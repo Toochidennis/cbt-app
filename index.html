@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LinkSkool</title>
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/styleguide.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <div class="main-app">
+        <div class="title-bar">
+            <div class="drag-region">
+                <div class="logo">
+                    <img class="graduation-cap" src="assets/img/graduationcap.svg" />
+                    <p class="link-skool">
+                        <span class="text-wrapper-7">Link</span><span class="text-wrapper-8">Skool</span>
+                    </p>
+                </div>
+                <div class="search">
+                    <div class="info-4">
+                        <img class="img-2" src="assets/img/magnifyingglass.svg" />
+                        <input class="search-here" placeholder="Search here...." type="text" />
+                    </div>
+                </div>
+                <div class="window-controls">
+                    <div class="button window-hover" id="min-button">
+                        <img class="icon" id="min" alt="minimize" srcset="assets/icons/min.svg" draggable="false" />
+                    </div>
+                    <div class="button window-hover" id="max-button">
+                        <img class="icon" id="max" alt="maximize" srcset="assets/icons/max.svg" draggable="false" />
+                    </div>
+                    <div class="button window-hover-close" id="close-button">
+                        <img class="icon" id="close" alt="close" srcset="assets/icons/close.svg" draggable="false" />
+                    </div>
+                </div>
+            </div </div>
+            <div class="content-area" id="app"></div>
+        </div>
+        <script type="module" src="renderer/renderer.js"></script>
+</body>
+
+</html>

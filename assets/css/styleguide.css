@@ -1,0 +1,13 @@
+:root {
+  --graywhite: rgba(255, 255, 255, 1);
+  --gray-900: rgba(29, 32, 38, 1);
+  --gray-600: rgba(110, 116, 133, 1);
+  --gray-700: rgba(78, 85, 102, 1);
+  --secondary-100: rgba(235, 235, 255, 1);
+  --body-large-400-font-family: "Inter", Helvetica;
+  --body-large-400-font-weight: 400;
+  --body-large-400-font-size: 16px;
+  --body-large-400-letter-spacing: 0px;
+  --body-large-400-line-height: 24px;
+  --body-large-400-font-style: normal;
+}

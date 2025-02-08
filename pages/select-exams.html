@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Exam</title>
+    <link rel="stylesheet" href="../assets/css/globals.css" />
+    <link rel="stylesheet" href="../assets/css/styleguide.css" />
+    <link rel="stylesheet" href="../assets/css/style3.css" />
+</head>
+
+<body>
+    <div class="select-exams">
+        <div class="frame">
+            <p class="title">Joint Admissions Matriculation Board (JAMB)</p>
+            <div class="close-button" id="close-button">
+                <div class="close-button-text">Back to Home</div>
+            </div>
+        </div>
+        <hr>
+        <div class="frame-2">
+            <p class="subtitle">
+                <span class="span">Select subject(s) combination to practice </span>
+                <span class="text-wrapper-2">(maximum 4)</span>
+            </p>
+        </div>
+
+        <div class="frame-3">
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="english-checkbox" name="english-language">
+                <label class="text-wrapper-3" for="english-checkbox">English Language</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="math-checkbox" name="math">
+                <label class="text-wrapper-3" for="math-checkbox">Mathematics</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="commerce-checkbox" name="commerce">
+                <label class="text-wrapper-3" for="commerce-checkbox">Commerce</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="history-checkbox" name="history">
+                <label class="text-wrapper-3" for="history-checkbox">History</label>
+            </div>
+
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="geography-checkbox" name="geography">
+                <label class="text-wrapper-3" for="geography-checkbox">Geography</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="physics-checkbox" name="physics">
+                <label class="text-wrapper-3" for="physics-checkbox">Physics</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="chemistry-checkbox" name="chemistry">
+                <label class="text-wrapper-3" for="chemistry-checkbox">Chemistry</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="biology-checkbox" name="biology">
+                <label class="text-wrapper-3" for="biology-checkbox">Biology</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="economics-checkbox" name="economics">
+                <label class="text-wrapper-3" for="economics-checkbox">Economics</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="civic-checkbox" name="civic">
+                <label class="text-wrapper-3" for="civic-checkbox">Civic Education</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="literature-checkbox" name="literature">
+                <label class="text-wrapper-3" for="literature-checkbox">Literature</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="computer-checkbox" name="computer">
+                <label class="text-wrapper-3" for="computer-checkbox">Computer Studies</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="further-checkbox" name="further">
+                <label class="text-wrapper-3" for="further-checkbox">Further Mathematics</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="crs-checkbox" name="crs">
+                <label class="text-wrapper-3" for="crs-checkbox">C.R.S</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="agric-checkbox" name="agric">
+                <label class="text-wrapper-3" for="agric-checkbox">Agricultural Science</label>
+            </div>
+            <div class="checkbox-wrapper">
+                <input class="checkbox" type="checkbox" id="government-checkbox" name="government">
+                <label class="text-wrapper-3" for="government-checkbox">Government</label>
+            </div>
+        </div>
+
+        <div class="frame-4">
+            <div class="year-wrapper">
+                <h3 class="text-wrapper-4">Select Examination Year</h3>
+                <select class="item" id="exam-year">
+                    <option value="" disabled selected>Select Year</option>
+                </select>
+            </div>
+            <div class="time-wrapper">
+                <h3 class="text-wrapper-4">Set timer</h3>
+                <div >
+                    <input class="item" type="time" id="exam-time" step="60">
+                </div>
+            </div>
+        </div>
+        <div class="frame-5">
+            <div class="frame-6">
+                <div class="text-wrapper-5" id="start-exam">Start Exam</div>
+                <img class="double-left" src="../assets/icons/icons8-double-left-1.svg" />
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script type="module" src="../renderer/select-exams.js"></script>
+</body>
+
+</html>

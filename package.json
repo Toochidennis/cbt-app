@@ -1,0 +1,19 @@
+{
+  "name": "cbt-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ToochiDennis",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^34.0.2",
+    "electron-builder": "^25.1.8",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-reloader": "^1.2.3"
+  }
+}
