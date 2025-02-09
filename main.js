@@ -21,8 +21,7 @@ function createWindow() {
         frame: false,
         resizable: true,
         webPreferences: {
-            nodeIntegration: true,
-            devTools: true,
+            contextIsolation: true,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
@@ -84,46 +83,45 @@ ipcMain.handle('get-questions', async () => {
     }
 });
 
-function openSelectExamDialog() {
-    let selectExamWindow = new BrowserWindow({
+function openSelectSubjectDialog() {
+    let selectSubjectWindow = new BrowserWindow({
         width: 800,
         height: 600,
         modal: true,
         frame: false,
         parent: mainWindow,
         webPreferences: {
-            nodeIntegration: true,
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js')
         }
     });
 
-    selectExamWindow.loadFile('pages/select-exams.html')
+    selectSubjectWindow.loadFile('pages/select-subject.html')
 
-    const closeHandler = () => {
-        if (selectExamWindow && !selectExamWindow.isDestroyed()) {
-            mainWindow.webContents.send('second-window-closed');
-            selectExamWindow.close();
+    const closeHandler = (event, action) => {
+        if (selectSubjectWindow && !selectSubjectWindow.isDestroyed()) {
+            mainWindow.webContents.send('second-window-closed', action);
+            selectSubjectWindow.close();
         }
     }
 
     // Register the listener for this window instance
-    ipcMain.once("close-select-exam-window", closeHandler);
+    ipcMain.once("close-select-subject-window", closeHandler);
 
     // When the window is closed, remove the listener to avoid referencing a destroyed window
-    selectExamWindow.on('closed', () => {
-        ipcMain.removeListener("close-select-exam-window", closeHandler);
+    selectSubjectWindow.on('closed', () => {
+        ipcMain.removeListener("close-select-subject-window", closeHandler);
     });
 
     // Adjust size after content loads
-    selectExamWindow.webContents.once('did-finish-load', () => {
-        selectExamWindow.webContents.executeJavaScript(`
+    selectSubjectWindow.webContents.once('did-finish-load', () => {
+        selectSubjectWindow.webContents.executeJavaScript(`
             new Promise(resolve => {
                 const { scrollWidth, scrollHeight } = document.documentElement;
                 resolve({ width: scrollWidth, height: scrollHeight });
             });
         `).then(size => {
-            selectExamWindow.setBounds({
+            selectSubjectWindow.setBounds({
                 width: Math.min(size.width + 20, 800),  // Limit max width
                 height: Math.min(size.height + 20, 600) // Limit max height
             });
@@ -131,6 +129,6 @@ function openSelectExamDialog() {
     });
 }
 
-ipcMain.on('open-exam-window', () => {
-    openSelectExamDialog();
+ipcMain.on('open-subject-window', () => {
+    openSelectSubjectDialog();
 });

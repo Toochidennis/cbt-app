@@ -1,7 +1,7 @@
 import { loadPage } from "./navigation.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadPage('home');
+    loadPage('exam');
 });
 
 document.getElementById("min-button").addEventListener("click", () => {

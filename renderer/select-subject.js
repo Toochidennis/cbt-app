@@ -1,33 +1,15 @@
-import { loadPage } from "./navigation.js";
-import state from "./state.js";
-
 document.addEventListener("DOMContentLoaded", function () {
     const closeModalBtn = document.getElementById("close-button");
     const yearDropdown = document.getElementById("exam-year");
     const startBtn = document.getElementById("start-exam");
 
     closeModalBtn.addEventListener('click', () => {
-        // window.api.closeSelectExamWindow();
-        const window = remote
+        window.api.closeSelectSubjectWindow('home');
     });
-
 
     startBtn.addEventListener('click', () => {
-      
-        window.api.closeSelectExamWindow(()=>{
-            alert("hello");
-            // window.api.onSecondWindowClosed(() => {
-            //     //loadPage("exam");
-            //     alert('Hello');
-    
-            // });
-        });
-
-
-
+        window.api.closeSelectSubjectWindow('exam');
     });
-
-
 
     // Populate the year dropdown dynamically
     const currentYear = new Date().getFullYear() - 1;

@@ -1,19 +1,19 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css?family=Urbanist:500,400,600|STIX+Two+Text:700|Inter:var(--body-large-400-font-weight)");
+
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
+
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
   outline: -webkit-focus-ring-color auto 5px !important;
 }
+
 a {
   text-decoration: none;
 }
