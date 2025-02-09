@@ -6,6 +6,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-user-select: none; /* Chrome, Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Standard syntax */
 }
 
 /* a blue color as a generic focus style */

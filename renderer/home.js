@@ -8,13 +8,12 @@ document.getElementById('jamb-button').addEventListener('click', () => {
 
 window.api.onSecondWindowClosed((_, action) => {
     if (action === 'exam') {
-        loadPage(action);
-        // window.api.getQuestions().then((quests) => {
-        //     state.questions = quests;
-        //     // Navigate to the CBT page
-
-        // }).catch((error) => {
-        //     console.error('Failed to load questions:', error);
-        // });
+        window.api.getQuestions().then((quests) => {
+            state.questions = quests;
+            // Navigate to the CBT page
+            loadPage(action);
+        }).catch((error) => {
+            console.error('Failed to load questions:', error);
+        });
     }
 });

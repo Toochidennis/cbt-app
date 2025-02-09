@@ -135,7 +135,8 @@
 
 /*Homepage styles*/
 .element-homepage {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--graywhite);
     overflow: hidden;
     padding: 0 1rem;
