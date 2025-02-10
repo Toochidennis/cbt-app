@@ -1,9 +1,12 @@
 // state.js
 export function getInitialState() {
     return {
-        questions: [], // This will be populated with the fetched questions
-        currentQuestionIndex: 0,
-        userAnswers: []
+        subjects: {},
+        selectedSubjects: [],
+        currentSubject: '',
+        year: 0,
+        hour: 0,
+        minute: 0,
     };
 }
 

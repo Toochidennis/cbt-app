@@ -1,7 +1,7 @@
 import { loadPage } from "./navigation.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadPage('home');
+   loadPage('home');
 });
 
 document.getElementById("min-button").addEventListener("click", () => {
@@ -12,7 +12,7 @@ const maximizeButton = document.getElementById("max-button");
 const maxIcon = document.getElementById('max')
 
 maximizeButton.addEventListener("click", () => {
-   // window.api.maximize();
+    // window.api.maximize();
 });
 
 window.api.onMaximized(() => {

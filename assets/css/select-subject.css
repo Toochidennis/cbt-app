@@ -91,12 +91,13 @@
     gap: 20px;
     padding: 1rem;
     margin-top: 1em;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     border: 0.4px solid;
     border-color: #e0e0e0;
+    overflow: hidden;
 }
 
-.checkbox-wrapper{
+.checkbox-wrapper {
     display: flex;
     gap: 8px;
     align-items: center;
@@ -107,7 +108,7 @@
     height: 20px;
     background-color: #426bff;
     border-radius: 2px;
-   
+
 }
 
 .frame-3 .text-wrapper-3 {
@@ -121,14 +122,13 @@
     white-space: nowrap;
 }
 
-.frame-4{
+.frame-4 {
     display: flex;
     margin-top: 1rem;
-    gap:50px;
-    width: 100%;
+    gap: 50px;
 }
 
-.frame-4 .item{
+.frame-4 .item {
     font-family: "Urbanist", Helvetica;
     font-weight: 300;
     color: #1a1a1a;
@@ -136,28 +136,44 @@
     letter-spacing: 0;
     line-height: 20.3px;
     margin-top: 1rem;
-    width: 300px;
+    width: 250px;
     height: 40px;
     padding: .5em;
 }
 
-.text-wrapper-4 {
+.duration-header {
     font-family: "Urbanist", Helvetica;
     font-weight: 300;
     color: #252323;
     font-size: 1rem;
     letter-spacing: -0.11px;
     line-height: normal;
-  }
+}
 
+.duration-content {
+    display: flex;
+    gap: 20px;
+}
 
-.frame-5{
+.duration-content input {
+    font-family: "Urbanist", Helvetica;
+    font-weight: 300;
+    color: #1a1a1a;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 20.3px;
+    margin-top: .8rem;
+    height: 40px;
+    padding: .5em;
+}
+
+.frame-5 {
     margin-top: 3rem;
     display: flex;
     width: 100%;
 }
 
- .frame-6 {
+.frame-6 {
     display: flex;
     margin-left: auto;
     align-items: center;
@@ -167,9 +183,9 @@
     cursor: pointer;
     background-color: #2e55dd;
     border-radius: 8px;
-  }
-  
-  .select-exams .text-wrapper-5 {
+}
+
+.select-exams .text-wrapper-5 {
     width: fit-content;
     font-family: "Urbanist", Helvetica;
     font-weight: 500;
@@ -178,9 +194,9 @@
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
-  }
-  
-  .select-exams .double-left {
+}
+
+.select-exams .double-left {
     width: 24px;
     height: 24px;
-  }
+}

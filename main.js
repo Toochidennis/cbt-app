@@ -145,6 +145,10 @@ ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
 });
 
+ipcMain.on('open-exam-window', () => {
+    openExamWindow();
+});
+
 ipcMain.on('open-congrats-window', () => {
     openCongratsWindow();
 });

@@ -1,5 +1,4 @@
 import state from '../renderer/state.js';
-import { loadPage } from './navigation.js';
 
 let timer;
 let totalSeconds = 0;
@@ -12,22 +11,12 @@ const optionsContainer = document.getElementById('options-container');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
 
-startTimer();
-renderQuestion(state.currentQuestionIndex);
-
-nextBtn.addEventListener('click', () => handleNavigation(1));
-prevBtn.addEventListener('click', () => handleNavigation(-1));
-submitBtn.addEventListener('click', ()=> window.api.openCongratsWindow());
-
-// document.getElementById('submit-btn').addEventListener('click', () => {
-//     loadPage('summary');
-// });
 
 function startTimer() {
     if (timer) return; // Prevent multiple intervals
 
-    const hours = 2;
-    const minutes = 30;
+    const hours = state.hour;
+    const minutes = state.minute;
     const seconds = 0;
     totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
@@ -64,24 +53,44 @@ function pad(num) {
     return num.toString().padStart(2, '0');
 }
 
+function renderTabs() {
+    const tabContainer = document.querySelector('.tab');
+    tabContainer.innerHTML = '';
+
+    state.selectedSubjects.forEach(subject => {
+        const tabButton = document.createElement('button');
+        tabButton.classList = 'tablinks';
+        tabButton.textContent = subject;
+        tabButton.addEventListener('click', () => openTab(subject));
+        tabContainer.appendChild(tabButton);
+    });
+}
+
+function openTab(subject) {
+    state.currentSubject = subject;
+
+    renderQuestion(state.subjects[subject].currentQuestionIndex);
+}
+
 function renderQuestionNav() {
+    const subjectState = state.subjects[state.currentSubject];
     const questionNav = document.getElementById('question-nav');
     questionNav.innerHTML = '';
 
-    state.questions.map((_, index) => {
+    subjectState.questions.map((_, index) => {
         const box = document.createElement('div');
         box.classList.add('question-box');
         box.textContent = index + 1;
 
-        if (state.userAnswers[index]) {
+        if (subjectState.userAnswers[index]) {
             box.classList.add('answered')
         } else {
             box.classList.add('unanswered');
         }
 
         box.addEventListener('click', () => {
-            state.currentQuestionIndex = index;
-            renderQuestion(state.currentQuestionIndex);
+            subjectState.currentQuestionIndex = index;
+            renderQuestion(subjectState.currentQuestionIndex);
         });
 
         questionNav.appendChild(box);
@@ -89,9 +98,10 @@ function renderQuestionNav() {
 }
 
 function renderQuestion(index) {
-    const question = state.questions[index];
+    const subjectState = state.subjects[state.currentSubject];
+    const question = subjectState.questions[index];
 
-    progress.textContent = `Question ${state.currentQuestionIndex+1}/${state.questions.length}`;
+    progress.textContent = `Question ${index + 1}/${subjectState.questions.length}`;
     questionText.textContent = question.question;
 
     // Clear previous options
@@ -117,28 +127,61 @@ function renderQuestion(index) {
     renderQuestionNav();
 }
 
-function selectAnswer(answer) {
-    const currentQuestion = state.questions[state.currentQuestionIndex];
-    currentQuestion.userAnswer = answer;
-    state.userAnswers[state.currentQuestionIndex] = answer;
-}
 
 function handleNavigation(direction) {
+    const subjectState = state.subjects[state.currentSubject];
     const selectedOption = document.querySelector('input[name="option"]:checked');
     if (selectedOption) {
-        selectAnswer(selectedOption.value);
+        subjectState.userAnswers[subjectState.currentQuestionIndex] = selectedOption.value;
     }
 
-    state.currentQuestionIndex += direction;
+    subjectState.currentQuestionIndex += direction;
 
-    if (state.currentQuestionIndex < 0) {
-        state.currentQuestionIndex = 0;
-    } else if (state.currentQuestionIndex >= state.questions.length) {
-        state.currentQuestionIndex = state.questions.length - 1;
+    if (subjectState.currentQuestionIndex < 0) {
+        subjectState.currentQuestionIndex = 0;
+    } else if (subjectState.currentQuestionIndex >= subjectState.questions.length) {
+        subjectState.currentQuestionIndex = subjectState.questions.length - 1;
         document.getElementById('next-btn').style.display = 'none';
     } else {
         document.getElementById('next-btn').style.display = 'inline';
     }
 
-    renderQuestion(state.currentQuestionIndex);
+    renderQuestion(subjectState.currentQuestionIndex);
+}
+
+function init() {
+    console.log(state);
+    // startTimer();
+
+    // nextBtn.addEventListener('click', () => handleNavigation(1));
+    // prevBtn.addEventListener('click', () => handleNavigation(-1));
+    // submitBtn.addEventListener('click', () => window.api.openCongratsWindow());
+    // // Set the first subject as the current subject
+    // state.currentSubject = state.selectedSubjects[0];
+
+    // // Render tabs
+    // renderTabs();
+
+    // // Load questions for each subject (this should be replaced with actual data fetching logic)
+    // // selectedSubjects.forEach(subject => {
+    // //     state.subjects[subject].questions = loadQuestionsForSubject(subject);
+    // // });
+
+    // // Render the first question of the initial subject
+    // renderQuestion(0);
+}
+
+function loadQuestionsForSubject(subject) {
+    // Replace this with actual logic to fetch questions for the given subject
+    return [
+        {
+            question: `Sample question 1 for ${subject}`,
+            options: ['Option A', 'Option B', 'Option C', 'Option D']
+        },
+        {
+            question: `Sample question 2 for ${subject}`,
+            options: ['Option A', 'Option B', 'Option C', 'Option D']
+        }
+        // Add more questions as needed
+    ];
 }

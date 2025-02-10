@@ -115,7 +115,6 @@
 /*Homepage styles*/
 .element-homepage {
     height: 100vh;
-
     background-color: var(--graywhite);
     overflow: hidden;
     padding: 0 1rem;
@@ -248,8 +247,6 @@
     position: absolute;
     top: 40px;
     flex: 0 0 auto;
-    margin-left: -50.00px;
-    margin-right: -50.00px;
 }
 
 .element-homepage .div-2 {
@@ -263,7 +260,6 @@
 .div-2 {
     display: flex;
     flex-wrap: wrap;
-    /* Ensures items wrap on smaller screens */
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -399,4 +395,8 @@
     gap: 12px;
     position: relative;
     flex: 0 0 auto;
+}
+
+.hidden{
+    display: none;
 }

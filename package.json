@@ -15,5 +15,9 @@
     "electron-builder": "^25.1.8",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

@@ -25,7 +25,6 @@
                 <span class="text-wrapper-2">(maximum 4)</span>
             </p>
         </div>
-
         <div class="frame-3">
             <div class="checkbox-wrapper">
                 <input class="checkbox" type="checkbox" id="english-checkbox" name="english-language">
@@ -101,10 +100,12 @@
                     <option value="" disabled selected>Select Year</option>
                 </select>
             </div>
-            <div class="time-wrapper">
-                <h3 class="text-wrapper-4">Set timer</h3>
-                <div >
-                    <input class="item" type="time" id="exam-time" step="60">
+            <div class="duration-container">
+                <h3 class="duration-header">Set timer</h3>
+                <!-- <div id="error-message" style="color: red;"></div> -->
+                <div class="duration-content">
+                    <input type="number" id="hour" placeholder="Hours">
+                    <input type="number" id="minutes" placeholder="Minutes">
                 </div>
             </div>
         </div>

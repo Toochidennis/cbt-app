@@ -45,26 +45,11 @@
     cursor: pointer;
 }
 
-.answer-question .text-wrapper-12 {
-    font-weight: 500;
-    position: relative;
-    width: 5.98px;
-    height: 17.95px;
-    margin-top: -0.75px;
-    font-family: "Inter", Helvetica;
-    color: #ff4848;
-    font-size: 15px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-}
-
 .submit-button .text-wrapper-1 {
     font-family: "Urbanist", Helvetica;
     font-weight: 500;
     color: #ff4848;
-    font-size: 1.rem;
+    font-size: 1rem;
     letter-spacing: 0;
     line-height: normal;
 }
@@ -132,7 +117,7 @@
 }
 
 .options-container {
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
 
 .options-container label {
