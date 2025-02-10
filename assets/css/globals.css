@@ -1,15 +1,19 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Urbanist:500,400,600|STIX+Two+Text:700|Inter:var(--body-large-400-font-weight)");
+@import url("https://fonts.googleapis.com/css?family=Urbanist:500,400,600|STIX+Two+Text:700|Inter:var(--body-large-400-font-weight)|BioRhyme:wght@300;400;800&display=swap|Bungee Color:wght@400&display=swap");
 
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-user-select: none; /* Chrome, Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* Internet Explorer/Edge */
-  user-select: none;         /* Standard syntax */
+  -webkit-user-select: none;
+  /* Chrome, Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Standard syntax */
 }
 
 /* a blue color as a generic focus style */

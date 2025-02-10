@@ -17,3 +17,7 @@ window.api.onSecondWindowClosed((_, action) => {
         });
     }
 });
+
+window.api.onCongratsWindowClosed(() => {
+    loadPage('home');
+});

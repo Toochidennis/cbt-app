@@ -5,6 +5,7 @@ let timer;
 let totalSeconds = 0;
 
 const countdown = document.getElementById('countdown');
+const submitBtn = document.getElementById('submit-button');
 const progress = document.getElementById('progress');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
@@ -16,7 +17,7 @@ renderQuestion(state.currentQuestionIndex);
 
 nextBtn.addEventListener('click', () => handleNavigation(1));
 prevBtn.addEventListener('click', () => handleNavigation(-1));
-
+submitBtn.addEventListener('click', ()=> window.api.openCongratsWindow());
 
 // document.getElementById('submit-btn').addEventListener('click', () => {
 //     loadPage('summary');
@@ -92,15 +93,26 @@ function renderQuestion(index) {
 
     progress.textContent = `Question ${state.currentQuestionIndex+1}/${state.questions.length}`;
     questionText.textContent = question.question;
-    optionsContainer.innerHTML = `
-    ${question.options.map((option, _) => `
-    <label>
-        <input type="radio" name="option" value="${option}" ${question.userAnswer === option ? 'checked' : ''}>
-        ${option}
-    </label><br>
-    `).join('')
-        }
-    `;
+
+    // Clear previous options
+    optionsContainer.innerHTML = '';
+
+    // Apply fade-in animation to question text
+    questionText.classList.remove('fade-in');
+    void questionText.offsetWidth; // Trigger reflow to restart animation
+    questionText.classList.add('fade-in');
+
+    // Render options with staggered animation
+    question.options.forEach((option, i) => {
+        const label = document.createElement('label');
+        label.innerHTML = `
+            <input type="radio" name="option" value="${option}" ${question.userAnswer === option ? 'checked' : ''}>
+            ${option}
+        `;
+        label.classList.add('fade-in');
+        label.style.animationDelay = `${(i + 1) * 0.2}s`; // Staggered delay
+        optionsContainer.appendChild(label);
+    });
 
     renderQuestionNav();
 }

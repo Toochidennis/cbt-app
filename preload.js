@@ -10,5 +10,8 @@ contextBridge.exposeInMainWorld('api', {
     onMaximized: (callback) => ipcRenderer.on("window-maximized", callback),
     onRestored: (callback) => ipcRenderer.on("window-restored", callback),
     openSelectSubjectWindow: () => ipcRenderer.send('open-subject-window'),
+    openCongratsWindow: () => ipcRenderer.send("open-congrats-window"),
     onSecondWindowClosed: (callback) => ipcRenderer.on('second-window-closed', callback),
+    onCongratsWindowClosed: (callback) => ipcRenderer.on('congrats-window-closed', callback),
+    closeCongratsWindow: () => ipcRenderer.send('close-congrats-window'),
 });
