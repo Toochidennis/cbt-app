@@ -81,7 +81,7 @@
     background-color: #ddd;
 }
 
-.tab button.active {
+.tab .active {
     background-color: #f4f6ff;
     border-bottom: 1px solid #2e55dd;
 }
@@ -131,6 +131,7 @@
     font-size: 1.2rem;
     letter-spacing: 0;
     line-height: normal;
+    cursor: pointer;
 }
 
 .options-container input[type="radio"] {

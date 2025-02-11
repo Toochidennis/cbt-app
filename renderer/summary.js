@@ -3,47 +3,49 @@ import { loadPage } from './navigation.js';
 
 function renderSummary() {
     const summaryContainer = document.getElementById('summary-container');
-    let correctCount = 0;
+    summaryContainer.innerHTML = ''; // Clear previous content
 
-    const summaryHTML = state.questions.map((question, index) => {
-        const isCorrect = state.userAnswers[index] === question.correctAnswer;
-        if (isCorrect) correctCount++;
-        return `
+    let overallScore = 0;
+    let overallMaxScore = 0;
+    let summaryHTML = '';
+
+    // Loop over each subject available in the state
+    Object.keys(state.subjects).forEach(subject => {
+        const subjectState = state.subjects[subject];
+        const subjectQuestions = subjectState.questions;
+        const numQuestions = subjectQuestions.length;
+        const subjectMaxScore = numQuestions * 2; // Each question is 2 marks
+        let subjectScore = 0;
+
+        summaryHTML += `<h2>${subject}</h2>`;
+
+        subjectQuestions.forEach((question, index) => {
+            // Retrieve the user's answer for this question (if any)
+            const userAnswer = subjectState.userAnswers[index];
+            // Check if the answer is correct
+            const isCorrect = userAnswer === question.correctAnswer;
+            if (isCorrect) {
+                subjectScore += 2;
+            }
+            summaryHTML += `
             <p>Question ${index + 1}: ${question.question}</p>
-            <p>Your answer: ${state.userAnswers[index] || 'No answer selected'}</p>
+            <p>Your answer: ${userAnswer || 'No answer selected'}</p>
             <p>Correct answer: ${question.correctAnswer}</p>
             <p>${isCorrect ? 'Correct' : 'Incorrect'}</p>
             <hr>
         `;
-    }).join('');
+        });
 
+        summaryHTML += `<p><strong>${subject} Score: ${subjectScore} / ${subjectMaxScore}</strong></p>`;
+        overallScore += subjectScore;
+        overallMaxScore += subjectMaxScore;
+    });
+
+    summaryHTML += `<h2>Total Score: ${overallScore} out of ${overallMaxScore}</h2>`;
     summaryContainer.innerHTML = summaryHTML;
-    summaryContainer.innerHTML += `<p>Total Score: ${correctCount} out of ${state.questions.length}</p>`;
 }
 
 renderSummary();
-
-// function resetQuiz() {
-//     // Reset the state
-//     Object.assign(state, getInitialState());
-
-//     // Fetch the questions again
-//     window.api.getQuestions().then((quests) => {
-//         state.questions = quests;
-
-//         // Navigate to the CBT page
-//         loadPage('cbt');
-//     }).catch((error) => {
-//         console.error('Failed to load questions:', error);
-//         // Optionally, display an error message to the user
-//     });
-// }
-
-// document.addEventListener("click", (event) => {
-//     if (event.target && event.target.id === "retake-btn") {
-//         resetQuiz();
-//     }
-// });
 
 document.getElementById('home-btn').addEventListener('click', () => {
     // Logic to navigate back to the home page

@@ -1,3 +1,11 @@
+let data = {
+    subjects: {},
+    selectedSubjects: [],
+    year: 0,
+    duration: { hours: 0, minutes: 0 },
+    action: 'exam'
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     const closeModalBtn = document.getElementById("close-button");
     const yearDropdown = document.getElementById("exam-year");
@@ -21,18 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     startBtn.addEventListener('click', () => {
-        const duration = getDuration();
-        const subjects = getSelectedSubjects();
-
-        const selectedData = {
-            "subjects": subjects,
-            "hour": duration['hour'],
-            "minutes": duration['minutes'],
-            "action": 'exam',
-            "year": yearDropdown.value,
-        };
-
-        window.api.closeSelectSubjectWindow(selectedData);
+        validateSelectionAndProceed(yearDropdown.value);
     });
 
     // Populate the year dropdown dynamically
@@ -57,12 +54,55 @@ function getSelectedSubjects() {
 }
 
 function getDuration() {
-    const hour = document.getElementById('hour').value;
+    const hours = document.getElementById('hour').value;
     const minutes = document.getElementById('minutes').value;
 
-    if (!hour && !minutes) {
-        return { hour: 0, minutes: 0 };
+    return { hours: hours, minutes: minutes };
+}
+
+async function validateSelectionAndProceed(year) {
+    const duration = getDuration();
+    const subjects = getSelectedSubjects();
+
+    if (subjects.length === 0) {
+        console.log(subjects);
+        return;
+    } else if (!duration['hours'] && !duration['minutes']) {
+        console.log(duration);
+        return;
+    } else if (!year) {
+        console.log('year');
+        return;
     } else {
-        return { hour: hour, minutes: minutes };
+
+        await Promise.all(subjects.map(subject => loadQuestionsForSubject(subject, year)));
+
+        data.selectedSubjects = subjects;
+        data.duration = duration;
+        data.year = year;
+
+        window.api.closeSelectSubjectWindow(data);
+    }
+}
+
+async function loadQuestionsForSubject(subject, year) {
+    try {
+        const questions = await window.api.getQuestions(subject, year);
+        // Check if no questions were returned.
+        if (!questions || questions.length === 0) {
+            const msg = `No questions found for subject: ${subject} (year: ${year}).`;
+            console.error(msg);
+
+            // Throw an error so that the calling code knows to stop further processing.
+            throw new Error(msg);
+        }
+
+        data.subjects[subject] = {
+            questions: questions,
+            currentQuestionIndex: 0,
+            userAnswers: [],
+        };
+    } catch (error) {
+        console.error('Failed to load questions:', error);
     }
 }

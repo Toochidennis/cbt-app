@@ -1,5 +1,5 @@
 {
-  "name": "cbt-app",
+  "name": "LinkSkool",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "electron-reloader": "^1.2.3"
   },
   "dependencies": {
+    "better-sqlite3": "^11.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }

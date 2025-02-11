@@ -19,8 +19,8 @@ export function loadPage(page) {
     if (page === 'exam') {
         homeDiv.classList.add('hidden');
         examDiv.classList.remove('hidden');
-      } else if (page === 'home') {
+    } else if (page === 'home') {
         examDiv.classList.add('hidden');
         homeDiv.classList.remove('hidden');
-      }
+    }
 }

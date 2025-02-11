@@ -5,8 +5,7 @@ export function getInitialState() {
         selectedSubjects: [],
         currentSubject: '',
         year: 0,
-        hour: 0,
-        minute: 0,
+        duration: { hours: 0, minutes: 0 }
     };
 }
 

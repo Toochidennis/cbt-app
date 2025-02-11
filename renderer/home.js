@@ -5,34 +5,28 @@ document.getElementById('jamb-button').addEventListener('click', () => {
     window.api.openSelectSubjectWindow();
 });
 
-window.api.onSecondWindowClosed((_, data) => {
-    if (data['action'] === 'exam') {
-        window.api.getQuestions().then((question) => {
-            data['subjects'].map((subject, _) => {
-                state.subjects[subject] = {
-                    questions: question,
-                    currentQuestionIndex: 0,
-                    userAnswers: [],
-                }
-            });
-
-            state.selectedSubjects = data['subjects'];
-            state.hour = data['hour'];
-            state.minute = data['minutes'];
-            state.year = data['year'];
-
-            init();
-            // Navigate to the CBT page
-            loadPage(data['action']);
-        }).catch((error) => {
-            console.error('Failed to load questions:', error);
-        });
-    }
-});
 
 window.api.onCongratsWindowClosed(() => {
     loadPage('home');
 });
+
+// Show exam screen when subjects selection window is closed
+window.api.onSecondWindowClosed((_, data) => {
+    if (data['action'] === 'exam') {
+        state.subjects = data['subjects'];
+        state.duration = data['duration'];
+        state.selectedSubjects = data['selectedSubjects'];
+        state.year = data['year'];
+
+        console.log("state ", state);
+
+        init();
+
+        // Navigate to the Exam page
+        loadPage(data['action']);
+    }
+});
+
 
 // exam functionality
 let timer;
@@ -45,13 +39,14 @@ const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
+const attemptedDiv = document.getElementById('attempted-questions');
 
 
 function startTimer() {
     if (timer) return; // Prevent multiple intervals
 
-    const hours = state.hour;
-    const minutes = state.minute;
+    const hours = state.duration['hours'];
+    const minutes = state.duration['minutes'];
     const seconds = 0;
     totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
@@ -96,12 +91,18 @@ function renderTabs() {
         const tabButton = document.createElement('button');
         tabButton.classList = 'tablinks';
         tabButton.textContent = subject;
-        tabButton.addEventListener('click', () => openTab(subject));
+        tabButton.addEventListener('click', () => openTab(subject, tabButton));
         tabContainer.appendChild(tabButton);
     });
 }
 
-function openTab(subject) {
+function openTab(subject, clickedButton) {
+    // Get all buttons inside the tab container
+    const tabButtons = document.querySelectorAll('.tab .tablinks');
+    // Remove the "active" class from each button
+    tabButtons.forEach(button => button.classList.remove('active'));
+    clickedButton.classList.add('active');
+
     state.currentSubject = subject;
 
     renderQuestion(state.subjects[subject].currentQuestionIndex);
@@ -124,7 +125,9 @@ function renderQuestionNav() {
         }
 
         box.addEventListener('click', () => {
+            selectAnswer(subjectState);
             subjectState.currentQuestionIndex = index;
+
             renderQuestion(subjectState.currentQuestionIndex);
         });
 
@@ -132,11 +135,13 @@ function renderQuestionNav() {
     });
 }
 
+
 function renderQuestion(index) {
     const subjectState = state.subjects[state.currentSubject];
     const question = subjectState.questions[index];
 
     progress.textContent = `Question ${index + 1}/${subjectState.questions.length}`;
+    attemptedDiv.textContent = `${subjectState.userAnswers.length}/${subjectState.questions.length}`;
     questionText.textContent = question.question;
 
     // Clear previous options
@@ -151,7 +156,7 @@ function renderQuestion(index) {
     question.options.forEach((option, i) => {
         const label = document.createElement('label');
         label.innerHTML = `
-            <input type="radio" name="option" value="${option}" ${question.userAnswer === option ? 'checked' : ''}>
+            <input type="radio" name="option" value="${option}" ${subjectState.userAnswers[index] === option ? 'checked' : ''}>
             ${option}
         `;
         label.classList.add('fade-in');
@@ -162,13 +167,17 @@ function renderQuestion(index) {
     renderQuestionNav();
 }
 
-
-function handleNavigation(direction) {
-    const subjectState = state.subjects[state.currentSubject];
+function selectAnswer(subjectState) {
     const selectedOption = document.querySelector('input[name="option"]:checked');
     if (selectedOption) {
         subjectState.userAnswers[subjectState.currentQuestionIndex] = selectedOption.value;
     }
+}
+
+
+function handleNavigation(direction) {
+    const subjectState = state.subjects[state.currentSubject];
+    selectAnswer(subjectState);
 
     subjectState.currentQuestionIndex += direction;
 
@@ -185,7 +194,6 @@ function handleNavigation(direction) {
 }
 
 function init() {
-    console.log(state);
     startTimer();
 
     nextBtn.addEventListener('click', () => handleNavigation(1));
@@ -197,26 +205,6 @@ function init() {
     // Render tabs
     renderTabs();
 
-    // Load questions for each subject (this should be replaced with actual data fetching logic)
-    // selectedSubjects.forEach(subject => {
-    //     state.subjects[subject].questions = loadQuestionsForSubject(subject);
-    // });
-
     // Render the first question of the initial subject
     renderQuestion(0);
-}
-
-function loadQuestionsForSubject(subject) {
-    // Replace this with actual logic to fetch questions for the given subject
-    return [
-        {
-            question: `Sample question 1 for ${subject}`,
-            options: ['Option A', 'Option B', 'Option C', 'Option D']
-        },
-        {
-            question: `Sample question 2 for ${subject}`,
-            options: ['Option A', 'Option B', 'Option C', 'Option D']
-        }
-        // Add more questions as needed
-    ];
 }

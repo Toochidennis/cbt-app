@@ -1,0 +1,3422 @@
+[
+  {
+    "subject": "Biology",
+    "question": "The major building block of an organism is...",
+    "option_1": "Nitrogen",
+    "option_2": "Carbon",
+    "option_3": "Water",
+    "option_4": "Sulphur",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The process by which plants loss water to the atmosphere is",
+    "option_1": "transpiration",
+    "option_2": "guttation",
+    "option_3": "translocation",
+    "option_4": "evaporation",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe organism belongs to kingdom",
+    "option_1": "monera",
+    "option_2": "protista",
+    "option_3": "fungi",
+    "option_4": "animalia",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The formation of cilia and flagella in living cells is carried out with the help of",
+    "option_1": "ribosome",
+    "option_2": "lysosome",
+    "option_3": "centriole",
+    "option_4": "plastid",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The food nutrient with the highest energy value is",
+    "option_1": "protein",
+    "option_2": "carbohydrate",
+    "option_3": "lipid",
+    "option_4": "minerals",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "                             I\n\n6 X  +  6 H₂O      →     C6H₁₂O6   +   6O₂ \n\n III               chlorophyll      II               IV\n\nUse the diagram above to answer question that follows\n\nThe part labelled I is",
+    "option_1": "enzyme",
+    "option_2": "water",
+    "option_3": "sunlight",
+    "option_4": "chemical",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Bilateral symmetry,cylindrical bodies and double openings are characteristic features of",
+    "option_1": "nematodes",
+    "option_2": "hydra",
+    "option_3": "protozoa",
+    "option_4": "protists",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Mouth part adapted for piercing and sucking is found in",
+    "option_1": "housefly",
+    "option_2": "grasshopper",
+    "option_3": "mosquito",
+    "option_4": "cockroach",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The web-feet of frogs and toads is basically for",
+    "option_1": "leaping",
+    "option_2": "walking",
+    "option_3": "swimming",
+    "option_4": "mating",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The part of the inner ear that is responsible for hearing is",
+    "option_1": "sacculus",
+    "option_2": "cochlea",
+    "option_3": "utriculus",
+    "option_4": "ampullae",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The changes of living organisms over generation is referred to as",
+    "option_1": "human evolution",
+    "option_2": "organic evolution",
+    "option_3": "physical evolution",
+    "option_4": "chemical evolution",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "In a cross involving a heterozygous red flower plant (Rr) and a white flowered plant (rr). What is the probability that the offspring will be Rr?",
+    "option_1": "1/2",
+    "option_2": "1",
+    "option_3": "2",
+    "option_4": "1/4",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Inbreeding is highly discouraged in humans because it may",
+    "option_1": "increase the death rate of new born",
+    "option_2": "lead to the birth of dwarfs",
+    "option_3": "lead to high rate of competition among offspring",
+    "option_4": "lead to outbreak of hereditary diseases",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "One main feature of trees in the savanna habitat is the possession of",
+    "option_1": "large, leathery leaves",
+    "option_2": "straight slender stems with branches near the top",
+    "option_3": "thin, smooth barks",
+    "option_4": "thick, corky bark",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe zone labelled II is called",
+    "option_1": "supra-tidal zone",
+    "option_2": "pelagic zone",
+    "option_3": "littoral zone",
+    "option_4": "benthic zone",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following structures enables the exchange of gases in insects?",
+    "option_1": "skin",
+    "option_2": "tracheae",
+    "option_3": "Malpighian tubules",
+    "option_4": "flame cell",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The total number of ATP produced during glycolysis is",
+    "option_1": "3 molecules",
+    "option_2": "2 molecules",
+    "option_3": "4 molecules",
+    "option_4": "6 molecules",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe diagram above is",
+    "option_1": "circulatory system",
+    "option_2": "reproductive system",
+    "option_3": "urinary system",
+    "option_4": "nervous system",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Bile is a greenish alkaline liquid which is stored in the",
+    "option_1": "gall bladder",
+    "option_2": "liver",
+    "option_3": "stomach",
+    "option_4": "pancreas",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A medium texture soil with high organic matter is",
+    "option_1": "clay",
+    "option_2": "loamy",
+    "option_3": "humus",
+    "option_4": "sandy",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "One of the following is an example of discontinuous variation",
+    "option_1": "shape of the head",
+    "option_2": "blood group",
+    "option_3": "body complexion",
+    "option_4": "pointed nose",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The type of variation where there are no remarkable differences between the two extreme individuals is called",
+    "option_1": "continuous variation",
+    "option_2": "morphological variation",
+    "option_3": "physiological variation",
+    "option_4": "discontinuous variation",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The transmission of diseases through contamination of food is an economic importance of",
+    "option_1": "mosquitoes",
+    "option_2": "cockroaches",
+    "option_3": "butterflies",
+    "option_4": "bees",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Bryophyte is an intermediate group between higher algae and",
+    "option_1": "thallophyte",
+    "option_2": "pteridophyte",
+    "option_3": "spermatophyte",
+    "option_4": "tracheophyte",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Ecological succession can result from",
+    "option_1": "newly formed habitat",
+    "option_2": "habitat with abundant food",
+    "option_3": "habitat with space and light",
+    "option_4": "population of plants on a fertile land",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "population of plants on a fertile land",
+    "option_1": "terrestrial",
+    "option_2": "arboreal",
+    "option_3": "aquatic",
+    "option_4": "desert",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of these pair of substances must be present for a seed to germinate in a laboratory set-up?",
+    "option_1": "microbes and water",
+    "option_2": "heat and water",
+    "option_3": "soil and manure",
+    "option_4": "heat and microbe",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A fruit formed from one flower with many carpels is referred to as",
+    "option_1": "simple",
+    "option_2": "multiple",
+    "option_3": "aggregate",
+    "option_4": "FALSE",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following plant is found in the ground layer of a tropical rainforest in Nigeria?",
+    "option_1": "obeche",
+    "option_2": "liverwort",
+    "option_3": "mahogany",
+    "option_4": "oil palm",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe endocrine gland that is located in the part labelled I is ",
+    "option_1": "thyroid",
+    "option_2": "adrenal",
+    "option_3": "parathyroid",
+    "option_4": "pituitary",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following processes takes place in the carbon cycle?",
+    "option_1": "evaporation",
+    "option_2": "nitrification",
+    "option_3": "combustion",
+    "option_4": "transpiration",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following plants shows hypogeal germination?",
+    "option_1": "castor oi",
+    "option_2": "groundnut",
+    "option_3": "maize",
+    "option_4": "orange",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "In vascular plants, xylem tissue is responsible for",
+    "option_1": "transportation of water",
+    "option_2": "translocation of food",
+    "option_3": "transportation of hormones",
+    "option_4": "storage of sugar",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The causative agent of tuberculosis is",
+    "option_1": "virus",
+    "option_2": "bacteria",
+    "option_3": "protozoa",
+    "option_4": "fungi",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of these is a respiratory organ in mammals?",
+    "option_1": "skin",
+    "option_2": "mouth",
+    "option_3": "heart",
+    "option_4": "lungs",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the Nigeria states is Northern guinea savanna located?",
+    "option_1": "Borno",
+    "option_2": "Kano",
+    "option_3": "Oyo",
+    "option_4": "Kwara",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Darwin's theory of evolution is based on the principle of",
+    "option_1": "use and disuse of organ",
+    "option_2": "natural selection",
+    "option_3": "acquired characteristics",
+    "option_4": "mutation",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Similar structures that are modified to work in different ways in different organisms are referred to as",
+    "option_1": "homologous structures",
+    "option_2": "analogous structures",
+    "option_3": "divergent structures",
+    "option_4": "convergent structures",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "One of the ways of controlling Schistosomiasis is by",
+    "option_1": "destroying water snails and water weeds",
+    "option_2": "clearing the bushes around the house",
+    "option_3": "washing hands after using the toilet",
+    "option_4": "properly washing fruits before eating them",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The central nervous system comprises of",
+    "option_1": "brain and somatic",
+    "option_2": "brain and spinal cord",
+    "option_3": "spinal cord and somatic",
+    "option_4": "brain only",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe organelle that shows the organism has plant characteristics is",
+    "option_1": "I",
+    "option_2": "II",
+    "option_3": "III",
+    "option_4": "IV",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Reproduction in paramecium is by",
+    "option_1": "binary fission",
+    "option_2": "budding",
+    "option_3": "spore formation",
+    "option_4": "fragmentation",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A community with a population of two million three hundred and ten thousand people living in an area of two thousand three hundred and ten square kilometres has a population density of",
+    "option_1": "10000",
+    "option_2": "10",
+    "option_3": "100",
+    "option_4": "1000",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A succession that occurs in an area where there are no pre-existing community is called",
+    "option_1": "tertiary succession",
+    "option_2": "primary succession",
+    "option_3": "post-primary succession",
+    "option_4": "secondary succession",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following processes releases oxygen to the atmosphere?",
+    "option_1": "Respiration",
+    "option_2": "Combustion",
+    "option_3": "Decomposition",
+    "option_4": "photosynthesis",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The depressed side of paramecium which is lined with cilia leads to a tube-like structure called",
+    "option_1": "anal pore",
+    "option_2": "oral groove",
+    "option_3": "gullet",
+    "option_4": "food vacuole",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The rhizoid of liverwort is",
+    "option_1": "unicellular and unbranched",
+    "option_2": "multicellular and branched",
+    "option_3": "unicellular and branched",
+    "option_4": "multicellular and unbranched",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "In glycolysis, glucose is broken down through series of reactions in the presence of enzyme and absence of oxygen to produce",
+    "option_1": "Acetyl-coenzyme + ATP",
+    "option_2": "Phosphorylated glucose",
+    "option_3": "pyruvic acid + ATP",
+    "option_4": "Amino acid",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Gaseous exchange takes place through the plasma membrane in",
+    "option_1": "hydra",
+    "option_2": "paramecium",
+    "option_3": "flatworm",
+    "option_4": "earthworm",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "One of the characteristics of secondary succession is that it",
+    "option_1": "starts on a bare surface",
+    "option_2": "takes longer time to reach climax",
+    "option_3": "starts on already colonized surface",
+    "option_4": "starts with low organism",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "One of the components of xylem tissue is",
+    "option_1": "companion cell",
+    "option_2": "tracheid",
+    "option_3": "sieve tube",
+    "option_4": "epidermal",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements explains the theory of natural selection?",
+    "option_1": "There is no struggle for existence",
+    "option_2": "New species get better adaptation",
+    "option_3": "The weaker offspring are eliminated",
+    "option_4": "Unused structures disappear later",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The chemical and physical composition of soil is an example of",
+    "option_1": "climatic factor",
+    "option_2": "topographic factor",
+    "option_3": "Edaphic factor",
+    "option_4": "chemical factor",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The abiotic factor that affect the population growth of an organism is",
+    "option_1": "predator",
+    "option_2": "rain fall",
+    "option_3": "food shortage",
+    "option_4": "disease",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The cells responsible for transmitting messages to the effectors are",
+    "option_1": "motor neurons",
+    "option_2": "sensory neurons",
+    "option_3": "hair cells",
+    "option_4": "relay neurons",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The oxygen transported to all parts of the body during blood circulation is used for the",
+    "option_1": "growth and development of cells",
+    "option_2": "removal of waste products",
+    "option_3": "release of energy from food",
+    "option_4": "formation of carboxyl haemoglobin",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "After fertilization in plants, the zygote develops in to",
+    "option_1": "fruit",
+    "option_2": "an embryo",
+    "option_3": "seed",
+    "option_4": "an endosperm",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe organ is resposible for",
+    "option_1": "production of heat",
+    "option_2": "osmoregulation",
+    "option_3": "vasoconstriction",
+    "option_4": "production of hormones",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following evidences of evolution employs the use of radio-isotope dating?",
+    "option_1": "comparative anatomy",
+    "option_2": "Embryology",
+    "option_3": "Fossil records",
+    "option_4": "vestigial organs",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Pentadactyl forelimb of vertebrate function due to differences in environment is",
+    "option_1": "comparative anatomy",
+    "option_2": "physiological evidence",
+    "option_3": "embryological evidence",
+    "option_4": "fossil records",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The feeding relationship between ruminants and the bacteria in their digestive tract is",
+    "option_1": "saprophytic",
+    "option_2": "parasitic",
+    "option_3": "symbiotic",
+    "option_4": "heterotrophic",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A photosynthetic carnivorous plant which feeds on insects is",
+    "option_1": "parasitic",
+    "option_2": "saprophytic",
+    "option_3": "herbivorous",
+    "option_4": "insectivorous",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Xerophytes are mostly found in the",
+    "option_1": "arid land",
+    "option_2": "tropical rainforest",
+    "option_3": "montane forest",
+    "option_4": "Sudan savanna",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "In which zone of the marine habitat does the organisms require adaptation for attachment?",
+    "option_1": "Supratidal",
+    "option_2": "Subtidal",
+    "option_3": "intertidal",
+    "option_4": "abyssal zone",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Energy transfer in plants and animals are in the form of",
+    "option_1": "DNA",
+    "option_2": "ATP",
+    "option_3": "GTP",
+    "option_4": "RNA",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The pigment carrying oxygen in the blood is",
+    "option_1": "plasma",
+    "option_2": "haemoglobin",
+    "option_3": "oxyhaemoglobin",
+    "option_4": "erythrocytes",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Production of healthier offspring, viable seeds and formation of new varieties are good characteristics",
+    "option_1": "self pollination",
+    "option_2": "cross pollination",
+    "option_3": "wind pollination",
+    "option_4": "insect pollination",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "One of the following is a courtship behaviour in animals",
+    "option_1": "fighting",
+    "option_2": "display",
+    "option_3": "hibernation",
+    "option_4": "feeding",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "In blood transfusion, a patient with group AB receives",
+    "option_1": "Group A, B, AB",
+    "option_2": "Group O, A, B",
+    "option_3": "Group O, B, AB",
+    "option_4": "Group O, A, B, AB",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A trait that is always expressed during crossing of hereditary characteristics is",
+    "option_1": " recessive trait",
+    "option_2": "dominant trait",
+    "option_3": "homozygous trait",
+    "option_4": "heterozygous trait",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Blood group AB is considered as universal recipient because they can receive blood from groups",
+    "option_1": "A and O",
+    "option_2": "A and O",
+    "option_3": "AB and O",
+    "option_4": "A, B, AB and O",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "An example of organism that exhibits counter shading to escape from its predator is",
+    "option_1": "grasshopper",
+    "option_2": "toad",
+    "option_3": "fish",
+    "option_4": "chameleon",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A form of adaptive coloration that helps animals to remain unnoticed is",
+    "option_1": "hibernation",
+    "option_2": "aestivation",
+    "option_3": "countershading",
+    "option_4": "migration",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe part labelled III is",
+    "option_1": "abdomen",
+    "option_2": "head",
+    "option_3": "maxillae",
+    "option_4": "thorax",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Lamarck's theory of evolution is based on the idea of",
+    "option_1": "the inheritance of acquired traits",
+    "option_2": "organisms' survival of the fittest",
+    "option_3": "organisms constantly struggling for existence",
+    "option_4": "plenty offspring produced by organisms",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "How many chromosomes will be present in a gamete if the somatic cell has 8 chromosomes?",
+    "option_1": "16",
+    "option_2": "6",
+    "option_3": "4",
+    "option_4": "8",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nWhat is the genotypic ratio of the offspring produced in F1\n generation?",
+    "option_1": "2:01:01",
+    "option_2": "1:02:01",
+    "option_3": "2:2",
+    "option_4": "3:1",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Body temperature, thirst and hunger are regulated by",
+    "option_1": "thalamus",
+    "option_2": "hypothalamus",
+    "option_3": "medulla oblongata",
+    "option_4": "spinal cord",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Cell division that involves the growth, development, repairs and replacement of worn out tissues is",
+    "option_1": "biosynthesis",
+    "option_2": "mitosis",
+    "option_3": "meiosis",
+    "option_4": "synthesis",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram to answer the question that follows\n\nThe flower of plants belongs to part labelled",
+    "option_1": "I",
+    "option_2": "II",
+    "option_3": "III",
+    "option_4": "IV",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The bacteria in the large intestine of man synthesizes",
+    "option_1": "vitamins and minerals",
+    "option_2": "vitamins and glucose",
+    "option_3": "amino acids and vitamins",
+    "option_4": "amino acids and minerals",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The main excretory product of earthworm is",
+    "option_1": "ammonia",
+    "option_2": "carbon dioxide",
+    "option_3": "urea",
+    "option_4": "uric acid",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following conditions causes aestivation in animals?",
+    "option_1": "Wind",
+    "option_2": "Drought",
+    "option_3": "Rain",
+    "option_4": "Cold",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "An instrument used for measuring the intensity of light",
+    "option_1": "thermometer",
+    "option_2": "photometer",
+    "option_3": "anemometer",
+    "option_4": "hygrometer",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A common component of blood and lymph is",
+    "option_1": "fats",
+    "option_2": "plasma",
+    "option_3": "red blood cell",
+    "option_4": "white blood cell",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The part of the kidney where the selective reabsorption takes place is",
+    "option_1": "glomerulus",
+    "option_2": "Bowman's capsule",
+    "option_3": "Henle's loop",
+    "option_4": "urethra",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The schlerenchyma tissues consist of",
+    "option_1": "dead cell",
+    "option_2": "living cell",
+    "option_3": "tracheid cell",
+    "option_4": "meristematic cell",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The number of vertebrae in the human vertebral column is",
+    "option_1": "30",
+    "option_2": "33",
+    "option_3": "38",
+    "option_4": "39",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The organisms that adopt swarming as an adaptation to overcome overcrowding are",
+    "option_1": "Agama lizard",
+    "option_2": "tilapia",
+    "option_3": "rats",
+    "option_4": "termites",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Loamy soil is characterized by",
+    "option_1": "low humus and high porosity",
+    "option_2": "high humus and high porosity",
+    "option_3": "moderate humus and low porosity",
+    "option_4": "high humus and moderate porosity",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The cone in the retina of eye is an example of",
+    "option_1": "cell",
+    "option_2": "tissue",
+    "option_3": "organ",
+    "option_4": "system",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The part of the flower that develops into seed is",
+    "option_1": "ovule",
+    "option_2": "pedicel",
+    "option_3": "petal",
+    "option_4": "style",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of these is a medium of transportation in plants?",
+    "option_1": "cell sap",
+    "option_2": "Nucleus",
+    "option_3": "Mitochondrion",
+    "option_4": "Ribosome",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a viral disease?",
+    "option_1": "Syphilis",
+    "option_2": "Measles",
+    "option_3": "Cholera",
+    "option_4": "Typhoid",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows\n\nThe experiment is set up to determine the presence of",
+    "option_1": "chlorophyll",
+    "option_2": "starch",
+    "option_3": "oxygen",
+    "option_4": "pigment",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The type of circulatory system found in arthropods and some molluscs is",
+    "option_1": "open circulatory system",
+    "option_2": "closed circulatory system",
+    "option_3": "single circulatory system",
+    "option_4": "double circulatory system",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "In plants, the main excretory product produced during metabolism is",
+    "option_1": "oxygen",
+    "option_2": "alkaloids",
+    "option_3": "carbon(iv)oxide",
+    "option_4": "mucilage",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the questions that follow\n\nThe part labelled I is",
+    "option_1": "oviduct",
+    "option_2": "placenta",
+    "option_3": "amnion",
+    "option_4": "uterus",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Comparative anatomy to study evidence for evolution depends on",
+    "option_1": "four fingered",
+    "option_2": "three fingered",
+    "option_3": "two fingered",
+    "option_4": "five fingered",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Iron is an essential nutrient in plants because it",
+    "option_1": "aids in the formation of chlorophyll and proteins",
+    "option_2": "helps in cell division",
+    "option_3": "protects the plants from pest attack",
+    "option_4": "fastens fruits maturation",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The endocrine gland that is called the master gland is the",
+    "option_1": "thyroid gland",
+    "option_2": "pancreas",
+    "option_3": "pituitary gland",
+    "option_4": "adrenal gland",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following characteristics is possessed by both living and non-living things?",
+    "option_1": "Both age and die",
+    "option_2": "Both have life",
+    "option_3": "Both have weight",
+    "option_4": "Both have no shape",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Infectious diseases are caused by",
+    "option_1": "bacteria",
+    "option_2": "protists",
+    "option_3": "Amoeba",
+    "option_4": "Amoeba",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The cell organelle responsible for the synthesis of protein is the",
+    "option_1": "centriole",
+    "option_2": "vacuole",
+    "option_3": "plastid",
+    "option_4": "ribosome",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows",
+    "option_1": "thigmotropism",
+    "option_2": "phototropism",
+    "option_3": "geotropism",
+    "option_4": "hydrotropism",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following factors can lead to overcrowding?",
+    "option_1": "Emigration",
+    "option_2": "Competition",
+    "option_3": "High natality",
+    "option_4": "High mortality",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The common examples of trees found in the desert are",
+    "option_1": "raffia palm and coconut",
+    "option_2": "baobab and cacti",
+    "option_3": "white and red mangrove",
+    "option_4": "shea-butter and isobelina",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "If the F1 generation allows for self-pollination, what will be the genotypic ratio of the offspring?",
+    "option_1": "1 : 2 : 1",
+    "option_2": "2 : 2",
+    "option_3": "3 : 1",
+    "option_4": "2 : 1 : 1",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The resemblance of an organism to another organism as means of enhancing it's chances of survival in its habitat is known as",
+    "option_1": "counter shading",
+    "option_2": "protective colouration",
+    "option_3": "mimicry",
+    "option_4": "warning",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The urinary tubules opens into a proximal convoluted tubule coils to form distal by making a",
+    "option_1": "Z- shaped loop",
+    "option_2": "L- shaped loop",
+    "option_3": "U- shaped loop",
+    "option_4": "I- shaped loop",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A discontinuous morphological variation often used in crime detection is the",
+    "option_1": "skin colour",
+    "option_2": "blood group",
+    "option_3": "finger prints",
+    "option_4": "eye colour",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The component that serves as major buffer in blood is",
+    "option_1": "plasma",
+    "option_2": "erythrocytes",
+    "option_3": "leucocytes",
+    "option_4": "lymph",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "DNA carries the genetic information and are generally found in the",
+    "option_1": "ribosomes",
+    "option_2": "chromosomes",
+    "option_3": "blood",
+    "option_4": "enzymes",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows:\n\nRecombination of genes at fertilization is represented by the part labelled",
+    "option_1": "I",
+    "option_2": "II",
+    "option_3": "III",
+    "option_4": "IV",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Hemophilia in humans is controlled by the",
+    "option_1": "blood group",
+    "option_2": "dominant gene",
+    "option_3": "rhesus factor",
+    "option_4": "recessive gene",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The part of the brain that receives sensory impulses of smell is the",
+    "option_1": "olfactory lobe",
+    "option_2": "medulla oblongata",
+    "option_3": "cerebrum",
+    "option_4": "Cerebellum",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram above to answer the question that follows.\n\nExamples of non-vascular plants are labelled ",
+    "option_1": "I and II",
+    "option_2": "I and III",
+    "option_3": "II and III",
+    "option_4": "II and IV",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following organisms contains Chlorophyll in its cells?",
+    "option_1": "Caterpillar",
+    "option_2": "Paramecium",
+    "option_3": "Euglena",
+    "option_4": "Grasshopper",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Species are groups of organisms that",
+    "option_1": " are of different origins and are always found together",
+    "option_2": "are of common origin but cannot interbreed freely",
+    "option_3": "have similar features and can interbreed freely",
+    "option_4": "resemble each other and occupy different niches",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "A plant with short, vertical underground stem is a",
+    "option_1": "bulb",
+    "option_2": "corm",
+    "option_3": "rhizome",
+    "option_4": "tuber",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The diagram above is an illustration of a reproductive process in an organism. Study it and answer ques tions 4 and 5.\n\nThe type of reproduction illustrated is",
+    "option_1": "budding",
+    "option_2": "binary fission",
+    "option_3": "grafting",
+    "option_4": "vegetative propagation",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The illustrated organism is capable of reproducing by",
+    "option_1": "sexual means only",
+    "option_2": "asexual means only",
+    "option_3": "vegetative propagation only",
+    "option_4": "sexual and asexual means",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following organisms consists of unicellular cells joined to form a filament?",
+    "option_1": "Amoeba",
+    "option_2": "Spirogyra",
+    "option_3": "Euglena",
+    "option_4": "Chlamydomonas",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The structure in the cell that controls the movement of substances in and out of the cell is the",
+    "option_1": "cytoplasmic membrane",
+    "option_2": "nuclear membrane",
+    "option_3": "protoplasm",
+    "option_4": "endoplasm",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The bursting of a red blood cell placed in a hypotonic solution is called",
+    "option_1": "crenation",
+    "option_2": "haemolysis",
+    "option_3": "plasmolysis",
+    "option_4": "cytolysis",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The function of the root hair in plants is to",
+    "option_1": "absorb soil water by the process of osmosis.",
+    "option_2": "excrete water and mineral salts by simple diffusion.",
+    "option_3": "purify the soil for the plant.",
+    "option_4": "translocate manufactured food",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "If a germinating seed is attached horizontally to a revolving klinostat, what would be the effect on the seedling after three days? The",
+    "option_1": "plumule will curve vertically upward while the radicle will not show any curvature",
+    "option_2": "radicle will curve towards the ground while the plumule will not show any curvature.",
+    "option_3": "plumule and radicle will not show any curvature.",
+    "option_4": "plumule will curve vertically upwards while the radicle will curve towards the ground",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The lumbar vertebra differs from the thoracic vertebra because it possesses a",
+    "option_1": "longer neural spine.",
+    "option_2": "wider neural canal.",
+    "option_3": "thicker centrum.",
+    "option_4": "shorter transverse process.",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following blood vessels carries oxygenated blood into the heart?",
+    "option_1": "Pulmonary artery",
+    "option_2": "Anterior vena cava",
+    "option_3": "Pulmonary vein",
+    "option_4": "Posterior vena cava",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Filtrates in the Bowman's capsule contain vitamins because",
+    "option_1": "they have low molecular weight.",
+    "option_2": "most of them are fat soluble.",
+    "option_3": "they cannot be reabsorbed into the blood.",
+    "option_4": "little amount is required by the blood.",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The structures that contain grey matter and white matter are found in the",
+    "option_1": "reproductive system.",
+    "option_2": "nervous system.",
+    "option_3": "respiratory system.",
+    "option_4": "digestive system.",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following events does not occur in the light reaction stage of photosynthesis?",
+    "option_1": "Which of the following events does not occur in the light reaction stage of photosynthesis?",
+    "option_2": "Carbon (IV) oxide combines with hydrogen",
+    "option_3": "Photolysis of water occurs",
+    "option_4": "Hydroxyl ions are produced",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The rate of photosynthesis decreases in a wilted herbaceous plant because the",
+    "option_1": "enzymes in the leaf were denatured",
+    "option_2": "chlorophyll in the leaves was not broken down",
+    "option_3": "amount of light reaching the plant was reduced",
+    "option_4": "amount of carbon dioxide entering the leaf decrease.",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The element required for chlorophyll formation in plants is",
+    "option_1": "Iron",
+    "option_2": "Calcium",
+    "option_3": "Phosphorus",
+    "option_4": "Sulphur",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The process of food digestion in mammals would",
+    "option_1": "make energy immediately available to the body",
+    "option_2": "promote growth and repair of tissues",
+    "option_3": "provide sufficient food materials within the body",
+    "option_4": "render food substances soluble and absorbable",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following food substances would give a negative reaction with Benedict's reagent?",
+    "option_1": "Fructose",
+    "option_2": "Glucose",
+    "option_3": "Galactose",
+    "option_4": "Sucrose",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Sunlight is the major source of",
+    "option_1": " Vitamin D",
+    "option_2": "vitamin C",
+    "option_3": "vitamin B",
+    "option_4": "vitamin A",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Discouraging the use of poison to kill fish in a large water body is a way of",
+    "option_1": "impoverishing the people.",
+    "option_2": "conserving the fish species.",
+    "option_3": "allowing the fittest organism to survive",
+    "option_4": "making the fish adapt to their environment",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The pathway through which nutrient are replenished and circulated in an ecosystem is called a",
+    "option_1": "cycle",
+    "option_2": "pyramid of energy",
+    "option_3": "pyramid of numbers",
+    "option_4": "Food chain",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "The illustration below is a food chain. Study it and answer questions 29 and 30.\n             Grasses → Grasshoppers → Lizards → Hawks\n\nWhich of the following statements is not correct about the food chain? The number of ",
+    "option_1": "grasses eaten by grasshoppers is greater than the number of grasshoppers.",
+    "option_2": "grasses eaten by grasshoppers is fewer than the number of grasshoppers.",
+    "option_3": "grasshoppers eaten by lizards is greater than the number of lizards.",
+    "option_4": "lizards eaten by hawks is greater than the number of hawks.",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "If the individual species of organisms in the food chain 1 are counted and arranged as a pyramid, the result would be a pyramid of",
+    "option_1": "numbers",
+    "option_2": "energy",
+    "option_3": "biomass",
+    "option_4": "biomes",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following gases is released during the decomposition of organic matter?",
+    "option_1": "Carbon(II) oxide",
+    "option_2": "Sulphur (IV) oxide",
+    "option_3": "Hydrogen Sulphide",
+    "option_4": "Nitrous oxide",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is an example of a microorganism in action as a disease vector?",
+    "option_1": "Fungi decomposing dead plant material",
+    "option_2": "Mosquito transmitting malaria",
+    "option_3": "Bacteria causing food poisoning",
+    "option_4": "Algae producing oxygen through photosynthesis",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a characteristic of cells related to irritability?",
+    "option_1": "Ability to respond to stimuli",
+    "option_2": "Ability to synthesize proteins",
+    "option_3": "Ability to generate energy",
+    "option_4": "Ability to replicate DNA",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "The membrane around the vacuole is known as",
+    "option_1": "Elaioplast",
+    "option_2": "Amyloplast",
+    "option_3": "Tonoplast",
+    "option_4": "Cytoplast",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is evidence of evolution?",
+    "option_1": "All of the above.",
+    "option_2": "Similarities in embryonic development",
+    "option_3": "Fossils of extinct organisms",
+    "option_4": "Homologous structures in different species",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is an example of an adaptation for survival in social insects?",
+    "option_1": "Migration to warmer climates",
+    "option_2": "Production of venom for defense",
+    "option_3": "Formation of complex caste systems",
+    "option_4": "Hibernation during winter months",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is NOT a part of the alimentary canal?",
+    "option_1": "Oesophagus",
+    "option_2": "Large intestine",
+    "option_3": "Liver",
+    "option_4": "Small intestine",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is an evolutionary trend commonly observed in organisms?",
+    "option_1": "Decreased complexity over time",
+    "option_2": "Increased dependence on external resources",
+    "option_3": "Increased genetic diversity within populations",
+    "option_4": "Decreased adaptation to the environment",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a characteristic feature of Kingdom Plantae?",
+    "option_1": "Presence of chloroplasts",
+    "option_2": "Ability to perform photosynthesis",
+    "option_3": "Lack of cell walls",
+    "option_4": "Heterotrophic mode of nutrition",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "A biome characterized by hot summer, warm winter and treeless vegetation is",
+    "option_1": "Steppe grasslands",
+    "option_2": "Temperate deserts",
+    "option_3": "Savannah grassland",
+    "option_4": "Tropical deserts",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is an example of physiological variation in organisms?",
+    "option_1": "Variation in blood pressure among individuals",
+    "option_2": "Variation in beak shape among finches",
+    "option_3": "Differences in fur color in rabbits",
+    "option_4": "Variation in leaf shape in plants",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following are components of the skeletal system in humans?",
+    "option_1": "Cartilage and blood vessels",
+    "option_2": "Ligaments and tendons",
+    "option_3": "Muscles and nerves",
+    "option_4": "Bones and joints",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following represents an example of ecological management and conservation through a biological association?",
+    "option_1": "Construction of a dam for hydroelectric power",
+    "option_2": "Introduction of an invasive species for pest control",
+    "option_3": "Clear-cutting of a forest for timber extraction",
+    "option_4": "Establishment of marine protected areas",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "The term cell was given by",
+    "option_1": "Robert Hooke",
+    "option_2": "Schwann",
+    "option_3": "De Bary",
+    "option_4": "Tatum",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is the primary organ involved in gas exchange during respiration in humans?",
+    "option_1": "Diaphragm",
+    "option_2": "Bronchi",
+    "option_3": "Lungs",
+    "option_4": "Trachea",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which gland is responsible for producing the hormone insulin?",
+    "option_1": "Thyroid gland",
+    "option_2": "Pituitary gland",
+    "option_3": "Pancreas",
+    "option_4": "Adrenal gland",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Most fishes do not sink in water because of the presences of:\nI. swim bladder\nII. air bladder\nIII. air sacs\nIV. air in spongy bones",
+    "option_1": "II and III are correct",
+    "option_2": "I and II are correct",
+    "option_3": "I, II, III and IV are correct",
+    "option_4": "III and IV are correct",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "In monohybrid inheritance, if an organism carries two different alleles for a particular gene, it is called:",
+    "option_1": "Homozygous",
+    "option_2": "Dominant",
+    "option_3": "Heterozygous",
+    "option_4": "Recessive",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "What is the tissue responsible for transporting water and minerals from the roots to the rest of the plant?",
+    "option_1": "Xylem",
+    "option_2": "Epidermis",
+    "option_3": "Parenchyma",
+    "option_4": "Phloem",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is an example of an abiotic ecological factor?",
+    "option_1": "Temperature",
+    "option_2": "Competition",
+    "option_3": "Predation",
+    "option_4": "Symbiosis",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following processes is involved in the reproduction of developing organisms?",
+    "option_1": "Budding",
+    "option_2": "Germination",
+    "option_3": "Fertilization",
+    "option_4": "Pollination",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Behavioral adaptation for dealing with a hot climate could include",
+    "option_1": "Hibernating during the hottest part of the day",
+    "option_2": "Large scales on the back of a lizard",
+    "option_3": "Feeding during the hottest part of the day",
+    "option_4": "A small kidney to conserve wate",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "The natural place of an organism or community is known as",
+    "option_1": "Niche",
+    "option_2": "Habit",
+    "option_3": "Biome",
+    "option_4": "Habitat",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which process in the nutrient cycle converts atmospheric nitrogen into a form that plants can utilize?",
+    "option_1": "Denitrification",
+    "option_2": "Nitrogen fixation",
+    "option_3": "Ammonification",
+    "option_4": "Nitrification",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following functions is performed by the skin to help maintain homeostasis in the human body?",
+    "option_1": "Regulation of body temperature",
+    "option_2": "Filtration of blood",
+    "option_3": "Production of hormones",
+    "option_4": "Digestion of food",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following soil types becomes less fertile due to the intense leaching caused by tropical rains?",
+    "option_1": "Yellow soil",
+    "option_2": "Laterite soil",
+    "option_3": "Red soils",
+    "option_4": "Black soil",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which type of reproduction involves the fusion of gametes from two parents?",
+    "option_1": "Sexual reproduction",
+    "option_2": "Asexual reproduction",
+    "option_3": "Binary fission",
+    "option_4": "Budding",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which processes are involved in nutrient cycling in a functioning ecosystem?",
+    "option_1": "Erosion, weathering, and sedimentation",
+    "option_2": "Decomposition, evaporation, and precipitation",
+    "option_3": "Nitrogen fixation, denitrification, and ammonification",
+    "option_4": "Respiration, photosynthesis, and transpiration",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "What is autotrophic nutrition?",
+    "option_1": "Nutrition in which organisms obtain food by breaking down complex organic compounds.",
+    "option_2": "Nutrition in which organisms obtain food from other organisms",
+    "option_3": "Nutrition in which organisms obtain food by consuming both plants and animals",
+    "option_4": "Nutrition in which organisms produce their own food using energy from the sun or inorganic substances",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "The theory of evolution can be defined as",
+    "option_1": "The belief that all species were created in their current form",
+    "option_2": "The hypothesis that organisms strive to improve themselves over generations",
+    "option_3": "The idea that species change over time through natural processes",
+    "option_4": "The concept that evolution occurs through a series of sudden and dramatic changes",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a male reproductive organ in humans?",
+    "option_1": "Uterus",
+    "option_2": "Ovary",
+    "option_3": "Testis",
+    "option_4": "Fallopian tube",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is an example of a behavioral adaptation for survival in animals?",
+    "option_1": "Sharp teeth",
+    "option_2": "Migration",
+    "option_3": "Wings",
+    "option_4": "Camouflage",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following traits is not visible in a person with Down syndrome?",
+    "option_1": "Short neck",
+    "option_2": "High muscle tone",
+    "option_3": "Small stature",
+    "option_4": "Slant eyes",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "What is the definition of population ecology?",
+    "option_1": "The study of interactions between organisms and their physical environment",
+    "option_2": "The study of evolutionary processes and their effects on populations",
+    "option_3": "The study of interactions between different populations in an ecosystem",
+    "option_4": "The study of the distribution and abundance of individuals within a species",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "What is the term used to describe the maximum number of individuals of a species that an environment can support indefinitely?",
+    "option_1": "Ecological niche",
+    "option_2": "Limiting factor",
+    "option_3": "Carrying capacity",
+    "option_4": "Density-dependent factor",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements about the heart is true?",
+    "option_1": "The heart is responsible for the production of red blood cells",
+    "option_2": "The heart pumps oxygenated blood to the lungs",
+    "option_3": "The heart receives blood from the kidneys and filters waste products",
+    "option_4": "The heart is a muscular organ that contracts to circulate blood throughout the body",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "What is the primary source of variation in a population?",
+    "option_1": "Gene flow",
+    "option_2": "Mutation",
+    "option_3": "Natural selection",
+    "option_4": "Genetic drift",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which component of blood is responsible for carrying oxygen to the body tissues?",
+    "option_1": "Platelets",
+    "option_2": "White blood cells",
+    "option_3": "Red blood cells",
+    "option_4": "Plasma",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "What are the primary products of photosynthesis?",
+    "option_1": "Carbon dioxide and water",
+    "option_2": "Glucose and oxygen",
+    "option_3": "Glucose and carbon dioxide",
+    "option_4": "Oxygen and water",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "The alternate form of a gene is",
+    "option_1": "Alternate type",
+    "option_2": "Dominant character",
+    "option_3": "Recessive character",
+    "option_4": "Allele",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which organs are part of the alimentary canal in the human digestive system?",
+    "option_1": "Salivary glands, tongue, and pharynx",
+    "option_2": "Large intestine, appendix, and rectum",
+    "option_3": "Stomach, liver, and gallbladder",
+    "option_4": "Oesophagus, pancreas, and small intestine",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following characteristics is typical of the phylum Arthropoda?",
+    "option_1": "Radial symmetry",
+    "option_2": "Closed circulatory system",
+    "option_3": "Endoskeleton made of bones",
+    "option_4": "Presence of a segmented body",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is an example of conserving resources in an ecosystem",
+    "option_1": "Excessive use of chemical fertilizers in agriculture",
+    "option_2": "Introducing invasive species to an ecosystem",
+    "option_3": "Implementing sustainable fishing practices",
+    "option_4": "Cutting down trees for timber production",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following represents the correct hierarchical organization of life from the smallest to the largest scale?",
+    "option_1": "Organs, tissues, cells, organisms, populations, communities, ecosystems",
+    "option_2": "Cells, organs, tissues, organisms, populations, communities, ecosystems",
+    "option_3": "Tissues, organs, cells, organisms, populations, communities, ecosystems",
+    "option_4": "Cells, tissues, organs, organisms, populations, communities, ecosystems",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following blood vessels carries oxygenated blood away from the heart?",
+    "option_1": "Arteries",
+    "option_2": "Venules",
+    "option_3": "Capillaries",
+    "option_4": "Veins",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following factors primarily affects the distribution of organisms in an ecosystem",
+    "option_1": "Wind speed",
+    "option_2": "Soil pH",
+    "option_3": "Temperature",
+    "option_4": "Day length",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is NOT a method of reproduction in animals?",
+    "option_1": "Asexual reproduction",
+    "option_2": "Budding",
+    "option_3": "Sexual reproduction",
+    "option_4": "Sporulation",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements is true about the kingdom Fungi?",
+    "option_1": "Fungi obtain nutrients by absorbing organic matter",
+    "option_2": "Fungi are photosynthetic organisms",
+    "option_3": "Fungi are multicellular organisms",
+    "option_4": "Fungi reproduce through the formation of seeds",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Viviparity refers to the reproductive strategy in which",
+    "option_1": "Offspring are produced by internal fertilization",
+    "option_2": "Offspring are produced by external fertilization",
+    "option_3": "Offspring develop and are nourished inside the female's body",
+    "option_4": "Offspring develop and are nourished outside the female's body",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is the most inclusive level of classification in the Linnaean system?",
+    "option_1": "Kingdom",
+    "option_2": "Phylum",
+    "option_3": "Domain",
+    "option_4": "Class",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following describes the inheritance of traits from parents to offspring?",
+    "option_1": "Adaptation",
+    "option_2": "Evolution",
+    "option_3": "Natural selection",
+    "option_4": "Genetics",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements best describes the role of competition in the process of adaptation?",
+    "option_1": "Competition leads to the selection of individuals with favorable traits for survival and reproduction",
+    "option_2": "Competition ensures equal distribution of resources among individuals in a population",
+    "option_3": "Competition leads to the development of new traits and adaptations in a population",
+    "option_4": "Competition reduces the need for adaptations as individuals coexist peacefully",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements is true regarding sex-linked traits?",
+    "option_1": "Sex-linked traits are located on the sex chromosomes",
+    "option_2": "Sex-linked traits are inherited only from the mother",
+    "option_3": "Sex-linked traits are more commonly observed in females",
+    "option_4": "Sex-linked traits are not influenced by hormonal factors",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a plant hormone responsible for promoting cell elongation and growth?",
+    "option_1": "Abscisic acid",
+    "option_2": "Gibberellins",
+    "option_3": "Ethylene",
+    "option_4": "Cytokinins",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a primary source of pollution in aquatic ecosystems?",
+    "option_1": "Soil erosion",
+    "option_2": "Industrial discharge",
+    "option_3": "Air pollution",
+    "option_4": "Deforestation",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following mechanisms is responsible for providing support in plants?",
+    "option_1": "Muscles and bones",
+    "option_2": "Exoskeleton",
+    "option_3": "Endocrine system",
+    "option_4": "Cell walls and turgor pressure",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Metamorphosis is a biological process that involves",
+    "option_1": "The growth and development of an organism from a zygote to an adult",
+    "option_2": "The change in form and structure during the life cycle of certain organisms",
+    "option_3": "The regeneration of lost body parts in an organism",
+    "option_4": "The transformation of an organism from an adult stage to a larval stage",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following organs is primarily responsible for excretion in humans?",
+    "option_1": "Liver",
+    "option_2": "Pancreas",
+    "option_3": "Kidneys",
+    "option_4": "Lungs",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is the correct classification of carbohydrates?",
+    "option_1": "Lipid",
+    "option_2": "Phytonutrient",
+    "option_3": "Macronutrient",
+    "option_4": "Micronutrient",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following eye defects is caused by the inability of the eye to focus light on the retina?",
+    "option_1": "Glaucoma",
+    "option_2": "Myopia",
+    "option_3": "Cataracts",
+    "option_4": "Astigmatism",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Germination is the process in which a seed",
+    "option_1": "Begins to photosynthesize",
+    "option_2": "Develops into a mature plant",
+    "option_3": "Absorbs nutrients from the soil",
+    "option_4": "Breaks dormancy and starts to grow",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements is true regarding sexual reproduction in organisms?",
+    "option_1": "It involves the fusion of gametes from two parents, resulting in offspring with genetic variation",
+    "option_2": "It involves the production of offspring through a single parent, resulting in genetically identical offspring",
+    "option_3": "It is a form of asexual reproduction where offspring are produced without the involvement of gametes",
+    "option_4": "It does not involve the formation of gametes or the fusion of reproductive cells",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a method of asexual reproduction in plants?",
+    "option_1": "Pollination",
+    "option_2": "Vegetative propagation",
+    "option_3": "Seed dispersal",
+    "option_4": "Fertilization",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following plant tissues is responsible for transporting water and nutrients from the roots to the rest of the plant?",
+    "option_1": "Mesophyll",
+    "option_2": "Xylem",
+    "option_3": "Epidermis",
+    "option_4": "Phloem",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements best describes courtship behaviors in animals?",
+    "option_1": "Courtship behaviors are solely performed by males to establish dominance within a social group",
+    "option_2": "Courtship behaviors involve displays and rituals performed by both males and females to attract a mate",
+    "option_3": "Courtship behaviors are primarily performed by females to attract males for mating",
+    "option_4": "Courtship behaviors are aggressive interactions between males competing for a female mate",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following best describes physiological variation in biology?",
+    "option_1": "Variations in the physiological processes and functions of organisms",
+    "option_2": "Differences in physical characteristics and appearance within a population",
+    "option_3": "Differences in behavior and social interactions among individuals",
+    "option_4": "Variations in the genetic makeup of individuals within a species",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following options correctly identifies excretory organs in animals?",
+    "option_1": "Stomach, intestines, and bladder",
+    "option_2": "Lungs, kidneys, and skin",
+    "option_3": "Brain, spinal cord, and nerves",
+    "option_4": "Heart, liver, and spleen",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following best describes the concept of trophic levels in a functioning ecosystem?",
+    "option_1": "The levels of ecological interactions within an ecosystem",
+    "option_2": "The levels of energy flow within an ecosystem",
+    "option_3": "The levels of nutrient cycling within an ecosystem",
+    "option_4": "The levels of biological diversity within an ecosystem",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements best describes pollination in plants?",
+    "option_1": "Pollination is the process of transferring pollen from the stigma to the anther of a flower",
+    "option_2": "Pollination is the process of transferring pollen from the anther to the stigma of a flower",
+    "option_3": "Pollination is the process of releasing pollen into the air for dispersal",
+    "option_4": "Pollination is the process of seed formation within a flower",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following best describes a natural habitat in ecology?",
+    "option_1": "An area where organisms naturally live and interact with their surroundings",
+    "option_2": "A human-created environment for wildlife conservation",
+    "option_3": "A controlled laboratory setting for ecological experiments",
+    "option_4": "A protected area for endangered species",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements about viruses is true?",
+    "option_1": "Viruses can reproduce outside of a host cell",
+    "option_2": "Viruses require a host cell to replicate",
+    "option_3": "Viruses possess a cellular structure",
+    "option_4": "Viruses are living organisms",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements is true regarding cell growth?",
+    "option_1": "Cell growth is solely influenced by external factors",
+    "option_2": "Cell growth is a continuous process throughout the life of a cell",
+    "option_3": "Cell growth involves an increase in the number of organelles within a cell",
+    "option_4": "Cell growth occurs by cell division",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following statements is true regarding the urinary tubule in the excretory system?",
+    "option_1": "The urinary tubule is responsible for the production of urine",
+    "option_2": "The urinary tubule regulates the water and electrolyte balance in the body",
+    "option_3": "The urinary tubule connects the kidneys to the bladder",
+    "option_4": "The urinary tubule is the site of filtration of blood",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "What is the primary function of the liver in the human body?",
+    "option_1": "Regulation of body temperature",
+    "option_2": "Regulation of blood pressure",
+    "option_3": "Production of hormones",
+    "option_4": "Detoxification and metabolism of nutrients and drugs",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Ecological succession refers to",
+    "option_1": "The movement of organisms from one habitat to another",
+    "option_2": "The competition among species for limited resources",
+    "option_3": "The process of natural selection in a population",
+    "option_4": "The gradual and predictable change in a community over time",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following options best describes adaptation for survival in organisms?",
+    "option_1": "Adaptation is the inherited trait that increases an organism's chances of survival and reproduction in its environment",
+    "option_2": "Adaptation is the process by which organisms acquire new characteristics during their lifetime",
+    "option_3": "Adaptation refers to the ability of an organism to change its environment to better suit its needs",
+    "option_4": "Adaptation involves the development of new traits in response to changes in the environment",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Digestive enzymes are responsible for",
+    "option_1": "Breaking down food into smaller molecules",
+    "option_2": "Absorbing nutrients into the bloodstream",
+    "option_3": "Regulating the pH of the digestive tract",
+    "option_4": "Transporting food through the digestive system",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a difference between plant and animal cells?",
+    "option_1": "Plant cells have a nucleus, while animal cells do not",
+    "option_2": "Plant cells have a cell membrane, while animal cells have a cell wall",
+    "option_3": "Plant cells contain chloroplasts for photosynthesis, while animal cells do not",
+    "option_4": "Plant cells have a central vacuole, while animal cells have multiple small vacuoles",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following structures in the ear is responsible for transmitting sound vibrations to the auditory nerve?",
+    "option_1": "Eardrum",
+    "option_2": "Ossicles",
+    "option_3": "Cochlea",
+    "option_4": "Auditory canal",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Biology",
+    "question": "sources of air pollutants are?",
+    "option_1": "industrial chimneys, burning fossil oils and river dams",
+    "option_2": "sulphurdioxide, acid rain and pesticides",
+    "option_3": "sulphur dioxide, vehicle exhausts, and aerosols",
+    "option_4": "sewage,smoke and old vehicles",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The body of a snail is divided into head?",
+    "option_1": "thorax and abdomen",
+    "option_2": "visceral mass and abdomen",
+    "option_3": "thorax and foot",
+    "option_4": "visceral mass and foot",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "An adaptation for defense in animals is?",
+    "option_1": "croaking of a male toad",
+    "option_2": "basking in lizard",
+    "option_3": "spines in porcupine fish",
+    "option_4": "huddling together of penguins",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The movement of Euglena towards the source of light is a?",
+    "option_1": "tropic movement",
+    "option_2": "tactic movement",
+    "option_3": "nastic movement",
+    "option_4": "kinetic movement",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "During mitosis, the stage at which chromosomes lines up around the equator is?",
+    "option_1": "telophase",
+    "option_2": "metasphase",
+    "option_3": "anaphase",
+    "option_4": "prophase",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The waste product of insects is?",
+    "option_1": "uric acid",
+    "option_2": "urine",
+    "option_3": "Mucilage",
+    "option_4": "sweat",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "Succession that occurs on an abandoned farm land is?",
+    "option_1": "tertiary",
+    "option_2": "secondary",
+    "option_3": "primary",
+    "option_4": "climax",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "In Nigeria, Southern Guinea Savanna is found in?",
+    "option_1": "Borno and Sokoto",
+    "option_2": "Kogi and Kwara",
+    "option_3": "Kaduna and Cross River",
+    "option_4": "Kano and Niger",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is associated with the dark stage of photosynthesis?",
+    "option_1": "Assimilation of Carbon(IV)oxide",
+    "option_2": "Photophosphorylation",
+    "option_3": "Photolysis",
+    "option_4": "Excitation of chlorophyll",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The part of mammalian skin that excretes metabolic wastes is?",
+    "option_1": "sweat gland",
+    "option_2": "horny layer",
+    "option_3": "Malpighian layer",
+    "option_4": "sebaceous gland",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The feeding relationship that exists between a tick and a cow is?",
+    "option_1": "parasitism",
+    "option_2": "mechanism",
+    "option_3": "saprophytism",
+    "option_4": "commensalism",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The type of fruit that is formed from a single flower having several free carpels is?",
+    "option_1": "indehiscent fruit",
+    "option_2": "aggregate fruit",
+    "option_3": "simple fruit",
+    "option_4": "fleshy fruit",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The part that performs urinogenital function in the male reproductive system is the?",
+    "option_1": "seminal vesacle",
+    "option_2": "epididymis",
+    "option_3": "urethra",
+    "option_4": "ureter",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The components of blood in man are?",
+    "option_1": "red blood cells, white blood cells, plasma and water",
+    "option_2": "red blood cells, white blood cells, and plasma",
+    "option_3": "red blood cells, white blood cells, and platelets",
+    "option_4": "red blood cells, white blood cells, plasma and platelets",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "he development of big muscles by a wrestler is an example of?",
+    "option_1": "acquired characteristics",
+    "option_2": "inherited characteristics",
+    "option_3": "mutation",
+    "option_4": "atrophication",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "Lack of nucleus is a feature in?",
+    "option_1": "osteocyte",
+    "option_2": "neurone",
+    "option_3": "erythrocyte",
+    "option_4": "leucocyte",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "A universal recipient of blood belongs to blood group?",
+    "option_1": "O",
+    "option_2": "AB",
+    "option_3": "B",
+    "option_4": "A",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The internal structure of a leaf that has larger air space is?",
+    "option_1": "palisade mesophyll",
+    "option_2": "epidermis",
+    "option_3": "spongy mesophyll",
+    "option_4": "vascular bundles",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "An example of arboreal animal is?",
+    "option_1": "squirrels",
+    "option_2": "duck",
+    "option_3": "pig",
+    "option_4": "rat",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The movement of sugars from the leaf to other parts of plant is?",
+    "option_1": "guttation",
+    "option_2": "transpiration",
+    "option_3": "transportation",
+    "option_4": "translocation",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "Gaseous exchange in annelids is more advanced and efficient compared to flatworms because?",
+    "option_1": "the cells of their epidermis have no blood capillaries",
+    "option_2": "they have well developed respiratory structures",
+    "option_3": "their cylindrical shape gives high surface area to volume ratio",
+    "option_4": "their surface area to volume ratio is very low",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The structure that joins the two strands of a chromosome together is the?",
+    "option_1": "spindle",
+    "option_2": "cellulose",
+    "option_3": "centromere",
+    "option_4": "chromatid",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "When a colour blind woman marries a normal man, what is the probability of their son being colour blind?",
+    "option_1": "25%",
+    "option_2": "100%",
+    "option_3": "50%",
+    "option_4": "0%",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The correct pathway for blood flow from the heart to the tissues of mammals is?",
+    "option_1": "heart-arteriole-artery-tissues",
+    "option_2": "heart-artery-arteriole-tissues",
+    "option_3": "heart-vein-venule-tissues",
+    "option_4": "heart-venule-vein-tissues",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "Tall trees with buttress roots and evergreen leaves are characteristics features of?",
+    "option_1": "temperate grass land",
+    "option_2": "Southern Guinea Savanna",
+    "option_3": "Southern Guinea Savanna",
+    "option_4": "Northern Guinea savanna",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The genes crossing over occurs during?",
+    "option_1": "fertilization",
+    "option_2": "mutation",
+    "option_3": "mitosis",
+    "option_4": "meiosis",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "In genetic counseling, a man with hemoglobin formation HbA HbS is most preferred to marry a woman of?",
+    "option_1": "HbA HbA",
+    "option_2": "HbC HbH",
+    "option_3": "HbM HbF",
+    "option_4": "HbS HbS",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "An ecological instrument used to measure wind direction is?",
+    "option_1": "Secchi disc",
+    "option_2": "wind vane",
+    "option_3": "anemometer",
+    "option_4": "slope gauge",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The growth of mucor on a piece of bread is?",
+    "option_1": "scavenging",
+    "option_2": "commensalism",
+    "option_3": "autotrophism",
+    "option_4": "saprophytism",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "Conversion of atmosphere carbon into chemical bond energy occurs during the process of?",
+    "option_1": "transpiration",
+    "option_2": "photosynthesis",
+    "option_3": "digestion",
+    "option_4": "respiration",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The display of male agama lizard is to?",
+    "option_1": "scare predators",
+    "option_2": "regulate body temperature",
+    "option_3": "attract female for mate",
+    "option_4": "give invite to intruders",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The end product of the digestion of carbohydrate is?",
+    "option_1": "amino acid",
+    "option_2": "glycerol",
+    "option_3": "glucose",
+    "option_4": "sucrose",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The sum total of all observable features of an organism is?",
+    "option_1": "phenotype",
+    "option_2": "heterozygous",
+    "option_3": "genotype",
+    "option_4": "homozygous",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "Pentadactyl plan of the fore limbs of frog, bird, horse, whale and man is a proof of?",
+    "option_1": "spontaneous generation",
+    "option_2": "evolution",
+    "option_3": "locomotion",
+    "option_4": "creation",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The under secretion of thyroxine in children results in?",
+    "option_1": "goitre",
+    "option_2": "gigantism",
+    "option_3": "kwashiorkor",
+    "option_4": "cretinism",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "petaloid sepals serve the function of?",
+    "option_1": "carrying out photosynthesis",
+    "option_2": "attracting pollinating agents to a flower",
+    "option_3": "retaining pollen grains in the corolla tubes",
+    "option_4": "protecting the inner floral parts of the flower",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The system of classification in which there are seven hierarchies from kingdom to species was introduced by?",
+    "option_1": "Felix Dujardin",
+    "option_2": "Carolus Linneus",
+    "option_3": "Theodore Schwann",
+    "option_4": "Charles Darwin",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "An adaptive feature of camel to the desert is?",
+    "option_1": "ability to increase sweat production",
+    "option_2": "ability to pass high amount of urine",
+    "option_3": "ability to tolerate low degree of dehydration",
+    "option_4": "ability to tolerate high degree of dehydration",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The part labelled II is?",
+    "option_1": "pellicle",
+    "option_2": "cytoplasmic connections",
+    "option_3": "flagella",
+    "option_4": "cells",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The organism above is?",
+    "option_1": "chlamydomonas",
+    "option_2": "algae",
+    "option_3": "volvox",
+    "option_4": "euglena",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "The beak structure of the organism is best adapted for?",
+    "option_1": "pecking grass",
+    "option_2": "killing and picking fish",
+    "option_3": "pecking woods",
+    "option_4": "sucking nectars",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "One of the functions of water in seed germination is to?",
+    "option_1": "dilute the embryo",
+    "option_2": "make the soil wet and soft",
+    "option_3": "activate the enzymes",
+    "option_4": "promote aerobic respiration",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Biology",
+    "question": "One of the functions of the xylem is?",
+    "option_1": "strengthening the stem",
+    "option_2": "manufacturing food",
+    "option_3": "reducing loss of water",
+    "option_4": "conducting manufactured food",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the statements below is not characteristic of wind-pollinated flowers?",
+    "option_1": "Stigmas are usually large and feathery",
+    "option_2": "Stigmas are usually large and feathery",
+    "option_3": "The pollen grains have rough spiny surfaces",
+    "option_4": "The flowers are not scented.",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Some of the features of an animal are scales, teeth, nares, and backbone. The animal is likely to be a?",
+    "option_1": "toad",
+    "option_2": "bird",
+    "option_3": "lizard",
+    "option_4": "rat",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Choose the sequence which represents the correct order of organisms in a food chain",
+    "option_1": "Grass, snake, toad, grasshopper, hawk",
+    "option_2": "Grass, grasshopper, toad, snake, hawk",
+    "option_3": "Grass, grasshopper, snake, toad, hawk.",
+    "option_4": "Grass, snake, grasshopper, toad, hawk",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Flatworms and roundworms are said to be invertebrates because?",
+    "option_1": "they are small animals",
+    "option_2": "they can live inside the vertebrates",
+    "option_3": "some of them are unicellular",
+    "option_4": "they have no backbones",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "When a Spirogyra cell is immersed in a salt solution more concentrated than its cell sap, it?",
+    "option_1": "remains unchanged",
+    "option_2": "takes tip water and burst",
+    "option_3": "absorbs a little water",
+    "option_4": "loses water and shrivels",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is NOT regarded as a pollutant on land or in the air?",
+    "option_1": "Smoke",
+    "option_2": "Nitrogen",
+    "option_3": "Noise",
+    "option_4": "Sulphur dioxide",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The initial volume of water poured into a bag of dry soil was 50ml and the amount that drained through was 35mI. The percentage water content of the fully soaked soil is therefore?",
+    "option_1": "46.7",
+    "option_2": "25.0",
+    "option_3": "20.0",
+    "option_4": "30.0",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "When the original king and queen of termites die, they are replaced by",
+    "option_1": "the king and queen of another colony",
+    "option_2": "some adult reproductives from the same colony",
+    "option_3": "some adult workers which are specially fed to breed",
+    "option_4": "developing nymphs nurtured as secondary reproductives",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "In demonstrating the importance of mineral elements in plants, the culture bottle must be darkened to?",
+    "option_1": "prevent algal growth in culture solution",
+    "option_2": "allow root growth",
+    "option_3": "prevent breakdown of mineral elements",
+    "option_4": "prevents photosynthesis in the root",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "In the mammalian respiratory system. exchange of gases occurs in the?",
+    "option_1": "lungs",
+    "option_2": "bronchi",
+    "option_3": "bronchioles",
+    "option_4": "alveoli",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Aged erythrocytes are destroyed in the?",
+    "option_1": "pancreas",
+    "option_2": "liver",
+    "option_3": "lymph nodes",
+    "option_4": "kidney",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The villus in the small intestine is significant because it?",
+    "option_1": "increases the surface area for absorption",
+    "option_2": "increases the surface area for digestion",
+    "option_3": "assists in mixing digested food",
+    "option_4": "assists in filtering undigested food",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following food substances will produce a brick-red colour when warmed with Benedict's solution?",
+    "option_1": "Glucose",
+    "option_2": "Starch",
+    "option_3": "Egg White",
+    "option_4": "Maltose",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The blood vessel which carries blood from the alimentary canal to the liver is the?",
+    "option_1": "hepatic artery",
+    "option_2": "hepatic vein",
+    "option_3": "hepatic portal vein",
+    "option_4": "mesenteric artery",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is TRUE of the process of conjugation in Paramecium?",
+    "option_1": "Micronucleus disintegrates",
+    "option_2": "Each ex-conjugant divides only once",
+    "option_3": "Macro nucleus undergoes division",
+    "option_4": "Each micronucleus divides twice",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "People who suck petrol with their mouths run the risk of increasing in their blood the concentration of",
+    "option_1": "iron",
+    "option_2": "lead",
+    "option_3": "calcium",
+    "option_4": "magnesium",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is a measure for the control of bilharzia?",
+    "option_1": "Cutting low bushes around homes",
+    "option_2": "Application of molluscicides in water bodies",
+    "option_3": "Screening windows and doors with mosquito nets",
+    "option_4": "Application of herbicides in water bodies",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The appendicular skeleton is composed of the pectoral girdle?",
+    "option_1": "pelvic girdle, fore and hind limbs",
+    "option_2": "pelvic girdle and fore limbs",
+    "option_3": "lumbar vertebrae and pelvic girdle",
+    "option_4": "lumbar vertebrae, fore and hind limbs",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "A freshwater plant such as water lily can solve the problem of buoyancy by the possession of?",
+    "option_1": "aerenchyma tissues",
+    "option_2": "dissected leaves",
+    "option_3": "thin cell walls of the epidermis",
+    "option_4": "water-repelling epidermis",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The correct sequence for the perception of smell in mammals is?",
+    "option_1": "chemicals --> olfactory nerve endings --> brain",
+    "option_2": "dissolved chemicals --> nasal sensory cells --> brain",
+    "option_3": "chemicals --> mucus membrane sensory cells --> brain",
+    "option_4": "dissolved chemicals --> sensory cells --> olfactory nerve --> brain",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "I. High birth rate and high immigration rate\n\nII. Low birth rate and high immigration rate\n\nIII. Low mortality rate and low emigration rate\n\nIV. High mortality rate and high emigration rate.\n\nWhich combination of the above can cause rapid over-crowding in climax biotic communities and human settlements? ",
+    "option_1": "II and III",
+    "option_2": "I and III",
+    "option_3": "I and IV",
+    "option_4": "I and II",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The number of plant species obtained from a population study of a garden is as follows: Guinea grass (15), Ipomoea spp (5), Sida spp (7) and Imperata spp (23)\n\nWhat is the percentage of occurrence of Imperata spp?",
+    "option_1": "35%",
+    "option_2": "16%",
+    "option_3": "46%",
+    "option_4": "23%",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "When a marine fish was taken from the ocean and put in a tank of fresh water, it died after a short period because?",
+    "option_1": "the tank was too small compared to the large-ocean",
+    "option_2": "the body cells of the fish swelled and burst as a result of the hypotonic fresh water",
+    "option_3": "the body cells of the fish shrank as their sap was hypertonic to the freshwater",
+    "option_4": "there was no food in the tank, so the fish starved",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "If a DNA strand has a base sequence TCA, its complementary strand must be?",
+    "option_1": "ATG",
+    "option_2": "TAG",
+    "option_3": "GAT",
+    "option_4": "AGT",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The two key cations involved in the action potential of nervous transmissions are?",
+    "option_1": "Na+ and Fe2+",
+    "option_2": "Mg2+ and K+",
+    "option_3": "Na+ and K+",
+    "option_4": "Fe2+ and Mg2+",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "I. Rattus rattus. Il. Agama agama III. Bufo regularis IV. Tilapia  zillii\nThe order of evolutionary advancement of the above vertebrates is?",
+    "option_1": "I, II, III, IV",
+    "option_2": "I, IV, III, II",
+    "option_3": "II, III, IV, I",
+    "option_4": "IV, III, II, I",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following produces both hormones and enzymes?",
+    "option_1": "Ileum",
+    "option_2": "Pancreas",
+    "option_3": "Gall bladder",
+    "option_4": "Kidney",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The correct sequence of the movement of urea during urine formation is?",
+    "option_1": "glomerulus ---> Bowman's capsule -> convoluted tubule ---> Henle's loop -> collecting- tubule",
+    "option_2": "glomerulus -> Bowman's capsule -> convoluted tubule -> Henle's loop -> convoluted tubule -> collecting tubule",
+    "option_3": "convoluted tubule -> glomerulus --> Nettle's loop -> Bowman's capsule->collecting tubule",
+    "option_4": "convoluted tubule -> Bowman's capsule -> Henle's loop -7> glomerulus -> collecting tubule",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The order of passage of food in the digestive system is",
+    "option_1": "ileum --> caecum ->large intestine -> rectum",
+    "option_2": "ileum --> colon --> caecum -> rectum",
+    "option_3": "large intestine --> ileum -> caecum -> rectum",
+    "option_4": "colon -> caecum -> ileum -> rectum",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Mass of a crucible = 10g,\n\nMass of a crucible and soil before heating =29g\n\nMass of a crucible and soil after heating = 18g\n\nFrom the information above, determine the percentage of water in the given soil sample?",
+    "option_1": "20%",
+    "option_2": "25%",
+    "option_3": "40%",
+    "option_4": "60%",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "I. Stomata --> Spirogyra\n\nII. Alveoli --> Earthworm\n\nIII. Malpighian tubule -> Mammal\n\nIV. Contractile vacuole -> Protozoa\n\nWhich of the above structures is correctly matched with the organisms in which it is found?",
+    "option_1": "II",
+    "option_2": "I",
+    "option_3": "IV",
+    "option_4": "III",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The sequence of the one-way gaseous exchange mechanism in a fish is?",
+    "option_1": "mouth --> operculum -> gills",
+    "option_2": "mouth -> gills > operculum",
+    "option_3": "operculum > gills -> mouth",
+    "option_4": "gills -> operculum --> mouth",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is true in blood transfusion?",
+    "option_1": "A person of blood group AB can donate blood only to another person of blood group AB",
+    "option_2": "Persons of blood groups A and B can donate or receive blood from each other",
+    "option_3": "A person of blood group AB can receive blood only from persons of blood group A or B",
+    "option_4": "A person of blood group O can donate only to a person of blood group O",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The plants that grow in deserts or very dry areas are referred to as?",
+    "option_1": "hydrophytes",
+    "option_2": "epiphytes",
+    "option_3": "xerophytes",
+    "option_4": "mesophytes",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The most abundant group of organisms in the animal kingdom?",
+    "option_1": "Mammalia",
+    "option_2": "Aves",
+    "option_3": "Insecta",
+    "option_4": "Annelida",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The movement of part of a plant in response to external stimulus of no particular direction is?",
+    "option_1": "taxism",
+    "option_2": "tropism",
+    "option_3": "haptotropic movement",
+    "option_4": "nastic movement",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The mutation theory of organic evolution was propounded by?",
+    "option_1": "Gregor Mendel",
+    "option_2": "Hugo de Vries",
+    "option_3": "Jean Lamarck",
+    "option_4": "Charles Darwin",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "If both parents are heterozygous for a trait. the probability that an offspring will be recessive for that trait is?",
+    "option_1": "1/2",
+    "option_2": "1/4",
+    "option_3": "1",
+    "option_4": "3/4",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "Blood circulation in a mammal is said to be double because?",
+    "option_1": "it passes twice through the heart in a complete circuit",
+    "option_2": "it moves in both arteries and veins",
+    "option_3": "it circulates in both the heart and other organs",
+    "option_4": "the heart contains auricles and ventricles",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Biology",
+    "question": "The hormone which regulates the amount of glucose in the blood is called?",
+    "option_1": "Adrenalin",
+    "option_2": "Auxin",
+    "option_3": "Insulin",
+    "option_4": "Thyroxine",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Deamination occurs in the?",
+    "option_1": "Kidney",
+    "option_2": "Pancreas",
+    "option_3": "Spleen",
+    "option_4": "Liver",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "In an agricultural ecosystem, the biotic component consist of",
+    "option_1": "crops, pests and beneficial insects",
+    "option_2": "crops, temperature and humidity",
+    "option_3": "pests, beneficial insects and water",
+    "option_4": "crops, water and soil",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Epiphytes growing on the branches of trees provide an example of the relationship known as?",
+    "option_1": "parasitism",
+    "option_2": "commensalism",
+    "option_3": "saprophytism",
+    "option_4": "holophytism",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The hypha of rhizopus is said to be non-septate because it",
+    "option_1": "does not contain chloropyll",
+    "option_2": "has no cross wall",
+    "option_3": "is vacuoled",
+    "option_4": "stores oil globus",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The function of ribosome in cells is",
+    "option_1": "protein synthesis",
+    "option_2": "starch synthesis",
+    "option_3": "transport of material",
+    "option_4": "lipid storage",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "In which of the following does external fertilization take place?",
+    "option_1": "toad",
+    "option_2": "lizard",
+    "option_3": "bird",
+    "option_4": "cockroach",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The villus in the small intestine is significant because",
+    "option_1": "Increases the surface area for absorption",
+    "option_2": "increases the surface area for digestion",
+    "option_3": "assists in mixing digested food",
+    "option_4": "assists in filtering undigested food",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The butterfly is of great economic importance because",
+    "option_1": "of it's use in scientific studies",
+    "option_2": "it sucks nectar from flowers",
+    "option_3": "it adds to the beauty of the environment",
+    "option_4": "it pollinates flowers of crops and other plants",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The bright colours of the comb and feathers in the peacock are for?",
+    "option_1": "sex differentiation",
+    "option_2": "beauty",
+    "option_3": "courtship",
+    "option_4": "defence",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "What is the term used to describe biotic and abiotic factors in the environment of the organism?",
+    "option_1": "habitat",
+    "option_2": "biome",
+    "option_3": "ecosystem",
+    "option_4": "ecological niche",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following instruments is NOT used in measuring abiotic factors in any habitat?",
+    "option_1": "microscope",
+    "option_2": "thermometer",
+    "option_3": "hygrometer",
+    "option_4": "windvane",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The smallest living organism which share the characteristics of both living and non-living matter are",
+    "option_1": "bacteria",
+    "option_2": "fungi",
+    "option_3": "viruses",
+    "option_4": "protozoa",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The process by which a red blood cell placed in distilled water absorbs water until it burst and realease it's content into the surrounding is known as",
+    "option_1": "osmosis",
+    "option_2": "plasmolysis",
+    "option_3": "turgidity",
+    "option_4": "hemolysis",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following waste products in plants is excreted through the stomata and lenticles?",
+    "option_1": "carbon dioxide",
+    "option_2": "alkaloids",
+    "option_3": "tannins",
+    "option_4": "anthoocyanins",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram to answer the question\n\nThe vertebra illustrated is",
+    "option_1": "lumber",
+    "option_2": "thoracic",
+    "option_3": "caudal",
+    "option_4": "cervical",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram to answer the question\n\nThe neural arch is labelled",
+    "option_1": "i",
+    "option_2": "ii",
+    "option_3": "iii",
+    "option_4": "iv",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The excretory structure in the earthworm is the",
+    "option_1": "malphighian tubule",
+    "option_2": "flame cell",
+    "option_3": "nephridium",
+    "option_4": "kidney",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "In which of the following vertebrates does the skin function as a respiratory surface",
+    "option_1": "rat",
+    "option_2": "lizard",
+    "option_3": "fish",
+    "option_4": "frog",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The process of walking is under the control of the part of the brain called",
+    "option_1": "optic lobe",
+    "option_2": "olfactory lobe",
+    "option_3": "cerebellum",
+    "option_4": "medulla oblongata",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The ability of the eyes to focus on both near and distance objects is termed",
+    "option_1": "image formation",
+    "option_2": "refraction",
+    "option_3": "hypermetropia",
+    "option_4": "accommodation",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "A group of organism of different species living in a particular area is described as a",
+    "option_1": "colony",
+    "option_2": "community",
+    "option_3": "population",
+    "option_4": "niche",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The biological association that contributes directly to succession in a community is",
+    "option_1": "competition",
+    "option_2": "predation",
+    "option_3": "parasitism",
+    "option_4": "commensalism",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Floating microscopic heterotrophs are mostly grouped as",
+    "option_1": "phytoplankton",
+    "option_2": "zooplankton",
+    "option_3": "microbes",
+    "option_4": "nekton",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Vaccination is carried out in order to",
+    "option_1": "check the production of poison",
+    "option_2": "increase the activities of white blood cells",
+    "option_3": "increase the number of red blood cells",
+    "option_4": "stimulate the production of anti-bodies",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "For growth to occur in organisms, the rate of",
+    "option_1": "anabolism must exceed that of catabolism",
+    "option_2": "catabolism must exceed that of anabolism",
+    "option_3": "food storage must be low",
+    "option_4": "food storage must be high",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The probability of a baby being a boy or a girl depends on the contribution of the",
+    "option_1": "father's sex cells",
+    "option_2": "father's stomatic chromosome",
+    "option_3": "mother's sex cell",
+    "option_4": "mother's X-chromosome",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Both recesssive and dominant characters are found",
+    "option_1": "on different chromosome in the cell",
+    "option_2": "at the same logus of a homologous chromosome",
+    "option_3": "at a different loci of a homologous chromosome",
+    "option_4": "on the same chromatid in a chromosome",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "In a population of living things, the parameters of size, height, weight and colours are examples of",
+    "option_1": "continuous variation",
+    "option_2": "non-heritable variation",
+    "option_3": "discontinuous variation",
+    "option_4": "physiological variation",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram to answer the question.\n\nThe process of water loss and intake indicated by the arrows labelled i and ii are respectively",
+    "option_1": "evaporation and osmosis",
+    "option_2": "osmosis and exhalation",
+    "option_3": "osmosis and diffusion",
+    "option_4": "urination and diffusion",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The noticeable adaptation of the animal to it's aquatic habitat is the possession of",
+    "option_1": "webbed digits",
+    "option_2": "four limb",
+    "option_3": "wide mouth",
+    "option_4": "large eyes",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Paternity disputes can most accurately be resolved through the use of",
+    "option_1": "blood group typing",
+    "option_2": "finger printing",
+    "option_3": "tongue rolling",
+    "option_4": "DNA Analysis",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the table below to answer the question.\n\nHigh relative humidity will be expected in Zones",
+    "option_1": "ii and iv",
+    "option_2": "ii and iii",
+    "option_3": "i and iii",
+    "option_4": "i and iv",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the table to answer the question.\n\nWhich of the zones is likely to be a desert?",
+    "option_1": "i",
+    "option_2": "ii",
+    "option_3": "iii",
+    "option_4": "iv",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "When bacteria swim from cold to warm regions, this is known as",
+    "option_1": "positive phototaxis",
+    "option_2": "negative phototaxis",
+    "option_3": "positive thermotaxis",
+    "option_4": "negative chemotaxis",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "The only caste in the termite colony whose members can feed themselves are the",
+    "option_1": "workers",
+    "option_2": "reproductives",
+    "option_3": "soldiers",
+    "option_4": "nymphs",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following is the best explanation for a child who is phenotypically short and born of two tall parents",
+    "option_1": "both parent possess genes for shortness",
+    "option_2": "the father possess a gene for shortness",
+    "option_3": "nature makes the child short",
+    "option_4": "",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Which of the following vertebrates has the most simple structured heart",
+    "option_1": "reptile",
+    "option_2": "fish",
+    "option_3": "mammal",
+    "option_4": "Amphibian",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram to answer the question.\n\nThe type of protective adaption exhibited by the animal is",
+    "option_1": "disruptive colouration",
+    "option_2": "flash colouration",
+    "option_3": "countershading colouration",
+    "option_4": "warning colouration",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Biology",
+    "question": "Use the diagram to answer the question.\n\nThe structure labelled i is",
+    "option_1": "photosensitive",
+    "option_2": "radiosensitive",
+    "option_3": "chemoreceptive",
+    "option_4": "tactile",
+    "answer": 4,
+    "year": 2020
+  }
+]

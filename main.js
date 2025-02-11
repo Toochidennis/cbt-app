@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 const fs = require('fs').promises;
+const db = require('./database/db')
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -145,22 +146,24 @@ ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
 });
 
-ipcMain.on('open-exam-window', () => {
-    openExamWindow();
-});
-
 ipcMain.on('open-congrats-window', () => {
     openCongratsWindow();
 });
 
 // IPC handler for fetching questions
-ipcMain.handle('get-questions', async () => {
+ipcMain.handle('get-questions-by-subject', (_, subject, year) => {
     try {
-        const filePath = path.join(__dirname, 'assets/data/questions.json');
-        const data = await fs.readFile(filePath, 'utf-8');
-        return JSON.parse(data);
+        const stmt = db.prepare(`SELECT * FROM questions WHERE subject = ? AND year = ? ORDER BY RANDOM() LIMIT 50;`);
+        const questions = stmt.all(subject, year);
+
+        questions.forEach(q => {
+            if (q.options) {
+                q.options = JSON.parse(q.options);
+            }
+        });
+        return questions;
     } catch (error) {
-        console.error('Error reading questions.json:', error);
+        console.error('Error retrieving questions:', error);
         throw error;
     }
 });

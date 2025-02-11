@@ -1,7 +1,7 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
-    getQuestions: () => ipcRenderer.invoke('get-questions'),
+    getQuestions: (subject, year) => ipcRenderer.invoke('get-questions-by-subject', subject, year),
     navigate: (page) => ipcRenderer.send('navigate', page),
     minimize: () => ipcRenderer.send("minimize-window"),
     maximize: () => ipcRenderer.send("maximize-window"),
@@ -10,11 +10,8 @@ contextBridge.exposeInMainWorld('api', {
     onMaximized: (callback) => ipcRenderer.on("window-maximized", callback),
     onRestored: (callback) => ipcRenderer.on("window-restored", callback),
     openSelectSubjectWindow: () => ipcRenderer.send('open-subject-window'),
-    openExamWindow: () => ipcRenderer.send("open-exam-window"),
     openCongratsWindow: () => ipcRenderer.send("open-congrats-window"),
     onSecondWindowClosed: (callback) => ipcRenderer.on('second-window-closed', callback),
     onCongratsWindowClosed: (callback) => ipcRenderer.on('congrats-window-closed', callback),
     closeCongratsWindow: () => ipcRenderer.send('close-congrats-window'),
-    sendExamData: (data) => ipcRenderer.send('get-exam-data', data),
-    examData: (data) => ipcRenderer.on('exam-data', data),
 });
