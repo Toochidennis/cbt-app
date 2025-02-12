@@ -17,5 +17,6 @@ contextBridge.exposeInMainWorld('api', {
     setFullScreen: (isFullScreen) => ipcRenderer.send('set-fullscreen', isFullScreen),
     hideControls: (isHide) => ipcRenderer.on('hide-controls', isHide),
     showControls: (isShow) => ipcRenderer.on('show-controls', isShow),
-
+    saveExamSummary: (summaryData) => ipcRenderer.invoke('save-exam-summary', summaryData),
+    getExamSummary: () => ipcRenderer.invoke('get-exam-summary'),
 });

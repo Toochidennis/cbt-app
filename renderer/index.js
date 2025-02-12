@@ -34,6 +34,7 @@ window.api.onSecondWindowClosed((_, data) => {
 // exam functionality
 let timer;
 let totalSeconds = 0;
+let isPaused = false;
 
 const countdown = document.getElementById('countdown');
 const submitBtn = document.getElementById('submit-button');
@@ -48,6 +49,7 @@ const attemptedDiv = document.getElementById('attempted-questions');
 function startTimer() {
     if (timer) return; // Prevent multiple intervals
 
+    console.log("Duration: ", state.duration);
     const hours = state.duration.hours;
     const minutes = state.duration.minutes;
     const seconds = 0;
@@ -72,7 +74,7 @@ function startTimer() {
 function resetTimer() {
     clearInterval(timer);
     timer = null;
-    isPaused = false;
+    //isPaused = false;
     totalSeconds = 0;
     updateDisplay();
 }
@@ -167,7 +169,7 @@ function renderQuestion(index) {
         const label = document.createElement('label');
         label.innerHTML = `
             <input type="radio" name="option" value="${option}" ${subjectState.userAnswers[index] === option ? 'checked' : ''}>
-            ${option}
+            ${capitalizeSentence(option)}
         `;
         label.classList.add('fade-in');
         label.style.animationDelay = `${(i + 1) * 0.2}s`; // Staggered delay
@@ -175,6 +177,11 @@ function renderQuestion(index) {
     });
 
     renderQuestionNav();
+}
+
+function capitalizeSentence(text) {
+    if (!text) return '';
+    return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 
@@ -190,10 +197,7 @@ function handleNavigation(direction) {
     const subjectState = state.subjects[state.currentSubject];
     selectAnswer(subjectState);
 
-    console.log('Before increment: ', subjectState.currentQuestionIndex)
     subjectState.currentQuestionIndex += direction;
-
-    console.log('After increment: ', subjectState.currentQuestionIndex)
 
     if (subjectState.currentQuestionIndex < 0) {
         subjectState.currentQuestionIndex = 0;
@@ -217,9 +221,29 @@ function prevHandler() {
     handleNavigation(-1);
 }
 
-
 function submitHandler() {
-    window.api.openCongratsWindow();
+    finishExam();
+   // window.api.openCongratsWindow();
+}
+
+async function finishExam() {
+    // // Example: calculate the score and total time, then build the summary
+    // const summaryData = {
+    //   exam_date: new Date().toISOString(),
+    //   subjects: state.selectedSubjects, // e.g. an array of subjects
+    //   score: calculateScore(),          // implement your own score calculation
+    //   total_time: totalSeconds,         // total seconds spent on the exam
+    //   details: {
+    //     // You can add additional details here (like per subject data, etc.)
+    //   }
+    // };
+
+    try {
+        await window.api.saveExamSummary(state);
+        // console.log('Exam summary saved with id:', summaryId);
+    } catch (error) {
+        console.error('Error saving exam summary:', error);
+    }
 }
 
 
@@ -254,6 +278,7 @@ function keyboardShortcutsHandler(event) {
 
 
 function init() {
+    resetTimer();
     startTimer();
     state.currentSubject = state.selectedSubjects[0];
     renderTabs();

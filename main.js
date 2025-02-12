@@ -61,8 +61,8 @@ function createWindow() {
     });
 
     ipcMain.on('set-fullscreen', (_, isFullScreen) => {
-        mainWindow.setFullScreen(isFullScreen); 
-        mainWindow.webContents.send('hide-controls', isFullScreen);  
+        mainWindow.setFullScreen(isFullScreen);
+        mainWindow.webContents.send('hide-controls', isFullScreen);
     });
 }
 
@@ -145,6 +145,7 @@ function openCongratsWindow() {
         ipcMain.removeListener('close-congrats-window', closeHandler);
         mainWindow.webContents.send('show-controls', true);
     });
+
 }
 
 // IPC handlers for opening windows
@@ -173,6 +174,40 @@ ipcMain.handle('get-questions-by-subject', (_, subject, year) => {
         throw error;
     }
 });
+
+process.on('uncaughtException', (err) => {
+    console.error('Uncaught Exception:', err);
+});
+
+
+ipcMain.handle('save-exam-summary', (_, summaryData) => {
+    try {
+       // console.log('dataaaa: ', summaryData);
+        const insertStmt = db.prepare(`INSERT INTO exam_summary (exam_data) VALUES (?)`);
+        const stringifiedData = JSON.stringify({summaryData: "text"});
+        console.log('Stringified data:', stringifiedData);
+        const result = insertStmt.run("stringifiedData");
+        console.log('Insert result:', result);
+    } catch (error) {
+        console.error('Error saving exam summary:', error);
+        throw error;
+    }
+});
+
+ipcMain.handle('get-exam-summary', () => {
+    try {
+        const stmt = db.prepare("SELECT * FROM exam_summary ORDER BY id DESC LIMIT 1");
+        const summary = stmt.get();
+        if (summary) {
+            summary.exam_data = JSON.parse(summary.exam_data);
+        }
+        return summary;
+    } catch (error) {
+        console.error('Error retrieving exam summary:', error);
+        throw error;
+    }
+});
+
 
 // App event handlers
 app.whenReady().then(() => {

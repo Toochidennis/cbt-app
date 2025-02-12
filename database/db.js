@@ -28,6 +28,17 @@ const query = `
 
 db.exec(query);
 
+const createSummaryTableStmt = `
+    CREATE TABLE IF NOT EXISTS exam_summary (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        exam_date TEXT,
+        subjects TEXT,
+        details TEXT
+    );
+`;
+
+db.exec(createSummaryTableStmt);
+
 function seedDatabaseFromFolder() {
     // Load data if the questions table is empty
     const rowCount = db.prepare("SELECT COUNT(*) as count FROM questions").get().count;

@@ -1,5 +1,4 @@
 import state from './state.js';
-import { loadPage } from './navigation.js';
 
 function renderSummary() {
     const summaryContainer = document.getElementById('summary-container');
