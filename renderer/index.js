@@ -1,5 +1,5 @@
-import { loadPage } from "../renderer/navigation.js";
-import state from "../renderer/state.js";
+import { loadPage } from "./navigation.js";
+import state from "./state.js";
 
 document.getElementById('jamb-button').addEventListener('click', () => {
     window.api.openSelectSubjectWindow();
@@ -8,22 +8,25 @@ document.getElementById('jamb-button').addEventListener('click', () => {
 
 window.api.onCongratsWindowClosed(() => {
     loadPage('home');
+    window.api.setFullScreen(false);
 });
 
 // Show exam screen when subjects selection window is closed
 window.api.onSecondWindowClosed((_, data) => {
-    if (data['action'] === 'exam') {
-        state.subjects = data['subjects'];
-        state.duration = data['duration'];
-        state.selectedSubjects = data['selectedSubjects'];
-        state.year = data['year'];
+    if (data.action === 'exam') {
+        state.subjects = data.subjects;
+        state.duration = data.duration;
+        state.selectedSubjects = data.selectedSubjects;
+        state.year = data.year;
 
         console.log("state ", state);
 
         init();
 
+        window.api.setFullScreen(true);
+
         // Navigate to the Exam page
-        loadPage(data['action']);
+        loadPage(data.action);
     }
 });
 
@@ -45,8 +48,8 @@ const attemptedDiv = document.getElementById('attempted-questions');
 function startTimer() {
     if (timer) return; // Prevent multiple intervals
 
-    const hours = state.duration['hours'];
-    const minutes = state.duration['minutes'];
+    const hours = state.duration.hours;
+    const minutes = state.duration.minutes;
     const seconds = 0;
     totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
@@ -60,9 +63,11 @@ function startTimer() {
             clearInterval(timer);
             timer = null;
             alert('Time is up!');
+            submitHandler();
         }
     }, 1000);
 }
+
 
 function resetTimer() {
     clearInterval(timer);
@@ -87,10 +92,15 @@ function renderTabs() {
     const tabContainer = document.querySelector('.tab');
     tabContainer.innerHTML = '';
 
-    state.selectedSubjects.forEach(subject => {
+    state.selectedSubjects.forEach((subject, index) => {
         const tabButton = document.createElement('button');
         tabButton.classList = 'tablinks';
         tabButton.textContent = subject;
+
+        if (index === 0) {
+            tabButton.classList.add('active');
+        }
+
         tabButton.addEventListener('click', () => openTab(subject, tabButton));
         tabContainer.appendChild(tabButton);
     });
@@ -167,6 +177,7 @@ function renderQuestion(index) {
     renderQuestionNav();
 }
 
+
 function selectAnswer(subjectState) {
     const selectedOption = document.querySelector('input[name="option"]:checked');
     if (selectedOption) {
@@ -179,7 +190,10 @@ function handleNavigation(direction) {
     const subjectState = state.subjects[state.currentSubject];
     selectAnswer(subjectState);
 
+    console.log('Before increment: ', subjectState.currentQuestionIndex)
     subjectState.currentQuestionIndex += direction;
+
+    console.log('After increment: ', subjectState.currentQuestionIndex)
 
     if (subjectState.currentQuestionIndex < 0) {
         subjectState.currentQuestionIndex = 0;
@@ -193,18 +207,67 @@ function handleNavigation(direction) {
     renderQuestion(subjectState.currentQuestionIndex);
 }
 
+
+function nextHandler() {
+    handleNavigation(1);
+}
+
+
+function prevHandler() {
+    handleNavigation(-1);
+}
+
+
+function submitHandler() {
+    window.api.openCongratsWindow();
+}
+
+
+function keyboardShortcutsHandler(event) {
+    const key = event.key.toLowerCase();
+
+    if (!isNaN(key) && key !== '0') {
+        const optionIndex = parseInt(key) - 1;
+        const options = document.querySelectorAll('input[name="option"]');
+        if (options && optionIndex < options.length) {
+            options[optionIndex].checked = true;
+
+            const subjectState = state.subjects[state.currentSubject];
+            selectAnswer(subjectState);
+        }
+    }
+
+    switch (key) {
+        case 'p':
+            prevHandler();
+            break;
+        case 'n':
+            nextHandler();
+            break;
+        case 's':
+            submitHandler();
+            break;
+        default:
+            break;
+    }
+}
+
+
 function init() {
     startTimer();
-
-    nextBtn.addEventListener('click', () => handleNavigation(1));
-    prevBtn.addEventListener('click', () => handleNavigation(-1));
-    submitBtn.addEventListener('click', () => window.api.openCongratsWindow());
-    // Set the first subject as the current subject
     state.currentSubject = state.selectedSubjects[0];
-
-    // Render tabs
     renderTabs();
-
-    // Render the first question of the initial subject
     renderQuestion(0);
+
+    // Remove any previously attached listeners (if any)
+    nextBtn.removeEventListener('click', nextHandler);
+    prevBtn.removeEventListener('click', prevHandler);
+    submitBtn.removeEventListener('click', submitHandler);
+    document.removeEventListener('keydown', keyboardShortcutsHandler);
+
+    // Then add the event listeners
+    nextBtn.addEventListener('click', nextHandler);
+    prevBtn.addEventListener('click', prevHandler);
+    submitBtn.addEventListener('click', submitHandler);
+    document.addEventListener('keydown', keyboardShortcutsHandler);
 }

@@ -97,18 +97,21 @@
             <div class="year-wrapper">
                 <h3 class="text-wrapper-4">Select Examination Year</h3>
                 <select class="item" id="exam-year">
-                    <option value="" disabled selected>Select Year</option>
+                    <!-- <option value="" disabled selected>Select Year</option> -->
                 </select>
             </div>
             <div class="duration-container">
                 <h3 class="duration-header">Set timer</h3>
                 <!-- <div id="error-message" style="color: red;"></div> -->
                 <div class="duration-content">
-                    <input type="number" id="hour" placeholder="Hours">
-                    <input type="number" id="minutes" placeholder="Minutes">
+                    <input type="number" id="hour" placeholder="Hours" value="1">
+                    <input type="number" id="minutes" placeholder="Minutes" >
                 </div>
             </div>
         </div>
+
+        <div id="feedback"></div>
+
         <div class="frame-5">
             <div class="frame-6" id="start-exam">
                 <div class="text-wrapper-5">Start Exam</div>

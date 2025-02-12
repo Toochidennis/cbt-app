@@ -190,7 +190,7 @@
     font-family: "Urbanist", Helvetica;
     font-weight: 500;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
@@ -199,4 +199,15 @@
 .select-exams .double-left {
     width: 24px;
     height: 24px;
+}
+
+#feedback {
+    margin-top: 1em;
+    color: red;
+    font-family: "Urbanist", Helvetica;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
 }

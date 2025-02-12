@@ -6,11 +6,11 @@
     height: 100vh;
 }
 
-.cbt-header{
+.cbt-header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    
+
 }
 
 .cbt-1 {
@@ -85,7 +85,8 @@
     background-color: #f4f6ff;
     border-bottom: 1px solid #2e55dd;
 }
-.question-section{
+
+.question-section {
     flex: 1;
     overflow-y: auto;
     padding: 1rem;
@@ -134,6 +135,10 @@
     cursor: pointer;
 }
 
+.options-container label:hover {
+    color: #2e55dd;
+}
+
 .options-container input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
@@ -146,6 +151,11 @@
     outline-offset: 2.5px;
     transition: border 0.2s, outline 0.2s;
     cursor: pointer;
+}
+
+.options-container input[type="radio"]:hover {
+    background-color: #7795FF;
+    border-color: #7795FF;
 }
 
 /* Styles for the checked state */
@@ -165,22 +175,21 @@ input[type="radio"]:focus {
 }
 
 .controls-section {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+
 }
 
 .controls-section div {
     display: flex;
     align-items: center;
-
 }
 
 .controls-section .back {
     border-radius: 32px;
-    padding: .9em 2em;
+    padding: .5em 1em;
     gap: 10px;
     border: 1.5px solid #2e55dd;
     cursor: pointer;
@@ -199,26 +208,38 @@ input[type="radio"]:focus {
 }
 
 .controls-section .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 32px;
-    padding: .9em 2em;
+    padding: .5em 1em;
     gap: 10px;
     background-color: #2e55dd;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
 }
-.back:active, .next:active {
-    transform: scale(0.98); /* Slightly reduce size to simulate press */
+
+.back:active,
+.next:active,
+.submit-button:active {
+    transform: scale(0.98);
+    /* Slightly reduce size to simulate press */
 }
 
 .controls-section .next span {
-    width: fit-content;
     font-family: "Urbanist", Helvetica;
     font-weight: 500;
     color: #fff;
+    padding: .2em 1em;
     font-size: 1rem;
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
+}
+
+.controls-section .next img {
+    width: 20px;
+    height: 20px;
 }
 
 .questions-nav-wrapper {
@@ -249,8 +270,8 @@ input[type="radio"]:focus {
 }
 
 .question-box {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -278,6 +299,7 @@ input[type="radio"]:focus {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -290,6 +312,7 @@ input[type="radio"]:focus {
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(-20px);

@@ -14,4 +14,8 @@ contextBridge.exposeInMainWorld('api', {
     onSecondWindowClosed: (callback) => ipcRenderer.on('second-window-closed', callback),
     onCongratsWindowClosed: (callback) => ipcRenderer.on('congrats-window-closed', callback),
     closeCongratsWindow: () => ipcRenderer.send('close-congrats-window'),
+    setFullScreen: (isFullScreen) => ipcRenderer.send('set-fullscreen', isFullScreen),
+    hideControls: (isHide) => ipcRenderer.on('hide-controls', isHide),
+    showControls: (isShow) => ipcRenderer.on('show-controls', isShow),
+
 });

@@ -59,6 +59,11 @@ function createWindow() {
     ipcMain.on('close-window', () => {
         mainWindow.close();
     });
+
+    ipcMain.on('set-fullscreen', (_, isFullScreen) => {
+        mainWindow.setFullScreen(isFullScreen); 
+        mainWindow.webContents.send('hide-controls', isFullScreen);  
+    });
 }
 
 function openSelectSubjectDialog() {
@@ -138,6 +143,7 @@ function openCongratsWindow() {
     // When the window is closed, remove the listener to avoid referencing a destroyed window
     congratsWindow.on('closed', () => {
         ipcMain.removeListener('close-congrats-window', closeHandler);
+        mainWindow.webContents.send('show-controls', true);
     });
 }
 

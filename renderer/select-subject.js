@@ -6,6 +6,8 @@ let data = {
     action: 'exam'
 };
 
+const feedback = document.getElementById('feedback');
+
 document.addEventListener("DOMContentLoaded", function () {
     const closeModalBtn = document.getElementById("close-button");
     const yearDropdown = document.getElementById("exam-year");
@@ -19,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (checkedCheckboxes.length > maxSelection) {
                 this.checked = false;
-                //alert('You can select up to ' + maxSelection + ' subjects only.');
+                feedback.textContent = 'You can select up to ' + maxSelection + ' subjects only.';
+            } else {
+                feedback.textContent = '';
             }
         });
     });
@@ -65,15 +69,16 @@ async function validateSelectionAndProceed(year) {
     const subjects = getSelectedSubjects();
 
     if (subjects.length === 0) {
-        console.log(subjects);
+        feedback.textContent = 'Select at least one subject';
         return;
     } else if (!duration['hours'] && !duration['minutes']) {
-        console.log(duration);
+        feedback.textContent = 'Hour or time is required';
         return;
     } else if (!year) {
-        console.log('year');
+        feedback.textContent = 'Year is required';
         return;
     } else {
+        feedback.textContent = '';
 
         await Promise.all(subjects.map(subject => loadQuestionsForSubject(subject, year)));
 
@@ -92,9 +97,12 @@ async function loadQuestionsForSubject(subject, year) {
         if (!questions || questions.length === 0) {
             const msg = `No questions found for subject: ${subject} (year: ${year}).`;
             console.error(msg);
+            feedback.textContent = msg;
 
             // Throw an error so that the calling code knows to stop further processing.
             throw new Error(msg);
+        } else {
+            feedback.textContent = '';
         }
 
         data.subjects[subject] = {
