@@ -1,16 +1,16 @@
 const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
-const fs = require('fs').promises;
-const db = require('./database/db')
+//const fs = require('fs').promises;
+const { saveActivationState, getActivationState, db } = require('./database/db');
 
 const env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-        hardResetMethod: 'exit',
-    });
-}
+// if (env === 'development') {
+//     require('electron-reload')(__dirname, {
+//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+//         hardResetMethod: 'exit',
+//     });
+// }
 
 let mainWindow;
 
@@ -64,6 +64,49 @@ function createWindow() {
         mainWindow.setFullScreen(isFullScreen);
         mainWindow.webContents.send('hide-controls', isFullScreen);
     });
+
+    // IPC handlers for activation state.
+    ipcMain.handle('get-activation-state', async () => {
+        return getActivationState();
+    });
+
+    ipcMain.handle('save-activation-state', async (_, isActivated) => {
+        saveActivationState(isActivated);
+        return true;
+    });
+}
+
+
+function openActivationWindow() {
+    const activationWindow = new BrowserWindow({
+        width: 450,
+        height: 500,
+        frame: false,
+        modal: true,
+        transparent: true,
+        parent: mainWindow,
+        webPreferences: {
+            contextIsolation: true,
+            preload: path.join(__dirname, 'preload.js'),
+        },
+    });
+
+    activationWindow.loadFile('pages/activation.html');
+
+    const closeHandler = () => {
+        if (activationWindow && !activationWindow.isDestroyed()) {
+            activationWindow.close();
+        }
+    };
+
+    // Register the listener for this window instance
+    ipcMain.once('close-activation-window', closeHandler);
+
+    // When the window is closed, remove the listener to avoid referencing a destroyed window
+    activationWindow.on('closed', () => {
+        ipcMain.removeListener('close-activation-window', closeHandler);
+    });
+
 }
 
 function openSelectSubjectDialog() {
@@ -114,7 +157,7 @@ function openSelectSubjectDialog() {
     // });
 }
 
-function openCongratsWindow() {
+function openCongratsWindow(summaryData) {
     const congratsWindow = new BrowserWindow({
         width: 450,
         height: 500,
@@ -146,6 +189,10 @@ function openCongratsWindow() {
         mainWindow.webContents.send('show-controls', true);
     });
 
+    // Send the summary after the page has loaded.
+    congratsWindow.webContents.on('did-finish-load', () => {
+        congratsWindow.webContents.send('get-exam-summary', summaryData);
+    });
 }
 
 // IPC handlers for opening windows
@@ -153,8 +200,12 @@ ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
 });
 
-ipcMain.on('open-congrats-window', () => {
-    openCongratsWindow();
+ipcMain.on('open-activation-window', () => {
+    openActivationWindow();
+});
+
+ipcMain.on('open-congrats-window', (_, summaryData) => {
+    openCongratsWindow(summaryData);
 });
 
 // IPC handler for fetching questions
@@ -162,12 +213,15 @@ ipcMain.handle('get-questions-by-subject', (_, subject, year) => {
     try {
         const stmt = db.prepare(`SELECT * FROM questions WHERE subject = ? AND year = ? ORDER BY RANDOM() LIMIT 50;`);
         const questions = stmt.all(subject, year);
+        console.log(questions)
 
-        questions.forEach(q => {
-            if (q.options) {
-                q.options = JSON.parse(q.options);
-            }
-        });
+        if (questions.length !== 0) {
+            questions.forEach(q => {
+                if (q.options) {
+                    q.options = JSON.parse(q.options);
+                }
+            });
+        }
         return questions;
     } catch (error) {
         console.error('Error retrieving questions:', error);
@@ -175,38 +229,38 @@ ipcMain.handle('get-questions-by-subject', (_, subject, year) => {
     }
 });
 
-process.on('uncaughtException', (err) => {
-    console.error('Uncaught Exception:', err);
-});
+// ipcMain.handle('save-exam-summary', (_, summaryData) => {
+//     try {
+//         const insertStmt = db.prepare(`INSERT INTO exam_summary (exam_data) VALUES (?)`);
+//         const stringifiedData = JSON.stringify({summaryData: "text"});
+//         console.log('Stringified data:', stringifiedData);
+//         let result = 0;
+//         const transaction = db.transaction((summary)=>{
+//             result = insertStmt.run(summary);
+//         });
 
+//         transaction(stringifiedData);
+//         console.log('Insert result:', result);
+//     } catch (error) {
+//         console.error('Error saving exam summary:', error);
+//         throw error;
+//     }
+// });
 
-ipcMain.handle('save-exam-summary', (_, summaryData) => {
-    try {
-       // console.log('dataaaa: ', summaryData);
-        const insertStmt = db.prepare(`INSERT INTO exam_summary (exam_data) VALUES (?)`);
-        const stringifiedData = JSON.stringify({summaryData: "text"});
-        console.log('Stringified data:', stringifiedData);
-        const result = insertStmt.run("stringifiedData");
-        console.log('Insert result:', result);
-    } catch (error) {
-        console.error('Error saving exam summary:', error);
-        throw error;
-    }
-});
-
-ipcMain.handle('get-exam-summary', () => {
-    try {
-        const stmt = db.prepare("SELECT * FROM exam_summary ORDER BY id DESC LIMIT 1");
-        const summary = stmt.get();
-        if (summary) {
-            summary.exam_data = JSON.parse(summary.exam_data);
-        }
-        return summary;
-    } catch (error) {
-        console.error('Error retrieving exam summary:', error);
-        throw error;
-    }
-});
+// ipcMain.handle('get-exam-summary', () => {
+//     try {
+//         const stmt = db.prepare("SELECT * FROM exam_summary ORDER BY id DESC LIMIT 1");
+//         const summary = stmt.get();
+//         if (summary) {
+//             summary.exam_data = JSON.parse(summary.exam_data);
+//         }
+//         console.log(summary)
+//         return summary;
+//     } catch (error) {
+//         console.error('Error retrieving exam summary:', error);
+//         throw error;
+//     }
+// });
 
 
 // App event handlers

@@ -16,7 +16,7 @@ export function loadPage(page) {
     const homeDiv = document.getElementById('home');
     const examDiv = document.getElementById('cbt');
 
-    if (page === 'exam') {
+    if (page === 'cbt') {
         homeDiv.classList.add('hidden');
         examDiv.classList.remove('hidden');
     } else if (page === 'home') {

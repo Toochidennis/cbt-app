@@ -3,7 +3,7 @@ let data = {
     selectedSubjects: [],
     year: 0,
     duration: { hours: 0, minutes: 0 },
-    action: 'exam'
+    action: 'cbt'
 };
 
 const feedback = document.getElementById('feedback');
@@ -80,13 +80,15 @@ async function validateSelectionAndProceed(year) {
     } else {
         feedback.textContent = '';
 
-        await Promise.all(subjects.map(subject => loadQuestionsForSubject(subject, year)));
+        const questions = await Promise.all(subjects.map(subject => loadQuestionsForSubject(subject, year)));
 
-        data.selectedSubjects = subjects;
-        data.duration = duration;
-        data.year = year;
+        if (questions[0].length !== 0) {
+            data.selectedSubjects = subjects;
+            data.duration = duration;
+            data.year = year;
 
-        window.api.closeSelectSubjectWindow(data);
+            window.api.closeSelectSubjectWindow(data);
+        }
     }
 }
 
@@ -94,23 +96,23 @@ async function loadQuestionsForSubject(subject, year) {
     try {
         const questions = await window.api.getQuestions(subject, year);
         // Check if no questions were returned.
-        if (!questions || questions.length === 0) {
+        if (questions.length === 0) {
             const msg = `No questions found for subject: ${subject} (year: ${year}).`;
             console.error(msg);
-            feedback.textContent = msg;
 
-            // Throw an error so that the calling code knows to stop further processing.
-            throw new Error(msg);
+            feedback.textContent = msg;
         } else {
+            data.subjects[subject] = {
+                questions: questions,
+                currentQuestionIndex: 0,
+                userAnswers: [],
+            };
             feedback.textContent = '';
         }
 
-        data.subjects[subject] = {
-            questions: questions,
-            currentQuestionIndex: 0,
-            userAnswers: [],
-        };
+        return questions;
     } catch (error) {
         console.error('Failed to load questions:', error);
+        return []
     }
 }

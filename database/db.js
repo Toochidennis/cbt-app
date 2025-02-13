@@ -1,15 +1,17 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
+const { app } = require('electron');
 
 // Define the path to your SQLite database file.
-const dbPath = path.join(__dirname, 'data', 'questions.db');
+const dataDir = path.join(app.getPath('userData'), 'data');
 
 // Create dir if not exist
-const dataDir = path.join(__dirname, 'data');
 if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir);
+    fs.mkdirSync(dataDir, {recursive: true});
 }
+
+const dbPath = path.join(dataDir, 'questions.db');
 
 // Open or create database file
 const db = new Database(dbPath);
@@ -28,16 +30,24 @@ const query = `
 
 db.exec(query);
 
-const createSummaryTableStmt = `
-    CREATE TABLE IF NOT EXISTS exam_summary (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        exam_date TEXT,
-        subjects TEXT,
-        details TEXT
+// Create a table for activation state if it doesn't exist.
+db.exec(`
+    CREATE TABLE IF NOT EXISTS activation (
+        key TEXT PRIMARY KEY,
+        value TEXT
     );
-`;
+`);
 
-db.exec(createSummaryTableStmt);
+// const createSummaryTableStmt = `
+//     CREATE TABLE IF NOT EXISTS exam_summary (
+//         id INTEGER PRIMARY KEY AUTOINCREMENT,
+//         exam_date TEXT,
+//         subjects TEXT,
+//         details TEXT
+//     );
+// `;
+
+// db.exec(createSummaryTableStmt);
 
 function seedDatabaseFromFolder() {
     // Load data if the questions table is empty
@@ -100,4 +110,17 @@ function seedDatabaseFromFolder() {
 
 seedDatabaseFromFolder();
 
-module.exports = db;
+// Function to save activation state.
+function saveActivationState(isActivated) {
+    const stmt = db.prepare(`INSERT OR REPLACE INTO activation (key, value) VALUES (?, ?)`);
+    stmt.run('activated', isActivated ? 'true' : 'false');
+}
+
+// Function to get the activation state.
+function getActivationState() {
+    const stmt = db.prepare(`SELECT value FROM activation WHERE key = ?`);
+    const row = stmt.get('activated');
+    return row && row.value === 'true';
+}
+
+module.exports = { saveActivationState, getActivationState, db };

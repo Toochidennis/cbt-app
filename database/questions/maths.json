@@ -1811,16 +1811,6 @@
   },
   {
     "subject": "Mathematics",
-    "question": "",
-    "option_1": "",
-    "option_2": "",
-    "option_3": "",
-    "option_4": "",
-    "answer": null,
-    "year": 2022
-  },
-  {
-    "subject": "Mathematics",
     "question": "In the diagram above angle LNM and angle YNZ are represented by g and h respectively. Find ∠MNY",
     "option_1": "1800 - g0 - h0",
     "option_2": "360º - (g-h)º",
@@ -2286,7 +2276,7 @@
     "option_2": "5cm",
     "option_3": "4cm",
     "option_4": "3cm",
-    "answer": null,
+    "answer": 4,
     "year": 2021
   },
   {

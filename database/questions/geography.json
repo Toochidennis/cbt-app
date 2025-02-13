@@ -1,0 +1,3542 @@
+[
+  {
+    "subject": "Geography",
+    "question": "Which of the following settlement type is the largest?",
+    "option_1": "Conurbation",
+    "option_2": "City",
+    "option_3": "Megalopolis",
+    "option_4": "Agglomeration",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The location of iron and steel industry at Ajakuta in Nigeria is best explained by the presence of (1) iron ore at Itakpe (11) limestone at Ewekoro (III) river port at Lokoja (IV) coal at Orukpa and Okaba",
+    "option_1": "ll and IV",
+    "option_2": "I and II only",
+    "option_3": "I and IV only",
+    "option_4": "Il and Ill only",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "One characteristic that distinguishes urban settlements from rural settlements is that",
+    "option_1": "rural settlements are areas of secondary activities",
+    "option_2": "urban settlements are areas of primary activities",
+    "option_3": "urban settlements are areas of secondary and tertiary activities",
+    "option_4": "both primary and tertiary activities predominate in urban settlement",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A major problem in agricultural development in Nigeria is",
+    "option_1": "the application of fertilizer instead of manure",
+    "option_2": "insufficient labour",
+    "option_3": "insufficient storage facilities",
+    "option_4": "the presence of equatorial forest",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "They are formed in layers and derived from old rocks and the remains of dead organic materials. This description refers",
+    "option_1": "intrusive rocks",
+    "option_2": "sedimentary rocks",
+    "option_3": "metamorphic rocks",
+    "option_4": "igneous rocks",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following geographical regions of Nigeria covers one-fifth of the country and has a generally flat surface dotted with granitic hills? The",
+    "option_1": "North-Eastern highlands",
+    "option_2": "Cross River basin",
+    "option_3": "Western highlands",
+    "option_4": "North-Central highlands",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The solar system comprises the sun and",
+    "option_1": "nine planets",
+    "option_2": "seven planets",
+    "option_3": "six planets",
+    "option_4": "eight planets",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "On June 21st, when the sun is overhead at the Tropic of Cancer,places in the Northern Hemisphere experience",
+    "option_1": "shorter day and longer night",
+    "option_2": "longer day and night",
+    "option_3": "longer day and shorter night",
+    "option_4": "twilight",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following least influences population density in Nigeria?",
+    "option_1": "Tsetse fly infestation",
+    "option_2": "Mining",
+    "option_3": "Fertile agricultural land",
+    "option_4": "Thick forest vegetation",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following countries is located within the Horn of Africa?",
+    "option_1": "Kenya",
+    "option_2": "Djiboti",
+    "option_3": "Chad",
+    "option_4": "Swaziland",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following climatic types is found on the western margins of continents between altitude 300 and 400 North and South of the Equator?",
+    "option_1": "China type",
+    "option_2": "Mediterranean",
+    "option_3": "Sudan savanna",
+    "option_4": "Monsoon",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a sea route?",
+    "option_1": "New york-London-Rotterdam",
+    "option_2": "London-capetown-melbourne",
+    "option_3": "sydnry-suez-London",
+    "option_4": "London-moscow-baghdad",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following best explains why wind action is more predominant in Arid regions than in Humid regions?",
+    "option_1": "Lack of surface drainage and the presence of strong winds",
+    "option_2": "Excessively high temperature during the day and night",
+    "option_3": "Loose surface materials and the absence of vegetation cover",
+    "option_4": "Insufficient and unreliable rainfall",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Cement factory is usually located near",
+    "option_1": "source of capital",
+    "option_2": "source of raw materials",
+    "option_3": "the market",
+    "option_4": "source of labour",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Mountains formed as a result of compressional forces in the earth's crust are",
+    "option_1": "block mountains",
+    "option_2": "residual mountains",
+    "option_3": "volcanic mountains",
+    "option_4": "fold mountains",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "All the following are causes of mechanical weathering except",
+    "option_1": "temperature changes",
+    "option_2": "frost action",
+    "option_3": "alternate wetting and drying",
+    "option_4": "rain action",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following regions in Nigeria has an average height of over 100 metres above sea level?",
+    "option_1": "Biu Plateau",
+    "option_2": "North-Central Highlands",
+    "option_3": "Udi Plateau",
+    "option_4": "Adamawa Highlands",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following dams in Africa provides both irrigation water and hydro-electricity?",
+    "option_1": "Gezira",
+    "option_2": "Kainji",
+    "option_3": "Cabora Bassa",
+    "option_4": "Akosombo",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A conurbation is a settlement",
+    "option_1": "with about 500.000 people",
+    "option_2": "where a large number of town join together over a considerable area",
+    "option_3": "in which two or more towns have joined together with each retaining its identity",
+    "option_4": "whose people are predominantly farmers",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "All the major industrial zones of Nigeria owe their origin mainly to",
+    "option_1": "influx of migrant labour",
+    "option_2": "self-help projects",
+    "option_3": "the abundance of water resources",
+    "option_4": "the presence of cash crops",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Temperatures of adjacent coastlands are reduced when on - shore winds blow over cold currents because the",
+    "option_1": "current increases the total rainfall in such areas",
+    "option_2": "current influences the temperature of the prevailing winds",
+    "option_3": "rainfall in sunny areas is usually heavy",
+    "option_4": "current influences the air pressure",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "When the sun is directly overhead at the tropic of Capricorn (23 %, °) on 22nd December, the Northern Hemisphere experiences it's",
+    "option_1": "twilight",
+    "option_2": "spring equinox",
+    "option_3": "winter solstice",
+    "option_4": "summer solstice",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following rock types is coal associated with?",
+    "option_1": "Mechanically-formed sedimentary rocks",
+    "option_2": "Plutonic igneous rocks",
+    "option_3": "Organically-formed sedimentary rocks",
+    "option_4": "Hard crystalline rocks",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A large expanse of low, level land, formed due to an uplift of part of the sea floor bordering a continent is called",
+    "option_1": "a deltaic plain",
+    "option_2": "an outwash plain",
+    "option_3": "flood plain",
+    "option_4": "Da coastal plain",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following are best explains the drift of population from rural to the cities in Nigeria?",
+    "option_1": "There is food scarcity in the rural areas",
+    "option_2": "There are more job opportunities in the cities",
+    "option_3": "Better recreational facilities are available in the cities",
+    "option_4": "The cost of living in the cities is very high",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following best accounts for the decline in the importance of rail transport in Africa?",
+    "option_1": "Low volume of goods available for transportation",
+    "option_2": "Short distances covered by railways",
+    "option_3": "High competition from road transport",
+    "option_4": "Threat of retrenchment of railway workers",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "If the local time at a place X is 12.00 noon when the G.M.T is 5.00a.m then X is located on longitude",
+    "option_1": "75°W",
+    "option_2": "10°W",
+    "option_3": "105°E",
+    "option_4": "75°E",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "All the following are members of the ECOWAS except",
+    "option_1": "Cote d'Ivoire",
+    "option_2": "Cameroun",
+    "option_3": "Burkina Faso",
+    "option_4": " Senegal",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a proof to show that the earth is spherical in shape?",
+    "option_1": "twilight and dawn",
+    "option_2": "lunar eclipse",
+    "option_3": "aerial photograph",
+    "option_4": "sunrise and sunset",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Nigeria is located between longitude",
+    "option_1": "1oE and 10°E",
+    "option_2": "3°E and 10°E",
+    "option_3": "3°E and 15°E",
+    "option_4": "2°E and 15°E",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The world's busiest shipping routes are on the",
+    "option_1": "Indian ocean",
+    "option_2": "Pacific ocean",
+    "option_3": "Atlantic ocean",
+    "option_4": "Antarctic circle",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The outer layer of the earth is called the",
+    "option_1": "crust",
+    "option_2": "mantle",
+    "option_3": "barysphere",
+    "option_4": "hemisphere",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The major problem facing the utilization of human resources in West Africa is",
+    "option_1": "unemployment",
+    "option_2": "housing for all by the year 2000",
+    "option_3": "soil infertility",
+    "option_4": "emigration",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The development of hydro-electric power in Nigeria is least affected by the",
+    "option_1": "a regular supply of water",
+    "option_2": "availability of suitable sites for dams",
+    "option_3": "rapid increase in demand for electricity",
+    "option_4": "presence of high mountains",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The equatorial diameter of the earth is approximately",
+    "option_1": "14.76km",
+    "option_2": "6.760km",
+    "option_3": "14.67km",
+    "option_4": "8.760km",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "All the following are advantages of the bush fallowing system in West Africa except that it",
+    "option_1": "is very economical in the use of land",
+    "option_2": "reduces the need for the use of artificial fertilizers",
+    "option_3": "allows land to regain its fertility during fallow",
+    "option_4": "could lead to soil erosion",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The tourist centre of Ogbunike cave is located near",
+    "option_1": "Ikeja in Lagos state",
+    "option_2": "Yankari in Bauchi state",
+    "option_3": "Onitsha in Anambra state",
+    "option_4": "Kainji in Niger State",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is an effect of rural-urban migration on the source region?\nRural unemployment",
+    "option_1": "Rural unemployment",
+    "option_2": "Rural depopulation",
+    "option_3": "urban depopulation",
+    "option_4": "Rural congestion",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not an element of climate?",
+    "option_1": "precipitation",
+    "option_2": "air pressure",
+    "option_3": "altitude",
+    "option_4": "temperature",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following best accounts for the high population density in the Nile Valley?",
+    "option_1": "Conducive climate",
+    "option_2": "Migration from Europe during winter",
+    "option_3": "Presence of rich alluvial winter",
+    "option_4": "Presence of numerous oil fields",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Rocks which have been formed by the cooling and solidification of molten magma are called",
+    "option_1": "sedimentary rocks",
+    "option_2": "metamorphic rocks",
+    "option_3": "conglomerates",
+    "option_4": "igneous rocks",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The climatic belts recognized by the Greek were",
+    "option_1": "hot, mild and cool",
+    "option_2": "equatorial, polar and torrid",
+    "option_3": "torrid, temperate and frigid",
+    "option_4": "hot, cold and medium",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A conurbation can best be described as",
+    "option_1": "two or more towns joined together, each town maintaining its own identity",
+    "option_2": "a big area of land with few settlements",
+    "option_3": "a large village with thousands of people",
+    "option_4": "a large area with big cities",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Sills, dykes and batholiths are examples of",
+    "option_1": "extrusive volcanic landforms",
+    "option_2": "depositional landforms",
+    "option_3": "intrusive volcanic landforms",
+    "option_4": "landforms from earthquakes",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not true of pie chart?",
+    "option_1": "data with wide extreme can be conveniently represented in a pie chart",
+    "option_2": "statistics of various item can be represented on a single diagram",
+    "option_3": "it is often difficult to compare the component parts",
+    "option_4": "it is easy to draw",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following environmental hazards is due primarily to human activities?",
+    "option_1": "hurricane",
+    "option_2": "ozone depletion",
+    "option_3": "earthquake",
+    "option_4": "volcanic eruption",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Life expectancy refers to the",
+    "option_1": "age at which people retire from their jobs",
+    "option_2": "average age at which people die",
+    "option_3": "age at which people receive their pension",
+    "option_4": "achievement one makes in life",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The most common mode of transportation in Africa is",
+    "option_1": "road",
+    "option_2": "soil",
+    "option_3": "ocean",
+    "option_4": "air",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A great advantage of Basin irrigation is that",
+    "option_1": "the basin helps to trap much alluvium to enrich the soil",
+    "option_2": "it makes it possible to irrigate larger areas",
+    "option_3": "it is an expensive means of irrigation",
+    "option_4": "water is not wasted",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "All the following are problems of mining in Africa except",
+    "option_1": "inadequate unskilled labour",
+    "option_2": "use of obsolete technology",
+    "option_3": "shortage of power",
+    "option_4": "inadequate foreign capital",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "On June 21st, when the sun is overhead at the Tropic of Cancer,places in the Northern Hemisphere experience",
+    "option_1": "shorter day and longer night",
+    "option_2": "longer day and night",
+    "option_3": "longer day and shorter night",
+    "option_4": "twilight",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A settlement developed at the meeting point of roads is known as a",
+    "option_1": "port town",
+    "option_2": "nodal town",
+    "option_3": "confluence town",
+    "option_4": "gap town",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "It is a port that specializes in receiving and redistributing goods to the neighboring countries'. Which of the following ports is described in the preceding statement?",
+    "option_1": "Ferry port",
+    "option_2": "Enterport",
+    "option_3": "River port",
+    "option_4": "outport",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Africa's largest timber producer is",
+    "option_1": "Ghana",
+    "option_2": "Malawi",
+    "option_3": "Zaire",
+    "option_4": "Nigeria",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A geyser is best described as/an",
+    "option_1": "explosion of volcano",
+    "option_2": "fountain of super heated stream",
+    "option_3": "thermal stream",
+    "option_4": "pool of hot water",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A line joining places having an equal degree of cloudiness is an",
+    "option_1": "isotherm",
+    "option_2": "isohyet",
+    "option_3": "isoneph",
+    "option_4": "isobar",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The process of head ward erosion will lead to the formation of",
+    "option_1": "pot holes",
+    "option_2": "river capture",
+    "option_3": "oxbow lakes",
+    "option_4": "alluvial cones",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a fossil fuel?",
+    "option_1": "Gneiss",
+    "option_2": "Granite",
+    "option_3": "Lignite",
+    "option_4": "Mica",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following lines of latitudes divides the earth into two hemispheres",
+    "option_1": "Tropic of Cancer",
+    "option_2": "The Equator",
+    "option_3": "Tropic of Capricorn",
+    "option_4": "Antarctic Circle",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Sunrise and sunset are not proofs that the Earth is spherical in shape, as they can be observed on other celestial bodies as well.",
+    "option_1": "mercury and venus",
+    "option_2": "venus and mars",
+    "option_3": "mercury and Saturn",
+    "option_4": "venus and Jupiter",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The system of cultivation of tropical commercial crops estates is known as",
+    "option_1": "mixed cropping",
+    "option_2": "bush fallowing",
+    "option_3": "intensive farming",
+    "option_4": "plantation agriculture",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "A mercury barometer is used for measuring",
+    "option_1": "wind speed",
+    "option_2": "atmospheric pressure",
+    "option_3": "temperature",
+    "option_4": "sunshine",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "When a ship appears over the distant horizon the",
+    "option_1": "mast is seen before the hull",
+    "option_2": "hull is seen before the cabin",
+    "option_3": "cabin is seen before the mast",
+    "option_4": "hull and the mast are seen together",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The Gezira scheme and the Manaquil Extension are famous for the cultivation of",
+    "option_1": "cotton",
+    "option_2": "kolanut",
+    "option_3": "beans and other legumes",
+    "option_4": "sugarcane",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "An example of an organically formed sedimentary rock is",
+    "option_1": "coal",
+    "option_2": "granite",
+    "option_3": "rock salt",
+    "option_4": "sandstone",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The ocean that connects Europe and America is the",
+    "option_1": "Antarctic ocean",
+    "option_2": "Atlantic ocean",
+    "option_3": "Arctic ocean",
+    "option_4": "Indian ocean",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which activity requires the following? I. Large area of land usually in thousands of hectares II. Availability of water either in the form of rain or irrigation III. High capital outlay",
+    "option_1": "plantation agriculture",
+    "option_2": "lumbering",
+    "option_3": "tourism industry",
+    "option_4": "mining",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "In which part of the atmosphere does rain clouds develop?",
+    "option_1": "thermosphere",
+    "option_2": "exosphere",
+    "option_3": "stratosphere",
+    "option_4": "Troposphere",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which type of rock are quartzite, schist and marble",
+    "option_1": "Metamorphic",
+    "option_2": "sedimentary",
+    "option_3": "volcanic",
+    "option_4": "Igneous",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The nearest planet to the sun is the",
+    "option_1": "Earth",
+    "option_2": "Mercury",
+    "option_3": "Pluto",
+    "option_4": "Mars",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The angular distance of a point on the Earth's surface measured in degrees from the centre of the Earth east or west of the Greenwich Meridian is known as",
+    "option_1": "orbit",
+    "option_2": "latitude",
+    "option_3": "axis",
+    "option_4": "longitude",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Copper is an important raw material in the",
+    "option_1": "pharmaceutical industry",
+    "option_2": "chemical industry",
+    "option_3": "oil refining industry",
+    "option_4": "electrical industry",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following features is shared by Hong Kong, Java and Manhattan?",
+    "option_1": "multi-racial communities",
+    "option_2": "rapid industrial growth",
+    "option_3": "rapid industrial growth",
+    "option_4": "rapid industrial growth",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The innermost section of the Earth is the",
+    "option_1": "sial",
+    "option_2": "mantle",
+    "option_3": "crust",
+    "option_4": "core",
+    "answer": 4,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The part of the earth's crust that is covered by oceans and seas is called",
+    "option_1": "stratosphere",
+    "option_2": "ionosphere",
+    "option_3": "hydrosphere",
+    "option_4": "biosphere",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The major source of power for most terrestrial ecosystems is",
+    "option_1": "geothermal energy",
+    "option_2": "nuclear power",
+    "option_3": "solar energy",
+    "option_4": "hydroelectric power",
+    "answer": 3,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The term over-population is best defined as the situation where",
+    "option_1": "the population exceeds available resources",
+    "option_2": "birth rate is equal to death rate",
+    "option_3": "there is an increasing birth rate and a decreasing infant mortality rate",
+    "option_4": "there is high population density",
+    "answer": 1,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The longest river in Africa is River",
+    "option_1": "Zambezi",
+    "option_2": "nile",
+    "option_3": "Senegal",
+    "option_4": "congo",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a type of mountain?",
+    "option_1": "conical mountain",
+    "option_2": "mountain of accumulation",
+    "option_3": "block mountain",
+    "option_4": "fold mountain",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "When wet and dry bulb thermometers record the same temperature, it means",
+    "option_1": "air is dry",
+    "option_2": "air is saturated",
+    "option_3": "humidity is high",
+    "option_4": "humidity is low",
+    "answer": 2,
+    "year": 2024
+  },
+  {
+    "subject": "Geography",
+    "question": "The broad-leafed evergreen and dense equatorial forest of the Amazon basin is called",
+    "option_1": "blanos",
+    "option_2": "campos",
+    "option_3": "selvas",
+    "option_4": "pampas",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "River regime is best described as the",
+    "option_1": "seasonal variation in the volume of water in a river",
+    "option_2": "period a river overflows its bank",
+    "option_3": "amount of load a river carries",
+    "option_4": "rate at which a river flows",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Nigeria major export commodity is",
+    "option_1": "cocoa",
+    "option_2": "petroleum",
+    "option_3": "coal",
+    "option_4": "cotton",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following has the highest salinity?",
+    "option_1": "Dead sea",
+    "option_2": "Mediterranean sea",
+    "option_3": "Red sea",
+    "option_4": "South Atlantic ocean",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "A settlement where two rivers meet is called a",
+    "option_1": "nodal town",
+    "option_2": "linear settlement",
+    "option_3": "nucleated settlement",
+    "option_4": "confluence town",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Plateaux formed together with fold mountains are best described as",
+    "option_1": "dissected",
+    "option_2": "tactonic",
+    "option_3": "intermoutau",
+    "option_4": "piedmout",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following rocks is organically formed?",
+    "option_1": "coal",
+    "option_2": "grit",
+    "option_3": "shale",
+    "option_4": "gypsum",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Kossou Dam is located on river",
+    "option_1": "nile",
+    "option_2": "nile",
+    "option_3": "badama",
+    "option_4": "cunene",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "A major function performed by rural settlement is",
+    "option_1": "commercial",
+    "option_2": "industrial",
+    "option_3": "administrative",
+    "option_4": "agriculture",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "A line joining all points of equal salinity is an",
+    "option_1": "isoplech",
+    "option_2": "isopach",
+    "option_3": "isoba",
+    "option_4": "isohaline",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The highest concentration of industries in Nigeria is found in the",
+    "option_1": "South-eastern zone",
+    "option_2": "North-central zone",
+    "option_3": "Western zone",
+    "option_4": "Mid-western zone",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a process of chemical weathering?",
+    "option_1": "frost action",
+    "option_2": "hydrolysis",
+    "option_3": "oxidation",
+    "option_4": "carbonation",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The coastal regions of Sierra Leone record an annual rainfall of over",
+    "option_1": "5,000mm",
+    "option_2": "3000mm",
+    "option_3": "4,800mm",
+    "option_4": "6,500mm",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Buying and selling of goods and services within a country is termed as",
+    "option_1": "international trade",
+    "option_2": "barter",
+    "option_3": "foreign trade",
+    "option_4": "internal trade",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a wind deposited land form?",
+    "option_1": "yardang",
+    "option_2": "rock pedestal",
+    "option_3": "loess",
+    "option_4": "deflation hollow",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following represents the correct sequence in which denudation occurs?",
+    "option_1": "erosion → weathering → deposition",
+    "option_2": "weathering → deposition → erosion",
+    "option_3": "deposition → weathering → erosion",
+    "option_4": "Weathering → erosion → deposition",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The table above shows the temperature and rainfall distribution of station Z. Study and use it to answer the question.\n\nWhat is the annual range of temperature for station Z",
+    "option_1": "10oC",
+    "option_2": "(\\54^0\\)C",
+    "option_3": "22oC",
+    "option_4": "32o",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The table above shows the temperature and rainfall distribution of station Z. Study and use it to answer the question.Which month of the year has the highest temperature",
+    "option_1": "April",
+    "option_2": "May",
+    "option_3": "June",
+    "option_4": "August",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The table above shows the temperature and rainfall distribution of station Z. Study and use it to answer the question.The wettest month of the year is",
+    "option_1": "April",
+    "option_2": "June",
+    "option_3": "May",
+    "option_4": "August",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Water vapour is turned into water droplets by the process of",
+    "option_1": "convection",
+    "option_2": "evaporation",
+    "option_3": "liquefaction",
+    "option_4": "condensation",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the population density of a country with a total population of 140,000,000 and a total land area of 500,000 (\\Km^2\\)?",
+    "option_1": "200 persons per km2",
+    "option_2": "500 persons per km2",
+    "option_3": "350 persons per (\\km^2\\)",
+    "option_4": "280 persons per km2",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following rocks is produced by the solidification of magna within the earth crust",
+    "option_1": "extrusive rock",
+    "option_2": "sedimentary rock",
+    "option_3": "plutonic rocks",
+    "option_4": "metamorphic rock",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Urban type of settlement is best described as",
+    "option_1": "isolated",
+    "option_2": "dispersed",
+    "option_3": "nucleated",
+    "option_4": "nucleated",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Crater lakes are usually associated with areas",
+    "option_1": "that have heavy fault lines",
+    "option_2": "that have active volcanoes",
+    "option_3": "that have extinct volcanoes",
+    "option_4": "where subsidence has taken place",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is associated with savanna vegetation?",
+    "option_1": "shallow-rooted trees",
+    "option_2": "Trees that grow throughout the year",
+    "option_3": "dense vegetation",
+    "option_4": "scrub",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The instrument used to measure relative humidity is called",
+    "option_1": "hygrometer",
+    "option_2": "anemometer",
+    "option_3": "barometer",
+    "option_4": "thermometer",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a problem militating against political and economic integration in West Africa?",
+    "option_1": "currency",
+    "option_2": "political instability",
+    "option_3": "powerful colonial economic ties",
+    "option_4": "religion",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following landforms is associated with parallel vaulting?",
+    "option_1": "Gorge",
+    "option_2": "Rift valley",
+    "option_3": "Inselberg",
+    "option_4": "Dyke",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "An example of a coastline of emergence is",
+    "option_1": "a raised beach",
+    "option_2": "a dalmation coast",
+    "option_3": "a ria coast",
+    "option_4": "an estuarian coast",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a plantation crop?",
+    "option_1": "cocoa",
+    "option_2": "oil palm",
+    "option_3": "rubber",
+    "option_4": "rye",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Soil erosion by action of rain can be caused y all the following except",
+    "option_1": "scanty vegetation",
+    "option_2": "aridity",
+    "option_3": "tropical rainstorms",
+    "option_4": "steep slopes",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The sparse population in the middle belt of West Africa can be traced to all of the following except",
+    "option_1": "inter-ethnic war",
+    "option_2": "tsetse fly infestation",
+    "option_3": "Arab slave trade in the North",
+    "option_4": "concentration of industries",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "When weathering occurs on hill slopes, rock debris usually pile up at the bottom of the hill slope to form",
+    "option_1": "creep",
+    "option_2": "levee",
+    "option_3": "pebbles",
+    "option_4": "scrcee",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Jos plateau is an example of a",
+    "option_1": "Basalt plateau",
+    "option_2": "Volcanic plateau",
+    "option_3": "Plutonic plateau",
+    "option_4": "Tectonic plateau",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The world's greatest gold producer is",
+    "option_1": "South Africa",
+    "option_2": "Ghana",
+    "option_3": "Nigeria",
+    "option_4": "Canada",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a major boost of tourism?",
+    "option_1": "adequate publicity about natural scenery",
+    "option_2": "variation in mode of transportation",
+    "option_3": "higher dependency ratio of the population",
+    "option_4": "specialization in labour force",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Africa has the largest potential reserve of hydro-electric power in the world because",
+    "option_1": "it is surrounded by large oceans",
+    "option_2": "many of the areas are not accessible",
+    "option_3": "it has copious rainfall and many water falls",
+    "option_4": "Africans have not developed the use of hydro-electric",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Great Britain and Germany are trading partners of west African countries from",
+    "option_1": "Western Europe",
+    "option_2": "South America",
+    "option_3": "North America",
+    "option_4": "The far east",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Under the Greek system of climate classification, the world is divided into",
+    "option_1": "hot, temperate and dry zones",
+    "option_2": "temperate, fridgid and hot zones",
+    "option_3": "torrid, equatorial and tropical zones",
+    "option_4": "torrid, temperate and frigid zones",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a feature of heavy industries?",
+    "option_1": "capital intensive",
+    "option_2": "small scale plants",
+    "option_3": "consumer goods production",
+    "option_4": "low turn-over",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not true of the North Atlantic sea route?",
+    "option_1": "It links Nigeria with Europe",
+    "option_2": "It is the busiest sea route",
+    "option_3": "Goods carried on the route include grains",
+    "option_4": "It links North America with Europe",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Soil erosion by action of rain can be caused by all of the following except",
+    "option_1": "tropical rainstorms",
+    "option_2": "scanty vegetation",
+    "option_3": "steep slopes",
+    "option_4": "aridity",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "In which erosional plain is an inselberg commonly found",
+    "option_1": "pediplain",
+    "option_2": "flood plain",
+    "option_3": "penaplain",
+    "option_4": "outerwash plain",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The largest ocean in the world is the",
+    "option_1": "Arctic ocean",
+    "option_2": "Atlantic ocean",
+    "option_3": "Indian ocean",
+    "option_4": "Pacific ocean",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The type of energy that is most environmentally friendly is",
+    "option_1": "Thermal",
+    "option_2": "Nuclear",
+    "option_3": "hydro electric",
+    "option_4": "solar",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Rocks are said to be crystalline when the atoms forming them are",
+    "option_1": "found in sedimentary rocks",
+    "option_2": "found in crystalline rocks",
+    "option_3": "arrenged in a deposit pattern",
+    "option_4": "arranged vertically",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The part of the earth crust covered by water bodies is known as the",
+    "option_1": "hydrosphere",
+    "option_2": "sial",
+    "option_3": "stratosphere",
+    "option_4": "",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The coastal regions of Sierra Leone record an annual rainfall of over",
+    "option_1": "3000mm",
+    "option_2": "6,500mm",
+    "option_3": "4,800mm",
+    "option_4": "5,000mm",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following pairs of landforms can be found in the desert areas?",
+    "option_1": "Barchans and tombolos",
+    "option_2": "Zeugens and rock pedestals",
+    "option_3": "Sauddoars and tombolos",
+    "option_4": "Yardangs and batholiths",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following sources of power supply is renewable?",
+    "option_1": "gas",
+    "option_2": "nuclear",
+    "option_3": "solar",
+    "option_4": "cone",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not correct about the great circle?",
+    "option_1": "The Equator is a Great Circle among the latitudes",
+    "option_2": "The Greenwich Meridian and the International Date Line are the only lines of latitude forming a Great Circle",
+    "option_3": "The Great Circle divides the earth into two equal spheres",
+    "option_4": "The centre of the Great Circle is also the centre of the earth",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The main reason for which most manufacturing industries in West Africa are concentrated in cities and towns along the coast is that they have",
+    "option_1": "a large number of warehouses",
+    "option_2": "large urban market",
+    "option_3": "a large pool of unskilled labour",
+    "option_4": "numerous banks",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The type of agriculture in which water is conserved in a year so that crops can be grown in succeeding years by ploughing, mulching or harrowing is known as",
+    "option_1": "arable farming",
+    "option_2": "intensive cultivation",
+    "option_3": "extensive cultivation",
+    "option_4": "dry farming",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the features of wind deposition is",
+    "option_1": "a mesa",
+    "option_2": "an inselberg",
+    "option_3": "a ventifact",
+    "option_4": "barchan",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following stations is situated in a region of tropical monsoon climate?",
+    "option_1": "Valencia",
+    "option_2": "In salah",
+    "option_3": "Bombay(Munbai)",
+    "option_4": "Durban",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The instrument used to measure the duration of sunshine is the",
+    "option_1": "campbell-stokes recorder",
+    "option_2": "cup-anemometer",
+    "option_3": "aneroid barometer",
+    "option_4": "aneroid barometer",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The land-use activities which can be considered responsible for soil erosion in the tropics are",
+    "option_1": "irrigation, terrace farming and crop rotation",
+    "option_2": "mining, bush fallowing and market gardening",
+    "option_3": "industrialization, monoculture and lumbering",
+    "option_4": " bush fallowing, overgrazing and monoculture",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The sun is vertically overhead at the tropic of Caprison in",
+    "option_1": "September 23rd",
+    "option_2": "March 21st",
+    "option_3": "June 21st",
+    "option_4": "December 22nd",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Barchan dunes move",
+    "option_1": "at right angle to the prevailing wind",
+    "option_2": "in the same direction as the prevailing winds",
+    "option_3": "in the same direction as the prevailing winds",
+    "option_4": "in a circular direction",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The major crop grown in the El juf Basin of Mali is",
+    "option_1": "Cotton",
+    "option_2": "cashew",
+    "option_3": "cocoa",
+    "option_4": "coffee",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the temperature around an aeroplane flying at an altitude of 4000metres if the temperature on the earth's surface is",
+    "option_1": "140C",
+    "option_2": "660C",
+    "option_3": "260C",
+    "option_4": "(\\12^0C\\)",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "A block mountain is formed as a result of",
+    "option_1": "fission",
+    "option_2": "vulcanisity",
+    "option_3": "differential erosion",
+    "option_4": "faulting",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Quartz, fieldspar and mica are three principal mineral that can easily be seen in",
+    "option_1": "limestone",
+    "option_2": "basalt",
+    "option_3": "coal",
+    "option_4": "granite",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The difference in time between two longitudes is approximately",
+    "option_1": "15 hours",
+    "option_2": "4 hours",
+    "option_3": "40 minutes",
+    "option_4": "4 minutes",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The dam which is not used in Gezira is the",
+    "option_1": "Aswan",
+    "option_2": "Jebal Azula",
+    "option_3": "Jebal Azula",
+    "option_4": "Sennar",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The most common form of migration experienced in countries of Tropical Africa is",
+    "option_1": "urban-rural migration",
+    "option_2": "rural-rural migration",
+    "option_3": "urban-urban migration",
+    "option_4": "rural-urban migration",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "A slope is said to be even when the contours are",
+    "option_1": "concentric",
+    "option_2": "irregularly spaced",
+    "option_3": "closely spaced",
+    "option_4": "equally placed",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following distinguishes rotation from revolution?",
+    "option_1": "Revolution causes day and night while rotation causes season",
+    "option_2": "Rotation causes variation in the lengths of day and night while revolution causes rising and falling of tides",
+    "option_3": "A complete revolution takes 24 hours while rotation makes a year",
+    "option_4": "The earth rotates on its axis while it revolves around the sun in an elliptical orbit",
+    "answer": 4,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Countries in the northern hemisphere experience shorter days and longer nights when the sun is overhead on the",
+    "option_1": "Equator",
+    "option_2": "Artic Circle",
+    "option_3": "Tropic of Cancer",
+    "option_4": "Tropic of Capricorn",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "A piece of evidence that confirms that the earth is spherical is",
+    "option_1": "solar system",
+    "option_2": "earth's orbit",
+    "option_3": "moon's eclipse",
+    "option_4": "standard time",
+    "answer": 3,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "A tremendous pressure or temperature change may lead to the formation of",
+    "option_1": "gnesis",
+    "option_2": "clay",
+    "option_3": "limestone",
+    "option_4": "granite",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Exports from Mali are most likely to pass through the sea port at",
+    "option_1": "Banjul",
+    "option_2": "Abidjan",
+    "option_3": "Lagos",
+    "option_4": "dakar",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "Exports from Mali are most likely to pass through the sea port at",
+    "option_1": "Banjul",
+    "option_2": "Abidjan",
+    "option_3": "Lagos",
+    "option_4": "dakar",
+    "answer": 2,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "\"An open forest with evergreen, thick leathery leaves and woody stems with deep roots\" is known as",
+    "option_1": "mediterranean vegetation",
+    "option_2": "montane vegetation",
+    "option_3": "hot desert vegetation",
+    "option_4": "tropical rainforest",
+    "answer": 1,
+    "year": 2023
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are advantages of overpopulation except?",
+    "option_1": "Quick information dissemination",
+    "option_2": "Socialization",
+    "option_3": "Large labour",
+    "option_4": "Insufficient food",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is best defined as the movement of people from one geographical area to another involving permanent or temporary residence or settlement?",
+    "option_1": "Transportation",
+    "option_2": "Civilization",
+    "option_3": "Migration",
+    "option_4": "urbanization",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Use thUse the information on country Y below to answer the question that follows:\nLand area = 200,000km2\n\nPopulation = 10,000,000.\n\n\ncalculate the population density of country Y :",
+    "option_1": "50 persons per km2",
+    "option_2": "2000 persons per km2",
+    "option_3": "200 persons per km2",
+    "option_4": "20 persons per km2",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The birth rate of a country can be increased through the following except?",
+    "option_1": "Encouragement of early marriages",
+    "option_2": "Encouragement of less work hours",
+    "option_3": "Encouragement of polygamy",
+    "option_4": "legislation against abortion",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following zones is the least industrialized in Nigeria?",
+    "option_1": "Lokoja-Ajaokuta",
+    "option_2": "Lagos-Ikeja",
+    "option_3": "Porthacourt-Aba",
+    "option_4": "Kaduna-Zaria",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are areas of lowlands in Nigeria except?",
+    "option_1": "The Chad Basin",
+    "option_2": "The Eastern Scarpland",
+    "option_3": "The Coaster plain",
+    "option_4": "The Niger-Benue trough",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The wind which blows across the Atlantic Ocean towards the coast of Nigeria and is responsible for rainy season is known as?",
+    "option_1": "Equatorial Easterlies",
+    "option_2": "Land and sea breeze",
+    "option_3": "Tropical continental airmass",
+    "option_4": "Tropical maritime airmass",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a major river basin in Nigeria?",
+    "option_1": "The Cross River Basin",
+    "option_2": "The Niger Basin",
+    "option_3": "The South Atlantic Basin",
+    "option_4": "The Sokoto Basin",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Tin-mining activities in Nigeria are the main causes of environmental degradation on the?",
+    "option_1": "Westen Highlands",
+    "option_2": "Eastern Highlands",
+    "option_3": "Jos Plateau",
+    "option_4": "Obudu Plateau",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The high cost of lumbering operations in tropical forest is mainly due to?",
+    "option_1": "Shortage of labour",
+    "option_2": "Absence of many rivers",
+    "option_3": "Absence of pure stands of trees",
+    "option_4": "low quality of available timber",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following farming activity best describes the rearing of only animals like cattle, sheep and goat mainly in the savanna belt of the north?",
+    "option_1": "Mixed farming",
+    "option_2": "Animal farming",
+    "option_3": "Pastoral farming",
+    "option_4": "Intensive farming",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The outer structure of the earth is made up of the following except?",
+    "option_1": "Mesosphere",
+    "option_2": "Atmosphere",
+    "option_3": "Biosphere",
+    "option_4": "Hydrosphere",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is an importance of the atmosphere to living organisms?",
+    "option_1": "It provides water for industrial uses",
+    "option_2": "It provides oxygen for animals and plants for respiration",
+    "option_3": "It provides shelter in form of timber for man",
+    "option_4": "It aids transportation through construction of roads and railways",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The correct arrangement of the layers of the earth crust from the surface to the interior is?",
+    "option_1": "sial, mantle, sima, core",
+    "option_2": "sima, sial, core, mantle",
+    "option_3": "core, mantle, sima and sial",
+    "option_4": "sial, sima, mantle and core",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "If the scale of a map is 2cm to 1km, what is the ground distance if the distance between two towns on the map is 20cm?",
+    "option_1": "5km",
+    "option_2": "2.5km",
+    "option_3": "10km",
+    "option_4": "20km",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "If the scale of two maps are (a;1:100,000 and b;1:400,000) what is the ground distance if the distance between two towns on the maps is 10cm?",
+    "option_1": "10km, 40km",
+    "option_2": "5km, 20km",
+    "option_3": "2.5km, 10km",
+    "option_4": "20km, 80km",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a reason for the high volume of trade between Nigeria and developed countries?",
+    "option_1": "similarity of products",
+    "option_2": "The Niger Basin",
+    "option_3": "The South Atlantic Basin",
+    "option_4": "The Sokoto Basin",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are seaports used in the North Atlantic sea route except?",
+    "option_1": "Lagos-Antwerp",
+    "option_2": "Lagos-Montreal",
+    "option_3": "Lagos-Southampton",
+    "option_4": "Lagos-Rotterdam",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ is the condition of the lower atmosphere of a place over a short period?",
+    "option_1": "climate",
+    "option_2": "weather",
+    "option_3": "cloud",
+    "option_4": "Humidity",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "In a combined maximum and minimum thermometer, the difference between the hottest and coldest daily temperature for that day gives the?",
+    "option_1": "Diurnal range of temperature",
+    "option_2": "Mean daily temperature",
+    "option_3": "Minimum daily temperature",
+    "option_4": "Maximum daily temperature",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ is defined as the total surrounding or medium of any organism in a given area?",
+    "option_1": "Biotic component",
+    "option_2": "Abiotic component",
+    "option_3": "Environment",
+    "option_4": "Ecosystem",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following processes leads to the loss of carbon from the air?",
+    "option_1": "combustion",
+    "option_2": "respiration",
+    "option_3": "putrifaction",
+    "option_4": "putrifaction",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "On maps, lines drawn to join all places in the ocean having equal degree of salinity are called?",
+    "option_1": "isohalines",
+    "option_2": "isobars",
+    "option_3": "isosalines",
+    "option_4": "isossal",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Where the salinity of an ocean is high;",
+    "option_1": "the ocean water is dense and flows at the ocean surface towards a low salinity area",
+    "option_2": "the ocean water is dense and creeps at the bottom of the ocean towards low salinity areas",
+    "option_3": "the ocean water is light and flows at the area surface towards a high salinity area",
+    "option_4": "the ocean water is light and flows at the ocean surface towards a low salinity area",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The type of water left in the soil after excess water has been drained off, following heavy rainfall is known as?",
+    "option_1": "Field capacity",
+    "option_2": "capillary water",
+    "option_3": "gravitational water",
+    "option_4": "hygroscopic water",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The lowest part in the soil profile is known as?",
+    "option_1": "top soil",
+    "option_2": "sub soil",
+    "option_3": "parent materials",
+    "option_4": "bedrock",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a graphical representation of statistical data?",
+    "option_1": "Choropleth map",
+    "option_2": "Dot map",
+    "option_3": "Shaded map",
+    "option_4": "Star graph",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a vegetation characteristics of the Tropical rainforest?",
+    "option_1": "Trees are not in pure stand",
+    "option_2": "Tough, small, leathery, hairy leaves to guard against excessive transpiration",
+    "option_3": "Trees are conical in shape",
+    "option_4": "there is high undergrowth",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a problem of landlocked countries?",
+    "option_1": "Security of goods",
+    "option_2": "Political stability",
+    "option_3": "Low freight cost",
+    "option_4": "Political dependence",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following is not a problem involved in harnessing solar energy?",
+    "option_1": "Poor technological know-how",
+    "option_2": "Adequacy of capital",
+    "option_3": "Unreliability",
+    "option_4": "Fear of competition with established energy sources",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following surveying instruments is used to set out lines at right angles to the main chain line?",
+    "option_1": "Optical square",
+    "option_2": "Station pegs",
+    "option_3": "Offset staff",
+    "option_4": "Steel Band",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "________is the failure of the end point of a closed traverse to fall exactly on the point of origin of the transverse?",
+    "option_1": "Error of compass",
+    "option_2": "Traverse error",
+    "option_3": "Error of closure",
+    "option_4": "Field error",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the process of lowering and leveling of the earth surface by gradual breaking and wearing away of such earth's surfaces?",
+    "option_1": "Weathering",
+    "option_2": "Denudation",
+    "option_3": "Relief",
+    "option_4": "Mass wasting",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is an effect of the earth's revolution?",
+    "option_1": "Day and night",
+    "option_2": "It determines a year",
+    "option_3": "Dawn and Twilight",
+    "option_4": "Apparent Sunrise and sunset",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The soil gains nitrogen through one of the following except?",
+    "option_1": "Denitrification",
+    "option_2": "Application of organic manure",
+    "option_3": "Electrical discharge",
+    "option_4": "Symbiotic nitrogen fixation",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a way of controlling soil erosion?",
+    "option_1": "Overgrazing",
+    "option_2": "Contour ploughing",
+    "option_3": "Deforestation",
+    "option_4": "Bush burning",
+    "answer": 2,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "__________ is a highland area which seperates the headstreams of rivers flowing in different directions but rising from the same mountainous source?",
+    "option_1": "Flood plain",
+    "option_2": "Cuesta",
+    "option_3": "Watershed",
+    "option_4": "Plateau",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "___________ is a layer of very fine wind-deposited sand and silt?",
+    "option_1": "loess",
+    "option_2": "seif",
+    "option_3": "barchan",
+    "option_4": "Bajada",
+    "answer": 1,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "An important mineral deposit in south Africa which has attracted a large number of white settler is?",
+    "option_1": "Iron in Durban",
+    "option_2": "Copper in Cape Town",
+    "option_3": "Gold in Witwatersrand",
+    "option_4": "Aluminium in Johannessburg",
+    "answer": 3,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following gives the correct full meaning of G.I.S?",
+    "option_1": "Geographic Internet Solution",
+    "option_2": "Geographic Internet System",
+    "option_3": "Geographic Information Spread",
+    "option_4": "Geographic Information System",
+    "answer": 4,
+    "year": 2022
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are volcanic mountains except",
+    "option_1": "Cotopaxi of Ecuador",
+    "option_2": "Midcrop of Sumatra",
+    "option_3": "Fuji of Japan",
+    "option_4": "Monadnock of USA",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The human activity that can improve composition of the atmosphere is",
+    "option_1": "Use of chemicals",
+    "option_2": "Land reclamation",
+    "option_3": "Mining and Construction works",
+    "option_4": "Cutting down of trees",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a sedimentary rock.",
+    "option_1": "Graphite",
+    "option_2": "shale",
+    "option_3": "marble",
+    "option_4": "schist",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "These are landforms producing agent except",
+    "option_1": "waves",
+    "option_2": "rivers",
+    "option_3": "storms",
+    "option_4": "glaciers",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The function performed by urban to the rural settlement in supply of",
+    "option_1": "Industrial raw materials",
+    "option_2": "medicinal herbs",
+    "option_3": "food",
+    "option_4": "maufactured goods",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Use the map below to answer this question above    The feature marked Y on the map is?",
+    "option_1": "obon hill",
+    "option_2": "obudu plateau",
+    "option_3": "alantika mountain",
+    "option_4": "mandara mountain",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the feature labelled K on the map is",
+    "option_1": "river sokoto",
+    "option_2": "lake chad",
+    "option_3": "lake kainji",
+    "option_4": "river zamfara",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The benefits of international trade to developing nations include the following except",
+    "option_1": "Encourages specialisation in production",
+    "option_2": "Encourages healthy competition",
+    "option_3": "Strains international trade relation",
+    "option_4": "Enables nations to move from subsistence to mechanized economy",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not caused by the earth's rotation?",
+    "option_1": "Day and night",
+    "option_2": "Seasonal changes",
+    "option_3": "Deflection of winds",
+    "option_4": "Deflection of ocean currents",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are responsible for the concentration of industries in eastern United States of America except",
+    "option_1": "Large market",
+    "option_2": "Natural resources",
+    "option_3": "Inadequate capital",
+    "option_4": "High technology",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following farming activity best describes the rearing of only animals like cattle, sheep and goat mainly in the savanna belt of the north?",
+    "option_1": "mixed farming",
+    "option_2": "animal farming",
+    "option_3": "pastoral farming",
+    "option_4": "intensive farming",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The outer structure of the earth is made up of the following except?",
+    "option_1": "mesosphere",
+    "option_2": "atmosphere",
+    "option_3": "biosphere",
+    "option_4": "Hydrosphere",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is an importance of the atmosphere to living organisms?",
+    "option_1": "It provides water for industrial uses",
+    "option_2": "It provides oxygen for animals and plants for respiration",
+    "option_3": "It provides shelter in form of timber for man",
+    "option_4": "It aids transportation through construction of roads and railways",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The correct arrangement of the layers of the earth crust from the surface to the interior is",
+    "option_1": "sial, mantle, sima, core",
+    "option_2": "sima, sial, core, mantle",
+    "option_3": "core, mantle, sima and sial",
+    "option_4": "sial, sima, mantle and core",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "If the scale of a map is 2cm to 1km, what is the ground distance if the distance between two towns on the map is 20cm",
+    "option_1": "5km",
+    "option_2": "2.5km",
+    "option_3": "10km",
+    "option_4": "20km",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "If the scale of two maps are (a;1:100,000 and b;1:400,000) what is the ground distance if the distance between two towns on the maps is 10cm",
+    "option_1": "10km, 40km",
+    "option_2": "5km, 20km",
+    "option_3": "2.5km, 10km",
+    "option_4": "20km, 80km",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a reason for the high volume of trade between Nigeria and developed countries?",
+    "option_1": "similarity of products",
+    "option_2": "low level of technology",
+    "option_3": "colonial Ties",
+    "option_4": "presence of trade unions",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are seaports used in the North Atlantic sea route except",
+    "option_1": "Lagos-Antwerp",
+    "option_2": "Lagos-Montreal",
+    "option_3": "Lagos-Southampton",
+    "option_4": "Lagos-Rotterdam",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ is the condition of the lower atmosphere of a place over a short period",
+    "option_1": "climate",
+    "option_2": "weather",
+    "option_3": "cloud",
+    "option_4": "humidity",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "In a combined maximum and minimum thermometer, the difference between the hottest and coldest daily temperature for that day gives the",
+    "option_1": "Diurnal range of temperature",
+    "option_2": "Mean daily temperature",
+    "option_3": "Minimum daily temperature",
+    "option_4": "Maximum daily temperature",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ is defined as the total surrounding or medium of any organism in a given area",
+    "option_1": "Biotic component",
+    "option_2": "Abiotic component",
+    "option_3": "Environment",
+    "option_4": "Ecosystem",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following processes leads to the loss of carbon from the air",
+    "option_1": "combustion",
+    "option_2": "combustion",
+    "option_3": "putrifaction",
+    "option_4": "photosynthesis",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "On maps, lines drawn to join all places in the ocean having equal degree of salinity are called",
+    "option_1": "isohalines",
+    "option_2": "isobars",
+    "option_3": "isosalines",
+    "option_4": "isossal",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Where the salinity of an ocean is high;",
+    "option_1": "the ocean water is dense and flows at the ocean surface towards a low salinity area",
+    "option_2": "the ocean water is dense and creeps at the bottom of the ocean towards low salinity areas",
+    "option_3": "the ocean water is light and flows at the area surface towards a high salinity area",
+    "option_4": "the ocean water is light and flows at the ocean surface towards a low salinity area",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The type of water left in the soil after excess water has been drained off, following heavy rainfall is known as",
+    "option_1": "Field capacity",
+    "option_2": "Field capacity",
+    "option_3": "gravitational water",
+    "option_4": "hygroscopic water",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The part labelled X in the soil profile above is known as",
+    "option_1": "top soil",
+    "option_2": "sub soil",
+    "option_3": "parent materials",
+    "option_4": "bedrock",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a graphical representation of statistical data?",
+    "option_1": "Choropleth map",
+    "option_2": "Dot map",
+    "option_3": "Shaded map",
+    "option_4": "Star graph",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a vegetation characteristics of the Tropical rainforest?",
+    "option_1": "Trees are not in pure stand",
+    "option_2": "Tough, small, leathery, hairy leaves to guard against excessive transpiration",
+    "option_3": "Trees are conical in shape",
+    "option_4": "Trees are conical in shape",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a problem of landlocked countries",
+    "option_1": "security of goods",
+    "option_2": "political stability",
+    "option_3": "low freight cost",
+    "option_4": "political indepedence",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following is not a problem involved in harnessing solar energy?",
+    "option_1": "Poor technological know-how",
+    "option_2": "Adequacy of capital",
+    "option_3": "Unreliability",
+    "option_4": "Fear of competition with established energy sources",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following surveying instruments is used to set out lines at right angles to the main chain line",
+    "option_1": "Optical square",
+    "option_2": "Station pegs",
+    "option_3": "Offset staff",
+    "option_4": "Steel Band",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "________is the failure of the end point of a closed traverse to fall exactly on the point of origin of the transverse",
+    "option_1": "Error of compass",
+    "option_2": "Traverse error",
+    "option_3": "Error of closure",
+    "option_4": "Field error",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the process of lowering and levelling of the earth surface by gradual breaking and wearing away of such earth's surfaces.",
+    "option_1": "Weathering",
+    "option_2": "Denudation",
+    "option_3": "Relief",
+    "option_4": "Mass wasting",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is an effect of the earth's revolution?",
+    "option_1": "Day and night",
+    "option_2": "It determines a year",
+    "option_3": "Dawn and Twilight",
+    "option_4": "Apparent Sunrise and sunset",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The soil gains nitrogen through one of the following except",
+    "option_1": "Denitrification",
+    "option_2": "Application of organic manure",
+    "option_3": "Electrical discharge",
+    "option_4": "Symbiotic nitrogen fixation",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a way of controlling soil erosion",
+    "option_1": "Overgrazing",
+    "option_2": "Contour ploughing",
+    "option_3": "Deforestation",
+    "option_4": "Bush burning",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "__________ is a highland area which seperates the headstreams of rivers flowing in different directions but rising from the same mountainous source",
+    "option_1": "flood plain",
+    "option_2": "cuesta",
+    "option_3": "watershed",
+    "option_4": "plateau",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "___________ is a layer of very fine wind-deposited sand and silt?",
+    "option_1": "loess",
+    "option_2": "seif",
+    "option_3": "barchan",
+    "option_4": "bajada",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "An important mineral deposit in south Africa which has attracted a large number of white settler is",
+    "option_1": "Iron in Durban",
+    "option_2": "Copper in Cape Town",
+    "option_3": "Gold in Witwatersrand",
+    "option_4": " Aluminium in Johannessburg",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following gives the correct full meaning of G.I.S?",
+    "option_1": "Geographic Internet Solution",
+    "option_2": "Geographic Internet System",
+    "option_3": "Geographic Information Spread",
+    "option_4": "Geographic Information System",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Sparse population in the middle belt of Nigeria can not be attributed to",
+    "option_1": "Absence of major industries",
+    "option_2": "Absence of major minerals",
+    "option_3": "Poor soil",
+    "option_4": "Slave trade",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "In Nigeria, which of the following vegetation zones is best known for timber exploitation?",
+    "option_1": "Fresh water swamp forest",
+    "option_2": "Fresh water swamp forest",
+    "option_3": "Montane vegetation",
+    "option_4": "Rain forest",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are the importance of highland in Nigeria except",
+    "option_1": "occupy good land",
+    "option_2": "occupy good land",
+    "option_3": "source of minerals",
+    "option_4": "source of rivers",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following tourist centres is wrongly paired?",
+    "option_1": "Eiffel Tower - Germany",
+    "option_2": "Pyramids - Egypt",
+    "option_3": "The colosseum - Italy",
+    "option_4": "Victoria falls - Zambia",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The state in Nigeria with the highest population density is",
+    "option_1": "Anambra",
+    "option_2": "Bayelsa",
+    "option_3": "Ogun",
+    "option_4": "Niger",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Geo-referencing in GIS is referred to as",
+    "option_1": "Assigning spatials location to a data",
+    "option_2": "Data acquisition",
+    "option_3": "Data Management",
+    "option_4": "Manipulation and analysis",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "A device for transferring information from analogue map into computer for further manipulation is",
+    "option_1": "Aerial photograph",
+    "option_2": "Digitizer",
+    "option_3": "Global positioning system",
+    "option_4": "Plotter",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The system of agriculture referred to as \"Land rotation\" is",
+    "option_1": "Bush fallow",
+    "option_2": "Crop rotation",
+    "option_3": "Mixed farming",
+    "option_4": "Shifting cultivation",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "These are areas of crude oil production in Nigeria except",
+    "option_1": "Afam",
+    "option_2": "Egbema",
+    "option_3": "Oloibiri",
+    "option_4": "Ughelli",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a factor that favours industrial concentration in Western Nigeria?",
+    "option_1": "Availability of raw materials",
+    "option_2": "Closeness to major importing and exporting ports",
+    "option_3": "Creativity of people in the area",
+    "option_4": "Good road network",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following rocks is organically formed?",
+    "option_1": "Gypsum",
+    "option_2": "Coal",
+    "option_3": "Grit",
+    "option_4": "shale",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "River regime is best described as the",
+    "option_1": "rate at which a river flows",
+    "option_2": "seasonal variation in the volume of water in a river",
+    "option_3": "period a river overflows its banks",
+    "option_4": "amount of load a river carries",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the features of wind deposition is",
+    "option_1": "a barchan",
+    "option_2": "a ventifact",
+    "option_3": "an inselberg",
+    "option_4": "a messa",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Jos plateau is an example of a",
+    "option_1": "Volcanic plateau",
+    "option_2": "Dissected plateau",
+    "option_3": "Tectonic plateau",
+    "option_4": "Bassalt Plateau",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "A line joining all points of equal salinity is an",
+    "option_1": "isopalh",
+    "option_2": "Isopleth",
+    "option_3": "Isohaline",
+    "option_4": "isobar",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Tropical savanna vegetation is characterized by",
+    "option_1": "drought - resistant trees",
+    "option_2": "trees with broad leaves and fleshy bark",
+    "option_3": "palm trees and thorny scrub",
+    "option_4": "scattered every green trees",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "An example of a coastline of emergence is",
+    "option_1": "a raised beach",
+    "option_2": "an estuarian coast",
+    "option_3": "a dalmatian coast",
+    "option_4": "a ria coast",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is associated with savanna vegetation",
+    "option_1": "Shallow - rooted trees",
+    "option_2": "Trees that grow throughout the year",
+    "option_3": "Scrub",
+    "option_4": "Dense vegetation",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following statements is true of the North Atlantic Sea route?",
+    "option_1": "It is the busiest sea route",
+    "option_2": "It links Nigeria with Europe",
+    "option_3": "Goods carried on the route include grains",
+    "option_4": "It links North America with Europe",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "A settlement located where two rivers meet is called a",
+    "option_1": "nucleated settlement",
+    "option_2": "confluence town",
+    "option_3": "linear settlement",
+    "option_4": "nodal town",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Exports from Mali are most likely to pass through the Sea port at",
+    "option_1": "Lagos",
+    "option_2": "Dakar",
+    "option_3": "Banjul",
+    "option_4": "Abidjan",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The coastal regions of Sierra leonne record an annual rainfall of over",
+    "option_1": "3,000 mm",
+    "option_2": "4,000 mm",
+    "option_3": "5,000 mm",
+    "option_4": "6,500 mm",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Kossou Dam is located on River",
+    "option_1": "Volta",
+    "option_2": "Bandama",
+    "option_3": "Ginene",
+    "option_4": "Nile",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Nigeria's major export commodity is",
+    "option_1": "Coal",
+    "option_2": "Cocoa",
+    "option_3": "Cocoa",
+    "option_4": "Petroleum",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "A major percentage of the world's exports of citrus fruits is from the",
+    "option_1": "Tropical region",
+    "option_2": "Cool temperate region",
+    "option_3": "Polar region",
+    "option_4": "Mediterranean region",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following has the highest salinity",
+    "option_1": "south atlantic",
+    "option_2": "dead sea",
+    "option_3": "red sea",
+    "option_4": "Mediterranean Sea",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The dam which is not used in the gezira is the",
+    "option_1": "A swan",
+    "option_2": "Sennar",
+    "option_3": "Roseires",
+    "option_4": "Jebel Azula",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which statement is not true of the middle belt in Nigeria?",
+    "option_1": "The soil is not productive",
+    "option_2": "mineral resources can be found in it",
+    "option_3": "the population is sparse",
+    "option_4": "None of the above",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following zones is the least industrialized in Nigeria?",
+    "option_1": "Lokoja - Ajaokuta",
+    "option_2": "Lagos - Ikeja",
+    "option_3": "Port harcourt - Aba",
+    "option_4": "Abeokuta - Ibadan",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following towns is not a precolonial town",
+    "option_1": "Ilorin",
+    "option_2": "Bida",
+    "option_3": "Enugu",
+    "option_4": "Ibadan",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following lakes owes its origin mainly to faulting?",
+    "option_1": "Lake Chad",
+    "option_2": "Lake Superior",
+    "option_3": "Lake Malawi",
+    "option_4": "Lake Victoria",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "In the desert region the most prominent agent of erosion is",
+    "option_1": "Thunder storms",
+    "option_2": "Rain fall",
+    "option_3": "Rivers",
+    "option_4": "Wind",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the disadvantages of water transport is that it",
+    "option_1": "causes atmospheric pollution",
+    "option_2": "is used for carrying agricultural commodities only",
+    "option_3": "is not flexible",
+    "option_4": "cannot carry bulky goods",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a sea route?",
+    "option_1": "London - moscow - Baghdad",
+    "option_2": "London - Capetown - melbourne",
+    "option_3": "New york - London - Rotterdam",
+    "option_4": "Sydney - Suez - London",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The tourist centre of Ogbunike care is located near",
+    "option_1": "Kainji in Niger state",
+    "option_2": "Yankari in Bauchi state",
+    "option_3": "Ikeja in Lagos state",
+    "option_4": "Onitsha in Anambra state",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Nigeria is located between longitudes",
+    "option_1": "3°E and 15°E",
+    "option_2": "2°E and 15°E",
+    "option_3": "1°E and 10°E",
+    "option_4": "3°E and 10°E",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not an element of climate",
+    "option_1": "Attitude",
+    "option_2": "Temperature",
+    "option_3": "Air pressure",
+    "option_4": "Precipitation",
+    "answer": 1,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Cement factory is usually located near",
+    "option_1": "Source of capital",
+    "option_2": "Source of labour",
+    "option_3": "Source of raw material",
+    "option_4": "The market",
+    "answer": 3,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following countries is located in North Africa.",
+    "option_1": "Zaire",
+    "option_2": "Ruwanda",
+    "option_3": "Namibia",
+    "option_4": "Algeria",
+    "answer": 4,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The best solution to the rapid depletion of forest resources in West Africa is to",
+    "option_1": "reserve hectares of land for plantations",
+    "option_2": "Introduce forest conservation techniques",
+    "option_3": "Import wood from other countries",
+    "option_4": "Employ more forest guards",
+    "answer": 2,
+    "year": 2021
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are advantages of overpopulation except",
+    "option_1": "Quick information dissemination",
+    "option_2": "Effective planning",
+    "option_3": "Large labour",
+    "option_4": "Insufficient food",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is best defined as the movement of people from one geographical area to another involving permanent or temporary residence or settlement",
+    "option_1": "Transportation",
+    "option_2": "Networking",
+    "option_3": "Migration",
+    "option_4": "Urbanization",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Use the information on country Y below to answer the question that follows:\n\nLand area = 200,000km 2\n\nPopulation = 10,000,000.\n\ncalculate the population density of country Y",
+    "option_1": "50 persons per km 2",
+    "option_2": "0.02 persons per km 2",
+    "option_3": "200 persons per km 2",
+    "option_4": "20 persons per km 2",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The birth rate of a country can be increased through the following except",
+    "option_1": "Encouragement of early marriages",
+    "option_2": "Inadequate health services",
+    "option_3": "Encouragement of polygamy",
+    "option_4": "Legislation against abortion",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are areas of lowlands in Nigeria except in Nigeria",
+    "option_1": "The Chad Basin",
+    "option_2": "The Eastern Scarpland",
+    "option_3": "The Coaster plain",
+    "option_4": "The Niger-Benue trough",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The wind which blows across the Atlantic Ocean towards the coast of Nigeria and is responsible for rainy season is known as",
+    "option_1": "Equatorial Easterlies",
+    "option_2": "Land and sea breeze",
+    "option_3": "Tropical continental airmass",
+    "option_4": "Tropical maritime airmass",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a major river basin in Nigeria?",
+    "option_1": "The Cross River Basin",
+    "option_2": "The Niger Basin",
+    "option_3": "The South Atlantic Basin",
+    "option_4": "The Sokoto Basin",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Tin-mining activities in Nigeria are the main causes of environmental degradation on the?",
+    "option_1": "Western Highlands",
+    "option_2": "Eastern Highlands",
+    "option_3": "Jos Plateau",
+    "option_4": "Obudu Plateau",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The high cost of lumbering operations in tropical forest is mainly due to?",
+    "option_1": "Shortage of labour",
+    "option_2": "Absence of many rivers",
+    "option_3": "Absence of pure stands of trees",
+    "option_4": "low quality of available timber",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following farming activity best describes the rearing of only animals like cattle, sheep and goat mainly in the savanna belt of the north?",
+    "option_1": "Mixed Farming",
+    "option_2": "Animal Farming",
+    "option_3": "Pastoral Farming",
+    "option_4": "Intensive Farming",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The outer structure of the earth is made up of the following except?",
+    "option_1": "Mesosphere",
+    "option_2": "Atmosphere",
+    "option_3": "Biosphere",
+    "option_4": "Hydrosphere",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is an importance of the atmosphere to living organisms?",
+    "option_1": "It provides water for industrial uses",
+    "option_2": "It provides oxygen for animals and plants for respiration",
+    "option_3": "It provides shelter in form of timber for man",
+    "option_4": "It aids transportation through construction of roads and railways",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The correct arrangement of the layers of the earth crust from the surface to the interior is",
+    "option_1": "sial, mantle, sima, core",
+    "option_2": "sima, sial, core, mantle",
+    "option_3": "core, mantle, sima and sial",
+    "option_4": "sial, sima, mantle and core",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "If the scale of a map is 2cm to 1km, what is the ground distance if the distance between two towns on the map is 20cm",
+    "option_1": "5km",
+    "option_2": "2.5km",
+    "option_3": "10km",
+    "option_4": "20km",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "If the scale of two maps are (a;1:100,000 and b;1:400,000) what is the ground distance if the distance between two towns on the maps is 10cm",
+    "option_1": "10km, 40km",
+    "option_2": "5km, 20km",
+    "option_3": "2.5km, 10km",
+    "option_4": " 20km, 80km",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a reason for the high volume of trade between Nigeria and developed countries?",
+    "option_1": "similarity of products",
+    "option_2": "low level of technology",
+    "option_3": "colonial Ties",
+    "option_4": "presence of trade unions",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are seaports used in the North Atlantic sea route except",
+    "option_1": "Lagos-Antwerp",
+    "option_2": "Lagos-Montreal",
+    "option_3": "Lagos-Southampton",
+    "option_4": "Lagos-Rotterdam",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ is the condition of the lower atmosphere of a place over a short period",
+    "option_1": "Climate",
+    "option_2": "Weather",
+    "option_3": "Cloud",
+    "option_4": "Humidity",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "In a combined maximum and minimum thermometer, the difference between the hottest and coldest daily temperature for that day gives the",
+    "option_1": "Diurnal range of temperature",
+    "option_2": "Mean daily temperature",
+    "option_3": "Minimum daily temperature",
+    "option_4": "Maximum daily temperature",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ is defined as the total surrounding or medium of any organism in a given area",
+    "option_1": "Biotic component",
+    "option_2": "Abiotic component",
+    "option_3": "Environment",
+    "option_4": "Ecosystem",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following processes leads to the loss of carbon from the air",
+    "option_1": "combustion",
+    "option_2": "respiration",
+    "option_3": "putrefaction",
+    "option_4": "photosynthesis",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "On maps, lines drawn to join all places in the ocean having equal degree of salinity are called",
+    "option_1": "isohalines",
+    "option_2": "isobars",
+    "option_3": "isosalines",
+    "option_4": "isossal",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Where the salinity of an ocean is high;",
+    "option_1": "the ocean water is dense and flows at the ocean surface towards a low salinity area",
+    "option_2": "the ocean water is dense and creeps at the bottom of the ocean towards low salinity areas",
+    "option_3": "the ocean water is light and flows at the area surface towards a high salinity area",
+    "option_4": "the ocean water is light and flows at the ocean surface towards a low salinity area",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The type of water left in the soil after excess water has been drained off, following heavy rainfall is known as",
+    "option_1": "Field capacity",
+    "option_2": "capillary water",
+    "option_3": "gravitational water",
+    "option_4": "hygroscopic water",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The part labelled X in the soil profile is known as",
+    "option_1": "top soil",
+    "option_2": "sub soil",
+    "option_3": "parent materials",
+    "option_4": "bedrock",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a graphical representation of statistical data?",
+    "option_1": "Choropleth map",
+    "option_2": "Dot map",
+    "option_3": "Shaded map",
+    "option_4": "Star graph",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a vegetation characteristics of the Tropical rainforest?",
+    "option_1": "Trees are not in pure stand",
+    "option_2": "Tough, small, leathery, hairy leaves to guard against excessive transpiration",
+    "option_3": "Trees are conical in shape",
+    "option_4": "there is high undergrowth",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a problem of landlocked countries",
+    "option_1": "Security of goods",
+    "option_2": "Political stability",
+    "option_3": "Low freight cost",
+    "option_4": "Political dependence",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following is not a problem involved in harnessing solar energy?",
+    "option_1": "Poor technological know-how",
+    "option_2": "Adequacy of capital",
+    "option_3": "Unreliability",
+    "option_4": "Fear of competition with established energy sources",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following surveying instruments is used to set out lines at right angles to the main chain line",
+    "option_1": "Optical square",
+    "option_2": "Station pegs",
+    "option_3": "Offset staff",
+    "option_4": "Steel Band",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "________is the failure of the end point of a closed traverse to fall exactly on the point of origin of the transverse",
+    "option_1": "Error of compass",
+    "option_2": "Traverse error",
+    "option_3": "Error of closure",
+    "option_4": "Field error",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the process of lowering and levelling of the earth surface by gradual breaking and wearing away of such earth's surfaces.",
+    "option_1": "Weathering",
+    "option_2": "Denudation",
+    "option_3": "Relief",
+    "option_4": "Mass wasting",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the process of lowering and levelling of the earth surface by gradual breaking and wearing away of such earth's surfaces.",
+    "option_1": "Weathering",
+    "option_2": "Denudation",
+    "option_3": "Relief",
+    "option_4": "Mass wasting",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is an effect of the earth's revolution?",
+    "option_1": "Day and night",
+    "option_2": "It determines a year",
+    "option_3": "Dawn and Twilight",
+    "option_4": "Apparent Sunrise and sunset",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The soil gains nitrogen through one of the following except",
+    "option_1": "Denitrification",
+    "option_2": "Application of organic manure",
+    "option_3": "Electrical discharge",
+    "option_4": "Symbiotic nitrogen fixation",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a way of controlling soil erosion",
+    "option_1": "Overgrazing",
+    "option_2": "Contour ploughing",
+    "option_3": "Deforestation",
+    "option_4": "Bush burning",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "__________ is a highland area which seperates the headstreams of rivers flowing in different directions but rising from the same mountainous source",
+    "option_1": "Flood plain",
+    "option_2": "Cuesta",
+    "option_3": "Watershed",
+    "option_4": "Plateau",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "___________ is a layer of very fine wind-deposited sand and silt?",
+    "option_1": "loess",
+    "option_2": "seif",
+    "option_3": "barchan",
+    "option_4": "Bajada",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "An important mineral deposit in south Africa which has attracted a large number of white settler is",
+    "option_1": "Iron in Durban",
+    "option_2": "Copper in Cape Town",
+    "option_3": "Gold in Witwatersrand",
+    "option_4": "Aluminium in Johannessburg",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following gives the correct full meaning of G.I.S?",
+    "option_1": "Geographic Internet Solution",
+    "option_2": "Geographic Internet System",
+    "option_3": "Geographic Information Spread",
+    "option_4": "Geographic Information System",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following statistical mapping techniques is most suitable for showing the spatial distribution of cattle in the different northern states of Nigeria?",
+    "option_1": "Dot map",
+    "option_2": "Isopleth",
+    "option_3": "Pie graph",
+    "option_4": "Proportion circle",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Plants in the savannah are adapted mainly to alternating periods of high and low?",
+    "option_1": "Light intensities",
+    "option_2": "Water supply",
+    "option_3": "Temperatures",
+    "option_4": "Soil salinity",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The prosperity of Kenya depends on the cultivation of",
+    "option_1": "coffee, sisal and rice",
+    "option_2": "coffee, cocoa and rice",
+    "option_3": "coffee, rubber and maize",
+    "option_4": "coffee, maize and sisal",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not an example of mineral resources?",
+    "option_1": "Latex",
+    "option_2": "Zinc",
+    "option_3": "Coal",
+    "option_4": "Tin",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Arrange the following scales in ascending order: 1:50,000, 1:200,000, 1:200, 1:300,000",
+    "option_1": "1:200,1:50,000,1:200,000, 1:300,000",
+    "option_2": "1:300,000,1:200,000,1:50,000,1:200",
+    "option_3": "1:50,000, 1:200,000,1:300,000, 1:200",
+    "option_4": "1:300,000, 1:200, 1:50,000, 1:200,000",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a precaution to be taken when making a compass traverse?",
+    "option_1": "The bearing should not be observed from a position close to strongly magnetic materials",
+    "option_2": "The 'back' bearing should be taken from the other end of the line and should differ from the 'on'/'forward' bearing by exactly 180o",
+    "option_3": "All magnetic materials should be removed from the body and pockets of the reader before the bearing is taken",
+    "option_4": "The compass must be held vertically so that the edge of the card does not rub against the top of the compass",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following is not a sequence of denudation",
+    "option_1": "Erosion",
+    "option_2": "Transportation",
+    "option_3": "Decomposition",
+    "option_4": "Deposition",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "What is the longitude of a town Y whose local time is 12:00 noon when Greenwich mean time is 6:00pm",
+    "option_1": "90o W",
+    "option_2": "180o E",
+    "option_3": "150o W",
+    "option_4": "80o E",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following food chains is impossible?",
+    "option_1": "Grass→sheep→man",
+    "option_2": "Grass→Toad→grasshopper→rat",
+    "option_3": "Grass→grashopper→toad→snake",
+    "option_4": "Diatoms→euglena→water fleas",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following activities does not control soil erosion",
+    "option_1": "contour ploughing",
+    "option_2": "deforestation",
+    "option_3": "covercropping",
+    "option_4": "afforestation",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not an importance of Geographic Information System(G.I.S)",
+    "option_1": "Urban and regional planning",
+    "option_2": "Resource management",
+    "option_3": "funds mismanagement",
+    "option_4": "Dam site location",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "________ are projection of highlands into low grounds i.e the v-shape points to the low land?",
+    "option_1": "Valleys",
+    "option_2": "Ridges",
+    "option_3": "Spurs",
+    "option_4": "Gorger",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ is a large mass of igneous mound with a dome-shaped upper surface and a level base?",
+    "option_1": "Laccolith",
+    "option_2": "Lopolith",
+    "option_3": "Phacolith",
+    "option_4": "Batholith",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The instrument used in measuring the intensity of an earthquake is known as?",
+    "option_1": "Earthometer",
+    "option_2": "Ritcher's Scale",
+    "option_3": "Seismograph",
+    "option_4": "Shock Wave",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "_________ is formed when two corries cut back opposite sides of the same mountain, resulting in a knife-edged ridge",
+    "option_1": "Cirque",
+    "option_2": "Pyramidal Peak",
+    "option_3": "Striation",
+    "option_4": "Arete",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following is not a favourable condition for siting a settlement",
+    "option_1": "Adequate water supply",
+    "option_2": "Land for building",
+    "option_3": "Defence",
+    "option_4": "Infertility of soil",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The name given to two or more towns/cities which have grown to merge with one another is?",
+    "option_1": "Hamlet",
+    "option_2": "Homestead",
+    "option_3": "Conurbation",
+    "option_4": "Megapolis",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a problem of the Economic Community of West Africa States(ECOWAS)?",
+    "option_1": "Trade liberalization",
+    "option_2": "Language Barrier",
+    "option_3": "Political Instability",
+    "option_4": "Differences in political ideology",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following important fruits is produced in North-West Africa?",
+    "option_1": "Pineapples",
+    "option_2": "Tangerines",
+    "option_3": "Pears",
+    "option_4": "Vine",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following statements is right?",
+    "option_1": "In West Africa, colonial masters encouraged plantation agriculture",
+    "option_2": "In West Africa, plantation are on fertile lowlands",
+    "option_3": "In East Africa, management of plantations is less efficient than in West Africa,",
+    "option_4": "In East Africa, uniformity of climate has made for limited variety of crops",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Interdependence within the ecosystem can best be interpreted to mean that components of the ecosystem",
+    "option_1": "pray on one another",
+    "option_2": "harm one another",
+    "option_3": "regulate one another",
+    "option_4": "interact with one another",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a measure of environmental control?",
+    "option_1": "Preservation",
+    "option_2": "Stabilization",
+    "option_3": "Degradation",
+    "option_4": "Afforestation",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is not a proof of the earth's sphericity?",
+    "option_1": "The circular horizon",
+    "option_2": "deflection of winds",
+    "option_3": "ship's visibilty",
+    "option_4": "circumnavigation of the earth",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following types of rock is a source of energy?",
+    "option_1": "Sandstone",
+    "option_2": "Coal",
+    "option_3": "Granite",
+    "option_4": "Graphite",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "_______ transport is the slowest and the cheapest means of transort",
+    "option_1": "Air",
+    "option_2": "Water",
+    "option_3": "Rail",
+    "option_4": "Pipeline",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a limitation of rail transport in developing countries?",
+    "option_1": "Lack of technical know-how",
+    "option_2": "low cost of construction",
+    "option_3": "It is too fast",
+    "option_4": "low cost of maintenance",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following is the most important major ocean(shipping) route",
+    "option_1": "The Panama canal route",
+    "option_2": "The north pacific route",
+    "option_3": "The trans-pacific route",
+    "option_4": "The north atlantic route",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Which of the following is a problem of world transportation?",
+    "option_1": "Lack of soil erosion",
+    "option_2": "Absence of many rivers",
+    "option_3": "Absence of marshy areas",
+    "option_4": "poor visibility",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "One of the following is not a vegetation belt in lagos state",
+    "option_1": "The rainforest",
+    "option_2": "The fresh water swamp",
+    "option_3": "The savannah",
+    "option_4": "The coaster mangrove",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "All except one are functions of a village",
+    "option_1": "Lumbering function",
+    "option_2": "Small-scale shopping",
+    "option_3": "Mining function",
+    "option_4": "Religious function",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "________ is formed from the combination of several local government areas",
+    "option_1": "State",
+    "option_2": "Town",
+    "option_3": "Village",
+    "option_4": "Megapolis",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "It takes mecury how many days to complete its orbit?",
+    "option_1": "365",
+    "option_2": "88",
+    "option_3": "225",
+    "option_4": "84",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The relative dryness of the Horn Africa is due to",
+    "option_1": "The dominance of cold currents in the region",
+    "option_2": "The shape and direction of the shoreline",
+    "option_3": "Its closeness to the high ranges of east africa",
+    "option_4": "The distance from the belt of tropical cyclones",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The development of a climax vegetation in the savannah belt of Nigeria is disturbed mainly by",
+    "option_1": "Lumbering",
+    "option_2": "Mining",
+    "option_3": "Animal grazing",
+    "option_4": "Bush burning",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "______ is a collection of building with people living them",
+    "option_1": "Houses",
+    "option_2": "Town",
+    "option_3": "Settlement",
+    "option_4": "Land",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "Lines joining places of equal sunshine hours on a map are called?",
+    "option_1": "Isobars",
+    "option_2": "Isotherms",
+    "option_3": "Isohytes",
+    "option_4": "Isohels",
+    "answer": 4,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "All except one is a disadvantage of compass traversing",
+    "option_1": "lack of technical experts",
+    "option_2": "Its uses are complex",
+    "option_3": "It can be used to survey a large area",
+    "option_4": "The instrument used are expensive",
+    "answer": 3,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "When the traverse connects two stations, whose positions are known, what type of traverse is this?",
+    "option_1": "closed traverse",
+    "option_2": "open traverse",
+    "option_3": "station traverse",
+    "option_4": "leg traverse",
+    "answer": 1,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "______ is a surveying instrument used for measuring the angles of ground slopes",
+    "option_1": "The optical square",
+    "option_2": "The watkin's clinometer",
+    "option_3": "The offset staff",
+    "option_4": "The gunter's chain",
+    "answer": 2,
+    "year": 2020
+  },
+  {
+    "subject": "Geography",
+    "question": "The following are seaports used in the North Atlantic sea route except",
+    "option_1": "Lagos-Hamburg",
+    "option_2": "Lagos-New york",
+    "option_3": "Lagos-Rotterdam",
+    "option_4": "Lagos-Southampton",
+    "answer": 2,
+    "year": 2020
+  }
+]

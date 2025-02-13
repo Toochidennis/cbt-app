@@ -4,12 +4,20 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "build": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.digitaldreams.linkskool",
+    "win": {
+      "icon": "assets/icons/logo2.ico",
+      "target": "nsis"
+    }
   },
   "keywords": [],
   "author": "ToochiDennis",
   "license": "ISC",
-  "description": "",
+  "description": "LinkSkool",
   "devDependencies": {
     "electron": "^34.0.2",
     "electron-builder": "^25.1.8",
@@ -18,7 +26,6 @@
   },
   "dependencies": {
     "better-sqlite3": "^11.8.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "electron-reload": "^2.0.0-alpha.1"
   }
 }

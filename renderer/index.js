@@ -1,8 +1,17 @@
 import { loadPage } from "./navigation.js";
 import state from "./state.js";
 
-document.getElementById('jamb-button').addEventListener('click', () => {
-    window.api.openSelectSubjectWindow();
+document.getElementById('jamb-button').addEventListener('click', async () => {
+    const activated = await window.api.getActivationState();
+
+    if (!activated) {
+        window.api.openActivationWindow();
+    } else {
+        window.api.openSelectSubjectWindow();
+
+        // Proceed to show the exam page.
+        console.log("Activation confirmed. Proceeding to exam...");
+    }
 });
 
 
@@ -13,13 +22,11 @@ window.api.onCongratsWindowClosed(() => {
 
 // Show exam screen when subjects selection window is closed
 window.api.onSecondWindowClosed((_, data) => {
-    if (data.action === 'exam') {
+    if (data.action === 'cbt') {
         state.subjects = data.subjects;
         state.duration = data.duration;
         state.selectedSubjects = data.selectedSubjects;
         state.year = data.year;
-
-        console.log("state ", state);
 
         init();
 
@@ -34,7 +41,6 @@ window.api.onSecondWindowClosed((_, data) => {
 // exam functionality
 let timer;
 let totalSeconds = 0;
-let isPaused = false;
 
 const countdown = document.getElementById('countdown');
 const submitBtn = document.getElementById('submit-button');
@@ -49,7 +55,6 @@ const attemptedDiv = document.getElementById('attempted-questions');
 function startTimer() {
     if (timer) return; // Prevent multiple intervals
 
-    console.log("Duration: ", state.duration);
     const hours = state.duration.hours;
     const minutes = state.duration.minutes;
     const seconds = 0;
@@ -184,14 +189,12 @@ function capitalizeSentence(text) {
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-
 function selectAnswer(subjectState) {
     const selectedOption = document.querySelector('input[name="option"]:checked');
     if (selectedOption) {
         subjectState.userAnswers[subjectState.currentQuestionIndex] = selectedOption.value;
     }
 }
-
 
 function handleNavigation(direction) {
     const subjectState = state.subjects[state.currentSubject];
@@ -222,32 +225,42 @@ function prevHandler() {
 }
 
 function submitHandler() {
-    finishExam();
-   // window.api.openCongratsWindow();
+    window.api.openCongratsWindow(state);
 }
 
-async function finishExam() {
-    // // Example: calculate the score and total time, then build the summary
-    // const summaryData = {
-    //   exam_date: new Date().toISOString(),
-    //   subjects: state.selectedSubjects, // e.g. an array of subjects
-    //   score: calculateScore(),          // implement your own score calculation
-    //   total_time: totalSeconds,         // total seconds spent on the exam
-    //   details: {
-    //     // You can add additional details here (like per subject data, etc.)
-    //   }
-    // };
+// async function finishExam() {
+//     // // Example: calculate the score and total time, then build the summary
+//     // const summaryData = {
+//     //   exam_date: new Date().toISOString(),
+//     //   subjects: state.selectedSubjects, // e.g. an array of subjects
+//     //   score: calculateScore(),          // implement your own score calculation
+//     //   total_time: totalSeconds,         // total seconds spent on the exam
+//     //   details: {
+//     //     // You can add additional details here (like per subject data, etc.)
+//     //   }
+//     // };
 
-    try {
-        await window.api.saveExamSummary(state);
-        // console.log('Exam summary saved with id:', summaryId);
-    } catch (error) {
-        console.error('Error saving exam summary:', error);
-    }
-}
+//     try {
+//          await Promise.all(window.api.saveExamSummary(state));
+//         console.log('Exam summary saved with id:', summaryId);
+//     } catch (error) {
+//         console.error('Error saving exam summary:', error);
+//     }
+// }
 
 
 function keyboardShortcutsHandler(event) {
+    event.preventDefault();
+    // First, handle arrow keys for navigation
+    if (event.key === 'ArrowLeft') {
+        handleNavigation(-1);
+        return;
+    }
+    if (event.key === 'ArrowRight') {
+        handleNavigation(1);
+        return;
+    }
+
     const key = event.key.toLowerCase();
 
     if (!isNaN(key) && key !== '0') {
