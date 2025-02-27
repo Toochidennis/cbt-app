@@ -28,12 +28,14 @@ window.api.onSecondWindowClosed((_, data) => {
         state.selectedSubjects = data.selectedSubjects;
         state.year = data.year;
 
-        init();
+        console.log(data.subjects)
+
+        //init();
 
         window.api.setFullScreen(true);
 
         // Navigate to the Exam page
-        loadPage(data.action);
+       // loadPage(data.action);
     }
 });
 

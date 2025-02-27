@@ -8,10 +8,10 @@ const dataDir = path.join(app.getPath('userData'), 'data');
 
 // Create dir if not exist
 if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, {recursive: true});
+    fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const dbPath = path.join(dataDir, 'questions.db');
+const dbPath = path.join(dataDir, 'questions_2.db');
 
 // Open or create database file
 const db = new Database(dbPath);
@@ -21,7 +21,8 @@ const query = `
     CREATE TABLE IF NOT EXISTS questions (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         subject TEXT,
-        question TEXT,
+        question_image TEXT,
+        question_text TEXT,
         options TEXT,
         answer INTEGER,
         year INTEGER
@@ -67,7 +68,7 @@ function seedDatabaseFromFolder() {
 
         // Prepare an insert statement.
         const insertStmt = db.prepare(
-            "INSERT INTO questions (subject, question, options, answer, year) VALUES (?, ?, ?, ?, ?)"
+            "INSERT INTO questions (subject, question_image, question_text, options, answer, year) VALUES (?, ?, ?, ?, ?, ?)"
         );
 
         // Create a transaction for batch inserting.
@@ -75,7 +76,7 @@ function seedDatabaseFromFolder() {
             for (const q of questions) {
                 // Convert the options array to a JSON string.
                 const optionsStr = JSON.stringify(q.options);
-                insertStmt.run(q.subject, q.question, optionsStr, q.answer, q.year);
+                insertStmt.run(q.subject, q.question_image, q.question_text, optionsStr, q.answer, q.year);
             }
         });
 
@@ -90,8 +91,18 @@ function seedDatabaseFromFolder() {
                 // assign the subject name from the file name.
                 questionsData = questionsData.map(q => ({
                     subject: q.subject,
-                    question: q.question,
-                    options: [q.option_1, q.option_2, q.option_3, q.option_4],
+                    question_image: q.question_image,
+                    question_text: q.question_text,
+                    options: [
+                        q.option_1_text,
+                        q.option_1_image,
+                        q.option_2_text,
+                        q.option_2_image,
+                        q.option_3_text,
+                        q.option_3_image,
+                        q.option_4_text,
+                        q.option_4_image
+                    ],
                     answer: q.answer,
                     year: q.year
                 }));
