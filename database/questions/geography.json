@@ -1202,36 +1202,6 @@
   {
     "subject": "Geography",
     "question_image": "",
-    "question_text": "",
-    "option_1_text": "",
-    "option_1_image": "",
-    "option_2_text": "",
-    "option_2_image": "",
-    "option_3_text": "",
-    "option_3_image": "",
-    "option_4_text": "",
-    "option_4_image": "",
-    "answer": null,
-    "year": null
-  },
-  {
-    "subject": "Geography",
-    "question_image": "",
-    "question_text": "Which of the following criteria is used to classify settlements into rural or urban?",
-    "option_1_text": "age",
-    "option_1_image": "",
-    "option_2_text": "function",
-    "option_2_image": "",
-    "option_3_text": "site",
-    "option_3_image": "",
-    "option_4_text": "location",
-    "option_4_image": "",
-    "answer": null,
-    "year": 2023
-  },
-  {
-    "subject": "Geography",
-    "question_image": "",
     "question_text": "The broad-leafed evergreen and dense equatorial forest of the Amazon basin is called",
     "option_1_text": "blanos",
     "option_1_image": "",
@@ -1271,7 +1241,7 @@
     "option_3_image": "",
     "option_4_text": "cotton",
     "option_4_image": "",
-    "answer": null,
+    "answer": 1,
     "year": 2023
   },
   {
@@ -1557,21 +1527,6 @@
     "option_4_text": "metamorphic rock",
     "option_4_image": "",
     "answer": 3,
-    "year": 2023
-  },
-  {
-    "subject": "Geography",
-    "question_image": "",
-    "question_text": "Urban type of settlement is best described as",
-    "option_1_text": "isolated",
-    "option_1_image": "",
-    "option_2_text": "dispersed",
-    "option_2_image": "",
-    "option_3_text": "nucleated",
-    "option_3_image": "",
-    "option_4_text": "nucleated",
-    "option_4_image": "",
-    "answer": null,
     "year": 2023
   },
   {
@@ -2342,21 +2297,6 @@
   {
     "subject": "Geography",
     "question_image": "",
-    "question_text": "",
-    "option_1_text": "",
-    "option_1_image": "",
-    "option_2_text": "",
-    "option_2_image": "",
-    "option_3_text": "",
-    "option_3_image": "",
-    "option_4_text": "",
-    "option_4_image": "",
-    "answer": null,
-    "year": null
-  },
-  {
-    "subject": "Geography",
-    "question_image": "",
     "question_text": "The following are advantages of overpopulation except?",
     "option_1_text": "Quick information dissemination",
     "option_1_image": "",
@@ -2953,21 +2893,6 @@
     "option_4_image": "",
     "answer": 4,
     "year": 2022
-  },
-  {
-    "subject": "Geography",
-    "question_image": "",
-    "question_text": "",
-    "option_1_text": "",
-    "option_1_image": "",
-    "option_2_text": "",
-    "option_2_image": "",
-    "option_3_text": "",
-    "option_3_image": "",
-    "option_4_text": "",
-    "option_4_image": "",
-    "answer": null,
-    "year": null
   },
   {
     "subject": "Geography",
@@ -4168,21 +4093,6 @@
     "option_4_image": "",
     "answer": 2,
     "year": 2021
-  },
-  {
-    "subject": "Geography",
-    "question_image": "",
-    "question_text": "",
-    "option_1_text": "",
-    "option_1_image": "",
-    "option_2_text": "",
-    "option_2_image": "",
-    "option_3_text": "",
-    "option_3_image": "",
-    "option_4_text": "",
-    "option_4_image": "",
-    "answer": null,
-    "year": null
   },
   {
     "subject": "Geography",

@@ -3,6 +3,7 @@ const ACTIVATION_CODE = 'LINK-5416-SKOOL';
 const feedback = document.getElementById('feedback');
 const proceedBtn = document.getElementById('proceed-btn');
 const codeInput = document.getElementById('code');
+const closeBtn = document.getElementById('close-btn');
 
 async function validateCode() {
     const code = codeInput.value.trim();
@@ -19,3 +20,8 @@ async function validateCode() {
 proceedBtn.addEventListener('click', () => {
     validateCode();
 });
+
+closeBtn.addEventListener('click', ()=>{
+    window.api.closeActivationWindow();
+})
+

@@ -23,4 +23,5 @@ contextBridge.exposeInMainWorld('api', {
     saveActivationState: (isActivated) => ipcRenderer.invoke('save-activation-state', isActivated),
     openActivationWindow: () => ipcRenderer.send('open-activation-window'),
     closeActivationWindow: () => ipcRenderer.send('close-activation-window'),
+    getImagePath: (subject, imageFileName) => ipcRenderer.invoke('get-image-path', subject, imageFileName),
 });

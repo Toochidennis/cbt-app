@@ -107,8 +107,12 @@
     line-height: normal;
 }
 
-#question-text {
+#question-image-container{
     margin-top: 1em;
+}
+
+#question-text {
+    margin-top: .2em;
     font-weight: 700;
     color: #414141;
     font-size: 1.3rem;

@@ -30,12 +30,12 @@ window.api.onSecondWindowClosed((_, data) => {
 
         console.log(data.subjects)
 
-        //init();
+        init();
 
         window.api.setFullScreen(true);
 
         // Navigate to the Exam page
-       // loadPage(data.action);
+        loadPage(data.action);
     }
 });
 
@@ -47,6 +47,7 @@ let totalSeconds = 0;
 const countdown = document.getElementById('countdown');
 const submitBtn = document.getElementById('submit-button');
 const progress = document.getElementById('progress');
+const questionImage = document.getElementById('question-image');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const nextBtn = document.getElementById('next-btn');
@@ -155,13 +156,22 @@ function renderQuestionNav() {
 }
 
 
-function renderQuestion(index) {
+async function renderQuestion(index) {
     const subjectState = state.subjects[state.currentSubject];
     const question = subjectState.questions[index];
 
     progress.textContent = `Question ${index + 1}/${subjectState.questions.length}`;
     attemptedDiv.textContent = `${subjectState.userAnswers.length}/${subjectState.questions.length}`;
-    questionText.textContent = question.question;
+    questionText.textContent = question.question_text;
+
+    // Build the full path to the question image if it exists
+    if (question.question_image && question.question_image.trim() !== "") {
+        // Use getImagePath with the selected subject folder
+        questionImage.src = await window.api.getImagePath(state.currentSubject, question.question_image);
+        questionImage.style.display = "block";
+    } else {
+        questionImage.style.display = "none";
+    }
 
     // Clear previous options
     optionsContainer.innerHTML = '';
@@ -172,14 +182,36 @@ function renderQuestion(index) {
     questionText.classList.add('fade-in');
 
     // Render options with staggered animation
-    question.options.forEach((option, i) => {
+    question.options.forEach(async (option, i) => {
         const label = document.createElement('label');
-        label.innerHTML = `
-            <input type="radio" name="option" value="${option}" ${subjectState.userAnswers[index] === option ? 'checked' : ''}>
-            ${capitalizeSentence(option)}
-        `;
         label.classList.add('fade-in');
-        label.style.animationDelay = `${(i + 1) * 0.2}s`; // Staggered delay
+        label.style.animationDelay = `${(i + 1) * 0.2}s`;
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'option';
+        const optionText = capitalizeSentence(option.text);
+        // Decide what to save: if there's text, use that; if not, use the image name.
+        const answerValue = optionText  && optionText.trim() !== ""
+            ? option.text
+            : option.image; // Option image filename or path.
+        input.value = answerValue;
+        input.setAttribute('data-answer', answerValue);
+
+        label.appendChild(input);
+
+        // If the option has an image, load it from the subject folder
+        if (option.image && option.image.trim() !== "") {
+            const img = document.createElement('img');
+            img.src = await window.api.getImagePath(state.currentSubject, option.image);
+            img.alt = answerValue || 'Option image';
+            label.appendChild(img);
+        } else {
+            // Otherwise, show text
+            const span = document.createElement('span');
+            span.textContent = capitalizeSentence(answerValue);
+            label.appendChild(span);
+        }
+
         optionsContainer.appendChild(label);
     });
 
@@ -194,7 +226,8 @@ function capitalizeSentence(text) {
 function selectAnswer(subjectState) {
     const selectedOption = document.querySelector('input[name="option"]:checked');
     if (selectedOption) {
-        subjectState.userAnswers[subjectState.currentQuestionIndex] = selectedOption.value;
+        const answer = selectedOption.getAttribute('data-answer');
+        subjectState.userAnswers[subjectState.currentQuestionIndex] = answer;
     }
 }
 

@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 //const fs = require('fs').promises;
 const { saveActivationState, getActivationState, db } = require('./database/db');
+const getImagePath = require('./database/image_loader');
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -67,6 +68,7 @@ function createWindow() {
 
     // IPC handlers for activation state.
     ipcMain.handle('get-activation-state', async () => {
+        console.log('hello');
         return getActivationState();
     });
 
@@ -225,6 +227,15 @@ ipcMain.handle('get-questions-by-subject', (_, subject, year) => {
         return questions;
     } catch (error) {
         console.error('Error retrieving questions:', error);
+        throw error;
+    }
+});
+
+ipcMain.handle('get-image-path', (_, subject, imageFileName)=>{
+    try{
+        return getImagePath(subject, imageFileName);
+    }catch(error){
+        console.error('Error retrieving image path:', error);
         throw error;
     }
 });

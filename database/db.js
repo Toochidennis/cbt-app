@@ -11,7 +11,7 @@ if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const dbPath = path.join(dataDir, 'questions_2.db');
+const dbPath = path.join(dataDir, 'questions_4.db');
 
 // Open or create database file
 const db = new Database(dbPath);
@@ -94,14 +94,10 @@ function seedDatabaseFromFolder() {
                     question_image: q.question_image,
                     question_text: q.question_text,
                     options: [
-                        q.option_1_text,
-                        q.option_1_image,
-                        q.option_2_text,
-                        q.option_2_image,
-                        q.option_3_text,
-                        q.option_3_image,
-                        q.option_4_text,
-                        q.option_4_image
+                        { text: q.option_1_text, image: q.option_1_image },
+                        { text: q.option_2_text, image: q.option_2_image },
+                        { text: q.option_3_text, image: q.option_3_image },
+                        { text: q.option_4_text, image: q.option_4_image }
                     ],
                     answer: q.answer,
                     year: q.year
