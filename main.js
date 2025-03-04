@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 //const fs = require('fs').promises;
 require('./renderer/question');
+const QuestionModel = require('./models/QuestionModel');
+const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
 
 const env = process.env.NODE_ENV || 'development';
@@ -77,7 +79,6 @@ function createWindow() {
         return true;
     });
 }
-
 
 function openActivationWindow() {
     const activationWindow = new BrowserWindow({
@@ -213,28 +214,17 @@ ipcMain.on('open-congrats-window', (_, summaryData) => {
 // IPC handler for fetching questions
 ipcMain.handle('get-questions-by-subject', (_, subject, year) => {
     try {
-        const stmt = db.prepare(`SELECT * FROM questions WHERE subject = ? AND year = ? ORDER BY RANDOM() LIMIT 50;`);
-        const questions = stmt.all(subject, year);
-        console.log(questions)
-
-        if (questions.length !== 0) {
-            questions.forEach(q => {
-                if (q.options) {
-                    q.options = JSON.parse(q.options);
-                }
-            });
-        }
-        return questions;
+        return QuestionModel.find(subject, year);
     } catch (error) {
         console.error('Error retrieving questions:', error);
         throw error;
     }
 });
 
-ipcMain.handle('get-image-path', (_, subject, imageFileName)=>{
-    try{
+ipcMain.handle('get-image-path', (_, subject, imageFileName) => {
+    try {
         return getImagePath(subject, imageFileName);
-    }catch(error){
+    } catch (error) {
         console.error('Error retrieving image path:', error);
         throw error;
     }

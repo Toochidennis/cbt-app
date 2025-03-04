@@ -7,7 +7,7 @@ const fs = require('fs');
 const rowCount = QuestionModel.count();
 if (rowCount === 0) {
     console.log("Seeding database with questions from folder...");
-    const questionsFolder = '../assets/questionContent/questions';
+    const questionsFolder = path.join(__dirname, "../assets/questionContent/questions");
 
     // Check if the folder exists.
     if (!fs.existsSync(questionsFolder)) {
