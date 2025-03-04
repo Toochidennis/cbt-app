@@ -18,7 +18,15 @@ function loadExamSummary() {
             subjectQuestions.forEach((question, index) => {
                 // Retrieve the user's answer for this question (if any)
                 const selectedAnswer = subjectState.userAnswers[index];
-                const userAnswer = question.options.indexOf(selectedAnswer) + 1;
+                const optionIndex = question.options.findIndex(option => {
+                    const optionValue = (option.text && option.text.trim() !== "")
+                        ? option.text
+                        : option.image;
+                    return optionValue === selectedAnswer;
+                });
+
+                // Convert the index to a 1-based answer number
+                const userAnswer = optionIndex + 1;
                 console.log('User answer and index: ', selectedAnswer, userAnswer, question.answer);
                 // Check if the answer is correct
                 const isCorrect = userAnswer === question.answer;

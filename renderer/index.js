@@ -186,16 +186,22 @@ async function renderQuestion(index) {
         const label = document.createElement('label');
         label.classList.add('fade-in');
         label.style.animationDelay = `${(i + 1) * 0.2}s`;
+
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'option';
         const optionText = capitalizeSentence(option.text);
         // Decide what to save: if there's text, use that; if not, use the image name.
-        const answerValue = optionText  && optionText.trim() !== ""
+        const answerValue = optionText && optionText.trim() !== ""
             ? option.text
-            : option.image; // Option image filename or path.
+            : option.image; // Option image filename
         input.value = answerValue;
         input.setAttribute('data-answer', answerValue);
+
+        // Pre-check if the answer is already saved.
+        if (subjectState.userAnswers[index] === answerValue) {
+            input.checked = true;
+        }
 
         label.appendChild(input);
 
