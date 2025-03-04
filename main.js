@@ -1,8 +1,8 @@
 const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 //const fs = require('fs').promises;
-const { saveActivationState, getActivationState, db } = require('./database/db');
-const getImagePath = require('./database/image_loader');
+require('./renderer/question');
+const getImagePath = require('./renderer/image_loader');
 
 const env = process.env.NODE_ENV || 'development';
 
