@@ -20,7 +20,7 @@ contextBridge.exposeInMainWorld('api', {
     // saveExamSummary: (summaryData) => ipcRenderer.invoke('save-exam-summary', summaryData),
     getExamSummary: (summaryData) => ipcRenderer.on('get-exam-summary', summaryData),
     getActivationState: () => ipcRenderer.invoke('get-activation-state'),
-    saveActivationState: (isActivated) => ipcRenderer.invoke('save-activation-state', isActivated),
+    validateActivationCode: (activationCode) => ipcRenderer.invoke('validate-activation-code', activationCode),
     openActivationWindow: () => ipcRenderer.send('open-activation-window'),
     closeActivationWindow: () => ipcRenderer.send('close-activation-window'),
     getImagePath: (subject, imageFileName) => ipcRenderer.invoke('get-image-path', subject, imageFileName),

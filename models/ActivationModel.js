@@ -1,18 +1,18 @@
 const db = require('../models/database');
 const { machineIdSync } = require('node-machine-id');
 const crypto = require('crypto');
-const fetch = require('node-fetch'); // or use axios
+//const fetch = require('node-fetch'); // or use axios
+const fetch = (...args) =>
+    import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 class ActivationModel {
     /**
-     * Generates a unique product key by combining the user-supplied activation code
-     * with a system-specific identifier.
+     * Generates a unique product key by getting a system-specific identifier.
      */
-    static generateProductKey(activationCode) {
+    static generateProductKey() {
         // Use a package like `node-machine-id` to get a unique machine identifier.
-        const machineId = machineIdSync(); // you can choose the options you need here
-        // Combine the activation code and machine ID (you could add separators, salt, etc.)
-        return `${activationCode}-${machineId}`;
+        const machineId = machineIdSync();
+        return machineId.slice(0, 18);
     }
 
     /**
@@ -20,34 +20,45 @@ class ActivationModel {
      * to the server, comparing the server's hash to a locally computed hash.
      */
     static async validateActivation(activationCode) {
-        const productKey = this.generateProductKey(activationCode);
+        try {
+            const productKey = this.generateProductKey(activationCode);
 
-        // Send activation code and product key to your server
-        // (Your server should hash the received productKey with its secret and return the hash)
-        const response = await fetch('https://yourserver.com/validate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ activationCode, productKey })
-        });
+            //Send activation code and product key to your server
+            //(Your server should hash the received productKey with its secret and return the hash)
+            const response = await fetch('http://linkskool.com/developmentportal/api/activate.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ activationCode, productKey })
+            });
 
-        if (!response.ok) {
-            throw new Error(`Server error: ${response.statusText}`);
-        }
+            const responseData = await response.json();
 
-        const { hash: serverHash } = await response.json();
+            if (!response.ok) {
+              //  console.error('Server error:', responseData);
+                // throw new Error(responseData.message || 'Server error');
+                return responseData;
+            }
 
-        // Compute local hash for comparison. For example, using SHA256:
-        const localHash = crypto.createHash('sha256').update(productKey).digest('hex');
+            // Compute local hash for comparison
+            const localHash = crypto
+                .createHash('sha256')
+                .update(`${activationCode}-${productKey}`)
+                .digest('hex');
 
-        // Compare the hashes
-        if (localHash === serverHash) {
-            // If valid, update the activation status in your database.
-            const stmt = db.prepare(`INSERT OR REPLACE INTO activation (key, value) VALUES (?, ?)`);
-            stmt.run('activated', 'true');
-            // Optionally store the activation code or product key as well.
-            return true;
-        } else {
-            return false;
+            const serverHash = responseData.hashKey;
+
+            // Compare the hashes
+            if (localHash === serverHash) {
+                // If valid, update the activation status in your database.
+                const stmt = db.prepare(`INSERT OR REPLACE INTO activation (key, value) VALUES (?, ?)`);
+                stmt.run('activated', 'true');
+                return { success: true };
+            } else {
+                return { success: false, error: 'Activation validation failed: Invalid hash.' };
+            }
+        } catch (e) {
+          //  console.error('Network or unexpected error:', error);
+            return { success: false, error: error.message };
         }
     }
 

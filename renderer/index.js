@@ -2,17 +2,17 @@ import { loadPage } from "./navigation.js";
 import state from "./state.js";
 
 document.getElementById('jamb-button').addEventListener('click', async () => {
-    // const activated = await window.api.getActivationState();
+    const activated = await window.api.getActivationState();
 
-    // if (!activated) {
-    //     window.api.openActivationWindow();
-    // } else {
-    //     window.api.openSelectSubjectWindow();
+    if (!activated) {
+        window.api.openActivationWindow();
+    } else {
+        window.api.openSelectSubjectWindow();
 
-    //     // Proceed to show the exam page.
-    //     console.log("Activation confirmed. Proceeding to exam...");
-    // }
-    window.api.openSelectSubjectWindow();
+        // Proceed to show the exam page.
+        console.log("Activation confirmed. Proceeding to exam...");
+    }
+   // window.api.openSelectSubjectWindow();
 });
 
 

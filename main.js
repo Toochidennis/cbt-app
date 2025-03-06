@@ -70,13 +70,11 @@ function createWindow() {
 
     // IPC handlers for activation state.
     ipcMain.handle('get-activation-state', async () => {
-        console.log('hello');
-        return getActivationState();
+        return ActivationModel.isActivated();
     });
 
-    ipcMain.handle('save-activation-state', async (_, isActivated) => {
-        saveActivationState(isActivated);
-        return true;
+    ipcMain.handle('validate-activation-code', async (_, activationCode) => {
+        return ActivationModel.validateActivation(activationCode);
     });
 }
 
