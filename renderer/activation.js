@@ -1,36 +1,100 @@
-const feedback = document.getElementById('feedback');
-const proceedBtn = document.getElementById('proceed-btn');
-const codeInput = document.getElementById('code');
+
 const closeBtn = document.getElementById('close-btn');
+const onlineFeedback = document.getElementById('feedback-1');
+const offlineFeedback1 = document.getElementById('feedback-2');
+const offlineFeedback2 = document.getElementById('feedback-3');
+const onlineActivateBtn = document.getElementById('activate-online');
+const offlineActivateBtn1 = document.getElementById('activate-offline-1');
+const offlineActivateBtn2 = document.getElementById('activate-offline-2');
+const codeInput1 = document.getElementById('pin-1');
+const codeInput2 = document.getElementById('pin-2');
+const codeInput3 = document.getElementById('pin-3');
+const hashInput1 = document.getElementById('hash-1');
+const hashInput2 = document.getElementById('hash-2');
+const productKey1 = document.getElementById('product-key-1');
+const productKey2 = document.getElementById('product-key-2');
 
-async function validateCode() {
-    const code = codeInput.value.trim();
+async function generateProductKey() {
+    const productKey = await window.api.generateProductKey();
 
-    if(code === ''){
-        alert('Activation code is required');
-    }else{
-        const response =  await window.api.validateActivationCode(code);
-        console.log("is activated:", response);
-    }
-
-    
-
-
-    // if (code === ACTIVATION_CODE) {
-    //     await window.api.saveActivationState(true);
-    //     feedback.textContent = 'Activation successful';
-    //     window.api.closeActivationWindow();
-    //     window.api.openSelectSubjectWindow();
-    // } else {
-    //     feedback.textContent = 'Invalid activation code.';
-    // }
+    productKey1.textContent = productKey;
+    productKey2.textContent = productKey;
 }
 
-proceedBtn.addEventListener('click', () => {
-    validateCode();
+generateProductKey();
+
+async function validateCodeOnline() {
+    const code = codeInput1.value.trim();
+
+    if (code === '') {
+        onlineFeedback.textContent = 'Pin is required';;
+    } else {
+        const { success: status, error: message } = await window.api.validateActivationOnline(code);
+        console.log("is activated:", status, " error: ", message);
+
+        if (status) {
+            onlineFeedback.textContent = "Activation successfully";
+            // window.api.openSelectSubjectWindow();
+        } else {
+            onlineFeedback.textContent = message;
+        }
+    }
+}
+
+async function validateCodeOffline(type = 'pin') {
+    const code = codeInput2.value.trim();
+    const code2 = codeInput3.value.trim();
+    const hash1 = hashInput1.value.trim();
+    const hash2 = hashInput2.value.trim();
+
+    switch (type) {
+        case 'transfer':
+            if (code2 === '' || hash2 === '') {
+                offlineFeedback2.textContent = 'Pin and activation code is required';
+            } else {
+                const { success: status, error: message } = await window.api.validateActivationOffline(code, hash);
+                console.log("is activated:", status, " error: ", message);
+
+                if (status) {
+                    offlineFeedback2.textContent = "Activation successfully";
+                    // window.api.openSelectSubjectWindow();
+                } else {
+                    offlineFeedback2.textContent = message;
+                }
+            }
+            break;
+        case 'pin':
+            if (code === '' || hash1 === '') {
+                offlineFeedback1.textContent = 'Pin and activation code is required';
+            } else {
+                const { success: status, error: message } = await window.api.validateActivationOffline(code, hash);
+                console.log("is activated:", status, " error: ", message);
+
+                if (status) {
+                    offlineFeedback1.textContent = "Activation successfully";
+                    // window.api.openSelectSubjectWindow();
+                } else {
+                    offlineFeedback1.textContent = message;
+                }
+            }
+            break;
+        default:
+            return
+    }
+}
+
+onlineActivateBtn.addEventListener('click', () => {
+    validateCodeOnline();
 });
 
-closeBtn.addEventListener('click', ()=>{
+offlineActivateBtn1.addEventListener('click', ()=>{
+    validateCodeOffline();
+});
+
+offlineActivateBtn2.addEventListener('click', ()=>{
+    validateCodeOffline('transfer');
+});
+
+closeBtn.addEventListener('click', () => {
     window.api.closeActivationWindow();
 })
-

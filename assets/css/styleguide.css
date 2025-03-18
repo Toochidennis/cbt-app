@@ -10,4 +10,14 @@
   --body-large-400-letter-spacing: 0px;
   --body-large-400-line-height: 24px;
   --body-large-400-font-style: normal;
+  
+  /*Deborah*/
+  --today: 0px 0px 15px 0px rgba(66, 108, 255, 0.1);
+  --variable-collection-colomy-red: rgba(220, 64, 54, 1);
+  --variable-collection-cololight-colur-red: rgba(252, 232, 230, 1);
+  --variable-collection-color-green: rgba(30, 142, 62, 1);
+  --variable-collection-color: var(--variable-collection-color-green);
+  --variable-collection-color-green-light: rgba(230, 244, 232, 1);
+  --variable-collection-my-blue: rgba(56, 82, 172, 1);
+  --variable-collection-purple: rgba(163, 48, 142, 1);
 }
