@@ -1,3 +1,4 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const loadPage = require('./navigation.js');
 const state = require('./state.js');
 
@@ -297,6 +298,7 @@ function prevHandler() {
 
 function submitHandler() {
     const correctedData = JSON.parse(JSON.stringify(state));
+
     window.api.sendExamResults(correctedData);
     loadPage('summary');
 }
@@ -361,3 +363,57 @@ function init() {
     submitBtn.addEventListener('click', submitHandler);
     document.addEventListener('keydown', keyboardShortcutsHandler);
 }
+},{"./navigation.js":2,"./state.js":3}],2:[function(require,module,exports){
+// export function loadPage(page) {
+//     fetch(`pages/${page}.html`)
+//         .then(response => response.text())
+//         .then(html => {
+//             const appDiv = document.getElementById('app');
+//             appDiv.innerHTML = html;
+//             const script = document.createElement('script');
+//             script.type = 'module';
+//             script.src = `renderer/${page}.js`;
+//             document.body.appendChild(script);
+//         })
+//         .catch(err => console.error('Error loading page:', err));
+// }
+
+function loadPage(page) {
+    const homeDiv = document.getElementById('home');
+    const examDiv = document.getElementById('cbt');
+    const summaryDiv = document.getElementById('summary');
+
+    if (page === 'cbt') {
+        homeDiv.classList.add('hidden');
+        summaryDiv.classList.add('hidden');
+        examDiv.classList.remove('hidden');
+    } else if (page === 'home') {
+        examDiv.classList.add('hidden');
+        summaryDiv.classList.add('hidden');
+        homeDiv.classList.remove('hidden');
+    }else if(page === 'summary'){
+        examDiv.classList.add('hidden');
+        homeDiv.classList.add('hidden');
+        summaryDiv.classList.remove('hidden');
+    }
+}
+
+module.exports = loadPage;
+
+},{}],3:[function(require,module,exports){
+// state.js
+function getInitialState() {
+    return {
+        subjects: {},
+        selectedSubjects: [],
+        currentSubject: '',
+        year: 0,
+        duration: { hours: 0, minutes: 0 }
+    };
+}
+
+// Initialize the state
+const state = getInitialState();
+module.exports =  {state, getInitialState};
+
+},{}]},{},[1]);

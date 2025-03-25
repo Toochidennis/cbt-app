@@ -1,4 +1,4 @@
-import { loadPage } from "./navigation.js";
+const loadPage = require('./navigation.js');
 
 document.addEventListener('DOMContentLoaded', () => {
     loadPage('home');

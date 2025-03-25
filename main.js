@@ -5,16 +5,16 @@ require('./renderer/question');
 const QuestionModel = require('./models/QuestionModel');
 const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
-const { generateKey } = require('crypto');
+// const { generateKey } = require('crypto');
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-        hardResetMethod: 'exit',
-    });
-}
+// if (env === 'development') {
+//     require('electron-reload')(__dirname, {
+//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+//         hardResetMethod: 'exit',
+//     });
+// }
 
 let mainWindow;
 
@@ -69,24 +69,16 @@ function createWindow() {
         mainWindow.webContents.send('hide-controls', isFullScreen);
     });
 
-    // IPC handlers for activation state.
-    ipcMain.handle('get-activation-state', async () => {
-        return ActivationModel.isActivated();
-    });
-
-    ipcMain.handle('validate-activation-online', async (_, activationCode) => {
-        return ActivationModel.validateActivationOnline(activationCode);
-    });
-
-    ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) => {
-        return ActivationModel.validateActivationOffline(activationCode, hash);
+    ipcMain.on('send-exam-results', (_, summaryData) => {
+        console.log(summaryData);
+       mainWindow.webContents.send('get-exam-summary', summaryData);
     });
 }
 
 function openActivationWindow() {
     const activationWindow = new BrowserWindow({
         // width: 450,
-       //  height: 700,
+        //  height: 700,
         frame: false,
         modal: true,
         parent: mainWindow,
@@ -97,10 +89,6 @@ function openActivationWindow() {
     });
 
     activationWindow.loadFile('pages/activation.html');
-
-    ipcMain.handle('generate-product-key', async()=>{
-        return ActivationModel.generateProductKey();
-    });
 
     const closeHandler = () => {
         if (activationWindow && !activationWindow.isDestroyed()) {
@@ -149,46 +137,6 @@ function openSelectSubjectDialog() {
     });
 }
 
-function openCongratsWindow(summaryData) {
-    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-    const congratsWindow = new BrowserWindow({
-        // width: Math.min(1200, width * 0.8), // 80% of screen width or 1200px, whichever is smaller
-        // height: Math.min(800, height * 0.8),
-        width: 900,
-        frame: false,
-        modal: true,
-        transparent: false,
-        parent: mainWindow,
-        webPreferences: {
-            contextIsolation: true,
-            preload: path.join(__dirname, 'preload.js'),
-        },
-    });
-
-    congratsWindow.loadFile('pages/summary.html');
-
-    const closeHandler = (_, action) => {
-        if (congratsWindow && !congratsWindow.isDestroyed()) {
-            mainWindow.webContents.send('congrats-window-closed', action);
-            congratsWindow.close();
-        }
-    };
-
-    // Register the listener for this window instance
-    ipcMain.once('close-congrats-window', closeHandler);
-
-    // When the window is closed, remove the listener to avoid referencing a destroyed window
-    congratsWindow.on('closed', () => {
-        ipcMain.removeListener('close-congrats-window', closeHandler);
-        mainWindow.webContents.send('show-controls', true);
-    });
-
-    // Send the summary after the page has loaded.
-    congratsWindow.webContents.on('did-finish-load', () => {
-        congratsWindow.webContents.send('get-exam-summary', summaryData);
-    });
-}
-
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
@@ -196,10 +144,6 @@ ipcMain.on('open-subject-window', () => {
 
 ipcMain.on('open-activation-window', () => {
     openActivationWindow();
-});
-
-ipcMain.on('open-congrats-window', (_, summaryData) => {
-    openCongratsWindow(summaryData);
 });
 
 // IPC handler for fetching questions
@@ -219,6 +163,24 @@ ipcMain.handle('get-image-path', (_, subject, imageFileName) => {
         console.error('Error retrieving image path:', error);
         throw error;
     }
+});
+
+// IPC handlers for activation state.
+ipcMain.handle('get-activation-state', async () => {
+    return ActivationModel.isActivated();
+});
+
+ipcMain.handle('validate-activation-online', async (_, activationCode) => {
+    return ActivationModel.validateActivationOnline(activationCode);
+});
+
+ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) => {
+    return ActivationModel.validateActivationOffline(activationCode, hash);
+});
+
+
+ipcMain.handle('generate-product-key', async () => {
+    return ActivationModel.generateProductKey();
 });
 
 // App event handlers

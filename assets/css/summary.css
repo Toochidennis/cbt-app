@@ -9,8 +9,9 @@
     flex-direction: column;
     background-color: #f6f6f6;
     padding: 2rem;
-    overflow-y: hidden;
-    font-family: Urbanist;
+    overflow-y: auto;
+    height: 100vh;
+    font-family: "Urbanist";
 }
 
 .summary-page .header {
@@ -115,16 +116,17 @@ h2 {
 
 .summary-content {
     margin-top: 1em;
+    padding-bottom: 3em;
 }
 
-.subject-charts {
+.stats{
     margin-top: 1em;
     display: flex;
     gap: 10px;
     width: 100%;
 }
 
-.subject-charts .chart-content {
+.stats-content {
     display: flex;
     background-color: #fff;
     border: 1px solid #f6f6f61a;
@@ -133,14 +135,14 @@ h2 {
     box-shadow: var(--today);
 }
 
-.chart-content .line {
+.line {
     width: 6px;
     border-radius: 5px;
     background: linear-gradient(180deg, rgba(66, 108, 255, 0.7),
             rgba(66, 108, 255, 0.3), rgba(66, 108, 255, 0.8) 70%);
 }
 
-.chart-content .stats {
+.stats-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,7 +150,7 @@ h2 {
     gap: 10px
 }
 
-.stats .correct,
+.correct,
 .incorrect {
     display: flex;
     align-items: center;
@@ -324,7 +326,7 @@ h2 {
     font-size: 1rem;
     letter-spacing: 0;
     line-height: normal;
-    cursor: pointer;
+    pointer-events: none;
 }
 
 .options-container input[type="radio"] {

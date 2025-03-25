@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/styleguide.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/cbt.css" />
+    <link rel="stylesheet" href="assets/css/summary.css" />
 </head>
 
 <body>
@@ -36,24 +37,58 @@
                     </div>
                 </div>
             </div </div>
+
             <div class="content-area" id="home">
                 <div class="homepage">
-                    <div class="frame-5">
-                        <div class="header-contents">
-                            <div class="frame-6">
-                                <p class="smart-practice-for">
-                                    <span class="span">Smart practice for smarter</span> <span class="text-wrapper-6">
-                                        results</span>
-                                </p>
-                                <p class="p">
-                                    Gain access to a wide range of practice tests tailored to help manage your
-                                    time effectively,
-                                    and boost
-                                    your confidence before the big day.
-                                </p>
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <div class="slider">
+                                <div class="slide">
+                                    <div class="slider-content">
+                                        <div class="slider-text">Easter Kids Coding Fest</div>
+                                        <p>Gain access to a wide range of practice tests
+                                            tailored to help manage your time effectively,
+                                            and boost your confidence before the big day.
+                                        </p>
+                                        <button class="register-button">Register</button>
+                                    </div>
+                                    <div class="graphics">
+                                        <img src="assets/img/fest.png">
+                                    </div>
+                                </div>
+                
+                                <div class="slide">
+                                    <div class="slider-content">
+                                        <div class="slider-text">Kids Coding Bootcamp</div>
+                                        <p>Join our immersive coding camp for kids and teens.
+                                            Learn coding, robotics, and more in a fun environment!
+                                        </p>
+                                        <button class="register-button">Register</button>
+                                    </div>
+                                    <div class="graphics">
+                                        <img src="assets/img/funny-woman.png">
+                                    </div>
+                                </div>
+                
+                                <div class="slide">
+                                    <div class="slider-content">
+                                        <div class="slider-text">Kids Coding Challenge</div>
+                                        <p>Join our immersive tech camp for kids and teens.
+                                            Learn coding, robotics, and more in a fun environment!
+                                        </p>
+                                        <button class="register-button">Register</button>
+                                    </div>
+                                    <div class="graphics">
+                                        <img src="assets/img/fest.png">
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                
+                        <button id="prevBtn">‹</button>
+                        <button id="nextBtn">›</button>
                     </div>
+                
                     <div class="category">
                         <div class="select-an-exam-to">Select an exam to&nbsp;&nbsp;practice</div>
                         <div class="div-2">
@@ -83,6 +118,8 @@
                                     <div class="text-wrapper-2">2020-2024</div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="div-3">
                             <div class="category-4">
                                 <div class="frame-3"><img class="image-3" src="assets/img/image-70.png" />
                                 </div>
@@ -133,7 +170,7 @@
                         <div class="question-container">
                             <div id="progress">Question 12/25</div>
                             <div id="question-image-container">
-                                <img id="question-image"/>
+                                <img id="question-image" />
                             </div>
                             <div id="question-text">x
                                 Guy Bailey, Roy Hackett and Paul Stephenson made history in 1963, as part of a protest
@@ -170,9 +207,71 @@
                     </div>
                 </div>
             </div>
+
+            <div class="content" id="summary">
+                <div class="summary-page">
+                    <div class="header">
+                        <div class="close" id="close-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24">
+                                <line x1="5" y1="5" x2="19" y2="19" stroke="#426CFF" stroke-width="2" stroke-linecap="round" />
+                                <line x1="5" y1="19" x2="19" y2="5" stroke="#426CFF" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="summary-content">
+                        <h2>Result OverView</h2>
+                        <div class="content-1">
+                            <div class="text-content">
+                                <span>Well Done!</span>
+                                <div id="you-scored"></div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="points-chart"></canvas>
+                                <div class="chart-text" id="chart-text"></div>
+                            </div>
+                        </div>
+
+                        <div class="stats" id="stats"> </div>
+
+                        <div class="metrics">
+                            <div class="performance-container">
+                                <span>Total Score Performance</span>
+                                <div class="performance-content">
+                                    <canvas id="doughnut-chart"></canvas>
+
+                                </div>
+                            </div>
+                            <div class="analysis-container">
+                                <span>Total Score Analysis</span>
+                                <canvas id="analysis-chart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="tab" id="summary-tab"></div>
+                        <div id="questions-container">
+                            <div class="questions-content">
+                                <div class="question-line"></div>
+                                <div class="question">
+                                    <div class="progress"></div>
+                                    <div class="question-image-container">
+                                        <img class="question-image" />
+                                    </div>
+                                    <div class="question-text"></div>
+                                    <div class="options-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-        <script type="module" src="renderer/renderer.js"></script>
-        <script type="module" src="renderer/index.js"></script>
+
+
+        <script src="renderer/bundle.js"></script>
+        <script src="renderer/renderer-bundle.js"></script>
+        <script src="renderer/index-bundle.js"></script>
 </body>
 
 </html>

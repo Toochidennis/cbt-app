@@ -12,15 +12,24 @@
 //         .catch(err => console.error('Error loading page:', err));
 // }
 
-export function loadPage(page) {
+function loadPage(page) {
     const homeDiv = document.getElementById('home');
     const examDiv = document.getElementById('cbt');
+    const summaryDiv = document.getElementById('summary');
 
     if (page === 'cbt') {
         homeDiv.classList.add('hidden');
+        summaryDiv.classList.add('hidden');
         examDiv.classList.remove('hidden');
     } else if (page === 'home') {
         examDiv.classList.add('hidden');
+        summaryDiv.classList.add('hidden');
         homeDiv.classList.remove('hidden');
+    }else if(page === 'summary'){
+        examDiv.classList.add('hidden');
+        homeDiv.classList.add('hidden');
+        summaryDiv.classList.remove('hidden');
     }
 }
+
+module.exports = loadPage;

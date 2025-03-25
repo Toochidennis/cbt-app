@@ -25,7 +25,7 @@ class ActivationModel {
 
             //Send activation code and product key to your server
             //(Your server should hash the received productKey with its secret and return the hash)
-            const response = await fetch('http://linkskool.com/developmentportal/api/activate.php', {
+            const response = await fetch('http://linkskool.net/api/v1/activate.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ activationCode, productKey })
@@ -36,7 +36,7 @@ class ActivationModel {
             if (!response.ok) {
                 //  console.error('Server error:', responseData);
                 // throw new Error(responseData.message || 'Server error');
-                return responseData;
+                return {success: false, error: 'Invalid activation code'};
             }
 
             // Compute local hash for comparison
@@ -53,13 +53,13 @@ class ActivationModel {
                 // If valid, update the activation status in your database.
                 const stmt = db.prepare(`INSERT OR REPLACE INTO activation (key, value) VALUES (?, ?)`);
                 stmt.run('activated', 'true');
-                return { success: true };
+                return { success: true, error: ''};
             } else {
                 return { success: false, error: 'Activation validation failed: Invalid hash.' };
             }
         } catch (e) {
             //  console.error('Network or unexpected error:', error);
-            return { success: false, error: error.message };
+            return { success: false, error: 'An error occurred. Please try again.' };
         }
     }
 
@@ -85,7 +85,7 @@ class ActivationModel {
                 // If valid, update the activation status in your database.
                 const stmt = db.prepare(`INSERT OR REPLACE INTO activation (key, value) VALUES (?, ?)`);
                 stmt.run('activated', 'true');
-                return { success: true };
+                return { success: true, error: '' };
             } else {
                 return { success: false, error: 'Activation validation failed: Invalid hash.' };
             }
