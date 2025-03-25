@@ -1,4 +1,139 @@
-<h1>CBT Summary</h1>
-<div id="summary-container"></div>
-<button id="retake-btn">Retake Quiz</button>
-<button id="home-btn">Back to Home</button>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="../assets/css/globals.css" />
+    <link rel="stylesheet" href="../assets/css/styleguide.css" />
+    <link rel="stylesheet" href="../assets/css/summary.css" />
+</head>
+
+<body>
+    <div class="summary-page">
+        <div class="header">
+            <div class="close" id="close-btn">
+                <img class="icon" src="../assets/icons/close.svg">
+            </div>
+        </div>
+        <div class="summary-content">
+            <h2>Result OverView</h2>
+            <div class="content-1">
+                <div class="text-content">
+                    <span>Well Done!</span>
+                    <div id="you-scored"></div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="points-chart"></canvas>
+                    <div class="chart-text" id="chart-text"></div>
+                </div>
+            </div>
+            <div class="subject-charts">
+                <div class="chart-content">
+                    <div class="line"></div>
+                    <div class="stats" id="stats">
+                        <div id="subject-name">English Language</div>
+                        <div class="correct">
+                            <div id="correct-circle"></div>
+                            <div id="correct-text">Correct</div>
+                        </div>
+                        <div id="correct-score">70 points</div>
+
+                        <div class="incorrect">
+                            <div id="incorrect-circle"></div>
+                            <div id="incorrect-text">Incorrect</div>
+                        </div>
+                        <div id="incorrect-score">70 points</div>
+                    </div>
+                    <canvas id="subject-chart" width="50" height="50"></canvas>
+                </div>
+                <div class="chart-content">
+                    <div class="line"></div>
+                    <div class="stats" id="stats">
+                        <div id="subject-name">English Language</div>
+                        <div class="correct">
+                            <div id="correct-circle"></div>
+                            <div id="correct-text">Correct</div>
+                        </div>
+                        <div id="correct-score">70 points</div>
+
+                        <div class="incorrect">
+                            <div id="incorrect-circle"></div>
+                            <div id="incorrect-text">Incorrect</div>
+                        </div>
+                        <div id="incorrect-score">70 points</div>
+                    </div>
+                    <canvas id="subject-chart" width="50" height="50"></canvas>
+                </div>
+                <div class="chart-content">
+                    <div class="line"></div>
+                    <div class="stats" id="stats">
+                        <div id="subject-name">English Language</div>
+                        <div class="correct">
+                            <div id="correct-circle"></div>
+                            <div id="correct-text">Correct</div>
+                        </div>
+                        <div id="correct-score">70 points</div>
+
+                        <div class="incorrect">
+                            <div id="incorrect-circle"></div>
+                            <div id="incorrect-text">Incorrect</div>
+                        </div>
+                        <div id="incorrect-score">70 points</div>
+                    </div>
+                    <canvas id="subject-chart" width="50" height="50"></canvas>
+                </div>
+                <div class="chart-content">
+                    <div class="line"></div>
+                    <div class="stats" id="stats">
+                        <div id="subject-name">English Language</div>
+                        <div class="correct">
+                            <div id="correct-circle"></div>
+                            <div id="correct-text">Correct</div>
+                        </div>
+                        <div id="correct-score">70 points</div>
+
+                        <div class="incorrect">
+                            <div id="incorrect-circle"></div>
+                            <div id="incorrect-text">Incorrect</div>
+                        </div>
+                        <div id="incorrect-score">70 points</div>
+                    </div>
+                    <canvas id="subject-chart" width="50" height="50"></canvas>
+                </div>
+            </div>
+            <div class="metrics">
+                <div class="performance-container">
+                    <span>Total Score Performance</span>
+                    <div class="performance-content">
+                        <canvas id="doughnut-chart"></canvas>
+
+                    </div>
+                </div>
+                <div class="analysis-container">
+                    <span>Total Score Analysis</span>
+                    <canvas id="analysis-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="tab"></div>
+            <div id="questions-container">
+                <div class="questions-content">
+                    <div class="question-line"></div>
+                    <div class="question">
+                        <div class="progress"></div>
+                        <div class="question-image-container">
+                            <img class="question-image" />
+                        </div>
+                        <div class="question-text"></div>
+                        <div class="options-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../renderer/bundle.js"></script>
+</body>
+
+</html>

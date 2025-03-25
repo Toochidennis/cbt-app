@@ -10,24 +10,118 @@
 </head>
 
 <body>
-
-    <div class="container-parent">
+    <div class="parent">
         <div class="header">
             <div class="close" id="close-btn">
-                <img class="icon" src="../assets/icons/close.svg">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                    <line x1="5" y1="5" x2="19" y2="19" stroke="#426CFF" stroke-width="2" stroke-linecap="round" />
+                    <line x1="5" y1="19" x2="19" y2="5" stroke="#426CFF" stroke-width="2" stroke-linecap="round" />
+                </svg>
             </div>
         </div>
-        <div class="container1">
-            <div class="text"> Activation Code Required</div>
-            <div class="text1">Please enter your activation code to start practice test.</div>
-        </div>
-        <div class="container2">
-            <div class="search" id="search">
-                <input id="code" type="text" placeholder="Enter activation code" />
+
+        <div class="activation">
+            <div class="online-wrapper">
+                <div class="online">
+                    <div class="frame-1">
+                        <div class="title-text">Activate via Scratch Card (Online)</div>
+                        <div class="divider"></div>
+
+                        <div class="title-3">Follow the instructions to continue</div>
+                        <ul class="custom-list">
+                            <li>Enter purchased pin</li>
+                            <li>Click on the <span>Activate</span> button below to start taking tests</li>
+                        </ul>
+                        <div class="input-container-1">
+                            <div class="input-field">
+                                <input id="pin-1" placeholder="Enter pin">
+                            </div>
+                            <button id="activate-online" type="submit">Activate</button>
+                        </div>
+                        <div class="feedback" id="feedback-1"></div>
+                    </div>
+
+                    <div class="frame-2">
+                        <div class="title-text-2">Activate via Online Payment</div>
+                        <div class="divider"></div>
+                        <div class="card-issuant">
+                            <img src="../assets/img/master.png">
+                            <img src="../assets/img/visa.png">
+                            <img src="../assets/img/verve.png">
+                        </div>
+                        <div class="title-4">Follow the instructions to continue</div>
+                        <ul class="custom-list">
+                            <li>Click on the <span class="highlight-text">Pay Online</span> button below</li>
+                            <li>Select an online payment method (Paystack, Zelle...)</li>
+                            <li>Provide email or phone number to receive activation code</li>
+                        </ul>
+                        <button id="pay online" type="submit">Pay Online</button>
+                    </div>
+                </div>
             </div>
-            <div id="feedback"></div>
-            <div class="button-primary" id="proceed-btn">
-                <b class="button-text">Proceed</b>
+            <div class="offline-wrapper">
+                <div class="offline">
+                    <div class="frame-3">
+                        <div class="title-text">Activate via Scratch Card (Offline)</div>
+                        <div class="divider"></div>
+
+                        <div class="title-3">Follow the instructions to continue</div>
+                        <ul class="custom-list">
+                            <li>Send this code <span class="pin" id="product-key-1"></span> and the scratch pin to
+                                <span class="highlight-text" id="phone-number">09047697293</span> via WhatsApp
+                            </li>
+                            <li>Enter the received activation code below</li>
+                        </ul>
+                        <div class="input-container">
+                            <div class="input-field-2">
+                                <input id="pin-2" placeholder="Enter pin">
+                            </div>
+                            <div class="input-field-2">
+                                <input id="hash-1" placeholder="Enter activation code">
+                            </div>
+                            <button id="activate-offline-1" type="submit">Activate</button>
+                        </div>
+                        <div class="feedback" id="feedback-2"></div>
+                    </div>
+
+                    <div class="frame-4">
+                        <div class="title-text-2">Activate via Bank Transfer</div>
+                        <div class="divider"></div>
+                        <div class="account">
+                            <div class="account-title">
+                                <div>Bank Name</div>
+                                <div>Account Number</div>
+                                <div>Account Name</div>
+                            </div>
+                            <div class="account-data">
+                                <p>Fidelity Bank</p>
+                                <p>5610001273</p>
+                                <p>Digital Dreams Limited</p>
+                            </div>
+                        </div>
+                        <div class="title-3">Follow the instructions to continue</div>
+                        <ul class="custom-list">
+                            <li id="amount">Send the equivalent of
+                                <span class="highlight-text">&#8358;5000.00</span> to the bank account above
+                            </li>
+                            <li id="frame-4-text">Send transaction receipt and this code <span class="pin"
+                                    id="product-key-2"></span> to
+                                <span class="highlight-text" id="phone-number">09047697293</span> via WhatsApp
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-field-2">
+                            <input id="pin-3" placeholder="Enter pin">
+                        </div>
+                        <div class="input-field-2">
+                            <input id="hash-2" placeholder="Enter activation code">
+                        </div>
+                        <button id="activate-offline-2" type="submit">Activate</button>
+                    </div>
+                    <div class="feedback" id="feedback-3"></div>
+
+                </div>
             </div>
         </div>
     </div>

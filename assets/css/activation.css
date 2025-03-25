@@ -1,10 +1,8 @@
-.container-parent {
-    border-radius: 10px;
-    background-color: #426cff;
-    font-size: 1.5rem;
-    padding: 1em;
-    color: #fff;
-    font-family: Urbanist;
+.parent {
+    display: flex;
+    font-size: .8rem;
+    font-family: "Urbanist";
+    color: rgba(91, 89, 80, 1);
 }
 
 .header {
@@ -13,62 +11,137 @@
 }
 
 .header .close {
-    border: 1.5px solid #fff;
+    position: fixed;
+    border: 1.5px solid #426CFF;
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     align-items: center;
     display: flex;
     justify-content: center;
     cursor: pointer;
+    top: 16px;
+    right: 16px;
 }
 
-.close:active{
+.close:active {
     transform: scale(0.98);
 }
 
-.text {
-    letter-spacing: -0.02em;
+.activation {
+    flex: 1;
+    display: flex;
+}
+
+.activation .online-wrapper {
+    flex: 1;
+    background-color: #ECF0FF;
+    padding: 2em;
+    border-right: 1px solid transparent;
+    border-image: repeating-linear-gradient(0deg, #B6B6B6 0px, #B6B6B6 20px, transparent 20px, transparent 30px);
+    border-image-slice: 1;
+    height: 100%;
+}
+
+.activation .online,
+.offline {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.online .frame-1,
+.frame-3 {
+    padding-bottom: 1em;
+    border-bottom: 1px solid transparent;
+    border-image: repeating-linear-gradient(90deg, #B6B6B6 0px, #B6B6B6 20px,
+            transparent 20px, transparent 30px) 1 100%;
+    border-image-slice: 1;
+}
+
+.title-text {
+    color: #426CFF;
     line-height: 120%;
+    letter-spacing: -2%;
+    font-size: 1.3rem;
     font-weight: 600;
-}
-
-.text1 {
-    font-size: .9rem;
-    line-height: 145%;
-    margin-top: .5em;
-    color: #EBEBEB;
-    text-align: center;
-}
-
-.container2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 1em;
-    justify-content: center;
-    gap: 8px;
 }
 
-.container1 {
+.title-text-2 {
+    color: #426CFF;
+    line-height: 120%;
+    letter-spacing: -2%;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 1em;
+}
+
+.divider {
+    color: #426CFF;
+    background-color: #426CFF;
+    height: 2px;
+}
+
+.title-2 {
+    margin-top: 1em;
+    background-color: rgba(66, 108, 255, 0.1);
+    padding: .8em;
+    border-radius: 4px;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+.title-3,
+.title-4 {
+    margin-top: 1em;
+    line-height: 130%;
+    letter-spacing: 0;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.title-4 {
+    margin-top: 2em;
+}
+
+.custom-list {
     display: flex;
-
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    gap: 16px;
+    margin-top: 1em;
+    margin-left: 1em;
+    list-style-type: disc;
 }
 
-.search {
+.input-container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.input-container-1 {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: .5em;
+}
+
+.input-field {
     display: flex;
     align-self: stretch;
-    height: 48px;
+    height: 38px;
+    width: 100%;
     align-items: center;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 6px;
+    border: .75px solid rgba(212, 212, 212, 1);
     padding: .5rem;
+    margin-top: 1em;
 }
 
-#code {
+input {
     width: 100%;
     border: none;
     background: none;
@@ -77,35 +150,103 @@
     font-family: "Urbanist", Helvetica;
     font-weight: 400;
     line-height: 0.03em;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding: .5em;
 }
 
-#code::placeholder {
-    color: var(--gray-700);
+input::placeholder {
+    color: rgba(140, 140, 140, 1);
+    line-height: 150%;
+    letter-spacing: 0;
     font-size: 1rem;
 }
 
-#feedback {
-    color: yellow;
-    font-size: 1rem;
-}
-
-.button-primary {
-    align-self: stretch;
-    box-shadow: 0px 3px 2px -2px rgba(0, 0, 0, 0.06), 0px 5px 3px -2px rgba(0, 0, 0, 0.02);
-    border-radius: 8px;
-    background-color: #7795ff;
+.input-field-2 {
     display: flex;
+    align-self: stretch;
+    height: 38px;
+    width: 100%;
+    align-items: center;
+    background-color: rgba(248, 248, 248, 1);
+    border-radius: 6px;
+    border: .75px solid rgba(212, 212, 212, 1);
+    padding: .5rem;
+    margin-top: 1em;
+}
+
+.feedback {
+    margin-top: .5em;
+    color: red;
+}
+
+.activation .offline-wrapper {
+    flex: 1;
+    padding: 2em;
+    height: 100%;
+}
+
+button {
+    border-radius: 6px;
+    background-color: rgba(47, 85, 221, 1);
+    border: .75px solid rgba(119, 149, 255, 1);
     margin-top: 1em;
     align-items: center;
     justify-content: center;
-    padding: 1em;
-    font-size: 1rem;
+    padding: .8em;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0;
     text-align: center;
-    color: #fff;
+    color: rgba(235, 255, 226, 1);
     cursor: pointer;
 }
 
-.button-primary:active {
+button:active {
     transform: scale(0.98);
+}
+
+.card-issuant {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: .5em;
+    margin-top: 2em;
+}
+
+.account {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(248, 248, 248, 1);
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.account .account-title {
+    display: flex;
+    gap: 70px;
+}
+
+.account-data {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.account-data p {
+    color: rgba(65, 65, 65, 1);
+}
+
+.highlight-text {
+    color: #426CFF;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+}
+
+.pin {
+    color: #5B5950;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
 }

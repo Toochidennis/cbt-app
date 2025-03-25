@@ -2,7 +2,10 @@ const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 //const fs = require('fs').promises;
 require('./renderer/question');
+const QuestionModel = require('./models/QuestionModel');
+const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
+const { generateKey } = require('crypto');
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -18,8 +21,8 @@ let mainWindow;
 function createWindow() {
     const { width, height } = screen.getPrimaryDisplay().workAreaSize;
     mainWindow = new BrowserWindow({
-        width: Math.min(1200, width * 0.8), // 80% of screen width or 1200px, whichever is smaller
-        height: Math.min(800, height * 0.8),
+        // width: Math.min(1200, width * 0.8), // 80% of screen width or 1200px, whichever is smaller
+        // height: Math.min(800, height * 0.8),
         frame: false,
         resizable: true,
         webPreferences: {
@@ -68,24 +71,24 @@ function createWindow() {
 
     // IPC handlers for activation state.
     ipcMain.handle('get-activation-state', async () => {
-        console.log('hello');
-        return getActivationState();
+        return ActivationModel.isActivated();
     });
 
-    ipcMain.handle('save-activation-state', async (_, isActivated) => {
-        saveActivationState(isActivated);
-        return true;
+    ipcMain.handle('validate-activation-online', async (_, activationCode) => {
+        return ActivationModel.validateActivationOnline(activationCode);
+    });
+
+    ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) => {
+        return ActivationModel.validateActivationOffline(activationCode, hash);
     });
 }
 
-
 function openActivationWindow() {
     const activationWindow = new BrowserWindow({
-        width: 450,
-        height: 500,
+        // width: 450,
+       //  height: 700,
         frame: false,
         modal: true,
-        transparent: true,
         parent: mainWindow,
         webPreferences: {
             contextIsolation: true,
@@ -94,6 +97,10 @@ function openActivationWindow() {
     });
 
     activationWindow.loadFile('pages/activation.html');
+
+    ipcMain.handle('generate-product-key', async()=>{
+        return ActivationModel.generateProductKey();
+    });
 
     const closeHandler = () => {
         if (activationWindow && !activationWindow.isDestroyed()) {
@@ -140,32 +147,17 @@ function openSelectSubjectDialog() {
     selectSubjectWindow.on('closed', () => {
         ipcMain.removeListener('close-select-subject-window', closeHandler);
     });
-
-    // Adjust size after content loads
-    // selectSubjectWindow.webContents.once('did-finish-load', () => {
-    //     selectSubjectWindow.webContents
-    //         .executeJavaScript(`
-    //         new Promise((resolve) => {
-    //             const { scrollWidth, scrollHeight } = document.documentElement;
-    //             resolve({ width: scrollWidth, height: scrollHeight });
-    //         });
-    //     `)
-    //         .then((size) => {
-    //             selectSubjectWindow.setBounds({
-    //                 width: Math.min(size.width + 20, 800), // Limit max width
-    //                 height: Math.min(size.height + 20, 600), // Limit max height
-    //             });
-    //         });
-    // });
 }
 
 function openCongratsWindow(summaryData) {
+    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
     const congratsWindow = new BrowserWindow({
-        width: 450,
-        height: 500,
+        // width: Math.min(1200, width * 0.8), // 80% of screen width or 1200px, whichever is smaller
+        // height: Math.min(800, height * 0.8),
+        width: 900,
         frame: false,
         modal: true,
-        transparent: true,
+        transparent: false,
         parent: mainWindow,
         webPreferences: {
             contextIsolation: true,
@@ -173,7 +165,7 @@ function openCongratsWindow(summaryData) {
         },
     });
 
-    congratsWindow.loadFile('pages/congrats.html');
+    congratsWindow.loadFile('pages/summary.html');
 
     const closeHandler = (_, action) => {
         if (congratsWindow && !congratsWindow.isDestroyed()) {
@@ -213,66 +205,21 @@ ipcMain.on('open-congrats-window', (_, summaryData) => {
 // IPC handler for fetching questions
 ipcMain.handle('get-questions-by-subject', (_, subject, year) => {
     try {
-        const stmt = db.prepare(`SELECT * FROM questions WHERE subject = ? AND year = ? ORDER BY RANDOM() LIMIT 50;`);
-        const questions = stmt.all(subject, year);
-        console.log(questions)
-
-        if (questions.length !== 0) {
-            questions.forEach(q => {
-                if (q.options) {
-                    q.options = JSON.parse(q.options);
-                }
-            });
-        }
-        return questions;
+        return QuestionModel.find(subject, year);
     } catch (error) {
         console.error('Error retrieving questions:', error);
         throw error;
     }
 });
 
-ipcMain.handle('get-image-path', (_, subject, imageFileName)=>{
-    try{
+ipcMain.handle('get-image-path', (_, subject, imageFileName) => {
+    try {
         return getImagePath(subject, imageFileName);
-    }catch(error){
+    } catch (error) {
         console.error('Error retrieving image path:', error);
         throw error;
     }
 });
-
-// ipcMain.handle('save-exam-summary', (_, summaryData) => {
-//     try {
-//         const insertStmt = db.prepare(`INSERT INTO exam_summary (exam_data) VALUES (?)`);
-//         const stringifiedData = JSON.stringify({summaryData: "text"});
-//         console.log('Stringified data:', stringifiedData);
-//         let result = 0;
-//         const transaction = db.transaction((summary)=>{
-//             result = insertStmt.run(summary);
-//         });
-
-//         transaction(stringifiedData);
-//         console.log('Insert result:', result);
-//     } catch (error) {
-//         console.error('Error saving exam summary:', error);
-//         throw error;
-//     }
-// });
-
-// ipcMain.handle('get-exam-summary', () => {
-//     try {
-//         const stmt = db.prepare("SELECT * FROM exam_summary ORDER BY id DESC LIMIT 1");
-//         const summary = stmt.get();
-//         if (summary) {
-//             summary.exam_data = JSON.parse(summary.exam_data);
-//         }
-//         console.log(summary)
-//         return summary;
-//     } catch (error) {
-//         console.error('Error retrieving exam summary:', error);
-//         throw error;
-//     }
-// });
-
 
 // App event handlers
 app.whenReady().then(() => {

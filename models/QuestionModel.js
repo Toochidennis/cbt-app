@@ -2,7 +2,7 @@
 const db = require('../models/database');
 
 class QuestionModel {
-    static create({ questions }) {
+    static create(questionsData) {
         const insertStmt = db.prepare(
             "INSERT INTO questions (subject, question_image, question_text, options, answer, year) VALUES (?, ?, ?, ?, ?, ?)"
         );
@@ -10,11 +10,10 @@ class QuestionModel {
         const insertTransaction = db.transaction((questions) => {
             for (const q of questions) {
                 // Convert options array to JSON string for storage
-                insertStmt.run(subject, question_image, question_text, JSON.stringify(options), answer, year);
+                insertStmt.run(q.subject, q.question_image, q.question_text, JSON.stringify(q.options), q.answer, q.year);
             }
         });
-
-        insertTransaction(questions);
+        insertTransaction(questionsData);
     }
 
     static find(subject, year) {

@@ -12,6 +12,7 @@ document.getElementById('jamb-button').addEventListener('click', async () => {
         // Proceed to show the exam page.
         console.log("Activation confirmed. Proceeding to exam...");
     }
+   // window.api.openSelectSubjectWindow();
 });
 
 
