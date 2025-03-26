@@ -1,13 +1,14 @@
-const { app, BrowserWindow, ipcMain, screen, shell } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, shell, autoUpdater, dialog } = require('electron');
+const axios = require('axios');
 const path = require('path');
 require('./renderer/question');
 const QuestionModel = require('./models/QuestionModel');
 const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
 
-// const env = process.env.NODE_ENV || 'development';
-
 const gotTheLock = app.requestSingleInstanceLock();
+
+// const env = process.env.NODE_ENV || 'development';
 
 // if (env === 'development') {
 //     require('electron-reload')(__dirname, {
@@ -74,9 +75,6 @@ function createWindow() {
         mainWindow.webContents.send('show-controls', true);
         mainWindow.setFullScreen(false);
     });
-
-    // ipcMain.on('hide-summary-page', ()=>{
-    // });
 
     ipcMain.on('open-link', (_, url) => {
         shell.openExternal(url);
@@ -145,6 +143,21 @@ function openSelectSubjectDialog() {
     });
 }
 
+async function checkForUpdates() {
+    const updateUrl = 'http://linkschoolonline.com/version';
+
+    try {
+        const { data } = await axios.get(updateUrl);
+        const currentVersion = app.getVersion();
+
+        if (data.version && data.version !== currentVersion) {
+            autoUpdater.setFeedURL({ url: data.url });
+            autoUpdater.checkForUpdates();
+        }
+    } catch (error) {
+        console.error("Error checking for updates:", error);
+    }
+}
 
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
@@ -192,6 +205,21 @@ ipcMain.handle('generate-product-key', async () => {
     return ActivationModel.generateProductKey();
 });
 
+autoUpdater.on("download-progress", (progress) => {
+    console.log(`Download progress: ${progress.percent}%`);
+});
+
+autoUpdater.on('update-downloaded', () => {
+    dialog.showMessageBox({
+        type: 'info',
+        title: 'Update available',
+        message: 'A new update has been downloaded. Restart the app to apply it?',
+        buttons: ['Restart', 'Later']
+    }).then(result => {
+        if (result.response === 0) autoUpdater.quitAndInstall();
+    });
+});
+
 
 if (!gotTheLock) {
     app.quit();
@@ -205,6 +233,7 @@ if (!gotTheLock) {
     });
 
     app.whenReady().then(() => {
+        checkForUpdates();
         createWindow();
 
         app.on('activate', () => {

@@ -1,7 +1,6 @@
 const db = require('../models/database');
 const { machineIdSync } = require('node-machine-id');
 const crypto = require('crypto');
-//const fetch = require('node-fetch'); // or use axios
 const fetch = (...args) =>
     import('node-fetch').then(({ default: fetch }) => fetch(...args));
 

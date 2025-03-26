@@ -31,10 +31,12 @@
     "electron-reloader": "^1.2.3"
   },
   "dependencies": {
+    "axios": "^1.8.4",
     "better-sqlite3": "^11.8.1",
     "browserify": "^17.0.1",
     "chart.js": "^4.4.8",
     "electron-reload": "^2.0.0-alpha.1",
+    "electron-updater": "^6.3.9",
     "node-fetch": "^3.3.2",
     "node-machine-id": "^1.1.12"
   }
