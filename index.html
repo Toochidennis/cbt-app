@@ -50,7 +50,7 @@
                                             tailored to help manage your time effectively,
                                             and boost your confidence before the big day.
                                         </p>
-                                        <button class="register-button">Register</button>
+                                        <button class="register-button" id="fest-btn">Register</button>
                                     </div>
                                     <div class="graphics">
                                         <img src="assets/img/fest.png">
@@ -63,10 +63,10 @@
                                         <p>Join our immersive coding camp for kids and teens.
                                             Learn coding, robotics, and more in a fun environment!
                                         </p>
-                                        <button class="register-button">Register</button>
+                                        <button class="register-button" id="boot-camp-btn">Register</button>
                                     </div>
                                     <div class="graphics">
-                                        <img src="assets/img/funny-woman.png">
+                                        <img src="assets/img/boot-camp.png">
                                     </div>
                                 </div>
                 
@@ -76,10 +76,10 @@
                                         <p>Join our immersive tech camp for kids and teens.
                                             Learn coding, robotics, and more in a fun environment!
                                         </p>
-                                        <button class="register-button">Register</button>
+                                        <button class="register-button" id="challenge-btn">Register</button>
                                     </div>
                                     <div class="graphics">
-                                        <img src="assets/img/fest.png">
+                                        <img src="assets/img/challenge.png">
                                     </div>
                                 </div>
                             </div>
@@ -150,6 +150,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
 
             <div class="content-area" id="cbt">
@@ -212,10 +213,7 @@
                 <div class="summary-page">
                     <div class="header">
                         <div class="close" id="close-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24">
-                                <line x1="5" y1="5" x2="19" y2="19" stroke="#426CFF" stroke-width="2" stroke-linecap="round" />
-                                <line x1="5" y1="19" x2="19" y2="5" stroke="#426CFF" stroke-width="2" stroke-linecap="round" />
-                            </svg>
+                            Back to Home
                         </div>
                     </div>
                     <div class="summary-content">
@@ -238,7 +236,6 @@
                                 <span>Total Score Performance</span>
                                 <div class="performance-content">
                                     <canvas id="doughnut-chart"></canvas>
-
                                 </div>
                             </div>
                             <div class="analysis-container">
@@ -247,7 +244,7 @@
                             </div>
                         </div>
 
-                        <div class="tab" id="summary-tab"></div>
+                        <div class="summary-tab" id="summary-tab"></div>
                         <div id="questions-container">
                             <div class="questions-content">
                                 <div class="question-line"></div>
@@ -257,7 +254,7 @@
                                         <img class="question-image" />
                                     </div>
                                     <div class="question-text"></div>
-                                    <div class="options-container"></div>
+                                    <div class="options-container-summary"></div>
                                 </div>
                             </div>
                         </div>

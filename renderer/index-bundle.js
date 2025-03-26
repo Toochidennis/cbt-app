@@ -7,6 +7,9 @@ function slider() {
     const slides = document.querySelectorAll(".slide");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
+    const festBtn = document.getElementById('fest-btn');
+    const bootCampBtn = document.getElementById('boot-camp-btn');
+    const challengeBtn = document.getElementById('challenge-btn');
 
     let index = 0;
 
@@ -23,6 +26,18 @@ function slider() {
     prevBtn.addEventListener("click", () => {
         index = (index - 1 + slides.length) % slides.length;
         showSlide(index);
+    });
+
+    festBtn.addEventListener('click', ()=>{
+      window.api.openLink('https://forms.gle/wMh3PcgVNCfo1E229');
+    });
+
+    bootCampBtn.addEventListener('click', ()=>{
+        window.api.openLink('https://forms.gle/teJJV3W7nqkYC2qe8');
+    });
+
+    challengeBtn.addEventListener('click', ()=>{
+        window.api.openLink('https://forms.gle/H4RdFpvvDJ2L8LT2A');
     });
 
     // Auto-slide every 5 seconds
@@ -49,10 +64,10 @@ document.getElementById('jamb-button').addEventListener('click', async () => {
 });
 
 
-window.api.onCongratsWindowClosed(() => {
-    loadPage('home');
-    window.api.setFullScreen(false);
-});
+// window.api.onCongratsWindowClosed(() => {
+    
+//     window.api.setFullScreen(false);
+// });
 
 // Show exam screen when subjects selection window is closed
 window.api.onSecondWindowClosed((_, data) => {
@@ -298,7 +313,6 @@ function prevHandler() {
 
 function submitHandler() {
     const correctedData = JSON.parse(JSON.stringify(state));
-
     window.api.sendExamResults(correctedData);
     loadPage('summary');
 }

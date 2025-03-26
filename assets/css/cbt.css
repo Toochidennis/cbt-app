@@ -174,7 +174,7 @@
 }
 
 /* Styles for the focus state */
-input[type="radio"]:focus {
+.options-container input[type="radio"]:focus {
     outline: 2px solid #2e55dd;
 }
 

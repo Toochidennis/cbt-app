@@ -1,13 +1,13 @@
-const { app, BrowserWindow, ipcMain, screen } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, shell } = require('electron');
 const path = require('path');
-//const fs = require('fs').promises;
 require('./renderer/question');
 const QuestionModel = require('./models/QuestionModel');
 const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
-// const { generateKey } = require('crypto');
 
 // const env = process.env.NODE_ENV || 'development';
+
+const gotTheLock = app.requestSingleInstanceLock();
 
 // if (env === 'development') {
 //     require('electron-reload')(__dirname, {
@@ -70,8 +70,16 @@ function createWindow() {
     });
 
     ipcMain.on('send-exam-results', (_, summaryData) => {
-        console.log(summaryData);
-       mainWindow.webContents.send('get-exam-summary', summaryData);
+        mainWindow.webContents.send('get-exam-summary', summaryData);
+        mainWindow.webContents.send('show-controls', true);
+        mainWindow.setFullScreen(false);
+    });
+
+    // ipcMain.on('hide-summary-page', ()=>{
+    // });
+
+    ipcMain.on('open-link', (_, url) => {
+        shell.openExternal(url);
     });
 }
 
@@ -137,6 +145,7 @@ function openSelectSubjectDialog() {
     });
 }
 
+
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
@@ -183,15 +192,27 @@ ipcMain.handle('generate-product-key', async () => {
     return ActivationModel.generateProductKey();
 });
 
-// App event handlers
-app.whenReady().then(() => {
-    createWindow();
 
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow();
+if (!gotTheLock) {
+    app.quit();
+} else {
+    app.on('second-instance', () => {
+        if (mainWindow) {
+            if (mainWindow.isMinimized()) mainWindow.restore();
+            mainWindow.show();
+            mainWindow.focus();
+        }
     });
-});
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit();
-});
+    app.whenReady().then(() => {
+        createWindow();
+
+        app.on('activate', () => {
+            if (BrowserWindow.getAllWindows().length === 0) createWindow();
+        });
+    });
+
+    app.on('window-all-closed', () => {
+        if (process.platform !== 'darwin') app.quit();
+    });
+}

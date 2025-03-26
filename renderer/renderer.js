@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.api.showControls((_, isShow) => {
+        console.log("I rannnn");
         if (isShow) {
             controlsContainer.classList.remove('hidden');
             search.classList.remove('hidden');

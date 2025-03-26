@@ -5,14 +5,19 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
-      "watch": "browserify renderer/summary.js -o renderer/bundle.js --watch",
+    "watch": "browserify renderer/summary.js -o renderer/bundle.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
+    "asar": true,
     "appId": "com.digitaldreams.linkskool",
     "win": {
       "icon": "assets/icons/logo2.ico",
       "target": "nsis"
+    },
+    "nsis": {
+      "runAfterFinish": false,
+      "perMachine": true
     }
   },
   "keywords": [],

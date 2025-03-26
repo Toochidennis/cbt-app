@@ -1,6 +1,7 @@
-const { contextBridge, ipcRenderer } = require('electron');
+const { contextBridge, ipcRenderer, shell } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
+    openLink: (url) => ipcRenderer.send('open-link', url),
     getQuestions: (subject, year) => ipcRenderer.invoke('get-questions-by-subject', subject, year),
     navigate: (page) => ipcRenderer.send('navigate', page),
     minimize: () => ipcRenderer.send("minimize-window"),
@@ -13,6 +14,7 @@ contextBridge.exposeInMainWorld('api', {
     sendExamResults: (summaryData) => ipcRenderer.send("send-exam-results", summaryData),
     onSecondWindowClosed: (callback) => ipcRenderer.on('second-window-closed', callback),
     onCongratsWindowClosed: (callback) => ipcRenderer.on('congrats-window-closed', callback),
+ //   hideSummaryPage: () => ipcRenderer.send('hide-summary-page'),
     closeCongratsWindow: () => ipcRenderer.send('close-congrats-window'),
     setFullScreen: (isFullScreen) => ipcRenderer.send('set-fullscreen', isFullScreen),
     hideControls: (isHide) => ipcRenderer.on('hide-controls', isHide),

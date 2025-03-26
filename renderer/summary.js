@@ -25,7 +25,6 @@ const questionsContainer = document.getElementById('questions-container');
 
 
 window.api.getExamSummary((_, summary) => {
-    console.log('summmmarrttt');
     state = summary;
     let overallScore = 0;
     let overallMaxScore = 0;
@@ -65,8 +64,6 @@ window.api.getExamSummary((_, summary) => {
 function renderTabs() {
     const tabContainer = document.getElementById('summary-tab');
     tabContainer.innerHTML = '';
-
-    console.log('Hello ', tabContainer);
 
     const fragment = document.createDocumentFragment();
 
@@ -129,7 +126,7 @@ async function renderQuestion() {
         questionText.textContent = question.question_text;
 
         const optionsContainer = document.createElement('div');
-        optionsContainer.classList.add('options-container');
+        optionsContainer.classList.add('options-container-summary');
 
         const selectedAnswer = subjectState.userAnswers[index];
 
@@ -399,5 +396,5 @@ function plotAnalysisChart(subjectsData) {
 }
 
 closeBtn.addEventListener('click', () => {
-    loadPage("home");
+    loadPage('home');
 });

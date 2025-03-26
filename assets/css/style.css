@@ -79,7 +79,7 @@
     margin-right: 5px;
 }
 
-.window-controls{
+.window-controls {
     display: flex;
     gap: 5px;
     margin-right: 8px;
@@ -110,12 +110,21 @@
     background-color: #E81123;
     /* Red hover effect for close button */
 }
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    overflow: auto;
+}
+
 .carousel-container {
     position: relative;
     width: 100%;
     max-width: 800px;
-    /* Adjust width */
-    margin: auto;
+    flex: auto;
+    max-height: 50vh;
     overflow: hidden;
 }
 
@@ -137,9 +146,9 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    height: 280px;
     background-color: #fff;
     margin-top: 1em;
+    height: 100%;
 }
 
 .slider-content {
@@ -150,8 +159,9 @@
 }
 
 .graphics img {
-    width: 65%;
+    width: 50%;
     height: auto;
+    max-height: 100%;
 }
 
 /* Navigation Buttons */
@@ -177,14 +187,13 @@
     right: 10px;
 }
 
-
 .slider-text {
     color: rgba(47, 85, 221, 1);
     font-family: "Urbanist";
     font-weight: 600;
     letter-spacing: -2%;
     line-height: 80%;
-    font-size: 2rem;
+    font-size: 1.8rem;
     max-width: 400px;
 }
 
@@ -196,7 +205,6 @@
     line-height: 32px;
     font-size: 1rem;
     max-width: 500px;
-
 }
 
 .graphics img {
@@ -204,7 +212,7 @@
 }
 
 .register-button {
-    background-color: rgba(66, 108, 255, 1);
+    background-color: #FA9702;
     border-radius: 6px;
     border: .75px solid rgba(119, 149, 255, 1);
     align-items: center;
@@ -223,28 +231,29 @@ button:active {
     transform: scale(0.98);
 }
 
-.homepage .category {
+.category {
+    flex: auto;
+    max-height: 50vh;
+    width: 100%;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 20px;
     background: linear-gradient(rgba(249, 249, 249, 1), rgba(205, 216, 255, 1));
-    padding-bottom: 5em;
 }
 
-.homepage .select-an-exam-to {
+.select-an-exam-to {
     width: fit-content;
     font-family: "Urbanist";
     font-weight: 500;
-    width: 100%;
+    margin-top: .5em;
     text-align: center;
     color: #407bff;
     font-size: 1.5rem;
     letter-spacing: 0;
     line-height: 40px;
     white-space: nowrap;
-    margin-top: 1em;
 }
 
 .div-2,
@@ -316,8 +325,8 @@ button:active {
 .image-2,
 .image-3,
 .img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
 }
 
@@ -337,7 +346,7 @@ button:active {
 .text-wrapper-4,
 .text-wrapper-5 {
     font-family: "Urbanist", Helvetica;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--gray-900);
     text-align: left;
 }
@@ -385,21 +394,6 @@ button:active {
     }
 }
 
-.element-homepage .image-4 {
-    width: 40px;
-    height: 38.3px;
-    position: relative;
-    object-fit: cover;
-}
-
-.element-homepage .browse-all {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.hidden{
+.hidden {
     display: none;
 }
