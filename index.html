@@ -12,6 +12,21 @@
 
 <body>
     <div class="main-app">
+        <div class="sidebar">
+            <div class="sidebar-item" id="cbt-btn">
+                <img src="assets/icons/cbt.svg" alt="CBT" />
+                <span>CBT</span>
+            </div>
+            <div class="sidebar-item" id="typing-btn">
+                <img src="assets/icons/typing.svg" alt="Typing" />
+                <span>Typing</span>
+            </div>
+            <div class="sidebar-item" id="learn-btn">
+                <img src="assets/icons/learning_sphere.svg" alt="Learn" />
+                <span>Learn</span>
+            </div>
+        </div>
+
         <div class="title-bar">
             <div class="drag-region">
                 <div class="logo">
@@ -26,153 +41,22 @@
                 </div>
                 <div class="window-controls" id="controls-container">
                     <div class="button window-hover" id="min-button">
-                        <img class="icon" id="min" alt="minimize" srcset="assets/icons/min.svg" draggable="false" />
+                        <img class="icon" id="min" alt="minimize" src="assets/icons/min.svg" draggable="false" />
                     </div>
                     <div class="button window-hover" id="max-button">
-                        <img class="icon" id="max" alt="maximize" srcset="assets/icons/max.svg" draggable="false" />
+                        <img class="icon" id="max" alt="maximize" src="assets/icons/max.svg" draggable="false" />
                     </div>
                     <div class="button window-hover-close" id="close-button">
-                        <img class="icon" id="close" alt="close" srcset="assets/icons/close.svg" draggable="false" />
-                    </div>
-                </div>
-            </div </div>
-            <div class="content-area" id="home">
-                <div class="homepage">
-                    <div class="frame-5">
-                        <div class="header-contents">
-                            <div class="frame-6">
-                                <p class="smart-practice-for">
-                                    <span class="span">Smart practice for smarter</span> <span class="text-wrapper-6">
-                                        results</span>
-                                </p>
-                                <p class="p">
-                                    Gain access to a wide range of practice tests tailored to help manage your
-                                    time effectively,
-                                    and boost
-                                    your confidence before the big day.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category">
-                        <div class="select-an-exam-to">Select an exam to&nbsp;&nbsp;practice</div>
-                        <div class="div-2">
-                            <div class="category-1">
-                                <div class="image-wrapper"><img class="image" src="assets/img/image-67.png" /></div>
-                                <div class="info">
-                                    <div class="text-wrapper">WAEC</div>
-                                    <div class="text-wrapper-2">West African Examination Council</div>
-                                    <div class="text-wrapper-2">2020-2024</div>
-                                </div>
-                            </div>
-                            <div class="category-2" id="jamb-button">
-                                <div class="img-wrapper"><img class="img" src="assets/img/image-68.png" />
-                                </div>
-                                <div class="info-2">
-                                    <div class="text-wrapper-3">JAMB</div>
-                                    <div class="text-wrapper-4">Joint Admission Matriculation Board</div>
-                                    <div class="text-wrapper-5">2020-2024</div>
-                                </div>
-                            </div>
-                            <div class="category-3">
-                                <div class="frame-2"><img class="image" src="assets/img/image-69.png" />
-                                </div>
-                                <div class="info-3">
-                                    <div class="text-wrapper">NECO</div>
-                                    <div class="text-wrapper-2">West African Examination Council</div>
-                                    <div class="text-wrapper-2">2020-2024</div>
-                                </div>
-                            </div>
-                            <div class="category-4">
-                                <div class="frame-3"><img class="image-3" src="assets/img/image-70.png" />
-                                </div>
-                                <div class="info-3">
-                                    <div class="text-wrapper">IELTS</div>
-                                    <div class="text-wrapper-2">West African Examination Council</div>
-                                    <div class="text-wrapper-2">2020-2024</div>
-                                </div>
-                            </div>
-                            <div class="category-5">
-                                <div class="frame-3"><img class="image-3" src="assets/img/image-67-1.png" />
-                                </div>
-                                <div class="info">
-                                    <div class="text-wrapper">WAEC</div>
-                                    <div class="text-wrapper-2">West African Examination Council</div>
-                                    <div class="text-wrapper-2">2020-2024</div>
-                                </div>
-                            </div>
-                            <div class="category-6">
-                                <div class="frame-3"><img class="image-3" src="assets/img/image-70.png" />
-                                </div>
-                                <div class="info-3">
-                                    <div class="text-wrapper">IELTS</div>
-                                    <div class="text-wrapper-2">West African Examination Council</div>
-                                    <div class="text-wrapper-2">2020-2024</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-area" id="cbt">
-                <div class="cbt-content">
-                    <div class="cbt-header">
-                        <div class="cbt-1">
-                            <div class="time-container">
-                                <img class="stopwatch" src="assets/icons/icons8-stopwatch-1-1.svg" />
-                                <div id="countdown"></div>
-                            </div>
-                            <div class="submit-button" id="submit-button">
-                                <p class="text-wrapper-1">End and Submit</p>
-                            </div>
-                        </div>
-                        <div class="tab"></div>
-                    </div>
-                    <div class="question-section">
-                        <div class="question-container">
-                            <div id="progress">Question 12/25</div>
-                            <div id="question-image-container">
-                                <img id="question-image"/>
-                            </div>
-                            <div id="question-text">x
-                                Guy Bailey, Roy Hackett and Paul Stephenson made history in 1963, as part of a protest
-                                against a
-                                bus
-                                company that refused to employ black and Asian drivers in which UK city? Guy Bailey, Roy
-                                Hackett
-                                and
-                                Paul Stephenson made history in 1963, as part of a protest against a bus company that
-                                refused to
-                                employ
-                                black and Asian drivers in which UK city?
-                            </div>
-                        </div>
-                        <div class="options-container" id="options-container"></div>
-                        <div class="controls-section">
-                            <div class="back" id="prev-btn">
-                                <img src="assets/icons/icons8-back-1.svg" />
-                                <p>Previous</p>
-                            </div>
-                            <div class="next" id="next-btn">
-                                <span>Next</span>
-                                <img src="assets/icons/icons8-double-left-1.svg" />
-                            </div>
-                        </div>
-
-                        <div class="questions-nav-wrapper">
-                            <p class="attempted-questions">
-                                <span class="text-wrapper-2">Attempted Questions : </span> <span class="text-wrapper-3"
-                                    id="attempted-questions">20/40</span>
-                            </p>
-                            <div id="question-nav"></div>
-                        </div>
+                        <img class="icon" id="close" alt="close" src="assets/icons/close.svg" draggable="false" />
                     </div>
                 </div>
             </div>
         </div>
-        <script type="module" src="renderer/renderer.js"></script>
-        <script type="module" src="renderer/index.js"></script>
+
+        <div id="content"></div>
+    </div>
+    <script type="module" src="renderer/renderer.js"></script>
+    <script type="module" src="renderer/index.js"></script>
 </body>
 
 </html>

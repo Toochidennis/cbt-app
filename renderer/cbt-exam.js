@@ -1,65 +1,15 @@
-import { switchPage } from "./navigation.js";
-import state from "./state.js";
-
-
 let timer;
 let totalSeconds = 0;
 
-const contentDiv = document.getElementById("content");
-
-const observer = new MutationObserver(() => {
-    // console.log("Content changed! Now we can interact with new elements.");
-    attachEventListeners();
-});
-
-observer.disconnect();
-observer.observe(contentDiv, { childList: true, subtree: true });
-
-
-function attachEventListeners() {
-    slider();
-
-    document.getElementById('jamb-button').addEventListener('click', async () => {
-        const activated = await window.api.getActivationState();
-    
-        // if (!activated) {
-        //     window.api.openActivationWindow();
-        // } else {
-        //     window.api.openSelectSubjectWindow();
-    
-        //     // Proceed to show the exam page.
-        //     console.log("Activation confirmed. Proceeding to exam...");
-        // }
-        window.api.openSelectSubjectWindow();
-    });
-
-}
-
-
-
-window.api.onCongratsWindowClosed(() => {
-    loadPage('cbt-dashboard');
-    window.api.setFullScreen(false);
-});
-
-// Show exam screen when subjects selection window is closed
-window.api.onSecondWindowClosed((_, data) => {
-    if (data.action === 'cbt-exam') {
-        state.subjects = data.subjects;
-        state.duration = data.duration;
-        state.selectedSubjects = data.selectedSubjects;
-        state.year = data.year;
-
-        // Navigate to the Exam page
-        switchPage(data.action);
-
-        init();
-
-        window.api.setFullScreen(true);
-
-    }
-});
-
+const countdown = document.getElementById('countdown');
+const submitBtn = document.getElementById('submit-button');
+const progress = document.getElementById('progress');
+const questionImage = document.getElementById('question-image');
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+const attemptedDiv = document.getElementById('attempted-questions');
 
 function init() {
     resetTimer();
@@ -67,12 +17,6 @@ function init() {
     state.currentSubject = state.selectedSubjects[0];
     renderTabs();
     renderQuestion(0);
-
-    const submitBtn = document.getElementById('submit-button');
-
-
-    const nextBtn = document.getElementById('next-btn');
-    const prevBtn = document.getElementById('prev-btn');
 
     // Remove any previously attached listeners (if any)
     nextBtn.removeEventListener('click', nextHandler);
@@ -87,72 +31,7 @@ function init() {
     document.addEventListener('keydown', keyboardShortcutsHandler);
 }
 
-function slider() {
-    const slider = document.querySelector(".slider");
-    const slides = document.querySelectorAll(".slide");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-
-    let index = 0;
-
-    function showSlide(index) {
-        const slideWidth = slides[0].clientWidth;
-        slider.style.transform = `translateX(-${index * slideWidth}px)`;
-    }
-
-    nextBtn.addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-    });
-
-    prevBtn.addEventListener("click", () => {
-        index = (index - 1 + slides.length) % slides.length;
-        showSlide(index);
-    });
-
-    // Auto-slide every 5 seconds
-    setInterval(() => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-    }, 4000);
-}
-
-
-function startTimer() {
-    if (timer) return; // Prevent multiple intervals
-
-    const hours = state.duration.hours;
-    const minutes = state.duration.minutes;
-    const seconds = 0;
-    totalSeconds = hours * 3600 + minutes * 60 + seconds;
-
-    if (totalSeconds <= 0) return;
-
-    timer = setInterval(() => {
-        if (totalSeconds > 0) {
-            totalSeconds--;
-            updateDisplay();
-        } else {
-            clearInterval(timer);
-            timer = null;
-            alert('Time is up!');
-            submitHandler();
-        }
-    }, 1000);
-}
-
-
-function resetTimer() {
-    clearInterval(timer);
-    timer = null;
-    //isPaused = false;
-    totalSeconds = 0;
-    updateDisplay();
-}
-
 function updateDisplay() {
-    const countdown = document.getElementById('countdown');
-
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
@@ -222,12 +101,6 @@ function renderQuestionNav() {
 
 
 async function renderQuestion(index) {
-    const progress = document.getElementById('progress');
-    const questionImage = document.getElementById('question-image');
-    const questionText = document.getElementById('question-text');
-    const optionsContainer = document.getElementById('options-container');
-    const attemptedDiv = document.getElementById('attempted-questions');
-
     const subjectState = state.subjects[state.currentSubject];
     const question = subjectState.questions[index];
 
@@ -342,12 +215,92 @@ function submitHandler() {
 
 function keyboardShortcutsHandler(event) {
     event.preventDefault();
-    if (event.key === 'ArrowLeft') return handleNavigation(-1);
-    if (event.key === 'ArrowRight') return handleNavigation(1);
-    if (!isNaN(event.key) && event.key !== '0') {
-        const options = document.querySelectorAll('input[name="option"]');
-        if (options[event.key - 1]) options[event.key - 1].checked = true;
-        selectAnswer(state.subjects[state.currentSubject]);
+    // First, handle arrow keys for navigation
+    if (event.key === 'ArrowLeft') {
+        handleNavigation(-1);
+        return;
     }
-    if (['p', 'n', 's'].includes(event.key)) ({ p: prevHandler, n: nextHandler, s: submitHandler }[event.key])();
+    if (event.key === 'ArrowRight') {
+        handleNavigation(1);
+        return;
+    }
+
+    const key = event.key.toLowerCase();
+
+    if (!isNaN(key) && key !== '0') {
+        const optionIndex = parseInt(key) - 1;
+        const options = document.querySelectorAll('input[name="option"]');
+        if (options && optionIndex < options.length) {
+            options[optionIndex].checked = true;
+
+            const subjectState = state.subjects[state.currentSubject];
+            selectAnswer(subjectState);
+        }
+    }
+
+    switch (key) {
+        case 'p':
+            prevHandler();
+            break;
+        case 'n':
+            nextHandler();
+            break;
+        case 's':
+            submitHandler();
+            break;
+        default:
+            break;
+    }
 }
+
+function startTimer() {
+    if (timer) return; // Prevent multiple intervals
+
+    const hours = state.duration.hours;
+    const minutes = state.duration.minutes;
+    const seconds = 0;
+    totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+    if (totalSeconds <= 0) return;
+
+    timer = setInterval(() => {
+        if (totalSeconds > 0) {
+            totalSeconds--;
+            updateDisplay();
+        } else {
+            clearInterval(timer);
+            timer = null;
+            alert('Time is up!');
+            submitHandler();
+        }
+    }, 1000);
+}
+
+
+function resetTimer() {
+    clearInterval(timer);
+    timer = null;
+    //isPaused = false;
+    totalSeconds = 0;
+    updateDisplay();
+}
+
+// async function finishExam() {
+//     // // Example: calculate the score and total time, then build the summary
+//     // const summaryData = {
+//     //   exam_date: new Date().toISOString(),
+//     //   subjects: state.selectedSubjects, // e.g. an array of subjects
+//     //   score: calculateScore(),          // implement your own score calculation
+//     //   total_time: totalSeconds,         // total seconds spent on the exam
+//     //   details: {
+//     //     // You can add additional details here (like per subject data, etc.)
+//     //   }
+//     // };
+
+//     try {
+//          await Promise.all(window.api.saveExamSummary(state));
+//         console.log('Exam summary saved with id:', summaryId);
+//     } catch (error) {
+//         console.error('Error saving exam summary:', error);
+//     }
+// }

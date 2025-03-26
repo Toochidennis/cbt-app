@@ -98,11 +98,7 @@ function openActivationWindow() {
 
     activationWindow.loadFile('pages/activation.html');
 
-    ipcMain.handle('generate-product-key', async()=>{
-        return ActivationModel.generateProductKey();
-    });
-
-    const closeHandler = () => {
+       const closeHandler = () => {
         if (activationWindow && !activationWindow.isDestroyed()) {
             activationWindow.close();
         }
@@ -219,6 +215,10 @@ ipcMain.handle('get-image-path', (_, subject, imageFileName) => {
         console.error('Error retrieving image path:', error);
         throw error;
     }
+});
+
+ipcMain.handle('generate-product-key', async()=>{
+    return ActivationModel.generateProductKey();
 });
 
 // App event handlers

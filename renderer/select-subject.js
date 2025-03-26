@@ -3,7 +3,7 @@ let data = {
     selectedSubjects: [],
     year: 0,
     duration: { hours: 0, minutes: 0 },
-    action: 'cbt'
+    action: 'cbt-exam'
 };
 
 const feedback = document.getElementById('feedback');

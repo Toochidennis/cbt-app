@@ -1,12 +1,27 @@
-import { loadPage } from "./navigation.js";
+import { switchPage } from "./navigation.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadPage('home');
+    switchPage("cbt-dashboard");
 
     const controlsContainer = document.getElementById('controls-container');
     const search = document.getElementById('search');
     const maximizeButton = document.getElementById("max-button");
     const maxIcon = document.getElementById('max')
+    const cbtBtn = document.getElementById('cbt-btn')
+    const typingBtn = document.getElementById('typing-btn')
+    const learnBtn = document.getElementById('learn-btn')
+
+    cbtBtn.addEventListener('click', ()=>{
+        switchPage('cbt-dashboard');
+    });
+
+    typingBtn.addEventListener('click', ()=>{
+        switchPage('key-buddy');
+    });
+
+    learnBtn.addEventListener('click', ()=>{
+        switchPage('learning');
+    });
 
     document.getElementById("min-button").addEventListener("click", () => {
         window.api.minimize();

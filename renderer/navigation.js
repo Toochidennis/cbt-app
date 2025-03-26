@@ -24,3 +24,12 @@ export function loadPage(page) {
         homeDiv.classList.remove('hidden');
     }
 }
+
+export function switchPage(page) {
+    fetch(`pages/${page}.html`)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("content").innerHTML = html;
+        })
+        .catch(error => console.error("Error loading page:", error));
+}
