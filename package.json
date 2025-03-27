@@ -1,10 +1,10 @@
 {
   "name": "LinkSkool",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder",
+    "build": "electron-builder --win --publish always",
     "watch": "browserify renderer/summary.js -o renderer/bundle.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +17,16 @@
     },
     "nsis": {
       "runAfterFinish": false,
-      "perMachine": true
-    }
+      "perMachine": true,
+      "allowElevation": true
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://linkschoolonline.com/assets/downloads/",
+        "disableWebInstaller": true
+      }
+    ]
   },
   "keywords": [],
   "author": "ToochiDennis",
@@ -35,6 +43,7 @@
     "better-sqlite3": "^11.8.1",
     "browserify": "^17.0.1",
     "chart.js": "^4.4.8",
+    "electron-log": "^5.3.3",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-updater": "^6.3.9",
     "node-fetch": "^3.3.2",

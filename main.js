@@ -1,10 +1,15 @@
-const { app, BrowserWindow, ipcMain, screen, shell, autoUpdater, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, shell, dialog } = require('electron');
+const { autoUpdater } = require('electron-updater');
 const axios = require('axios');
 const path = require('path');
 require('./renderer/question');
 const QuestionModel = require('./models/QuestionModel');
 const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
+const log = require('electron-log');
+
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
@@ -143,22 +148,6 @@ function openSelectSubjectDialog() {
     });
 }
 
-async function checkForUpdates() {
-    const updateUrl = 'http://linkschoolonline.com/version';
-
-    try {
-        const { data } = await axios.get(updateUrl);
-        const currentVersion = app.getVersion();
-
-        if (data.version && data.version !== currentVersion) {
-            autoUpdater.setFeedURL({ url: data.url });
-            autoUpdater.checkForUpdates();
-        }
-    } catch (error) {
-        console.error("Error checking for updates:", error);
-    }
-}
-
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
@@ -200,20 +189,32 @@ ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) =>
     return ActivationModel.validateActivationOffline(activationCode, hash);
 });
 
-
 ipcMain.handle('generate-product-key', async () => {
     return ActivationModel.generateProductKey();
 });
 
+autoUpdater.on('update-available', () => {
+    log.info('Update available');
+});
+
+autoUpdater.on('update-not-available', () => {
+    log.info('No update available');
+});
+
+autoUpdater.on('error', (err) => {
+    log.error('Error during update:', err);
+});
+
 autoUpdater.on("download-progress", (progress) => {
-    console.log(`Download progress: ${progress.percent}%`);
+    log.info(`Download progress: ${progress.percent}%`);
 });
 
 autoUpdater.on('update-downloaded', () => {
+    log.info('Update downloaded');
     dialog.showMessageBox({
         type: 'info',
         title: 'Update available',
-        message: 'A new update has been downloaded. Restart the app to apply it?',
+        message: 'A new version has been downloaded. Restart the application to apply the updates.',
         buttons: ['Restart', 'Later']
     }).then(result => {
         if (result.response === 0) autoUpdater.quitAndInstall();
@@ -232,8 +233,17 @@ if (!gotTheLock) {
         }
     });
 
+    const UPDATE_INTERVAL = 30 * 60 * 1000; // 30 minutes
+
     app.whenReady().then(() => {
-        checkForUpdates();
+        // Check for updates on startup
+        autoUpdater.checkForUpdates();
+
+        // Periodic update check
+        setInterval(() => {
+            autoUpdater.checkForUpdates();
+        }, UPDATE_INTERVAL);
+
         createWindow();
 
         app.on('activate', () => {
