@@ -23,8 +23,7 @@
     "publish": [
       {
         "provider": "generic",
-        "url": "http://linkschoolonline.com/assets/downloads/",
-        "disableWebInstaller": true
+        "url": "http://linkschoolonline.com/assets/downloads/"
       }
     ]
   },
