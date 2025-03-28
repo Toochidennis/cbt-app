@@ -65,12 +65,12 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #f0f0f0; /* Light background for the keyboard container */
-    border: 2px solid #ccc; /* Border for the keyboard container */
+   
+   
     border-radius: 5px; /* Slightly rounded corners */
     padding: 20px; /* Padding inside the keyboard container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the keyboard container */
-    width: 650px; /* Fixed width for the keyboard container */
+   
+    width: 700px; /* Fixed width for the keyboard container */
     margin: 0 auto; /* Center the keyboard container */
     margin-top: 100px;
 }
@@ -149,7 +149,7 @@ header {
 
 .key.enter {
     width: 80px; /* Adjust width */
-    height: 40px; /* Adjust height */
+    height: 50px; /* Adjust height */
     position: relative;
     background-color: #fff;
     border: 1px solid #ccc;
