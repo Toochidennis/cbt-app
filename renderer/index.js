@@ -17,7 +17,7 @@ observer.observe(contentDiv, { childList: true, subtree: true });
 
 
 function attachEventListeners() {
-    slider();
+  //  slider();
 
     document.getElementById('jamb-button').addEventListener('click', async () => {
         const activated = await window.api.getActivationState();

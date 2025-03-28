@@ -1,0 +1,228 @@
+
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff8f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.typing-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.instruction {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.key-sequence {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.key-sequence .key {
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.key-sequence .key.active {
+    background-color: #a8e6cf;
+}
+
+.progress-bar {
+    height: 5px;
+    background-color: #ccc;
+    margin-top: 70px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #ff8c42;
+    transition: width 0.3s;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0f0f0; /* Light background for the keyboard container */
+    border: 2px solid #ccc; /* Border for the keyboard container */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 20px; /* Padding inside the keyboard container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the keyboard container */
+    width: 650px; /* Fixed width for the keyboard container */
+    margin: 0 auto; /* Center the keyboard container */
+    margin-top: 100px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.row.cap{
+    height: 50px;
+}
+
+.key {
+    position: relative; /* Enable positioning for child elements */
+    padding: 15px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for individual keys */
+    transition: box-shadow 0.2s, transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.key::before {
+    content: attr(data-char); /* Display the special character */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px; /* Smaller font size for the special character */
+    color: #888; /* Light gray color for the special character */
+}
+
+.key:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.key.space {
+    width: 300px; /* Expanded width for the space bar */
+}
+
+.key.active {
+    background-color: #ff8c42;
+    color: #fff;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.key.correct {
+    background-color: green;
+    color: #fff;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.key.incorrect {
+    background-color: red;
+    color: #fff;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.key.suggested {
+    background-color: #ffd700; /* Yellow for suggested key */
+    color: #000;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.key.ctrl{
+    width: 100px;
+}
+
+.key.alt{
+    width: 75px;
+}
+
+.key.enter {
+    width: 80px; /* Adjust width */
+    height: 40px; /* Adjust height */
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for the Enter key */
+}
+
+.key.enter::after {
+    content: "↵"; /* Unicode arrow for Enter */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #000;
+}
+
+.key.tab{
+    width: 80px;
+}
+
+.key.back{
+    width: 110px;
+}
+.key.Shift {
+    width: 110px; /* Increased width for the Shift key */
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+}
+
+.modal-content p {
+    margin: 10px 0;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #ff8c42;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background-color: #e6762f;
+}

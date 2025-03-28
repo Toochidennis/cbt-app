@@ -1,87 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KeyBuddy</title>
-</head>
-<body>
-    <div class="key-buddy">
-        <div class="typing-text"></div>
-        <div class="keyboard">
-            <div class="row">
-                <span class="key" data-key="`">` ~</span>
-                <span class="key" data-key="1">1 !</span>
-                <span class="key" data-key="2">2 @</span>
-                <span class="key" data-key="3">3 #</span>
-                <span class="key" data-key="4">4 $</span>
-                <span class="key" data-key="5">5 %</span>
-                <span class="key" data-key="6">6 ^</span>
-                <span class="key" data-key="7">7 &</span>
-                <span class="key" data-key="8">8 *</span>
-                <span class="key" data-key="9">8 (</span>
-                <span class="key" data-key="0">0 )</span>
-                <span class="key" data-key="-">- _</span>
-                <span class="key" data-key="=">= +</span>
-                <span class="key" data-key="Backspace">Backspace</span>
-            </div>
 
-            <div class="row">
-                <span class="key" data-key="Tab">Tab</span>
-                <span class="key" data-key="q">Q</span>
-                <span class="key" data-key="w">W</span>
-                <span class="key" data-key="e">E</span>
-                <span class="key" data-key="r">R</span>
-                <span class="key" data-key="t">T</span>
-                <span class="key" data-key="y">Y</span>
-                <span class="key" data-key="u">U</span>
-                <span class="key" data-key="i">I</span>
-                <span class="key" data-key="o">O</span>
-                <span class="key" data-key="p">P</span>
-                <span class="key" data-key="[">[ {</span>
-                <span class="key" data-key="]">] }</span>
-                <span class="key" data-key="\">\ |</span>
-            </div>
 
-            <div class="row">
-                <span class="key" data-key="CapsLock">Caps Lock</span>
-                <span class="key" data-key="a">A</span>
-                <span class="key" data-key="s">S</span>
-                <span class="key" data-key="d">D</span>
-                <span class="key" data-key="f">F</span>
-                <span class="key" data-key="g">G</span>
-                <span class="key" data-key="h">H</span>
-                <span class="key" data-key="j">J</span>
-                <span class="key" data-key="k">K</span>
-                <span class="key" data-key="l">L</span>
-                <span class="key" data-key=";">; :</span>
-                <span class="key" data-key="'">' "</span>
-                <span class="key" data-key="Enter">Enter</span>
-            </div>
-
-            <div class="row">
-                <span class="key" data-key="ShiftLeft">Shift</span>
-                <span class="key" data-key="z">Z</span>
-                <span class="key" data-key="x">X</span>
-                <span class="key" data-key="c">C</span>
-                <span class="key" data-key="v">V</span>
-                <span class="key" data-key="b">B</span>
-                <span class="key" data-key="n">N</span>
-                <span class="key" data-key="m">M</span>
-                <span class="key" data-key=",">, <</span>
-                <span class="key" data-key=".">. ></span>
-                <span class="key" data-key="/">/ ?</span>
-                <span class="key" data-key="ShiftRight">Shift</span>
-            </div>
-
-            <div class="row">
-                <span class="key" data-key="ControlLeft">Ctrl</span>
-                <span class="key" data-key="AltLeft">Alt</span>
-                <span class="key" data-key="Space">Space</span>
-                <span class="key" data-key="AltRight">Alt</span>
-                <span class="key" data-key="ControlRight">Ctrl</span>
-            </div>
+    <div class="container">
+       
+        <main class="main-content">
+            <header>
+                <button class="back-btn">Back</button>
+                <div class="header-controls">
+                    <span class="timer">00:00</span>
+                    <button class="restart-btn">Restart</button>
+                </div>
+            </header>
+            <section class="typing-area">
+                <div class="instruction">Home key</div>
+                <div class="key-sequence">
+                    <span class="key active">A</span>
+                    <span class="key">S</span>
+                    <span class="key">A</span>
+                    <span class="key">A</span>
+                    <span class="key">F</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </section>
+            <section class="keyboard">  
+                <div class="row">
+                    <button class="key" data-char="~">`</button>
+                    <button class="key" data-char="!">1</button>
+                    <button class="key" data-char="@">2</button>
+                    <button class="key" data-char="#">3</button>
+                    <button class="key" data-char="$">4</button>
+                    <button class="key" data-char="%">5</button>
+                    <button class="key" data-char="^">6</button>
+                    <button class="key" data-char="&">7</button>
+                    <button class="key" data-char="*">8</button>
+                    <button class="key" data-char="(">(</button>
+                    <button class="key" data-char=")">)</button>
+                    <button class="key" data-char="_">-</button>
+                    <button class="key" data-char="+">=</button>
+                    <button class="key back">Backspace</button>
+                </div>
+                <div class="row">
+                    <button class="key tab">Tab</button>
+                    <button class="key">Q</button>
+                    <button class="key">W</button>
+                    <button class="key">E</button>
+                    <button class="key">R</button>
+                    <button class="key">T</button>
+                    <button class="key">Y</button>
+                    <button class="key">U</button>
+                    <button class="key">I</button>
+                    <button class="key">O</button>
+                    <button class="key">P</button>
+                    <button class="key" data-char="{">[</button>
+                    <button class="key" data-char="}">]</button>
+                    <button class="key" data-char="|">\\</button>
+                </div>
+                <div class="row cap">
+                    <button class="key">Caps Lock</button>
+                    <button class="key">A</button>
+                    <button class="key">S</button>
+                    <button class="key">D</button>
+                    <button class="key">F</button>
+                    <button class="key">G</button>
+                    <button class="key">H</button>
+                    <button class="key">J</button>
+                    <button class="key">K</button>
+                    <button class="key">L</button>
+                    <button class="key" data-char=":">;</button>
+                    <button class="key" data-char="&quot;">'</button>
+                    <button class="key enter">Enter</button>
+                </div>
+                <div class="row">
+                    <button class="key Shift">Shift</button>
+                    <button class="key">Z</button>
+                    <button class="key">X</button>
+                    <button class="key">C</button>
+                    <button class="key">V</button>
+                    <button class="key">B</button>
+                    <button class="key">N</button>
+                    <button class="key">M</button>
+                    <button class="key" data-char="<">,</button>
+                    <button class="key" data-char=">">.</button>
+                    <button class="key" data-char="?">/</button>
+                    <button class="key Shift">Shift</button>
+                </div>
+                <div class="row">
+                    <button class="key ctrl">Ctrl</button>
+                    <button class="key alt">Alt</button>
+                    <button class="key space">Space</button>
+                    <button class="key alt">Alt</button>
+                    <button class="key ctrl">Ctrl</button>
+                    
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="level-title">Game Over</h2>
+            <p id="score-display">Your Score: 0</p>
+            <p id="comment-display">Great job!</p>
+            <button id="next-level-btn">Next</button>
+            <button id="replay-btn">Replay</button>
         </div>
     </div>
-</body>
-</html>
