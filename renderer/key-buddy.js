@@ -18,8 +18,6 @@ const observer = new MutationObserver(() => {
         const nextLevelBtn = document.getElementById("next-level-btn");
         const replayBtn = document.getElementById("replay-btn");
         const levelTitle = document.getElementById("level-title");
-        const volumeControl = document.getElementById("volume-control");
-        const bgmVolumeControl = document.getElementById("bgm-volume-control");
         let countdownInterval;
         let score = 0;
         let level = 1; // Start at level 1
@@ -42,26 +40,12 @@ const observer = new MutationObserver(() => {
             audio.volume = globalVolume;
         };
     
-        // Update global volume when the slider changes
-        volumeControl.addEventListener("input", (event) => {
-            globalVolume = parseFloat(event.target.value);
-        });
-    
-        // Update background music volume when the slider changes
-        bgmVolumeControl.addEventListener("input", (event) => {
-            bgmVolume = parseFloat(event.target.value);
-            if (backgroundMusic) {
-                backgroundMusic.volume = bgmVolume;
-            }
-        });
-    
         // Function to play background music
         const playBackgroundMusic = () => {
             if (!backgroundMusic) {
                 backgroundMusic = new Audio("assets/sounds/Popoi - Dorila y Mello.mp3");
                 backgroundMusic.loop = true; // Enable looping
             }
-            backgroundMusic.volume = bgmVolume; // Set background music volume
             backgroundMusic.play();
         };
     
@@ -233,6 +217,9 @@ const observer = new MutationObserver(() => {
         initializeSequence();
         startCountdown();
     
+        // Start background music
+        playBackgroundMusic();
+    
         // Function to play the keyboard click sound for correct keys
         const playClickSound = () => {
             const audio = new Audio("assets/sounds/key-clack1.wav");
@@ -384,6 +371,7 @@ const observer = new MutationObserver(() => {
             highlightNextLetter(); // Highlight the first letter of the first word
         });
     });
+    
     
 
 });
