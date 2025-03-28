@@ -7,17 +7,17 @@ let totalSeconds = 0;
 
 const contentDiv = document.getElementById("content");
 
-const observer = new MutationObserver(() => {
-    // console.log("Content changed! Now we can interact with new elements.");
-    attachEventListeners();
-});
+// const observer = new MutationObserver(() => {
+//      console.log("Content changed! Now we can interact with new elements.");
+//     attachEventListeners();
+// });
 
-observer.disconnect();
-observer.observe(contentDiv, { childList: true, subtree: true });
+// observer.disconnect();
+// observer.observe(contentDiv, { childList: true, subtree: true });
 
 
 function attachEventListeners() {
-  //  slider();
+    slider();
 
     document.getElementById('jamb-button').addEventListener('click', async () => {
         const activated = await window.api.getActivationState();

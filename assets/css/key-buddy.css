@@ -1,16 +1,13 @@
-
-
 .container {
     display: flex;
     width: 100%;
 }
 
-
 .main-content {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #fff8f0;
+    background: linear-gradient(rgba(249, 249, 249, 1), rgba(205, 216, 255, 1));
 }
 
 header {

@@ -1,7 +1,7 @@
 import { switchPage } from "./navigation.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    switchPage("cbt-dashboard");
+    switchPage("cbt-dashboard", 'index.js');
 
     const controlsContainer = document.getElementById('controls-container');
     const search = document.getElementById('search');
@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const learnBtn = document.getElementById('learn-btn')
 
     cbtBtn.addEventListener('click', ()=>{
-        switchPage('cbt-dashboard');
+        switchPage("cbt-dashboard", 'index.js');
     });
 
     typingBtn.addEventListener('click', ()=>{
-        switchPage('key-buddy');
+        switchPage('key-buddy', 'key-buddy.js');
     });
 
     learnBtn.addEventListener('click', ()=>{

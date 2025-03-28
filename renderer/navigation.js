@@ -1,17 +1,3 @@
-// export function loadPage(page) {
-//     fetch(`pages/${page}.html`)
-//         .then(response => response.text())
-//         .then(html => {
-//             const appDiv = document.getElementById('app');
-//             appDiv.innerHTML = html;
-//             const script = document.createElement('script');
-//             script.type = 'module';
-//             script.src = `renderer/${page}.js`;
-//             document.body.appendChild(script);
-//         })
-//         .catch(err => console.error('Error loading page:', err));
-// }
-
 export function loadPage(page) {
     const homeDiv = document.getElementById('home');
     const examDiv = document.getElementById('cbt');
@@ -25,11 +11,20 @@ export function loadPage(page) {
     }
 }
 
-export function switchPage(page) {
+export function switchPage(page, script) {
     fetch(`pages/${page}.html`)
         .then(response => response.text())
         .then(html => {
             document.getElementById("content").innerHTML = html;
+            loadScript(script);
         })
         .catch(error => console.error("Error loading page:", error));
+}
+
+function loadScript(src) {
+    const script = document.createElement('script');
+    script.src = `renderer/${src}`;
+    script.async = true;
+    script.type = 'module';
+    document.head.appendChild(script);
 }
