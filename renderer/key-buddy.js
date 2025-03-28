@@ -380,10 +380,3 @@
     });
     
 
-});
-
-observer.disconnect();
-observer.observe(contentDiv, { childList: true, subtree: true });
-
-
-
