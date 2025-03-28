@@ -52,7 +52,7 @@
         // Function to play background music
         const playBackgroundMusic = () => {
             if (!backgroundMusic) {
-                backgroundMusic = new Audio("sounds/Popoi - Dorila y Mello.mp3");
+                backgroundMusic = new Audio("assets/sounds/Popoi - Dorila y Mello.mp3");
                 backgroundMusic.loop = true; // Enable looping
             }
             backgroundMusic.volume = bgmVolume; // Set background music volume
@@ -191,7 +191,7 @@
         // Function to play the game-over sound
         const playGameOverSound = () => {
             pauseBackgroundMusic(); // Pause background music
-            const audio = new Audio("sounds/game-over.wav");
+            const audio = new Audio("assets/sounds/game-over.wav");
             setVolume(audio); // Set volume
             audio.play();
             audio.addEventListener("ended", () => {
@@ -229,14 +229,14 @@
     
         // Function to play the keyboard click sound for correct keys
         const playClickSound = () => {
-            const audio = new Audio("sounds/key-clack1.wav");
+            const audio = new Audio("assets/sounds/key-clack1.wav");
             setVolume(audio); // Set volume
             audio.play();
         };
     
         // Function to play the wrong key sound
         const playWrongKeySound = () => {
-            const audio = new Audio("sounds/wrong-buzzer-6268.mp3");
+            const audio = new Audio("assets/sounds/wrong-buzzer-6268.mp3");
             setVolume(audio); // Set volume
             audio.play();
         };
