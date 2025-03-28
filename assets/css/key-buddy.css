@@ -3,6 +3,8 @@
     width: 100%;
 }
 
+
+
 .main-content {
     flex: 1;
     padding: 20px;
@@ -62,11 +64,8 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-   
-   
     border-radius: 5px; /* Slightly rounded corners */
     padding: 20px; /* Padding inside the keyboard container */
-   
     width: 700px; /* Fixed width for the keyboard container */
     margin: 0 auto; /* Center the keyboard container */
     margin-top: 100px;

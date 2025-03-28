@@ -1,6 +1,6 @@
 
 
-    document.addEventListener("DOMContentLoaded", () => {
+     document.addEventListener("DOMContentLoaded", () => {
         const keySequenceContainer = document.querySelector(".key-sequence");
         const progress = document.querySelector(".progress");
         const restartButton = document.querySelector(".restart-btn");
@@ -12,6 +12,8 @@
         const nextLevelBtn = document.getElementById("next-level-btn");
         const replayBtn = document.getElementById("replay-btn");
         const levelTitle = document.getElementById("level-title");
+        const volumeControl = document.getElementById("volume-control");
+        const bgmVolumeControl = document.getElementById("bgm-volume-control");
         let countdownInterval;
         let score = 0;
         let level = 1; // Start at level 1
@@ -22,9 +24,48 @@
         let currentLetterIndex = 0; // Track the current letter in the word
         let totalLetters = []; // Store all 200 letters
         let shiftActive = false; // Track if Shift is active
-
+        let globalVolume = 1; // Default volume
+        let bgmVolume = 1; // Default background music volume
+    
         const specialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "{", "}", "|", ":", "\"", "<", ">", "?"];
-
+    
+        let backgroundMusic;
+    
+        // Function to set the volume for a given audio element
+        const setVolume = (audio) => {
+            audio.volume = globalVolume;
+        };
+    
+        // Update global volume when the slider changes
+        volumeControl.addEventListener("input", (event) => {
+            globalVolume = parseFloat(event.target.value);
+        });
+    
+        // Update background music volume when the slider changes
+        bgmVolumeControl.addEventListener("input", (event) => {
+            bgmVolume = parseFloat(event.target.value);
+            if (backgroundMusic) {
+                backgroundMusic.volume = bgmVolume;
+            }
+        });
+    
+        // Function to play background music
+        const playBackgroundMusic = () => {
+            if (!backgroundMusic) {
+                backgroundMusic = new Audio("sounds/Popoi - Dorila y Mello.mp3");
+                backgroundMusic.loop = true; // Enable looping
+            }
+            backgroundMusic.volume = bgmVolume; // Set background music volume
+            backgroundMusic.play();
+        };
+    
+        // Function to pause background music
+        const pauseBackgroundMusic = () => {
+            if (backgroundMusic) {
+                backgroundMusic.pause();
+            }
+        };
+    
         // Function to calculate the number of letters to display based on the level
         const lettersPerScreenWidth = () => {
             const screenWidth = window.innerWidth;
@@ -32,7 +73,7 @@
             const baseLetters = Math.floor((screenWidth * 0.6) / letterWidth); // Base number of letters for level 1
             return Math.max(5, baseLetters - (level - 1) * 4); // Reduce 2 letters per level, minimum 5
         };
-
+    
         // Function to generate random words or special characters based on the current level
         const getRandomWordOrChar = () => {
             const isSpecialChar = Math.random() < 0.3; // 30% chance to include a special character
@@ -48,7 +89,7 @@
                 return word;
             }
         };
-
+    
         // Function to generate random letters or special characters for the total sequence
         const generateTotalLetters = () => {
             totalLetters = []; // Clear the existing letters
@@ -56,7 +97,7 @@
                 totalLetters.push(getRandomWordOrChar()); // Generate random words or special characters
             }
         };
-
+    
         // Function to display the next batch of letters
         const displayNextBatch = () => {
             keySequenceContainer.innerHTML = ""; // Clear the current sequence
@@ -72,7 +113,7 @@
             currentLetterIndex = 0; // Reset letter index
             highlightNextLetter(); // Highlight the first letter of the first word
         };
-
+    
         // Function to initialize the sequence
         const initializeSequence = () => {
             generateTotalLetters(); // Generate all 200 letters
@@ -80,13 +121,14 @@
             progress.style.width = "0%"; // Reset progress bar
             score = 0; // Reset score
             gameActive = true; // Reactivate the game
+            playBackgroundMusic(); // Start or resume background music
         };
-
+    
         // Function to highlight the next letter or special character in the current word
         const highlightNextLetter = () => {
             if (!gameActive) return; // Stop highlighting if the game is over
             keyboardKeys.forEach((key) => key.classList.remove("suggested")); // Remove previous highlights
-
+    
             const currentWord = keySequenceContainer.children[currentWordIndex];
             if (currentWord) {
                 const currentLetter = currentWord.textContent[currentLetterIndex];
@@ -103,7 +145,7 @@
                 });
             }
         };
-
+    
         // Function to highlight the next key to press
         const highlightNextKey = () => {
             if (!gameActive) return; // Stop highlighting if the game is over
@@ -117,13 +159,13 @@
                 });
             }
         };
-
+    
         // Function to update the progress bar
         const updateProgressBar = () => {
             const progressPercentage = (score / targetScore) * 100;
             progress.style.width = `${Math.min(progressPercentage, 100)}%`; // Cap at 100%
         };
-
+    
         // Function to start the countdown timer
         const startCountdown = () => {
             let timeLeft = 60; // 60 seconds
@@ -145,10 +187,22 @@
                 }
             }, 1000);
         };
-
+    
+        // Function to play the game-over sound
+        const playGameOverSound = () => {
+            pauseBackgroundMusic(); // Pause background music
+            const audio = new Audio("sounds/game-over.wav");
+            setVolume(audio); // Set volume
+            audio.play();
+            audio.addEventListener("ended", () => {
+                playBackgroundMusic(); // Resume background music after game-over sound ends
+            });
+        };
+    
         // Function to show the "Game Over" modal
         const showGameOverModal = () => {
             gameActive = false; // Deactivate the game
+            playGameOverSound(); // Play the game-over sound
             gameOverModal.classList.remove("hidden");
             scoreDisplay.textContent = `Your Score: ${score}`;
             if (level < maxLevel) {
@@ -162,47 +216,49 @@
             }
             commentDisplay.textContent = score >= targetScore ? "Amazing job!" : "Keep practicing!";
         };
-
+    
         // Function to hide the "Game Over" modal
         const hideGameOverModal = () => {
             gameOverModal.classList.add("hidden");
             score = 0; // Reset score
         };
-
+    
         // Initialize the sequence and start the timer on page load
         initializeSequence();
         startCountdown();
-
+    
         // Function to play the keyboard click sound for correct keys
         const playClickSound = () => {
             const audio = new Audio("sounds/key-clack1.wav");
+            setVolume(audio); // Set volume
             audio.play();
         };
-
+    
         // Function to play the wrong key sound
         const playWrongKeySound = () => {
-            const audio = new Audio("sounds/fast-fart.mp3");
+            const audio = new Audio("sounds/wrong-buzzer-6268.mp3");
+            setVolume(audio); // Set volume
             audio.play();
         };
-
+    
         // Function to handle typing logic for words or special characters
         const handleTyping = (inputChar) => {
             if (!gameActive) return; // Stop processing if the game is over
-
+    
             const currentWord = keySequenceContainer.children[currentWordIndex];
             if (currentWord) {
                 const currentLetter = currentWord.textContent[currentLetterIndex];
                 if (inputChar.toUpperCase() === currentLetter.toUpperCase()) {
                     playClickSound(); // Play the click sound for correct key
                     currentLetterIndex++; // Move to the next letter in the word
-
+    
                     if (currentLetterIndex === currentWord.textContent.length) {
                         // Word or special character is completely typed
                         currentWord.classList.add("correct"); // Mark the word as correct
                         setTimeout(() => {
                             currentWord.remove(); // Remove the word after 200ms
                             currentLetterIndex = 0; // Reset letter index for the new word
-
+    
                             // Add a new word or special character to maintain the correct number of letters on the screen
                             if (keySequenceContainer.children.length < lettersPerScreenWidth()) {
                                 if (totalLetters.length > 0) {
@@ -214,7 +270,7 @@
                                     showGameOverModal(); // End the game if all letters are typed
                                 }
                             }
-
+    
                             currentWordIndex = 0; // Reset to the first word in the sequence
                             highlightNextLetter(); // Highlight the first letter of the next word
                         }, 200);
@@ -232,26 +288,26 @@
                 }
             }
         };
-
+    
         // Event listener for keydown
         document.addEventListener("keydown", (event) => {
             if (!gameActive) return; // Stop processing if the game is over
-
+    
             if (event.key === "Shift") {
                 shiftActive = true; // Activate Shift
                 highlightNextLetter(); // Update suggestions to reflect Shift state
                 return;
             }
-
+    
             const inputChar = shiftActive
                 ? keyboardKeys.find((key) => key.dataset.char === event.key)?.dataset.char || event.key
                 : event.key;
-
+    
             if (inputChar) {
                 handleTyping(inputChar); // Handle typing logic
             }
         });
-
+    
         // Event listener for keyup to deactivate Shift
         document.addEventListener("keyup", (event) => {
             if (event.key === "Shift") {
@@ -259,7 +315,7 @@
                 highlightNextLetter(); // Update suggestions to reflect Shift state
             }
         });
-
+    
         // Event listener for mouse clicks on keys
         keyboardKeys.forEach((key) => {
             key.addEventListener("click", () => {
@@ -271,20 +327,20 @@
                 handleTyping(inputChar); // Handle typing logic
             });
         });
-
+    
         document.addEventListener("keydown", (event) => {
             if (event.key === "Shift") {
                 shiftActive = true; // Activate Shift
             }
             handleTyping(event); // Handle typing logic
         });
-
+    
         document.addEventListener("keyup", (event) => {
             if (event.key === "Shift") {
                 shiftActive = false; // Deactivate Shift
             }
         });
-
+    
         document.addEventListener("keydown", (event) => {
             if (!gameActive) return; // Stop highlighting keys if the game is over
             // Highlight the pressed key on the keyboard
@@ -295,14 +351,14 @@
                 }
             });
         });
-
+    
         // Restart button functionality
         restartButton.addEventListener("click", () => {
             clearInterval(countdownInterval); // Stop the current timer
             initializeSequence(); // Restart the sequence
             startCountdown(); // Restart the timer
         });
-
+    
         // Replay button functionality in the modal
         replayBtn.addEventListener("click", () => {
             hideGameOverModal(); // Hide the modal
@@ -312,7 +368,7 @@
             startCountdown(); // Restart the timer
             highlightNextKey(); // Highlight the first key to type
         });
-
+    
         // Next level button functionality in the modal
         nextLevelBtn.addEventListener("click", () => {
             level++; // Increment the level
@@ -322,3 +378,12 @@
             highlightNextLetter(); // Highlight the first letter of the first word
         });
     });
+    
+
+});
+
+observer.disconnect();
+observer.observe(contentDiv, { childList: true, subtree: true });
+
+
+
