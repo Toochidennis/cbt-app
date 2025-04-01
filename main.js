@@ -5,7 +5,6 @@ require('./renderer/question');
 const QuestionModel = require('./models/QuestionModel');
 const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
-const { generateKey } = require('crypto');
 
 const env = process.env.NODE_ENV || 'development';
 

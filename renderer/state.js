@@ -1,5 +1,4 @@
-// state.js
-export function getInitialState() {
+function getInitialState() {
     return {
         subjects: {},
         selectedSubjects: [],
@@ -11,4 +10,4 @@ export function getInitialState() {
 
 // Initialize the state
 const state = getInitialState();
-export default state;
+module.exports=  {state, getInitialState};

@@ -1,4 +1,4 @@
-export function loadPage(page) {
+function loadPage(page) {
     const homeDiv = document.getElementById('home');
     const examDiv = document.getElementById('cbt');
 
@@ -11,20 +11,18 @@ export function loadPage(page) {
     }
 }
 
-export function switchPage(page, script) {
+function switchPage(page, script) {
     fetch(`pages/${page}.html`)
         .then(response => response.text())
         .then(html => {
             document.getElementById("content").innerHTML = html;
-            loadScript(script);
+            return fetch(`renderer/${script}`); // Fetch the script content
         })
-        .catch(error => console.error("Error loading page:", error));
+        .then(response => response.text())
+        .then(jsCode => {
+            eval(jsCode); // Execute the script manually
+        })
+        .catch(error => console.error("Error loading page/script:", error));
 }
 
-function loadScript(src) {
-    const script = document.createElement('script');
-    script.src = `renderer/${src}`;
-    script.async = true;
-    script.type = 'module';
-    document.head.appendChild(script);
-}
+module.exports = {loadPage, switchPage}

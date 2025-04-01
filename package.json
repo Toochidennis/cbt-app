@@ -5,7 +5,7 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
-      "watch": "browserify renderer/summary.js -o renderer/bundle.js --watch",
+      "watch": "browserify renderer/key-buddy.js -o renderer/key-buddy-bundle.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
