@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const search = document.getElementById('search');
     const maximizeButton = document.getElementById("max-button");
     const maxIcon = document.getElementById('max')
+    const timer = document.getElementById('timer')
+
+    timer.style.display ='block'
+    controlsContainer.style.display = 'none';
+    search.style.display = 'none';
 
     document.getElementById("min-button").addEventListener("click", () => {
         window.api.minimize();
@@ -68,8 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.api.hideControls((_, isHide) => {
         if (isHide) {
-            controlsContainer.classList.add('hidden');
-            search.classList.add('hidden');
+            controlsContainer.style.display = 'none';
+            search.style.display = 'none';
+            timer.style.display ='block'
+
         }
     });
 

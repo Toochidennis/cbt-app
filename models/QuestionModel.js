@@ -4,13 +4,13 @@ const db = require('../models/database');
 class QuestionModel {
     static create(questionsData) {
         const insertStmt = db.prepare(
-            "INSERT INTO questions (subject, question_image, question_text, options, answer, year) VALUES (?, ?, ?, ?, ?, ?)"
+            "INSERT INTO questions (subject, question_image, passage, question_text, options, answer, year) VALUES (?, ?, ?, ?, ?, ?, ?)"
         );
         // Create a transaction for batch inserting.
         const insertTransaction = db.transaction((questions) => {
             for (const q of questions) {
                 // Convert options array to JSON string for storage
-                insertStmt.run(q.subject, q.question_image, q.question_text, JSON.stringify(q.options), q.answer, q.year);
+                insertStmt.run(q.subject, q.question_image, q.passage, q.question_text, JSON.stringify(q.options), q.answer, q.year);
             }
         });
         insertTransaction(questionsData);

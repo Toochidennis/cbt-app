@@ -1,11 +1,11 @@
 {
   "name": "LinkSkool",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --win --publish always",
-    "watch": "browserify renderer/summary.js -o renderer/bundle.js --watch",
+    "watch": "browserify renderer/renderer.js -o renderer/renderer-bundle.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {

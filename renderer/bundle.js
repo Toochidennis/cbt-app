@@ -15214,6 +15214,7 @@ async function renderQuestion() {
 
         const questionImage = document.createElement('img');
         questionImage.classList.add('question-image');
+
         if (question.question_image?.trim()) {
             questionImage.src = await window.api.getImagePath(state.currentSubject, question.question_image);
             questionImage.style.display = "block";
@@ -15222,9 +15223,19 @@ async function renderQuestion() {
         }
         imageDiv.appendChild(questionImage);
 
+        const passageDiv = document.createElement('div');
+        passageDiv.classList.add('question-text');
+
+        if(question.passage.trim() !== ""){
+            passageDiv.innerHTML = capitalizeSentence(question.passage.trim())
+            passageDiv.style.display = "block";
+        } else {
+            passageDiv.style.display = "none";
+        }
+
         const questionText = document.createElement('div');
         questionText.classList.add('question-text');
-        questionText.textContent = question.question_text;
+        questionText.innerHTML = question.question_text;
 
         const optionsContainer = document.createElement('div');
         optionsContainer.classList.add('options-container-summary');
@@ -15261,7 +15272,7 @@ async function renderQuestion() {
             optionsContainer.appendChild(label);
         });
 
-        questionDiv.append(progress, imageDiv, questionText, optionsContainer);
+        questionDiv.append(progress, imageDiv, passageDiv, questionText, optionsContainer);
         questionsContent.append(questionLine, questionDiv);
 
         // Highlight correct & incorrect answers

@@ -18,8 +18,8 @@
 
 /* For Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
-  border-radius: 10px;
+  width: .5em; /* Width of the scrollbar */
+  border-radius: 50%;
 }
 
 ::-webkit-scrollbar-track {

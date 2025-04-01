@@ -78,7 +78,14 @@ window.api.onSecondWindowClosed((_, data) => {
 
         init();
 
-        window.api.setFullScreen(true);
+        const controlsContainer = document.getElementById('controls-container');
+    const search = document.getElementById('search');
+    const timer = document.getElementById('timer')
+
+      //  window.api.setFullScreen(true);
+        controlsContainer.style.display = 'none';
+        search.style.display = 'none';
+        timer.style.display ='block'
 
         loadPage(data.action);
     }
@@ -93,6 +100,7 @@ const countdown = document.getElementById('countdown');
 const submitBtn = document.getElementById('submit-button');
 const progress = document.getElementById('progress');
 const questionImage = document.getElementById('question-image');
+const passageDiv = document.getElementById('passage');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const nextBtn = document.getElementById('next-btn');
@@ -200,14 +208,21 @@ function renderQuestionNav() {
     });
 }
 
-
 async function renderQuestion(index) {
     const subjectState = state.subjects[state.currentSubject];
     const question = subjectState.questions[index];
 
     progress.textContent = `Question ${index + 1}/${subjectState.questions.length}`;
+
+    if(question.passage.trim() !== ""){
+        passageDiv.innerHTML = capitalizeSentence(question.passage.trim())
+        passageDiv.style.display = "block";
+    } else {
+        passageDiv.style.display = "none";
+    }
+
     attemptedDiv.textContent = `${subjectState.userAnswers.length}/${subjectState.questions.length}`;
-    questionText.textContent = question.question_text;
+    questionText.innerHTML = question.question_text;
 
     // Build the full path to the question image if it exists
     if (question.question_image && question.question_image.trim() !== "") {
@@ -235,9 +250,9 @@ async function renderQuestion(index) {
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'option';
-        const optionText = capitalizeSentence(option.text);
+        const optionText = capitalizeSentence(option.text?.trim());
         // Decide what to save: if there's text, use that; if not, use the image name.
-        const answerValue = optionText && optionText.trim() !== ""
+        const answerValue = optionText && optionText !== ""
             ? option.text
             : option.image; // Option image filename
         input.value = answerValue;

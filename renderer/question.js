@@ -30,6 +30,7 @@ if (rowCount === 0) {
             questionsData = questionsData.map(q => ({
                 subject: q.subject,
                 question_image: q.question_image,
+                passage: q.passage,
                 question_text: q.question_text,
                 options: [
                     { text: q.option_1_text, image: q.option_1_image },
@@ -40,6 +41,8 @@ if (rowCount === 0) {
                 answer: q.answer,
                 year: q.year
             }));
+
+          //  console.log(questionsData);
 
             // Insert the questions into the database.
             QuestionModel.create(questionsData);
