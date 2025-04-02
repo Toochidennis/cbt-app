@@ -141,7 +141,7 @@ async function renderQuestion() {
 
         const selectedAnswer = subjectState.userAnswers[index];
 
-        // Render options
+        
         question.options.forEach(async (option) => {
             const label = document.createElement('label');
 
@@ -180,6 +180,10 @@ async function renderQuestion() {
         );
 
         const correctAnswerIndex = question.answer - 1;
+
+       // console.log('Selected answer index ', optionIndex);
+        //console.log('Correct answer ', correctAnswerIndex);
+        //console.log('Select answer ', selectedAnswer);
 
         if (optionIndex === correctAnswerIndex) {
             questionLine.classList.add("correct-line");

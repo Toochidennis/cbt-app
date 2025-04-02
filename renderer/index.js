@@ -78,14 +78,7 @@ window.api.onSecondWindowClosed((_, data) => {
 
         init();
 
-        const controlsContainer = document.getElementById('controls-container');
-    const search = document.getElementById('search');
-    const timer = document.getElementById('timer')
-
-      //  window.api.setFullScreen(true);
-        controlsContainer.style.display = 'none';
-        search.style.display = 'none';
-        timer.style.display ='block'
+        window.api.setFullScreen(true);
 
         loadPage(data.action);
     }
@@ -250,9 +243,9 @@ async function renderQuestion(index) {
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'option';
-        const optionText = capitalizeSentence(option.text?.trim());
+        const optionText = capitalizeSentence(option.text.trim());
         // Decide what to save: if there's text, use that; if not, use the image name.
-        const answerValue = optionText && optionText !== ""
+        const answerValue = optionText && optionText.trim() !== ""
             ? option.text
             : option.image; // Option image filename
         input.value = answerValue;
@@ -278,6 +271,10 @@ async function renderQuestion(index) {
             label.appendChild(span);
         }
 
+        input.addEventListener('click', ()=>{
+            selectAnswer(subjectState);
+        });
+
         optionsContainer.appendChild(label);
     });
 
@@ -293,6 +290,7 @@ function selectAnswer(subjectState) {
     const selectedOption = document.querySelector('input[name="option"]:checked');
     if (selectedOption) {
         const answer = selectedOption.getAttribute('data-answer');
+      //  console.log("answer ",answer);
         subjectState.userAnswers[subjectState.currentQuestionIndex] = answer;
     }
 }

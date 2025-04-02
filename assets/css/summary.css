@@ -1,15 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .summary-page {
     display: flex;
     flex-direction: column;
     background-color: #f6f6f6;
     padding: 2rem;
     height: 100vh;
+    margin-top: 3em;
     overflow: hidden;
     font-family: "Urbanist";
 }

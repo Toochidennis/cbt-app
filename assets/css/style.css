@@ -17,12 +17,75 @@
     -webkit-app-region: drag;
 }
 
+.div-timer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 0;
+    height: 54px;
+    background-color: white;
+    box-shadow: inset 0px -1px 0px #e8eaef;
+    -webkit-app-region: drag;
+}
+.link{
+    font-style: italic;
+    color: #426CFF;
+
+}
+
+.trouble{
+    margin-left: 73%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.watch-container {
+    display: flex;
+    gap: 10px;
+    width: 180px;
+    align-items: center;
+}
+
+#countdown {
+    font-weight: 500;
+    font-family: "Inter", Helvetica;
+    color: #ff4848;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.submit-button {
+    align-items: center;
+    border-radius: 32px;
+    border: 1px solid #ff5252;
+    padding: .8em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.submit-text {
+    font-family: "Urbanist", Helvetica;
+    font-weight: 500;
+    color: #ff4848;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
 .logo,
 .search,
 .window-controls {
     -webkit-app-region: no-drag;
     display: flex;
     align-items: center;
+}
+
+.logo{
+    height: 100%;
 }
 
 .logo img.graduation-cap {
@@ -108,46 +171,6 @@
 .window-controls .button#close-button:hover {
     background-color: #E81123;
     /* Red hover effect for close button */
-}
-
-.cbt-1 {
-    display: flex;
-    gap: 10px;
-}
-
-.cbt-1 .time-container {
-    margin-left: auto;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-#countdown {
-    font-weight: 500;
-    font-family: "Inter", Helvetica;
-    color: #ff4848;
-    font-size: 1rem;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-}
-
-.cbt-1 .submit-button {
-    align-items: center;
-    border-radius: 32px;
-    border: 1px solid #ff5252;
-    padding: .8em;
-    cursor: pointer;
-}
-
-.submit-button .text-wrapper-1 {
-    font-family: "Urbanist", Helvetica;
-    font-weight: 500;
-    color: #ff4848;
-    font-size: 1rem;
-    letter-spacing: 0;
-    line-height: normal;
 }
 
 .homepage {
