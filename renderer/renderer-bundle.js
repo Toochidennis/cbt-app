@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     learnBtn.addEventListener('click', ()=>{
-        switchPage('learning');
+        switchPage('learn-courses', 'renderer-bundle.js');
+
     });
 
     document.getElementById("min-button").addEventListener("click", () => {
