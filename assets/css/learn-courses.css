@@ -3,6 +3,7 @@
     display: flex;
     height: calc(100vh - 50px); /* Full height minus the height of the fixed .top */
     margin-bottom: 30em;
+    width: 100%;
 }
 
 .courses-content::-webkit-scrollbar,
