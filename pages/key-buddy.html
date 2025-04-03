@@ -5,6 +5,16 @@
             <div class="header-controls">
                 <span class="timer">00:00</span>
                 <button class="restart-btn">Restart</button>
+                <label for="music-volume" class="volume-label">Music:</label>
+                <input type="range" id="music-volume" min="0" max="1" step="0.1" value="1">
+                <button id="music-mute-toggle" class="mute-btn">
+                    <img src="assets/img/image.png" alt="Music Mute/Unmute" id="music-mute-icon" width="24" height="24">
+                </button>
+                <label for="key-volume" class="volume-label">Key:</label>
+                <input type="range" id="key-volume" min="0" max="1" step="0.1" value="1">
+                <button id="key-mute-toggle" class="mute-btn">
+                    <img src="assets/img/image.png" alt="Key Mute/Unmute" id="key-mute-icon" width="24" height="24">
+                </button>
             </div>
         </header>
         <section class="typing-area">
