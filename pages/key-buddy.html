@@ -3,18 +3,22 @@
         <header>
             <button class="back-btn">Back</button>
             <div class="header-controls">
+                <div class="volume-container">
+                    <button id="music-mute-toggle" class="mute-btn">
+                        <img src="assets/img/image.png" alt="Music Mute/Unmute" id="music-mute-icon" width="24" height="24">
+                    </button>
+                    <label for="music-volume" class="volume-label">Music:</label>
+                    <input type="range" id="music-volume" min="0" max="1" step="0.1" value="1">
+                </div>
+                <div class="volume-container">
+                    <button id="key-mute-toggle" class="mute-btn">
+                        <img src="assets/img/image.png" alt="Key Mute/Unmute" id="key-mute-icon" width="24" height="24">
+                    </button>
+                    <label for="key-volume" class="volume-label">Key:</label>
+                    <input type="range" id="key-volume" min="0" max="1" step="0.1" value="1">
+                </div>
                 <span class="timer">00:00</span>
                 <button class="restart-btn">Restart</button>
-                <label for="music-volume" class="volume-label">Music:</label>
-                <input type="range" id="music-volume" min="0" max="1" step="0.1" value="1">
-                <button id="music-mute-toggle" class="mute-btn">
-                    <img src="assets/img/image.png" alt="Music Mute/Unmute" id="music-mute-icon" width="24" height="24">
-                </button>
-                <label for="key-volume" class="volume-label">Key:</label>
-                <input type="range" id="key-volume" min="0" max="1" step="0.1" value="1">
-                <button id="key-mute-toggle" class="mute-btn">
-                    <img src="assets/img/image.png" alt="Key Mute/Unmute" id="key-mute-icon" width="24" height="24">
-                </button>
             </div>
         </header>
         <section class="typing-area">
@@ -64,7 +68,7 @@
                 <button class="key" data-char="|">\\</button>
             </div>
             <div class="row cap">
-                <button class="key">CapsLock</button>
+                <button class="key">Caps Lock</button>
                 <button class="key">A</button>
                 <button class="key">S</button>
                 <button class="key">D</button>
@@ -108,7 +112,8 @@
         <h2 id="level-title">Game Over</h2>
         <p id="score-display">Your Score: 0</p>
         <p id="comment-display">Great job!</p>
-        <button id="next-level-btn">Next</button>
         <button id="replay-btn">Replay</button>
+        <button id="next-level-btn">Next</button>
+       
     </div>
 </div>

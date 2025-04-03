@@ -1,0 +1,557 @@
+.main-content{
+    margin-top: 50px; /* Add margin to avoid overlapping with the fixed .top */
+    display: flex;
+    height: calc(100vh - 50px); /* Full height minus the height of the fixed .top */
+    
+}
+
+.main-content::-webkit-scrollbar,
+.mid-content::-webkit-scrollbar,
+.dropdown-container::-webkit-scrollbar {
+    transition: opacity 0.5s ease; /* Smooth transition for hiding */
+}
+
+.main-content.hide-scrollbar::-webkit-scrollbar,
+.mid-content.hide-scrollbar::-webkit-scrollbar,
+.dropdown-container.hide-scrollbar::-webkit-scrollbar {
+    opacity: 0; /* Hide scrollbar */
+}
+
+.top{
+    position: fixed; /* Fix the navigation bar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: white;
+    box-shadow: 0px -1px 0px #E9EAF0 inset; 
+    border-bottom: 1px black ; 
+    align-items: center;
+    display: flex; 
+    flex-wrap: wrap;
+    align-content: center;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+.logo-container{
+    display: flex;;
+    width: auto;
+    /* background-color: #2F55DD; */
+    height: 100%;
+    align-items: center;
+}
+.linkskool{
+    color: #FC9338;
+    font-size: 20px;
+    font-family: STIX Two Text;
+    font-style: italic;
+    font-weight: 700;
+    word-wrap: break-word;
+    /* background-color: red; */
+    height: 40px;
+    padding-top:15px ;
+}
+
+.skool{
+    color: #2F55DD;
+font-size: 20px;
+font-family: STIX Two Text;
+font-style: italic;
+font-weight: 700;
+word-wrap: break-word;
+}
+
+.top img{
+    width: 30px;
+    height: 30px;
+    margin-left: 80px;
+    margin-right: 10px;
+}
+.search {
+    width: 50%;
+    padding: 7px;
+    margin-left: 130px;
+    background: url("MagnifyingGlass.png") no-repeat left center;
+    background-size: 20px; 
+    padding-left: 25px;
+    background-color: #F3F3F4;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+    border: 1px solid #E9EAF0;
+}
+
+.dropdown {
+   width: 800px;
+}
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* Adds spacing between dropdowns */
+    max-width: 300px;
+    margin-top: 40px;
+    height: auto; /* Allow it to maintain its own height */
+    overflow-y: auto; /* Enable vertical scrolling for dropdown-container */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    scrollbar-width: thin; /* For modern browsers */
+    scrollbar-color: white transparent; /* Customize scrollbar color */
+}
+
+.dropdown-container::-webkit-scrollbar {
+    width: 5px; /* Scrollbar width for WebKit browsers */
+}
+
+.dropdown-container::-webkit-scrollbar-thumb {
+    background-color: white; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+.dropdown-container::-webkit-scrollbar-track {
+    background: transparent; /* Scrollbar track color */
+}
+
+.dropdown .btn {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 30px; /* Space between arrow and text */
+    width: 35%; /* Consistent button width */
+    background-color: white; /* White background */
+    border: none; /* Remove all borders */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);; /* Add grey line at the bottom */
+    color: #171717;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 600;
+    line-height: 21px;
+    word-wrap: break-word;
+}
+
+.dropdown .btn:hover,
+.dropdown .btn:focus,
+.dropdown .btn:active {
+    background-color: white !important; /* No background color */
+    color: black !important; /* Keep text black */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important; /* Ensure bottom border remains grey */
+    box-shadow: none !important; /* Remove focus shadow */
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+    transform: rotate(-45deg); /* Arrow pointing right */
+    transition: transform 0.3s ease; /* Smooth rotation */
+    margin-top: 8px;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(45deg); /* Arrow pointing down */
+}
+
+.dropdown-content {
+    display: none; /* Initially hide the dropdown content */
+    flex-direction: column;
+    gap: 1px;
+    margin-top: 10px;
+    background-color: white;
+    /* padding: 10px; */
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 35%;
+    color: #171717;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 500;
+    line-height: 21px;
+    word-wrap: break-word;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    /* color: #007bff; */
+}
+
+.dropdown-content a:hover {
+    text-decoration: underline;
+}
+
+.dropdown-content label {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between checkbox and text */
+    cursor: pointer;
+}
+
+.dropdown-content input[type="checkbox"] {
+    accent-color: black; /* Style the checkbox */
+    cursor: pointer;
+}
+
+.mid-content {
+    background-color: #F5F7FF;
+    width: 55%;
+    overflow-y: auto; /* Enable vertical scrolling for mid-content */
+    scrollbar-width: thin; /* For modern browsers */
+    scroll-behavior: smooth;
+    scrollbar-color: #F5F7FF transparent; /* Customize scrollbar color */
+    position: relative; /* Ensure proper positioning for child elements */
+    height: calc(100vh - 50px); /* Full height minus the fixed .top */
+}
+
+.mid-content::-webkit-scrollbar {
+    width: 5px; /* Scrollbar width for WebKit browsers */
+}
+
+.mid-content::-webkit-scrollbar-thumb {
+    background-color: white; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+.mid-content::-webkit-scrollbar-track {
+    background: transparent; /* Scrollbar track color */
+}
+.main-header{
+    display: flex;
+    padding-top: 20px;
+    background-color: white;
+    width: 100%;
+}
+
+.heading {
+    color: #2F55DD;
+font-size: 24px;
+font-family: Urbanist;
+font-weight: 600;
+line-height: 24px;
+word-wrap: break-word;
+margin-left: 200px;
+
+}
+
+.video-container {
+    position: sticky; /* Make the video container static */
+    top: 0; /* Stick to the top of the parent container */
+    z-index: 10; /* Ensure it stays above other content */
+    margin-left: 20px;  
+    margin-bottom: 20px; /* Adjusted bottom margin */
+    display: flex;
+    flex-direction: column; /* Stack video and title vertically */
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    height: 100%; /* Default height for the video container */
+    transition: height 0.3s ease; /* Smooth transition for height changes */
+    overflow: hidden; /* Prevent content overflow during height changes */
+}
+
+.title{
+    display: flex;
+    gap: 100px; /* Space between video and title */
+}
+.title p{
+    margin-top: 10px; /* Space between video and title */
+    color: #171717;
+    font-size: 22px;
+    font-family: Urbanist;
+    font-weight: 600;
+    line-height: 21px;
+    word-wrap: break-word;
+    margin-left: 25px;
+}
+
+.title button {
+    color: #FFFFFF;
+    background: url("icons8_pdf_1\ 1.png") no-repeat left center ;
+    background-color: #426CFF;
+    color: white;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 500;
+    line-height: 32px;
+    word-wrap: break-word;
+    padding-left: 20px; /* Increased padding to add space between image and text */
+    padding-right: 10px; /* Optional: Add right padding for balance */
+    border: none;
+    height: 35px ;
+}
+
+.title span {
+    color: #8C8C8C;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 400;
+    line-height: 21px;
+    word-wrap: break-word;
+}
+
+.zoom{
+    display: flex;
+    background-color: #FFFFFF;
+    border: 2px solid white;
+    width: 90%;
+    margin-left: 40px;
+}
+
+.zoomimg{
+    width: 60%;
+    padding: 20px;
+}
+
+.zoomimg p{
+    color: #4E5566;
+    font-size: 10px;
+    font-family: Urbanist;
+    font-weight: 500;
+    line-height: 16.11px;
+    word-wrap: break-word;
+}
+
+.zoomimg span{
+    color: #2D8CFF;
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 600;
+    text-decoration: underline;
+    word-wrap: break-word;
+}
+
+.zoom button{
+    height: 50px;
+    margin-left: 60px;
+    background: url(icons8_zoom\ 1.png) no-repeat right center ;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-family: Urbanist;
+    font-weight: 600;
+    line-height: 22.91px;
+    word-wrap: break-word;
+    padding-right: 30px;
+    background-color: #2196F3;
+    padding-left: 15px;
+    border: none;
+    margin-top: 60px;
+}
+.zoom1 button{
+    height: 50px;
+    margin-left: 60px;
+    color: #696969;
+    font-size: 12px;
+    font-family: Urbanist;
+    font-weight: 600;
+    line-height: 22.91px;
+    word-wrap: break-word;
+    padding-right: 30px;
+    background-color: #E0E0E0;
+    border: none;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+}
+
+.zoom1{
+    display: flex;
+    background-color: #F6F6F6;
+    border: 2px solid white;
+    width: 90%;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    height: 100px;
+}
+
+.zoomimg1{
+    width: 60%;
+    padding: 20px;
+}
+
+.zoomimg1 p{
+    color: #4E5566;
+    font-size: 10px;
+    font-family: Urbanist;
+    font-weight: 500;
+    line-height: 16.11px;
+    word-wrap: break-word;
+}
+
+.back{
+    display: flex;
+}
+
+.previous{
+    border: none;
+    background: url(icons8_back\ 2.png) no-repeat left center;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+.next{
+    border: none;
+    background: url(icons8_back\ 2\ \(1\).png) no-repeat right center ;
+    margin-left: 450px;
+    margin-bottom: 20px;
+    padding-right: 30px;
+}
+
+.missed{
+    max-width: 300px;
+    padding-left: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin; /* For modern browsers */
+    scroll-behavior: smooth;
+    scrollbar-color: white transparent; /* Customize scrollbar color */
+}
+
+.missed::-webkit-scrollbar {
+    width: 5px; /* Scrollbar width for WebKit browsers */
+}
+
+.missed::-webkit-scrollbar-thumb {
+    background-color: white; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+.missed::-webkit-scrollbar-track {
+    background: transparent; /* Scrollbar track color */
+}
+
+.missed p{
+    color: #171717;
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 600;
+    line-height: 24px;
+    word-wrap: break-word;
+    margin-top: 20px;
+}
+
+.summary{
+    border: 1px solid whitesmoke;
+    width: 270px;
+}
+
+.summary p{
+    color: #426CFF;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 400;
+    line-height: 15.27px;
+    word-wrap: break-word;
+    margin-left: 13px;
+    margin-top: 10px;
+}
+
+.summary span{
+    color: #171717;
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 600;
+    line-height: 15.27px;
+    word-wrap: break-word;
+    margin-left: 3px;
+}
+
+.summary img{
+    margin-left: 35px;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.summary button{
+    color: #426CFF;
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 38.18px;
+    word-wrap: break-word;
+    background-color: #D9E1FF;
+    border: none;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.watch-lecture{
+    border: 1px solid whitesmoke;
+    width: 270px;
+    margin-top: 20px;
+    
+}
+
+.watch-lecture p{
+    color: #426CFF;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 400;
+    line-height: 15.27px;
+    word-wrap: break-word;
+    margin-left: 10px;
+}
+
+.watch-lecture span{
+    color: #6E7485;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 400;
+    line-height: 15.27px;
+    word-wrap: break-word;
+    margin-left: 1px;
+}
+
+.watch-lecture h6{
+    color: #1D2026;
+    font-size: 15.36px;
+    font-family: Urbanist;
+    font-weight: 500;
+    line-height: 19.09px;
+    word-wrap: break-word;
+    margin-left: 10px;
+}
+
+.watch-lecture img{
+    width: 80%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.watch-lecture button{
+    color: #426CFF;
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 38.18px;
+    word-wrap: break-word;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    height: 37px;
+    margin-left: 50px;
+    margin-bottom: 22px;
+    margin-top: 22px;
+    border: none;
+}
+
+.static-container {
+    position: sticky; /* Keep the video and title static */
+    top: 0;
+    z-index: 10; /* Ensure it stays above other content */
+    background-color: transparent; /* Background to avoid overlap */
+    padding-bottom: 10px;
+   
+}
+
+.scrollable-content {
+    overflow-y: auto; /* Enable scrolling for other content */
+    height: calc(100vh - 150px); /* Adjust height to fit the remaining space */
+}
