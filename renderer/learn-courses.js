@@ -1,8 +1,8 @@
 const switchPage =  require( "./navigation.js");
 
-document.getElementById('join-now').addEventListener('click', ()=>{
-    switchPage('learn-courses', 'learn-courses-bundle.js');
-});
+// document.getElementById('join-now').addEventListener('click', ()=>{
+//     switchPage('learn-courses', 'learn-courses-bundle.js');
+// });
 
 function toggleDropdown(dropdownId, button) {
     const dropdownContent = document.getElementById(dropdownId);
@@ -74,6 +74,7 @@ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
 
 // Add event listeners for dropdown buttons
 document.querySelectorAll('.dropdown button').forEach(button => {
+    console.log("hello");
     button.addEventListener('click', function () {
         const dropdownId = this.getAttribute('id').replace('Button', 'Content');
         toggleDropdown(dropdownId, this);

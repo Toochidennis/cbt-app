@@ -1,12 +1,17 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const switchPage =  require( "./navigation.js");
 
-document.getElementById('join-now').addEventListener('click', ()=>{
-    switchPage('learn-courses', 'learn-courses-bundle.js');
-});
+// document.getElementById('join-now').addEventListener('click', ()=>{
+//     switchPage('learn-courses', 'learn-courses-bundle.js');
+// });
 
 function toggleDropdown(dropdownId, button) {
     const dropdownContent = document.getElementById(dropdownId);
+    if (!dropdownContent) {
+        console.error(`Dropdown content with ID "${dropdownId}" not found.`);
+        return;
+    }
+
     const isVisible = dropdownContent.style.display === 'flex';
 
     // Toggle the clicked dropdown content
@@ -18,6 +23,11 @@ function toggleDropdown(dropdownId, button) {
         arrow.classList.toggle('open', !isVisible);
     }
 }
+
+// Ensure all dropdown contents are initially hidden
+document.querySelectorAll('.dropdown-content').forEach(content => {
+    content.style.display = 'none';
+});
 
 function handleCheckboxChange(checkbox) {
     if (checkbox.checked) {
@@ -51,6 +61,25 @@ document.querySelector('.mid-content').addEventListener('scroll', function () {
     } else {
         videoContainer.style.height = '100%'; // Reset to original height
     }
+});
+
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            console.log(`${this.value} selected`);
+        } else {
+            console.log(`${this.value} deselected`);
+        }
+    });
+});
+
+// Add event listeners for dropdown buttons
+document.querySelectorAll('.dropdown button').forEach(button => {
+    console.log("hello");
+    button.addEventListener('click', function () {
+        const dropdownId = this.getAttribute('id').replace('Button', 'Content');
+        toggleDropdown(dropdownId, this);
+    });
 });
 
 
