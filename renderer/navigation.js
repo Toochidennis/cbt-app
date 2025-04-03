@@ -7,6 +7,7 @@ function loadPage(page) {
         examDiv.classList.remove('hidden');
     } else if (page === 'home') {
         examDiv.classList.add('hidden');
+        
         homeDiv.classList.remove('hidden');
     }
 }
