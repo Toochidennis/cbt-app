@@ -8,6 +8,7 @@ function loadPage(page) {
         examDiv.classList.remove('hidden');
     } else if (page === 'home') {
         examDiv.classList.add('hidden');
+        
         homeDiv.classList.remove('hidden');
     }
 }
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     learnBtn.addEventListener('click', ()=>{
-        switchPage('learning');
+        switchPage('learn-courses');
     });
 
     document.getElementById("min-button").addEventListener("click", () => {

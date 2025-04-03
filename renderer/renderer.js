@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     learnBtn.addEventListener('click', ()=>{
-        switchPage('learning');
+        switchPage('learn-courses');
     });
 
     document.getElementById("min-button").addEventListener("click", () => {
