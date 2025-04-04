@@ -142,7 +142,7 @@ const getRandomWordOrChar = () => {
         usedWords.push(word); // Mark the word as used
         return word;
     }
-    return ""; // Fallback in case of unexpected level
+    return "";
 };
 
 // Function to generate random letters for the total sequence
@@ -160,12 +160,13 @@ const displayNextBatch = () => {
     const batch = totalLetters.splice(0, batchSize); // Get the next batch of letters
     batch.forEach((word) => {
         const newKey = document.createElement("span");
-        newKey.classList.add("key");
+        newKey.classList.add("intro-key");
         // Wrap each letter in a span for individual styling
         newKey.innerHTML = word
             .split("")
             .map((letter) => `<span>${letter}</span>`)
             .join("");
+        
         keySequenceContainer.appendChild(newKey);
     });
     currentWordIndex = 0; // Reset word index

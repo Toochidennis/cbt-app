@@ -1,15 +1,14 @@
 .container {
     display: flex;
     width: 100%;
+    font-family: "Urbanist";
 }
-
-
 
 .main-content {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-    background: linear-gradient(rgba(249, 249, 249, 1), rgba(205, 216, 255, 1));
+    background-color: #fff;
     width: 100%;
 }
 
@@ -26,7 +25,7 @@ header {
 }
 
 .instruction {
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
@@ -34,62 +33,70 @@ header {
     display: flex;
     justify-content: center;
     gap: 10px;
+    width: 100%;
+    align-items: center;
+    background-color: #fafafa;
+    min-height: 100px;
+    max-width: 100% ;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.key-sequence .key {
-    font-size: 24px; /* Slightly larger font for better visibility */
-    font-weight: bold;
-    color: #333; /* Darker text color for readability */
-    background-color: #f0f8ff; /* Light blue background for a playful look */
-    padding: 15px;
-    border: 2px solid #87ceeb; /* Sky blue border */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a playful shadow */
+
+.key-sequence .intro-key {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    padding: .3em;
+    background-color: #B0F0D7 ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, background-color 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.key-sequence .key:hover {
-    background-color: #e0f7fa; /* Slightly lighter blue on hover */
-    transform: scale(1.1); /* Slight zoom effect on hover */
+.key-sequence .intro-key:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.1); 
 }
 
-.key-sequence .key span.correct {
+.key-sequence .intro-key span.correct {
     background-color: green;
     color: #fff;
     border-radius: 3px;
     padding: 2px 4px;
 }
 
-.key-sequence .key span.incorrect {
+.key-sequence .intro-key span.incorrect {
     background-color: red;
     color: #fff;
-    border-radius: 3px;
-    padding: 2px 4px;
 }
 
-.key-sequence .key.incorrect {
+.key-sequence .intro-key.incorrect {
     background-color: red;
     color: #fff;
-    border-radius: 5px;
-    padding: 10px;
 }
 
 .progress-bar {
-    height: 10px; /* Increase height for better visibility */
-    background-color: #e0e0e0; /* Light gray background */
-    border-radius: 10px; /* Rounded corners */
-    margin-top: 50px; /* Adjust margin for better spacing */
+    height: 10px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
     position: relative;
-    overflow: hidden; /* Ensure the progress stays within the bar */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .progress {
     height: 100%;
     width: 0;
     background: linear-gradient(90deg, #ff8c42, #ff5722); /* Add a gradient for the progress */
-    border-radius: 10px; /* Match the bar's rounded corners */
-    transition: width 0.3s ease-in-out; /* Smooth transition for progress updates */
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out; 
 }
 
 .keyboard {
@@ -97,11 +104,9 @@ header {
     flex-direction: column;
     gap: 10px; /* Reduce gap between rows */
     border-radius: 10px; /* Slightly rounded corners */
-    padding: 20px; /* Adjust padding inside the keyboard container */
-    width: 850px; /* Increase width for the keyboard container */
+    padding: 1.5em; /* Adjust padding inside the keyboard container */
     margin: 0 auto; /* Center the keyboard container */
-    margin-top: 40px; /* Adjust margin for better spacing */
-   
+    margin-top: 1em; /* Adjust margin for better spacing */
 }
 
 .row {
@@ -110,21 +115,18 @@ header {
     gap: 5px; /* Reduce gap between keys */
 }
 
-.row.cap{
-    height: 50px;
-    height: 60px;
-}
-
 .key {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    width: 60px; /* Uniform width for most keys */
-    height: 60px; /* Uniform height for all keys */
-    border: 2px solid #87ceeb; /* Sky blue border for a playful look */
-    border-radius: 10px; /* Rounded corners for keys */
-    background-color: #f0f8ff; /* Light blue background for a fun look */
-    cursor: pointer;
-    text-align: center;
-    font-size: 16px; /* Adjust font size for better fit */
+    width: 50px;
+    height: 50px;
+    padding: 1em 0;
+    border-radius: 10px; 
+    background-color: #f0f8ff;
+    font-size: 1.2rem; /* Adjust font size for better fit */
     font-weight: bold;
     color: #333; /* Darker text color for readability */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a playful shadow */
@@ -132,22 +134,49 @@ header {
 }
 
 .key::before {
-    content: attr(data-char); /* Display the special character */
+    content: attr(data-char);
+    font-size: .8rem;
     position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 12px; /* Smaller font size for the special character */
-    color: #888; /* Light gray color for the special character */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.key::after {
+    content: attr(data-secondary);
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.key.back, .key.caps, .key.enter, .key.tab{
+    width: 105px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.key.shift{
+    width: 135px;
+    text-align: end;
+    font-size: 1rem;
+}
+
+.key.space {
+    width: 445px;
+    font-size: 1rem;
+}
+
+.key.ctrl, .key.alt{
+    width: 90px; 
+    font-size: 1rem;
 }
 
 .key:hover {
     background-color: #e0f7fa; /* Slightly lighter blue on hover */
     transform: translateY(-3px); /* Slight lift effect on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-}
-
-.key.space {
-    width: 360px; /* Adjust width for the space bar */
 }
 
 .key.active {
@@ -171,40 +200,13 @@ header {
     color: #000;
 }
 
-.key.ctrl, .key.alt, .key.tab, .key.enter, .key.Shift, .key.back {
-    width: 90px; /* Adjust width for special keys */
-   
-}
-
 .key:active {
     transform: scale(0.95); /* Slightly shrink on press */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on press */
 }
 
-.key.enter {
-    width: 90px; /* Adjust width for Enter key */
-    height: 60px; /* Match height with other keys */
-   
-    position: relative;
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for the Enter key */
-}
 
-.key.enter::after {
-    content: "↵"; /* Unicode arrow for Enter */
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 18px;
-    color: #000;
-}
 
-.key.CapsLock {
-    width: 150px; /* Ensure the CapsLock key gets its proper width */
-    
-}
 
 .modal {
     position: fixed;
