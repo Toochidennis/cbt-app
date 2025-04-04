@@ -1,149 +1,103 @@
-.ongoing-class p{
-    color: #171717;
-    font-size: 20px;
-    font-family: Urbanist;
-    font-weight: 600;
-    text-transform: capitalize;
-    line-height: 19.54px;
-    word-wrap: break-word;
-    margin-top: 1.2em;
-    margin-left: 1.5em;
-    margin-bottom: 1em;
+.learning-carousel-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
 }
 
-.ongoing-box{
+.learning-carousel {
     display: flex;
+    width: 100%;
+    overflow: hidden;
 }
 
-.ongbox1{
+.learning-slider {
     display: flex;
-    border-radius: 3.96px;
-    background-color: #426CFF1A;
-    width: 40%;
-    height: 120px;
-    margin-left: 30px;
+    transition: transform 0.5s ease-in-out;
 }
 
-.ongbox1 h6{
-    color: #8C8C8C;
-    font-size: 10.86px;
-    font-family: Urbanist;
-    font-weight: 700;
-    text-transform: capitalize;
-    line-height: 19.54px;
-    word-wrap: break-word;
-}
-
-.ongbox1 span{
-    color: #8C8C8C;
-    font-size: 10.86px;
-    font-family: Urbanist;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 19.54px;
-    word-wrap: break-word;
-}
-
-.ongbox1 h5{
-    color: #171717;
-    font-size: 17.82px;
-    font-family: Urbanist;
-    font-weight: 700;
-    text-transform: capitalize;
-    line-height: 19.54px;
-    word-wrap: break-word;
-}
-
-.ongbox1 button{
-    color: white;
-    font-size: 12.87px;
-    font-family: Urbanist;
-    font-weight: 500;
-    word-wrap: break-word;
-    width: 10em; 
-    height: 30px; 
-    padding-left: 15.84px; 
-    padding-right: 15.84px; 
-    padding-top: 7.92px;
-    padding-bottom: 7.92px; 
-    margin-top: 50px;
-    margin-left: 100px;
-    background: #426CFF; 
-    border-radius: 3.96px; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 7.92px; 
-    display: inline-flex;
-    border: none;
-    cursor: pointer;
-}
-.ongbox2{
+.learning-slide {
     display: flex;
-    border-radius: 3.96px;
-    background-color: #426CFF1A;
-    width: 40%;
-    height: 120px;
-    margin-left: 30px;
+    min-width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 350px; /* Increased height for better scaling */
+    background-color: #fff;
+    margin-top: 1em;
 }
 
-.ongbox2 h6{
-    color: #8C8C8C;
-    font-size: 10.86px;
-    font-family: Urbanist;
-    font-weight: 700;
-    text-transform: capitalize;
-    line-height: 19.54px;
-    word-wrap: break-word;
-}
-
-.ongbox2 span{
-    color: #8C8C8C;
-    font-size: 10.86px;
-    font-family: Urbanist;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 19.54px;
-    word-wrap: break-word;
-}
-
-.ongbox2 h5{
-    color: #171717;
-    font-size: 17.82px;
-    font-family: Urbanist;
-    font-weight: 700;
-    text-transform: capitalize;
-    line-height: 19.54px;
-    word-wrap: break-word;
-}
-
-.ongbox2 button{
-    color: white;
-    font-size: 12.87px;
-    font-family: Urbanist;
-    font-weight: 500;
-    word-wrap: break-word;
-    width: 10em; 
-    height: 30px; 
-    padding-left: 15.84px; 
-    padding-right: 15.84px; 
-    padding-top: 7.92px;
-    padding-bottom: 7.92px; 
-    margin-top: 50px;
-    margin-left: 100px;
-    background: #426CFF; 
-    border-radius: 3.96px; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 7.92px; 
-    display: inline-flex;
-    border: none;
-    cursor: pointer;
-}
-
-.left-content1, .left-content2{
+.learning-slider-content {
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    padding: 1em;
-    gap: 10px;
+    gap: 20px;
+}
+
+.learning-slider-text {
+    color: rgba(47, 85, 221, 1);
+    font-family: "Urbanist";
+    font-weight: 600;
+    letter-spacing: -2%;
+    line-height: 80%;
+    font-size: 2.5rem; /* Increased font size */
+    max-width: 500px;
+}
+
+.learning-slider-content p {
+    color: rgba(78, 85, 102, 1);
+    font-family: "Urbanist";
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 32px;
+    font-size: 1.2rem; /* Slightly larger font size */
+    max-width: 600px;
+}
+
+.learning-graphics img {
+    width: 80%; /* Adjusted to fit larger screen width */
+    height: auto;
+}
+
+#learning-prevBtn,
+#learning-nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #407bff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 50%;
+}
+
+#learning-prevBtn {
+    left: 10px;
+}
+
+#learning-nextBtn {
+    right: 10px;
+}
+
+.learning-register-button {
+    background-color: rgba(66, 108, 255, 1);
+    border-radius: 6px;
+    border: 0.75px solid rgba(119, 149, 255, 1);
+    align-items: center;
+    justify-content: center;
+    padding: 0.8em;
+    width: 250px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.98);
 }

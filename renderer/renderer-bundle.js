@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     learnBtn.addEventListener('click', ()=>{
-        switchPage('learn-courses', 'learn-courses-bundle.js');
+        switchPage('learning', 'learning-bundle.js');
 
     });
 
