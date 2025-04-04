@@ -1,9 +1,8 @@
 .courses-content{
     margin-top: 50px; /* Add margin to avoid overlapping with the fixed .top */
     display: flex;
-    height: calc(100vh - 50px); /* Full height minus the height of the fixed .top */
+    height: 85vh;
     margin-bottom: 30em;
-    width: 100%;
 }
 
 .courses-content::-webkit-scrollbar,
@@ -20,17 +19,17 @@
 
 
 
-
-
 .dropdown {
    width: 800px;
+   gap: 20px;
 }
 .dropdown-container {
     display: flex;
     flex-direction: column;
-    gap: 3px; /* Adds spacing between dropdowns */
+    gap: 5px; /* Adds spacing between dropdowns */
     max-width: 300px;
     margin-top: 40px;
+    background-color: white;
     height: auto; /* Allow it to maintain its own height */
     overflow-y: auto; /* Enable vertical scrolling for dropdown-container */
     overflow-x: hidden; /* Disable horizontal scrolling */
