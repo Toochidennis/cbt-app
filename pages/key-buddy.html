@@ -5,7 +5,8 @@
             <div class="header-controls">
                 <div class="volume-container">
                     <button id="music-mute-toggle" class="mute-btn">
-                        <img src="assets/img/image.png" alt="Music Mute/Unmute" id="music-mute-icon" width="24" height="24">
+                        <img src="assets/img/image.png" alt="Music Mute/Unmute" id="music-mute-icon" width="24"
+                            height="24">
                     </button>
                     <label for="music-volume" class="volume-label">Music:</label>
                     <input type="range" id="music-volume" min="0" max="1" step="0.1" value="1">
@@ -22,87 +23,81 @@
             </div>
         </header>
         <section class="typing-area">
-            <div class="instruction">Home key</div>
-            <div class="key-sequence">
-                <span class="key active">A</span>
-                <span class="key">S</span>
-                <span class="key">A</span>
-                <span class="key">A</span>
-                <span class="key">F</span>
-            </div>
+            <div class="instruction">Type the highlighted letter on the keyboard</div>
+            <div class="key-sequence"></div>
             <div class="progress-bar">
                 <div class="progress"></div>
             </div>
         </section>
-        <section class="keyboard">  
+        <section class="keyboard">
             <div class="row">
-                <button class="key" data-char="~">`</button>
-                <button class="key" data-char="!">1</button>
-                <button class="key" data-char="@">2</button>
-                <button class="key" data-char="#">3</button>
-                <button class="key" data-char="$">4</button>
-                <button class="key" data-char="%">5</button>
-                <button class="key" data-char="^">6</button>
-                <button class="key" data-char="&">7</button>
-                <button class="key" data-char="*">8</button>
-                <button class="key" data-char="(">(</button>
-                <button class="key" data-char=")">)</button>
-                <button class="key" data-char="_">-</button>
-                <button class="key" data-char="+">=</button>
-                <button class="key back">Backspace</button>
+                <div class="key" data-char="~" data-secondary="`"></div>
+                <div class="key" data-char="!" data-secondary="1"></div>
+                <div class="key" data-char="@" data-secondary="2"></div>
+                <div class="key" data-char="#" data-secondary="3"></div>
+                <div class="key" data-char="$" data-secondary="4"></div>
+                <div class="key" data-char="%" data-secondary="5"></div>
+                <div class="key" data-char="^" data-secondary="6"></div>
+                <div class="key" data-char="&" data-secondary="7"></div>
+                <div class="key" data-char="*" data-secondary="8"></div>
+                <div class="key" data-char="(" data-secondary="9"></div>
+                <div class="key" data-char=")" data-secondary="0"></div>
+                <div class="key" data-char="_" data-secondary="-"></div>
+                <div class="key" data-char="+" data-secondary="="></div>
+                <div class="key back">backspace</div>
             </div>
             <div class="row">
-                <button class="key tab">Tab</button>
-                <button class="key">Q</button>
-                <button class="key">W</button>
-                <button class="key">E</button>
-                <button class="key">R</button>
-                <button class="key">T</button>
-                <button class="key">Y</button>
-                <button class="key">U</button>
-                <button class="key">I</button>
-                <button class="key">O</button>
-                <button class="key">P</button>
-                <button class="key" data-char="{">[</button>
-                <button class="key" data-char="}">]</button>
-                <button class="key" data-char="|">\\</button>
+                <div class="key tab">tab</div>
+                <div class="key">Q</div>
+                <div class="key">W</div>
+                <div class="key">E</div>
+                <div class="key">R</div>
+                <div class="key">T</div>
+                <div class="key">Y</div>
+                <div class="key">U</div>
+                <div class="key">I</div>
+                <div class="key">O</div>
+                <div class="key">P</div>
+                <div class="key" data-char="}" data-secondary="["></div>
+                <div class="key" data-char="}" data-secondary="]"></div>
+                <div class="key" data-char="|" data-secondary="\"></div>
             </div>
             <div class="row cap">
-                <button class="key">Caps Lock</button>
-                <button class="key">A</button>
-                <button class="key">S</button>
-                <button class="key">D</button>
-                <button class="key">F</button>
-                <button class="key">G</button>
-                <button class="key">H</button>
-                <button class="key">J</button>
-                <button class="key">K</button>
-                <button class="key">L</button>
-                <button class="key" data-char=":">;</button>
-                <button class="key" data-char="&quot;">'</button>
-                <button class="key enter">Enter</button>
+                <div class="key caps">caps lock</div>
+                <div class="key">A</div>
+                <div class="key">S</div>
+                <div class="key">D</div>
+                <div class="key">F</div>
+                <div class="key">G</div>
+                <div class="key">H</div>
+                <div class="key">J</div>
+                <div class="key">K</div>
+                <div class="key">L</div>
+                <div class="key" data-char=":" data-secondary=";"></div>
+                <div class="key" data-char="&quot;" data-secondary="'"> </div>
+                <div class="key enter">enter</div>
             </div>
             <div class="row">
-                <button class="key Shift">Shift</button>
-                <button class="key">Z</button>
-                <button class="key">X</button>
-                <button class="key">C</button>
-                <button class="key">V</button>
-                <button class="key">B</button>
-                <button class="key">N</button>
-                <button class="key">M</button>
-                <button class="key" data-char="<">,</button>
-                <button class="key" data-char=">">.</button>
-                <button class="key" data-char="?">/</button>
-                <button class="key Shift">Shift</button>
+                <div class="key shift">shift</div>
+                <div class="key">Z</div>
+                <div class="key">X</div>
+                <div class="key">C</div>
+                <div class="key">V</div>
+                <div class="key">B</div>
+                <div class="key">N</div>
+                <div class="key">M</div>
+                <div class="key" data-char="<" data-secondary=","></div>
+                <div class="key" data-char=">" data-secondary="."></div>
+                <div class="key" data-char="?" data-secondary="/"></div>
+                <div class="key shift">shift</div>
             </div>
             <div class="row">
-                <button class="key ctrl">Ctrl</button>
-                <button class="key alt">Alt</button>
-                <button class="key space">Space</button>
-                <button class="key alt">Alt</button>
-                <button class="key ctrl">Ctrl</button>
-                
+                <div class="key ctrl">ctrl</div>
+                <div class="key alt">alt</div>
+                <div class="key space">space</div>
+                <div class="key alt">alt</div>
+                <div class="key ctrl">ctrl</div>
+
             </div>
         </section>
     </main>
@@ -114,6 +109,6 @@
         <p id="comment-display">Great job!</p>
         <button id="replay-btn">Replay</button>
         <button id="next-level-btn">Next</button>
-       
+
     </div>
 </div>
