@@ -1,103 +1,333 @@
-.learning-carousel-container {
-    position: relative;
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
+.learning-page {
+    margin-left: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+   
 }
 
-.learning-carousel {
+.learning-page::-webkit-scrollbar {
+    width: 5px;
+}
+
+.learning-page::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 20px;
+}
+
+.learning-page::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-banner {
     display: flex;
-    width: 100%;
-    overflow: hidden;
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.learning-slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.learning-slide {
-    display: flex;
-    min-width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    height: 350px; /* Increased height for better scaling */
-    background-color: #fff;
-    margin-top: 1em;
-}
-
-.learning-slider-content {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.learning-slider-text {
-    color: rgba(47, 85, 221, 1);
-    font-family: "Urbanist";
-    font-weight: 600;
-    letter-spacing: -2%;
-    line-height: 80%;
-    font-size: 2.5rem; /* Increased font size */
-    max-width: 500px;
-}
-
-.learning-slider-content p {
-    color: rgba(78, 85, 102, 1);
-    font-family: "Urbanist";
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 32px;
-    font-size: 1.2rem; /* Slightly larger font size */
-    max-width: 600px;
-}
-
-.learning-graphics img {
-    width: 80%; /* Adjusted to fit larger screen width */
+.banner1 {
+    width: 45%;
     height: auto;
+    background-image: url(../images/learninghome/banner1.png);
+    background-size: cover;
+    background-position: center;
+    background-color: #426CFF;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
 }
 
-#learning-prevBtn,
-#learning-nextBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    color: #407bff;
+.banner2 {
+    width: 45%;
+    height: auto;
+    background-image: url(../images/learninghome/banner1.png);
+    background-size: cover;
+    background-position: center;
+    background-color: #874FFF;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+}
+
+.banner1 p {
+    color: var(--color-gray-10, white);
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 500;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.banner2 p {
+    color: var(--color-gray-10, white);
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 500;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.banner2 span {
+    color: var(--color-gray-10, white);
+    font-size: 25px;
+    font-family: Urbanist;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.banner1 span {
+    color: var(--color-gray-10, white);
+    font-size: 25px;
+    font-family: Urbanist;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.banner1 button, .banner2 button {
+    background-color: #FC9338;
+    color: var(--color-gray-10, white);
     border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 30px;
-    border-radius: 50%;
-}
-
-#learning-prevBtn {
-    left: 10px;
-}
-
-#learning-nextBtn {
-    right: 10px;
-}
-
-.learning-register-button {
-    background-color: rgba(66, 108, 255, 1);
-    border-radius: 6px;
-    border: 0.75px solid rgba(119, 149, 255, 1);
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.8em;
-    width: 250px;
-    font-weight: 600;
-    line-height: 15px;
-    letter-spacing: 0;
-    text-align: center;
-    color: white;
-    cursor: pointer;
+    gap: 10px;
 }
 
-button:active {
-    transform: scale(0.98);
+.banner1 button img, .banner2 button img {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.banner1 img, .banner2 img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.category {
+    margin-top: 30px;
+}
+
+.learn-categories {
+    display: flex;
+    margin-top: 20px;
+}
+
+.catbox1, .catbox2 {
+    display: flex;
+    align-items: center;
+    background-color: #EBE3FF;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    gap: 50px;
+    width: 30rem;
+}
+
+.catbox1 img, .catbox2 img {
+    width: 60px;
+    height: 60px;
+    background-color: #E8DFFF;
+    border-radius: 50%;
+    padding: 10px;
+    object-fit: contain;
+}
+
+.catbox1 p, .catbox2 p {
+    color: #202020;
+    font-size: 16px;
+    font-family: Urbanist;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.catbox1 p span, .catbox2 p span {
+    color: #5F5F5F;
+    font-size: 12px;
+    font-family: Urbanist;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.title {
+    color: var(--color-gray-100, #202020);
+    font-size: 20px;
+    font-family: Urbanist;
+    font-weight: 600;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.course {
+    margin-bottom: 100px;
+    margin-left: 20px;
+    width: 97%;
+}
+
+.course-title {
+    color: var(--color-gray-100, #202020);
+    font-size: 20px;
+    font-family: Urbanist;
+    font-weight: 600;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    margin-top: 20px;
+}
+
+.learn-courses {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+    
+}
+
+.course-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F9F9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: 1px solid gray;
+}
+
+.course-box img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+   
+}
+
+.learn-courses .course-box:nth-child(1) img,
+.learn-courses .course-box:nth-child(5) img {
+    max-height: 120px; 
+}
+
+.course-content {
+    text-align: center;
+    width: 100%;
+}
+
+.banner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FF000026;
+    color: #FF3030;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 500;
+    word-wrap: break-word;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.catbox1 {
+    position: relative;
+}
+
+.course-label {
+    background-color: #426CFF1A;
+    color: #426CFF;
+    font-size: 12px;
+    font-family: Urbanist;
+    font-weight: 600;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    border-radius: 10px;
+    margin-right: 70px;
+    padding: 5px 10px;
+}
+
+.course-title-text {
+    color: var(--color-gray-100, #202020);
+    font-size: 20px;
+    font-family: Urbanist;
+    font-weight: 600;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 10px;
+    margin: 20px 0;
+}
+
+.course-description {
+    color: #4D4D4D;
+    font-size: 10px;
+    font-family: Urbanist;
+    font-weight: 400;
+    line-height: 16px;
+    word-wrap: break-word;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.course-footer {
+    display: flex;
+    align-items: center; /* Keep image and text inline */
+    gap: 20px; /* Space between image and text */
+    margin-top: 10px;
+    flex-wrap: wrap; /* Allow wrapping for the button */
+}
+
+.course-footer img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.course-footer p {
+    color: #202020;
+    font-size: 12px;
+    font-family: Urbanist;
+    font-weight: 500;
+    line-height: 16px;
+    margin: 0;
+}
+
+.course-footer p span {
+    color: #696969;
+    font-size: 10px;
+    font-family: Urbanist;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.course-footer button {
+    background-color:transparent;
+    color: #FC9338;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Urbanist;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 15px;
+    align-self: stretch; /* Make the button take full width */
+    margin-top: 10px; /* Add spacing above the button */
+    border: 1px solid #FC9338;
 }
