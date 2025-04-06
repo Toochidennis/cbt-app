@@ -11,10 +11,17 @@ axios.get('https://linkschoolonline.com/courses')
   });
 
 function populateCourses(courses) {
+  if (!courses || courses.length === 0) {
+    console.log("No courses available.");
+    return;
+  }
+
   const coursesContainer = document.getElementById('courses-container');
   coursesContainer.innerHTML = '';
 
-  courses.map((course) => {
+  const fragment = document.createDocumentFragment();
+
+  courses.forEach(course => {
     // Create elements dynamically
     const courseBox = document.createElement('div');
     const courseCategory = document.createElement('div');
@@ -26,7 +33,7 @@ function populateCourses(courses) {
     const footerImage = document.createElement('img');
     const footerText = document.createElement('p');
     const takeCourseBtn = document.createElement('button');
-  
+
     // Add them classes
     courseBox.classList.add('course-box');
     courseCategory.classList.add('course-label');
@@ -37,13 +44,12 @@ function populateCourses(courses) {
 
     // populate the elements with content
     courseImage.src = course.image_url;
-    console.log(course.image_url);
     courseImage.alt = "Course Image"
     courseCategory.textContent = course.category;
     courseTitle.textContent = course.course_name;
     courseDescription.textContent = course.description;
     footerImage.src = "assets/img/image 85.png"
-    footerImage.alt = "Easter Kids Coding Fest"
+    footerImage.alt = "Course Footer Image"
     footerText.innerHTML = `Easter Kids Coding Fest <br> Powered By Digital Dreams`;
     takeCourseBtn.textContent = "Take Course";
 
@@ -60,6 +66,8 @@ function populateCourses(courses) {
     courseBox.append(courseContent);
     courseBox.append(courseFooter);
 
-    coursesContainer.appendChild(courseBox);
+    fragment.appendChild(courseBox);
   });
+
+  coursesContainer.appendChild(fragment);
 }

@@ -4,9 +4,8 @@
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: white transparent;
+    scrollbar-color: #636363 transparent;
     font-family: "Urbanist";
-   
 }
 
 .learning-page::-webkit-scrollbar {
