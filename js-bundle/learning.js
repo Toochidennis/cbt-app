@@ -4385,17 +4385,67 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],37:[function(require,module,exports){
+const axios = require('axios');
 
-const axios = require('axios')
+function showShimmer() {
+  const coursesContainer = document.getElementById('courses-container');
+  coursesContainer.innerHTML = '';
+  coursesContainer.style.display = 'grid';
+  coursesContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
+  coursesContainer.style.gap = '20px';
+
+  for (let i = 0; i < 4; i++) {
+    const shimmerBox = document.createElement('div');
+    shimmerBox.classList.add('shimmer-box');
+    shimmerBox.style.height = '150px';
+    shimmerBox.style.borderRadius = '10px';
+
+    coursesContainer.appendChild(shimmerBox);
+  }
+}
+
+function hideShimmer() {
+  const coursesContainer = document.getElementById('courses-container');
+  coursesContainer.innerHTML = '';
+}
+
+function showError(message) {
+  const coursesContainer = document.getElementById('courses-container');
+  coursesContainer.innerHTML = '';
+
+  const errorBox = document.createElement('div');
+  errorBox.classList.add('error-box');
+
+  const errorIcon = document.createElement('div');
+  errorIcon.classList.add('error-icon');
+  errorIcon.textContent = '⚠️';
+
+  const errorMessage = document.createElement('p');
+  errorMessage.textContent = message;
+
+  errorBox.appendChild(errorIcon);
+  errorBox.appendChild(errorMessage);
+
+  coursesContainer.appendChild(errorBox);
+}
 
 axios.get('https://linkschoolonline.com/courses')
   .then(response => {
+    hideShimmer();
     console.log(response.data);
     populateCourses(response.data);
   })
   .catch(error => {
+    hideShimmer();
+    if (!navigator.onLine) {
+      showError('Unable to connect. Please check your internet connection and try again.');
+    } else {
+      showError('An error occurred while fetching courses. Please try again later.');
+    }
     console.error('Error:', error);
   });
+
+showShimmer();
 
 function populateCourses(courses) {
   if (!courses || courses.length === 0) {

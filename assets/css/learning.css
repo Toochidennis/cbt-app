@@ -327,3 +327,53 @@
     margin-top: 10px; /* Add spacing above the button */
     border: 1px solid #FC9338;
 }
+
+.shimmer-box {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 10px;
+    width: 100%;
+    height: 150px;
+    /* Ensure it does not affect course box styles */
+    box-shadow: none;
+    border: none;
+}
+
+@keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+}
+
+.error-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe6e6;
+    color: #ff4d4d;
+    font-size: 16px;
+    font-family: "Urbanist";
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error-box .error-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.error-box p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff4d4d;
+}
