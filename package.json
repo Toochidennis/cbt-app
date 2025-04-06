@@ -1,11 +1,17 @@
 {
   "name": "LinkSkool",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --win --publish always",
-    "watch": "browserify renderer/index.js -o renderer/index-bundle.js --watch",
+    "cbt-dashboard-watch": "browserify renderer/cbt-dashboard.js -o js-bundle/cbt-dashboard.js --watch",
+    "index-watch": "browserify renderer/index.js -o js-bundle/index.js --watch",
+    "key-buddy-watch": "browserify renderer/key-buddy.js -o js-bundle/key-buddy.js --watch",
+    "learning-watch": "browserify renderer/learning.js -o js-bundle/learning.js --watch",
+    "cbt-watch": "browserify renderer/cbt.js -o js-bundle/cbt.js --watch",
+    "summary-watch": "browserify renderer/summary.js -o js-bundle/summary.js --watch",
+    "learn-course-watch": "browserify renderer/learn-course.js -o js-bundle/learn-course.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {

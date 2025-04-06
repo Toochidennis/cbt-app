@@ -1,3 +1,21 @@
+const state = require('./state.js');
+
+
+// window.api.onSecondWindowClosed((_, data) => {
+//     if (data.action === 'cbt') {
+//         state.subjects = data.subjects;
+//         state.duration = data.duration;
+//         state.selectedSubjects = data.selectedSubjects;
+//         state.year = data.year;
+
+//         init();
+
+//         window.api.setFullScreen(true);
+
+//         loadPage(data.action);
+//     }
+// });
+
 let timer;
 let totalSeconds = 0;
 
@@ -5,30 +23,44 @@ const countdown = document.getElementById('countdown');
 const submitBtn = document.getElementById('submit-button');
 const progress = document.getElementById('progress');
 const questionImage = document.getElementById('question-image');
+const passageDiv = document.getElementById('passage');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
 const attemptedDiv = document.getElementById('attempted-questions');
 
-function init() {
-    resetTimer();
-    startTimer();
-    state.currentSubject = state.selectedSubjects[0];
-    renderTabs();
-    renderQuestion(0);
 
-    // Remove any previously attached listeners (if any)
-    nextBtn.removeEventListener('click', nextHandler);
-    prevBtn.removeEventListener('click', prevHandler);
-    submitBtn.removeEventListener('click', submitHandler);
-    document.removeEventListener('keydown', keyboardShortcutsHandler);
+function startTimer() {
+    if (timer) return; // Prevent multiple intervals
 
-    // Then add the event listeners
-    nextBtn.addEventListener('click', nextHandler);
-    prevBtn.addEventListener('click', prevHandler);
-    submitBtn.addEventListener('click', submitHandler);
-    document.addEventListener('keydown', keyboardShortcutsHandler);
+    const hours = state.duration.hours;
+    const minutes = state.duration.minutes;
+    const seconds = 0;
+    totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+    if (totalSeconds <= 0) return;
+
+    timer = setInterval(() => {
+        if (totalSeconds > 0) {
+            totalSeconds--;
+            updateDisplay();
+        } else {
+            clearInterval(timer);
+            timer = null;
+            alert('Time is up!');
+            submitHandler();
+        }
+    }, 1000);
+}
+
+
+function resetTimer() {
+    clearInterval(timer);
+    timer = null;
+    //isPaused = false;
+    totalSeconds = 0;
+    updateDisplay();
 }
 
 function updateDisplay() {
@@ -99,14 +131,21 @@ function renderQuestionNav() {
     });
 }
 
-
 async function renderQuestion(index) {
     const subjectState = state.subjects[state.currentSubject];
     const question = subjectState.questions[index];
 
     progress.textContent = `Question ${index + 1}/${subjectState.questions.length}`;
+
+    if (question.passage.trim() !== "") {
+        passageDiv.innerHTML = capitalizeSentence(question.passage.trim())
+        passageDiv.style.display = "block";
+    } else {
+        passageDiv.style.display = "none";
+    }
+
     attemptedDiv.textContent = `${subjectState.userAnswers.length}/${subjectState.questions.length}`;
-    questionText.textContent = question.question_text;
+    questionText.innerHTML = question.question_text;
 
     // Build the full path to the question image if it exists
     if (question.question_image && question.question_image.trim() !== "") {
@@ -120,21 +159,14 @@ async function renderQuestion(index) {
     // Clear previous options
     optionsContainer.innerHTML = '';
 
-    // Apply fade-in animation to question text
-    questionText.classList.remove('fade-in');
-    void questionText.offsetWidth; // Trigger reflow to restart animation
-    questionText.classList.add('fade-in');
-
-    // Render options with staggered animation
-    question.options.forEach(async (option, i) => {
+    // Render options
+    question.options.forEach(async (option) => {
         const label = document.createElement('label');
-        label.classList.add('fade-in');
-        label.style.animationDelay = `${(i + 1) * 0.2}s`;
 
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'option';
-        const optionText = capitalizeSentence(option.text);
+        const optionText = capitalizeSentence(option.text.trim());
         // Decide what to save: if there's text, use that; if not, use the image name.
         const answerValue = optionText && optionText.trim() !== ""
             ? option.text
@@ -161,6 +193,10 @@ async function renderQuestion(index) {
             span.textContent = capitalizeSentence(answerValue);
             label.appendChild(span);
         }
+
+        input.addEventListener('click', () => {
+            selectAnswer(subjectState);
+        });
 
         optionsContainer.appendChild(label);
     });
@@ -199,7 +235,6 @@ function handleNavigation(direction) {
     renderQuestion(subjectState.currentQuestionIndex);
 }
 
-
 function nextHandler() {
     handleNavigation(1);
 }
@@ -210,7 +245,9 @@ function prevHandler() {
 }
 
 function submitHandler() {
-    window.api.openCongratsWindow(state);
+    const correctedData = JSON.parse(JSON.stringify(state));
+    window.api.sendExamResults(correctedData);
+    loadPage('summary');
 }
 
 function keyboardShortcutsHandler(event) {
@@ -253,54 +290,23 @@ function keyboardShortcutsHandler(event) {
     }
 }
 
-function startTimer() {
-    if (timer) return; // Prevent multiple intervals
 
-    const hours = state.duration.hours;
-    const minutes = state.duration.minutes;
-    const seconds = 0;
-    totalSeconds = hours * 3600 + minutes * 60 + seconds;
+function init() {
+    resetTimer();
+    startTimer();
+    state.currentSubject = state.selectedSubjects[0];
+    renderTabs();
+    renderQuestion(0);
 
-    if (totalSeconds <= 0) return;
+    // Remove any previously attached listeners (if any)
+    nextBtn.removeEventListener('click', nextHandler);
+    prevBtn.removeEventListener('click', prevHandler);
+    submitBtn.removeEventListener('click', submitHandler);
+    document.removeEventListener('keydown', keyboardShortcutsHandler);
 
-    timer = setInterval(() => {
-        if (totalSeconds > 0) {
-            totalSeconds--;
-            updateDisplay();
-        } else {
-            clearInterval(timer);
-            timer = null;
-            alert('Time is up!');
-            submitHandler();
-        }
-    }, 1000);
+    // Then add the event listeners
+    nextBtn.addEventListener('click', nextHandler);
+    prevBtn.addEventListener('click', prevHandler);
+    submitBtn.addEventListener('click', submitHandler);
+    document.addEventListener('keydown', keyboardShortcutsHandler);
 }
-
-
-function resetTimer() {
-    clearInterval(timer);
-    timer = null;
-    //isPaused = false;
-    totalSeconds = 0;
-    updateDisplay();
-}
-
-// async function finishExam() {
-//     // // Example: calculate the score and total time, then build the summary
-//     // const summaryData = {
-//     //   exam_date: new Date().toISOString(),
-//     //   subjects: state.selectedSubjects, // e.g. an array of subjects
-//     //   score: calculateScore(),          // implement your own score calculation
-//     //   total_time: totalSeconds,         // total seconds spent on the exam
-//     //   details: {
-//     //     // You can add additional details here (like per subject data, etc.)
-//     //   }
-//     // };
-
-//     try {
-//          await Promise.all(window.api.saveExamSummary(state));
-//         console.log('Exam summary saved with id:', summaryId);
-//     } catch (error) {
-//         console.error('Error saving exam summary:', error);
-//     }
-// }

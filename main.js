@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, screen, shell, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, shell, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
 require('./renderer/question');
@@ -24,10 +24,7 @@ if (env === 'development') {
 let mainWindow;
 
 function createWindow() {
-    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
     mainWindow = new BrowserWindow({
-        // width: Math.min(1200, width * 0.8), // 80% of screen width or 1200px, whichever is smaller
-        // height: Math.min(800, height * 0.8),
         frame: false,
         resizable: true,
         webPreferences: {
