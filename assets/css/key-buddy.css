@@ -63,7 +63,7 @@ header {
 .key-sequence .intro-key:hover {
     background-color: #e0f7fa;
     transform: scale(1.1); 
-}
+} 
 
 .key-sequence .intro-key span.correct {
     background-color: green;

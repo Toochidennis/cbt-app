@@ -5,6 +5,7 @@
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: white transparent;
+    font-family: "Urbanist";
    
 }
 
@@ -64,7 +65,7 @@
 .banner2 p {
     color: var(--color-gray-10, white);
     font-size: 16px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 500;
     text-transform: uppercase;
     word-wrap: break-word;
@@ -74,7 +75,7 @@
 .banner2 span {
     color: var(--color-gray-10, white);
     font-size: 25px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 700;
     word-wrap: break-word;
 }
@@ -82,7 +83,7 @@
 .banner1 span {
     color: var(--color-gray-10, white);
     font-size: 25px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 700;
     word-wrap: break-word;
     margin-bottom: 20px;
@@ -149,7 +150,7 @@
 .catbox1 p, .catbox2 p {
     color: #202020;
     font-size: 16px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 700;
     word-wrap: break-word;
 }
@@ -157,7 +158,7 @@
 .catbox1 p span, .catbox2 p span {
     color: #5F5F5F;
     font-size: 12px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 400;
     word-wrap: break-word;
 }
@@ -165,7 +166,7 @@
 .title {
     color: var(--color-gray-100, #202020);
     font-size: 20px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     text-transform: capitalize;
     word-wrap: break-word;
@@ -180,7 +181,7 @@
 .course-title {
     color: var(--color-gray-100, #202020);
     font-size: 20px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     text-transform: capitalize;
     word-wrap: break-word;
@@ -198,7 +199,6 @@
 .course-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: #F9F9F9;
     padding: 20px;
     border-radius: 10px;
@@ -209,17 +209,16 @@
 .course-box img {
     width: 100%;
     height: auto;
-    max-height: 150px;
+    max-height: 110px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
-   
 }
 
-.learn-courses .course-box:nth-child(1) img,
+/* .learn-courses .course-box:nth-child(1) img,
 .learn-courses .course-box:nth-child(5) img {
     max-height: 120px; 
-}
+} */
 
 .course-content {
     text-align: center;
@@ -233,7 +232,7 @@
     background-color: #FF000026;
     color: #FF3030;
     font-size: 14px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 500;
     word-wrap: break-word;
     padding: 5px 10px;
@@ -248,19 +247,17 @@
     background-color: #426CFF1A;
     color: #426CFF;
     font-size: 12px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     text-transform: uppercase;
-    word-wrap: break-word;
     border-radius: 10px;
-    margin-right: 70px;
     padding: 5px 10px;
 }
 
 .course-title-text {
     color: var(--color-gray-100, #202020);
     font-size: 20px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     text-transform: capitalize;
     word-wrap: break-word;
@@ -273,7 +270,7 @@
 .course-description {
     color: #4D4D4D;
     font-size: 10px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 400;
     line-height: 16px;
     word-wrap: break-word;
@@ -300,7 +297,7 @@
 .course-footer p {
     color: #202020;
     font-size: 12px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 500;
     line-height: 16px;
     margin: 0;
@@ -309,7 +306,7 @@
 .course-footer p span {
     color: #696969;
     font-size: 10px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 400;
     word-wrap: break-word;
 }
@@ -321,7 +318,7 @@
     padding: 3px 10px;
     border-radius: 5px;
     font-size: 15px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     cursor: pointer;
     text-transform: capitalize;
