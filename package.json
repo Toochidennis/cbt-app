@@ -5,7 +5,7 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
-      "watch": "browserify renderer/key-buddy.js -o renderer/key-buddy-bundle.js --watch",
+    "watch": "browserify renderer/learning.js -o renderer/learning-bundle.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
@@ -26,6 +26,7 @@
     "electron-reloader": "^1.2.3"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "better-sqlite3": "^11.8.1",
     "browserify": "^17.0.1",
     "chart.js": "^4.4.8",
