@@ -1,16 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .summary-page {
     display: flex;
     flex-direction: column;
     background-color: #f6f6f6;
     padding: 2rem;
-    overflow-y: hidden;
-    font-family: Urbanist;
+    height: 100vh;
+    margin-top: 3em;
+    overflow: hidden;
+    font-family: "Urbanist";
 }
 
 .summary-page .header {
@@ -18,12 +14,12 @@
     justify-content: end;
 }
 
-.header .close {
-    position: fixed;
+.close {
     border: 1.5px solid #426bff;
-    border-radius: 50%;
+    border-radius: 10px;
     height: 40px;
-    width: 40px;
+    padding: 1em 2em;
+    color: #426bff;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -41,11 +37,16 @@ h2 {
     line-height: normal;
 }
 
+.summary-content{
+    overflow-y: auto;
+}
+
 .summary-content .content-1 {
     display: flex;
     margin-top: 1em;
     justify-content: space-between;
     padding-top: 1em;
+
     padding-right: 1em;
     padding-left: 2em;
     border-radius: 16px;
@@ -115,16 +116,19 @@ h2 {
 
 .summary-content {
     margin-top: 1em;
+    padding-bottom: 3em;
+    padding-left: 5em;
+    padding-right: 5em;
 }
 
-.subject-charts {
+.stats{
     margin-top: 1em;
     display: flex;
     gap: 10px;
     width: 100%;
 }
 
-.subject-charts .chart-content {
+.stats-content {
     display: flex;
     background-color: #fff;
     border: 1px solid #f6f6f61a;
@@ -133,14 +137,14 @@ h2 {
     box-shadow: var(--today);
 }
 
-.chart-content .line {
+.line {
     width: 6px;
     border-radius: 5px;
     background: linear-gradient(180deg, rgba(66, 108, 255, 0.7),
             rgba(66, 108, 255, 0.3), rgba(66, 108, 255, 0.8) 70%);
 }
 
-.chart-content .stats {
+.stats-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,7 +152,7 @@ h2 {
     gap: 10px
 }
 
-.stats .correct,
+.correct,
 .incorrect {
     display: flex;
     align-items: center;
@@ -192,7 +196,7 @@ h2 {
     flex: 1;
     background-color: #fff;
     border-radius: 16px;
-    padding: 2em;
+    padding: 2.5em;
     box-shadow: var(--today);
 }
 
@@ -212,18 +216,25 @@ h2 {
     justify-items: center;
 }
 
+.performance-content canvas{
+    height: 250px;
+}
+
 .analysis-container canvas {
     margin-top: 1em;
 }
 
-.tab {
+.summary-tab {
+    position: sticky;
+    background-color: #f6f6f6;
+    z-index: 999;
+    top: 0;
     display: flex;
     margin-top: 2em;
     border-bottom: 1px solid #ccc;
 }
 
-.tab button {
-    position: sticky;
+.summary-tab button {
     background-color: inherit;
     float: left;
     border: none;
@@ -239,15 +250,13 @@ h2 {
     letter-spacing: 0;
     line-height: 20.3px;
     white-space: nowrap;
-    z-index: 999;
-    top: 0;
 }
 
-.tab button:hover {
+.summary-tab button:hover {
     background-color: #ddd;
 }
 
-.tab .active {
+.summary-tab .active {
     background-color: #f4f6ff;
     border-bottom: 1px solid #2e55dd;
 }
@@ -297,9 +306,9 @@ h2 {
 
 .question-text {
     margin-top: .2em;
-    font-weight: 700;
+    font-weight: 300;
     color: #414141;
-    font-size: 1rem;
+    font-size: 1.2rem;
     word-wrap: break-word;
     text-align: justify;
     line-height: 32px;
@@ -307,11 +316,11 @@ h2 {
     letter-spacing: 0;
 }
 
-.options-container {
+.options-container-summary {
     margin-top: 1em;
 }
 
-.options-container label {
+.options-container-summary label {
     display: flex;
     align-items: center;
     gap: 1em;
@@ -324,10 +333,10 @@ h2 {
     font-size: 1rem;
     letter-spacing: 0;
     line-height: normal;
-    cursor: pointer;
+    pointer-events: none;
 }
 
-.options-container input[type="radio"] {
+.options-container-summary input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;

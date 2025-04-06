@@ -1,4 +1,4 @@
-
+const loadingOverlay = document.getElementById("loading-overlay");
 const closeBtn = document.getElementById('close-btn');
 const onlineFeedback = document.getElementById('feedback-1');
 const offlineFeedback1 = document.getElementById('feedback-2');
@@ -23,63 +23,71 @@ async function generateProductKey() {
 
 generateProductKey();
 
+function showLoading() {
+    loadingOverlay.style.display = 'flex';
+}
+
+function hideLoading() {
+    loadingOverlay.style.display = 'none';
+}
+
 async function validateCodeOnline() {
     const code = codeInput1.value.trim();
 
     if (code === '') {
-        onlineFeedback.textContent = 'Pin is required';;
-    } else {
+        onlineFeedback.textContent = 'Pin is required';
+        return;
+    }
+
+    try {
+        showLoading();
+
         const { success: status, error: message } = await window.api.validateActivationOnline(code);
-        console.log("is activated:", status, " error: ", message);
+
+        onlineFeedback.textContent = status ? "Activation successful" : message;
 
         if (status) {
-            onlineFeedback.textContent = "Activation successfully";
-            // window.api.openSelectSubjectWindow();
-        } else {
-            onlineFeedback.textContent = message;
+            window.api.closeActivationWindow();
+            window.api.openSelectSubjectWindow();
         }
+
+    } catch (error) {
+        onlineFeedback.textContent = "An error occurred. Please try again.";
+        console.error("Offline Activation Error:", error);
+    } finally {
+        hideLoading();
     }
 }
 
 async function validateCodeOffline(type = 'pin') {
-    const code = codeInput2.value.trim();
-    const code2 = codeInput3.value.trim();
-    const hash1 = hashInput1.value.trim();
-    const hash2 = hashInput2.value.trim();
+    const inputs = {
+        pin: { code: codeInput2.value.trim(), hash: hashInput1.value.trim(), feedback: offlineFeedback1 },
+        transfer: { code: codeInput3.value.trim(), hash: hashInput2.value.trim(), feedback: offlineFeedback2 },
+    };
 
-    switch (type) {
-        case 'transfer':
-            if (code2 === '' || hash2 === '') {
-                offlineFeedback2.textContent = 'Pin and activation code is required';
-            } else {
-                const { success: status, error: message } = await window.api.validateActivationOffline(code, hash);
-                console.log("is activated:", status, " error: ", message);
+    const { code, hash, feedback } = inputs[type] || {};
+    if (!code || !hash) {
+        feedback.textContent = 'Pin and activation code are required';
+        return;
+    }
 
-                if (status) {
-                    offlineFeedback2.textContent = "Activation successfully";
-                    // window.api.openSelectSubjectWindow();
-                } else {
-                    offlineFeedback2.textContent = message;
-                }
-            }
-            break;
-        case 'pin':
-            if (code === '' || hash1 === '') {
-                offlineFeedback1.textContent = 'Pin and activation code is required';
-            } else {
-                const { success: status, error: message } = await window.api.validateActivationOffline(code, hash);
-                console.log("is activated:", status, " error: ", message);
+    try {
+        showLoading();
 
-                if (status) {
-                    offlineFeedback1.textContent = "Activation successfully";
-                    // window.api.openSelectSubjectWindow();
-                } else {
-                    offlineFeedback1.textContent = message;
-                }
-            }
-            break;
-        default:
-            return
+        const { success: status, error: message } = await window.api.validateActivationOffline(code, hash);
+        console.log(`Type: ${type}, Activated: ${status}, Error: ${message}`);
+
+        feedback.textContent = status ? "Activation successful" : message;
+
+        if (status) {
+            window.api.closeActivationWindow();
+            window.api.openSelectSubjectWindow();
+        }
+    } catch (error) {
+        feedback.textContent = "An error occurred. Please try again.";
+        console.error("Online Activation Error:", error);
+    } finally {
+        hideLoading();
     }
 }
 
@@ -87,11 +95,11 @@ onlineActivateBtn.addEventListener('click', () => {
     validateCodeOnline();
 });
 
-offlineActivateBtn1.addEventListener('click', ()=>{
+offlineActivateBtn1.addEventListener('click', () => {
     validateCodeOffline();
 });
 
-offlineActivateBtn2.addEventListener('click', ()=>{
+offlineActivateBtn2.addEventListener('click', () => {
     validateCodeOffline('transfer');
 });
 

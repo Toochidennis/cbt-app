@@ -11,49 +11,10 @@
     top: 0;
     z-index: 1000;
 }
- 
-.cbt-1 {
-    display: flex;
-    width: 100%;
-    gap: 50px;
-}
 
-.cbt-1 .time-container {
-    margin-left: auto;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-#countdown {
-    font-weight: 500;
-    font-family: "Inter", Helvetica;
-    color: #ff4848;
-    font-size: 1rem;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-}
-
-.cbt-1 .submit-button {
-    align-items: center;
-    border-radius: 32px;
-    border: 1px solid #ff5252;
-    padding: 1em 1.5em;
-    cursor: pointer;
-}
-
-.submit-button .text-wrapper-1 {
-    font-family: "Urbanist", Helvetica;
-    font-weight: 500;
-    color: #ff4848;
-    font-size: 1rem;
-    letter-spacing: 0;
-    line-height: normal;
-}
 
 .tab {
+    margin-top: 2.2em;
     overflow: hidden;
     border-bottom: 1px solid #ccc;
 }
@@ -98,10 +59,9 @@
 #progress {
     align-self: stretch;
     font-family: "Urbanist", Helvetica;
-    font-weight: 500;
+    font-weight: 600;
     font-style: italic;
-    color: #8c8c8c;
-    font-size: 1rem;
+    font-size: 1.2rem;
     letter-spacing: 0;
     line-height: normal;
 }
@@ -111,7 +71,7 @@
 }
 
 #question-text {
-    margin-top: .2em;
+    margin-top: 1.5em;
     font-weight: 700;
     color: #414141;
     font-size: 1.3rem;
@@ -130,14 +90,12 @@
     gap: 1em;
     font-family: "Urbanist", Helvetica;
     font-weight: 500;
-    margin-bottom: .5em;
-    color: #696f79;
+    margin-bottom: .8em;
     font-size: 1.2rem;
     letter-spacing: 0;
     line-height: normal;
     cursor: pointer;
 }
-
 
 .options-container label:hover {
     color: #2e55dd;
@@ -174,7 +132,7 @@
 }
 
 /* Styles for the focus state */
-input[type="radio"]:focus {
+.options-container input[type="radio"]:focus {
     outline: 2px solid #2e55dd;
 }
 
@@ -183,7 +141,6 @@ input[type="radio"]:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .controls-section div {
@@ -227,7 +184,6 @@ input[type="radio"]:focus {
 .next:active,
 .submit-button:active {
     transform: scale(0.98);
-    /* Slightly reduce size to simulate press */
 }
 
 .controls-section .next span {
@@ -247,7 +203,7 @@ input[type="radio"]:focus {
 }
 
 .questions-nav-wrapper {
-    margin-top: 3rem;
+    margin-top: 2rem;
     background-color: #f6f6f6;
     margin-bottom: 3rem;
     padding: .5em;
@@ -274,8 +230,8 @@ input[type="radio"]:focus {
 }
 
 .question-box {
-    width: 38px;
-    height: 38px;
+    width: 2em;
+    height: 2em;
     display: flex;
     align-items: center;
     justify-content: center;

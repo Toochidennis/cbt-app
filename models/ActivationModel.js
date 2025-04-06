@@ -1,18 +1,50 @@
-const db = require('../models/database');
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
 const { machineIdSync } = require('node-machine-id');
 const crypto = require('crypto');
-//const fetch = require('node-fetch'); // or use axios
 const fetch = (...args) =>
     import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 class ActivationModel {
-    /**
-     * Generates a unique product key by getting a system-specific identifier.
-     */
+    static activationFilePath = path.join(os.homedir(), '.config', 'LinkSkool', 'activation.json');
+
+    static ensureDirectoryExists() {
+        const dir = path.dirname(this.activationFilePath);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+    }
+
     static generateProductKey() {
-        // Use a package like `node-machine-id` to get a unique machine identifier.
-        const machineId = machineIdSync();
-        return machineId.slice(0, 8);
+        return machineIdSync().slice(0, 8);
+    }
+
+    static saveActivationStatus(isActivated) {
+        this.ensureDirectoryExists();
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 365);
+        const data = { activated: isActivated, expiresAt: expirationDate.toISOString() };
+        fs.writeFileSync(this.activationFilePath, JSON.stringify(data, null, 2), 'utf8');
+    }
+
+    static isActivated() {
+        if (!fs.existsSync(this.activationFilePath)) return false;
+
+        try {
+            const data = JSON.parse(fs.readFileSync(this.activationFilePath, 'utf8'));
+            const expirationDate = new Date(data.expiresAt);
+            const currentDate = new Date();
+
+            if (data.activated === true && currentDate < expirationDate) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (error) {
+            console.error("Error reading activation file:", error);
+            return false;
+        }
     }
 
     /**
@@ -25,7 +57,7 @@ class ActivationModel {
 
             //Send activation code and product key to your server
             //(Your server should hash the received productKey with its secret and return the hash)
-            const response = await fetch('http://linkskool.com/developmentportal/api/activate.php', {
+            const response = await fetch('http://linkskool.net/api/v1/activate.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ activationCode, productKey })
@@ -36,7 +68,7 @@ class ActivationModel {
             if (!response.ok) {
                 //  console.error('Server error:', responseData);
                 // throw new Error(responseData.message || 'Server error');
-                return responseData;
+                return { success: false, error: 'Invalid activation code' };
             }
 
             // Compute local hash for comparison
@@ -44,22 +76,20 @@ class ActivationModel {
                 .createHash('sha256')
                 .update(`${activationCode}-${productKey}`)
                 .digest('hex');
-            const shortHash = localHash.slice(0, 6).toUpperCase();
 
+            const shortHash = localHash.slice(0, 6).toUpperCase();
             const serverHash = responseData.hashKey;
 
             // Compare the hashes
             if (shortHash === serverHash) {
-                // If valid, update the activation status in your database.
-                const stmt = db.prepare(`INSERT OR REPLACE INTO activation (key, value) VALUES (?, ?)`);
-                stmt.run('activated', 'true');
-                return { success: true };
+                this.saveActivationStatus(true);
+                return { success: true, error: '' };
             } else {
                 return { success: false, error: 'Activation validation failed: Invalid hash.' };
             }
         } catch (e) {
-            //  console.error('Network or unexpected error:', error);
-            return { success: false, error: error.message };
+            // console.error('Network or unexpected error:', error);
+            return { success: false, error: 'An error occurred. Please try again.' };
         }
     }
 
@@ -78,14 +108,12 @@ class ActivationModel {
 
             const shortHash = localHash.slice(0, 6).toUpperCase();
 
-            console.log("hash", shortHash);//645fc944
+          //  console.log("hash", shortHash);//645fc944
 
             // Compare the hashes
             if (shortHash === serverHash) {
-                // If valid, update the activation status in your database.
-                const stmt = db.prepare(`INSERT OR REPLACE INTO activation (key, value) VALUES (?, ?)`);
-                stmt.run('activated', 'true');
-                return { success: true };
+                this.saveActivationStatus(true);
+                return { success: true, error: '' };
             } else {
                 return { success: false, error: 'Activation validation failed: Invalid hash.' };
             }
@@ -93,15 +121,6 @@ class ActivationModel {
             //  console.error('Network or unexpected error:', error);
             return { success: false, error: e.message };
         }
-    }
-
-    /**
-     * Retrieves the activation state.
-     */
-    static isActivated() {
-        const stmt = db.prepare(`SELECT value FROM activation WHERE key = ?`);
-        const row = stmt.get('activated');
-        return row && row.value === 'true';
     }
 }
 

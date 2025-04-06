@@ -1,10 +1,16 @@
-const { app, BrowserWindow, ipcMain, screen } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, shell, dialog } = require('electron');
+const { autoUpdater } = require('electron-updater');
 const path = require('path');
-//const fs = require('fs').promises;
 require('./renderer/question');
 const QuestionModel = require('./models/QuestionModel');
 const ActivationModel = require('./models/ActivationModel');
 const getImagePath = require('./renderer/image_loader');
+const log = require('electron-log');
+
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = 'info';
+
+const gotTheLock = app.requestSingleInstanceLock();
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -68,24 +74,21 @@ function createWindow() {
         mainWindow.webContents.send('hide-controls', isFullScreen);
     });
 
-    // IPC handlers for activation state.
-    ipcMain.handle('get-activation-state', async () => {
-        return ActivationModel.isActivated();
+    ipcMain.on('send-exam-results', (_, summaryData) => {
+        mainWindow.webContents.send('get-exam-summary', summaryData);
+        mainWindow.webContents.send('show-controls', true);
+        mainWindow.setFullScreen(false);
     });
 
-    ipcMain.handle('validate-activation-online', async (_, activationCode) => {
-        return ActivationModel.validateActivationOnline(activationCode);
-    });
-
-    ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) => {
-        return ActivationModel.validateActivationOffline(activationCode, hash);
+    ipcMain.on('open-link', (_, url) => {
+        shell.openExternal(url);
     });
 }
 
 function openActivationWindow() {
     const activationWindow = new BrowserWindow({
         // width: 450,
-       //  height: 700,
+        //  height: 700,
         frame: false,
         modal: true,
         parent: mainWindow,
@@ -97,7 +100,7 @@ function openActivationWindow() {
 
     activationWindow.loadFile('pages/activation.html');
 
-       const closeHandler = () => {
+    const closeHandler = () => {
         if (activationWindow && !activationWindow.isDestroyed()) {
             activationWindow.close();
         }
@@ -144,46 +147,6 @@ function openSelectSubjectDialog() {
     });
 }
 
-function openCongratsWindow(summaryData) {
-    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-    const congratsWindow = new BrowserWindow({
-        // width: Math.min(1200, width * 0.8), // 80% of screen width or 1200px, whichever is smaller
-        // height: Math.min(800, height * 0.8),
-        width: 900,
-        frame: false,
-        modal: true,
-        transparent: false,
-        parent: mainWindow,
-        webPreferences: {
-            contextIsolation: true,
-            preload: path.join(__dirname, 'preload.js'),
-        },
-    });
-
-    congratsWindow.loadFile('pages/summary.html');
-
-    const closeHandler = (_, action) => {
-        if (congratsWindow && !congratsWindow.isDestroyed()) {
-            mainWindow.webContents.send('congrats-window-closed', action);
-            congratsWindow.close();
-        }
-    };
-
-    // Register the listener for this window instance
-    ipcMain.once('close-congrats-window', closeHandler);
-
-    // When the window is closed, remove the listener to avoid referencing a destroyed window
-    congratsWindow.on('closed', () => {
-        ipcMain.removeListener('close-congrats-window', closeHandler);
-        mainWindow.webContents.send('show-controls', true);
-    });
-
-    // Send the summary after the page has loaded.
-    congratsWindow.webContents.on('did-finish-load', () => {
-        congratsWindow.webContents.send('get-exam-summary', summaryData);
-    });
-}
-
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
@@ -191,10 +154,6 @@ ipcMain.on('open-subject-window', () => {
 
 ipcMain.on('open-activation-window', () => {
     openActivationWindow();
-});
-
-ipcMain.on('open-congrats-window', (_, summaryData) => {
-    openCongratsWindow(summaryData);
 });
 
 // IPC handler for fetching questions
@@ -216,19 +175,82 @@ ipcMain.handle('get-image-path', (_, subject, imageFileName) => {
     }
 });
 
-ipcMain.handle('generate-product-key', async()=>{
+// IPC handlers for activation state.
+ipcMain.handle('get-activation-state', async () => {
+    return ActivationModel.isActivated();
+});
+
+ipcMain.handle('validate-activation-online', async (_, activationCode) => {
+    return ActivationModel.validateActivationOnline(activationCode);
+});
+
+ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) => {
+    return ActivationModel.validateActivationOffline(activationCode, hash);
+});
+
+ipcMain.handle('generate-product-key', async () => {
     return ActivationModel.generateProductKey();
 });
 
-// App event handlers
-app.whenReady().then(() => {
-    createWindow();
+autoUpdater.on('update-available', () => {
+    log.info('Update available');
+});
 
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow();
+autoUpdater.on('update-not-available', () => {
+    log.info('No update available');
+});
+
+autoUpdater.on('error', (err) => {
+    log.error('Error during update:', err);
+});
+
+autoUpdater.on("download-progress", (progress) => {
+    log.info(`Download progress: ${progress.percent}%`);
+});
+
+autoUpdater.on('update-downloaded', () => {
+    log.info('Update downloaded');
+    dialog.showMessageBox({
+        type: 'info',
+        title: 'Update available',
+        message: 'A new version has been downloaded. Restart the application to apply the updates.',
+        buttons: ['Restart', 'Later']
+    }).then(result => {
+        if (result.response === 0) autoUpdater.quitAndInstall();
     });
 });
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit();
-});
+
+if (!gotTheLock) {
+    app.quit();
+} else {
+    app.on('second-instance', () => {
+        if (mainWindow) {
+            if (mainWindow.isMinimized()) mainWindow.restore();
+            mainWindow.show();
+            mainWindow.focus();
+        }
+    });
+
+    const UPDATE_INTERVAL = 30 * 60 * 1000; // 30 minutes
+
+    app.whenReady().then(() => {
+        // Check for updates on startup
+        autoUpdater.checkForUpdates();
+
+        // Periodic update check
+        setInterval(() => {
+            autoUpdater.checkForUpdates();
+        }, UPDATE_INTERVAL);
+
+        createWindow();
+
+        app.on('activate', () => {
+            if (BrowserWindow.getAllWindows().length === 0) createWindow();
+        });
+    });
+
+    app.on('window-all-closed', () => {
+        if (process.platform !== 'darwin') app.quit();
+    });
+}

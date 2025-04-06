@@ -1,98 +1,14 @@
-const switchPage = require('./navigation.js');
-const state = require("./state.js");
-
-
-let timer;
-let totalSeconds = 0;
-
-// const contentDiv = document.getElementById("content");
-
-// const observer = new MutationObserver(() => {
-//      console.log("Content changed! Now we can interact with new elements.");
-//      loadScript('index.js');
-//    attachEventListeners();
-// });
-
-// observer.disconnect();
-// observer.observe(contentDiv, { childList: true, subtree: true });
-
-
-function attachEventListeners() {
-    slider();
-
-    document.getElementById('jamb-button').addEventListener('click', async () => {
-        const activated = await window.api.getActivationState();
-    
-        // if (!activated) {
-        //     window.api.openActivationWindow();
-        // } else {
-        //     window.api.openSelectSubjectWindow();
-    
-        //     // Proceed to show the exam page.
-        //     console.log("Activation confirmed. Proceeding to exam...");
-        // }
-        window.api.openSelectSubjectWindow();
-    });
-}
-
-attachEventListeners()
-
-window.api.onCongratsWindowClosed(() => {
-    loadPage('cbt-dashboard');
-    window.api.setFullScreen(false);
-});
-
-// Show exam screen when subjects selection window is closed
-window.api.onSecondWindowClosed((_, data) => {
-    if (data.action === 'cbt-exam') {
-        state.subjects = data.subjects;
-        state.duration = data.duration;
-        state.selectedSubjects = data.selectedSubjects;
-        state.year = data.year;
-
-        // Navigate to the Exam page
-        switchPage(data.action);
-
-        init();
-
-        window.api.setFullScreen(true);
-
-    }
-});
-
-
-function init() {
-    resetTimer();
-    startTimer();
-    state.currentSubject = state.selectedSubjects[0];
-    renderTabs();
-    renderQuestion(0);
-
-    const submitBtn = document.getElementById('submit-button');
-
-
-    const nextBtn = document.getElementById('next-btn');
-    const prevBtn = document.getElementById('prev-btn');
-
-    // Remove any previously attached listeners (if any)
-    nextBtn.removeEventListener('click', nextHandler);
-    prevBtn.removeEventListener('click', prevHandler);
-    submitBtn.removeEventListener('click', submitHandler);
-    document.removeEventListener('keydown', keyboardShortcutsHandler);
-
-    // Then add the event listeners
-    nextBtn.addEventListener('click', nextHandler);
-    prevBtn.addEventListener('click', prevHandler);
-    submitBtn.addEventListener('click', submitHandler);
-    document.addEventListener('keydown', keyboardShortcutsHandler);
-}
+const loadPage = require('./navigation.js');
+const state = require('./state.js');
 
 function slider() {
     const slider = document.querySelector(".slider");
     const slides = document.querySelectorAll(".slide");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
-    console.log(slider);
+    const festBtn = document.getElementById('fest-btn');
+    const bootCampBtn = document.getElementById('boot-camp-btn');
+    const challengeBtn = document.getElementById('challenge-btn');
 
     let index = 0;
 
@@ -111,12 +27,78 @@ function slider() {
         showSlide(index);
     });
 
+    festBtn.addEventListener('click', () => {
+        window.api.openLink('https://forms.gle/wMh3PcgVNCfo1E229');
+    });
+
+    bootCampBtn.addEventListener('click', () => {
+        window.api.openLink('https://forms.gle/teJJV3W7nqkYC2qe8');
+    });
+
+    challengeBtn.addEventListener('click', () => {
+        window.api.openLink('https://forms.gle/H4RdFpvvDJ2L8LT2A');
+    });
+
     // Auto-slide every 5 seconds
     setInterval(() => {
         index = (index + 1) % slides.length;
         showSlide(index);
     }, 4000);
 }
+
+slider();
+
+document.getElementById('jamb-button').addEventListener('click', async () => {
+    const activated = await window.api.getActivationState();
+
+    if (!activated) {
+        window.api.openActivationWindow();
+    } else {
+        window.api.openSelectSubjectWindow();
+
+        // Proceed to show the exam page.
+        console.log("Activation confirmed. Proceeding to exam...");
+    }
+    // window.api.openSelectSubjectWindow();
+});
+
+
+// window.api.onCongratsWindowClosed(() => {
+
+//     window.api.setFullScreen(false);
+// });
+
+// Show exam screen when subjects selection window is closed
+window.api.onSecondWindowClosed((_, data) => {
+    if (data.action === 'cbt') {
+        state.subjects = data.subjects;
+        state.duration = data.duration;
+        state.selectedSubjects = data.selectedSubjects;
+        state.year = data.year;
+
+        init();
+
+        window.api.setFullScreen(true);
+
+        loadPage(data.action);
+    }
+});
+
+
+// exam functionality
+let timer;
+let totalSeconds = 0;
+
+const countdown = document.getElementById('countdown');
+const submitBtn = document.getElementById('submit-button');
+const progress = document.getElementById('progress');
+const questionImage = document.getElementById('question-image');
+const passageDiv = document.getElementById('passage');
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+const attemptedDiv = document.getElementById('attempted-questions');
 
 
 function startTimer() {
@@ -152,8 +134,6 @@ function resetTimer() {
 }
 
 function updateDisplay() {
-    const countdown = document.getElementById('countdown');
-
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
@@ -221,20 +201,21 @@ function renderQuestionNav() {
     });
 }
 
-
 async function renderQuestion(index) {
-    const progress = document.getElementById('progress');
-    const questionImage = document.getElementById('question-image');
-    const questionText = document.getElementById('question-text');
-    const optionsContainer = document.getElementById('options-container');
-    const attemptedDiv = document.getElementById('attempted-questions');
-
     const subjectState = state.subjects[state.currentSubject];
     const question = subjectState.questions[index];
 
     progress.textContent = `Question ${index + 1}/${subjectState.questions.length}`;
+
+    if (question.passage.trim() !== "") {
+        passageDiv.innerHTML = capitalizeSentence(question.passage.trim())
+        passageDiv.style.display = "block";
+    } else {
+        passageDiv.style.display = "none";
+    }
+
     attemptedDiv.textContent = `${subjectState.userAnswers.length}/${subjectState.questions.length}`;
-    questionText.textContent = question.question_text;
+    questionText.innerHTML = question.question_text;
 
     // Build the full path to the question image if it exists
     if (question.question_image && question.question_image.trim() !== "") {
@@ -249,20 +230,20 @@ async function renderQuestion(index) {
     optionsContainer.innerHTML = '';
 
     // Apply fade-in animation to question text
-    questionText.classList.remove('fade-in');
-    void questionText.offsetWidth; // Trigger reflow to restart animation
-    questionText.classList.add('fade-in');
+    // questionText.classList.remove('fade-in');
+    //  void questionText.offsetWidth; // Trigger reflow to restart animation
+    //questionText.classList.add('fade-in');
 
     // Render options with staggered animation
     question.options.forEach(async (option, i) => {
         const label = document.createElement('label');
-        label.classList.add('fade-in');
-        label.style.animationDelay = `${(i + 1) * 0.2}s`;
+        //   label.classList.add('fade-in');
+        //   label.style.animationDelay = `${(i + 1) * 0.2}s`;
 
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'option';
-        const optionText = capitalizeSentence(option.text);
+        const optionText = capitalizeSentence(option.text.trim());
         // Decide what to save: if there's text, use that; if not, use the image name.
         const answerValue = optionText && optionText.trim() !== ""
             ? option.text
@@ -290,6 +271,10 @@ async function renderQuestion(index) {
             label.appendChild(span);
         }
 
+        input.addEventListener('click', () => {
+            selectAnswer(subjectState);
+        });
+
         optionsContainer.appendChild(label);
     });
 
@@ -305,6 +290,7 @@ function selectAnswer(subjectState) {
     const selectedOption = document.querySelector('input[name="option"]:checked');
     if (selectedOption) {
         const answer = selectedOption.getAttribute('data-answer');
+        //  console.log("answer ",answer);
         subjectState.userAnswers[subjectState.currentQuestionIndex] = answer;
     }
 }
@@ -338,17 +324,68 @@ function prevHandler() {
 }
 
 function submitHandler() {
-    window.api.openCongratsWindow(state);
+    const correctedData = JSON.parse(JSON.stringify(state));
+    window.api.sendExamResults(correctedData);
+    loadPage('summary');
 }
 
 function keyboardShortcutsHandler(event) {
     event.preventDefault();
-    if (event.key === 'ArrowLeft') return handleNavigation(-1);
-    if (event.key === 'ArrowRight') return handleNavigation(1);
-    if (!isNaN(event.key) && event.key !== '0') {
-        const options = document.querySelectorAll('input[name="option"]');
-        if (options[event.key - 1]) options[event.key - 1].checked = true;
-        selectAnswer(state.subjects[state.currentSubject]);
+    // First, handle arrow keys for navigation
+    if (event.key === 'ArrowLeft') {
+        handleNavigation(-1);
+        return;
     }
-    if (['p', 'n', 's'].includes(event.key)) ({ p: prevHandler, n: nextHandler, s: submitHandler }[event.key])();
+    if (event.key === 'ArrowRight') {
+        handleNavigation(1);
+        return;
+    }
+
+    const key = event.key.toLowerCase();
+
+    if (!isNaN(key) && key !== '0') {
+        const optionIndex = parseInt(key) - 1;
+        const options = document.querySelectorAll('input[name="option"]');
+        if (options && optionIndex < options.length) {
+            options[optionIndex].checked = true;
+
+            const subjectState = state.subjects[state.currentSubject];
+            selectAnswer(subjectState);
+        }
+    }
+
+    switch (key) {
+        case 'p':
+            prevHandler();
+            break;
+        case 'n':
+            nextHandler();
+            break;
+        case 's':
+            submitHandler();
+            break;
+        default:
+            break;
+    }
+}
+
+
+function init() {
+    resetTimer();
+    startTimer();
+    state.currentSubject = state.selectedSubjects[0];
+    renderTabs();
+    renderQuestion(0);
+
+    // Remove any previously attached listeners (if any)
+    nextBtn.removeEventListener('click', nextHandler);
+    prevBtn.removeEventListener('click', prevHandler);
+    submitBtn.removeEventListener('click', submitHandler);
+    document.removeEventListener('keydown', keyboardShortcutsHandler);
+
+    // Then add the event listeners
+    nextBtn.addEventListener('click', nextHandler);
+    prevBtn.addEventListener('click', prevHandler);
+    submitBtn.addEventListener('click', submitHandler);
+    document.addEventListener('keydown', keyboardShortcutsHandler);
 }

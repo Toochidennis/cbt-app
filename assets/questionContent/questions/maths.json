@@ -2,6 +2,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "How many different 8-letter words are possible using the letters of the word SYLLABUS?",
     "option_1_text": "(8 - 1)!",
     "option_1_image": "",
@@ -17,6 +20,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate: 16^0.16 × 16^0.04 × 2^0.2",
     "option_1_text": "2",
     "option_1_image": "",
@@ -32,6 +38,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Let '*' and '^' be two binary operations such that a * b = a²b and a ^ b = 2a + b. Find (-4 * 2) ^ (7 * -1).",
     "option_1_text": "-49",
     "option_1_image": "",
@@ -47,6 +56,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate ∫[0 to 1] (4x - 6∛(x²)) dx",
     "option_1_text": "-5/8",
     "option_1_image": "",
@@ -62,6 +74,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The population of a village decreased from 1,230 to 1,040 due to breakout of an epidemic. What is the percentage decrease in the population?",
     "option_1_text": "15.44%",
     "option_1_image": "",
@@ -77,6 +92,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The interior angle of a regular polygon is five times the size of its exterior angle. Identify the polygon.",
     "option_1_text": "dodecagon",
     "option_1_image": "",
@@ -92,7 +110,10 @@
   {
     "subject": "Mathematics",
     "question_image": "",
-    "question_text": "The area A of a circle is increasing at a constant rate of 1.5 cm²s⁻¹. Find, to 3 significant figures, the rate at which the radius r of the circle is increasing when the area of the circle is 2 cm².\n.",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
+    "question_text": "The area A of a circle is increasing at a constant rate of 1.5 cm²s⁻¹. Find, to 3 significant figures, the rate at which the radius r of the circle is increasing when the area of the circle is 2 cm².",
     "option_1_text": "0.200 cms⁻¹",
     "option_1_image": "",
     "option_2_text": "0.798 cms⁻¹",
@@ -107,6 +128,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Make x the subject of the formula: y = 3x−9c / 4x+5d",
     "option_1_text": "x = -(9c - 5dy) / (4y - 3)",
     "option_1_image": "",
@@ -122,6 +146,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Solve for x: 3(x – 1) ≤ 2 (x – 3)",
     "option_1_text": "x ≤ -3",
     "option_1_image": "",
@@ -137,6 +164,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The diagram above is a circle with centre C. P, Q and S are points on the circumference. PS and SR are tangents to the circle. ∠PSR = 36°. Find ∠PQR",
     "option_1_text": "72°",
     "option_1_image": "",
@@ -152,6 +182,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If a car runs at a constant speed and takes 4.5 hrs to run a distance of 225 km, what time will it take to run 150 km?",
     "option_1_text": "2 hrs",
     "option_1_image": "",
@@ -167,6 +200,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Divide 1101001₂\n by 101₂",
     "option_1_text": "11101two",
     "option_1_image": "",
@@ -182,6 +218,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If 3 - √3 / 2 + √3 = a + b√3, what are the values of a and b?",
     "option_1_text": "a = 9, b = -5",
     "option_1_image": "",
@@ -197,6 +236,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the value of t, if the distance between the points P(–3, –14) and Q(t, –5) is 9 units.",
     "option_1_text": "3",
     "option_1_image": "",
@@ -212,6 +254,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "At simple interest, a man made a deposit of some money in the bank. The amount in his bank account after 10 years is three times the money deposited. If the interest rate stays the same, after how many years will the amount be five times the money deposited?",
     "option_1_text": " 15 years",
     "option_1_image": "",
@@ -227,6 +272,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate the following limit: lim (x→2) (x^2 + 4x - 12) / (x^2 - 2x)",
     "option_1_text": "4",
     "option_1_image": "",
@@ -242,6 +290,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q17.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The ages of students in a small primary school were recorded in the table below.   Estimate the mean",
     "option_1_text": "7.7",
     "option_1_image": "",
@@ -257,6 +308,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A committee of 5 people is to be chosen from a group of 6 men and 4 women. How many committees are possible if there is to be a majority of women?",
     "option_1_text": "60",
     "option_1_image": "",
@@ -272,6 +326,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q19.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If D = [[2, 4, 1], [-1, 1, -3], [3, 2, 1]], Find |D|",
     "option_1_text": "16",
     "option_1_image": "",
@@ -287,6 +344,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A boat sails 8 km north from P to Q and then sails 6 km west from Q to R. Calculate the bearing of R from P. Give your answer to the nearest degree.",
     "option_1_text": "217°",
     "option_1_image": "",
@@ -302,6 +362,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A coin is thrown 3 times. What is the probability that atleast one head is obtained?",
     "option_1_text": "7/8",
     "option_1_image": "",
@@ -317,6 +380,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the equation of straight line passing through (2, 3) and perpendicular to the line 3x+2y+4=0",
     "option_1_text": "3y = 5x - 2",
     "option_1_image": "",
@@ -332,6 +398,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Differentiate the function y = ∛(x²) (2x - x²)",
     "option_1_text": "10x^5/3 / 3 - 8x^2/3 / 3",
     "option_1_image": "",
@@ -347,6 +416,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Calculate the mean deviation of the first five prime numbers.",
     "option_1_text": "2.72",
     "option_1_image": "",
@@ -362,6 +434,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Determine the area of the region bounded by y = 2x²\n + 10 and Y = 4x+16\n.",
     "option_1_text": "18",
     "option_1_image": "",
@@ -377,6 +452,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the value of y if 402ᵧ=102₁₀",
     "option_1_text": "4",
     "option_1_image": "",
@@ -392,6 +470,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the value of y, if log (y + 8) + log (y - 8) = 2log 3 + 2log 5",
     "option_1_text": "y = ±5",
     "option_1_image": "",
@@ -407,6 +488,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In a group of 500 people, 350 people can speak English, and 400 people can speak French. Find how many people can speak both languages.",
     "option_1_text": "750",
     "option_1_image": "",
@@ -422,6 +506,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Factorize: 16x⁴−y⁴",
     "option_1_text": "(2x−y)(2x+y)(4x²+y²)",
     "option_1_image": "",
@@ -437,6 +524,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If A = { 1, 2, 3, 4, 5, 6}, B = { 2, 4, 6, 8 }. Find (A – B) ⋃ (B – A).",
     "option_1_text": " {1, 3, 5, 8}",
     "option_1_image": "",
@@ -452,6 +542,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A bag contains 8 red balls and some white balls. If the probability of drawing a white ball is half of the probability of drawing a red ball then find the probability of drawing a red ball and a white ball if the balls are drawn without replacement.",
     "option_1_text": "1/3",
     "option_1_image": "",
@@ -467,6 +560,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q32.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The ages of students in a small primary school were recorded in the table below.   Estimate the mean",
     "option_1_text": "7.725",
     "option_1_image": "",
@@ -482,6 +578,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q33.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the matrix A, given that A * [[0,2], [1,-1]] = [[2,1], [-1,0]]",
     "option_1_text": "[[2, -1/2], [1, -1/2]]",
     "option_1_image": "",
@@ -497,6 +596,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q34.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "How many students scored at least 25%",
     "option_1_text": "16",
     "option_1_image": "",
@@ -512,6 +614,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If -2x³ + 6x² + 17x - 21 is divided by (x+1), then the remainder is",
     "option_1_text": "32",
     "option_1_image": "",
@@ -527,6 +632,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Let a binary operation '*' be defined on a set A. The operation will be commutative if",
     "option_1_text": "a*b = b*a",
     "option_1_image": "",
@@ -542,6 +650,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Solve the following quadratic inequality: x²−x\n - 4 ≤ 2",
     "option_1_text": "−3<x<2",
     "option_1_image": "",
@@ -557,6 +668,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "What is the general term of the sequence 3, 8, 13, 18, ...?",
     "option_1_text": "5n - 2",
     "option_1_image": "",
@@ -572,6 +686,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The locus of a point equidistant from two intersecting lines is",
     "option_1_text": "where the sum of the distances of two focal points is fixed",
     "option_1_image": "",
@@ -587,6 +704,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Two numbers are respectively 35% and 80% more than a third number. The ratio of the two numbers is",
     "option_1_text": "7 : 16",
     "option_1_image": "",
@@ -602,6 +722,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The angle of elevation and depression of the top and bottom of another building, measured from the top of a 24 m tall building, is 30° and 60°, respectively. Determine the second building's height.",
     "option_1_text": "24 m",
     "option_1_image": "",
@@ -617,6 +740,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q42.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Calculate, correct to three significant figures, the length AB in the diagram above.",
     "option_1_text": "36.4 cm",
     "option_1_image": "",
@@ -632,6 +758,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "An article when sold for ₦230.00 makes a 15% profit. Find the profit or loss % if it was sold for ₦180.00",
     "option_1_text": "10% gain",
     "option_1_image": "",
@@ -647,6 +776,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q44.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Calculate, correct to three significant figures, the length of the arc AB in the diagram above.\n[Take π=22/7]",
     "option_1_text": "32.4 cm",
     "option_1_image": "",
@@ -662,6 +794,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A rectangular plot of land has sides with lengths of 38 m and 52 m corrected to the nearest m. Find the range of the possible values of the area of the rectangle",
     "option_1_text": "1931.25 m² ≤ A < 2021.25 m²",
     "option_1_image": "",
@@ -677,6 +812,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A man sells different brands of an items. 1/9\n of the items he has in his shop are from Brand A, 5/8\n of the remainder are from Brand B and the rest are from Brand C. If the total number of Brand C items in the man's shop is 81, how many more Brand B items than Brand C does the shop has?",
     "option_1_text": "243",
     "option_1_image": "",
@@ -692,6 +830,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the area, to the nearest cm²\n, of the triangle whose sides are in the ratio 2 : 3 : 4 and whose perimeter is 180 cm.",
     "option_1_text": "1162 cm²",
     "option_1_image": "",
@@ -707,6 +848,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the compound interest (CI) on ₦15,700 for 2 years at 8% per annum compounded annually.",
     "option_1_text": "₦6,212.48",
     "option_1_image": "",
@@ -722,6 +866,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q49.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the volume of the cylinder above\n[Take π=22/7]",
     "option_1_text": "9,856 cm³",
     "option_1_image": "",
@@ -737,6 +884,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The third term of an A.P is 6 and the fifth term is 12. Find the sum of its first twelve terms",
     "option_1_text": "201",
     "option_1_image": "",
@@ -752,6 +902,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Express 16.54 × 10⁻⁵ - 6.76 × 10⁻⁸ + 0.23 × 10⁻⁶ in standard form",
     "option_1_text": "1.66 × 10⁻⁴",
     "option_1_image": "",
@@ -767,6 +920,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A student is using a graduated cylinder to measure the volume of water and reports a reading of 18 mL. The teacher reports the value as 18.4 mL. What is the student's percent error?",
     "option_1_text": "2.17%",
     "option_1_image": "",
@@ -782,6 +938,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The difference between an exterior angle of (n - 1) sided regular polygon and an exterior angle of (n + 2) sided regular polygon is 6°, then the value of \"n\" is",
     "option_1_text": "11",
     "option_1_image": "",
@@ -797,6 +956,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Two dice are tossed. What is the probability that the total score is a prime number.",
     "option_1_text": "5/12",
     "option_1_image": "",
@@ -812,6 +974,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q56.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the volume of the composite solid above.\n",
     "option_1_text": "2048 cm³",
     "option_1_image": "",
@@ -827,6 +992,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the area and perimeter of a square whose length of diagonals is 20√2 cm.",
     "option_1_text": "800 cm², 80 cm",
     "option_1_image": "",
@@ -842,6 +1010,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Bello buys an old bicycle for ₦9,200.00 and spends ₦1,500.00 on its repairs. If he sells the bicycle for ₦13,400.00, his gain percent is",
     "option_1_text": "25.23%",
     "option_1_image": "",
@@ -857,6 +1028,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q59.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate 5/8 - 3/4 ÷ 5/12 × 1/4",
     "option_1_text": " - 3/40",
     "option_1_image": "",
@@ -872,6 +1046,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A rectangle has one side that is 6 cm shorter than the other. The area of the rectangle will increase by 68 cm²\n if we add 2 cm to each side of the rectangle. Find the length of the shorter side.",
     "option_1_text": "15 cm",
     "option_1_image": "",
@@ -887,6 +1064,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The second term of a geometric series is −2/3\n and its sum to infinity is 3/2\n. Find its common ratio.",
     "option_1_text": "−1/3",
     "option_1_image": "",
@@ -902,6 +1082,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q62.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the value of the angle marked x in the diagram above",
     "option_1_text": "60°",
     "option_1_image": "",
@@ -917,6 +1100,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The line 3y+6x = 48 passes through the points A(-2, k) and B(4, 8). Find the value of k.",
     "option_1_text": "16",
     "option_1_image": "",
@@ -932,6 +1118,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Tickets for the school play were priced at ₦520.00 each for adults and ₦250.00 each for kids. How many kids' tickets were sold if the total sales were ₦171,000.00 and there were 5 times as many adult tickets sold as children's tickets?",
     "option_1_text": "20",
     "option_1_image": "",
@@ -947,6 +1136,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Solve the logarithmic equation: log₂(6 - x) = 3 - log₂(x)",
     "option_1_text": " x = 4 or 2",
     "option_1_image": "",
@@ -962,6 +1154,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q66.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Calculate the area of the composite figure above.",
     "option_1_text": " 6048 m²",
     "option_1_image": "",
@@ -977,6 +1172,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q67.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the value of x in the diagram above",
     "option_1_text": "10 units",
     "option_1_image": "",
@@ -992,6 +1190,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q68.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Which inequality describes the graph above?",
     "option_1_text": "4y+5x≥20",
     "option_1_image": "",
@@ -1007,6 +1208,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the volume of a cone which has a base radius of 5 cm and slant height of 13 cm.",
     "option_1_text": "300π cm³",
     "option_1_image": "",
@@ -1022,6 +1226,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q70.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Study the given histogram above and answer the question that follows.\n\nWhat is the total number of students that scored at most 50 marks?",
     "option_1_text": "380",
     "option_1_image": "",
@@ -1037,6 +1244,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The area of a trapezium is 200 cm². Its parallel sides are in the ratio 2:3, and the perpendicular distance between them is 16 cm. Find the length of each of the parallel sides.",
     "option_1_text": "10 cm and 15 cm",
     "option_1_image": "",
@@ -1052,6 +1262,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q72.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "PQRS is a cyclic quadrilateral. Find x + y",
     "option_1_text": "50",
     "option_1_image": "",
@@ -1067,6 +1280,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A student pilot was required to fly to an airport and then return as part of his flight training. The average speed to the airport was 120 km/h, and the average speed returning was 150 km/h. If the total flight time was 3 hours, calculate the distance between the two airports.",
     "option_1_text": " 270 km",
     "option_1_image": "",
@@ -1082,6 +1298,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The perimeter of an isosceles right-angled triangle is 2 meters. Find the length of its longer side.",
     "option_1_text": "2 - √2",
     "option_1_image": "",
@@ -1097,6 +1316,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A ship sets sail from port A (86°N, 56°W) to port B (86°N, 64°W). Find the distance covered, correct to the nearest km. (Take 𝜋 = 3.142 and R=6370 km.)",
     "option_1_text": " 62 km",
     "option_1_image": "",
@@ -1112,6 +1334,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q76.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Use the graph of sin(θ) to estimate the value of θ when sin(θ) = -0.6 for 0° ≤ θ ≤ 360°.",
     "option_1_text": "θ = 223°, 305°",
     "option_1_image": "",
@@ -1127,6 +1352,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A circle has a radius of 13 cm with a chord 12 cm away from the centre of the circle. Calculate the length of the chord.",
     "option_1_text": "16 cm",
     "option_1_image": "",
@@ -1142,6 +1370,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Give the number of significant figures of the population of a town which has approximately 5,020,700 people",
     "option_1_text": "7 significant figures",
     "option_1_image": "",
@@ -1157,6 +1388,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "200 tickets were sold for a show. VIP tickets costs ₦1,200 and ₦700 for regular. Total amount realised from the sale of the tickets was ₦180,000. Find the number of VIP tickets sold and the the number of regular ticket sold.",
     "option_1_text": " VIP = 80, Regular = 100",
     "option_1_image": "",
@@ -1172,6 +1406,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "It takes 12 men 8 hours a day to finish a piece of work in 4 days. In how many days will it take 4 men working 16 hours a day to complete the same piece of work?",
     "option_1_text": " 6 days",
     "option_1_image": "",
@@ -1187,6 +1424,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate (212)₃ - (121)₃ + (222)₃",
     "option_1_text": "(313)₃",
     "option_1_image": "",
@@ -1202,6 +1442,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Factorise (4a + 3) ² - (3a - 2)²",
     "option_1_text": "(a + 1)(a + 5)",
     "option_1_image": "",
@@ -1217,6 +1460,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the median of the numbers 89, 141, 130, 161, 120, 131, 131, 100, 108 and 119 ",
     "option_1_text": "131",
     "option_1_image": "",
@@ -1232,6 +1478,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find all real number x which satisfy the inequality 1/3 (x + 1) - 1 > 1/5(x + 4) ",
     "option_1_text": " x < 11",
     "option_1_image": "",
@@ -1247,6 +1496,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Reach each number to two significant figures and then evaluate 0.02174×1.2047 / 0.023789",
     "option_1_text": "0",
     "option_1_image": "",
@@ -1262,6 +1514,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Four boys and ten girls can cut a field first in 5 hours. If the boys work at 5/4\n the rate at which the girls work, how many boys will be needed to cut the field in 3 hours? ",
     "option_1_text": "180",
     "option_1_image": "",
@@ -1277,6 +1532,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "What is the circumference of latitude 0° S if R is the radius of the Earth?",
     "option_1_text": "cos θ",
     "option_1_image": "",
@@ -1292,6 +1550,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A room is 12m long, 9m wide and 8m high. Find the cosine of the angle which a diagonal of the room makes with the floor of the room ",
     "option_1_text": "15/17",
     "option_1_image": "",
@@ -1307,6 +1568,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q89.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The goals scored by 40 football teams from three league  divisions are recorded below.What is the total number of goals scored by all the teams?",
     "option_1_text": "21",
     "option_1_image": "",
@@ -1322,6 +1586,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In a class of 150 students, the sector in a pie chart representing the students offering physics has an angle of 12°. How many students are offering physics?",
     "option_1_text": "18",
     "option_1_image": "",
@@ -1337,6 +1604,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If log₁₀ 2 = 0.3010 and log₁₀ 3 = 0.4771, evaluate log₁₀ 4.5",
     "option_1_text": "0.301",
     "option_1_image": "",
@@ -1352,6 +1622,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Simplify (32 - 4x^2) / (2x + 18)",
     "option_1_text": "2(x - 9)",
     "option_1_image": "",
@@ -1367,6 +1640,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In preparing rice cutlets, a cook used 75g of rice, 40g of margarine, 105g of meat and 20g of bread crumbs. Find the angle of the sector which represent meat in a pie chart? ",
     "option_1_text": "30°",
     "option_1_image": "",
@@ -1382,6 +1658,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The angle of a sector of a circle with radius 10.5 cm is 48°. Calculate the perimeter of the sector.",
     "option_1_text": " 25.4cm",
     "option_1_image": "",
@@ -1397,6 +1676,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "What is the product of 27/5, (3)^-3, and (1/5)^-1?",
     "option_1_text": "5",
     "option_1_image": "",
@@ -1412,6 +1694,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A crate of soft drinks contains 10 bottle of Coca-Cola 8 of Fanta and 6 of Sprite. If one bottle is selected at random, what is the probability that it is Not a Coca-Cola bottle? ",
     "option_1_text": "5/12",
     "option_1_image": "",
@@ -1427,6 +1712,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q97.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In this figure, PQ = PR = PS and ∠SRT = 68°. Find ∠QPS.",
     "option_1_text": "136°",
     "option_1_image": "",
@@ -1442,6 +1730,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the gradient of the line passing through the points (-2, 0) and (0, -4) ",
     "option_1_text": "2",
     "option_1_image": "",
@@ -1457,6 +1748,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the equation of the line through the points (5, 7) parallel to the line 7x + 5y = 12.",
     "option_1_text": "5x + 7y = 120",
     "option_1_image": "",
@@ -1472,6 +1766,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If N225.00 yields N27.00 in x years simple interest at the rate of 4% per annum, find x. ",
     "option_1_text": "3",
     "option_1_image": "",
@@ -1487,6 +1784,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Calculate the standard deviation of the following data: 7, 8, 9, 10, 11, 12, 13 ",
     "option_1_text": "2",
     "option_1_image": "",
@@ -1502,6 +1802,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A number is selected at random between 20 and 30, both numbers inclusive. Find the probability that the number is a prime. ",
     "option_1_text": "2/11",
     "option_1_image": "",
@@ -1517,6 +1820,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q103.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The equation of the line in the graph is ",
     "option_1_text": "3y = 3x + 12",
     "option_1_image": "",
@@ -1532,6 +1838,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Express the product of 0.0014 and 0.011 in standard form ",
     "option_1_text": "1.54 × 10⁻²",
     "option_1_image": "",
@@ -1547,6 +1856,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A schoolboy lying on the ground 30m away from the foot of a water tank tower observes that the angle of elevation of the top of the tank is 60°. Calculate the height of the tank.",
     "option_1_text": "60√3 m",
     "option_1_image": "",
@@ -1562,6 +1874,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the simple interest rate percent annum at which N1000 accumulates to N1240 in 3 years. ",
     "option_1_text": "6%",
     "option_1_image": "",
@@ -1577,6 +1892,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q107.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The pie chart shows the income of a civil servant in month. If his monthly income is ₦6,000. Find his monthly basic salary. \n",
     "option_1_text": " ₦2,050",
     "option_1_image": "",
@@ -1592,6 +1910,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If x is positive real number, find the range of values for which 1/3x + 12 > 1/4x",
     "option_1_text": " x > -1/6",
     "option_1_image": "",
@@ -1607,6 +1928,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the value of x if √2 / x + √2 = 1/ x - √2",
     "option_1_text": "3√2 + 4",
     "option_1_image": "",
@@ -1622,6 +1946,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A binary operation x is defined by a x b = aᵇ. If a x 2 = 2 - a, find the possible values of a?",
     "option_1_text": "1, -2",
     "option_1_image": "",
@@ -1637,6 +1964,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The chord ST of a circle is equal to the radius r of the circle. Find the length of arc ST",
     "option_1_text": "πr/3",
     "option_1_image": "",
@@ -1652,6 +1982,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A sector of a circle of radius 7.2 cm, which subtends an angle of 300° at the center, is used to form a cone. What is the radius of the base of the cone?",
     "option_1_text": " 8cm",
     "option_1_image": "",
@@ -1667,6 +2000,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A cylindrical tank has a capacity of 3080m³\n. What is the depth of the tank if the diameter of its base is 14m?",
     "option_1_text": "25m",
     "option_1_image": "",
@@ -1682,6 +2018,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The acres for rice, pineapple, cassava, cocoa and palm oil in a certain district are given respectively as 2, 5, 3, 11 and 9. What is the angle of the sector of cassava in a pie chart? ",
     "option_1_text": "180°",
     "option_1_image": "",
@@ -1697,6 +2036,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Three consecutive terms of a geometric progression are give as n - 2, n and n + 3. Find the common ratio ",
     "option_1_text": "3/2",
     "option_1_image": "",
@@ -1712,6 +2054,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In a class of 40 students, 32 offer mathematics, 24 offer physics and 4 offer neither mathematics nor physics. How many offer both mathematics and physics? ",
     "option_1_text": "4",
     "option_1_image": "",
@@ -1727,6 +2072,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The sum of the interior angle of pentagon is 6x + 6y. Find y in terms of x.",
     "option_1_text": "y = 6 - x",
     "option_1_image": "",
@@ -1742,6 +2090,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The mean age group of some students is 15years. When the age of a teacher, 45 years old, is added to the ages of the students, the mean of their ages become 18 years. Find the number of students in the group. ",
     "option_1_text": "7",
     "option_1_image": "",
@@ -1757,6 +2108,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A surveyor walks 500m up a hill which slopes at an angle of 30°. Calculate the vertical height through which he rises.",
     "option_1_text": " 252m",
     "option_1_image": "",
@@ -1772,6 +2126,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q120.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the non-zero positive value of x which satisfies the equation ",
     "option_1_text": "2",
     "option_1_image": "",
@@ -1787,6 +2144,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q121.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "",
     "option_1_text": "20",
     "option_1_image": "",
@@ -1802,6 +2162,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the amount if simple interest is paid yearly at 5% per annum for 3 years, on a principal of # 200,000.00",
     "option_1_text": " # 23, 000.00",
     "option_1_image": "",
@@ -1817,6 +2180,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "y is inversely proportional to x and y = 4, when x = 1/2, find x when y = 10",
     "option_1_text": "2",
     "option_1_image": "",
@@ -1832,6 +2198,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the angle subtended by an arc 33cm long of a circle of diameter 28cm.",
     "option_1_text": "1050",
     "option_1_image": "",
@@ -1847,6 +2216,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Solve 16x\n = 0.25",
     "option_1_text": " -1/2",
     "option_1_image": "",
@@ -1862,6 +2234,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The ratio of men to women in a 20-member committee is 3:1. How many women must be added to the committee to make the ratio of men to women 3:2?",
     "option_1_text": "2",
     "option_1_image": "",
@@ -1877,6 +2252,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If p * q = 2p + pq + q, find p  when ( p * 2) - (p * 1) = 40",
     "option_1_text": "39",
     "option_1_image": "",
@@ -1892,6 +2270,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Which of the following is a measure of central tendency?",
     "option_1_text": " Standard deviation",
     "option_1_image": "",
@@ -1907,6 +2288,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q129.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "From the figure above, find the length of Chord PQ",
     "option_1_text": "17cm",
     "option_1_image": "",
@@ -1922,6 +2306,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q130.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Identify the equation of the shaded region in the given graph ",
     "option_1_text": " y > 1",
     "option_1_image": "",
@@ -1937,6 +2324,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q131.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In how many ways can 6 people sit around a table ",
     "option_1_text": "120",
     "option_1_image": "",
@@ -1952,6 +2342,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The graph above represents inequalities",
     "option_1_text": "3x +4y ≥12, x >0, y > 0",
     "option_1_image": "",
@@ -1967,6 +2360,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The sum to infinity of a GP is 100, find its first term if the common ratio is -1/2",
     "option_1_text": "150",
     "option_1_image": "",
@@ -1982,6 +2378,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "PQR is a triangle such that |PQ| = |QR| = 8cm and QPR = 60º. Find the area of ∠\n PQR",
     "option_1_text": "16√3cm2",
     "option_1_image": "",
@@ -1997,6 +2396,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q136.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The Venn diagram above shows the number of students offering physics and chemistry in a class of 65. What is the probability that a student selected from the class offers physics and chemistry if every students offers at least one subject?",
     "option_1_text": "2/13",
     "option_1_image": "",
@@ -2012,6 +2414,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "From the top of a building 10m high, the angle of elevation of a fruit on top of a tree 25m is 30º. Calculate the horizontal distance between the building and the tree.",
     "option_1_text": "15√3\nm",
     "option_1_image": "",
@@ -2027,6 +2432,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A boy bought Oranges at the rate of #24.00 for 5 and sold it at the rate of # 30.00 for 4 Oranges. Find the profit made of the ones sold ",
     "option_1_text": "# 24.00",
     "option_1_image": "",
@@ -2042,6 +2450,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Differentiate y = (5x + 1)4",
     "option_1_text": "  20 (5x + 1)3",
     "option_1_image": "",
@@ -2057,6 +2468,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "mplify 5+√7/3+√7",
     "option_1_text": "17 - √7",
     "option_1_image": "",
@@ -2072,6 +2486,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the perimeter of a triangle whose vertices pass through ( 3, 2), (4, 5) and (6, 2) in surd form.",
     "option_1_text": " 3 + 12+√+13",
     "option_1_image": "",
@@ -2087,6 +2504,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the 7th\n term of the sequence -10, 50, -250 ...........",
     "option_1_text": " 165250",
     "option_1_image": "",
@@ -2102,6 +2522,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The scores of students in a test are recorded as follows: 4, 3, 3, 2, 1, 2, 5, 7, 8, 3, and 5. Find the mode of the mark.",
     "option_1_text": "2",
     "option_1_image": "",
@@ -2117,6 +2540,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "P(x, 4) and Q( 10, 8) are two points joined by a straight line in a plane. If the midpoint of the line is (9, 6), find the value of x.",
     "option_1_text": "12",
     "option_1_image": "",
@@ -2132,6 +2558,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find x if 162+x/4=64x",
     "option_1_text": "3",
     "option_1_image": "",
@@ -2147,6 +2576,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Given that P is the set of all prime numbers between 0 and 10, and Q is the set of all odd numbers between 0 and 10. Find the union of elements in P that are not in Q and the elements in Q that are not in P.",
     "option_1_text": " {2, 9}",
     "option_1_image": "",
@@ -2162,6 +2594,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q147.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In the diagram above, T represents the construction of angle .....",
     "option_1_text": "150",
     "option_1_image": "",
@@ -2177,6 +2612,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Convert the number 10111.11two to a mixed number.",
     "option_1_text": "23 1/4",
     "option_1_image": "",
@@ -2192,6 +2630,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Subtract 14256seven\n from 20045seven",
     "option_1_text": "1256seven",
     "option_1_image": "",
@@ -2207,6 +2648,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The average age of the four female teachers in a school is 40 and the average age of eight male teachers in the school is 25. Calculate the average age of the teachers in the school.",
     "option_1_text": "20",
     "option_1_image": "",
@@ -2222,6 +2666,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "How many proper and improper subsets are there in the set K = { a, b, c, d, e}?",
     "option_1_text": "10",
     "option_1_image": "",
@@ -2237,6 +2684,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Differentiate Cos250 - Sin 250\n\n ",
     "option_1_text": "- ( Sin25º + Cos25º)  ",
     "option_1_image": "",
@@ -2252,6 +2702,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The mean of the numbers 13, 16, x, 18, 21, 2x, 35, is 22. Find the value of x",
     "option_1_text": "16",
     "option_1_image": "",
@@ -2267,6 +2720,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the variance of a group of data whose standard deviation is 12.34 to the nearest whole number.",
     "option_1_text": "150",
     "option_1_image": "",
@@ -2282,6 +2738,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Calculate the standard deviation of the following scores 5, 4, 6, 7, and 8",
     "option_1_text": "√2",
     "option_1_image": "",
@@ -2297,6 +2756,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "From a class of 5 girls and 7 boys, a committee consisting of 2 girls and 3 boys is to be formed. How many ways can this be done?",
     "option_1_text": " 350 ways",
     "option_1_image": "",
@@ -2312,6 +2774,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In how many ways can a committee of 5 be selected from a group of 7 males and 3 females, if the committee must have one female?",
     "option_1_text": " 105ways",
     "option_1_image": "",
@@ -2327,6 +2792,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": " A bag contains 7 red and 4 black identical balls. Two balls were picked at random from the bag and replaced each time. Find the probability the two balls were of same colour.",
     "option_1_text": " 54/121",
     "option_1_image": "",
@@ -2342,6 +2810,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "U varies directly as the square root of V when U = 24, V = 9, find the value of V when U = 16.",
     "option_1_text": "0.32",
     "option_1_image": "",
@@ -2357,6 +2828,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If B varies inversely as c1/3 and C = 27 when B = 2, find the value of the constant of proportionality K.",
     "option_1_text": "3",
     "option_1_image": "",
@@ -2372,6 +2846,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the roots of x3 - 19x - 30=0",
     "option_1_text": "5, 3, and 2",
     "option_1_image": "",
@@ -2387,6 +2864,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If x is inversely proportional to y and x = 9 when y = 4, find the law containing x and y",
     "option_1_text": "x = 16/y",
     "option_1_image": "",
@@ -2402,6 +2882,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If tanθ\n = 8/15\n, simplify Sinθ−Cosθ/Sin2θ−Sinθ",
     "option_1_text": "−119/72",
     "option_1_image": "",
@@ -2417,6 +2900,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A binary operation * is defined on a set of real numbers by x*y = xy\n for all values of x and y, if x * 2 = x, find the possible values of x.",
     "option_1_text": "0, 2",
     "option_1_image": "",
@@ -2432,6 +2918,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The weights of 15 students in a class are given as 25, 30, 32, 30, 42, 45, 48, 50, 52, 51, 42, 38, 40, and 42. What is the mode of the given data?",
     "option_1_text": "51",
     "option_1_image": "",
@@ -2447,6 +2936,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q168.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The number of 144 students who registered for mathematics, physics, and chemistry in an examination are shown in the Venn diagram. How many registered for physics and mathematics?",
     "option_1_text": "16",
     "option_1_image": "",
@@ -2462,6 +2954,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Make q the subject of the relation t = (pq/r−r2q",
     "option_1_text": "q = rt2/p−r3",
     "option_1_image": "",
@@ -2477,6 +2972,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "(a+√8a)2 = 54 + b√2, a and b are positive integers. Find the value of a and the value of b.",
     "option_1_text": " a = 24, b = 6",
     "option_1_image": "",
@@ -2492,6 +2990,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Solve for k in the equation 1/8k+2\n = 1",
     "option_1_text": "2",
     "option_1_image": "",
@@ -2507,6 +3008,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate (101two)3",
     "option_1_text": "111101two",
     "option_1_image": "",
@@ -2522,6 +3026,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q173.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The shaded portion in the venn diagram above represents?",
     "option_1_text": "F - (E n F) - (G n F)",
     "option_1_image": "",
@@ -2537,6 +3044,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If a fair coin is tossed twice, what is the probability of obtaining at least one head?",
     "option_1_text": "0.25",
     "option_1_image": "",
@@ -2552,6 +3062,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If the mean of 2, 5, (x+1), (x+2), 7 and 9 is 6. Find the median ",
     "option_1_text": "5.5",
     "option_1_image": "",
@@ -2567,6 +3080,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If sin θ = -  3/5\n and θ lies in the third quadrant, find cos θ",
     "option_1_text": "4/5",
     "option_1_image": "",
@@ -2582,6 +3098,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Simplify 1/3−√2\n in the form of p + q√2",
     "option_1_text": "7/3 - 1/7√2",
     "option_1_image": "",
@@ -2597,6 +3116,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the length of a chord 3cm from the centre of a circle of radius 5cm",
     "option_1_text": " 8cm",
     "option_1_image": "",
@@ -2612,6 +3134,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If the above information is represented on a pie chart. What angle represents his spending on food?",
     "option_1_text": "108.5",
     "option_1_image": "",
@@ -2627,6 +3152,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A rectangular pyramid has an area 24cm2 and height 7.5cm. Find its volume?",
     "option_1_text": "65.0cm3",
     "option_1_image": "",
@@ -2642,6 +3170,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The 10th term of an AP is 32. If the first term is 3/2, what is the 4th term?",
     "option_1_text": "35/3",
     "option_1_image": "",
@@ -2657,6 +3188,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q183.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In the diagram above angle LNM and angle YNZ are represented by g and h respectively. Find ∠MNY",
     "option_1_text": "1800 - g0 - h0",
     "option_1_image": "",
@@ -2672,6 +3206,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In how many ways can the letter of ZOOLOGY be arranged?",
     "option_1_text": "720",
     "option_1_image": "",
@@ -2687,6 +3224,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Integrate (2x+1)3",
     "option_1_text": "2x+13/8\n  + C",
     "option_1_image": "",
@@ -2702,6 +3242,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Given that r = √3v/πh\n, make v the subject of the formula",
     "option_1_text": " v = 3 πr2\n h",
     "option_1_image": "",
@@ -2717,6 +3260,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate Log2\n 8√2",
     "option_1_text": " 3.0",
     "option_1_image": "",
@@ -2732,6 +3278,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The locus of points equidistant from a fixed point.",
     "option_1_text": "circle",
     "option_1_image": "",
@@ -2747,6 +3296,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "What will be the result obtained when the numerator of 96/50\n is decreased by 37.5% and its denominator decreased by 20%.",
     "option_1_text": "1.5",
     "option_1_image": "",
@@ -2762,6 +3314,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A poultry farmer realized 200 eggs from his birds and sold 5 1/2\n crates of eggs. What percentages of eggs are left?",
     "option_1_text": "82.50%",
     "option_1_image": "",
@@ -2777,6 +3332,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If sec2θ + tan2θ = 3, then the angle θ is equal to?",
     "option_1_text": "900",
     "option_1_image": "",
@@ -2792,6 +3350,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "find the limit of y = x3+6x−7/x−1\n as x tends to 1",
     "option_1_text": "9",
     "option_1_image": "",
@@ -2807,6 +3368,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the equation of a straight line parallel to the line 2x - y = 5 and having intercept of 5",
     "option_1_text": " 2x + y = 5",
     "option_1_image": "",
@@ -2822,6 +3386,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Calculate the median of 14, 17, 10, 13, 18 and 10.",
     "option_1_text": "12.5",
     "option_1_image": "",
@@ -2837,6 +3404,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The equivalent of (10110.011)2\n in base 10 is?",
     "option_1_text": "26.325",
     "option_1_image": "",
@@ -2852,6 +3422,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The cost C of running a school is directly proportional to the number of students N, if 20 students cost #10,000, How many students can #1,000,000 cover?",
     "option_1_text": "3000",
     "option_1_image": "",
@@ -2867,6 +3440,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Evaluate n2+1\nCn+5\n if n = 3 ",
     "option_1_text": "55",
     "option_1_image": "",
@@ -2882,6 +3458,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Given that S = 3t2 + 5t - 10 is displacement of a particle in metres, calculate it initial velocity.",
     "option_1_text": "10m/s",
     "option_1_image": "",
@@ -2897,6 +3476,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q202.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In the diagram above, XY = 8cm and OX = 5cm. Find Oz",
     "option_1_text": "9cm",
     "option_1_image": "",
@@ -2912,6 +3494,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Let (*) be a binary operation on a natural number defined by a * b = a - b + (ab)2\n, then find 3 * 5",
     "option_1_text": "223",
     "option_1_image": "",
@@ -2927,6 +3512,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If y varies inversely as x and x = 3 when y =4. Find the value of x when y = 12",
     "option_1_text": "4",
     "option_1_image": "",
@@ -2942,6 +3530,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If 8, p, q and 26 is an A.P. Find the values of p and q",
     "option_1_text": " p = 14 and q = 14",
     "option_1_image": "",
@@ -2957,6 +3548,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find x if the mean of 2x, 4x, 2x - 13 and 6x is 4.",
     "option_1_text": "1.5",
     "option_1_image": "",
@@ -2972,6 +3566,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Factorize 4a2\n - 9b2",
     "option_1_text": " (2a-3b) (2a+3b)",
     "option_1_image": "",
@@ -2987,6 +3584,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If n(P) = 20 and n(Q) = 30 and n(PuQ) = 40, find the value n(PnQ)",
     "option_1_text": "10",
     "option_1_image": "",
@@ -3002,6 +3602,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Three times a certain number (x), minus 2 is less than the number minus 6.Find the possible values of x. ",
     "option_1_text": " x <-2",
     "option_1_image": "",
@@ -3017,6 +3620,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q210.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The number line represented by the inequality",
     "option_1_text": "x≤2",
     "option_1_image": "",
@@ -3032,6 +3638,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If a dress is sold for #3800.00 at 20% discount. what is its original price?",
     "option_1_text": "#3,000.00",
     "option_1_image": "",
@@ -3047,6 +3656,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Solve the following equation: 2/(2r−1)\n - 5/3\n =  1/(r+2)",
     "option_1_text": "( -1,5/2\n )",
     "option_1_image": "",
@@ -3062,6 +3674,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "In how many ways can 2 students be selected from a group of 5 students in a debating competition?",
     "option_1_text": " 25 ways",
     "option_1_image": "",
@@ -3077,6 +3692,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "What is the rate of change of the volume V of a hemisphere with respect to its radius r when r = 2?",
     "option_1_text": "8π",
     "option_1_image": "",
@@ -3092,6 +3710,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "determine the maximum value of y=3x2\n + 5x - 3",
     "option_1_text": "6",
     "option_1_image": "",
@@ -3107,6 +3728,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q216.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A trapezium has two parallel sides of lengths 5cm and 9cm. If the area is 91cm2\n, find the distance between the parallel sides",
     "option_1_text": "13 cm",
     "option_1_image": "",
@@ -3122,6 +3746,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "find the value of p if the line which passes through (-1, -p) and (-2,2) is parallel to the line 2y+8x-17=0?",
     "option_1_text": "−2/7",
     "option_1_image": "",
@@ -3137,6 +3764,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The ratio of the length of two similar rectangular blocks is 2 : 3. If the volume of the larger block is 351cm3, then the volume of the other block is?",
     "option_1_text": "234.00 cm3",
     "option_1_image": "",
@@ -3152,6 +3782,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the derivative of the function y = 2x2\n(2x - 1) at the point x = -1?",
     "option_1_text": "18",
     "option_1_image": "",
@@ -3167,6 +3800,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Correct 241.34(3 x 10−3\n)2\n to 4 significant figures",
     "option_1_text": "0.0014",
     "option_1_image": "",
@@ -3182,6 +3818,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the mean deviation of 1, 2, 3 and 4",
     "option_1_text": " 1.0",
     "option_1_image": "",
@@ -3197,6 +3836,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "At what rate would a sum of N100.00 deposited for 5 years raise an interest of N7.50?",
     "option_1_text": " 1/2\n%",
     "option_1_image": "",
@@ -3212,6 +3854,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Three children shared a basket of mangoes in such a way that the first child took 1/4\n of the mangoes and the second 34\n of the remainder. What fraction of the mangoes did the third child take?",
     "option_1_text": "16-Mar",
     "option_1_image": "",
@@ -3227,6 +3872,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Simplify and express in standard form 0.00275×0.00640/0.025×0.08",
     "option_1_text": "8.8 x 10-1",
     "option_1_image": "",
@@ -3242,6 +3890,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Simplify √27\n + 3/√3",
     "option_1_text": "4√3",
     "option_1_image": "",
@@ -3257,6 +3908,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Three brothers in a business deal share the profit at the end of a contract. The first received 1/3\n of the profit and the second 2/3\n of the remainder. If the third received the remaining N12000.00 how much profit did they share?",
     "option_1_text": "N60 000.00",
     "option_1_image": "",
@@ -3272,6 +3926,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "P(-6, 1) and Q(6, 6) are the two ends of the diameter of a given circle. Calculate the radius.",
     "option_1_text": "6.5 units",
     "option_1_image": "",
@@ -3287,6 +3944,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The angle of a sector of a circle, radius 10.5cm, is 48°, Calculate the perimeter of the sector",
     "option_1_text": "8.8cm",
     "option_1_image": "",
@@ -3302,6 +3962,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the length of a side of a rhombus whose diagonals are 6cm and 8cm",
     "option_1_text": " 8cm",
     "option_1_image": "",
@@ -3317,6 +3980,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Each of the interior angles of a regular polygon is 140°. How many sides has the polygon?",
     "option_1_text": " 9",
     "option_1_image": "",
@@ -3332,6 +3998,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A cylinder pipe, made of metal is 3cm thick.If the internal radius of the pipe is 10cm.Find the volume of metal used in making 3m of the pipe.",
     "option_1_text": " 153π\ncm3",
     "option_1_image": "",
@@ -3347,6 +4016,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The locus of a point which moves so that it is equidistant from two intersecting straight lines is the?",
     "option_1_text": "perpendicular bisector of the two lines",
     "option_1_image": "",
@@ -3362,6 +4034,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "4, 16, 30, 20, 10, 14 and 26 are represented on a pie chart. Find the sum of the angles of the bisectors representing all numbers equals to or greater than 16",
     "option_1_text": " 48o",
     "option_1_image": "",
@@ -3377,6 +4052,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The mean of ten positive numbers is 16. When another number is added, the mean becomes 18. Find the eleventh number",
     "option_1_text": "3",
     "option_1_image": "",
@@ -3392,6 +4070,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Two numbers are removed at random from the numbers 1, 2, 3 and 4. What is the probability that the sum of the numbers removed is even?",
     "option_1_text": " 2/3",
     "option_1_image": "",
@@ -3407,6 +4088,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the probability that a number selected at random from 41 to 56 is a multiple of 9",
     "option_1_text": "1/8",
     "option_1_image": "",
@@ -3422,6 +4106,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Musa borrows N10.00 at 2% per month simple interest and repays N8.00 after 4 months. How much does he still owe?",
     "option_1_text": " N10.80",
     "option_1_image": "",
@@ -3437,6 +4124,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Simplify 2log 2/5\n - log72/125\n + log 9",
     "option_1_text": "1 - 4 log3",
     "option_1_image": "",
@@ -3452,6 +4142,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A car travels from calabar to Enugu, a distance of P km with an average speed of U km per hour and continues to benin, a distance of Q km, with an average speed of Wkm per hour. Find its average speed from Calabar to Benin",
     "option_1_text": "(p+q)/pw+qu",
     "option_1_image": "",
@@ -3467,6 +4160,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If w varies inversely as uv/u+v\n and w = 8 when\n\nu = 2 and v = 6, find a relationship between u, v, w.",
     "option_1_text": "uvw = 16(u + v)",
     "option_1_image": "",
@@ -3482,6 +4178,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If g(x) = x2\n + 3x  find g(x + 1) - g(x)",
     "option_1_text": "(x + 2)",
     "option_1_image": "",
@@ -3497,6 +4196,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "factorize m3\n - m2\n + 2m - 2",
     "option_1_text": "(m2 + 1)(m - 2)",
     "option_1_image": "",
@@ -3512,6 +4214,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The angles of a quadrilateral are 5x-30, 4x+60, 60-x and 3x+61.find the smallest of these angles​",
     "option_1_text": "5x - 30",
     "option_1_image": "",
@@ -3527,6 +4232,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "What is the n-th term of the sequence 2, 6, 12, 20...?",
     "option_1_text": "4n - 2",
     "option_1_image": "",
@@ -3542,6 +4250,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If the binary operation ∗\n is defined by m ∗\n n = mn + m + n for any real number m and n, find the identity of the elements under this operation",
     "option_1_text": " e = 1",
     "option_1_image": "",
@@ -3557,6 +4268,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Factorize completely 81a4\n - 16b4",
     "option_1_text": "(3a + 2b)(2a - 3b)(9a2 + 4b2)",
     "option_1_image": "",
@@ -3572,6 +4286,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find x if log9\nx = 1.5",
     "option_1_text": "27",
     "option_1_image": "",
@@ -3587,6 +4304,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "List all integers satisfying the inequality in -2 < 2x-6 < 4 ",
     "option_1_text": "2,3,4 and 5",
     "option_1_image": "",
@@ -3602,6 +4322,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "X is due east point of y on a coast. Z is another point on the coast but 6.0km due south of Y. If the distance ZX is 12km, calculate the bearing of Z from X",
     "option_1_text": " 240°",
     "option_1_image": "",
@@ -3617,6 +4340,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "A group of market women sell at least one of yam, plantain and maize. 12 of them sell maize, 10 sell yam and 14 sell plantain. 5 sell plantain and maize, 4 sell yam and maize, 2 sell yam and plantain only while 3 sell all the three items. How many women are in the group?",
     "option_1_text": "25",
     "option_1_image": "",
@@ -3632,6 +4358,9 @@
   {
     "subject": "Mathematics",
     "question_image": "",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "If (x + 2) and (x - 1) are factors of the expression Lx+2kx2+24\n, find the values of L and k.",
     "option_1_text": " l = -12, k = -6",
     "option_1_image": "",
@@ -3647,6 +4376,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q254.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "The diagram above is a circle with centre C. P, Q and S are points on the circumference. PS and SR are tangents to the circle. ∠PSR = 36o. Find ∠PQR",
     "option_1_text": "72",
     "option_1_image": "",
@@ -3662,6 +4394,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q255.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Mr Adu spends his annual salary on food(f), rent(r), car maintenance, gifts(g), savings(s) and some miscellaneous (m) as indicate in the table below:",
     "option_1_text": "108.5",
     "option_1_image": "",
@@ -3677,6 +4412,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q256.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "",
     "option_1_text": "",
     "option_1_image": "q256_1.png",
@@ -3692,6 +4430,9 @@
   {
     "subject": "Mathematics",
     "question_image": "q257.png",
+    "explanation_image": "",
+    "explanation_text": "",
+    "passage": "",
     "question_text": "Find the determinant of the matrix A",
     "option_1_text": "4",
     "option_1_image": "",

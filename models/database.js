@@ -11,7 +11,7 @@ if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const dbPath = path.join(dataDir, 'questions_14.db');
+const dbPath = path.join(dataDir, 'questions_21.db');
 
 // Open or create database file
 const db = new Database(dbPath);
@@ -22,6 +22,7 @@ const query = `
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         subject TEXT,
         question_image TEXT,
+        passage TEXT,
         question_text TEXT,
         options TEXT,
         answer INTEGER,
