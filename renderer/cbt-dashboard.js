@@ -56,9 +56,7 @@ document.getElementById('jamb-button').addEventListener('click', async () => {
         // Proceed to show the exam page.
         console.log("Activation confirmed. Proceeding to exam...");
     }
-    // window.api.openSelectSubjectWindow();
 });
-
 
 // Show exam screen when subjects selection window is closed
 window.api.onSecondWindowClosed((_, data) => {
@@ -68,8 +66,6 @@ window.api.onSecondWindowClosed((_, data) => {
         state.selectedSubjects = data.selectedSubjects;
         state.year = data.year;
 
-        init();
 
     }
 });
-

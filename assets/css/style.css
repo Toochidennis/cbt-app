@@ -162,20 +162,22 @@
     overflow-y: hidden;
     width: 100%; 
 }
+
 /*Homepage styles*/
 .homepage {
     display: flex;
     flex-direction: column;
-    background-color: #F7F7F7;
-    overflow: hidden;
+    height: 100vh;
+    align-items: center;
+    overflow: auto;
 }
 
 .carousel-container {
     position: relative;
     width: 100%;
     max-width: 800px;
-    /* Adjust width */
-    margin: auto;
+    flex: auto;
+    max-height: 45vh;
     overflow: hidden;
 }
 
@@ -210,7 +212,7 @@
 }
 
 .graphics img {
-    width: 65%;
+    width: 60%;
     height: auto;
 }
 
@@ -237,7 +239,6 @@
     right: 10px;
 }
 
-
 .slider-text {
     color: rgba(47, 85, 221, 1);
     font-family: "Urbanist";
@@ -256,7 +257,6 @@
     line-height: 32px;
     font-size: 1rem;
     max-width: 500px;
-
 }
 
 .graphics img {
@@ -264,7 +264,7 @@
 }
 
 .register-button {
-    background-color: rgba(66, 108, 255, 1);
+    background-color: #FA9702;
     border-radius: 6px;
     border: .75px solid rgba(119, 149, 255, 1);
     align-items: center;
@@ -283,28 +283,29 @@ button:active {
     transform: scale(0.98);
 }
 
-.homepage .category {
+.category {
+    flex: auto;
+    max-height: 50vh;
+    width: 100%;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 20px;
     background: linear-gradient(rgba(249, 249, 249, 1), rgba(205, 216, 255, 1));
-    padding-bottom: 5em;
 }
 
-.homepage .select-an-exam-to {
+.select-an-exam-to {
     width: fit-content;
     font-family: "Urbanist";
     font-weight: 500;
-    width: 100%;
+
     text-align: center;
     color: #407bff;
     font-size: 1.5rem;
     letter-spacing: 0;
     line-height: 40px;
     white-space: nowrap;
-    margin-top: 1em;
 }
 
 .div-2,
