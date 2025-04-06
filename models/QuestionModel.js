@@ -19,7 +19,7 @@ class QuestionModel {
     static find(subject, year) {
         const stmt = db.prepare(`SELECT * FROM questions WHERE subject = ? AND year = ? ORDER BY RANDOM() LIMIT 50;`);
         const questions = stmt.all(subject, year);
-        console.log(questions)
+       // console.log(questions)
 
         if (questions.length !== 0) {
             questions.forEach(q => {

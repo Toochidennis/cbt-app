@@ -354,7 +354,6 @@
     border-radius: 10px;
     width: 100%;
     height: 150px;
-    /* Ensure it does not affect course box styles */
     box-shadow: none;
     border: none;
 }

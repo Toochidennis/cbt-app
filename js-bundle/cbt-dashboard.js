@@ -60,14 +60,9 @@ document.getElementById('jamb-button').addEventListener('click', async () => {
 });
 
 // Show exam screen when subjects selection window is closed
-window.api.onSecondWindowClosed((_, data) => {
-    if (data.action === 'cbt') {
-        state.subjects = data.subjects;
-        state.duration = data.duration;
-        state.selectedSubjects = data.selectedSubjects;
-        state.year = data.year;
-
-
+window.api.onSecondWindowClosed((_, examData) => {
+    if (examData.action === 'cbt-exam') {
+        window.api.openExamWindow(examData);
     }
 });
 

@@ -5,14 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBT</title>
-    <link rel="stylesheet" href="assets/css/globals.css" />
-    <link rel="stylesheet" href="assets/css/styleguide.css" />
-    <link rel="stylesheet" href="assets/css/cbt.css" />
-    <link rel="stylesheet" href="assets/css/summary.css" />
+    <link rel="stylesheet" href="../assets/css/globals.css" />
+    <link rel="stylesheet" href="../assets/css/styleguide.css" />
+    <link rel="stylesheet" href="../assets/css/cbt.css" />
+    <link rel="stylesheet" href="../assets/css/summary.css" />
 </head>
 
 <body>
     <div class="main-content">
+        <header>
+            <div class="logo">
+                <img class="graduation-cap" src="../assets/img/graduationcap.svg" />
+                <p class="link-skool">
+                    <span class="link">Link</span><span class="text-wrapper-8">Skool</span>
+                </p>
+            </div>
+            <div class="trouble">
+                <div class="watch-container">
+                    <img class="stopwatch" src="../assets/icons/icons8-stopwatch-1-1.svg" />
+                    <div id="countdown"></div>
+                </div>
+                <div class="submit-button" id="submit-button">
+                    <p class="submit-text">End and Submit</p>
+                </div>
+            </div>
+        </header>
         <div class="content-area" id="cbt">
             <div class="cbt-content">
                 <div class="cbt-header">
@@ -41,12 +58,12 @@
                     <div class="options-container" id="options-container"></div>
                     <div class="controls-section">
                         <div class="back" id="prev-btn">
-                            <img src="assets/icons/icons8-back-1.svg" />
+                            <img src="../assets/icons/icons8-back-1.svg" />
                             <p>Previous</p>
                         </div>
                         <div class="next" id="next-btn">
                             <span>Next</span>
-                            <img src="assets/icons/icons8-double-left-1.svg" />
+                            <img src="../assets/icons/icons8-double-left-1.svg" />
                         </div>
                     </div>
 
@@ -61,7 +78,7 @@
             </div>
         </div>
 
-        <div class="content" id="summary">
+        <div class="content" id="summary" style="display: none;">
             <div class="summary-page">
                 <div class="header">
                     <div class="close" id="close-btn">
@@ -103,8 +120,8 @@
         </div>
     </div>
 
-    <script src="js-bundle/cbt.js"></script>
-    <script src="js-bundle/summary.js"></script>
+    <script src="../js-bundle/cbt.js"></script>
+    <script src="../js-bundle/summary.js"></script>
 </body>
 
 </html>

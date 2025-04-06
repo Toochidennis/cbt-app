@@ -84,15 +84,13 @@ function createWindow() {
 
 function openActivationWindow() {
     const activationWindow = new BrowserWindow({
-        // width: 450,
-        //  height: 700,
         frame: false,
         modal: true,
         parent: mainWindow,
         webPreferences: {
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js'),
-        },
+        }
     });
 
     activationWindow.loadFile('pages/activation.html');
@@ -110,7 +108,6 @@ function openActivationWindow() {
     activationWindow.on('closed', () => {
         ipcMain.removeListener('close-activation-window', closeHandler);
     });
-
 }
 
 function openSelectSubjectDialog() {
@@ -123,7 +120,7 @@ function openSelectSubjectDialog() {
         webPreferences: {
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js'),
-        },
+        }
     });
 
     selectSubjectWindow.loadFile('pages/select-subject.html');
@@ -144,18 +141,27 @@ function openSelectSubjectDialog() {
     });
 }
 
-function openExamWindow() {
+function openExamWindow(examData) {
     const examWindow = new BrowserWindow({
         modal: true,
         frame: false,
         parent: mainWindow,
         webPreferences: {
             contextIsolation: true,
+        //    devTools: false,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
 
-    examWindow.loadFile('pages/cbt.html');
+    //examWindow.setFullScreen(true);
+    examWindow.loadFile('pages/cbt.html').then(()=>{
+        examWindow.webContents.send('start-exam', examData);
+    });
+    
+    // examWindow.webContents.on('devtools-opened', ()=>{
+    //     examWindow.webContents.closeDevTools();
+    // });
+    
 
     const closeHandler = () => {
         if (examWindow && !examWindow.isDestroyed()) {
@@ -167,7 +173,7 @@ function openExamWindow() {
     ipcMain.once('close-exam-window', closeHandler);
 
     // When the window is closed, remove the listener to avoid referencing a destroyed window
-    selectSubjectWindow.on('closed', () => {
+    examWindow.on('closed', () => {
         ipcMain.removeListener('close-exam-window', closeHandler);
     });
 }
@@ -181,8 +187,9 @@ ipcMain.on('open-activation-window', () => {
     openActivationWindow();
 });
 
-ipcMain.on('open-exam-window', () => {
-    openExamWindow();
+ipcMain.on('open-exam-window', (_, examData) => {
+    console.log("Exam ", examData);
+    openExamWindow(examData);
 });
 
 // IPC handler for fetching questions

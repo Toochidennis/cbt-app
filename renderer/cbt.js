@@ -1,21 +1,5 @@
 const state = require('./state.js');
 
-
-// window.api.onSecondWindowClosed((_, data) => {
-//     if (data.action === 'cbt') {
-//         state.subjects = data.subjects;
-//         state.duration = data.duration;
-//         state.selectedSubjects = data.selectedSubjects;
-//         state.year = data.year;
-
-//         init();
-
-//         window.api.setFullScreen(true);
-
-//         loadPage(data.action);
-//     }
-// });
-
 let timer;
 let totalSeconds = 0;
 
@@ -30,6 +14,16 @@ const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
 const attemptedDiv = document.getElementById('attempted-questions');
 
+console.log('data, ', state);
+window.api.startExam((_, data) => {
+     console.log('data, ', data);
+    // state.subjects = data.subjects;
+    // state.duration = data.duration;
+    // state.selectedSubjects = data.selectedSubjects;
+    // state.year = data.year;
+
+  //  init();
+});
 
 function startTimer() {
     if (timer) return; // Prevent multiple intervals
@@ -53,7 +47,6 @@ function startTimer() {
         }
     }, 1000);
 }
-
 
 function resetTimer() {
     clearInterval(timer);
