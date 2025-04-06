@@ -144,6 +144,34 @@ function openSelectSubjectDialog() {
     });
 }
 
+function openExamWindow() {
+    const examWindow = new BrowserWindow({
+        modal: true,
+        frame: false,
+        parent: mainWindow,
+        webPreferences: {
+            contextIsolation: true,
+            preload: path.join(__dirname, 'preload.js'),
+        },
+    });
+
+    examWindow.loadFile('pages/cbt.html');
+
+    const closeHandler = () => {
+        if (examWindow && !examWindow.isDestroyed()) {
+            examWindow.close();
+        }
+    };
+
+    // Register the listener for this window instance
+    ipcMain.once('close-exam-window', closeHandler);
+
+    // When the window is closed, remove the listener to avoid referencing a destroyed window
+    selectSubjectWindow.on('closed', () => {
+        ipcMain.removeListener('close-exam-window', closeHandler);
+    });
+}
+
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
@@ -151,6 +179,10 @@ ipcMain.on('open-subject-window', () => {
 
 ipcMain.on('open-activation-window', () => {
     openActivationWindow();
+});
+
+ipcMain.on('open-exam-window', () => {
+    openExamWindow();
 });
 
 // IPC handler for fetching questions

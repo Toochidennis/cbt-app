@@ -4431,7 +4431,6 @@ function populateCourses(courses) {
 
     // populate the elements with content
     courseImage.src = course.image_url;
-    console.log(course.image_url);
     courseImage.alt = "Course Image"
     courseCategory.textContent = course.category;
     courseTitle.textContent = course.course_name;
@@ -4440,7 +4439,7 @@ function populateCourses(courses) {
     footerImage.alt = "Course Footer Image"
     footerText.innerHTML = `Easter Kids Coding Fest <br> Powered By Digital Dreams`;
     takeCourseBtn.textContent = "Take Course";
-    
+
 
     courseContent.append(courseTitle);
     courseContent.append(courseDescription);

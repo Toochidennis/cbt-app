@@ -472,12 +472,12 @@ function loadPage(page) {
     }
 }
 
-function switchPage(page, script) {
+function switchPage(page) {
     fetch(`pages/${page}.html`)
         .then(response => response.text())
         .then(html => {
             document.getElementById("content").innerHTML = html;
-            return fetch(`renderer/${script}`); // Fetch the script content
+            return fetch(`js-bundle/${page}.js`); // Fetch the script content
         })
         .then(response => response.text())
         .then(jsCode => {

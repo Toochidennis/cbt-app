@@ -15062,7 +15062,39 @@ exports.valueOrDefault = valueOrDefault;
 
 
 },{"@kurkle/color":1}],5:[function(require,module,exports){
+function loadPage(page) {
+    const homeDiv = document.getElementById('home');
+    const examDiv = document.getElementById('cbt');
+
+    if (page === 'cbt') {
+        homeDiv.classList.add('hidden');
+        examDiv.classList.remove('hidden');
+    } else if (page === 'home') {
+        examDiv.classList.add('hidden');
+        
+        homeDiv.classList.remove('hidden');
+    }
+}
+
+function switchPage(page) {
+    fetch(`pages/${page}.html`)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("content").innerHTML = html;
+            return fetch(`js-bundle/${page}.js`); // Fetch the script content
+        })
+        .then(response => response.text())
+        .then(jsCode => {
+            eval(jsCode); // Execute the script manually
+        })
+        .catch(error => console.error("Error loading page/script:", error));
+}
+
+module.exports = {loadPage, switchPage}
+
+},{}],6:[function(require,module,exports){
 const Chart = require('chart.js/auto');
+const loadPage = require('./navigation');
 
 let state = [];
 
@@ -15074,6 +15106,10 @@ const subjectShortNames = {
     "literature in english": "Literature",
 };
 
+let pointsChart = null;
+let performanceChart = null;
+let analysisChart = null;
+
 const closeBtn = document.getElementById('close-btn');
 const score = document.getElementById('you-scored');
 const pointsCanvas = document.getElementById('points-chart').getContext('2d');
@@ -15082,13 +15118,52 @@ const performanceCanvas = document.getElementById('doughnut-chart').getContext('
 const analysisCanvas = document.getElementById('analysis-chart').getContext('2d');
 const questionsContainer = document.getElementById('questions-container');
 
+
+window.api.getExamSummary((_, summary) => {
+    state = summary;
+    let overallScore = 0;
+    let overallMaxScore = 0;
+    let chartsData = {};
+
+    Object.entries(summary.subjects).forEach(([subject, subjectState]) => {
+        const numQuestions = subjectState.questions.length;
+        const subjectMaxScore = numQuestions * 2; // Each question is 2 marks
+        let subjectScore = subjectState.questions.reduce((score, question, index) => {
+            const selectedAnswer = subjectState.userAnswers[index];
+            const userAnswerIndex = question.options.findIndex(option =>
+                (option.text?.trim() || option.image) === selectedAnswer
+            );
+            return userAnswerIndex + 1 === question.answer ? score + 2 : score;
+        }, 0);
+
+        overallScore += subjectScore;
+        overallMaxScore += subjectMaxScore;
+        chartsData[subject] = { score: subjectScore, maxScore: subjectMaxScore };
+    });
+
+    score.textContent = `You scored ${overallScore} points`;
+    const result = processScores(chartsData);
+
+    // Plot charts
+    plotPointsChart(result.totalScore, result.totalMaxScore);
+    plotPerformanceChart(result.overallPassed, result.overallFailed, result.totalMaxScore);
+    plotAnalysisChart(result.subjectsData);
+    statsChart(result.subjectsData);
+
+    state.currentSubject = state.selectedSubjects[0];
+    renderTabs();
+    renderQuestion();
+});
+
+
 function renderTabs() {
-    const tabContainer = document.querySelector('.tab');
+    const tabContainer = document.getElementById('summary-tab');
     tabContainer.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
 
     state.selectedSubjects.forEach((subject, index) => {
+       
         const tabButton = document.createElement('button');
         tabButton.classList.add('tablinks');
         tabButton.textContent = subject;
@@ -15133,6 +15208,7 @@ async function renderQuestion() {
 
         const questionImage = document.createElement('img');
         questionImage.classList.add('question-image');
+
         if (question.question_image?.trim()) {
             questionImage.src = await window.api.getImagePath(state.currentSubject, question.question_image);
             questionImage.style.display = "block";
@@ -15141,16 +15217,26 @@ async function renderQuestion() {
         }
         imageDiv.appendChild(questionImage);
 
+        const passageDiv = document.createElement('div');
+        passageDiv.classList.add('question-text');
+
+        if(question.passage.trim() !== ""){
+            passageDiv.innerHTML = capitalizeSentence(question.passage.trim())
+            passageDiv.style.display = "block";
+        } else {
+            passageDiv.style.display = "none";
+        }
+
         const questionText = document.createElement('div');
         questionText.classList.add('question-text');
-        questionText.textContent = question.question_text;
+        questionText.innerHTML = question.question_text;
 
         const optionsContainer = document.createElement('div');
-        optionsContainer.classList.add('options-container');
+        optionsContainer.classList.add('options-container-summary');
 
         const selectedAnswer = subjectState.userAnswers[index];
 
-        // Render options
+        
         question.options.forEach(async (option) => {
             const label = document.createElement('label');
 
@@ -15180,15 +15266,19 @@ async function renderQuestion() {
             optionsContainer.appendChild(label);
         });
 
-        questionDiv.append(progress, imageDiv, questionText, optionsContainer);
+        questionDiv.append(progress, imageDiv, passageDiv, questionText, optionsContainer);
         questionsContent.append(questionLine, questionDiv);
 
         // Highlight correct & incorrect answers
-        const optionIndex = question.options.findIndex(option => 
+        const optionIndex = question.options.findIndex(option =>
             (option.text?.trim() || option.image) === selectedAnswer
         );
 
         const correctAnswerIndex = question.answer - 1;
+
+       // console.log('Selected answer index ', optionIndex);
+        //console.log('Correct answer ', correctAnswerIndex);
+        //console.log('Select answer ', selectedAnswer);
 
         if (optionIndex === correctAnswerIndex) {
             questionLine.classList.add("correct-line");
@@ -15210,46 +15300,9 @@ function capitalizeSentence(text) {
 
 
 function getShortSubjectName(subject) {
-    return subjectShortNames[subject.toLowerCase()] || subject; 
+    return subjectShortNames[subject.toLowerCase()] || subject;
 }
 
-
-function loadExamSummary() {
-    window.api.getExamSummary((_, summary) => {
-        state = summary;
-        let overallScore = 0;
-        let overallMaxScore = 0;
-        let chartsData = {};
-
-        Object.entries(summary.subjects).forEach(([subject, subjectState]) => {
-            const numQuestions = subjectState.questions.length;
-            const subjectMaxScore = numQuestions * 2; // Each question is 2 marks
-            let subjectScore = subjectState.questions.reduce((score, question, index) => {
-                const selectedAnswer = subjectState.userAnswers[index];
-                const userAnswerIndex = question.options.findIndex(option => 
-                    (option.text?.trim() || option.image) === selectedAnswer
-                );
-                return userAnswerIndex + 1 === question.answer ? score + 2 : score;
-            }, 0);
-
-            overallScore += subjectScore;
-            overallMaxScore += subjectMaxScore;
-            chartsData[subject] = { score: subjectScore, maxScore: subjectMaxScore };
-        });
-
-        score.textContent = `You scored ${overallScore} points`;
-        const result = processScores(chartsData);
-
-        // Plot charts
-        pointsChart(result.totalScore, result.totalMaxScore);
-        performanceChart(result.overallPassed, result.overallFailed, result.totalMaxScore);
-        analysisChart(result.subjectsData);
-
-        state.currentSubject = state.selectedSubjects[0];
-        renderTabs();
-        renderQuestion();
-    });
-}
 
 const processScores = (subjects) => {
     let totalScore = 0, totalMaxScore = 0;
@@ -15265,10 +15318,14 @@ const processScores = (subjects) => {
 };
 
 
-function pointsChart(score, maxScore) {
+function plotPointsChart(score, maxScore) {
     chartText.innerHTML = `${score} <span>points</span>`;
 
-    new Chart(pointsCanvas, {
+    if (pointsChart) {
+        pointsChart.destroy();
+    }
+
+    pointsChart = new Chart(pointsCanvas, {
         type: 'doughnut',
         data: {
             datasets: [{
@@ -15293,8 +15350,13 @@ function pointsChart(score, maxScore) {
     });
 }
 
-function performanceChart(passedScores, failedScores, maxScore) {
-    new Chart(performanceCanvas, {
+function plotPerformanceChart(passedScores, failedScores, maxScore) {
+
+    if (performanceChart) {
+        performanceChart.destroy();
+    }
+
+    performanceChart = new Chart(performanceCanvas, {
         type: 'doughnut',
         data: {
             labels: ['Correct', 'Wrong'],
@@ -15329,7 +15391,46 @@ function performanceChart(passedScores, failedScores, maxScore) {
     });
 }
 
-function analysisChart(subjectsData) {
+function statsChart(subjects) {
+    const statsContainer = document.getElementById('stats');
+    statsContainer.innerHTML = '';
+
+    const shortSubject = state.selectedSubjects.map(getShortSubjectName);
+
+    subjects.map((data, i) => {
+        const statsContent = document.createElement('div');
+        statsContent.classList.add('stats-content');
+
+        statsContent.innerHTML =
+            `
+            <div class="line"></div>
+            <div class="stats-details" id="stats">
+                <div>${shortSubject[i]}</div>
+                <div class="correct">
+                    <div id="correct-circle"></div>
+                    <div id="correct-text">Correct</div>
+                </div>
+                <div id="correct-score">${data.passed} points</div>
+
+                <div class="incorrect">
+                    <div id="incorrect-circle"></div>
+                    <div id="incorrect-text">Incorrect</div>
+                </div>
+                <div id="incorrect-score">${data.failed} points</div>
+            </div>
+            <canvas id="subject-chart" width="66" height="80"></canvas>
+        `;
+
+        statsContainer.appendChild(statsContent);
+    });
+
+}
+
+function plotAnalysisChart(subjectsData) {
+
+    if (analysisChart) {
+        analysisChart.destroy();
+    }
     // Extract keys (subjects)
     const keys = Object.keys(subjectsData);
 
@@ -15346,7 +15447,7 @@ function analysisChart(subjectsData) {
         "rgba(12, 202, 223, 0.2)"
     ];
 
-    new Chart(analysisCanvas, {
+    analysisChart = new Chart(analysisCanvas, {
         type: "bar",
         data: {
             labels: chartLabels,
@@ -15405,8 +15506,7 @@ function analysisChart(subjectsData) {
 }
 
 closeBtn.addEventListener('click', () => {
-    window.api.closeCongratsWindow();
+    loadPage('home');
 });
 
-loadExamSummary();
-},{"chart.js/auto":2}]},{},[5]);
+},{"./navigation":5,"chart.js/auto":2}]},{},[6]);
