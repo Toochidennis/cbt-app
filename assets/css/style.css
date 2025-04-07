@@ -126,6 +126,7 @@
     display: flex;
     gap: 5px;
     margin-right: 8px;
+   
 }
 
 /* Individual Button Styling */
@@ -142,7 +143,6 @@
 .window-controls .button img.icon {
     width: 20px;
     height: 20px;
-    background: #000;
 }
 
 .window-controls .button:hover {
@@ -150,10 +150,17 @@
     /* Light hover effect */
 }
 
+.window-controls .button#min-button:hover {
+    background-color: blue;
+}
+.window-controls .button#max-button:hover {
+    background-color: blue;
+}
 .window-controls .button#close-button:hover {
     background-color: #E81123;
-    /* Red hover effect for close button */
 }
+
+
 
 #content {
     margin-top: 2.5em;
