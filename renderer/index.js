@@ -1,8 +1,6 @@
-const { switchPage }  = require( "./navigation.js");
+const { switchPage }  = require( "./navigation");
 
 document.addEventListener('DOMContentLoaded', () => {
-    switchPage("cbt-dashboard");
-
     const controlsContainer = document.getElementById('controls-container');
     const search = document.getElementById('search');
     const maximizeButton = document.getElementById("max-button");
@@ -10,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cbtBtn = document.getElementById('cbt-btn')
     const typingBtn = document.getElementById('typing-btn')
     const learnBtn = document.getElementById('learn-btn')
+
+    switchPage("cbt-dashboard");
 
     cbtBtn.addEventListener('click', ()=>{
         switchPage("cbt-dashboard");
@@ -29,15 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     maximizeButton.addEventListener("click", () => {
-        // window.api.maximize();
+        window.api.maximize();
     });
 
     window.api.onMaximized(() => {
-        maxIcon.srcset = "assets/icons/restore.svg"
+        maxIcon.srcset = "assets/img/restore-down.png"
     });
 
     window.api.onRestored(() => {
-        maxIcon.srcset = "assets/icons/max.svg"
+        maxIcon.srcset = "assets/img/maximize2.png"
     });
 
     document.getElementById("close-button").addEventListener("click", () => {

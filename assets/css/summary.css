@@ -1,30 +1,12 @@
 .summary-page {
     display: flex;
-    flex-direction: column;
-    background-color: #f6f6f6;
-    padding: 2rem;
     height: 100vh;
-    margin-top: 3em;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #f6f6f6;
+    padding-top: 3.5em;
     overflow: hidden;
     font-family: "Urbanist";
-}
-
-.summary-page .header {
-    display: flex;
-    justify-content: end;
-}
-
-.close {
-    border: 1.5px solid #426bff;
-    border-radius: 10px;
-    height: 40px;
-    padding: 1em 2em;
-    color: #426bff;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
 }
 
 h2 {
@@ -46,7 +28,6 @@ h2 {
     margin-top: 1em;
     justify-content: space-between;
     padding-top: 1em;
-
     padding-right: 1em;
     padding-left: 2em;
     border-radius: 16px;

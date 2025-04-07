@@ -1,8 +1,4 @@
-const switchPage =  require( "./navigation.js");
-
-
 const keySequenceContainer = document.querySelector(".key-sequence");
-const progress = document.querySelector(".progress");
 const restartButton = document.querySelector(".restart-btn");
 const timerDisplay = document.querySelector(".timer");
 const keyboardKeys = document.querySelectorAll(".keyboard .key");
@@ -22,7 +18,6 @@ let countdownInterval;
 let score = 0;
 let level = 1; // Start at level 1
 const maxLevel = 6; // Maximum level
-const targetScore = 50; // Target score for the progress bar
 let gameActive = true; // Flag to track if the game is active
 let currentWordIndex = 0; // Track the current word being typed
 let currentLetterIndex = 0; // Track the current letter in the word
@@ -180,7 +175,6 @@ const initializeSequence = () => {
     usedLetters = []; // Reset used letters for level 1
     generateTotalLetters(); // Generate all 200 letters
     displayNextBatch(); // Display the first batch of letters
-    progress.style.width = "0%"; // Reset progress bar
     score = 0; // Reset score
     gameActive = true; // Reactivate the game
     playBackgroundMusic(); // Start or resume background music
@@ -217,11 +211,6 @@ const highlightNextKey = () => {
     }
 };
 
-// Function to update the progress bar
-const updateProgressBar = () => {
-    const progressPercentage = (score / targetScore) * 100;
-    progress.style.width = `${Math.min(progressPercentage, 100)}%`; // Cap at 100%
-};
 
 // Function to start the countdown timer
 const startCountdown = () => {
@@ -340,7 +329,6 @@ const handleTyping = (inputChar) => {
                 resetWordState(); // Reset word state
             }, 200);
             score++; // Increment score
-            updateProgressBar(); // Update the progress bar
         } else {
             highlightNextLetter(); // Highlight the next letter in the word
         }

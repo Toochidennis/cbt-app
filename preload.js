@@ -14,6 +14,7 @@ contextBridge.exposeInMainWorld('api', {
     sendExamResults: (summaryData) => ipcRenderer.send("send-exam-results", summaryData),
     onSecondWindowClosed: (callback) => ipcRenderer.on('second-window-closed', callback),
     openExamWindow: (examData) => ipcRenderer.send('open-exam-window', examData),
+    closeExamWindow: () => ipcRenderer.send('close-exam-window'),
     openLearnCourseWindow: (courseData) => ipcRenderer.send('open-learn-course-window', courseData),
     startExam: (examData) => ipcRenderer.on('start-exam', examData),
     setFullScreen: (isFullScreen) => ipcRenderer.send('set-fullscreen', isFullScreen),

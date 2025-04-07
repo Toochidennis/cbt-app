@@ -1,9 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const switchPage =  require( "./navigation.js");
-
-
 const keySequenceContainer = document.querySelector(".key-sequence");
-const progress = document.querySelector(".progress");
 const restartButton = document.querySelector(".restart-btn");
 const timerDisplay = document.querySelector(".timer");
 const keyboardKeys = document.querySelectorAll(".keyboard .key");
@@ -23,7 +19,6 @@ let countdownInterval;
 let score = 0;
 let level = 1; // Start at level 1
 const maxLevel = 6; // Maximum level
-const targetScore = 50; // Target score for the progress bar
 let gameActive = true; // Flag to track if the game is active
 let currentWordIndex = 0; // Track the current word being typed
 let currentLetterIndex = 0; // Track the current letter in the word
@@ -120,8 +115,8 @@ const englishWords = {
         "action", "beauty", "charge", "desert", "effort", "flight", "glance", "honest", "insect", "jungle", "kitten", "legend", "moment", "nature", "orange", "pirate", "rescue", "spirit", "temple", "vision"]
 };
 
-let usedWords = []; // Track used words for the current level
-let usedLetters = []; // Track used letters for level 1
+let usedWords = []; 
+let usedLetters = []; 
 
 // Function to generate random words or letters based on the current level without repetition
 const getRandomWordOrChar = () => {
@@ -181,7 +176,6 @@ const initializeSequence = () => {
     usedLetters = []; // Reset used letters for level 1
     generateTotalLetters(); // Generate all 200 letters
     displayNextBatch(); // Display the first batch of letters
-    progress.style.width = "0%"; // Reset progress bar
     score = 0; // Reset score
     gameActive = true; // Reactivate the game
     playBackgroundMusic(); // Start or resume background music
@@ -218,11 +212,6 @@ const highlightNextKey = () => {
     }
 };
 
-// Function to update the progress bar
-const updateProgressBar = () => {
-    const progressPercentage = (score / targetScore) * 100;
-    progress.style.width = `${Math.min(progressPercentage, 100)}%`; // Cap at 100%
-};
 
 // Function to start the countdown timer
 const startCountdown = () => {
@@ -341,7 +330,6 @@ const handleTyping = (inputChar) => {
                 resetWordState(); // Reset word state
             }, 200);
             score++; // Increment score
-            updateProgressBar(); // Update the progress bar
         } else {
             highlightNextLetter(); // Highlight the next letter in the word
         }
@@ -456,36 +444,5 @@ nextLevelBtn.addEventListener("click", () => {
     startCountdown(); // Restart the timer
     highlightNextLetter(); // Highlight the first letter of the first word
 });
-
-},{"./navigation.js":2}],2:[function(require,module,exports){
-function loadPage(page) {
-    const homeDiv = document.getElementById('home');
-    const examDiv = document.getElementById('cbt');
-
-    if (page === 'cbt') {
-        homeDiv.classList.add('hidden');
-        examDiv.classList.remove('hidden');
-    } else if (page === 'home') {
-        examDiv.classList.add('hidden');
-        
-        homeDiv.classList.remove('hidden');
-    }
-}
-
-function switchPage(page) {
-    fetch(`pages/${page}.html`)
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("content").innerHTML = html;
-            return fetch(`js-bundle/${page}.js`); // Fetch the script content
-        })
-        .then(response => response.text())
-        .then(jsCode => {
-            eval(jsCode); // Execute the script manually
-        })
-        .catch(error => console.error("Error loading page/script:", error));
-}
-
-module.exports = {loadPage, switchPage}
 
 },{}]},{},[1]);

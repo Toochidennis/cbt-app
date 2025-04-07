@@ -1,4 +1,4 @@
-const state = require('./state.js');
+const state = require('./state');
 
 let timer;
 let totalSeconds = 0;
@@ -14,15 +14,13 @@ const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
 const attemptedDiv = document.getElementById('attempted-questions');
 
-console.log('data, ', state);
 window.api.startExam((_, data) => {
-    console.log('data, ', data);
     state.subjects = data.subjects;
     state.duration = data.duration;
     state.selectedSubjects = data.selectedSubjects;
     state.year = data.year;
 
-    //  init();
+    init();
 });
 
 function startTimer() {
@@ -232,15 +230,23 @@ function nextHandler() {
     handleNavigation(1);
 }
 
-
 function prevHandler() {
     handleNavigation(-1);
 }
 
 function submitHandler() {
+    loadSummaryPage();
+}
+
+function loadSummaryPage() {
+     resetTimer();
     const correctedData = JSON.parse(JSON.stringify(state));
     window.api.sendExamResults(correctedData);
-    loadPage('summary');
+
+    document.getElementById('cbt').style.display = 'none';
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('summary').style.display = 'block';
+    document.getElementById('close-btn').style.display = 'block';
 }
 
 function keyboardShortcutsHandler(event) {
@@ -302,4 +308,7 @@ function init() {
     prevBtn.addEventListener('click', prevHandler);
     submitBtn.addEventListener('click', submitHandler);
     document.addEventListener('keydown', keyboardShortcutsHandler);
+    document.getElementById('close-btn').addEventListener('click', ()=>{
+        window.api.closeExamWindow();
+    });
 }

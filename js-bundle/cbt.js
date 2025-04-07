@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const state = require('./state.js');
+const state = require('./state');
 
 let timer;
 let totalSeconds = 0;
@@ -15,15 +15,13 @@ const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
 const attemptedDiv = document.getElementById('attempted-questions');
 
-console.log('data, ', state);
 window.api.startExam((_, data) => {
-     console.log('data, ', data);
-    // state.subjects = data.subjects;
-    // state.duration = data.duration;
-    // state.selectedSubjects = data.selectedSubjects;
-    // state.year = data.year;
+    state.subjects = data.subjects;
+    state.duration = data.duration;
+    state.selectedSubjects = data.selectedSubjects;
+    state.year = data.year;
 
-  //  init();
+    init();
 });
 
 function startTimer() {
@@ -233,15 +231,23 @@ function nextHandler() {
     handleNavigation(1);
 }
 
-
 function prevHandler() {
     handleNavigation(-1);
 }
 
 function submitHandler() {
+    loadSummaryPage();
+}
+
+function loadSummaryPage() {
+     resetTimer();
     const correctedData = JSON.parse(JSON.stringify(state));
     window.api.sendExamResults(correctedData);
-    loadPage('summary');
+
+    document.getElementById('cbt').style.display = 'none';
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('summary').style.display = 'block';
+    document.getElementById('close-btn').style.display = 'block';
 }
 
 function keyboardShortcutsHandler(event) {
@@ -303,8 +309,11 @@ function init() {
     prevBtn.addEventListener('click', prevHandler);
     submitBtn.addEventListener('click', submitHandler);
     document.addEventListener('keydown', keyboardShortcutsHandler);
+    document.getElementById('close-btn').addEventListener('click', ()=>{
+        window.api.closeExamWindow();
+    });
 }
-},{"./state.js":2}],2:[function(require,module,exports){
+},{"./state":2}],2:[function(require,module,exports){
 function getInitialState() {
     return {
         subjects: {},

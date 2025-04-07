@@ -66,16 +66,10 @@ function createWindow() {
         mainWindow.close();
     });
 
-    ipcMain.on('set-fullscreen', (_, isFullScreen) => {
-        mainWindow.setFullScreen(isFullScreen);
-        mainWindow.webContents.send('hide-controls', isFullScreen);
-    });
-
-    ipcMain.on('send-exam-results', (_, summaryData) => {
-        mainWindow.webContents.send('get-exam-summary', summaryData);
-        mainWindow.webContents.send('show-controls', true);
-        mainWindow.setFullScreen(false);
-    });
+    // ipcMain.on('set-fullscreen', (_, isFullScreen) => {
+    //     mainWindow.setFullScreen(isFullScreen);
+    //     mainWindow.webContents.send('hide-controls', isFullScreen);
+    // });
 
     ipcMain.on('open-link', (_, url) => {
         shell.openExternal(url);
@@ -148,33 +142,27 @@ function openExamWindow(examData) {
         parent: mainWindow,
         webPreferences: {
             contextIsolation: true,
-        //    devTools: false,
+                devTools: false,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
 
-    //examWindow.setFullScreen(true);
-    examWindow.loadFile('pages/cbt.html').then(()=>{
+    examWindow.setFullScreen(true);
+    examWindow.loadFile('pages/cbt.html').then(() => {
         examWindow.webContents.send('start-exam', examData);
     });
-    
-    // examWindow.webContents.on('devtools-opened', ()=>{
-    //     examWindow.webContents.closeDevTools();
-    // });
-    
 
-    const closeHandler = () => {
-        if (examWindow && !examWindow.isDestroyed()) {
-            examWindow.close();
-        }
-    };
+    examWindow.webContents.on('devtools-opened', ()=>{
+        examWindow.webContents.closeDevTools();
+    });
+
+    ipcMain.on('send-exam-results', (_, summaryData) => {
+        examWindow.webContents.send('get-exam-summary', summaryData);
+    });
 
     // Register the listener for this window instance
-    ipcMain.once('close-exam-window', closeHandler);
-
-    // When the window is closed, remove the listener to avoid referencing a destroyed window
-    examWindow.on('closed', () => {
-        ipcMain.removeListener('close-exam-window', closeHandler);
+    ipcMain.on('close-exam-window', () => {
+        examWindow.close();
     });
 }
 
@@ -185,16 +173,16 @@ function openLearnCourseWindow() {
         parent: mainWindow,
         webPreferences: {
             contextIsolation: true,
-        //    devTools: false,
+            //    devTools: false,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
 
     learnCourseWindow.setFullScreen(true);
-    learnCourseWindow.loadFile('pages/learn-course.html').then(()=>{
-      //  learnCoursesWindow.webContents.send('start-exam', );
+    learnCourseWindow.loadFile('pages/learn-course.html').then(() => {
+        //  learnCoursesWindow.webContents.send('start-exam', );
     });
-    
+
     // examWindow.webContents.on('devtools-opened', ()=>{
     //     examWindow.webContents.closeDevTools();
     // });
@@ -227,7 +215,7 @@ ipcMain.on('open-exam-window', (_, examData) => {
     openExamWindow(examData);
 });
 
-ipcMain.on('open-learn-course-window', ()=>{
+ipcMain.on('open-learn-course-window', () => {
     openLearnCourseWindow();
 });
 

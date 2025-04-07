@@ -16,21 +16,22 @@
         <header>
             <div class="logo">
                 <img class="graduation-cap" src="../assets/img/graduationcap.svg" />
-                <p class="link-skool">
-                    <span class="link">Link</span><span class="text-wrapper-8">Skool</span>
+                <p>
+                    <span class="link">Link</span><span class="skool">Skool</span>
                 </p>
             </div>
-            <div class="trouble">
-                <div class="watch-container">
+            <div class="timer" id="timer">
+                <div class="watch">
                     <img class="stopwatch" src="../assets/icons/icons8-stopwatch-1-1.svg" />
-                    <div id="countdown"></div>
+                    <div id="countdown">10 : 10 : 10</div>
                 </div>
-                <div class="submit-button" id="submit-button">
-                    <p class="submit-text">End and Submit</p>
-                </div>
+                <button id="submit-button">End and submit</button>
+            </div>
+            <div class="close" style="display: none;" id="close-btn">
+                Back to Home
             </div>
         </header>
-        <div class="content-area" id="cbt">
+        <div class="cbt-container" id="cbt">
             <div class="cbt-content">
                 <div class="cbt-header">
                     <div class="tab"></div>
@@ -78,13 +79,8 @@
             </div>
         </div>
 
-        <div class="content" id="summary" style="display: none;">
+        <div class="content" style="display: none;" id="summary" >
             <div class="summary-page">
-                <div class="header">
-                    <div class="close" id="close-btn">
-                        Back to Home
-                    </div>
-                </div>
                 <div class="summary-content">
                     <h2>Result OverView</h2>
                     <div class="content-1">

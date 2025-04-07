@@ -1,3 +1,90 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    height: 54px;
+    padding:  2em;
+    box-shadow: inset 0px -1px 0px #e8eaef;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    font-style: italic;
+    color: #426CFF;
+}
+
+.graduation-cap {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.logo p {
+    font-family: "STIX Two Text";
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.skool {
+    font-style: italic;
+    color: #fc9338;
+}
+
+.timer, .watch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.watch{
+    gap: 10px;
+}
+
+.watch div{
+    color: #ff5252;
+    font-family: "Urbanist", Helvetica;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.stopwatch{
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.timer button{
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #ff5252;
+    padding: .8em;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: "Urbanist";
+    font-size: 1rem;
+}
+
+.timer button:active, .close {
+    transform: scale(0.98);
+}
+
+.close {
+    display: none;
+    border: 1.5px solid #426bff;
+    border-radius: 10px;
+    padding: 0.8em 1.5em;
+    color: #426bff;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
 
 .cbt-content {
     background: white;
@@ -6,7 +93,7 @@
     flex-direction: column;
     height: 100vh;
 }
-    
+
 .cbt-header {
     position: sticky;
     top: 0;
