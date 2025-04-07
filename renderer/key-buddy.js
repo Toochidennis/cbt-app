@@ -119,8 +119,8 @@ const englishWords = {
         "action", "beauty", "charge", "desert", "effort", "flight", "glance", "honest", "insect", "jungle", "kitten", "legend", "moment", "nature", "orange", "pirate", "rescue", "spirit", "temple", "vision"]
 };
 
-let usedWords = []; // Track used words for the current level
-let usedLetters = []; // Track used letters for level 1
+let usedWords = []; 
+let usedLetters = []; 
 
 // Function to generate random words or letters based on the current level without repetition
 const getRandomWordOrChar = () => {

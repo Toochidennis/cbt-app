@@ -16,13 +16,13 @@ const attemptedDiv = document.getElementById('attempted-questions');
 
 console.log('data, ', state);
 window.api.startExam((_, data) => {
-     console.log('data, ', data);
-    // state.subjects = data.subjects;
-    // state.duration = data.duration;
-    // state.selectedSubjects = data.selectedSubjects;
-    // state.year = data.year;
+    console.log('data, ', data);
+    state.subjects = data.subjects;
+    state.duration = data.duration;
+    state.selectedSubjects = data.selectedSubjects;
+    state.year = data.year;
 
-  //  init();
+    //  init();
 });
 
 function startTimer() {
