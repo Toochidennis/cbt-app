@@ -93,6 +93,14 @@ const pauseBackgroundMusic = () => {
     }
 };
 
+// Function to calculate the number of letters to display based on the level
+const lettersPerScreenWidth = () => {
+    const screenWidth = window.innerWidth;
+    const letterWidth = 40; // Approximate width of each letter in pixels
+    const baseLetters = Math.floor((screenWidth * 0.6) / letterWidth); // Base number of letters for level 1
+    return Math.max(7, baseLetters - (level - 1) * 4); // Reduce 2 letters per level, minimum 5
+};
+
 const englishWords = {
     2: ["an", "as", "at", "be", "by", "do", "go", "he", "if", "in", "is", "it", "me", "my", "no", "of", "on", "or", "so", "to", "up", "us", "we", 
         "am", "ok", "hi", "oh", "um", "ex", "ax", "id", "ad", "pi", "ox", "nu", "op", "lo", "yo", "ti", "xi", "za", "et", "jo"],
@@ -140,6 +148,27 @@ const generateTotalLetters = () => {
     }
 };
 
+// // Function to display the next batch of letters
+const displayNextBatch = () => {
+    keySequenceContainer.innerHTML = ""; // Clear the current sequence
+    const batchSize = lettersPerScreenWidth(); // Calculate the number of letters to display
+    const batch = totalLetters.splice(0, batchSize); // Get the next batch of letters
+    batch.forEach((word) => {
+        const newKey = document.createElement("span");
+        newKey.classList.add("intro-key");
+        // Wrap each letter in a span for individual styling
+        newKey.innerHTML = word
+            .split("")
+            .map((letter) => `<span>${letter}</span>`)
+            .join("");
+        
+        keySequenceContainer.appendChild(newKey);
+    });
+    currentWordIndex = 0; // Reset word index
+    currentLetterIndex = 0; // Reset letter index
+    highlightNextLetter(); // Highlight the first letter of the first word
+};
+
 // Function to initialize the sequence
 const initializeSequence = () => {
     usedWords = []; // Reset used words for the new level
@@ -172,7 +201,7 @@ const highlightNextLetter = () => {
 const highlightNextKey = () => {
     if (!gameActive) return; // Stop highlighting if the game is over
     keyboardKeys.forEach((key) => key.classList.remove("suggested")); // Remove previous highlights
-    const currentKey = keySequenceContainer.querySelector(".intro-key");
+    const currentKey = keySequenceContainer.querySelector(".key");
     if (currentKey) {
         keyboardKeys.forEach((key) => {
             if (key.textContent.toUpperCase() === currentKey.textContent) {
@@ -304,6 +333,22 @@ const handleTyping = (inputChar) => {
             highlightNextLetter(); // Highlight the next letter in the word
         }
     }
+};
+
+// Function to reset word state after a word is removed
+const resetWordState = () => {
+    currentLetterIndex = 0; // Reset letter index for the new word
+    if (keySequenceContainer.children.length < lettersPerScreenWidth()) {
+        const newKey = document.createElement("span");
+        newKey.classList.add("key");
+        newKey.innerHTML = getRandomWordOrChar()
+            .split("")
+            .map((letter) => `<span>${letter}</span>`)
+            .join("");
+        keySequenceContainer.appendChild(newKey);
+    }
+    currentWordIndex = 0; // Reset to the first word in the sequence
+    highlightNextLetter(); // Highlight the first letter of the next word
 };
 
 // Function to toggle the visibility of dropdowns on click
