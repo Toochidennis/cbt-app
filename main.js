@@ -178,6 +178,42 @@ function openExamWindow(examData) {
     });
 }
 
+function openLearnCourseWindow() {
+    const learnCourseWindow = new BrowserWindow({
+        modal: true,
+        frame: false,
+        parent: mainWindow,
+        webPreferences: {
+            contextIsolation: true,
+        //    devTools: false,
+            preload: path.join(__dirname, 'preload.js'),
+        },
+    });
+
+    learnCourseWindow.setFullScreen(true);
+    learnCourseWindow.loadFile('pages/learn-course.html').then(()=>{
+      //  learnCoursesWindow.webContents.send('start-exam', );
+    });
+    
+    // examWindow.webContents.on('devtools-opened', ()=>{
+    //     examWindow.webContents.closeDevTools();
+    // });
+
+    const closeHandler = () => {
+        if (learnCourseWindow && !learnCourseWindow.isDestroyed()) {
+            learnCourseWindow.close();
+        }
+    };
+
+    // Register the listener for this window instance
+    ipcMain.once('close-learn-course-window', closeHandler);
+
+    // When the window is closed, remove the listener to avoid referencing a destroyed window
+    learnCourseWindow.on('closed', () => {
+        ipcMain.removeListener('close-learn-course-window', closeHandler);
+    });
+}
+
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
@@ -188,8 +224,11 @@ ipcMain.on('open-activation-window', () => {
 });
 
 ipcMain.on('open-exam-window', (_, examData) => {
-    console.log("Exam ", examData);
     openExamWindow(examData);
+});
+
+ipcMain.on('open-learn-course-window', ()=>{
+    openLearnCourseWindow();
 });
 
 // IPC handler for fetching questions

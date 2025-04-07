@@ -4490,6 +4490,9 @@ function populateCourses(courses) {
     footerText.innerHTML = `Easter Kids Coding Fest <br> Powered By Digital Dreams`;
     takeCourseBtn.textContent = "Take Course";
 
+    takeCourseBtn.addEventListener('click', () => {
+      window.api.openLearnCourseWindow();
+    });
 
     courseContent.append(courseTitle);
     courseContent.append(courseDescription);
