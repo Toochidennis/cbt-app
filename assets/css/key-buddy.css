@@ -32,6 +32,7 @@ header {
 .key-sequence {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     width: 100%;
     align-items: center;
@@ -39,11 +40,9 @@ header {
     min-height: 100px;
     max-width: 100% ;
     overflow: hidden;
-    white-space: nowrap;
 }
 
-
-.key-sequence .intro-key {
+.key-sequence .sequence-key {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
@@ -60,24 +59,24 @@ header {
     flex-shrink: 0;
 }
 
-.key-sequence .intro-key:hover {
+.key-sequence .sequence-key:hover {
     background-color: #e0f7fa;
     transform: scale(1.1); 
 } 
 
-.key-sequence .intro-key span.correct {
+.key-sequence .sequence-key span.correct {
     background-color: green;
     color: #fff;
     border-radius: 3px;
     padding: 2px 4px;
 }
 
-.key-sequence .intro-key span.incorrect {
+.key-sequence .sequence-key span.incorrect {
     background-color: red;
     color: #fff;
 }
 
-.key-sequence .intro-key.incorrect {
+.key-sequence .sequence-key.incorrect {
     background-color: red;
     color: #fff;
 }
