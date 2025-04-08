@@ -102,7 +102,7 @@ const lettersPerScreenWidth = () => {
 };
 
 const englishWords = {
-    2: ["an", "as", "at", "be", "by", "do", "go", "he", "if", "in", "is", "it", "me", "my", "no", "of", "on", "or", "so", "to", "up", "us", "we", 
+    2: ["an", "as", "at", "be", "by", "do", "go", "he", "if", "in", "is", "it", "me", "my", "no", "of", "on", "or", "so", "to", "up", "us", "we",
         "am", "ok", "hi", "oh", "um", "ex", "ax", "id", "ad", "pi", "ox", "nu", "op", "lo", "yo", "ti", "xi", "za", "et", "jo"],
     3: ["and", "bat", "cat", "dog", "egg", "fan", "get", "hat", "ice", "jam", "kit", "log", "man", "net", "owl", "pen", "rat", "sun", "top", "van",
         "box", "car", "dig", "elf", "fig", "gap", "hip", "ink", "jet", "key", "lip", "map", "nap", "oak", "pet", "run", "sip", "tap", "vow", "win"],
@@ -114,8 +114,8 @@ const englishWords = {
         "action", "beauty", "charge", "desert", "effort", "flight", "glance", "honest", "insect", "jungle", "kitten", "legend", "moment", "nature", "orange", "pirate", "rescue", "spirit", "temple", "vision"]
 };
 
-let usedWords = []; 
-let usedLetters = []; 
+let usedWords = [];
+let usedLetters = [];
 
 // Function to generate random words or letters based on the current level without repetition
 const getRandomWordOrChar = () => {
@@ -161,7 +161,7 @@ const displayNextBatch = () => {
             .split("")
             .map((letter) => `<span>${letter}</span>`)
             .join("");
-        
+
         keySequenceContainer.appendChild(newKey);
     });
     currentWordIndex = 0; // Reset word index
