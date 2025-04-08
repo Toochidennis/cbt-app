@@ -32,7 +32,6 @@ header {
 .key-sequence {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 10px;
     width: 100%;
     align-items: center;
@@ -46,11 +45,11 @@ header {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    width: 2em;
-    height: 2em;
-    text-align: center;
-    padding: .3em;
-    background-color: #B0F0D7 ;
+    width: 2.5em;
+    height: 2.5em;
+    padding: .4em 1em;
+    justify-content: center;
+    background-color: #B0F0D7;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, background-color 0.3s;
@@ -79,6 +78,12 @@ header {
 .key-sequence .sequence-key.incorrect {
     background-color: red;
     color: #fff;
+}
+
+.key-sequence .sequence-key.active{
+    background-color: yellow; /* Bright orange for active keys */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for active keys */
 }
 
 .keyboard {
@@ -186,7 +191,6 @@ header {
     transform: scale(0.95); /* Slightly shrink on press */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on press */
 }
-
 
 
 

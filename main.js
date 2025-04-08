@@ -156,22 +156,13 @@ function openExamWindow(examData) {
         examWindow.webContents.closeDevTools();
     });
 
-    ipcMain.on('send-exam-results', (_, summaryData) => {
+    ipcMain.once('send-exam-results', (_, summaryData) => {
         examWindow.webContents.send('get-exam-summary', summaryData);
     });
 
-    const closeHandler = () => {
-        if (examWindow && !examWindow.isDestroyed()) {
-            examWindow.close();
-        }
-    };
-
     // Register the listener for this window instance
-    ipcMain.once('close-exam-window', closeHandler);
-
-    // When the window is closed, remove the listener to avoid referencing a destroyed window
-    examWindow.on('closed', () => {
-        ipcMain.removeListener('close-exam-window', closeHandler);
+    ipcMain.once('close-exam-window', ()=>{
+        examWindow.close();
     });
 }
 
@@ -192,18 +183,9 @@ function openLearnCourseWindow() {
         //  learnCoursesWindow.webContents.send('start-exam', );
     });
 
-    const closeHandler = () => {
-        if (learnCourseWindow && !learnCourseWindow.isDestroyed()) {
-            learnCourseWindow.close();
-        }
-    };
-
     // Register the listener for this window instance
-    ipcMain.once('close-learn-course-window', closeHandler);
-
-    // When the window is closed, remove the listener to avoid referencing a destroyed window
-    learnCourseWindow.on('closed', () => {
-        ipcMain.removeListener('close-learn-course-window', closeHandler);
+    ipcMain.once('close-learn-course-window', ()=>{
+        learnCourseWindow.close();
     });
 }
 

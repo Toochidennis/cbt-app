@@ -96,7 +96,7 @@ const pauseBackgroundMusic = () => {
 // Function to calculate the number of letters to display based on the level
 const lettersPerScreenWidth = () => {
     const screenWidth = window.innerWidth;
-    const letterWidth = 40; // Approximate width of each letter in pixels
+    const letterWidth = 60; // Approximate width of each letter in pixels
     const baseLetters = Math.floor((screenWidth * 0.6) / letterWidth); // Base number of letters for level 1
     return Math.max(7, baseLetters - (level - 1) * 4); // Reduce 2 letters per level, minimum 5
 };
@@ -214,7 +214,7 @@ const highlightNextKey = () => {
 
 // Function to start the countdown timer
 const startCountdown = () => {
-    let timeLeft = 60; // 60 seconds
+    let timeLeft = 10; // 60 seconds
     timerDisplay.textContent = "01:00"; // Display initial time
     countdownInterval = setInterval(() => {
         if (!gameActive) {

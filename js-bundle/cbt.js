@@ -240,7 +240,7 @@ function submitHandler() {
 }
 
 function loadSummaryPage() {
-     resetTimer();
+    resetTimer();
     const correctedData = JSON.parse(JSON.stringify(state));
     window.api.sendExamResults(correctedData);
 
