@@ -1,64 +1,59 @@
-body, html {
-    height: 100vh; /* Set the height of the entire screen */
-    margin: 0; /* Remove default margin */
-    overflow: hidden; /* Prevent scrolling on the main body */
+body,
+html {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
 }
 
-.top{
-    position: fixed; /* Fix the navigation bar */
-    top: 0;
-    left: 0;
+.top {
+    position: fixed;
     width: 100%;
-    height: 64px;
+    height: 54px;
     background: white;
-    box-shadow: 0px -1px 0px #E9EAF0 inset; 
-    border-bottom: 1px black ; 
+    box-shadow: 0px -1px 0px #E9EAF0 inset;
+    border-bottom: 1px black;
     align-items: center;
-    display: flex; 
-    flex-wrap: wrap;
-    align-content: center;
-    z-index: 1000; /* Ensure it stays above other content */
+    padding: 0 2em;
+    display: flex;
+    z-index: 1000;
 }
-.logo-container{
-    display: flex; ;
-    width: auto;
-    /* background-color: #2F55DD; */
-    height: 100%;
+
+.logo-container {
+    display: flex;
     align-items: center;
+    gap: 10px;
 }
-.linkskool{
+
+.link {
     color: #FC9338;
-    font-size: 20px;
+    font-size: 1.5em;
     font-family: STIX Two Text;
     font-style: italic;
     font-weight: 700;
     word-wrap: break-word;
-    /* background-color: red; */
-    height: 40px;
-    padding-top: 15px ;
 }
 
-.skool{
+
+.skool {
     color: #2F55DD;
-    font-size: 20px;
+    font-size: 1em;
     font-family: STIX Two Text;
     font-style: italic;
     font-weight: 700;
     word-wrap: break-word;
 }
 
-.top img{
+.top img {
     width: 30px;
     height: 30px;
-    margin-left: 80px;
-    margin-right: 10px;
 }
+
 .search {
     width: 50%;
     padding: 7px;
     margin-left: 130px;
     background: url("../img/magnifyingglass.svg") no-repeat left center;
-    background-size: 20px; 
+    background-size: 20px;
     padding-left: 25px;
     background-color: #F3F3F4;
     font-size: 16px;
@@ -69,59 +64,72 @@ body, html {
     border: 1px solid #E9EAF0;
 }
 
-
-.courses-content{
-    height: 100%; /* Occupy the full height of the screen */
+.courses-content {
+    height: 100%;
     display: flex;
-    margin-top: 50px; /* Add margin to avoid overlapping with the fixed .top */
+    margin-top: 50px;
     margin-bottom: 30em;
 }
- 
+
 .courses-content::-webkit-scrollbar,
 .mid-content::-webkit-scrollbar,
 .dropdown-container::-webkit-scrollbar {
-    transition: opacity 0.5s ease; /* Smooth transition for hiding */
+    transition: opacity 0.5s ease;
+    /* Smooth transition for hiding */
 }
 
 .courses-content.hide-scrollbar::-webkit-scrollbar,
 .mid-content.hide-scrollbar::-webkit-scrollbar,
 .dropdown-container.hide-scrollbar::-webkit-scrollbar {
-    opacity: 0; /* Hide scrollbar */
+    opacity: 0;
+    /* Hide scrollbar */
 }
 
 .mid-content {
     background-color: #F5F7FF;
     width: 65%;
-    overflow-y: auto; /* Enable vertical scrolling */
-    scrollbar-width: thin; /* For modern browsers */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    scrollbar-width: thin;
+    /* For modern browsers */
     scroll-behavior: smooth;
-    height: calc(100vh - 64px); /* Correct height calculation */
-    position: relative; /* Ensure child elements can be positioned relative to this container */
+    height: calc(100vh - 64px);
+    /* Correct height calculation */
+    position: relative;
+    /* Ensure child elements can be positioned relative to this container */
 }
 
 .mid-content::-webkit-scrollbar {
-    width: 5px; /* Scrollbar width for WebKit browsers */
+    width: 5px;
+    /* Scrollbar width for WebKit browsers */
 }
 
 .mid-content::-webkit-scrollbar-thumb {
-    background-color: white; /* Scrollbar thumb color */
-    border-radius: 4px; /* Rounded scrollbar thumb */
+    background-color: white;
+    /* Scrollbar thumb color */
+    border-radius: 4px;
+    /* Rounded scrollbar thumb */
 }
 
 .mid-content::-webkit-scrollbar-track {
-    background: transparent; /* Scrollbar track color */
+    background: transparent;
+    /* Scrollbar track color */
 }
+
 .main-header {
     display: flex;
-    align-items: center; /* Align items vertically on the same line */
-    gap: 100px; /* Increase spacing between the image and the heading */
+    align-items: center;
+    /* Align items vertically on the same line */
+    gap: 100px;
+    /* Increase spacing between the image and the heading */
     padding-top: 20px;
     background-color: white;
     width: 100%;
 }
 
 .main-header img {
-    width: 30px; /* Adjust image size */
+    width: 30px;
+    /* Adjust image size */
     height: 30px;
 }
 
@@ -132,13 +140,16 @@ body, html {
     font-weight: 600;
     line-height: 24px;
     word-wrap: break-word;
-    
+
 }
 
 .video-container {
-    position: sticky; /* Keep the video container fixed */
-    top: 0; /* Stick to the top of the parent container */
-    z-index: 10; /* Ensure it stays above other content */
+    position: sticky;
+    /* Keep the video container fixed */
+    top: 0;
+    /* Stick to the top of the parent container */
+    z-index: 10;
+    /* Ensure it stays above other content */
     margin-left: 20px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -147,26 +158,34 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    padding: 20px 10px; /* Add padding to the top and sides */
+    padding: 20px 10px;
+    /* Add padding to the top and sides */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 95%;
-    height: 30rem; /* Adjust height for better display */
-    overflow: hidden; /* Prevent content overflow */
+    height: 30rem;
+    /* Adjust height for better display */
+    overflow: hidden;
+    /* Prevent content overflow */
 }
 
 .video-container video {
-    height: 100%; /* Ensure the video fills the height of the container */
-    width: 100%; /* Ensure the video fills the width of the container */
-    
+    height: 100%;
+    /* Ensure the video fills the height of the container */
+    width: 100%;
+    /* Ensure the video fills the width of the container */
+
 }
 
-.title{
+.title {
     display: flex;
-    gap: 100px; /* Space between video and title */
+    gap: 100px;
+    /* Space between video and title */
 }
-.title p{
-    margin-top: 10px; /* Space between video and title */
+
+.title p {
+    margin-top: 10px;
+    /* Space between video and title */
     color: #171717;
     font-size: 22px;
     font-family: Urbanist;
@@ -179,7 +198,7 @@ body, html {
 
 .title button {
     color: #FFFFFF;
-    background: url("../img/icons8_pdf_1 1.png") no-repeat left center ;
+    background: url("../img/icons8_pdf_1 1.png") no-repeat left center;
     background-color: #426CFF;
     color: white;
     font-size: 14px;
@@ -187,10 +206,12 @@ body, html {
     font-weight: 500;
     line-height: 32px;
     word-wrap: break-word;
-    padding-left: 20px; /* Increased padding to add space between image and text */
-    padding-right: 10px; /* Optional: Add right padding for balance */
+    padding-left: 20px;
+    /* Increased padding to add space between image and text */
+    padding-right: 10px;
+    /* Optional: Add right padding for balance */
     border: none;
-    height: 35px ;
+    height: 35px;
     margin-top: .5em;
 }
 
@@ -203,7 +224,7 @@ body, html {
     word-wrap: break-word;
 }
 
-.zoom{
+.zoom {
     display: flex;
     background-color: #FFFFFF;
     border: 2px solid white;
@@ -211,12 +232,12 @@ body, html {
     margin-left: 40px;
 }
 
-.zoomimg{
+.zoomimg {
     width: 60%;
     padding: 20px;
 }
 
-.zoomimg p{
+.zoomimg p {
     color: #4E5566;
     font-size: 10px;
     font-family: Urbanist;
@@ -225,7 +246,7 @@ body, html {
     word-wrap: break-word;
 }
 
-.zoomimg span{
+.zoomimg span {
     color: #2D8CFF;
     font-size: 16px;
     font-family: Urbanist;
@@ -234,10 +255,10 @@ body, html {
     word-wrap: break-word;
 }
 
-.zoom button{
+.zoom button {
     height: 50px;
     margin-left: 60px;
-    background: url('../img/zoom.png') no-repeat right center ;
+    background: url('../img/zoom.png') no-repeat right center;
     color: #FFFFFF;
     font-size: 12px;
     font-family: Urbanist;
@@ -250,7 +271,8 @@ body, html {
     border: none;
     margin-top: 60px;
 }
-.zoom1 button{
+
+.zoom1 button {
     height: 50px;
     margin-left: 60px;
     color: #696969;
@@ -267,7 +289,7 @@ body, html {
     height: 40px;
 }
 
-.zoom1{
+.zoom1 {
     display: flex;
     background-color: #F6F6F6;
     border: 2px solid white;
@@ -278,12 +300,12 @@ body, html {
     height: 100px;
 }
 
-.zoomimg1{
+.zoomimg1 {
     width: 60%;
     padding: 20px;
 }
 
-.zoomimg1 p{
+.zoomimg1 p {
     color: #4E5566;
     font-size: 10px;
     font-family: Urbanist;
@@ -292,52 +314,64 @@ body, html {
     word-wrap: break-word;
 }
 
-.back{
+.back {
     display: flex;
 }
 
-.previous{
+.previous {
     border: none;
     background: url('../img/back.png') no-repeat left center;
     margin-left: 10px;
     margin-bottom: 20px;
     padding-left: 30px;
-    bottom: 20px; /* Adjust distance from the bottom */
+    bottom: 20px;
+    /* Adjust distance from the bottom */
 }
-.next{
+
+.next {
     border: none;
-    background: url('../img/back2.png') no-repeat right center ;
+    background: url('../img/back2.png') no-repeat right center;
     margin-left: 50em;
     margin-bottom: 20px;
     padding-right: 30px;
-    bottom: 20px; /* Adjust distance from the bottom */
+    bottom: 20px;
+    /* Adjust distance from the bottom */
 }
 
-.missed{
+.missed {
     max-width: 300px;
     padding-left: 10px;
-    overflow-y: auto; /* Enable vertical scrolling for missed content */
-    overflow-x: hidden; /* Disable horizontal scrolling */
-    scrollbar-width: thin; /* For modern browsers */
+    overflow-y: auto;
+    /* Enable vertical scrolling for missed content */
+    overflow-x: hidden;
+    /* Disable horizontal scrolling */
+    scrollbar-width: thin;
+    /* For modern browsers */
     scroll-behavior: smooth;
-    scrollbar-color: white transparent; /* Customize scrollbar color */
-    height: calc(100vh - 64px); /* Adjust height to fit the remaining space */
+    scrollbar-color: white transparent;
+    /* Customize scrollbar color */
+    height: calc(100vh - 64px);
+    /* Adjust height to fit the remaining space */
 }
 
 .missed::-webkit-scrollbar {
-    width: 5px; /* Scrollbar width for WebKit browsers */
+    width: 5px;
+    /* Scrollbar width for WebKit browsers */
 }
 
 .missed::-webkit-scrollbar-thumb {
-    background-color: white; /* Scrollbar thumb color */
-    border-radius: 4px; /* Rounded scrollbar thumb */
+    background-color: white;
+    /* Scrollbar thumb color */
+    border-radius: 4px;
+    /* Rounded scrollbar thumb */
 }
 
 .missed::-webkit-scrollbar-track {
-    background: transparent; /* Scrollbar track color */
+    background: transparent;
+    /* Scrollbar track color */
 }
 
-.missed p{
+.missed p {
     color: #171717;
     font-size: 16px;
     font-family: Urbanist;
@@ -347,12 +381,12 @@ body, html {
     margin-top: 20px;
 }
 
-.summary{
+.summary {
     border: 1px solid whitesmoke;
     width: 270px;
 }
 
-.summary p{
+.summary p {
     color: #426CFF;
     font-size: 14px;
     font-family: Urbanist;
@@ -363,7 +397,7 @@ body, html {
     margin-top: 10px;
 }
 
-.summary span{
+.summary span {
     color: #171717;
     font-size: 16px;
     font-family: Urbanist;
@@ -373,13 +407,13 @@ body, html {
     margin-left: 3px;
 }
 
-.summary img{
+.summary img {
     margin-left: 35px;
     margin-bottom: 20px;
     width: 70%;
 }
 
-.summary button{
+.summary button {
     color: #426CFF;
     font-size: 16px;
     font-family: Urbanist;
@@ -395,14 +429,14 @@ body, html {
     padding-right: 20px;
 }
 
-.watch-lecture{
+.watch-lecture {
     border: 1px solid whitesmoke;
     width: 270px;
     margin-top: 20px;
 
 }
 
-.watch-lecture p{
+.watch-lecture p {
     color: #426CFF;
     font-size: 14px;
     font-family: Urbanist;
@@ -412,7 +446,7 @@ body, html {
     margin-left: 10px;
 }
 
-.watch-lecture span{
+.watch-lecture span {
     color: #6E7485;
     font-size: 14px;
     font-family: Urbanist;
@@ -422,7 +456,7 @@ body, html {
     margin-left: 1px;
 }
 
-.watch-lecture h6{
+.watch-lecture h6 {
     color: #1D2026;
     font-size: 15.36px;
     font-family: Urbanist;
@@ -432,13 +466,13 @@ body, html {
     margin-left: 10px;
 }
 
-.watch-lecture img{
+.watch-lecture img {
     width: 80%;
     margin-left: 10px;
     margin-top: 10px;
 }
 
-.watch-lecture button{
+.watch-lecture button {
     color: #426CFF;
     font-size: 16px;
     font-family: Urbanist;
@@ -457,23 +491,28 @@ body, html {
 }
 
 .static-container {
-    position: sticky; /* Keep the video and title static */
+    position: sticky;
+    /* Keep the video and title static */
     top: 0;
-    z-index: 10; /* Ensure it stays above other content */
-    background-color: transparent; /* Background to avoid overlap */
+    z-index: 10;
+    /* Ensure it stays above other content */
+    background-color: transparent;
+    /* Background to avoid overlap */
     padding-bottom: 10px;
 
 }
 
 .scrollable-content {
-    overflow-y: auto; /* Enable scrolling for the content under the video */
-    height: calc(100vh - 150px); /* Adjust height to fit the remaining space */
-    padding-top: 20px; /* Add padding to avoid overlap with the video */
+    overflow-y: auto;
+    /* Enable scrolling for the content under the video */
+    height: calc(100vh - 150px);
+    /* Adjust height to fit the remaining space */
+    padding-top: 20px;
+    /* Add padding to avoid overlap with the video */
 }
 
-.side{
-    width: 15%;
-    padding-left: 20px;
+.side {
+    width: 20%;
     padding-top: 100px;
 }
 
@@ -484,22 +523,23 @@ body, html {
 }
 
 .side ul li {
-    margin-bottom: 2px; /* Add spacing between lessons */
-    padding: 20px 0; /* Add equal padding above and below the text */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add a faint stylish line */
-    text-align: center; /* Center the text horizontally */
+    margin-bottom: 2px;
+    padding: 1.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
 }
 
 .side ul li:last-child {
-    border-bottom: none; /* Remove the line for the last lesson */
+    border-bottom: none;
 }
 
 .side ul li label {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between radio button and text */
-    font-family: Urbanist;
-    font-size: 14px;
+    gap: 10px;
+    font-family: "Urbanist";
+    font-size: 1rem;
     font-weight: 500;
     color: #171717;
     cursor: pointer;
@@ -507,43 +547,57 @@ body, html {
 
 .side ul li label span {
     word-wrap: break-word;
+    font-family: "Urbanist";
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
 }
 
 .side ul li input[type="checkbox"] {
     cursor: pointer;
-    appearance: none; /* Remove default checkbox styling */
-    width: 20px; /* Set width */
-    height: 20px; /* Set height */
-    border: 1px solid black; /* Add border */
-    border-radius: 50%; /* Make it circular */
-    outline: none; /* Remove outline */
-    background-color: white; /* Background color */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    /* Add border */
+    border-radius: 50%;
+    /* Make it circular */
+    outline: none;
+    /* Remove outline */
+    background-color: white;
+    /* Background color */
     display: inline-block;
     position: relative;
 }
 
 .side ul li input[type="checkbox"]:checked {
-    background-color: #2F55DD; /* Fill color when checked */
-    border-color: #2F55DD; /* Border color when checked */
+    background-color: #2F55DD;
+    border-color: #2F55DD;
 }
 
 .side ul li input[type="checkbox"]:checked::after {
-    content: '✔'; /* Add tick symbol */
-    color: white; /* Tick color */
-    font-size: 14px; /* Adjust tick size */
+    content: '✔';
+    color: white;
+    font-size: 14px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the tick */
+    transform: translate(-50%, -50%);
+
 }
 
 .side ul li:hover {
-    background-color: #F5F7FF; /* Light background on hover */
-    border-radius: 5px; /* Add rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #F5F7FF;
+    /* Light background on hover */
+    border-radius: 5px;
+    /* Add rounded corners */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
 }
 
 .side ul li label:hover {
-    color: #2F55DD; /* Change text color on hover */
-    transition: color 0.3s ease; /* Smooth transition */
+    color: #2F55DD;
+    /* Change text color on hover */
+    transition: color 0.3s ease;
+    /* Smooth transition */
 }

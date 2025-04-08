@@ -1,90 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/learn-course.css"/>
+    <link rel="stylesheet" href="../assets/css/learn-course.css" />
     <title>Learn Course</title>
 </head>
-<body> 
+
+<body>
     <nav class="top">
         <div class="logo-container">
-        <img src="../assets/img/GraduationCap (1).png" alt="">
-        <p class="linkskool"><span class="skool">Link</span>Skool</p>
-    </div>
-    <input class="search" type="text" placeholder="Search here..." >
+            <img src="../assets/img/graduationcap.svg" alt="">
+            <p class="link"><span class="skool">Link</span>Skool</p>
+        </div>
+        <input class="search" type="text" placeholder="Search here...">
+
+        <button id="close-learn"><img src="../assets/img/icons8_left 1.png" alt=""></button>
     </nav>
     <div class="main-content">
         <div class="courses-content">
             <aside class="side">
-                <ul id="lesson-list">
-                    <li>
-                        <label>
-                            <input type="checkbox" name="lesson" value="1" onclick="selectLesson(1)"> 
-                            <span id="lesson-1-label">Lesson 1</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="lesson" value="2" onclick="selectLesson(2)"> 
-                            <span id="lesson-2-label">Lesson 2</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="lesson" value="3" onclick="selectLesson(3)"> 
-                            <span id="lesson-3-label">Lesson 3</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="lesson" value="4" onclick="selectLesson(4)"> 
-                            <span id="lesson-4-label">Lesson 4</span>
-                        </label>
-                    </li>
-                </ul>
+                <ul id="lesson-list"></ul>
             </aside>
-            
-            <div class="mid-content">   
+
+            <div class="mid-content">
                 <div class="main-header">
-                <button id="close-learn"><img src="../assets/img/icons8_left 1.png" alt=""></button>
-                <p class="heading">Front-end Development</p>
+                    <p class="heading">Front-end Development</p>
                 </div>
-                
-                    <div class="video-container">
-                        <video controls width="100%">
-                            <source src="../assets/img/LinkSkool 2025-04-06 16-51-00.mp4" type="video/mp4">
-                            
-                        </video>
-                        <div class="title">
-                            <p>Introduction to Scratch Programming <br><span>Digital dreams ict academy</span></p>
-                            <button>Download lesson PDF</button>
-                        </div> 
-                    
-                    
+
+                <div class="video-container">
+                    <iframe id="lesson-video" width="100%" height="100%"  title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="title">
+                        <p>Introduction to Scratch Programming <br><span>Digital dreams ict academy</span></p>
+                        <button>Download lesson PDF</button>
                     </div>
-                
-                    
-                    <div class="zoom">
-                        <div class="zoomimg">
-                            <img src="../assets/img/image 80.png" alt="zoom logo">
-                            <p>Your Class : Frontend Development is currently Ongoing. Your Class : Frontend Development is currently Ongoing.Your Class : Frontend Development is currently Ongoing</p>
-                            <span>Your Class : Frontend Devlopment starts in 02:54:00</span>
-                        </div>
-                        <button>Join Class via Zoom</button>
+                </div>
+
+                <div class="zoom">
+                    <div class="zoomimg">
+                        <img src="../assets/img/image 80.png" alt="zoom logo">
+                        <p>Your Class : Frontend Development is currently Ongoing. Your Class : Frontend Development is
+                            currently Ongoing.Your Class : Frontend Development is currently Ongoing</p>
+                        <span>Your Class : Frontend Devlopment starts in 02:54:00</span>
                     </div>
-                    <div class="zoom1">
-                        <div class="zoomimg1">
-                            <p>Your Class : Frontend Development is currently Ongoing. Your Class : Frontend Development is currently Ongoing.Your Class : Frontend Development is currently Ongoing</p>
-                        </div>
-                        <button>Take Test</button>
+                    <button>Join Class via Zoom</button>
+                </div>
+                <div class="zoom1">
+                    <div class="zoomimg1">
+                        <p>Your Class : Frontend Development is currently Ongoing. Your Class : Frontend Development is
+                            currently Ongoing.Your Class : Frontend Development is currently Ongoing</p>
                     </div>
-                    <div class="back">
-                        <button class="previous" onclick="navigateLesson('previous')">Previous</button>
-                        <button class="next" onclick="navigateLesson('next')">Next</button>
-                    </div>
-                
-               
+                    <button>Take Test</button>
+                </div>
+                <div class="back">
+                    <button class="previous" onclick="navigateLesson('previous')">Previous</button>
+                    <button class="next" onclick="navigateLesson('next')">Next</button>
+                </div>
+
             </div>
             <div class="missed">
                 <p>Here's what you missed</p>
@@ -99,11 +72,11 @@
                     <h6>1. Learn More About Web Design</h6>
                     <button>Watch lecture</button>
                 </div>
-        
+
             </div>
         </div>
-                
     </div>
-    <script src="../renderer/learn-course.js"></script>
+    <script src="../js-bundle/learn-course.js"></script>
 </body>
+
 </html>

@@ -1,49 +1,95 @@
-let currentLesson = 1;
+const axios = require('axios');
 
-window.api.startLearning((_,courseId)=>{
-    console.log("Course id ", courseId);
+let lessons = [];
+
+const lessonContainer = document.getElementById('lesson-list');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedCourseId = localStorage.getItem("selectedCourseId");
+    if (savedCourseId) {
+        console.log("Restored courseId from localStorage:", savedCourseId);
+        fetchLessons(savedCourseId);
+    }
 });
 
-function selectLesson(lesson) {
-    if (lesson === currentLesson + 1) {
-        currentLesson = lesson;
-        updateLessonStatus();
-        showLessonContent();
-    } else {
-        alert("You must complete the previous lesson first.");
+window.api.startLearning((_, courseId) => {
+    console.log("Course id ", courseId);
+    localStorage.setItem("selectedCourseId", courseId);
+
+    fetchLessons(courseId)
+});
+
+function fetchLessons(courseId) {
+    axios.get(`https://linkschoolonline.com/lessons?course_id=${courseId}`)
+        .then(response => {
+            console.log(response.data);
+            lessons = response.data;
+            populateLessons()
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function populateLessons() {
+    if (!lessons || lessons.length === 0) {
+        return
+    }
+
+    lessonContainer.innerHTML = ''
+
+    lessons.forEach((lesson, index) => {
+        const lessonList = document.createElement('li');
+        const label = document.createElement('label');
+        const span = document.createElement('span');
+
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.name = 'option';
+        input.value = lesson.title;
+        span.textContent = lesson.title;
+
+        lessonList.dataset.index = index;
+
+        label.append(input, span);
+        lessonList.appendChild(label);
+
+        lessonList.addEventListener('click', () => selectLesson(index));
+        lessonContainer.appendChild(lessonList);
+    });
+}
+
+function selectLesson(index) {
+    const selectedLesson = lessons[index];
+    const content = selectedLesson.content
+
+    if (!content) return;
+
+    const 
+
+
+    const embedUrl = getEmbedUrl(content.video_url);
+    document.getElementById('lesson-video').src = embedUrl;
+}
+
+function getEmbedUrl(youtubeUrl) {
+    try {
+        const url = new URL(youtubeUrl);
+        let videoId = '';
+
+        if (url.hostname === 'youtu.be') {
+            videoId = url.pathname.slice(1);
+        } else if (url.hostname.includes('youtube.com')) {
+            videoId = url.searchParams.get('v');
+        }
+
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
+    } catch (e) {
+        return '';
     }
 }
 
-function navigateLesson(direction) {
-    const totalLessons = 4;
-    if (direction === 'next' && currentLesson < totalLessons) {
-        currentLesson++;
-    } else if (direction === 'previous' && currentLesson > 1) {
-        currentLesson--;
-    }
-    updateLessonStatus();
-    showLessonContent();
-}
 
-function updateLessonStatus() {
-    for (let i = 1; i <= 4; i++) {
-        const lessonInput = document.querySelector(`input[name="lesson"][value="${i}"]`);
-        lessonInput.checked = i < currentLesson; // Check all lessons before the current one
-    }
-}
-
-function showLessonContent() {
-    // Logic to display content for the current lesson
-    console.log(`Displaying content for Lesson ${currentLesson}`);
-    // Add your content-switching logic here
-}
-
-// Initialize the first lesson as selected
-updateLessonStatus();
-showLessonContent();
-
-window.navigateLesson = navigateLesson;
-window.selectLesson = selectLesson;
 
 document.getElementById('close-learn').addEventListener('click', () => {
     window.api.closeLearnCourseWindow();

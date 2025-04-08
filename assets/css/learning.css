@@ -195,28 +195,11 @@
     margin-bottom: 15px;
 }
 
-/* .learn-courses .course-box:nth-child(1) img,
-.learn-courses .course-box:nth-child(5) img {
-    max-height: 120px; 
-} */
+
 
 .course-content {
     text-align: center;
     width: 100%;
-}
-
-.banner {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #FF000026;
-    color: #FF3030;
-    font-size: 14px;
-    font-family: "Urbanist";
-    font-weight: 500;
-    word-wrap: break-word;
-    padding: 5px 10px;
-    border-radius: 5px;
 }
 
 .catbox1 {
