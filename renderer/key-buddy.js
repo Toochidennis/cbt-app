@@ -187,6 +187,12 @@ const highlightNextLetter = () => {
 
     const currentWord = keySequenceContainer.children[currentWordIndex];
     if (currentWord) {
+        // Remove bounce effect from all boxes
+        Array.from(keySequenceContainer.children).forEach((box) => box.classList.remove("bouncing"));
+
+        // Add bounce effect to the current box
+        currentWord.classList.add("bouncing");
+
         const currentLetter = currentWord.textContent[currentLetterIndex];
         keyboardKeys.forEach((key) => {
             const keyChar = key.dataset.char || key.textContent; // Use data-char for special characters or textContent for regular keys

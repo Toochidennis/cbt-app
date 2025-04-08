@@ -151,7 +151,7 @@ body, html {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 95%;
-    height: 23rem; /* Adjust height for better display */
+    height: 30rem; /* Adjust height for better display */
     overflow: hidden; /* Prevent content overflow */
 }
 
@@ -173,7 +173,8 @@ body, html {
     font-weight: 600;
     line-height: 21px;
     word-wrap: break-word;
-    margin-left: 25px;
+    margin-right: 7em;
+    margin-top: .5em;
 }
 
 .title button {
@@ -190,6 +191,7 @@ body, html {
     padding-right: 10px; /* Optional: Add right padding for balance */
     border: none;
     height: 35px ;
+    margin-top: .5em;
 }
 
 .title span {
@@ -300,21 +302,15 @@ body, html {
     margin-left: 10px;
     margin-bottom: 20px;
     padding-left: 30px;
-    position: fixed; /* Fix the buttons at the bottom of the .mid-content area */
     bottom: 20px; /* Adjust distance from the bottom */
-    z-index: 100; /* Ensure they stay above other content */
-    left: calc(17.5% + 20px); /* Adjust position relative to .mid-content */
 }
 .next{
     border: none;
     background: url('../img/back2.png') no-repeat right center ;
-    margin-right: 80px;
+    margin-left: 50em;
     margin-bottom: 20px;
     padding-right: 30px;
-    position: fixed; /* Fix the buttons at the bottom of the .mid-content area */
     bottom: 20px; /* Adjust distance from the bottom */
-    z-index: 100; /* Ensure they stay above other content */
-    right: calc(17.5% + 20px); /* Adjust position relative to .mid-content */
 }
 
 .missed{

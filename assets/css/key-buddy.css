@@ -515,3 +515,32 @@ header {
     background-color: #45a049; /* Slightly darker green on hover */
     transform: scale(1.2); /* Slight zoom effect on hover */
 }
+
+.bouncing {
+    animation: bounce 0.5s infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-origin: center;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.sequence-key.bouncing {
+    animation: bounce 1s infinite; /* Increased duration to make it slower */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-origin: center;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
