@@ -64,7 +64,7 @@ html {
     border: 1px solid #E9EAF0;
 }
 
-#close-learn{
+#close-learn {
     margin-left: 15em;
     background-color: #2D8CFF;
     color: white;
@@ -136,13 +136,7 @@ html {
 
 .main-header img {
     width: 30px;
-    /* Adjust image size */
     height: 30px;
-    
-}
-
-.other{
-    padding: 5px;
 }
 
 .heading {
@@ -152,42 +146,43 @@ html {
     font-weight: 600;
     line-height: 24px;
     word-wrap: break-word;
+}
 
+.other {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
 }
 
 .video-container {
-    margin-left: 20px;
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:transparent;
+    background-color: transparent;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 48.5rem;
     height: 20rem;
     overflow: hidden;
 }
 
 .title {
     display: flex;
-    padding-left: 20px;
 }
 
 .title p {
     margin-top: 10px;
     color: #171717;
-    font-size: 22px;
+    font-size: 1.5rem;
     font-family: "Urbanist";
     font-weight: 600;
     line-height: 21px;
     word-wrap: break-word;
-    margin-right: 7em;
     margin-top: .5em;
 }
 
-.title button {
+/* .title button {
     color: #FFFFFF;
     background: url("../img/icons8_pdf_1 1.png") no-repeat left center;
     background-color: #426CFF;
@@ -198,17 +193,15 @@ html {
     line-height: 32px;
     word-wrap: break-word;
     padding-left: 20px;
-    /* Increased padding to add space between image and text */
     padding-right: 10px;
-    /* Optional: Add right padding for balance */
     border: none;
     height: 35px;
     margin-top: .5em;
-}
+} */
 
 .title span {
     color: #8C8C8C;
-    font-size: 14px;
+    font-size: .8rem;
     font-family: "Urbanist";
     font-weight: 400;
     line-height: 21px;
@@ -219,14 +212,13 @@ html {
     display: flex;
     background-color: #FFFFFF;
     border: 2px solid white;
-    width: 90%;
-    margin-left: 20px;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 1em;
+    align-items: center;
 }
 
-.zoomimg {
-    width: 60%;
-    padding: 20px;
-}
+
 
 .zoomimg p {
     color: #4E5566;
@@ -239,7 +231,7 @@ html {
 
 .zoomimg span {
     color: #2D8CFF;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: "Urbanist";
     font-weight: 600;
     text-decoration: underline;
@@ -247,96 +239,76 @@ html {
 }
 
 .zoom button {
-    height: 50px;
-    margin-left: 60px;
-    background: url('../img/zoom.png') no-repeat right center;
-    padding-right: 25px;
-    background-color: #E0E0E0;
-    padding-left: 10px;
+    display: flex;
+    gap: 10px ;
+    align-items: center;
+    background-color: #426CFF;
+    padding: .8em 1em;
+    border-radius: 10px;
     border: none;
-    margin-top: 20px;
-    color: #696969;
-    font-size: 14px;
+    color: #fff;
+    font-size: .8rem;
     font-family: "Urbanist";
     font-weight: 600;
     line-height: 22.91px;
-    word-wrap: break-word;
 }
 
 .zoom1 button {
-    height: 50px;
-    margin-left: 60px;
-    padding-right: 30px;
     background-color: #ED810D;
     border: none;
-    margin-top: 30px;
-    width: 150px;
-    height: 40px;
     color: white;
-    font-size: 14px;
+    font-size: .8rem;
+    padding: .8em 2em;
     font-family: "Urbanist";
     font-weight: 600;
     line-height: 22.91px;
-    word-wrap: break-word;
 }
 
 .zoom1 {
     display: flex;
-    background-color:#FFF8F4;
-    border: 2px solid #FC9338;
-    width: 87%;
-    margin-left: 40px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    height: 100px;
+    background-color: #FFF8F4;
+    border: 1px solid #FC9338;
+    justify-content: space-between;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-top: 1em;
+    align-items: center;
 }
 
-.zoomimg1 {
-    width: 60%;
-}
 
 .zoomimg1 p {
     color: #FC9338;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-family: "Urbanist";
     font-weight: 600;
-    word-wrap: break-word;
-}
-.zoomimg1 span {
-    color: #FFAC62;
-    font-size: 12px;
-    font-family: "Urbanist";
-    font-weight: 400;
     word-wrap: break-word;
 }
 
 .back {
     display: flex;
-background-color: white;
-padding-top: 15px;
-position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+
 }
 
-.previous {
-    border: none;
-    background: url('../img/back.png') no-repeat left center;
-    margin-left: 2em;
-    margin-bottom: 20px;
-    padding-left: 30px;
-    bottom: 20px;
-    /* Adjust distance from the bottom */
+.previous{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 0 1em;
 }
 
-.next {
-    border: none;
-    background: url('../img/back2.png') no-repeat right center;
-    margin-left: 45em;
-    margin-bottom: 20px;
-    padding-right: 30px;
-    bottom: 20px;
-    /* Adjust distance from the bottom */
+.previous:hover{
+    background-color: #4E5566;
+    color: #fff;
+}
+
+
+
+.previous img, .next img{
+    height: 1em;
 }
 
 .missed {

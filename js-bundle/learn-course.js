@@ -4455,7 +4455,7 @@ function populateLessons() {
         lessonContainer.appendChild(lessonList);
     });
 
-    scrollToLesson(currentIndex);
+ //   scrollToLesson(currentIndex);
     selectLesson(currentIndex, false);
 }
 
@@ -4483,14 +4483,13 @@ function selectLesson(index, updateCheckbox = true) {
     document.getElementById('lesson-video').src = embedUrl;
 
     document.getElementById('zoom-btn').onclick = () => {
-        window.api.joinZoom(selectedLesson.contents.zoom_url);
+        window.api.openLink(selectedLesson.contents.zoom_url);
     };
 
     document.getElementById('content-title').innerHTML =
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;
 }
-
 
 function getEmbedUrl(youtubeUrl) {
     try {
@@ -4503,36 +4502,34 @@ function getEmbedUrl(youtubeUrl) {
             videoId = url.searchParams.get('v');
         }
 
-        return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : youtubeUrl;
     } catch (e) {
         return '';
     }
 }
 
-function scrollToLesson(index) {
-    const listItems = document.querySelectorAll('#lesson-list li');
-    const item = listItems[index];
-    if (item) {
-        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// function scrollToLesson(index) {
+//     const listItems = document.querySelectorAll('#lesson-list li');
+//     const item = listItems[index];
+//     if (item) {
+//         item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//     }
+// }
+
+
+document.getElementById('next-btn').addEventListener('click', () => {
+    if (currentIndex < lessons.length - 1) {
+        selectLesson(currentIndex + 1, true); // true = update checkbox
+       // scrollToLesson(currentIndex);
     }
-}
+});
 
-
-// document.getElementById('next-btn').addEventListener('click', () => {
-//     if (currentIndex < lessons.length - 1) {
-//         selectLesson(currentIndex + 1, true); // true = update checkbox
-//         scrollToLesson(currentIndex);
-//     }
-// });
-
-// document.getElementById('prev-btn').addEventListener('click', () => {
-//     if (currentIndex > 0) {
-//         selectLesson(currentIndex - 1, true);
-//         scrollToLesson(currentIndex);
-//     }
-// });
-
-
+document.getElementById('prev-btn').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        selectLesson(currentIndex - 1, true);
+        //scrollToLesson(currentIndex);
+    }
+});
 
 
 document.getElementById('close-learn').addEventListener('click', () => {
