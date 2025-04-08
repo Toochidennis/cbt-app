@@ -65,7 +65,7 @@ function selectLesson(index) {
 
     if (!content) return;
 
-    const 
+    //const 
 
 
     const embedUrl = getEmbedUrl(content.video_url);

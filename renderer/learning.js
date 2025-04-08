@@ -1,4 +1,5 @@
 const axios = require('axios');
+
 const bannerColors = [
   "#426CFF", // Bright Blue
   "#5A8DEE", // Soft Blue
@@ -77,7 +78,7 @@ function populateCourses(courses) {
   const bannerContainer = document.getElementById('banner-container');
   const coursesContainer = document.getElementById('courses-container');
   coursesContainer.innerHTML = '';
-  //bannerContainer.innerHTML = '';
+  bannerContainer.innerHTML = '';
 
   const fragment = document.createDocumentFragment();
   const bannerFragment = document.createDocumentFragment();
@@ -122,11 +123,11 @@ function populateCourses(courses) {
     courseFooter.append(footerImage, footerText, takeCourseBtn);
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
     
- //   bannerFragment.appendChild(populateCarousel(course));
+    bannerFragment.appendChild(populateCarousel(course));
     fragment.appendChild(courseBox);
   });
 
- // bannerContainer.appendChild(bannerFragment);
+  bannerContainer.appendChild(bannerFragment);
   coursesContainer.appendChild(fragment);
 }
 
