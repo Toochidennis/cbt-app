@@ -150,25 +150,25 @@ const generateTotalLetters = () => {
 };
 
 // // Function to display the next batch of letters
-// const displayNextBatch = () => {
-//     keySequenceContainer.innerHTML = ""; // Clear the current sequence
-//     const batchSize = lettersPerScreenWidth(); // Calculate the number of letters to display
-//     const batch = totalLetters.splice(0, batchSize); // Get the next batch of letters
-//     batch.forEach((word) => {
-//         const newKey = document.createElement("span");
-//         newKey.classList.add("intro-key");
-//         // Wrap each letter in a span for individual styling
-//         newKey.innerHTML = word
-//             .split("")
-//             .map((letter) => `<span class='intro-key'>${letter}</span>`)
-//             .join("");
+const displayNextBatch = () => {
+    keySequenceContainer.innerHTML = ""; // Clear the current sequence
+    const batchSize = lettersPerScreenWidth(); // Calculate the number of letters to display
+    const batch = totalLetters.splice(0, batchSize); // Get the next batch of letters
+    batch.forEach((word) => {
+        const newKey = document.createElement("span");
+        newKey.classList.add("sequence-key");
+        // Wrap each letter in a span for individual styling
+        newKey.innerHTML = word
+            .split("")
+            .map((letter) => `<span>${letter}</span>`)
+            .join("");
         
-//         keySequenceContainer.appendChild(newKey);
-//     });
-//     currentWordIndex = 0; // Reset word index
-//     currentLetterIndex = 0; // Reset letter index
-//     highlightNextLetter(); // Highlight the first letter of the first word
-// };
+        keySequenceContainer.appendChild(newKey);
+    });
+    currentWordIndex = 0; // Reset word index
+    currentLetterIndex = 0; // Reset letter index
+    highlightNextLetter(); // Highlight the first letter of the first word
+};
 
 // Function to initialize the sequence
 const initializeSequence = () => {
@@ -202,7 +202,7 @@ const highlightNextLetter = () => {
 const highlightNextKey = () => {
     if (!gameActive) return; // Stop highlighting if the game is over
     keyboardKeys.forEach((key) => key.classList.remove("suggested")); // Remove previous highlights
-    const currentKey = keySequenceContainer.querySelector(".intro-key");
+    const currentKey = keySequenceContainer.querySelector(".sequence-key");
     if (currentKey) {
         keyboardKeys.forEach((key) => {
             if (key.textContent.toUpperCase() === currentKey.textContent) {
@@ -341,7 +341,7 @@ const resetWordState = () => {
     currentLetterIndex = 0; // Reset letter index for the new word
     if (keySequenceContainer.children.length < lettersPerScreenWidth()) {
         const newKey = document.createElement("span");
-        newKey.classList.add("key");
+        newKey.classList.add("sequence-key");
         newKey.innerHTML = getRandomWordOrChar()
             .split("")
             .map((letter) => `<span>${letter}</span>`)

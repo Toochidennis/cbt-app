@@ -81,23 +81,6 @@ header {
     color: #fff;
 }
 
-.progress-bar {
-    height: 10px;
-    background-color: #f0f8ff;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-}
-
-.progress {
-    height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, #ff8c42, #ff5722); /* Add a gradient for the progress */
-    border-radius: 10px;
-    transition: width 0.3s ease-in-out; 
-}
-
 .keyboard {
     display: flex;
     flex-direction: column;
