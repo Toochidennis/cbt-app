@@ -40,3 +40,7 @@ showLessonContent();
 
 window.navigateLesson = navigateLesson;
 window.selectLesson = selectLesson;
+
+document.getElementById('close-learn').addEventListener('click', () => {
+    window.api.closeLearnCourseWindow();
+});
