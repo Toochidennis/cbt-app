@@ -65,7 +65,7 @@ html {
 }
 
 #close-learn{
-    margin-left: 17em;
+    margin-left: 15em;
     background-color: #2D8CFF;
     color: white;
     padding: 10px;
@@ -141,6 +141,10 @@ html {
     
 }
 
+.other{
+    padding: 5px;
+}
+
 .heading {
     color: #2F55DD;
     font-size: 24px;
@@ -160,11 +164,9 @@ html {
     justify-content: center;
     align-items: center;
     background-color:transparent;
-    padding: 20px 10px;
-    /* Add padding to the top and sides */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 93%;
+    width: 48.5rem;
     height: 20rem;
     /* Adjust height for better display */
     overflow: hidden;
@@ -333,7 +335,7 @@ position: sticky;
 .previous {
     border: none;
     background: url('../img/back.png') no-repeat left center;
-    margin-left: 10px;
+    margin-left: 2em;
     margin-bottom: 20px;
     padding-left: 30px;
     bottom: 20px;
@@ -343,7 +345,7 @@ position: sticky;
 .next {
     border: none;
     background: url('../img/back2.png') no-repeat right center;
-    margin-left: 50em;
+    margin-left: 45em;
     margin-bottom: 20px;
     padding-right: 30px;
     bottom: 20px;
