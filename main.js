@@ -191,6 +191,22 @@ function openLearnCourseWindow(courseId) {
     });
 }
 
+ipcMain.on('open-zoom-meeting', (_, zoomUrl)=>{
+    const zoomWin = BrowserWindow({
+        modal: true,
+       // frame: false,
+        parent: mainWindow,
+        webPreferences: {
+            contextIsolation: true,
+            //    devTools: false,
+            //preload: path.join(__dirname, 'preload.js'),
+        },
+    });
+
+    zoomWin.maximize();
+    zoomWin.loadUrl(zoomUrl);
+});
+
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();
@@ -207,6 +223,7 @@ ipcMain.on('open-exam-window', (_, examData) => {
 ipcMain.on('open-learn-course-window', (_, courseId) => {
     openLearnCourseWindow(courseId);
 });
+
 
 // IPC handler for fetching questions
 ipcMain.handle('get-questions-by-subject', (_, subject, year) => {

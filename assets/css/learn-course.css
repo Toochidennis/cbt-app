@@ -575,6 +575,7 @@ html {
     border-color: #2F55DD;
 }
 
+
 .side ul li input[type="checkbox"]:checked::after {
     content: '✔';
     color: white;
@@ -584,6 +585,13 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
 
+}
+
+#lesson-list li.active {
+    background-color: #e0f7fa;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 .side ul li:hover {

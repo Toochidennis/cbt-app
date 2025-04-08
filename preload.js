@@ -28,6 +28,7 @@ contextBridge.exposeInMainWorld('api', {
     validateActivationOffline: (activationCode, hash) => ipcRenderer.invoke('validate-activation-offline', activationCode, hash),
     openActivationWindow: () => ipcRenderer.send('open-activation-window'),
     closeActivationWindow: () => ipcRenderer.send('close-activation-window'),
+    joinZoom: (url) => ipcRenderer.send('open-zoom-meeting', url),
     generateProductKey: (productKey) => ipcRenderer.invoke('generate-product-key', productKey),
     getImagePath: (subject, imageFileName) => ipcRenderer.invoke('get-image-path', subject, imageFileName),
 });

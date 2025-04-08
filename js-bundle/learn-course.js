@@ -4388,8 +4388,7 @@ process.umask = function() { return 0; };
 const axios = require('axios');
 
 let lessons = [];
-
-const lessonContainer = document.getElementById('lesson-list');
+let currentIndex = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     const savedCourseId = localStorage.getItem("selectedCourseId");
@@ -4419,10 +4418,15 @@ function fetchLessons(courseId) {
 }
 
 function populateLessons() {
-    if (!lessons || lessons.length === 0) {
-        return
+    if (!lessons || lessons.length === 0) return;
+    
+
+    const savedIndex = localStorage.getItem("selectedLessonIndex");
+    if (savedIndex !== null) {
+        currentIndex = parseInt(savedIndex);
     }
 
+    const lessonContainer = document.getElementById('lesson-list');
     lessonContainer.innerHTML = ''
 
     lessons.forEach((lesson, index) => {
@@ -4433,28 +4437,60 @@ function populateLessons() {
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.name = 'option';
+        input.disabled = true; 
         input.value = lesson.title;
         span.textContent = lesson.title;
-
-        lessonList.dataset.index = index;
 
         label.append(input, span);
         lessonList.appendChild(label);
 
-        lessonList.addEventListener('click', () => selectLesson(index));
+        lessonList.dataset.index = index;
+
+        if (index === currentIndex) {
+            lessonList.classList.add('active'); // add active class
+            input.checked = true;
+        }
+
+        lessonList.addEventListener('click', () => selectLesson(index, false));
         lessonContainer.appendChild(lessonList);
     });
+
+    scrollToLesson(currentIndex);
+    selectLesson(currentIndex, false);
 }
 
-function selectLesson(index) {
-    const content = lessons[index].contents;
+function selectLesson(index, updateCheckbox = true) {
+    currentIndex = index;
+    localStorage.setItem("selectedLessonIndex", currentIndex);
 
-    if (!content) return;
+    // Remove all highlights
+    const allLessons = document.querySelectorAll('#lesson-list li');
 
-    console.log('Selected Lesson:', content);
-    const embedUrl = getEmbedUrl(content.video_url);
+    allLessons.forEach((li, i) => {
+        const checkbox = li.querySelector('input');
+
+        li.classList.toggle('active', i === index);
+
+        if (updateCheckbox) {
+            checkbox.checked = i === index;
+        }
+    });
+
+    const selectedLesson = lessons[index];
+    if (!selectedLesson?.contents) return;
+
+    const embedUrl = getEmbedUrl(selectedLesson.contents.video_url);
     document.getElementById('lesson-video').src = embedUrl;
+
+    document.getElementById('zoom-btn').onclick = () => {
+        window.api.joinZoom(selectedLesson.contents.zoom_url);
+    };
+
+    document.getElementById('content-title').innerHTML =
+        `${selectedLesson.description} 
+        <br><span>Digital Dreams ICT Academy</span>`;
 }
+
 
 function getEmbedUrl(youtubeUrl) {
     try {
@@ -4472,6 +4508,30 @@ function getEmbedUrl(youtubeUrl) {
         return '';
     }
 }
+
+function scrollToLesson(index) {
+    const listItems = document.querySelectorAll('#lesson-list li');
+    const item = listItems[index];
+    if (item) {
+        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+
+// document.getElementById('next-btn').addEventListener('click', () => {
+//     if (currentIndex < lessons.length - 1) {
+//         selectLesson(currentIndex + 1, true); // true = update checkbox
+//         scrollToLesson(currentIndex);
+//     }
+// });
+
+// document.getElementById('prev-btn').addEventListener('click', () => {
+//     if (currentIndex > 0) {
+//         selectLesson(currentIndex - 1, true);
+//         scrollToLesson(currentIndex);
+//     }
+// });
+
 
 
 
