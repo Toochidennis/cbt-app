@@ -178,27 +178,14 @@ function openLearnCourseWindow() {
         },
     });
 
-    learnCourseWindow.setFullScreen(true);
+    learnCourseWindow.maximize();
     learnCourseWindow.loadFile('pages/learn-course.html').then(() => {
         //  learnCoursesWindow.webContents.send('start-exam', );
     });
 
-    // examWindow.webContents.on('devtools-opened', ()=>{
-    //     examWindow.webContents.closeDevTools();
-    // });
-
-    const closeHandler = () => {
-        if (learnCourseWindow && !learnCourseWindow.isDestroyed()) {
-            learnCourseWindow.close();
-        }
-    };
-
     // Register the listener for this window instance
-    ipcMain.once('close-learn-course-window', closeHandler);
-
-    // When the window is closed, remove the listener to avoid referencing a destroyed window
-    learnCourseWindow.on('closed', () => {
-        ipcMain.removeListener('close-learn-course-window', closeHandler);
+    ipcMain.on('close-learn-course-window', ()=>{
+        learnCourseWindow.close();
     });
 }
 

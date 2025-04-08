@@ -155,7 +155,7 @@ const displayNextBatch = () => {
     const batch = totalLetters.splice(0, batchSize); // Get the next batch of letters
     batch.forEach((word) => {
         const newKey = document.createElement("span");
-        newKey.classList.add("intro-key");
+        newKey.classList.add("sequence-key");
         // Wrap each letter in a span for individual styling
         newKey.innerHTML = word
             .split("")
@@ -201,7 +201,7 @@ const highlightNextLetter = () => {
 const highlightNextKey = () => {
     if (!gameActive) return; // Stop highlighting if the game is over
     keyboardKeys.forEach((key) => key.classList.remove("suggested")); // Remove previous highlights
-    const currentKey = keySequenceContainer.querySelector(".key");
+    const currentKey = keySequenceContainer.querySelector(".sequence-key");
     if (currentKey) {
         keyboardKeys.forEach((key) => {
             if (key.textContent.toUpperCase() === currentKey.textContent) {
@@ -340,7 +340,7 @@ const resetWordState = () => {
     currentLetterIndex = 0; // Reset letter index for the new word
     if (keySequenceContainer.children.length < lettersPerScreenWidth()) {
         const newKey = document.createElement("span");
-        newKey.classList.add("key");
+        newKey.classList.add("sequence-key");
         newKey.innerHTML = getRandomWordOrChar()
             .split("")
             .map((letter) => `<span>${letter}</span>`)
