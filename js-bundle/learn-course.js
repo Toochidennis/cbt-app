@@ -4486,6 +4486,10 @@ function selectLesson(index, updateCheckbox = true) {
         window.api.openLink(selectedLesson.contents.zoom_url);
     };
 
+    document.getElementById('take-test').onclick = () =>{
+        window.api.openQuizWindow(selectedLesson.contents.quiz_url);
+    };
+
     document.getElementById('content-title').innerHTML =
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;

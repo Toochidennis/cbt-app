@@ -12,6 +12,7 @@
     "cbt-watch": "browserify renderer/cbt.js -o js-bundle/cbt.js --watch",
     "summary-watch": "browserify renderer/summary.js -o js-bundle/summary.js --watch",
     "learn-course-watch": "browserify renderer/learn-course.js -o js-bundle/learn-course.js --watch",
+    "quiz-watch": "browserify renderer/quiz.js -o js-bundle/quiz.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {

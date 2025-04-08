@@ -191,6 +191,30 @@ function openLearnCourseWindow(courseId) {
     });
 }
 
+ipcMain.on('open-quiz-window', (_, quizData)=>{
+     const quizWindow = new BrowserWindow({
+        modal: true,
+        frame: false,
+        parent: mainWindow,
+        webPreferences: {
+            contextIsolation: true,
+            //    devTools: false,
+            preload: path.join(__dirname, 'preload.js'),
+        },
+    });
+
+    quizWindow.maximize();
+
+    // Enjoyment allowance
+    quizWindow.loadFile('pages/quiz.html').then(()=>{
+        quizWindow.webContents.send('start-quiz', quizData);
+    });
+
+    ipcMain.once('close-quiz-window', ()=>{
+        quizWindow.close();
+    });
+});
+
 // IPC handlers for opening windows
 ipcMain.on('open-subject-window', () => {
     openSelectSubjectDialog();

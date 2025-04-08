@@ -1,0 +1,232 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    height: 54px;
+    padding:  2em;
+    box-shadow: inset 0px -1px 0px #e8eaef;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    font-style: italic;
+    color: #426CFF;
+}
+
+.graduation-cap {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.logo p {
+    font-family: "STIX Two Text";
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.skool {
+    font-style: italic;
+    color: #fc9338;
+}
+
+.close {
+    display: none;
+    border: 1.5px solid #426bff;
+    border-radius: 10px;
+    padding: 0.8em 1.5em;
+    color: #426bff;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.cbt-content {
+    background: white;
+    padding: 2rem 3em;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.question-section {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.question-container {
+    margin-top: 1rem;
+}
+
+#progress {
+    align-self: stretch;
+    font-family: "Urbanist", Helvetica;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+#question-image-container{
+    margin-top: 1em;
+}
+
+#question-text {
+    margin-top: 1.5em;
+    font-weight: 700;
+    color: #414141;
+    font-size: 1.3rem;
+    line-height: 32px;
+    font-family: "Urbanist", Helvetica;
+    letter-spacing: 0;
+}
+
+.options-container {
+    margin-top: 1.5em;
+}
+
+.options-container label {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-family: "Urbanist", Helvetica;
+    font-weight: 500;
+    margin-bottom: .8em;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.options-container label:hover {
+    color: #2e55dd;
+}
+
+.options-container input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #8C8C8C;
+    border-radius: 50%;
+    outline: 2px solid #8C8C8C;
+    outline-offset: 2.5px;
+    transition: border 0.2s, outline 0.2s;
+    cursor: pointer;
+}
+
+.options-container input[type="radio"]:hover {
+    background-color: #7795FF;
+    border-color: #7795FF;
+}
+
+/* Styles for the checked state */
+.options-container input[type="radio"]:checked {
+    background-color: #2e55dd;
+    border-color: #2e55dd;
+}
+
+.options-container input[type="radio"]:unchecked {
+    background-color: #8C8C8C;
+    border-color: #8C8C8C;
+}
+
+/* Styles for the focus state */
+.options-container input[type="radio"]:focus {
+    outline: 2px solid #2e55dd;
+}
+
+.controls-section {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls-section div {
+    display: flex;
+    align-items: center;
+}
+
+.controls-section .back {
+    border-radius: 32px;
+    padding: .5em 1em;
+    gap: 10px;
+    border: 1.5px solid #2e55dd;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.controls-section .back p {
+    width: fit-content;
+    font-family: "Urbanist", Helvetica;
+    font-weight: 500;
+    color: #2e55dd;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.controls-section .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    padding: .5em 1em;
+    gap: 10px;
+    background-color: #2e55dd;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.back:active,
+.next:active,
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+.controls-section .next span {
+    font-family: "Urbanist", Helvetica;
+    font-weight: 500;
+    color: #fff;
+    padding: .2em 1em;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.controls-section .next img {
+    width: 20px;
+    height: 20px;
+}
+
+.questions-nav-wrapper {
+    margin-top: 2rem;
+    background-color: #f6f6f6;
+    margin-bottom: 3rem;
+    padding: .5em;
+}
+
+.text-wrapper-2 {
+    font-family: "Urbanist", Helvetica;
+    font-weight: 400;
+    color: #252323;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+.text-wrapper-3 {
+    font-weight: 600;
+}

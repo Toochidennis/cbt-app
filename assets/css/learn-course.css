@@ -33,7 +33,6 @@ html {
     word-wrap: break-word;
 }
 
-
 .skool {
     color: #2F55DD;
     font-size: 1em;
@@ -251,6 +250,7 @@ html {
     font-family: "Urbanist";
     font-weight: 600;
     line-height: 22.91px;
+    cursor: pointer;
 }
 
 .zoom1 button {
@@ -262,6 +262,11 @@ html {
     font-family: "Urbanist";
     font-weight: 600;
     line-height: 22.91px;
+    cursor: pointer;
+}
+
+.zoom button:active, .zomm1 button:active{
+    transform: scale(0.98);
 }
 
 .zoom1 {
@@ -298,6 +303,7 @@ html {
     align-items: center;
     gap: 15px;
     padding: 0 1em;
+    cursor: pointer;
 }
 
 .previous:hover{
@@ -496,7 +502,7 @@ html {
 
 .side ul li {
     margin-bottom: 2px;
-    padding: 1.5em;
+    padding: .8em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
     cursor: pointer;
@@ -521,7 +527,7 @@ html {
     word-wrap: break-word;
     font-family: "Urbanist";
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
