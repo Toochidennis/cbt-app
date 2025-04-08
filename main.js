@@ -142,7 +142,7 @@ function openExamWindow(examData) {
         parent: mainWindow,
         webPreferences: {
             contextIsolation: true,
-                devTools: false,
+            devTools: false,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
@@ -152,7 +152,7 @@ function openExamWindow(examData) {
         examWindow.webContents.send('start-exam', examData);
     });
 
-    examWindow.webContents.on('devtools-opened', ()=>{
+    examWindow.webContents.on('devtools-opened', () => {
         examWindow.webContents.closeDevTools();
     });
 
@@ -183,8 +183,7 @@ function openLearnCourseWindow() {
         //  learnCoursesWindow.webContents.send('start-exam', );
     });
 
-    // Register the listener for this window instance
-    ipcMain.on('close-learn-course-window', ()=>{
+    ipcMain.on('close-learn-course-window', () => {
         learnCourseWindow.close();
     });
 }
