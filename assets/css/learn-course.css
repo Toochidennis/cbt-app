@@ -96,6 +96,7 @@ body, html {
     scrollbar-width: thin; /* For modern browsers */
     scroll-behavior: smooth;
     height: calc(100vh - 64px); /* Correct height calculation */
+    position: relative; /* Ensure child elements can be positioned relative to this container */
 }
 
 .mid-content::-webkit-scrollbar {
@@ -296,16 +297,24 @@ body, html {
 .previous{
     border: none;
     background: url('../img/back.png') no-repeat left center;
-    margin-left: 50px;
+    margin-left: 10px;
     margin-bottom: 20px;
     padding-left: 30px;
+    position: fixed; /* Fix the buttons at the bottom of the .mid-content area */
+    bottom: 20px; /* Adjust distance from the bottom */
+    z-index: 100; /* Ensure they stay above other content */
+    left: calc(17.5% + 20px); /* Adjust position relative to .mid-content */
 }
 .next{
     border: none;
     background: url('../img/back2.png') no-repeat right center ;
-    margin-left: 600px;
+    margin-right: 80px;
     margin-bottom: 20px;
     padding-right: 30px;
+    position: fixed; /* Fix the buttons at the bottom of the .mid-content area */
+    bottom: 20px; /* Adjust distance from the bottom */
+    z-index: 100; /* Ensure they stay above other content */
+    right: calc(17.5% + 20px); /* Adjust position relative to .mid-content */
 }
 
 .missed{
