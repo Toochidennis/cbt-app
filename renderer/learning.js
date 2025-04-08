@@ -1,4 +1,12 @@
 const axios = require('axios');
+const bannerColors = [
+  "#426CFF", // Bright Blue
+  "#5A8DEE", // Soft Blue
+  "#6C63FF", // Purple-Blue
+  "#1E90FF", // Dodger Blue
+  "#4682B4", // Steel Blue
+];
+
 
 function showShimmer() {
   const coursesContainer = document.getElementById('courses-container');
