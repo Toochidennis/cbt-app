@@ -27,7 +27,7 @@ html {
 .link {
     color: #FC9338;
     font-size: 1.5em;
-    font-family: STIX Two Text;
+    font-family: "STIX Two Text";
     font-style: italic;
     font-weight: 700;
     word-wrap: break-word;
@@ -37,7 +37,7 @@ html {
 .skool {
     color: #2F55DD;
     font-size: 1em;
-    font-family: STIX Two Text;
+    font-family: "STIX Two Text";
     font-style: italic;
     font-weight: 700;
     word-wrap: break-word;
@@ -57,7 +57,7 @@ html {
     padding-left: 25px;
     background-color: #F3F3F4;
     font-size: 16px;
-    font-family: Inter;
+    font-family: "Urbanist";
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -144,7 +144,7 @@ html {
 .heading {
     color: #2F55DD;
     font-size: 24px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     line-height: 24px;
     word-wrap: break-word;
@@ -153,44 +153,29 @@ html {
 
 .video-container {
     margin-left: 20px;
-    margin-bottom: 20px;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color:transparent;
-    padding: 20px 10px;
-    /* Add padding to the top and sides */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 93%;
     height: 20rem;
-    /* Adjust height for better display */
     overflow: hidden;
-    /* Prevent content overflow */
-}
-
-.video-container video {
-    height: 100%;
-    /* Ensure the video fills the height of the container */
-    width: 100%;
-    /* Ensure the video fills the width of the container */
-
 }
 
 .title {
     display: flex;
     padding-left: 20px;
-    /* Space between video and title */
 }
 
 .title p {
     margin-top: 10px;
-    /* Space between video and title */
     color: #171717;
     font-size: 22px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     line-height: 21px;
     word-wrap: break-word;
@@ -204,7 +189,7 @@ html {
     background-color: #426CFF;
     color: white;
     font-size: 14px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 500;
     line-height: 32px;
     word-wrap: break-word;
@@ -220,7 +205,7 @@ html {
 .title span {
     color: #8C8C8C;
     font-size: 14px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 400;
     line-height: 21px;
     word-wrap: break-word;
@@ -231,7 +216,7 @@ html {
     background-color: #FFFFFF;
     border: 2px solid white;
     width: 90%;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .zoomimg {
@@ -242,7 +227,7 @@ html {
 .zoomimg p {
     color: #4E5566;
     font-size: 15px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 500;
     line-height: 16.11px;
     word-wrap: break-word;
@@ -251,7 +236,7 @@ html {
 .zoomimg span {
     color: #2D8CFF;
     font-size: 16px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     text-decoration: underline;
     word-wrap: break-word;
@@ -268,7 +253,7 @@ html {
     margin-top: 20px;
     color: #696969;
     font-size: 14px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     line-height: 22.91px;
     word-wrap: break-word;
@@ -285,7 +270,7 @@ html {
     height: 40px;
     color: white;
     font-size: 14px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     line-height: 22.91px;
     word-wrap: break-word;
@@ -311,14 +296,14 @@ html {
 .zoomimg1 p {
     color: #FC9338;
     font-size: 20px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 600;
     word-wrap: break-word;
 }
 .zoomimg1 span {
     color: #FFAC62;
     font-size: 12px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 400;
     word-wrap: break-word;
 }
@@ -362,8 +347,7 @@ position: sticky;
     scroll-behavior: smooth;
     scrollbar-color: white transparent;
     /* Customize scrollbar color */
-    height: calc(100vh - 64px);
-    /* Adjust height to fit the remaining space */
+    height: calc(100vh - 64px)
 }
 
 .missed::-webkit-scrollbar {
@@ -596,7 +580,6 @@ position: sticky;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 #lesson-list li.active {
