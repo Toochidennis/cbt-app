@@ -64,6 +64,15 @@ html {
     border: 1px solid #E9EAF0;
 }
 
+#close-learn{
+    margin-left: 17em;
+    background-color: #2D8CFF;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
 .courses-content {
     height: 100%;
     display: flex;
@@ -90,6 +99,7 @@ html {
     width: 65%;
     overflow-y: auto;
     /* Enable vertical scrolling */
+    overflow-x: hidden;
     scrollbar-width: thin;
     /* For modern browsers */
     scroll-behavior: smooth;
@@ -119,18 +129,16 @@ html {
 .main-header {
     display: flex;
     align-items: center;
-    /* Align items vertically on the same line */
-    gap: 100px;
-    /* Increase spacing between the image and the heading */
-    padding-top: 20px;
+    position: fixed;
     background-color: white;
-    width: 100%;
+    width: 60.3%;
 }
 
 .main-header img {
     width: 30px;
     /* Adjust image size */
     height: 30px;
+    
 }
 
 .heading {
@@ -144,26 +152,20 @@ html {
 }
 
 .video-container {
-    position: sticky;
-    /* Keep the video container fixed */
-    top: 0;
-    /* Stick to the top of the parent container */
-    z-index: 10;
-    /* Ensure it stays above other content */
     margin-left: 20px;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color:transparent;
     padding: 20px 10px;
     /* Add padding to the top and sides */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 95%;
-    height: 30rem;
+    width: 93%;
+    height: 20rem;
     /* Adjust height for better display */
     overflow: hidden;
     /* Prevent content overflow */
@@ -179,7 +181,7 @@ html {
 
 .title {
     display: flex;
-    gap: 100px;
+    padding-left: 20px;
     /* Space between video and title */
 }
 
@@ -239,7 +241,7 @@ html {
 
 .zoomimg p {
     color: #4E5566;
-    font-size: 10px;
+    font-size: 15px;
     font-family: Urbanist;
     font-weight: 500;
     line-height: 16.11px;
@@ -259,63 +261,73 @@ html {
     height: 50px;
     margin-left: 60px;
     background: url('../img/zoom.png') no-repeat right center;
-    color: #FFFFFF;
-    font-size: 12px;
+    padding-right: 25px;
+    background-color: #E0E0E0;
+    padding-left: 10px;
+    border: none;
+    margin-top: 20px;
+    color: #696969;
+    font-size: 14px;
     font-family: Urbanist;
     font-weight: 600;
     line-height: 22.91px;
     word-wrap: break-word;
-    padding-right: 30px;
-    background-color: #2196F3;
-    padding-left: 15px;
-    border: none;
-    margin-top: 60px;
 }
 
 .zoom1 button {
     height: 50px;
     margin-left: 60px;
-    color: #696969;
-    font-size: 12px;
-    font-family: Urbanist;
-    font-weight: 600;
-    line-height: 22.91px;
-    word-wrap: break-word;
     padding-right: 30px;
-    background-color: #E0E0E0;
+    background-color: #ED810D;
     border: none;
     margin-top: 30px;
     width: 150px;
     height: 40px;
+    color: white;
+    font-size: 14px;
+    font-family: Urbanist;
+    font-weight: 600;
+    line-height: 22.91px;
+    word-wrap: break-word;
 }
 
 .zoom1 {
     display: flex;
-    background-color: #F6F6F6;
-    border: 2px solid white;
-    width: 90%;
+    background-color:#FFF8F4;
+    border: 2px solid #FC9338;
+    width: 87%;
     margin-left: 40px;
     margin-top: 20px;
     margin-bottom: 40px;
     height: 100px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .zoomimg1 {
     width: 60%;
-    padding: 20px;
 }
 
 .zoomimg1 p {
-    color: #4E5566;
-    font-size: 10px;
+    color: #FC9338;
+    font-size: 20px;
     font-family: Urbanist;
-    font-weight: 500;
-    line-height: 16.11px;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+.zoomimg1 span {
+    color: #FFAC62;
+    font-size: 12px;
+    font-family: Urbanist;
+    font-weight: 400;
     word-wrap: break-word;
 }
 
 .back {
     display: flex;
+background-color: white;
+padding-top: 15px;
+position: sticky;
 }
 
 .previous {
