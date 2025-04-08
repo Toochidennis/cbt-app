@@ -1,5 +1,9 @@
 let currentLesson = 1;
 
+window.api.startLearning((_,courseId)=>{
+    console.log("Course id ", courseId);
+});
+
 function selectLesson(lesson) {
     if (lesson === currentLesson + 1) {
         currentLesson = lesson;

@@ -4453,10 +4453,13 @@ function populateCourses(courses) {
     return;
   }
 
+  const bannerContainer = document.getElementById('banner-container');
   const coursesContainer = document.getElementById('courses-container');
   coursesContainer.innerHTML = '';
+  bannerContainer.innerHTML = '';
 
   const fragment = document.createDocumentFragment();
+  const bannerFragment = document.createDocumentFragment();
 
   courses.forEach(course => {
     // Create elements dynamically
@@ -4491,24 +4494,46 @@ function populateCourses(courses) {
     takeCourseBtn.textContent = "Take Course";
 
     takeCourseBtn.addEventListener('click', () => {
-      window.api.openLearnCourseWindow();
+      window.api.openLearnCourseWindow(course.id);
     });
 
-    courseContent.append(courseTitle);
-    courseContent.append(courseDescription);
-
-    courseFooter.append(footerImage);
-    courseFooter.append(footerText);
-    courseFooter.append(takeCourseBtn);
-
-    courseBox.append(courseImage);
-    courseBox.append(courseCategory);
-    courseBox.append(courseContent);
-    courseBox.append(courseFooter);
-
+    courseContent.append(courseTitle, courseDescription);
+    courseFooter.append(footerImage, footerText, takeCourseBtn);
+    courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
+    
+    bannerFragment.appendChild(populateCarousel(course));
     fragment.appendChild(courseBox);
   });
 
+  bannerContainer.appendChild(bannerFragment);
   coursesContainer.appendChild(fragment);
+}
+
+function populateCarousel(course) {
+  const banner = document.createElement('div');
+  const bannerContent = document.createElement('div');
+  const bannerTitle = document.createElement('p');
+  const bannerSlogan = document.createElement('span');
+  const takeCourseBtn = document.createElement('button');
+  const courseIcon = document.createElement('img');
+
+  // Assign them classes
+  banner.classList.add('banner');
+  bannerContent.classList.add('banner-content');
+
+  // assign values
+  bannerTitle.textContent = course.course_name;
+  bannerSlogan.textContent = course.slogan;
+  courseIcon.src = course.icon;
+  takeCourseBtn.innerHTML = `Take Course <img src="assets/img/play.png" alt="Play icon">`;
+
+  takeCourseBtn.addEventListener('click', () => {
+    window.api.openLearnCourseWindow(course.id);
+  });
+
+  bannerContent.append(bannerTitle, bannerSlogan, takeCourseBtn);
+  banner.append(bannerContent, courseIcon);
+
+  return banner;
 }
 },{"axios":1}]},{},[37]);

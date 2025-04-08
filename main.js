@@ -166,7 +166,7 @@ function openExamWindow(examData) {
     });
 }
 
-function openLearnCourseWindow() {
+function openLearnCourseWindow(courseId) {
     const learnCourseWindow = new BrowserWindow({
         modal: true,
         frame: false,
@@ -179,8 +179,10 @@ function openLearnCourseWindow() {
     });
 
     learnCourseWindow.maximize();
+
     learnCourseWindow.loadFile('pages/learn-course.html').then(() => {
-        //  learnCoursesWindow.webContents.send('start-exam', );
+        console.log('Sending id ', courseId);
+        learnCourseWindow.webContents.send('start-learning', courseId);
     });
 
     // Register the listener for this window instance
@@ -202,8 +204,8 @@ ipcMain.on('open-exam-window', (_, examData) => {
     openExamWindow(examData);
 });
 
-ipcMain.on('open-learn-course-window', () => {
-    openLearnCourseWindow();
+ipcMain.on('open-learn-course-window', (_, courseId) => {
+    openLearnCourseWindow(courseId);
 });
 
 // IPC handler for fetching questions

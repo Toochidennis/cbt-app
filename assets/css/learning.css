@@ -30,14 +30,14 @@
 
 .scroll-banner {
     display: flex;
+    justify-content: space-between;
     gap: 30px;
     margin-top: 40px;
 }
 
-.banner1 {
+.banner {
     width: 45%;
     height: auto;
-    background-image: url(../images/learninghome/banner1.png);
     background-size: cover;
     background-position: center;
     background-color: #426CFF;
@@ -46,19 +46,7 @@
     display: flex;
 }
 
-.banner2 {
-    width: 45%;
-    height: auto;
-    background-image: url(../images/learninghome/banner1.png);
-    background-size: cover;
-    background-position: center;
-    background-color: #874FFF;
-    padding: 30px;
-    border-radius: 15px;
-    display: flex;
-}
-
-.banner1 p {
+.banner p {
     color: var(--color-gray-10, white);
     font-size: 16px;
     font-family: Urbanist;
@@ -68,25 +56,7 @@
     margin-bottom: 20px;
 }
 
-.banner2 p {
-    color: var(--color-gray-10, white);
-    font-size: 16px;
-    font-family: "Urbanist";
-    font-weight: 500;
-    text-transform: uppercase;
-    word-wrap: break-word;
-    margin-bottom: 20px;
-}
-
-.banner2 span {
-    color: var(--color-gray-10, white);
-    font-size: 25px;
-    font-family: "Urbanist";
-    font-weight: 700;
-    word-wrap: break-word;
-}
-
-.banner1 span {
+.banner span {
     color: var(--color-gray-10, white);
     font-size: 25px;
     font-family: "Urbanist";
@@ -95,8 +65,7 @@
     margin-bottom: 20px;
 }
 
-.banner1 button,
-.banner2 button {
+.banner button{
     background-color: #FC9338;
     color: var(--color-gray-10, white);
     border: none;
@@ -109,8 +78,7 @@
     gap: 10px;
 }
 
-.banner1 button img,
-.banner2 button img {
+.banner button img{
     width: 16px;
     height: 16px;
     background-color: white;
@@ -118,8 +86,7 @@
     padding: 5px;
 }
 
-.banner1 img,
-.banner2 img {
+.banner img {
     width: 150px;
     height: 150px;
     object-fit: contain;
