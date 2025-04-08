@@ -2,6 +2,7 @@
     margin-left: 20px;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: #636363 transparent;
@@ -16,7 +17,7 @@
 .learning-page::-webkit-scrollbar-thumb {
     background-color: #636363;
     border-radius: 20px;
-}
+} 
 
 .learning-page::-webkit-scrollbar-track {
     background: transparent;
@@ -30,20 +31,42 @@
 
 .scroll-banner {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-top: 40px;
+    gap: 10px;
+    margin-top: 30px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical overflow */
+    white-space: nowrap; /* Prevent items from wrapping */
+   scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.scroll-banner::-webkit-scrollbar {
+    height: 5px; /* Make the scrollbar thin */
+    background-color: white; /* Set the scrollbar background color to white */
+}
+
+.scroll-banner::-webkit-scrollbar-thumb {
+    background-color: white; /* Set the scrollbar thumb color to a light gray */
+    border-radius: 10px; /* Add rounded corners to the scrollbar thumb */
+}
+
+.scroll-banner::-webkit-scrollbar-track {
+    background: white; /* Set the scrollbar track color to white */
 }
 
 .banner {
-    width: 45%;
+    width: 600px; /* Ensure all banners have the same width */
     height: auto;
     background-size: cover;
     background-position: center;
     background-color: #426CFF;
-    padding: 30px;
+    padding: 1em;
     border-radius: 15px;
     display: flex;
+    flex-direction: row; /* Ensure content is arranged horizontally */
+    justify-content: space-between; /* Add space between writeup and image */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Add space between the writeup and the image */
 }
 
 .banner p {
@@ -54,6 +77,7 @@
     text-transform: uppercase;
     word-wrap: break-word;
     margin-bottom: 20px;
+    
 }
 
 .banner span {
@@ -61,7 +85,8 @@
     font-size: 25px;
     font-family: "Urbanist";
     font-weight: 700;
-    word-wrap: break-word;
+   
+    white-space: wrap;
     margin-bottom: 20px;
 }
 
@@ -201,6 +226,20 @@
     text-align: center;
     width: 100%;
 }
+
+.coming-banner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FF000026;
+    color: #FF3030;
+    font-size: 14px;
+    font-family: "Urbanist";
+    font-weight: 500;
+    word-wrap: break-word;
+    padding: 5px 10px;
+    border-radius: 5px;
+} 
 
 .catbox1 {
     position: relative;
