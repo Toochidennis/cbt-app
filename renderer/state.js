@@ -10,4 +10,4 @@ function getInitialState() {
 
 // Initialize the state
 const state = getInitialState();
-module.exports=  {state, getInitialState};
+module.exports=  {state};

@@ -203,7 +203,6 @@ function capitalizeSentence(text) {
     return text ? text.charAt(0).toUpperCase() + text.slice(1) : '';
 }
 
-
 function getShortSubjectName(subject) {
     return subjectShortNames[subject.toLowerCase()] || subject;
 }
