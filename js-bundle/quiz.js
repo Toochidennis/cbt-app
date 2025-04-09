@@ -19469,15 +19469,43 @@ const prevBtn = document.getElementById('prev-btn');
 const score = document.getElementById('you-scored');
 const pointsCanvas = document.getElementById('points-chart').getContext('2d');
 const chartText = document.getElementById('chart-text');
-const questionsContainer = document.getElementById('questions-container');
+const questionsContainer = document.getElementById('questions-container'); 
 
 fetchQuestions();
 
+function showLoader() {
+    const loaderContainer = document.createElement('div');
+    loaderContainer.id = 'loader-container';
+    const loader = document.createElement('div');
+    loader.id = 'loader'; 
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    loaderContainer.appendChild(loader);
+    document.body.appendChild(loaderContainer);
+}
+
+function hideLoader() {
+    const loaderContainer = document.getElementById('loader-container');
+    if (loaderContainer) {
+        loaderContainer.remove();
+    }
+}
+
 function fetchQuestions() {
+    showLoader(); 
     axios.get(`https://linkschoolonline.com/quiz`)
         .then(response => {
             console.log(response.data);
             formatQuestions(response.data);
+            hideLoader();
         })
         .catch(error => {
             console.error('Error:', error);
