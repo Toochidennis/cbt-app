@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cbtBtn = document.getElementById('cbt-btn')
     const typingBtn = document.getElementById('typing-btn')
     const learnBtn = document.getElementById('learn-btn')
+    const videoBtn = document.getElementById('video-btn')
 
     switchPage("cbt-dashboard");
 
@@ -22,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     learnBtn.addEventListener('click', ()=>{
         switchPage('learning');
-
+    });
+    videoBtn.addEventListener('click', ()=>{
+        switchPage('video');
     });
 
     document.getElementById("min-button").addEventListener("click", () => {
@@ -30,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     maximizeButton.addEventListener("click", () => {
-         window.api.maximize();
+        window.api.maximize();
     });
 
     window.api.onMaximized(() => {
