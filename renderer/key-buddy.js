@@ -220,7 +220,7 @@ const highlightNextKey = () => {
 
 // Function to start the countdown timer
 const startCountdown = () => {
-    let timeLeft = 10; // 60 seconds
+    let timeLeft = 60; // 60 seconds
     timerDisplay.textContent = "01:00"; // Display initial time
     countdownInterval = setInterval(() => {
         if (!gameActive) {

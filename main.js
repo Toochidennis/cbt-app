@@ -161,7 +161,7 @@ function openExamWindow(examData) {
     });
 
     // Register the listener for this window instance
-    ipcMain.once('close-exam-window', ()=>{
+    ipcMain.once('close-exam-window', () => {
         examWindow.close();
     });
 }
@@ -186,13 +186,13 @@ function openLearnCourseWindow(courseId) {
     });
 
     // Register the listener for this window instance
-    ipcMain.once('close-learn-course-window', ()=>{
+    ipcMain.once('close-learn-course-window', () => {
         learnCourseWindow.close();
     });
 }
 
-ipcMain.on('open-quiz-window', (_, quizData)=>{
-     const quizWindow = new BrowserWindow({
+ipcMain.on('open-quiz-window', (_, quizData) => {
+    const quizWindow = new BrowserWindow({
         modal: true,
         frame: false,
         parent: mainWindow,
@@ -206,11 +206,11 @@ ipcMain.on('open-quiz-window', (_, quizData)=>{
     quizWindow.maximize();
 
     // Enjoyment allowance
-    quizWindow.loadFile('pages/quiz.html').then(()=>{
+    quizWindow.loadFile('pages/quiz.html').then(() => {
         quizWindow.webContents.send('start-quiz', quizData);
     });
 
-    ipcMain.once('close-quiz-window', ()=>{
+    ipcMain.once('close-quiz-window', () => {
         quizWindow.close();
     });
 });

@@ -1,25 +1,28 @@
-.video-main-content{
-    padding: 30px;
+.video-main-content {
     overflow-y: auto;
     height: 100%;
     margin-bottom: 50px;
 }
-.section-header{
+
+.section-header {
     color: var(--color-gray-100, #202020);
-    font-family: Urbanist;
-    font-size: 20px;
+    font-family: "Urbanist";
+    font-size: 1.2rem;
+    margin-left: 2em;
+    margin-top: 1em;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
-    margin-bottom: 20px;
-}
-.top-banner{
-    display: flex;
-   gap: 10px;
 }
 
-.video-banner-content{
+.top-banner {
+    display: flex;
+    gap: 10px;
+    padding: 1em 2em;
+}
+
+.video-banner-content {
     display: flex;
     width: 394px;
     height: 76px;
@@ -30,81 +33,84 @@
     gap: 150px;
 }
 
-.video-banner-content img{
+.video-banner-content img {
     width: 54px;
     height: 54px;
     flex-shrink: 0;
     aspect-ratio: 1/1;
 }
 
-.video-banner-content p{ 
+.video-banner-content p {
     color: var(--color-gray-10, #FFF);
-    font-family: Urbanist;
+    font-family: "" Urbanist"";
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
-.bottom-banner{
+.bottom-banner {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
+    padding:  0 2em;
 }
 
-.programming-header{
+.all-videos{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 4em;
+    gap: 20px;
+}
+
+.grid{
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.programming-header {
     color: var(--color-gray-100, #202020);
-    font-family: Urbanist;
+    font-family: "" Urbanist"";
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
 }
 
-iframe{
+iframe {
     width: 15em;
 }
-.first-grid{
-    overflow-x: auto;
-    display: grid;
-}
 
-.grid-content{
-    border-radius: 10px;
-    width: 15em;
-    padding-bottom: 20px;
-}
-
-.grid-content p{
+.grid-content p {
     align-self: stretch;
     color: #1A1A1A;
-    font-family: Urbanist;
-    font-size: 14px;
+    font-family: "Urbanist";
+    font-size: .8rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
 }
 
-.grid-content h6{
+.grid-content h6 {
     color: #414141;
-    font-family: Urbanist;
-    font-size: 11px;
+    font-family: "Urbanist";
+    font-size: .7rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: capitalize;
 }
 
-.grid-content span{
+.grid-content span {
     color: #414141;
-    font-family: Urbanist;
-    font-size: 11px;
+    font-family: "Urbanist";
+    font-size: .7rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-

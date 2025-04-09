@@ -1,6 +1,6 @@
 {
   "name": "linkskool",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -13,6 +13,7 @@
     "summary-watch": "browserify renderer/summary.js -o js-bundle/summary.js --watch",
     "learn-course-watch": "browserify renderer/learn-course.js -o js-bundle/learn-course.js --watch",
     "quiz-watch": "browserify renderer/quiz.js -o js-bundle/quiz.js --watch",
+    "video-watch": "browserify renderer/video.js -o js-bundle/video.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
@@ -23,7 +24,7 @@
       "target": "nsis"
     },
     "nsis": {
-      "runAfterFinish": false,
+      "runAfterFinish": true,
       "perMachine": true,
       "allowElevation": true
     },

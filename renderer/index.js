@@ -1,4 +1,4 @@
-const { switchPage }  = require( "./navigation");
+const { switchPage } = require("./navigation");
 
 document.addEventListener('DOMContentLoaded', () => {
     const controlsContainer = document.getElementById('controls-container');
@@ -12,18 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     switchPage("cbt-dashboard");
 
-    cbtBtn.addEventListener('click', ()=>{
+    cbtBtn.addEventListener('click', () => {
         switchPage("cbt-dashboard");
     });
 
-    typingBtn.addEventListener('click', ()=>{
+    typingBtn.addEventListener('click', () => {
         switchPage('key-buddy');
     });
 
-    learnBtn.addEventListener('click', ()=>{
+    learnBtn.addEventListener('click', () => {
         switchPage('learning');
     });
-    videoBtn.addEventListener('click', ()=>{
+
+    videoBtn.addEventListener('click', () => {
         switchPage('video');
     });
 
