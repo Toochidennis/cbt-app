@@ -4406,7 +4406,34 @@ window.api.startLearning((_, courseId) => {
     fetchLessons(courseId)
 });
 
+function showLoader() {
+    const loaderContainer = document.createElement('div');
+    loaderContainer.id = 'loader-container';
+    const loader = document.createElement('div');
+    loader.id = 'loader';
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    loaderContainer.appendChild(loader);
+    document.body.appendChild(loaderContainer);
+}
+
+function hideLoader() {
+    const loaderContainer = document.getElementById('loader-container');
+    if (loaderContainer) {
+        loaderContainer.remove();
+    }
+}
+
 function fetchLessons(courseId) {
+    showLoader(); // Show loader before starting the request
     axios.get(`https://linkschoolonline.com/lessons?course_id=${courseId}`)
         .then(response => {
             console.log(response.data);
@@ -4415,6 +4442,9 @@ function fetchLessons(courseId) {
         })
         .catch(error => {
             console.error('Error:', error);
+        })
+        .finally(() => {
+            hideLoader(); // Hide loader after the request completes
         });
 }
 
@@ -4440,7 +4470,7 @@ function populateLessons() {
         input.name = 'option';
         input.disabled = true;
         input.value = lesson.title;
-        span.textContent = lesson.title;
+        span.textContent = `${lesson.title}: ${lesson.description}`;
 
         label.append(input, span);
         lessonList.appendChild(label);
@@ -4448,7 +4478,7 @@ function populateLessons() {
         lessonList.dataset.index = index;
 
         if (index === currentIndex) {
-            lessonList.classList.add('active'); // add active class
+            lessonList.classList.add('active');
             input.checked = true;
         }
 
@@ -4478,17 +4508,17 @@ function selectLesson(index, updateCheckbox = true) {
     });
 
     const selectedLesson = lessons[index];
-    if (!selectedLesson?.contents) return;
+    if (!selectedLesson?.content) return;
 
-    const embedUrl = getEmbedUrl(selectedLesson.contents.video_url);
+    const embedUrl = getEmbedUrl(selectedLesson.content.video_url);
     document.getElementById('lesson-video').src = embedUrl;
 
     document.getElementById('zoom-btn').onclick = () => {
-        window.api.openLink(selectedLesson.contents.zoom_url);
+        window.api.openLink(selectedLesson.content.zoom_url);
     };
 
     document.getElementById('take-test').onclick = () => {
-        window.api.openQuizWindow(selectedLesson.contents.quiz_url);
+        window.api.openQuizWindow(selectedLesson.content.quiz_url);
     };
 
     document.getElementById('content-title').innerHTML =
