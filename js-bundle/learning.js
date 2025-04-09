@@ -4470,7 +4470,7 @@ function populateCourses(courses) {
   const fragment = document.createDocumentFragment();
   const bannerFragment = document.createDocumentFragment();
 
-  courses.forEach(course => {
+  courses.forEach((course, index) => {
     // Create elements dynamically
     const courseBox = document.createElement('div');
     const courseCategory = document.createElement('div');
@@ -4510,7 +4510,7 @@ function populateCourses(courses) {
     courseFooter.append(footerImage, footerText, takeCourseBtn);
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
     
-    bannerFragment.appendChild(populateCarousel(course));
+    bannerFragment.appendChild(populateCarousel(course, bannerColors[index]));
     fragment.appendChild(courseBox);
   });
 
@@ -4518,7 +4518,7 @@ function populateCourses(courses) {
   coursesContainer.appendChild(fragment);
 }
 
-function populateCarousel(course) {
+function populateCarousel(course, color) {
   const banner = document.createElement('div');
   const bannerContent = document.createElement('div');
   const bannerTitle = document.createElement('p');
@@ -4538,10 +4538,12 @@ function populateCarousel(course) {
 
   takeCourseBtn.addEventListener('click', () => {
     window.api.openLearnCourseWindow(course.id);
+    localStorage.setItem('courseName', course.course_name);
   });
 
   bannerContent.append(bannerTitle, bannerSlogan, takeCourseBtn);
   banner.append(bannerContent, courseIcon);
+  banner.style.backgroundColor = color;
 
   return banner;
 }

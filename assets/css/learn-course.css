@@ -218,7 +218,6 @@ html {
 }
 
 
-
 .zoomimg p {
     color: #4E5566;
     font-size: 15px;
@@ -294,7 +293,6 @@ html {
     justify-content: space-between;
     align-items: center;
     margin-top: 2em;
-
 }
 
 .previous{
@@ -334,7 +332,6 @@ html {
 
 .missed::-webkit-scrollbar {
     width: 5px;
-    /* Scrollbar width for WebKit browsers */
 }
 
 .missed::-webkit-scrollbar-thumb {
@@ -490,7 +487,7 @@ html {
 }
 
 .side {
-    width: 20%;
+    width: 25%;
     padding-top: 100px;
 }
 

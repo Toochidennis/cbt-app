@@ -4390,6 +4390,8 @@ const axios = require('axios');
 let lessons = [];
 let currentIndex = 0;
 
+const courseName = localStorage.getItem('courseName');
+
 document.addEventListener('DOMContentLoaded', () => {
     const savedCourseId = localStorage.getItem("selectedCourseId");
     if (savedCourseId) {
@@ -4399,7 +4401,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.api.startLearning((_, courseId) => {
-    console.log("Course id ", courseId);
     localStorage.setItem("selectedCourseId", courseId);
 
     fetchLessons(courseId)
@@ -4419,7 +4420,6 @@ function fetchLessons(courseId) {
 
 function populateLessons() {
     if (!lessons || lessons.length === 0) return;
-    
 
     const savedIndex = localStorage.getItem("selectedLessonIndex");
     if (savedIndex !== null) {
@@ -4428,6 +4428,7 @@ function populateLessons() {
 
     const lessonContainer = document.getElementById('lesson-list');
     lessonContainer.innerHTML = ''
+    document.getElementById('course-title').textContent = courseName;
 
     lessons.forEach((lesson, index) => {
         const lessonList = document.createElement('li');
@@ -4437,7 +4438,7 @@ function populateLessons() {
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.name = 'option';
-        input.disabled = true; 
+        input.disabled = true;
         input.value = lesson.title;
         span.textContent = lesson.title;
 
@@ -4455,7 +4456,7 @@ function populateLessons() {
         lessonContainer.appendChild(lessonList);
     });
 
- //   scrollToLesson(currentIndex);
+    //   scrollToLesson(currentIndex);
     selectLesson(currentIndex, false);
 }
 
@@ -4486,7 +4487,7 @@ function selectLesson(index, updateCheckbox = true) {
         window.api.openLink(selectedLesson.contents.zoom_url);
     };
 
-    document.getElementById('take-test').onclick = () =>{
+    document.getElementById('take-test').onclick = () => {
         window.api.openQuizWindow(selectedLesson.contents.quiz_url);
     };
 
@@ -4524,7 +4525,7 @@ function getEmbedUrl(youtubeUrl) {
 document.getElementById('next-btn').addEventListener('click', () => {
     if (currentIndex < lessons.length - 1) {
         selectLesson(currentIndex + 1, true); // true = update checkbox
-       // scrollToLesson(currentIndex);
+        // scrollToLesson(currentIndex);
     }
 });
 
@@ -4534,7 +4535,6 @@ document.getElementById('prev-btn').addEventListener('click', () => {
         //scrollToLesson(currentIndex);
     }
 });
-
 
 document.getElementById('close-learn').addEventListener('click', () => {
     window.api.closeLearnCourseWindow();
