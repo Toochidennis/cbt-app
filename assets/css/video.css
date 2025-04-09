@@ -19,11 +19,6 @@
    gap: 10px;
 }
 
-.all-videos{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 .video-banner-content{
     display: flex;
     width: 394px;
