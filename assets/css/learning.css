@@ -17,7 +17,7 @@
 .learning-page::-webkit-scrollbar-thumb {
     background-color: #636363;
     border-radius: 20px;
-} 
+}
 
 .learning-page::-webkit-scrollbar-track {
     background: transparent;
@@ -26,97 +26,104 @@
 
 .learning-page::-webkit-scrollbar-thumb:hover {
     background: #555;
-    /* Handle color on hover */
 }
 
 .scroll-banner {
     display: flex;
     gap: 10px;
-    margin-top: 30px;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical overflow */
-    white-space: nowrap; /* Prevent items from wrapping */
-   scroll-behavior: smooth;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
     scrollbar-width: thin;
+    padding-top: 2em;
 }
 
 .scroll-banner::-webkit-scrollbar {
-    height: 5px; /* Make the scrollbar thin */
-    background-color: white; /* Set the scrollbar background color to white */
+    height: 5px;
+    background-color: white;
 }
 
 .scroll-banner::-webkit-scrollbar-thumb {
-    background-color: white; /* Set the scrollbar thumb color to a light gray */
-    border-radius: 10px; /* Add rounded corners to the scrollbar thumb */
+    background-color: white;
+    border-radius: 10px;
 }
 
 .scroll-banner::-webkit-scrollbar-track {
-    background: white; /* Set the scrollbar track color to white */
+    background: white;
 }
 
 .banner {
-    width: 600px; /* Ensure all banners have the same width */
-    height: auto;
-    background-size: cover;
-    background-position: center;
-    background-color: #426CFF;
-    padding: 1em;
-    border-radius: 15px;
+    width: 500px;
     display: flex;
-    flex-direction: row; /* Ensure content is arranged horizontally */
-    justify-content: space-between; /* Add space between writeup and image */
-    align-items: center; /* Align items vertically */
-    gap: 20px; /* Add space between the writeup and the image */
+    background-color: #426CFF;
+    border-radius: 15px;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    cursor: pointer;
 }
 
-.banner p {
-    color: var(--color-gray-10, white);
-    font-size: 16px;
-    font-family: Urbanist;
+.banner img {
+    width: 35%;
+
+}
+
+.banner:hover {
+    transform: translateY(-8px);
+}
+
+.banner-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 15px;
+}
+
+.banner-content p {
+    color: #fff;
+    font-size: 1rem;
+    font-family: "Urbanist";
     font-weight: 500;
     text-transform: uppercase;
-    word-wrap: break-word;
-    margin-bottom: 20px;
-    
-}
-
-.banner span {
-    color: var(--color-gray-10, white);
-    font-size: 25px;
-    font-family: "Urbanist";
-    font-weight: 700;
-   
     white-space: wrap;
-    margin-bottom: 20px;
 }
 
-.banner button{
+.banner-content span {
+    color: #fff;
+    font-size: .9rem;
+    font-family: "Urbanist";
+    font-weight: 400;
+    margin-top: .5em;
+    white-space: wrap;
+}
+
+.banner-content button {
+    width: 140px;
     background-color: #FC9338;
-    color: var(--color-gray-10, white);
+    color: #fff;
     border: none;
-    padding: 10px 20px;
+    gap: 10px;
+    padding: 10px;
     border-radius: 25px;
-    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
-.banner button img{
+.banner-content button:active {
+    transform: scale(0.9);
+}
+
+.banner-content button img {
     width: 16px;
     height: 16px;
     background-color: white;
     border-radius: 50%;
-    padding: 5px;
-}
-
-.banner img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin-left: auto;
-    margin-top: auto;
+    padding: 4px;
 }
 
 .learn-category {
@@ -126,51 +133,72 @@
 .learn-categories {
     display: flex;
     margin-top: 20px;
+    gap: 10px;
 }
 
-.catbox1,
-.catbox2 {
+.cat-box1 {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: #EBE3FF;
-    padding: 20px;
+    padding: 1em;
     border-radius: 10px;
-    margin-right: 20px;
-    gap: 50px;
+    gap: 10px;
     width: 30rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
-.catbox1 img,
-.catbox2 img {
-    width: 60px;
-    height: 60px;
-    background-color: #E8DFFF;
-    border-radius: 50%;
-    padding: 10px;
-    object-fit: contain;
+.cat-box1:active {
+    transform: scale(.92);
 }
 
-.catbox1 p,
-.catbox2 p {
+.cat-box1:hover {
+    transform: translateY(-5px);
+}
+
+.cat-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cat-text p {
     color: #202020;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: "Urbanist";
     font-weight: 700;
     word-wrap: break-word;
 }
 
-.catbox1 p span,
-.catbox2 p span {
+.cat-text span {
     color: #5F5F5F;
-    font-size: 12px;
+    font-size: .8rem;
     font-family: "Urbanist";
     font-weight: 400;
     word-wrap: break-word;
 }
 
+.kids {
+    background-color: #E7E7E7;
+}
+
+.coming-banner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FF000026;
+    color: #FF3030;
+    font-size: .9rem;
+    font-family: "Urbanist";
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 .title {
     color: var(--color-gray-100, #202020);
-    font-size: 20px;
+    font-size: 1.2rem;
     font-family: "Urbanist";
     font-weight: 600;
     text-transform: capitalize;
@@ -178,8 +206,11 @@
 }
 
 .course {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     margin-bottom: 100px;
-    margin-left: 20px;
     width: 97%;
 }
 
@@ -195,10 +226,9 @@
 
 .learn-courses {
     display: grid;
+    padding: .5em;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-top: 20px;
-
 }
 
 .course-box {
@@ -209,6 +239,13 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     outline: 1px solid gray;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.course-box:hover {
+    transform: translateY(-10px);
 }
 
 .course-box img {
@@ -220,29 +257,9 @@
     margin-bottom: 15px;
 }
 
-
-
 .course-content {
     text-align: center;
     width: 100%;
-}
-
-.coming-banner {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #FF000026;
-    color: #FF3030;
-    font-size: 14px;
-    font-family: "Urbanist";
-    font-weight: 500;
-    word-wrap: break-word;
-    padding: 5px 10px;
-    border-radius: 5px;
-} 
-
-.catbox1 {
-    position: relative;
 }
 
 .course-label {
@@ -283,12 +300,9 @@
 .course-footer {
     display: flex;
     align-items: center;
-    /* Keep image and text inline */
     gap: 20px;
-    /* Space between image and text */
     margin-top: 10px;
     flex-wrap: wrap;
-    /* Allow wrapping for the button */
 }
 
 .course-footer img {
@@ -320,20 +334,21 @@
     background-color: transparent;
     color: #FC9338;
     border: none;
-    padding: 3px 10px;
+    padding: 1em;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 1rem;
     font-family: "Urbanist";
     font-weight: 600;
     cursor: pointer;
     text-transform: capitalize;
     width: 100%;
-    padding: 15px;
     align-self: stretch;
-    /* Make the button take full width */
     margin-top: 10px;
-    /* Add spacing above the button */
     border: 1px solid #FC9338;
+}
+
+.course-footer button:active {
+    transform: scale(0.9);
 }
 
 .shimmer-box {

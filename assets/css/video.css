@@ -17,45 +17,47 @@
 }
 
 .top-banner {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
     padding: 1em 2em;
 }
 
 .video-banner-content {
     display: flex;
-    width: 394px;
-    height: 76px;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #426CFF;
     align-items: center;
-    padding: 20px 10px;
-    gap: 150px;
-}
-
-.video-banner-content img {
-    width: 54px;
-    height: 54px;
-    flex-shrink: 0;
-    aspect-ratio: 1/1;
+    justify-content: space-between;
 }
 
 .video-banner-content p {
-    color: var(--color-gray-10, #FFF);
-    font-family: "" Urbanist"";
-    font-size: 20px;
+    color: #fff;
+    font-family: "Urbanist";
+    font-size: 1.2rem;
+    padding: 1.2em;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
-.bottom-banner {
-    display: flex;
-    gap: 10px;
-    padding:  0 2em;
+.anim {
+    background-color: #874FFF;
 }
 
-.all-videos{
+.scratch {
+    background-color: #FC9338;
+}
+
+.graph {
+    background-color: #1E8E3E;
+}
+
+.more-videos {
+    background-color: #00B6FF;
+}
+
+.all-videos {
     display: flex;
     flex-direction: column;
     margin-left: 2em;
@@ -64,21 +66,19 @@
     gap: 20px;
 }
 
-.grid{
+.grid {
     display: flex;
     overflow-x: auto;
     gap: 10px;
     scrollbar-width: thin;
 }
 
-
 .programming-header {
-    color: var(--color-gray-100, #202020);
-    font-family: "" Urbanist"";
-    font-size: 20px;
-    font-style: normal;
+    color: #000;
+    font-family: "Urbanist";
+    font-size: 1.2rem;
     font-weight: 600;
-    line-height: normal;
+    line-height: 100%;
     text-transform: capitalize;
     margin-bottom: 1em;
 }
@@ -89,10 +89,9 @@ iframe {
 
 .grid-content p {
     align-self: stretch;
-    color: #1A1A1A;
+    color: #000;
     font-family: "Urbanist";
-    font-size: .8rem;
-    font-style: normal;
+    font-size: .9rem;
     font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
@@ -102,7 +101,6 @@ iframe {
     color: #414141;
     font-family: "Urbanist";
     font-size: .7rem;
-    font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: capitalize;
@@ -112,7 +110,6 @@ iframe {
     color: #414141;
     font-family: "Urbanist";
     font-size: .7rem;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
 }

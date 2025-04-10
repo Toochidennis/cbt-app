@@ -5,13 +5,13 @@ let currentIndex = 0;
 
 const courseName = localStorage.getItem('courseName');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const savedCourseId = localStorage.getItem("selectedCourseId");
-    if (savedCourseId) {
-        console.log("Restored courseId from localStorage:", savedCourseId);
-        fetchLessons(savedCourseId);
-    }
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     const savedCourseId = localStorage.getItem("selectedCourseId");
+//     if (savedCourseId) {
+//         console.log("Restored courseId from localStorage:", savedCourseId);
+//         fetchLessons(savedCourseId);
+//     }
+// });
 
 window.api.startLearning((_, courseId) => {
     localStorage.setItem("selectedCourseId", courseId);
