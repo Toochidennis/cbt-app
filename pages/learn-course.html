@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/globals.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Urbanist:500,400,600|STIX+Two+Text:700|Inter:var(--body-large-400-font-weight)|BioRhyme:wght@300;400;800&display=swap|Bungee Color:wght@400&display=swap" />
     <link rel="stylesheet" href="../assets/css/learn-course.css" />
@@ -21,21 +22,19 @@
 
         <button id="close-learn">Back to home</button>
     </nav>
-    <div class="main-content">
+    <div class="content">
+        <p id="course-title" class="course-title"></p>
         <div class="courses-content">
             <aside class="side">
                 <ul id="lesson-list"></ul>
             </aside>
 
             <div class="mid-content">
-                <div class="main-header">
-                    <p id="course-title" class="heading"></p>
-                </div>
                 <div class="other">
                     <!-- <div class="first-section">
                         <p>Lesson 1: Introduction to scratch programming</p>
                     </div> -->
-                    <div class="video-container">
+                    <div class="video-wrapper">
                         <iframe id="lesson-video" width="100%" height="100%" title="" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -44,14 +43,14 @@
                         <p id="content-title"></p>
                     </div>
                     <div class="zoom">
-                        <div class="zoomimg">
-                            <img src="../assets/img/image 80.png" alt="zoom logo">
-                            <p>Your Class : Frontend Development is currently Ongoing.</p>
+                        <div class="zooming">
+                            <img src="../assets/img/small_zoom.svg" alt="zoom logo">
+                            <p class="zoom-info">Your Zoom class starts on <strong>Friday, April 12th at 10:00 AM</strong></p>
                         </div>
                         <button id="zoom-btn">Join Class via Zoom</button>
                     </div>
-                    <div class="zoom1">
-                        <div class="zoomimg1">
+                    <div class="test-wrapper">
+                        <div class="test-content">
                             <p>Find out how much you learnt by taking a Test</p>
                         </div>
                         <button id="take-test">Take Test</button>
@@ -69,21 +68,24 @@
 
                 </div>
             </div>
-            <div class="missed">
-                <p>Here's what you missed</p>
+
+            <div class="right-bar">
+                <p class="missed-text">Here's what you missed</p>
                 <div class="summary">
-                    <p>Week One Assessment <br><span>Frontend Development</span></p>
+                    <p>Lesson Assessment</p>
+                    <span>Website Development</span>
                     <img src="../assets/img/Group 9.png" alt="">
                     <button>See assessment summary</button>
                 </div>
                 <div class="watch-lecture">
-                    <img src="../assets/img/image 80.png" alt="">
-                    <p>Week Two <br><span>Frontend Development</span><br></p>
-                    <h6>1. Learn More About Web Design</h6>
+                    <img src="../assets/img/zoom_logo.svg" alt="">
+                    <p>Lesson 1</p>
+                    <span>Introduction to Website</span>
                     <button>Watch lecture</button>
                 </div>
             </div>
         </div>
+
     </div>
     <script src="../js-bundle/learn-course.js"></script>
 </body>

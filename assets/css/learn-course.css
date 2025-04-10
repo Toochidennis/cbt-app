@@ -15,9 +15,11 @@ html {
     box-shadow: 0px -1px 0px #E9EAF0 inset;
     border-bottom: 1px black;
     align-items: center;
-    padding: 0 2em;
+    padding: 0 1em;
     display: flex;
     z-index: 1000;
+    top: 0;
+    right: 0;
 }
 
 .logo-container {
@@ -62,21 +64,134 @@ html {
 }
 
 #close-learn {
-    background-color: #2D8CFF;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+    color: #2D8CFF;
+    padding: 1em 2em;
+    background-color: transparent;
+    border: 1px solid #2D8CFF;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-#close-learn:active{
+#close-learn:active {
     transform: scale(0.95);
 }
-.courses-content {
-    height: 100%;
+
+#close-learn:hover {
+    background-color: #5aa0f7;
+    color: white;
+}
+
+.content {
+    margin-top: 54px;
+    height: 100vh;
     display: flex;
-    margin-top: 50px;
-    margin-bottom: 30em;
+    flex-direction: column;
+}
+
+.course-title {
+    color: #2F55DD;
+    font-size: 1.5rem;
+    font-family: "Urbanist";
+    font-weight: 700;
+    text-align: center;
+    padding: .5em;
+    line-height: 24px;
+}
+
+.courses-content {
+    flex: 1;
+    display: flex;
+}
+
+.side {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.side ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side ul li {
+    margin-bottom: 2px;
+    padding: .8em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.side ul li:last-child {
+    border-bottom: none;
+}
+
+.side ul li label {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    font-family: "Urbanist";
+    font-size: 1rem;
+    font-weight: 500;
+    color: #171717;
+    cursor: pointer;
+    flex-wrap: nowrap;
+}
+
+.side ul li label span {
+    flex: 1;
+    word-wrap: break-word;
+    font-family: "Urbanist";
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.side ul li input[type="checkbox"] {
+    flex: 0 0 20px;
+    cursor: pointer;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    outline: none;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+}
+
+.side ul li input[type="checkbox"]:checked {
+    background-color: #2F55DD;
+    border-color: #2F55DD;
+}
+
+
+.side ul li input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#lesson-list li.active {
+    background-color: #e0f7fa;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.side ul li:hover {
+    background-color: #F5F7FF;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.side ul li label:hover {
+    color: #2F55DD;
+    transition: color 0.3s ease;
 }
 
 .courses-content::-webkit-scrollbar,
@@ -94,18 +209,11 @@ html {
 }
 
 .mid-content {
+    flex: 2;
     background-color: #F5F7FF;
-    width: 65%;
     overflow-y: auto;
-    /* Enable vertical scrolling */
-    overflow-x: hidden;
     scrollbar-width: thin;
-    /* For modern browsers */
     scroll-behavior: smooth;
-    height: calc(100vh - 64px);
-    /* Correct height calculation */
-    position: relative;
-    /* Ensure child elements can be positioned relative to this container */
 }
 
 .mid-content::-webkit-scrollbar {
@@ -125,45 +233,29 @@ html {
     /* Scrollbar track color */
 }
 
-.main-header {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    background-color: white;
-    width: 60.3%;
-}
-
-.main-header img {
-    width: 30px;
-    height: 30px;
-}
-
-.heading {
-    color: #2F55DD;
-    font-size: 24px;
-    font-family: "Urbanist";
-    font-weight: 600;
-    line-height: 24px;
-    word-wrap: break-word;
-}
-
 .other {
     display: flex;
     flex-direction: column;
     padding: 2em;
 }
 
-.video-container {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 aspect ratio */
     background-color: transparent;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 20rem;
     overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .title {
@@ -214,35 +306,39 @@ html {
     justify-content: space-between;
     border-radius: 10px;
     padding: 1em;
+    margin-top: 1em;
     align-items: center;
+    gap: 10px;
+}
+
+.zooming {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zooming img {
+    width: 5em;
+    height: 2em;
+
 }
 
 
-.zoomimg p {
-    color: #4E5566;
-    font-size: 15px;
+.zooming p {
+    color: #000;
+    font-size: 1rem;
     font-family: "Urbanist";
     font-weight: 500;
     line-height: 16.11px;
     word-wrap: break-word;
 }
 
-.zoomimg span {
-    color: #2D8CFF;
-    font-size: 1rem;
-    font-family: "Urbanist";
-    font-weight: 600;
-    text-decoration: underline;
-    word-wrap: break-word;
-}
-
 .zoom button {
     display: flex;
-    gap: 10px ;
+    gap: 10px;
     align-items: center;
     background-color: #426CFF;
-    padding: .8em 1em;
-    border-radius: 10px;
+    padding: .5em 1em;
     border: none;
     color: #fff;
     font-size: .8rem;
@@ -252,23 +348,13 @@ html {
     cursor: pointer;
 }
 
-.zoom1 button {
-    background-color: #ED810D;
-    border: none;
-    color: white;
-    font-size: .8rem;
-    padding: .8em 2em;
-    font-family: "Urbanist";
-    font-weight: 600;
-    line-height: 22.91px;
-    cursor: pointer;
-}
 
-.zoom button:active, .zomm1 button:active{
+.zoom button:active,
+.test-wrapper button:active {
     transform: scale(0.98);
 }
 
-.zoom1 {
+.test-wrapper {
     display: flex;
     background-color: #FFF8F4;
     border: 1px solid #FC9338;
@@ -279,23 +365,35 @@ html {
     align-items: center;
 }
 
-
-.zoomimg1 p {
+.test-content p {
     color: #FC9338;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: "Urbanist";
     font-weight: 600;
     word-wrap: break-word;
 }
 
+.test-wrapper button {
+    background-color: #ED810D;
+    border: none;
+    color: white;
+    font-size: .8rem;
+    padding: .5em 2em;
+    font-family: "Urbanist";
+    font-weight: 600;
+    line-height: 22.91px;
+    cursor: pointer;
+}
+
 .back {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 2em;
 }
 
-.previous{
+.previous {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -304,284 +402,139 @@ html {
     cursor: pointer;
 }
 
-.previous:hover{
+.previous:hover {
     background-color: #4E5566;
     color: #fff;
 }
 
-
-
-.previous img, .next img{
+.previous img,
+.next img {
     height: 1em;
 }
 
-.missed {
-    max-width: 300px;
-    padding-left: 10px;
+.right-bar {
+    display: flex;
+    flex-direction: column;
+    flex: .8;
+    padding: 0 1em;
     overflow-y: auto;
-    /* Enable vertical scrolling for missed content */
     overflow-x: hidden;
-    /* Disable horizontal scrolling */
     scrollbar-width: thin;
-    /* For modern browsers */
     scroll-behavior: smooth;
     scrollbar-color: white transparent;
-    /* Customize scrollbar color */
-    height: calc(100vh - 64px)
+    gap: 15px;
 }
 
-.missed::-webkit-scrollbar {
+.right-bar::-webkit-scrollbar {
     width: 5px;
 }
 
-.missed::-webkit-scrollbar-thumb {
+.right-bar::-webkit-scrollbar-thumb {
     background-color: white;
-    /* Scrollbar thumb color */
     border-radius: 4px;
-    /* Rounded scrollbar thumb */
 }
 
-.missed::-webkit-scrollbar-track {
+.right-bar::-webkit-scrollbar-track {
     background: transparent;
-    /* Scrollbar track color */
 }
 
-.missed p {
+.missed-text {
     color: #171717;
-    font-size: 16px;
-    font-family: Urbanist;
+    font-size: 1rem;
+    font-family: "Urbanist";
     font-weight: 600;
     line-height: 24px;
-    word-wrap: break-word;
-    margin-top: 20px;
 }
 
 .summary {
-    border: 1px solid whitesmoke;
-    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #E9EAF0;
+    padding: 1em;
 }
 
 .summary p {
     color: #426CFF;
-    font-size: 14px;
-    font-family: Urbanist;
+    font-size: .9rem;
+    font-family: "Urbanist";
     font-weight: 400;
     line-height: 15.27px;
-    word-wrap: break-word;
-    margin-left: 13px;
-    margin-top: 10px;
 }
 
 .summary span {
     color: #171717;
-    font-size: 16px;
-    font-family: Urbanist;
+    font-size: .8rem;
+    font-family: "Urbanist";
     font-weight: 600;
     line-height: 15.27px;
     word-wrap: break-word;
-    margin-left: 3px;
 }
 
 .summary img {
-    margin-left: 35px;
-    margin-bottom: 20px;
-    width: 70%;
+    width: 6em;
+    height: 6em;
+    align-self: center;
 }
 
 .summary button {
     color: #426CFF;
-    font-size: 16px;
-    font-family: Urbanist;
-    font-weight: 600;
-    text-transform: capitalize;
+    font-size: .8rem;
+    font-family: "Urbanist";
+    font-weight: 500;
     line-height: 38.18px;
-    word-wrap: break-word;
     background-color: #D9E1FF;
     border: none;
-    margin-left: 25px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 .5em;
 }
 
 .watch-lecture {
-    border: 1px solid whitesmoke;
-    width: 270px;
-    margin-top: 20px;
-
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border: 1px solid #E9EAF0;
+    gap: 10px;
 }
+
+/* .watch-lecture img{
+    width: 80%;
+} */
 
 .watch-lecture p {
     color: #426CFF;
     font-size: 14px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 400;
     line-height: 15.27px;
     word-wrap: break-word;
-    margin-left: 10px;
 }
 
 .watch-lecture span {
-    color: #6E7485;
-    font-size: 14px;
-    font-family: Urbanist;
-    font-weight: 400;
-    line-height: 15.27px;
-    word-wrap: break-word;
-    margin-left: 1px;
-}
-
-.watch-lecture h6 {
     color: #1D2026;
-    font-size: 15.36px;
-    font-family: Urbanist;
+    font-size: .9rem;
+    font-family: "Urbanist";
     font-weight: 500;
     line-height: 19.09px;
-    word-wrap: break-word;
-    margin-left: 10px;
-}
-
-.watch-lecture img {
-    width: 80%;
-    margin-left: 10px;
-    margin-top: 10px;
+    white-space: wrap;
 }
 
 .watch-lecture button {
     color: #426CFF;
-    font-size: 16px;
-    font-family: Urbanist;
+    font-size: 1rem;
+    font-family: "Urbanist";
     font-weight: 600;
-    text-transform: capitalize;
     line-height: 38.18px;
-    word-wrap: break-word;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 40px;
-    height: 37px;
-    margin-left: 50px;
-    margin-bottom: 22px;
-    margin-top: 22px;
     border: none;
 }
 
 .static-container {
     position: sticky;
-    /* Keep the video and title static */
     top: 0;
     z-index: 10;
-    /* Ensure it stays above other content */
     background-color: transparent;
-    /* Background to avoid overlap */
     padding-bottom: 10px;
-
 }
 
 .scrollable-content {
     overflow-y: auto;
-    /* Enable scrolling for the content under the video */
-    height: calc(100vh - 150px);
-    /* Adjust height to fit the remaining space */
-    padding-top: 20px;
-    /* Add padding to avoid overlap with the video */
-}
-
-.side {
-    width: 28%;
-    padding-top: 100px;
-}
-
-.side ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.side ul li {
-    margin-bottom: 2px;
-    padding: .8em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.side ul li:last-child {
-    border-bottom: none;
-}
-
-.side ul li label {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    font-family: "Urbanist";
-    font-size: 1rem;
-    font-weight: 500;
-    color: #171717;
-    cursor: pointer;
-    flex-wrap: nowrap;
-}
-
-.side ul li label span {
-    flex: 1;
-    word-wrap: break-word;
-    font-family: "Urbanist";
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0;
-}
-
-.side ul li input[type="checkbox"] {
-    flex: 0 0 20px;
-    cursor: pointer;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 1px solid black;
-    /* Add border */
-    border-radius: 50%;
-    /* Make it circular */
-    outline: none;
-    /* Remove outline */
-    background-color: white;
-    /* Background color */
-    display: inline-block;
-    position: relative;
-}
-
-.side ul li input[type="checkbox"]:checked {
-    background-color: #2F55DD;
-    border-color: #2F55DD;
-}
-
-
-.side ul li input[type="checkbox"]:checked::after {
-    content: '✔';
-    color: white;
-    font-size: 14px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#lesson-list li.active {
-    background-color: #e0f7fa;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
-.side ul li:hover {
-    background-color: #F5F7FF;
-    /* Light background on hover */
-    border-radius: 5px;
-    /* Add rounded corners */
-    transition: background-color 0.3s ease;
-    /* Smooth transition */
-}
-
-.side ul li label:hover {
-    color: #2F55DD;
-    /* Change text color on hover */
-    transition: color 0.3s ease;
-    /* Smooth transition */
 }
