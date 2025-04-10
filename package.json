@@ -1,6 +1,6 @@
 {
   "name": "linkskool",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -20,7 +20,7 @@
     "asar": true,
     "appId": "com.digitaldreams.linkskool",
     "win": {
-      "icon": "assets/icons/logo2.ico",
+      "icon": "assets/icons/linkskool-icon.ico",
       "target": "nsis"
     },
     "nsis": {

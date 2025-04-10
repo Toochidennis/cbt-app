@@ -68,7 +68,9 @@
     display: flex;
     overflow-x: auto;
     gap: 10px;
+    scrollbar-width: thin;
 }
+
 
 .programming-header {
     color: var(--color-gray-100, #202020);
