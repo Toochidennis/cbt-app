@@ -24,7 +24,6 @@
       "target": "nsis"
     },
     "nsis": {
-      "runAfterFinish": true,
       "perMachine": true,
       "allowElevation": true
     },

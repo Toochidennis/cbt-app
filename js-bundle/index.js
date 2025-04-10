@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const learnBtn = document.getElementById('learn-btn')
     const videoBtn = document.getElementById('video-btn')
 
-    switchPage("learning");
+    switchPage("cbt-dashboard");
 
     cbtBtn.addEventListener('click', () => {
         switchPage("cbt-dashboard");

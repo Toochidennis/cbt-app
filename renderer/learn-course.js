@@ -125,7 +125,7 @@ function selectLesson(index, updateCheckbox = true) {
 
     const embedUrl = getEmbedUrl(selectedLesson.content.video_url);
     document.getElementById('lesson-video').src = embedUrl;
-
+    setZoomInfo(selectedLesson.content.date);
     document.getElementById('zoom-btn').onclick = () => {
         window.api.openLink(selectedLesson.content.zoom_url);
     };
@@ -137,6 +137,24 @@ function selectLesson(index, updateCheckbox = true) {
     document.getElementById('content-title').innerHTML =
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;
+}
+
+function setZoomInfo(serverDate) {
+    console.log('server date ', serverDate);
+    const formattedDate = new Date(serverDate.replace(" ", "T")); // convert to ISO format
+
+    const options = {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+    };
+
+    const readableDate = formattedDate.toLocaleDateString("en-US", options);
+    document.getElementById('zoom-info').innerHTML = `Your Zoom class starts on <strong>${readableDate}</strong>`;
+
+
 }
 
 function getEmbedUrl(youtubeUrl) {
