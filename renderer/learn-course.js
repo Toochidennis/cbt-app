@@ -137,6 +137,10 @@ function selectLesson(index, updateCheckbox = true) {
     document.getElementById('content-title').innerHTML =
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;
+
+    document.getElementById('watch-btn').onclick = () =>{
+        window.api.openLink(selectedLesson.content.recorded_url);
+    }
 }
 
 function setZoomInfo(serverDate) {

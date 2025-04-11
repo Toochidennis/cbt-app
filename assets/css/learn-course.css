@@ -525,6 +525,7 @@ html {
     font-weight: 600;
     line-height: 38.18px;
     border: none;
+    cursor: pointer;
 }
 
 .static-container {
