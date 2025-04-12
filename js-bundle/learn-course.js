@@ -4390,21 +4390,24 @@ const axios = require('axios');
 let lessons = [];
 let currentIndex = 0;
 
-const courseName = localStorage.getItem('courseName');
+const { courseId, courseName } = JSON.parse(localStorage.getItem('courseData'));
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const savedCourseId = localStorage.getItem("selectedCourseId");
-//     if (savedCourseId) {
-//         console.log("Restored courseId from localStorage:", savedCourseId);
-//         fetchLessons(savedCourseId);
-//     }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // const savedCourseId = localStorage.getItem("selectedCourseId");
+    if (courseId) {
+        console.log("Restored courseId from localStorage:", courseId);
+        fetchLessons(courseId);
+    }
+});
+
+// window.api.startLearning((_, courseId) => {
+//     localStorage.setItem("selectedCourseId", courseId);
+
+//     fetchLessons(courseId)
 // });
 
-window.api.startLearning((_, courseId) => {
-    localStorage.setItem("selectedCourseId", courseId);
 
-    fetchLessons(courseId)
-});
 
 function showLoader() {
     const loaderContainer = document.createElement('div');
@@ -4519,15 +4522,20 @@ function selectLesson(index, updateCheckbox = true) {
 
     document.getElementById('take-test').onclick = () => {
         window.api.openQuizWindow(selectedLesson.content.quiz_url);
+        localStorage.setItem('quizData',
+            JSON.stringify(
+                {
+                    courseId: courseId,
+                    lessonId: index + 1
+                })
+        );
     };
 
     document.getElementById('content-title').innerHTML =
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;
 
-    document.getElementById('watch-btn').onclick = () =>{
-        window.api.openLink(selectedLesson.content.recorded_url);
-    }
+    document.getElementById('recorded-video').src = selectedLesson.content.recorded_url;
 }
 
 function setZoomInfo(serverDate) {

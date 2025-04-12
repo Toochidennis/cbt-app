@@ -9,6 +9,8 @@ const quizState = {
 
 let pointsChart = null;
 
+const { courseId, lessonId } = JSON.parse(localStorage.getItem('quizData'));
+
 const submitBtn = document.getElementById('submit-button');
 const closeBtn = document.getElementById('close-btn');
 const progress = document.getElementById('progress');
@@ -51,7 +53,7 @@ function hideLoader() {
 
 function fetchQuestions() {
     showLoader(); 
-    axios.get(`https://linkschoolonline.com/quiz`)
+    axios.get(`https://linkschoolonline.com/lesson-quiz?lesson_id=${lessonId}&course_id=${courseId}`)
         .then(response => {
             console.log(response.data);
             formatQuestions(response.data);

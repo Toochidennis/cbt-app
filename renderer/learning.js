@@ -122,7 +122,7 @@ function populateCourses(courses) {
     courseContent.append(courseTitle, courseDescription);
     courseFooter.append(footerImage, footerText, takeCourseBtn);
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
-    
+
     bannerFragment.appendChild(populateCarousel(course, bannerColors[index]));
     fragment.appendChild(courseBox);
   });
@@ -151,7 +151,13 @@ function populateCarousel(course, color) {
 
   takeCourseBtn.addEventListener('click', () => {
     window.api.openLearnCourseWindow(course.id);
-    localStorage.setItem('courseName', course.course_name);
+    localStorage.setItem('courseData',
+      JSON.stringify(
+        {
+          courseId: course.id, 
+          courseName:course.course_name
+        })
+    );
   });
 
   bannerContent.append(bannerTitle, bannerSlogan, takeCourseBtn);
