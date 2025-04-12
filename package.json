@@ -1,10 +1,11 @@
 {
   "name": "linkskool",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win --publish always",
+    "build:win": "electron-builder --win --publish always",
+    "build:linux": "electron-builder --linux --publish always",
     "cbt-dashboard-watch": "browserify renderer/cbt-dashboard.js -o js-bundle/cbt-dashboard.js --watch",
     "index-watch": "browserify renderer/index.js -o js-bundle/index.js --watch",
     "key-buddy-watch": "browserify renderer/key-buddy.js -o js-bundle/key-buddy.js --watch",
@@ -22,6 +23,14 @@
     "win": {
       "icon": "assets/icons/linkskool-icon.ico",
       "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icons/linux-icon.png",
+      "category": "Education" 
     },
     "nsis": {
       "perMachine": true,
