@@ -4521,14 +4521,20 @@ function selectLesson(index, updateCheckbox = true) {
     };
 
     document.getElementById('take-test').onclick = () => {
-        window.api.openQuizWindow(selectedLesson.content.quiz_url);
-        localStorage.setItem('quizData',
-            JSON.stringify(
-                {
-                    courseId: courseId,
-                    lessonId: index + 1
-                })
-        );
+        if (selectedLesson.content.quiz_url === 1) {
+            window.api.openQuizWindow(selectedLesson.content.quiz_url);
+
+            localStorage.setItem('quizData',
+                JSON.stringify(
+                    {
+                        courseId: courseId,
+                        lessonId: index + 1
+                    })
+            );
+        } else {
+            alert('There is no quiz for the lesson yet');
+        }
+
     };
 
     document.getElementById('content-title').innerHTML =

@@ -1,7 +1,13 @@
-body,
-html {
-    height: 100vh;
+*{
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased
+}
+
+body, html {
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -83,7 +89,7 @@ html {
 
 .content {
     margin-top: 54px;
-    height: 100vh;
+    height: calc(100vh - 54px);
     display: flex;
     flex-direction: column;
 }
@@ -101,11 +107,13 @@ html {
 .courses-content {
     flex: 1;
     display: flex;
+    height: 100%;
 }
 
 .side {
     flex: 1;
     overflow-y: auto;
+    padding-bottom: 5em;
 }
 
 .side ul {
@@ -194,19 +202,18 @@ html {
     transition: color 0.3s ease;
 }
 
-.courses-content::-webkit-scrollbar,
+/* .courses-content::-webkit-scrollbar,
 .mid-content::-webkit-scrollbar,
 .dropdown-container::-webkit-scrollbar {
     transition: opacity 0.5s ease;
-    /* Smooth transition for hiding */
-}
+} */
 
-.courses-content.hide-scrollbar::-webkit-scrollbar,
+/* .courses-content.hide-scrollbar::-webkit-scrollbar,
 .mid-content.hide-scrollbar::-webkit-scrollbar,
 .dropdown-container.hide-scrollbar::-webkit-scrollbar {
     opacity: 0;
-    /* Hide scrollbar */
-}
+
+} */
 
 .mid-content {
     flex: 2;
@@ -214,11 +221,16 @@ html {
     overflow-y: auto;
     scrollbar-width: thin;
     scroll-behavior: smooth;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    position: relative;
+    padding: 1em;
+    padding-bottom: 3em;
 }
 
 .mid-content::-webkit-scrollbar {
     width: 5px;
-    /* Scrollbar width for WebKit browsers */
 }
 
 .mid-content::-webkit-scrollbar-thumb {
@@ -233,29 +245,14 @@ html {
     /* Scrollbar track color */
 }
 
-.other {
-    display: flex;
-    flex-direction: column;
-    padding: 2em;
-}
-
 .video-wrapper {
-    position: relative;
     width: 100%;
-    padding-top: 56.25%;
-    /* 16:9 aspect ratio */
+    aspect-ratio: 16 / 9;
     background-color: transparent;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    flex-shrink: 0;
 }
 
 .title {
@@ -320,9 +317,7 @@ html {
 .zooming img {
     width: 5em;
     height: 2em;
-
 }
-
 
 .zooming p {
     color: #000;
@@ -348,7 +343,6 @@ html {
     cursor: pointer;
 }
 
-
 .zoom button:active,
 .test-wrapper button:active {
     transform: scale(0.98);
@@ -359,7 +353,7 @@ html {
     background-color: #FFF8F4;
     border: 1px solid #FC9338;
     justify-content: space-between;
-    padding: 10px;
+    padding: 1em;
     border-radius: 10px;
     margin-top: 1em;
     align-items: center;
@@ -385,12 +379,20 @@ html {
     cursor: pointer;
 }
 
+.title, .zoom, .test-wrapper {
+    flex-shrink: 0;
+}
+
 .back {
     position: sticky;
+    bottom: 0;
+    background: #F5F7FF; /* match mid-content */
+    padding: 1em 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2em;
+
+    border-top: 1px solid #ccc;
 }
 
 .previous {
@@ -398,12 +400,13 @@ html {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    padding: 0 1em;
+
+    padding: .5em 1em;
     cursor: pointer;
 }
 
 .previous:hover {
-    background-color: #4E5566;
+    background-color: #ccc;
     color: #fff;
 }
 
@@ -416,6 +419,7 @@ html {
     display: flex;
     flex-direction: column;
     flex: .8;
+    overflow-y: auto;
     padding: 0 1em;
     overflow-y: auto;
     overflow-x: hidden;
@@ -496,9 +500,22 @@ html {
     gap: 10px;
 }
 
-/* .watch-lecture img{
-    width: 80%;
-} */
+.video-wrapper-right {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.video-wrapper-right iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
 
 .watch-lecture p {
     color: #426CFF;
