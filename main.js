@@ -182,9 +182,18 @@ function openLearnCourseWindow() {
     learnCourseWindow.maximize();
     learnCourseWindow.loadFile('pages/learn-course.html');
 
+    const closeHandler = () => {
+        if (learnCourseWindow && !learnCourseWindow.isDestroyed()) {
+            learnCourseWindow.close();
+        }
+    };
+
     // Register the listener for this window instance
-    ipcMain.once('close-learn-course-window', () => {
-        learnCourseWindow.close();
+    ipcMain.once('close-learn-course-window', closeHandler);
+
+    // When the window is closed, remove the listener to avoid referencing a destroyed window
+    learnCourseWindow.on('closed', () => {
+        ipcMain.removeListener('close-learn-course-window', closeHandler);
     });
 }
 
@@ -203,12 +212,22 @@ ipcMain.on('open-quiz-window', () => {
     quizWindow.maximize();
     // Enjoyment allowance
     quizWindow.loadFile('pages/quiz.html');
-
-    ipcMain.once('close-quiz-window', (_, lessonId) => {
-        learnCourseWindow.webContents.send('send-quiz-result', lessonId);
-        quizWindow.close();
-    });
     
+
+    const closeHandler = (_, lessonId) => {
+        if (quizWindow && !quizWindow.isDestroyed()) {
+            learnCourseWindow.webContents.send('send-quiz-result', lessonId);
+            quizWindow.close();
+        }
+    };
+
+    // Register the listener for this window instance
+    ipcMain.once('close-quiz-window', closeHandler);
+
+    // When the window is closed, remove the listener to avoid referencing a destroyed window
+    quizWindow.on('closed', () => {
+        ipcMain.removeListener('close-quiz-window', closeHandler);
+    });
 });
 
 // IPC handlers for opening windows

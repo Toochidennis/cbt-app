@@ -19547,13 +19547,13 @@ function init() {
     submitBtn.addEventListener('click', submitHandler);
     document.addEventListener('keydown', keyboardShortcutsHandler);
     closeBtn.addEventListener('click', () => {
-        window.api.closeQuizWindow();
+        window.api.closeQuizWindow(lessonId);
     });
 }
 
 function renderQuestion(index) {
     const question = quizState.questions[index];
-  //  console.log('at 0, ', question);
+    //  console.log('at 0, ', question);
 
     progress.textContent = `Question ${index + 1}/${quizState.questions.length}`;
     questionText.innerHTML = question.question_text;
@@ -19680,18 +19680,26 @@ function keyboardShortcutsHandler(event) {
 }
 
 function renderSummary() {
-  //  const numQuestions = quizState.questions.length;
+    //  const numQuestions = quizState.questions.length;
     const quizMaxScore = 100;
     let quizScore = quizState.questions.reduce((score, question, index) => {
+        console.log('answers ', quizState.userAnswers);
         const selectedAnswer = quizState.userAnswers[index];
         const userAnswerIndex = question.options.findIndex(option =>
             option?.trim() === selectedAnswer
         );
+        console.log('user index ', userAnswerIndex);
         return userAnswerIndex + 1 === question.answer ? score + 5 : score;
     }, 0);
 
     score.textContent = `You scored ${quizScore} points`;
-    localStorage.setItem('quizScore', JSON.stringify({ score: quizScore, maxScore: quizMaxScore }));
+    localStorage.setItem(`quiz_${courseId}_${lessonId}`,
+        JSON.stringify(
+            {
+                quizScore,
+                quizMaxScore,
+            }
+        ));
     plotPointsChart(quizScore, quizMaxScore);
 
     renderSummaryQuestion()

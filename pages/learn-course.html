@@ -29,7 +29,6 @@
             </aside>
 
             <div class="mid-content">
-
                 <!-- <div class="first-section">
                         <p>Lesson 1: Introduction to scratch programming</p>
                     </div> -->
@@ -41,6 +40,9 @@
                 </div>
                 <div class="title">
                     <p id="content-title"></p>
+                </div>
+                <div class="download-material">
+                    <button id="material-download">Download Material</button>
                 </div>
                 <div class="zoom">
                     <div class="zooming">
@@ -54,6 +56,15 @@
                         <p>Find out how much you learnt by taking a Test</p>
                     </div>
                     <button id="take-test">Take Quiz</button>
+                </div>
+                <div class="assignment-wrapper">
+                    <p class="assignment-title">Lesson Assignment</p>
+                    <div class="assignment-content">
+                        <p class="assignment-instruction" id="assignment-instruction">
+                            Download the file below and complete the assignment as instructed.
+                        </p>
+                        <button id="assignment-download">Download Assignment</button>
+                    </div>
                 </div>
                 <div class="back">
                     <div class="previous" id="prev-btn">
@@ -89,10 +100,30 @@
                 </div>
                 <div class="summary">
                     <p>Assignment</p>
-                    <button>Submit Assignment</button>
+                    <button id="assignment-submit">Submit Assignment</button>
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div id="assignment-modal" class="modal">
+            <div class="modal-content">
+                <h2>Submit Assignment</h2>
+                <p>Please enter your full name before submitting:</p>
+                <input type="text" id="student-name" placeholder="Your Full Name" />
+
+                <p style="font-size: 0.9em; color: #555; margin-top: 10px;">
+                    📌 After clicking "Send Email", your email app or browser will open.
+                    Please <strong>remember to attach your assignment file</strong> before sending.
+                </p>
+
+                <div class="modal-buttons">
+                    <button id="send-mail">Send Email</button>
+                    <button id="cancel-mail">Cancel</button>
+                </div>
+            </div>
+        </div>
+
         <script src="../js-bundle/learn-course.js"></script>
 </body>
 

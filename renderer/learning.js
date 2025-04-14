@@ -116,6 +116,7 @@ function populateCourses(courses) {
     takeCourseBtn.textContent = "Take Course";
 
     takeCourseBtn.onclick = () =>{
+      e.stopPropagation(); 
       startLearning(course)
     };
 
@@ -154,6 +155,7 @@ function populateCarousel(course, color) {
   takeCourseBtn.innerHTML = `Take Course <img src="assets/img/play.png" alt="Play icon">`;
 
   takeCourseBtn.onclick = () =>{
+    e.stopPropagation(); 
     startLearning(course)
   };
 

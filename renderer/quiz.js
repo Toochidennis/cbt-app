@@ -97,7 +97,7 @@ function init() {
     submitBtn.addEventListener('click', submitHandler);
     document.addEventListener('keydown', keyboardShortcutsHandler);
     closeBtn.addEventListener('click', () => {
-        window.api.closeQuizWindow();
+        window.api.closeQuizWindow(lessonId);
     });
 }
 
@@ -233,10 +233,12 @@ function renderSummary() {
     //  const numQuestions = quizState.questions.length;
     const quizMaxScore = 100;
     let quizScore = quizState.questions.reduce((score, question, index) => {
+        console.log('answers ', quizState.userAnswers);
         const selectedAnswer = quizState.userAnswers[index];
         const userAnswerIndex = question.options.findIndex(option =>
             option?.trim() === selectedAnswer
         );
+        console.log('user index ', userAnswerIndex);
         return userAnswerIndex + 1 === question.answer ? score + 5 : score;
     }, 0);
 

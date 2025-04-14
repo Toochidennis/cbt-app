@@ -19513,7 +19513,7 @@ function populateLessons() {
 
     const completedLessons = getCompletedLessons();
     const savedIndex = localStorage.getItem("selectedLessonIndex");
-    
+
     if (completedLessons.length < lessons.length) {
         // Load the first incomplete lesson
         for (let i = 0; i < lessons.length; i++) {
@@ -19529,7 +19529,7 @@ function populateLessons() {
         // Default to first lesson
         currentIndex = 0;
     }
-    
+
     const lessonContainer = document.getElementById('lesson-list');
     lessonContainer.innerHTML = ''
     document.getElementById('course-title').textContent = courseName;
@@ -19557,14 +19557,14 @@ function populateLessons() {
 
         if (completedLessons.includes(index)) {
             input.checked = true;
-        }    
+        }
 
         lessonList.addEventListener('click', () => selectLesson(index));
         lessonContainer.appendChild(lessonList);
     });
 
     //   scrollToLesson(currentIndex);
-    selectLesson(currentIndex, false);
+    selectLesson(currentIndex);
 }
 
 function selectLesson(index) {
@@ -19589,27 +19589,30 @@ function selectLesson(index) {
     document.getElementById('lesson-video').src = embedUrl;
     setZoomInfo(selectedLesson.content);
 
-    document.getElementById('take-test').onclick = () => {
-        if (selectedLesson.content.quiz_url === 1) {
-            window.api.openQuizWindow(selectedLesson.content.quiz_url);
-
-            localStorage.setItem('quizData',
-                JSON.stringify(
-                    {
-                        courseId: courseId,
-                        lessonId: index + 1
-                    })
-            );
-        } else {
-            alert('There is no quiz for the lesson yet');
-        }
-    };
+    takeQuiz(selectedLesson.content, 'take-test', courseId, index + 1);
+    takeQuiz(selectedLesson.content, 'second-quiz-btn', courseId, index + 1);
 
     document.getElementById('content-title').innerHTML =
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;
 
     document.getElementById('recorded-video').src = selectedLesson.content.recorded_url;
+
+    document.getElementById('assignment-download').onclick = () => {
+        if (selectedLesson.assignment_url) {
+            downloadFile(selectedLesson.assignment_url);
+        }else{
+            alert("There is no assignment for this material");
+        }
+    };
+
+    document.getElementById('material-download').onclick = () => {
+        if (selectedLesson.material_url) {
+            downloadFile(selectedLesson.material_url);
+        }else{
+            alert("Not material for this lesson yet");
+        }
+    };
 }
 
 function setZoomInfo(content) {
@@ -19712,27 +19715,51 @@ function saveCompletedLesson(index) {
     }
 }
 
-
 document.getElementById('close-learn').addEventListener('click', () => {
     window.api.closeLearnCourseWindow();
 });
 
+const takeQuiz = (content, viewId, courseId, lessonId) => {
+    const quizBtn = document.getElementById(viewId);
+    const assessment = JSON.parse(localStorage.getItem(`quiz_${courseId}_${lessonId}`) || '[]');
 
-// window.api.onFinisQuiz(() => {
-//     const {score, maxScore} = JSON.parse(localStorage.getItem('quizScore') || '{score: 0, maxScore: 100}');
-//     plotPointsChart(score, maxScore);
-// });
+    quizBtn.textContent = assessment.length === 0 ? 'Take Quiz' : 'Retake Quiz';
 
-plotPointsChart(0, 100);
+    console.log('assessment ', assessment);
+
+    plotPointsChart(assessment.quizScore || 0, assessment.maxScore || 100);
+
+    if (!content) return;
+
+    quizBtn.onclick = () => {
+        if (content.quiz_url === 1) {
+            window.api.openQuizWindow();
+
+            localStorage.setItem('quizData',
+                JSON.stringify(
+                    {
+                        courseId,
+                        lessonId
+                    })
+            );
+        } else {
+            alert('There is no quiz for the lesson yet');
+        }
+    };
+};
+
+window.api.onLessonQuizEnded((_, lessonId) => {
+    takeQuiz([], 'take-test', courseId, lessonId);
+    takeQuiz([], 'second-quiz-btn', courseId, lessonId);
+});
 
 function plotPointsChart(score, maxScore) {
     const assessmentCanvas = document.getElementById('assessment-chart').getContext('2d');
-    document.getElementById('user-score').textContent  = `${score}/${maxScore}`
-    
+    document.getElementById('user-score').textContent = `${score}/${maxScore}`
+
     if (pointsChart) {
         pointsChart.destroy();
     }
-    console.log('do u run at all?');
 
     pointsChart = new Chart(assessmentCanvas, {
         type: 'doughnut',
@@ -19756,4 +19783,58 @@ function plotPointsChart(score, maxScore) {
         }
     });
 }
+
+
+
+const modal = document.getElementById('assignment-modal');
+const submitBtn = document.getElementById('assignment-submit');
+const sendMailBtn = document.getElementById('send-mail');
+const cancelBtn = document.getElementById('cancel-mail');
+const nameInput = document.getElementById('student-name');
+
+// Show modal on button click
+submitBtn.addEventListener('click', () => {
+    nameInput.value = '';
+    modal.style.display = 'flex';
+});
+
+// Cancel button
+cancelBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Send email
+sendMailBtn.addEventListener('click', () => {
+    const fullName = nameInput.value.trim();
+
+    if (!fullName) {
+        alert('Please enter your full name.');
+        return;
+    }
+
+    const email = 'assignments@yourdomain.com';
+    const subject = encodeURIComponent('Assignment Submission');
+    const body = encodeURIComponent(
+        `Hi,\n\nMy name is ${fullName}, and I am submitting my assignment.\n\nPlease find the file attached.\n\nThank you.`
+    );
+
+    const mail = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}.`;
+    window.api.openLink(mail);
+
+    modal.style.display = 'none';
+});
+
+
+function downloadFile(url, lessonTitle) {
+   
+    const anchor = document.createElement('a');
+    anchor.href = url;
+
+    const fileName = url.split('/').pop().split('?')[0];
+
+    anchor.download = fileName || `${lessonTitle}-material`;
+    //anchor.target = '_blank'; 
+    anchor.click();
+}
+
 },{"axios":2,"chart.js/auto":36}]},{},[41]);

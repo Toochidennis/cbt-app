@@ -147,6 +147,22 @@ function selectLesson(index) {
         <br><span>Digital Dreams ICT Academy</span>`;
 
     document.getElementById('recorded-video').src = selectedLesson.content.recorded_url;
+
+    document.getElementById('assignment-download').onclick = () => {
+        if (selectedLesson.assignment_url) {
+            downloadFile(selectedLesson.assignment_url);
+        }else{
+            alert("There is no assignment for this material");
+        }
+    };
+
+    document.getElementById('material-download').onclick = () => {
+        if (selectedLesson.material_url) {
+            downloadFile(selectedLesson.material_url);
+        }else{
+            alert("Not material for this lesson yet");
+        }
+    };
 }
 
 function setZoomInfo(content) {
@@ -253,11 +269,13 @@ document.getElementById('close-learn').addEventListener('click', () => {
     window.api.closeLearnCourseWindow();
 });
 
-const takeQuiz = (content, viewId, courseId, lessonId, from = first) => {
+const takeQuiz = (content, viewId, courseId, lessonId) => {
     const quizBtn = document.getElementById(viewId);
     const assessment = JSON.parse(localStorage.getItem(`quiz_${courseId}_${lessonId}`) || '[]');
 
     quizBtn.textContent = assessment.length === 0 ? 'Take Quiz' : 'Retake Quiz';
+
+    console.log('assessment ', assessment);
 
     plotPointsChart(assessment.quizScore || 0, assessment.maxScore || 100);
 
@@ -280,7 +298,7 @@ const takeQuiz = (content, viewId, courseId, lessonId, from = first) => {
     };
 };
 
-window.api.onFinishQuiz((_, courseId, lessonId) => {
+window.api.onLessonQuizEnded((_, lessonId) => {
     takeQuiz([], 'take-test', courseId, lessonId);
     takeQuiz([], 'second-quiz-btn', courseId, lessonId);
 });
@@ -314,4 +332,57 @@ function plotPointsChart(score, maxScore) {
             }
         }
     });
+}
+
+
+
+const modal = document.getElementById('assignment-modal');
+const submitBtn = document.getElementById('assignment-submit');
+const sendMailBtn = document.getElementById('send-mail');
+const cancelBtn = document.getElementById('cancel-mail');
+const nameInput = document.getElementById('student-name');
+
+// Show modal on button click
+submitBtn.addEventListener('click', () => {
+    nameInput.value = '';
+    modal.style.display = 'flex';
+});
+
+// Cancel button
+cancelBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Send email
+sendMailBtn.addEventListener('click', () => {
+    const fullName = nameInput.value.trim();
+
+    if (!fullName) {
+        alert('Please enter your full name.');
+        return;
+    }
+
+    const email = 'assignments@yourdomain.com';
+    const subject = encodeURIComponent('Assignment Submission');
+    const body = encodeURIComponent(
+        `Hi,\n\nMy name is ${fullName}, and I am submitting my assignment.\n\nPlease find the file attached.\n\nThank you.`
+    );
+
+    const mail = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}.`;
+    window.api.openLink(mail);
+
+    modal.style.display = 'none';
+});
+
+
+function downloadFile(url, lessonTitle) {
+   
+    const anchor = document.createElement('a');
+    anchor.href = url;
+
+    const fileName = url.split('/').pop().split('?')[0];
+
+    anchor.download = fileName || `${lessonTitle}-material`;
+    //anchor.target = '_blank'; 
+    anchor.click();
 }

@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased;
+    font-family: "Urbanist";
 }
 
 body,
@@ -297,6 +298,16 @@ html {
     word-wrap: break-word;
 }
 
+.download-material{
+    display: flex;
+    justify-content: end;
+}
+
+.download-material button{
+    padding: 1em;
+    cursor: pointer;
+}
+
 .zoom {
     display: flex;
     background-color: #FFFFFF;
@@ -381,11 +392,57 @@ html {
     cursor: pointer;
 }
 
+.assignment-wrapper {
+    border: 1px solid #E9EAF0;
+    padding: 1em;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.assignment-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.assignment-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.assignment-instruction {
+    flex: 1;
+    font-size: 0.95em;
+    color: #333;
+}
+
+#assignment-download {
+    padding: 0.6em 1.2em;
+    border: none;
+    background-color: #2f80ed;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#assignment-download:hover {
+    background-color: #1366d6;
+}
+
 .title,
 .zoom,
+.assignment-wrapper,
 .test-wrapper {
     flex-shrink: 0;
 }
+
 
 .back {
     position: sticky;
@@ -560,4 +617,57 @@ html {
     font-weight: 500;
     line-height: 19.09px;
     white-space: wrap;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-buttons {
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    background-color: #0055ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cancel-mail {
+    background-color: #888;
 }
