@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,7 +6,8 @@
     -webkit-font-smoothing: antialiased
 }
 
-body, html {
+body,
+html {
     height: 100vh;
     overflow: hidden;
 }
@@ -341,6 +342,7 @@ body, html {
     font-weight: 600;
     line-height: 22.91px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .zoom button:active,
@@ -379,19 +381,20 @@ body, html {
     cursor: pointer;
 }
 
-.title, .zoom, .test-wrapper {
+.title,
+.zoom,
+.test-wrapper {
     flex-shrink: 0;
 }
 
 .back {
     position: sticky;
     bottom: 0;
-    background: #F5F7FF; /* match mid-content */
+    background: #F5F7FF;
     padding: 1em 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     border-top: 1px solid #ccc;
 }
 
@@ -400,7 +403,6 @@ body, html {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-
     padding: .5em 1em;
     cursor: pointer;
 }
@@ -475,21 +477,46 @@ body, html {
     word-wrap: break-word;
 }
 
-.summary img {
-    width: 6em;
-    height: 6em;
+.chart-wrapper {
+    position: relative;
     align-self: center;
+    flex-grow: 0;
+}
+
+.chart-wrapper span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFB573;
+    font-family: "Urbanist";
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0;
+    font-size: 1rem;
 }
 
 .summary button {
     color: #426CFF;
     font-size: .8rem;
     font-family: "Urbanist";
-    font-weight: 500;
+    font-weight: 400;
     line-height: 38.18px;
     background-color: #D9E1FF;
     border: none;
-    padding: 0 .5em;
+    width: 70%;
+    padding: 0 1em;
+    align-self: center;
+    cursor: pointer;
+}
+
+.summary button:hover {
+    background-color: #2F55DD;
+    color: #fff;
+}
+
+.summary button:active {
+    transform: scale(0.9);
 }
 
 .watch-lecture {
@@ -533,26 +560,4 @@ body, html {
     font-weight: 500;
     line-height: 19.09px;
     white-space: wrap;
-}
-
-.watch-lecture button {
-    color: #426CFF;
-    font-size: 1rem;
-    font-family: "Urbanist";
-    font-weight: 600;
-    line-height: 38.18px;
-    border: none;
-    cursor: pointer;
-}
-
-.static-container {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: transparent;
-    padding-bottom: 10px;
-}
-
-.scrollable-content {
-    overflow-y: auto;
 }

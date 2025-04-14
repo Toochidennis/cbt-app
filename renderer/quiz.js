@@ -21,7 +21,7 @@ const prevBtn = document.getElementById('prev-btn');
 const score = document.getElementById('you-scored');
 const pointsCanvas = document.getElementById('points-chart').getContext('2d');
 const chartText = document.getElementById('chart-text');
-const questionsContainer = document.getElementById('questions-container'); 
+const questionsContainer = document.getElementById('questions-container');
 
 fetchQuestions();
 
@@ -29,7 +29,7 @@ function showLoader() {
     const loaderContainer = document.createElement('div');
     loaderContainer.id = 'loader-container';
     const loader = document.createElement('div');
-    loader.id = 'loader'; 
+    loader.id = 'loader';
 
     const style = document.createElement('style');
     style.textContent = `
@@ -52,7 +52,7 @@ function hideLoader() {
 }
 
 function fetchQuestions() {
-    showLoader(); 
+    showLoader();
     axios.get(`https://linkschoolonline.com/lesson-quiz?lesson_id=${lessonId}&course_id=${courseId}`)
         .then(response => {
             console.log(response.data);
@@ -103,7 +103,7 @@ function init() {
 
 function renderQuestion(index) {
     const question = quizState.questions[index];
-    console.log('at 0, ', question);
+    //  console.log('at 0, ', question);
 
     progress.textContent = `Question ${index + 1}/${quizState.questions.length}`;
     questionText.innerHTML = question.question_text;
@@ -230,17 +230,24 @@ function keyboardShortcutsHandler(event) {
 }
 
 function renderSummary() {
-    const numQuestions = quizState.questions.length;
-    const quizMaxScore = numQuestions * 2;
+    //  const numQuestions = quizState.questions.length;
+    const quizMaxScore = 100;
     let quizScore = quizState.questions.reduce((score, question, index) => {
         const selectedAnswer = quizState.userAnswers[index];
         const userAnswerIndex = question.options.findIndex(option =>
             option?.trim() === selectedAnswer
         );
-        return userAnswerIndex + 1 === question.answer ? score + 2 : score;
+        return userAnswerIndex + 1 === question.answer ? score + 5 : score;
     }, 0);
 
     score.textContent = `You scored ${quizScore} points`;
+    localStorage.setItem(`quiz_${courseId}_${lessonId}`,
+        JSON.stringify(
+            {
+                quizScore,
+                quizMaxScore,
+            }
+        ));
     plotPointsChart(quizScore, quizMaxScore);
 
     renderSummaryQuestion()
@@ -305,9 +312,9 @@ function renderSummaryQuestion() {
 
         const correctAnswerIndex = question.answer - 1;
 
-        console.log('Selected answer index ', optionIndex);
-        console.log('Correct answer ', correctAnswerIndex);
-        console.log('Select answer ', selectedAnswer);
+        // console.log('Selected answer index ', optionIndex);
+        // console.log('Correct answer ', correctAnswerIndex);
+        // console.log('Select answer ', selectedAnswer);
 
         if (optionIndex === correctAnswerIndex) {
             questionLine.classList.add("correct-line");

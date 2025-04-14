@@ -115,13 +115,17 @@ function populateCourses(courses) {
     footerText.innerHTML = `Easter Kids Coding Fest <br> Powered By Digital Dreams`;
     takeCourseBtn.textContent = "Take Course";
 
-    takeCourseBtn.addEventListener('click', () => {
-      window.api.openLearnCourseWindow(course.id);
-    });
+    takeCourseBtn.onclick = () =>{
+      startLearning(course)
+    };
 
     courseContent.append(courseTitle, courseDescription);
     courseFooter.append(footerImage, footerText, takeCourseBtn);
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
+
+    courseBox.onclick = () =>{
+      startLearning(course)
+    };
 
     bannerFragment.appendChild(populateCarousel(course, bannerColors[index]));
     fragment.appendChild(courseBox);
@@ -149,20 +153,28 @@ function populateCarousel(course, color) {
   courseIcon.src = course.icon;
   takeCourseBtn.innerHTML = `Take Course <img src="assets/img/play.png" alt="Play icon">`;
 
-  takeCourseBtn.addEventListener('click', () => {
-    window.api.openLearnCourseWindow(course.id);
-    localStorage.setItem('courseData',
-      JSON.stringify(
-        {
-          courseId: course.id, 
-          courseName:course.course_name
-        })
-    );
-  });
+  takeCourseBtn.onclick = () =>{
+    startLearning(course)
+  };
 
   bannerContent.append(bannerTitle, bannerSlogan, takeCourseBtn);
   banner.append(bannerContent, courseIcon);
   banner.style.backgroundColor = color;
 
+  banner.onclick = () =>{
+    startLearning(course)
+  };
+
   return banner;
+}
+
+const startLearning = (course) => {
+  window.api.openLearnCourseWindow();
+  localStorage.setItem('courseData',
+    JSON.stringify(
+      {
+        courseId: course.id,
+        courseName: course.course_name
+      })
+  );
 }

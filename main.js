@@ -12,16 +12,17 @@ autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
-// const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 
-// if (env === 'development') {
-//     require('electron-reload')(__dirname, {
-//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-//         hardResetMethod: 'exit',
-//     });
-// }
+if (env === 'development') {
+    require('electron-reload')(__dirname, {
+        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+        hardResetMethod: 'exit',
+    });
+}
 
 let mainWindow;
+let learnCourseWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -166,8 +167,8 @@ function openExamWindow(examData) {
     });
 }
 
-function openLearnCourseWindow(courseId) {
-    const learnCourseWindow = new BrowserWindow({
+function openLearnCourseWindow() {
+    learnCourseWindow = new BrowserWindow({
         modal: true,
         frame: false,
         parent: mainWindow,
@@ -179,11 +180,7 @@ function openLearnCourseWindow(courseId) {
     });
 
     learnCourseWindow.maximize();
-
-    learnCourseWindow.loadFile('pages/learn-course.html').then(() => {
-        console.log('Sending id ', courseId);
-        learnCourseWindow.webContents.send('start-learning', courseId);
-    });
+    learnCourseWindow.loadFile('pages/learn-course.html');
 
     // Register the listener for this window instance
     ipcMain.once('close-learn-course-window', () => {
@@ -191,28 +188,27 @@ function openLearnCourseWindow(courseId) {
     });
 }
 
-ipcMain.on('open-quiz-window', (_, quizData) => {
+ipcMain.on('open-quiz-window', () => {
     const quizWindow = new BrowserWindow({
         modal: true,
         frame: false,
-        parent: mainWindow,
+        parent: learnCourseWindow,
         webPreferences: {
             contextIsolation: true,
-            //    devTools: false,
+            devTools: false,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
 
     quizWindow.maximize();
-
     // Enjoyment allowance
-    quizWindow.loadFile('pages/quiz.html').then(() => {
-        quizWindow.webContents.send('start-quiz', quizData);
-    });
+    quizWindow.loadFile('pages/quiz.html');
 
-    ipcMain.once('close-quiz-window', () => {
+    ipcMain.once('close-quiz-window', (_, lessonId) => {
+        learnCourseWindow.webContents.send('send-quiz-result', lessonId);
         quizWindow.close();
     });
+    
 });
 
 // IPC handlers for opening windows
@@ -231,7 +227,6 @@ ipcMain.on('open-exam-window', (_, examData) => {
 ipcMain.on('open-learn-course-window', (_, courseId) => {
     openLearnCourseWindow(courseId);
 });
-
 
 // IPC handler for fetching questions
 ipcMain.handle('get-questions-by-subject', (_, subject, year) => {

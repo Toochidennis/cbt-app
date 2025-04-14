@@ -19727,7 +19727,6 @@ plotPointsChart(0, 100);
 
 function plotPointsChart(score, maxScore) {
     const assessmentCanvas = document.getElementById('assessment-chart').getContext('2d');
-    document.getElementById('user-score').textContent  = `${score}/${maxScore}`
     
     if (pointsChart) {
         pointsChart.destroy();
@@ -19740,14 +19739,14 @@ function plotPointsChart(score, maxScore) {
             datasets: [{
                 data: [score, maxScore],
                 backgroundColor: [
-                    'rgba(252, 147, 56, 1)', 'rgba(255, 235, 217, 1)'
+                    'rgba(95, 255, 100, 1)', 'rgba(105, 105, 105, 0.1)'
                 ]
             }]
         },
         options: {
-            responsive: false,
+            responsive: true,
             maintainAspectRatio: false,
-            cutout: '60%',
+            cutout: '50%',
             borderWidth: 0,
             plugins: {
                 legend: { display: false },

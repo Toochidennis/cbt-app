@@ -29,43 +29,42 @@
             </aside>
 
             <div class="mid-content">
-                
-                    <!-- <div class="first-section">
+
+                <!-- <div class="first-section">
                         <p>Lesson 1: Introduction to scratch programming</p>
                     </div> -->
-                    <div class="video-wrapper">
-                        <iframe id="lesson-video" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay;
+                <div class="video-wrapper">
+                    <iframe id="lesson-video" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay;
                          clipboard-write; encrypted-media; 
                          gyroscope; picture-in-picture;
                         " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="title">
+                    <p id="content-title"></p>
+                </div>
+                <div class="zoom">
+                    <div class="zooming">
+                        <img src="../assets/img/small_zoom.svg" alt="zoom logo">
+                        <p class="zoom-info" id="zoom-info"></strong></p>
                     </div>
-                    <div class="title">
-                        <p id="content-title"></p>
+                    <button id="zoom-btn">Join Zoom Class</button>
+                </div>
+                <div class="test-wrapper">
+                    <div class="test-content">
+                        <p>Find out how much you learnt by taking a Test</p>
                     </div>
-                    <div class="zoom">
-                        <div class="zooming">
-                            <img src="../assets/img/small_zoom.svg" alt="zoom logo">
-                            <p class="zoom-info" id="zoom-info"></strong></p>
-                        </div>
-                        <button id="zoom-btn">Join Class via Zoom</button>
+                    <button id="take-test">Take Quiz</button>
+                </div>
+                <div class="back">
+                    <div class="previous" id="prev-btn">
+                        <img src="../assets/img/back.png" />
+                        <p>Previous</p>
                     </div>
-                    <div class="test-wrapper">
-                        <div class="test-content">
-                            <p>Find out how much you learnt by taking a Test</p>
-                        </div>
-                        <button id="take-test">Take Test</button>
+                    <div class="previous" id="next-btn">
+                        <p>Next</p>
+                        <img src="../assets/img/back2.png" />
                     </div>
-                    <div class="back">
-                        <div class="previous" id="prev-btn">
-                            <img src="../assets/img/back.png" />
-                            <p>Previous</p>
-                        </div>
-                        <div class="previous" id="next-btn">
-                            <p>Next</p>
-                            <img src="../assets/img/back2.png" />
-                        </div>
-                    </div>
-                
+                </div>
             </div>
 
             <div class="right-bar">
@@ -73,20 +72,26 @@
                 <div class="watch-lecture">
                     <div class="video-wrapper-right">
                         <iframe id="recorded-video" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay;
-                         clipboard-write; encrypted-media; 
-                         gyroscope; picture-in-picture;
+                        clipboard-write; encrypted-media; 
+                        gyroscope; picture-in-picture;
                         " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <span>Watch recorded zoom class video</span>
-                    <div class="summary">
-                        <p>Lesson Assessment</p>
-                        <span>Website Development</span>
-                        <img src="../assets/img/Group 9.png" alt="">
-                        <button>Assessment summary</button>
+                </div>
+                <div class="summary">
+                    <p>Lesson Assessment</p>
+                    <!-- <span>Website Development</span> -->
+                    <div class="chart-wrapper">
+                        <canvas id="assessment-chart" width="120" height="120"></canvas>
+                        <span id="user-score"></span>
                     </div>
+                    <button id="second-quiz-btn">Take Quiz</button>
+                </div>
+                <div class="summary">
+                    <p>Assignment</p>
+                    <button>Submit Assignment</button>
                 </div>
             </div>
-
         </div>
         <script src="../js-bundle/learn-course.js"></script>
 </body>

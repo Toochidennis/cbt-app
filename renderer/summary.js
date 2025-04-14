@@ -68,7 +68,7 @@ function renderTabs() {
     const fragment = document.createDocumentFragment();
 
     state.selectedSubjects.forEach((subject, index) => {
-       
+
         const tabButton = document.createElement('button');
         tabButton.classList.add('tablinks');
         tabButton.textContent = subject;
@@ -125,7 +125,7 @@ async function renderQuestion() {
         const passageDiv = document.createElement('div');
         passageDiv.classList.add('question-text');
 
-        if(question.passage.trim() !== ""){
+        if (question.passage.trim() !== "") {
             passageDiv.innerHTML = capitalizeSentence(question.passage.trim())
             passageDiv.style.display = "block";
         } else {
@@ -141,7 +141,7 @@ async function renderQuestion() {
 
         const selectedAnswer = subjectState.userAnswers[index];
 
-        
+
         question.options.forEach(async (option) => {
             const label = document.createElement('label');
 
@@ -181,7 +181,7 @@ async function renderQuestion() {
 
         const correctAnswerIndex = question.answer - 1;
 
-       // console.log('Selected answer index ', optionIndex);
+        // console.log('Selected answer index ', optionIndex);
         //console.log('Correct answer ', correctAnswerIndex);
         //console.log('Select answer ', selectedAnswer);
 
