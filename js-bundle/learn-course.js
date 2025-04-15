@@ -19455,7 +19455,7 @@ let lessons = [];
 let currentIndex = 0;
 let pointsChart = null;
 
-const { courseId, courseName } = JSON.parse(localStorage.getItem('courseData'));
+const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19813,7 +19813,6 @@ sendMailBtn.addEventListener('click', () => {
         return;
     }
 
-    const email = 'assignments@yourdomain.com';
     const subject = encodeURIComponent('Assignment Submission');
     const body = encodeURIComponent(
         `Hi,\n\nMy name is ${fullName}, and I am submitting my assignment.\n\nPlease find the file attached.\n\nThank you.`

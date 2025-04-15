@@ -176,7 +176,8 @@ const startLearning = (course) => {
     JSON.stringify(
       {
         courseId: course.id,
-        courseName: course.course_name
+        courseName: course.course_name,
+        email: course.email
       })
   );
 }
