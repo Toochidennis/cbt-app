@@ -242,6 +242,7 @@ function renderSummary() {
         return userAnswerIndex + 1 === question.answer ? score + 5 : score;
     }, 0);
 
+    quizScore *= 2;
     score.textContent = `You scored ${quizScore} points`;
     localStorage.setItem(`quiz_${courseId}_${lessonId}`,
         JSON.stringify(
