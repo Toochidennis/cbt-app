@@ -201,7 +201,7 @@ function setZoomInfo(content) {
     if (now > classEndTime) {
         zoomBtn.textContent = "Watch Recorded Video";
         zoomBtn.onclick = () => {
-            window.open(content.recorded_video_url);
+            window.open(content.recorded_url);
         };
     } else {
         zoomBtn.textContent = "Join Zoom Class";
@@ -299,8 +299,9 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 };
 
 window.api.onLessonQuizEnded((_, lessonId) => {
-    takeQuiz([], 'take-test', courseId, lessonId);
-    takeQuiz([], 'second-quiz-btn', courseId, lessonId);
+    fetchLessons(courseId);
+   // takeQuiz([], 'take-test', courseId, lessonId);
+   // takeQuiz([], 'second-quiz-btn', courseId, lessonId);
 });
 
 function plotPointsChart(score, maxScore) {
