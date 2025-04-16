@@ -19596,7 +19596,7 @@ function selectLesson(index) {
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;
 
-    document.getElementById('recorded-video').src = selectedLesson.content.recorded_url;
+    document.getElementById('recorded-video').src = getEmbedUrl(selectedLesson.content.recorded_url);
 
     document.getElementById('assignment-download').onclick = () => {
         if (selectedLesson.assignment_url) {

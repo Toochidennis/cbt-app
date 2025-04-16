@@ -146,12 +146,12 @@ function selectLesson(index) {
         `${selectedLesson.description} 
         <br><span>Digital Dreams ICT Academy</span>`;
 
-    document.getElementById('recorded-video').src = selectedLesson.content.recorded_url;
+    document.getElementById('recorded-video').src = getEmbedUrl(selectedLesson.content.recorded_url);
 
     document.getElementById('assignment-download').onclick = () => {
         if (selectedLesson.assignment_url) {
             downloadFile(selectedLesson.assignment_url);
-        }else{
+        } else {
             alert("There is no assignment for this material");
         }
     };
@@ -159,7 +159,7 @@ function selectLesson(index) {
     document.getElementById('material-download').onclick = () => {
         if (selectedLesson.material_url) {
             downloadFile(selectedLesson.material_url);
-        }else{
+        } else {
             alert("Not material for this lesson yet");
         }
     };
@@ -300,8 +300,8 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 
 window.api.onLessonQuizEnded((_, lessonId) => {
     fetchLessons(courseId);
-   // takeQuiz([], 'take-test', courseId, lessonId);
-   // takeQuiz([], 'second-quiz-btn', courseId, lessonId);
+    // takeQuiz([], 'take-test', courseId, lessonId);
+    // takeQuiz([], 'second-quiz-btn', courseId, lessonId);
 });
 
 function plotPointsChart(score, maxScore) {
@@ -376,7 +376,6 @@ sendMailBtn.addEventListener('click', () => {
 
 
 function downloadFile(url, lessonTitle) {
-   
     const anchor = document.createElement('a');
     anchor.href = url;
 
