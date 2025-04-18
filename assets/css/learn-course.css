@@ -298,12 +298,12 @@ html {
     word-wrap: break-word;
 }
 
-.download-material{
+.download-material {
     display: flex;
     justify-content: end;
 }
 
-.download-material button{
+.download-material button {
     padding: 1em;
     cursor: pointer;
 }
@@ -479,13 +479,14 @@ html {
     flex-direction: column;
     flex: .8;
     overflow-y: auto;
-    padding: 0 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 5em;
     overflow-y: auto;
-    overflow-x: hidden;
     scrollbar-width: thin;
     scroll-behavior: smooth;
-    scrollbar-color: white transparent;
     gap: 15px;
+    height: 100%;
 }
 
 .right-bar::-webkit-scrollbar {
@@ -627,7 +628,7 @@ html {
     width: 100%;
     height: 100%;
     backdrop-filter: blur(4px);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
     align-items: center;
     z-index: 1000;

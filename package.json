@@ -1,10 +1,10 @@
 {
   "name": "Linkskool",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build:win": "electron-builder --win --ia32 --x64 --publish always",
+    "build:win": "electron-builder --win --ia32 --publish always",
     "build:linux": "electron-builder --linux --publish always",
     "cbt-dashboard-watch": "browserify renderer/cbt-dashboard.js -o js-bundle/cbt-dashboard.js --watch",
     "index-watch": "browserify renderer/index.js -o js-bundle/index.js --watch",
@@ -15,6 +15,7 @@
     "learn-course-watch": "browserify renderer/learn-course.js -o js-bundle/learn-course.js --watch",
     "quiz-watch": "browserify renderer/quiz.js -o js-bundle/quiz.js --watch",
     "video-watch": "browserify renderer/video.js -o js-bundle/video.js --watch",
+    "activation-watch": "browserify renderer/activation.js -o js-bundle/activation.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
@@ -46,7 +47,7 @@
   "keywords": [],
   "author": "Digital Dreams LTD",
   "license": "ISC",
-  "description": "LinkSkool",
+  "description": "LinkSkool - A school learning management software",
   "devDependencies": {
     "electron": "^34.0.2",
     "electron-builder": "^25.1.8",

@@ -37,6 +37,10 @@
     background: #7795FF;
 }
 
+.sidebar-item.active{
+    background-color: #7795FF;
+}
+
 .sidebar-item img {
     width: 24px;
     height: 24px;

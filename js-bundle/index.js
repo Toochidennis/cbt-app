@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingBtn = document.getElementById('typing-btn')
     const learnBtn = document.getElementById('learn-btn')
     const videoBtn = document.getElementById('video-btn')
+    const sidebarItems = document.querySelectorAll(".sidebar-item");
+
+    sidebarItems[0].classList.add('active');
+    
+    sidebarItems.forEach(item => {
+        item.addEventListener("click", () => {
+            sidebarItems.forEach(el => el.classList.remove("active"));
+            item.classList.add("active");
+        });
+    });
 
     switchPage("cbt-dashboard");
 

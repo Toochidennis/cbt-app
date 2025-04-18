@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+    </div>
+
     <div class="parent">
         <div class="header">
             <div class="close" id="close-btn">
@@ -77,7 +81,7 @@
                                 <input id="pin-2" placeholder="Enter pin">
                             </div>
                             <div class="input-field-2">
-                                <input id="hash-1" placeholder="Enter code">
+                                <input id="hash-1" placeholder="Enter activation code">
                             </div>
                             <button id="activate-offline-1" type="submit">Activate</button>
                         </div>
@@ -115,7 +119,7 @@
                             <input id="pin-3" placeholder="Enter pin">
                         </div>
                         <div class="input-field-2">
-                            <input id="hash-2" placeholder="Enter code">
+                            <input id="hash-2" placeholder="Enter activation code">
                         </div>
                         <button id="activate-offline-2" type="submit">Activate</button>
                     </div>
@@ -125,8 +129,7 @@
             </div>
         </div>
     </div>
-    <script type="module" src="../renderer/activation.js"></script>
-
+    <script src="../js-bundle/activation.js"></script>
 </body>
 
 </html>

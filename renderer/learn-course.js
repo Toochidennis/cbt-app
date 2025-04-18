@@ -134,6 +134,7 @@ function selectLesson(index) {
 
     const selectedLesson = lessons[index];
     if (!selectedLesson?.content) return;
+    localStorage.setItem('lessonTitle', selectedLesson.title);
 
     const embedUrl = getEmbedUrl(selectedLesson.content.video_url);
     document.getElementById('lesson-video').src = embedUrl;
@@ -336,7 +337,6 @@ function plotPointsChart(score, maxScore) {
 }
 
 
-
 const modal = document.getElementById('assignment-modal');
 const submitBtn = document.getElementById('assignment-submit');
 const sendMailBtn = document.getElementById('send-mail');
@@ -357,13 +357,14 @@ cancelBtn.addEventListener('click', () => {
 // Send email
 sendMailBtn.addEventListener('click', () => {
     const fullName = nameInput.value.trim();
+    const lessonTitle = localStorage.getItem('lessonTitle');
 
     if (!fullName) {
         alert('Please enter your full name.');
         return;
     }
 
-    const subject = encodeURIComponent('Assignment Submission');
+    const subject = encodeURIComponent(`Assignment Submission for ${courseName} - ${lessonTitle}`);
     const body = encodeURIComponent(
         `Hi,\n\nMy name is ${fullName}, and I am submitting my assignment.\n\nPlease find the file attached.\n\nThank you.`
     );
