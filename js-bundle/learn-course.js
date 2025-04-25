@@ -19582,6 +19582,16 @@ function selectLesson(index) {
         checkbox.checked = completedLessons.includes(i);
     });
 
+    if (currentIndex === lessons.length - 1) {
+        handleCongratsContent(index);
+        return;
+    } else {
+        document.getElementById('submit-assignment').style.display = 'block';
+        document.getElementById('first-section').style.display = 'block';
+        document.querySelector('.watch-lecture').style.display = 'block';
+        document.getElementById('second-section').style.display = 'none'
+    }
+
     const selectedLesson = lessons[index];
     if (!selectedLesson?.content) return;
     localStorage.setItem('lessonTitle', selectedLesson.title);
@@ -19590,8 +19600,8 @@ function selectLesson(index) {
     document.getElementById('lesson-video').src = embedUrl;
     setZoomInfo(selectedLesson.content);
 
-    takeQuiz(selectedLesson.content, 'take-test', courseId, index + 1);
-    takeQuiz(selectedLesson.content, 'second-quiz-btn', courseId, index + 1);
+    takeQuiz(selectedLesson.content, 'take-test', courseId, index + 1, 0);
+    takeQuiz(selectedLesson.content, 'second-quiz-btn', courseId, index + 1, 0);
 
     document.getElementById('content-title').innerHTML =
         `${selectedLesson.description} 
@@ -19614,6 +19624,87 @@ function selectLesson(index) {
             alert("Not material for this lesson yet");
         }
     };
+}
+
+function handleCongratsContent(index) {
+    document.getElementById('submit-assignment').style.display = 'none';
+    document.getElementById('first-section').style.display = 'none';
+    document.getElementById('second-section').style.display = 'block';
+    document.querySelector('.watch-lecture').style.display = 'none';
+
+    currentIndex = index;
+    localStorage.setItem("selectedLessonIndex", currentIndex);
+
+    // Remove all highlights
+    const completedLessons = getCompletedLessons();
+    const allLessons = document.querySelectorAll('#lesson-list li');
+
+    allLessons.forEach((li, i) => {
+        const checkbox = li.querySelector('input');
+        li.classList.toggle('active', i === index);
+
+        checkbox.checked = completedLessons.includes(i);
+    });
+
+    const selectedLesson = lessons[index];
+    if (!selectedLesson?.content) return;
+    localStorage.setItem('lessonTitle', selectedLesson.title);
+
+    if (selectedLesson.content.video_url) {
+        const embedUrl = getEmbedUrl(selectedLesson.content.video_url);
+        document.getElementById('final-video').src = embedUrl;
+    } else {
+        document.getElementById('congrats-video').style.display = 'none';
+    }
+
+    document.getElementById('congrats-text').textContent = selectedLesson.goal;
+    document.getElementById('content-title-2').textContent = selectedLesson.description;
+
+    takeQuiz(selectedLesson.content, 'second-quiz-btn', courseId, index + 1);
+
+    const assessment = JSON.parse(localStorage.getItem(`quiz_${courseId}_${index}`) || '[]');
+    const isFinalQuiz = localStorage.getItem('isFinalQuiz');
+
+    if (isFinalQuiz && isFinalQuiz !== '0' && assessment.length !== 0) {
+        if (assessment.quizScore >= 50) {
+            finalQuizBtn.textContent = 'Download Certificate';
+            finalQuizBtn.onclick = () => {
+                showCertificateModal();
+            }
+        } else {
+            finalQuizBtn.textContent = 'Take Quiz';
+            finalQuizBtn.onclick = () => {
+                takeFinalQuiz(courseId, index, selectedLesson.content)
+            }
+        }
+    }
+}
+
+const showCertificateModal = () => {
+    const modal = document.getElementById('certificate-modal');
+    const downloadBtn = document.getElementById('download-cert');
+    const cancelBtn = document.getElementById('cancel-cert');
+    const nameInput = document.getElementById('cert-name');
+
+    nameInput.value = '';
+    modal.style.display = 'flex';
+
+    
+    downloadBtn.onclick =  () =>{
+        const fullName = nameInput.value.trim();
+    
+        if (!fullName) {
+            alert('Please enter your full name.');
+            return;
+        }
+
+        window.api.generatePDF(fullName, courseId);
+    }
+
+    // Cancel button
+    cancelBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 }
 
 function setZoomInfo(content) {
@@ -19679,27 +19770,17 @@ function getEmbedUrl(youtubeUrl) {
     }
 }
 
-// function scrollToLesson(index) {
-//     const listItems = document.querySelectorAll('#lesson-list li');
-//     const item = listItems[index];
-//     if (item) {
-//         item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-//     }
-// }
-
 document.getElementById('next-btn').addEventListener('click', () => {
     if (currentIndex < lessons.length - 1) {
         const nextIndex = currentIndex + 1;
         saveCompletedLesson(currentIndex);
-        selectLesson(nextIndex); // true = update checkbox
-        // scrollToLesson(currentIndex);
+        selectLesson(nextIndex);
     }
 });
 
 document.getElementById('prev-btn').addEventListener('click', () => {
     if (currentIndex > 0) {
         selectLesson(currentIndex - 1);
-        //scrollToLesson(currentIndex);
     }
 });
 
@@ -19722,11 +19803,10 @@ document.getElementById('close-learn').addEventListener('click', () => {
 
 const takeQuiz = (content, viewId, courseId, lessonId) => {
     const quizBtn = document.getElementById(viewId);
+    localStorage.setItem('isFinalQuiz', '0');
     const assessment = JSON.parse(localStorage.getItem(`quiz_${courseId}_${lessonId}`) || '[]');
 
     quizBtn.textContent = assessment.length === 0 ? 'Take Quiz' : 'Retake Quiz';
-
-    console.log('assessment ', assessment);
 
     plotPointsChart(assessment.quizScore || 0, assessment.maxScore || 100);
 
@@ -19749,11 +19829,28 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
     };
 };
 
+const takeFinalQuiz = (courseId, lessonId, content) => {
+    localStorage.setItem('isFinalQuiz', '1');
+
+    if (content.quiz_url === 1) {
+        window.api.openQuizWindow();
+
+        localStorage.setItem('quizData',
+            JSON.stringify(
+                {
+                    courseId,
+                    lessonId
+                })
+        );
+    } else {
+        alert('There is no quiz for the lesson yet');
+    }
+}
+
 window.api.onLessonQuizEnded((_, lessonId) => {
     fetchLessons(courseId);
-    // takeQuiz([], 'take-test', courseId, lessonId);
-    // takeQuiz([], 'second-quiz-btn', courseId, lessonId);
 });
+
 
 function plotPointsChart(score, maxScore) {
     const assessmentCanvas = document.getElementById('assessment-chart').getContext('2d');

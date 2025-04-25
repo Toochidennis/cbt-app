@@ -204,18 +204,6 @@ html {
     transition: color 0.3s ease;
 }
 
-/* .courses-content::-webkit-scrollbar,
-.mid-content::-webkit-scrollbar,
-.dropdown-container::-webkit-scrollbar {
-    transition: opacity 0.5s ease;
-} */
-
-/* .courses-content.hide-scrollbar::-webkit-scrollbar,
-.mid-content.hide-scrollbar::-webkit-scrollbar,
-.dropdown-container.hide-scrollbar::-webkit-scrollbar {
-    opacity: 0;
-
-} */
 
 .mid-content {
     flex: 2;
@@ -228,7 +216,7 @@ html {
     flex-direction: column;
     position: relative;
     padding: 1em;
-    padding-bottom: 3em;
+    padding-bottom: 5em;
 }
 
 .mid-content::-webkit-scrollbar {
@@ -272,22 +260,6 @@ html {
     margin-top: .5em;
 }
 
-/* .title button {
-    color: #FFFFFF;
-    background: url("../img/icons8_pdf_1 1.png") no-repeat left center;
-    background-color: #426CFF;
-    color: white;
-    font-size: 14px;
-    font-family: "Urbanist";
-    font-weight: 500;
-    line-height: 32px;
-    word-wrap: break-word;
-    padding-left: 20px;
-    padding-right: 10px;
-    border: none;
-    height: 35px;
-    margin-top: .5em;
-} */
 
 .title span {
     color: #8C8C8C;
@@ -620,7 +592,69 @@ html {
     white-space: wrap;
 }
 
-.modal {
+.cert-wrapper {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 2em;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+    align-items: center;
+}
+
+.cert-wrapper div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cert-template {
+    height: 160px;
+    width: 200px;
+}
+
+.cert-template img {
+    height: 100%;
+    width: 100%;
+}
+
+.congrats-text {
+    font-family: 'Urbanist';
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #426CFF;
+    max-width: 400px;
+    word-spacing: 0%;
+}
+
+.feedback-text {
+    font-family: 'Urbanist';
+    font-weight: 400;
+    font-size: 1rem;
+    max-width: 400px;
+    color: #000;
+}
+
+.cert-wrapper button {
+    width: 150px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Urbanist';
+    border: none;
+    border-radius: 10px;
+    background-color: #D9E1FF;
+    color: #0055ff;
+}
+
+.cert-wrapper button:active {
+    transform: scale(.95);
+}
+
+.modal,
+.modal-2 {
     display: none;
     position: fixed;
     top: 0;
@@ -639,8 +673,14 @@ html {
     padding: 2em;
     border-radius: 10px;
     width: 90%;
+    gap: 5px;
     max-width: 400px;
     text-align: center;
+}
+
+.modal-content h2 {
+    font-family: 'Urbanist';
+    font-size: 1.5rem;
 }
 
 .modal-content input {
@@ -661,6 +701,7 @@ html {
 .modal-buttons button {
     flex: 1;
     padding: 0.8em;
+    font-family: 'Urbanist';
     border: none;
     border-radius: 5px;
     background-color: #0055ff;
@@ -670,5 +711,9 @@ html {
 }
 
 #cancel-mail {
+    background-color: #888;
+}
+
+#cancel-cert {
     background-color: #888;
 }

@@ -32,50 +32,80 @@
                 <!-- <div class="first-section">
                         <p>Lesson 1: Introduction to scratch programming</p>
                     </div> -->
-                <div class="video-wrapper">
-                    <iframe id="lesson-video" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay;
+                <section id="first-section">
+                    <div class="video-wrapper">
+                        <iframe id="lesson-video" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay;
                          clipboard-write; encrypted-media; 
                          gyroscope; picture-in-picture;
                         " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="title">
-                    <p id="content-title"></p>
-                </div>
-                <div class="download-material">
-                    <button id="material-download">Download Material</button>
-                </div>
-                <div class="zoom">
-                    <div class="zooming">
-                        <img src="../assets/img/small_zoom.svg" alt="zoom logo">
-                        <p class="zoom-info" id="zoom-info"></strong></p>
                     </div>
-                    <button id="zoom-btn">Join Zoom Class</button>
-                </div>
-                <div class="test-wrapper">
-                    <div class="test-content">
-                        <p>Find out how much you learnt by taking a Test</p>
+                    <div class="title">
+                        <p id="content-title"></p>
                     </div>
-                    <button id="take-test">Take Quiz</button>
-                </div>
-                <div class="assignment-wrapper">
-                    <p class="assignment-title">Lesson Assignment</p>
-                    <div class="assignment-content">
-                        <p class="assignment-instruction" id="assignment-instruction">
-                            Download the file below and complete the assignment as instructed.
-                        </p>
-                        <button id="assignment-download">Download Assignment</button>
+                    <div class="download-material">
+                        <button id="material-download">Download Material</button>
                     </div>
-                </div>
-                <div class="back">
-                    <div class="previous" id="prev-btn">
-                        <img src="../assets/img/back.png" />
-                        <p>Previous</p>
+                    <div class="zoom">
+                        <div class="zooming">
+                            <img src="../assets/img/small_zoom.svg" alt="zoom logo">
+                            <p class="zoom-info" id="zoom-info"></strong></p>
+                        </div>
+                        <button id="zoom-btn">Join Zoom Class</button>
                     </div>
-                    <div class="previous" id="next-btn">
-                        <p>Next</p>
-                        <img src="../assets/img/back2.png" />
+                    <div class="test-wrapper">
+                        <div class="test-content">
+                            <p>Find out how much you learnt by taking a Test</p>
+                        </div>
+                        <button id="take-test">Take Quiz</button>
                     </div>
-                </div>
+                    <div class="assignment-wrapper">
+                        <p class="assignment-title">Lesson Assignment</p>
+                        <div class="assignment-content">
+                            <p class="assignment-instruction" id="assignment-instruction">
+                                Download the file below and complete the assignment as instructed.
+                            </p>
+                            <button id="assignment-download">Download Assignment</button>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="previous" id="prev-btn">
+                            <img src="../assets/img/back.png" />
+                            <p>Previous</p>
+                        </div>
+                        <div class="previous" id="next-btn">
+                            <p>Next</p>
+                            <img src="../assets/img/back2.png" />
+                        </div>
+                    </div>
+                </section>
+
+                <section style="display: none;" id="second-section">
+                    <section id="congrats-video">
+                        <div class="video-wrapper">
+                            <iframe id="final-video" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay;
+                         clipboard-write; encrypted-media; 
+                         gyroscope; picture-in-picture;
+                        " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="title">
+                            <p id="content-title-2"></p>
+                        </div>
+                    </section>
+                    <section class="cert-wrapper">
+                        <div>
+                            <span class="congrats-text" id="congrats-text">Congratulations on your Participation in the
+                                Website Development Course!</span>
+                            <span class="feedback-text" id="feedback-text">We're proud of your journey and
+                                growth.</span>
+                            <span class="feedback-text" id="test-reason">To make your certificate truly yours, please
+                                complete this short quiz to show what you've learned.</span>
+                            <button id="final-quiz">Take Quiz</button>
+                        </div>
+                        <div class="cert-template">
+                            <img src="../assets/img/scratch-cert.svg">
+                        </div>
+                    </section>
+                </section>
             </div>
 
             <div class="right-bar">
@@ -98,7 +128,7 @@
                     </div>
                     <button id="second-quiz-btn">Take Quiz</button>
                 </div>
-                <div class="summary">
+                <div class="summary" id="submit-assignment">
                     <p>Assignment</p>
                     <button id="assignment-submit">Submit Assignment</button>
                 </div>
@@ -120,6 +150,19 @@
                 <div class="modal-buttons">
                     <button id="send-mail">Send Email</button>
                     <button id="cancel-mail">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="certificate-modal" class="modal-2">
+            <div class="modal-content">
+                <h2>Congratulations! You passed</h2>
+                <p>Please enter your name to download your certificate</p>
+                <input type="text" id="cert-name" placeholder="Your Full Name" />
+
+                <div class="modal-buttons">
+                    <button id="download-cert">Download Certificate</button>
+                    <button id="cancel-cert">Cancel</button>
                 </div>
             </div>
         </div>
