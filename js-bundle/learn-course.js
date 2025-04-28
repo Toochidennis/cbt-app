@@ -19631,6 +19631,7 @@ function handleCongratsContent(index) {
     document.getElementById('first-section').style.display = 'none';
     document.getElementById('second-section').style.display = 'block';
     document.querySelector('.watch-lecture').style.display = 'none';
+    const finalQuizBtn = document.getElementById('final-quiz');
 
     currentIndex = index;
     localStorage.setItem("selectedLessonIndex", currentIndex);
@@ -19672,11 +19673,20 @@ function handleCongratsContent(index) {
                 showCertificateModal();
             }
         } else {
-            finalQuizBtn.textContent = 'Take Quiz';
-            finalQuizBtn.onclick = () => {
-                takeFinalQuiz(courseId, index, selectedLesson.content)
-            }
+            finalQuizBtn.textContent = 'Take Quizz';
+            finalQuizBtn.addEventListener('click', () => {
+                console.log('Opening quiz window...', courseId, index);
+                takeFinalQuiz(courseId, index, selectedLesson.content);
+            });
+            
         }
+    } else {
+        finalQuizBtn.textContent = 'Take Quiz';
+        finalQuizBtn.addEventListener('click', () => {
+            console.log('Opening quiz window...', courseId, index);
+            takeFinalQuiz(courseId, index, selectedLesson.content);
+        });
+        showCertificateModal();
     }
 }
 
@@ -19689,14 +19699,18 @@ const showCertificateModal = () => {
     nameInput.value = '';
     modal.style.display = 'flex';
 
-    
-    downloadBtn.onclick =  () =>{
+
+    downloadBtn.onclick = () => {
         const fullName = nameInput.value.trim();
-    
+
         if (!fullName) {
             alert('Please enter your full name.');
             return;
         }
+
+        downloadBtn.disabled = true;
+        downloadBtn.textContent = "Generating Certificate...";
+        downloadBtn.style.cursor = 'not-allowed';
 
         window.api.generatePDF(fullName, courseId);
     }
@@ -19833,7 +19847,9 @@ const takeFinalQuiz = (courseId, lessonId, content) => {
     localStorage.setItem('isFinalQuiz', '1');
 
     if (content.quiz_url === 1) {
+        console.log('Opening quiz window...', courseId, lessonId);
         window.api.openQuizWindow();
+
 
         localStorage.setItem('quizData',
             JSON.stringify(
@@ -19849,6 +19865,21 @@ const takeFinalQuiz = (courseId, lessonId, content) => {
 
 window.api.onLessonQuizEnded((_, lessonId) => {
     fetchLessons(courseId);
+
+    const assessment = JSON.parse(localStorage.getItem(`quiz_${courseId}_${lessonId}`) || '[]');
+    const isFinalQuiz = localStorage.getItem('isFinalQuiz');
+        const finalQuizBtn = document.getElementById('final-quiz');
+
+
+    if (isFinalQuiz && isFinalQuiz !== '0' && assessment.length !== 0) {
+        if (assessment.quizScore >= 50) {
+            finalQuizBtn.textContent = 'Download Certificate';
+             showCertificateModal();
+            finalQuizBtn.onclick = () => {
+                showCertificateModal();
+            }
+        }
+    }
 });
 
 

@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain, shell, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
+const fs = require('fs');
 require('./renderer/question');
 const QuestionModel = require('./models/QuestionModel');
 const ActivationModel = require('./models/ActivationModel');
@@ -212,7 +213,7 @@ ipcMain.on('open-quiz-window', () => {
     quizWindow.maximize();
     // Enjoyment allowance
     quizWindow.loadFile('pages/quiz.html');
-    
+
 
     const closeHandler = (_, lessonId) => {
         if (quizWindow && !quizWindow.isDestroyed()) {
@@ -228,6 +229,41 @@ ipcMain.on('open-quiz-window', () => {
     quizWindow.on('closed', () => {
         ipcMain.removeListener('close-quiz-window', closeHandler);
     });
+});
+
+
+ipcMain.handle('generate-certificate-pdf', async (_, name, courseId) => {
+    const certWindow = new BrowserWindow({
+        height: 800,
+        width: 2000,
+        show: true,
+        webPreferences: {
+            contextIsolation: true,
+            preload: path.join(__dirname, 'preload.js'),
+        },
+    });
+
+    certWindow.loadFile('pages/certificate.html').then(() => {
+        console.log('Certificate window loaded');
+        certWindow.webContents.send('set-name', name, courseId);
+    });
+
+    console.log('Name set in certificate window', name, courseId);
+    await new Promise(resolve => setTimeout(resolve, 5000));
+
+    const pdfBuffer = await certWindow.webContents.printToPDF({
+        marginsType: 0,
+        printBackground: true,
+        pageSize: 'A4',
+    });
+
+    const outputPath = path.join(app.getPath('downloads'), `${name}_${courseId}_certificate.pdf`);
+    fs.writeFileSync(outputPath, pdfBuffer);
+
+    console.log(`Certificate saved to ${outputPath}`);
+
+    certWindow.close();
+    return outputPath;
 });
 
 // IPC handlers for opening windows

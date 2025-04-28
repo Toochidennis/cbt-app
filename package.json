@@ -16,6 +16,7 @@
     "quiz-watch": "browserify renderer/quiz.js -o js-bundle/quiz.js --watch",
     "video-watch": "browserify renderer/video.js -o js-bundle/video.js --watch",
     "activation-watch": "browserify renderer/activation.js -o js-bundle/activation.js --watch",
+    "cert-watch": "browserify renderer/certificate.js -o js-bundle/certificate.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
