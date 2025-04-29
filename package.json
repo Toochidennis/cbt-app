@@ -32,7 +32,7 @@
         "deb"
       ],
       "icon": "assets/icons/linux-icon.png",
-      "category": "Education" 
+      "category": "Education"
     },
     "nsis": {
       "perMachine": true,
@@ -63,6 +63,8 @@
     "electron-log": "^5.3.3",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-updater": "^6.3.9",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "node-fetch": "^3.3.2",
     "node-machine-id": "^1.1.12"
   }

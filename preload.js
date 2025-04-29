@@ -23,6 +23,7 @@ contextBridge.exposeInMainWorld('api', {
     startExam: (examData) => ipcRenderer.on('start-exam', examData),
     generatePDF: (name, courseId) => ipcRenderer.invoke('generate-certificate-pdf', name, courseId),
     onSetName: (name, courseId) => ipcRenderer.on('set-name', name, courseId),
+    writePDF: (channel, data) => ipcRenderer.send(channel, data),
     setFullScreen: (isFullScreen) => ipcRenderer.send('set-fullscreen', isFullScreen),
     hideControls: (isHide) => ipcRenderer.on('hide-controls', isHide),
     showControls: (isShow) => ipcRenderer.on('show-controls', isShow),

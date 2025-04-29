@@ -210,7 +210,7 @@ ipcMain.on('open-quiz-window', () => {
         },
     });
 
-    quizWindow.maximize();
+   // quizWindow.maximize();
     // Enjoyment allowance
     quizWindow.loadFile('pages/quiz.html');
 
@@ -233,9 +233,11 @@ ipcMain.on('open-quiz-window', () => {
 
 
 ipcMain.handle('generate-certificate-pdf', async (_, name, courseId) => {
+   const pxToMicrons = px => Math.round(px * 264.58);
+
     const certWindow = new BrowserWindow({
-        height: 800,
-        width: 2000,
+        width: 1123,
+        height: 794,
         show: true,
         webPreferences: {
             contextIsolation: true,
@@ -251,19 +253,29 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId) => {
     console.log('Name set in certificate window', name, courseId);
     await new Promise(resolve => setTimeout(resolve, 5000));
 
-    const pdfBuffer = await certWindow.webContents.printToPDF({
-        marginsType: 0,
-        printBackground: true,
-        pageSize: 'A4',
-    });
+    // const pdfBuffer = await certWindow.webContents.printToPDF({
+    //     marginsType: 0,
+    //     printBackground: true,
+    //     pageSize: {
+    //         width: pxToMicrons(1123),  // microns for 1123px
+    //         height: pxToMicrons(794), // microns for 794px
+    //     }
+    // });
 
-    const outputPath = path.join(app.getPath('downloads'), `${name}_${courseId}_certificate.pdf`);
+    // const outputPath = path.join(app.getPath('downloads'), `${name}_${courseId}_certificate.pdf`);
+    // fs.writeFileSync(outputPath, pdfBuffer);
+
+    // console.log(`Certificate saved to ${outputPath}`);
+
+    //certWindow.close();
+    // return outputPath;
+});
+
+ipcMain.on('pdf-generated', (_, pdfBuffer) => {
+    const outputPath = path.join(app.getPath('downloads'), `certificate.pdf`);
     fs.writeFileSync(outputPath, pdfBuffer);
 
     console.log(`Certificate saved to ${outputPath}`);
-
-    certWindow.close();
-    return outputPath;
 });
 
 // IPC handlers for opening windows
