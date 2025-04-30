@@ -13,14 +13,14 @@ autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
-// const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 
-// if (env === 'development') {
-//     require('electron-reload')(__dirname, {
-//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-//         hardResetMethod: 'exit',
-//     });
-// }
+if (env === 'development') {
+    require('electron-reload')(__dirname, {
+        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+        hardResetMethod: 'exit',
+    });
+}
 
 let mainWindow;
 let learnCourseWindow;
@@ -233,7 +233,6 @@ ipcMain.on('open-quiz-window', () => {
 
 
 ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName) => {
-    const certKey = `certCount_${courseId}`;
     const certCountPath = path.join(app.getPath('userData'), 'certCount.json');
 
     // Load or create cert count file
@@ -243,7 +242,16 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName)
     }
 
     if ((certCounts[courseId] || 0) >= 4) {
-        return { error: 'Certificate limit reached for this course.' };
+        await dialog.showMessageBox({
+            type: 'info',
+            title: 'Certificate Request',
+            message: 'Certificate limit reached for this course.',
+            buttons: ['OK']
+        });
+
+        certWindow.close();
+
+        return {err:'Certificate limit reached for this course'};
     }
 
     const certWindow = new BrowserWindow({
