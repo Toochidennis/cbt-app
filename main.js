@@ -13,14 +13,14 @@ autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-        hardResetMethod: 'exit',
-    });
-}
+// if (env === 'development') {
+//     require('electron-reload')(__dirname, {
+//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+//         hardResetMethod: 'exit',
+//     });
+// }
 
 let mainWindow;
 let learnCourseWindow;
@@ -213,7 +213,6 @@ ipcMain.on('open-quiz-window', () => {
     quizWindow.maximize();
     // Enjoyment allowance
     quizWindow.loadFile('pages/quiz.html');
-
 
     const closeHandler = (_, lessonId) => {
         if (quizWindow && !quizWindow.isDestroyed()) {

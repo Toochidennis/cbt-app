@@ -5,6 +5,12 @@ let lessons = [];
 let currentIndex = 0;
 let pointsChart = null;
 
+const templates = {
+    1: '../assets/img/scratch-cert.svg',
+    2: '../assets/img/graphic-cert.svg',
+    3: '../assets/img/web-cert.svg'
+};
+
 const certModal = document.getElementById('certificate-modal');
 const downloadCertBtn = document.getElementById('download-cert');
 const cancelCertBtn = document.getElementById('cancel-cert');
@@ -15,6 +21,7 @@ const sendMailBtn = document.getElementById('send-mail');
 const cancelBtn = document.getElementById('cancel-mail');
 const nameInput = document.getElementById('student-name');
 const finalQuizBtn = document.getElementById('final-quiz');
+const certTemplate = document.getElementById('cert-template');
 
 const QUIZ_KEY_PREFIX = 'quiz_';
 
@@ -30,8 +37,8 @@ const setQuizData = (courseId, lessonId) => {
     localStorage.setItem('quizData', JSON.stringify({ courseId, lessonId }));
 };
 
-
 document.addEventListener('DOMContentLoaded', () => {
+    certTemplate.src = templates[courseId];
     if (courseId) {
         console.log("Restored courseId from localStorage:", courseId);
         fetchLessons(courseId);
