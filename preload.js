@@ -21,7 +21,7 @@ contextBridge.exposeInMainWorld('api', {
     closeQuizWindow: (lessonId) => ipcRenderer.send('close-quiz-window', lessonId),
     onLessonQuizEnded: (lessonId) => ipcRenderer.on('send-quiz-result', lessonId),
     startExam: (examData) => ipcRenderer.on('start-exam', examData),
-    generatePDF: (name, courseId) => ipcRenderer.invoke('generate-certificate-pdf', name, courseId),
+    generatePDF: (name, courseId, courseName) => ipcRenderer.invoke('generate-certificate-pdf', name, courseId, courseName),
     onSetName: (name, courseId) => ipcRenderer.on('set-name', name, courseId),
     writePDF: (channel, data) => ipcRenderer.send(channel, data),
     setFullScreen: (isFullScreen) => ipcRenderer.send('set-fullscreen', isFullScreen),

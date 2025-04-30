@@ -13,14 +13,14 @@ autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-        hardResetMethod: 'exit',
-    });
-}
+// if (env === 'development') {
+//     require('electron-reload')(__dirname, {
+//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+//         hardResetMethod: 'exit',
+//     });
+// }
 
 let mainWindow;
 let learnCourseWindow;
@@ -210,7 +210,7 @@ ipcMain.on('open-quiz-window', () => {
         },
     });
 
-   // quizWindow.maximize();
+    quizWindow.maximize();
     // Enjoyment allowance
     quizWindow.loadFile('pages/quiz.html');
 
@@ -232,50 +232,56 @@ ipcMain.on('open-quiz-window', () => {
 });
 
 
-ipcMain.handle('generate-certificate-pdf', async (_, name, courseId) => {
-   const pxToMicrons = px => Math.round(px * 264.58);
+ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName) => {
+    const certKey = `certCount_${courseId}`;
+    const certCountPath = path.join(app.getPath('userData'), 'certCount.json');
+
+    // Load or create cert count file
+    let certCounts = {};
+    if (fs.existsSync(certCountPath)) {
+        certCounts = JSON.parse(fs.readFileSync(certCountPath));
+    }
+
+    if ((certCounts[courseId] || 0) >= 4) {
+        return { error: 'Certificate limit reached for this course.' };
+    }
 
     const certWindow = new BrowserWindow({
         width: 1123,
         height: 794,
-        show: true,
+        show: false,
         webPreferences: {
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
 
-    certWindow.loadFile('pages/certificate.html').then(() => {
-        console.log('Certificate window loaded');
-        certWindow.webContents.send('set-name', name, courseId);
+    await certWindow.loadFile('pages/certificate.html');
+    certWindow.webContents.send('set-name', name, courseId);
+
+    // Wait for the 'pdf-generated' event and resolve when it's triggered
+    const pdfBuffer = await new Promise(resolve => {
+        ipcMain.once('pdf-generated', (_, buffer) => {
+            resolve(buffer);
+        });
     });
 
-    console.log('Name set in certificate window', name, courseId);
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    const filePath = path.join(app.getPath('downloads'), `${name}_${courseName}_certificate.pdf`);
+    fs.writeFileSync(filePath, pdfBuffer);
 
-    // const pdfBuffer = await certWindow.webContents.printToPDF({
-    //     marginsType: 0,
-    //     printBackground: true,
-    //     pageSize: {
-    //         width: pxToMicrons(1123),  // microns for 1123px
-    //         height: pxToMicrons(794), // microns for 794px
-    //     }
-    // });
+    await dialog.showMessageBox({
+        type: 'info',
+        title: 'PDF Generated',
+        message: 'The certificate has been saved to your Downloads folder.',
+        buttons: ['OK']
+    });
 
-    // const outputPath = path.join(app.getPath('downloads'), `${name}_${courseId}_certificate.pdf`);
-    // fs.writeFileSync(outputPath, pdfBuffer);
+    certCounts[courseId] = (certCounts[courseId] || 0) + 1;
+    fs.writeFileSync(certCountPath, JSON.stringify(certCounts));
 
-    // console.log(`Certificate saved to ${outputPath}`);
+    certWindow.close();
 
-    //certWindow.close();
-    // return outputPath;
-});
-
-ipcMain.on('pdf-generated', (_, pdfBuffer) => {
-    const outputPath = path.join(app.getPath('downloads'), `certificate.pdf`);
-    fs.writeFileSync(outputPath, pdfBuffer);
-
-    console.log(`Certificate saved to ${outputPath}`);
+    return { success: true, filePath };
 });
 
 // IPC handlers for opening windows
