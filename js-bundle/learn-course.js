@@ -19583,7 +19583,8 @@ function selectLesson(index) {
     updateLessonHighlight(index);
     localStorage.setItem('lessonTitle', selectedLesson.title);
 
-    if (index === lessons.length - 1) {
+    console.log(selectedLesson.content.reading_url);
+    if (selectedLesson.content.reading_url == 1) {
         return handleCongratsContent(index, selectedLesson);
     }
 

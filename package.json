@@ -13,7 +13,7 @@
     "learning-watch": "browserify renderer/learning.js -o js-bundle/learning.js --watch",
     "cbt-watch": "browserify renderer/cbt.js -o js-bundle/cbt.js --watch",
     "summary-watch": "browserify renderer/summary.js -o js-bundle/summary.js --watch",
-    "learn-course-watch": "browserify renderer/learn-course.js -o js-bundle/learn-course.js --watch",
+    "lc-watch": "browserify renderer/learn-course.js -o js-bundle/learn-course.js --watch",
     "quiz-watch": "browserify renderer/quiz.js -o js-bundle/quiz.js --watch",
     "video-watch": "browserify renderer/video.js -o js-bundle/video.js --watch",
     "activation-watch": "browserify renderer/activation.js -o js-bundle/activation.js --watch",

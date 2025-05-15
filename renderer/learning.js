@@ -8,12 +8,16 @@ const bannerColors = [
   "#4682B4", // Steel Blue
 ];
 
-const categoryColors = ['#EBE3FF', '#f3ecda', '#E7E7E7'];
+const categoryColors = ['#f3ecda', '#EBE3FF', '#E7E7E7'];
 const categoriesImg = [
-  'assets/img/easter-cat.svg',
   'assets/img/code-lab.svg',
+  'assets/img/easter-cat.svg',
   'assets/img/kids-camp.svg',
 ];
+
+const setCategory = (categoryId, categoryName) => {
+  localStorage.setItem('category', JSON.stringify({ categoryId, categoryName}));
+};
 
 function showShimmer() {
   const coursesContainer = document.getElementById('courses-container');
@@ -61,9 +65,8 @@ showShimmer();
 
 axios.get('https://linkskool.net/api/v1/categories.php')
   .then(response => {
-    console.log(response.data);
     populateCategories(response.data);
-    fetchCourses('Kids Weekend CodeLab');
+    fetchCourses('Kids Weekend CodeLab', 0);
   })
   .catch(error => {
     if (!navigator.onLine) {
@@ -100,8 +103,8 @@ function populateCategories(categories) {
     nameDiv.textContent = category.name;
     span.textContent = `${category.courses} courses available`;
 
-    soonDiv.textContent = category.free === 1 ? 'Free' : 'Paid'; 
-  
+    soonDiv.textContent = category.free === 1 ? 'Free' : 'Paid';
+
     if (category.available === 0) {
       soonDiv.textContent = 'Coming Soon';
     }
@@ -114,29 +117,29 @@ function populateCategories(categories) {
   });
 
   categoriesDiv.appendChild(categoriesFragment);
-  
+
   const catBoxes = document.querySelectorAll('.cat-box');
   catBoxes[0].classList.add('active');
 
   catBoxes.forEach((box, i) => {
-    box.addEventListener('click', () =>{
+    box.addEventListener('click', () => {
       catBoxes.forEach(el => el.classList.remove('active'));
       box.classList.add('active');
 
-      if(i === catBoxes.length - 1) return;
+      if (i === catBoxes.length - 1) return;
 
       showShimmer()
-      fetchCourses(categories[i].name);
+      fetchCourses(categories[i].name, categories[i]);
     });
   });
 }
 
-function fetchCourses(category) {
+function fetchCourses(category, selectedCategory) {
   axios.get('https://linkschoolonline.com/courses')
     .then(response => {
       hideShimmer();
       console.log(response.data);
-      populateCourses(response.data, category);
+      populateCourses(response.data, category, selectedCategory);
     })
     .catch(error => {
       hideShimmer();
@@ -150,7 +153,7 @@ function fetchCourses(category) {
 }
 
 
-function populateCourses(courses, category) {
+function populateCourses(courses, category, selectedCategory) {
   if (!courses || courses.length === 0) {
     console.log("No courses available.");
     return;
@@ -206,10 +209,12 @@ function populateCourses(courses, category) {
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
 
     courseBox.onclick = () => {
-      startLearning(course)
+      startLearning(course, category, selectedCategory);
     };
 
-    bannerFragment.appendChild(populateCarousel(course, bannerColors[index], category));
+    bannerFragment.appendChild(
+      populateCarousel(course, bannerColors[index], category, selectedCategory)
+    );
     fragment.appendChild(courseBox);
   });
 
@@ -217,7 +222,7 @@ function populateCourses(courses, category) {
   coursesContainer.appendChild(fragment);
 }
 
-function populateCarousel(course, color, category) {
+function populateCarousel(course, color, category, selectedCategory) {
   const banner = document.createElement('div');
   const bannerContent = document.createElement('div');
   const bannerTitle = document.createElement('p');
@@ -242,18 +247,18 @@ function populateCarousel(course, color, category) {
     startLearning(course)
   };
 
-  bannerContent.append(bannerTitle, bannerSlogan, bannerSlogan, takeCourseBtn);
+  bannerContent.append(bannerTitle, bannerSlogan, bannerCategory, takeCourseBtn);
   banner.append(bannerContent, courseIcon);
   banner.style.backgroundColor = color;
 
   banner.onclick = () => {
-    startLearning(course)
+    startLearning(course, category, selectedCategory);
   };
 
   return banner;
 }
 
-const startLearning = (course) => {
+const startLearning = (course, categoryId, categoryName) => {
   window.api.openLearnCourseWindow();
   localStorage.setItem('courseData',
     JSON.stringify(
@@ -263,4 +268,6 @@ const startLearning = (course) => {
         email: course.email
       })
   );
+
+  setCategory(categoryId, categoryName);
 }

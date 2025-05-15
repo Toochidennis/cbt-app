@@ -4395,10 +4395,10 @@ const bannerColors = [
   "#4682B4", // Steel Blue
 ];
 
-const categoryColors = ['#EBE3FF', '#f3ecda', '#E7E7E7'];
+const categoryColors = ['#f3ecda', '#EBE3FF', '#E7E7E7'];
 const categoriesImg = [
-  'assets/img/easter-cat.svg',
   'assets/img/code-lab.svg',
+  'assets/img/easter-cat.svg',
   'assets/img/kids-camp.svg',
 ];
 
@@ -4629,7 +4629,7 @@ function populateCarousel(course, color, category) {
     startLearning(course)
   };
 
-  bannerContent.append(bannerTitle, bannerSlogan, bannerSlogan, takeCourseBtn);
+  bannerContent.append(bannerTitle, bannerSlogan, bannerCategory, takeCourseBtn);
   banner.append(bannerContent, courseIcon);
   banner.style.backgroundColor = color;
 
