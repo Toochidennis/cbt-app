@@ -137,7 +137,7 @@
         </div>
 
         <!-- Modal -->
-        <div id="assignment-modal" class="modal">
+        <!-- <div id="assignment-modal" class="modal">
             <div class="modal-content">
                 <h2>Submit Assignment</h2>
                 <p>Please enter your full name before submitting:</p>
@@ -166,12 +166,58 @@
                     <button id="cancel-cert">Cancel</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div id="payment-modal" class="payment-modal">
             <div class="payment-content">
-                
+                <section class="payment-header">
+                    <p>Pay to continue learning!</p>
+                    <!-- <div class="close" id="close-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <line x1="5" y1="5" x2="19" y2="19" stroke="#426CFF" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="5" y1="19" x2="19" y2="5" stroke="#426CFF" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div> -->
+                </section>
+
+                <div class="frame-4">
+                    <div class="account">
+                        <div class="account-title">
+                            <div>Bank Name</div>
+                            <div>Account Number</div>
+                            <div>Account Name</div>
+                        </div>
+                        <div class="account-data">
+                            <p>Fidelity Bank</p>
+                            <p>5610001273</p>
+                            <p>Digital Dreams Limited</p>
+                        </div>
+                    </div>
+                    <div class="title-3">Follow the instructions to continue</div>
+                    <ul class="custom-list">
+                        <li>Send the equivalent of
+                            <span class="highlight-text">&#8358;10,000.00</span> to the bank account above
+                        </li>
+                        <li>Send transaction receipt to
+                            <span class="highlight-text">09047697293</span> via WhatsApp
+                        </li>
+                    </ul>
+                </div>
+                <div class="input-container">
+                    <div class="input-field">
+                        <input id="activation-code" placeholder="Enter activate code">
+                    </div>
+                    <button id="activate-btn" type="submit">Activate</button>
+                </div>
+                <div class="feedback"></div>
+                <div class="skip">I will pay later!</div>
             </div>
+        </div>
+
+        <div id="loading-overlay" class="hidden">
+            <div class="spinner"></div>
         </div>
 
         <script src="../js-bundle/learn-course.js"></script>

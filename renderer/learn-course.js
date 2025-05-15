@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Chart = require('chart.js/auto');
+const {checkAndShowModal} = require('./course-activation');
 
 let lessons = [];
 let currentIndex = 0;
@@ -124,6 +125,8 @@ function populateLessons() {
 }
 
 function selectLesson(index) {
+    checkAndShowModal();
+
     currentIndex = index;
     localStorage.setItem("selectedLessonIndex", currentIndex);
 

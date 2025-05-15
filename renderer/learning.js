@@ -15,10 +15,6 @@ const categoriesImg = [
   'assets/img/kids-camp.svg',
 ];
 
-const setCategory = (categoryId, categoryName) => {
-  localStorage.setItem('category', JSON.stringify({ categoryId, categoryName}));
-};
-
 function showShimmer() {
   const coursesContainer = document.getElementById('courses-container');
   coursesContainer.innerHTML = '';
@@ -66,7 +62,7 @@ showShimmer();
 axios.get('https://linkskool.net/api/v1/categories.php')
   .then(response => {
     populateCategories(response.data);
-    fetchCourses('Kids Weekend CodeLab', 0);
+    fetchCourses({ name: 'Kids Weekend CodeLab', id: 0, free: 0 });
   })
   .catch(error => {
     if (!navigator.onLine) {
@@ -129,17 +125,17 @@ function populateCategories(categories) {
       if (i === catBoxes.length - 1) return;
 
       showShimmer()
-      fetchCourses(categories[i].name, categories[i]);
+      fetchCourses(categories[i]);
     });
   });
 }
 
-function fetchCourses(category, selectedCategory) {
+function fetchCourses(selectedCategory) {
   axios.get('https://linkschoolonline.com/courses')
     .then(response => {
       hideShimmer();
       console.log(response.data);
-      populateCourses(response.data, category, selectedCategory);
+      populateCourses(response.data, selectedCategory);
     })
     .catch(error => {
       hideShimmer();
@@ -153,7 +149,7 @@ function fetchCourses(category, selectedCategory) {
 }
 
 
-function populateCourses(courses, category, selectedCategory) {
+function populateCourses(courses, category) {
   if (!courses || courses.length === 0) {
     console.log("No courses available.");
     return;
@@ -209,11 +205,11 @@ function populateCourses(courses, category, selectedCategory) {
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
 
     courseBox.onclick = () => {
-      startLearning(course, category, selectedCategory);
+      startLearning(course, category);
     };
 
     bannerFragment.appendChild(
-      populateCarousel(course, bannerColors[index], category, selectedCategory)
+      populateCarousel(course, bannerColors[index], category)
     );
     fragment.appendChild(courseBox);
   });
@@ -222,7 +218,7 @@ function populateCourses(courses, category, selectedCategory) {
   coursesContainer.appendChild(fragment);
 }
 
-function populateCarousel(course, color, category, selectedCategory) {
+function populateCarousel(course, color, category) {
   const banner = document.createElement('div');
   const bannerContent = document.createElement('div');
   const bannerTitle = document.createElement('p');
@@ -238,7 +234,7 @@ function populateCarousel(course, color, category, selectedCategory) {
   // assign values
   bannerTitle.textContent = course.course_name;
   bannerSlogan.textContent = course.slogan;
-  bannerCategory.textContent = category;
+  bannerCategory.textContent = category.name;
   courseIcon.src = course.icon;
   takeCourseBtn.innerHTML = `Take Course <img src="assets/img/play.png" alt="Play icon">`;
 
@@ -252,13 +248,13 @@ function populateCarousel(course, color, category, selectedCategory) {
   banner.style.backgroundColor = color;
 
   banner.onclick = () => {
-    startLearning(course, category, selectedCategory);
+    startLearning(course, category);
   };
 
   return banner;
 }
 
-const startLearning = (course, categoryId, categoryName) => {
+const startLearning = (course, category) => {
   window.api.openLearnCourseWindow();
   localStorage.setItem('courseData',
     JSON.stringify(
@@ -269,5 +265,7 @@ const startLearning = (course, categoryId, categoryName) => {
       })
   );
 
-  setCategory(categoryId, categoryName);
+  localStorage.setItem('category',
+    JSON.stringify({ id: category.id, isFree: category.free })
+  );
 }

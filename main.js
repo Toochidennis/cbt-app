@@ -329,7 +329,7 @@ ipcMain.handle('get-image-path', (_, subject, imageFileName) => {
 
 // IPC handlers for activation state.
 ipcMain.handle('get-activation-state', async () => {
-    return ActivationModel.isActivated();
+    return ActivationModel.isCbtActivated();
 });
 
 ipcMain.handle('validate-activation-online', async (_, activationCode) => {

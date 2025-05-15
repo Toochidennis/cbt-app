@@ -4448,9 +4448,8 @@ showShimmer();
 
 axios.get('https://linkskool.net/api/v1/categories.php')
   .then(response => {
-    console.log(response.data);
     populateCategories(response.data);
-    fetchCourses('Kids Weekend CodeLab');
+    fetchCourses({ name: 'Kids Weekend CodeLab', id: 0, free: 0 });
   })
   .catch(error => {
     if (!navigator.onLine) {
@@ -4487,8 +4486,8 @@ function populateCategories(categories) {
     nameDiv.textContent = category.name;
     span.textContent = `${category.courses} courses available`;
 
-    soonDiv.textContent = category.free === 1 ? 'Free' : 'Paid'; 
-  
+    soonDiv.textContent = category.free === 1 ? 'Free' : 'Paid';
+
     if (category.available === 0) {
       soonDiv.textContent = 'Coming Soon';
     }
@@ -4501,29 +4500,29 @@ function populateCategories(categories) {
   });
 
   categoriesDiv.appendChild(categoriesFragment);
-  
+
   const catBoxes = document.querySelectorAll('.cat-box');
   catBoxes[0].classList.add('active');
 
   catBoxes.forEach((box, i) => {
-    box.addEventListener('click', () =>{
+    box.addEventListener('click', () => {
       catBoxes.forEach(el => el.classList.remove('active'));
       box.classList.add('active');
 
-      if(i === catBoxes.length - 1) return;
+      if (i === catBoxes.length - 1) return;
 
       showShimmer()
-      fetchCourses(categories[i].name);
+      fetchCourses(categories[i]);
     });
   });
 }
 
-function fetchCourses(category) {
+function fetchCourses(selectedCategory) {
   axios.get('https://linkschoolonline.com/courses')
     .then(response => {
       hideShimmer();
       console.log(response.data);
-      populateCourses(response.data, category);
+      populateCourses(response.data, selectedCategory);
     })
     .catch(error => {
       hideShimmer();
@@ -4593,10 +4592,12 @@ function populateCourses(courses, category) {
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
 
     courseBox.onclick = () => {
-      startLearning(course)
+      startLearning(course, category);
     };
 
-    bannerFragment.appendChild(populateCarousel(course, bannerColors[index], category));
+    bannerFragment.appendChild(
+      populateCarousel(course, bannerColors[index], category)
+    );
     fragment.appendChild(courseBox);
   });
 
@@ -4620,7 +4621,7 @@ function populateCarousel(course, color, category) {
   // assign values
   bannerTitle.textContent = course.course_name;
   bannerSlogan.textContent = course.slogan;
-  bannerCategory.textContent = category;
+  bannerCategory.textContent = category.name;
   courseIcon.src = course.icon;
   takeCourseBtn.innerHTML = `Take Course <img src="assets/img/play.png" alt="Play icon">`;
 
@@ -4634,13 +4635,13 @@ function populateCarousel(course, color, category) {
   banner.style.backgroundColor = color;
 
   banner.onclick = () => {
-    startLearning(course)
+    startLearning(course, category);
   };
 
   return banner;
 }
 
-const startLearning = (course) => {
+const startLearning = (course, category) => {
   window.api.openLearnCourseWindow();
   localStorage.setItem('courseData',
     JSON.stringify(
@@ -4649,6 +4650,10 @@ const startLearning = (course) => {
         courseName: course.course_name,
         email: course.email
       })
+  );
+
+  localStorage.setItem('category',
+    JSON.stringify({ id: category.id, isFree: category.free })
   );
 }
 },{"axios":1}]},{},[37]);
