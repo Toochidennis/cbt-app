@@ -8,6 +8,12 @@ const bannerColors = [
   "#4682B4", // Steel Blue
 ];
 
+const categoryColors = ['#EBE3FF', '#f3ecda', '#E7E7E7'];
+const categoriesImg = [
+  'assets/img/easter-cat.svg',
+  'assets/img/code-lab.svg',
+  'assets/img/kids-camp.svg',
+];
 
 function showShimmer() {
   const coursesContainer = document.getElementById('courses-container');
@@ -51,25 +57,100 @@ function showError(message) {
   coursesContainer.appendChild(errorBox);
 }
 
-axios.get('https://linkschoolonline.com/courses')
+showShimmer();
+
+axios.get('https://linkskool.net/api/v1/categories.php')
   .then(response => {
-    hideShimmer();
     console.log(response.data);
-    populateCourses(response.data);
+    populateCategories(response.data);
+    fetchCourses('Kids Weekend CodeLab');
   })
   .catch(error => {
-    hideShimmer();
     if (!navigator.onLine) {
       showError('Unable to connect. Please check your internet connection and try again.');
     } else {
       showError('An error occurred while fetching courses. Please try again later.');
     }
     console.error('Error:', error);
+  })
+
+function populateCategories(categories) {
+  if (!categories) {
+    return;
+  }
+
+  const categoriesDiv = document.querySelector('.categories');
+  categoriesDiv.innerHTML = '';
+  const categoriesFragment = document.createDocumentFragment();
+
+  categories.forEach((category, i) => {
+    const catBox = document.createElement('div');
+    const img = document.createElement('img');
+    const catContent = document.createElement('div');
+    const nameDiv = document.createElement('p');
+    const span = document.createElement('span');
+    const soonDiv = document.createElement('div');
+
+    //Assign classes
+    catBox.classList.add('cat-box');
+    catContent.classList.add('cat-text');
+    soonDiv.classList.add('coming-banner');
+
+    img.src = categoriesImg[i];
+    nameDiv.textContent = category.name;
+    span.textContent = `${category.courses} courses available`;
+
+    soonDiv.textContent = category.free === 1 ? 'Free' : 'Paid'; 
+  
+    if (category.available === 0) {
+      soonDiv.textContent = 'Coming Soon';
+    }
+
+    catContent.append(nameDiv, span);
+    catBox.append(img, catContent, soonDiv);
+    catBox.style.backgroundColor = categoryColors[i];
+
+    categoriesFragment.appendChild(catBox);
   });
 
-showShimmer();
+  categoriesDiv.appendChild(categoriesFragment);
+  
+  const catBoxes = document.querySelectorAll('.cat-box');
+  catBoxes[0].classList.add('active');
 
-function populateCourses(courses) {
+  catBoxes.forEach((box, i) => {
+    box.addEventListener('click', () =>{
+      catBoxes.forEach(el => el.classList.remove('active'));
+      box.classList.add('active');
+
+      if(i === catBoxes.length - 1) return;
+
+      showShimmer()
+      fetchCourses(categories[i].name);
+    });
+  });
+}
+
+function fetchCourses(category) {
+  axios.get('https://linkschoolonline.com/courses')
+    .then(response => {
+      hideShimmer();
+      console.log(response.data);
+      populateCourses(response.data, category);
+    })
+    .catch(error => {
+      hideShimmer();
+      if (!navigator.onLine) {
+        showError('Unable to connect. Please check your internet connection and try again.');
+      } else {
+        showError('An error occurred while fetching courses. Please try again later.');
+      }
+      console.error('Error:', error);
+    });
+}
+
+
+function populateCourses(courses, category) {
   if (!courses || courses.length === 0) {
     console.log("No courses available.");
     return;
@@ -112,11 +193,11 @@ function populateCourses(courses) {
     courseDescription.textContent = course.description;
     footerImage.src = "assets/img/image 85.png"
     footerImage.alt = "Course Footer Image"
-    footerText.innerHTML = `Easter Kids Coding Fest <br> Powered By Digital Dreams`;
+    footerText.innerHTML = `${category} <br> Powered By Digital Dreams`;
     takeCourseBtn.textContent = "Take Course";
 
-    takeCourseBtn.onclick = () =>{
-      e.stopPropagation(); 
+    takeCourseBtn.onclick = () => {
+      e.stopPropagation();
       startLearning(course)
     };
 
@@ -124,11 +205,11 @@ function populateCourses(courses) {
     courseFooter.append(footerImage, footerText, takeCourseBtn);
     courseBox.append(courseImage, courseCategory, courseContent, courseFooter);
 
-    courseBox.onclick = () =>{
+    courseBox.onclick = () => {
       startLearning(course)
     };
 
-    bannerFragment.appendChild(populateCarousel(course, bannerColors[index]));
+    bannerFragment.appendChild(populateCarousel(course, bannerColors[index], category));
     fragment.appendChild(courseBox);
   });
 
@@ -136,11 +217,12 @@ function populateCourses(courses) {
   coursesContainer.appendChild(fragment);
 }
 
-function populateCarousel(course, color) {
+function populateCarousel(course, color, category) {
   const banner = document.createElement('div');
   const bannerContent = document.createElement('div');
   const bannerTitle = document.createElement('p');
   const bannerSlogan = document.createElement('span');
+  const bannerCategory = document.createElement('span');
   const takeCourseBtn = document.createElement('button');
   const courseIcon = document.createElement('img');
 
@@ -151,19 +233,20 @@ function populateCarousel(course, color) {
   // assign values
   bannerTitle.textContent = course.course_name;
   bannerSlogan.textContent = course.slogan;
+  bannerCategory.textContent = category;
   courseIcon.src = course.icon;
   takeCourseBtn.innerHTML = `Take Course <img src="assets/img/play.png" alt="Play icon">`;
 
-  takeCourseBtn.onclick = () =>{
-    e.stopPropagation(); 
+  takeCourseBtn.onclick = () => {
+    e.stopPropagation();
     startLearning(course)
   };
 
-  bannerContent.append(bannerTitle, bannerSlogan, takeCourseBtn);
+  bannerContent.append(bannerTitle, bannerSlogan, bannerSlogan, takeCourseBtn);
   banner.append(bannerContent, courseIcon);
   banner.style.backgroundColor = color;
 
-  banner.onclick = () =>{
+  banner.onclick = () => {
     startLearning(course)
   };
 
