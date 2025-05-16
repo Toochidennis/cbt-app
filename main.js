@@ -340,6 +340,14 @@ ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) =>
     return ActivationModel.validateActivationOffline(activationCode, hash);
 });
 
+ipcMain.handle('validate-course-activation', async (_, activationCode, categoryId) => {
+    return ActivationModel.validateActivationOnline(activationCode, categoryId);
+});
+
+ipcMain.handle('get-course-activation', async (_, categoryId) => {
+    return ActivationModel.isCourseActivated(categoryId);
+});
+
 ipcMain.handle('generate-product-key', async () => {
     return ActivationModel.generateProductKey();
 });

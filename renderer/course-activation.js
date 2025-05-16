@@ -7,7 +7,7 @@ const feedback = document.querySelector('.feedback');
 const skipBtn = document.querySelector('.skip');
 const loadingOverlay = document.getElementById("loading-overlay");
 
-let { categoryId, isFree } = localStorage.getItem('category');
+const {id:categoryId, isFree} = JSON.parse(localStorage.getItem('category'));
 
 function showLoading() {
     loadingOverlay.style.display = 'flex';
@@ -23,6 +23,7 @@ function getNumOfVideosWatched() {
 
 function incrementVideosWatched() {
     const current = getNumOfVideosWatched();
+    console.log('Current ', current);
     localStorage.setItem('count', `${current + 1}`);
 }
 
@@ -34,16 +35,14 @@ function hidePaymentModal() {
     paymentModal.style.display = 'none';
 }
 
-function checkAndShowModal() {
-    if (!categoryId || !isFree) return;
-
-    console.log('cat', categoryId);
+async function checkAndShowModal() {
+  //  if (categoryId !== 0) return;
 
     if (isFree === 0) {
         incrementVideosWatched();
 
         const count = getNumOfVideosWatched();
-        const isActivated = ActivationModel.isCourseActivated(categoryId);
+        const isActivated = await window.api.getCourseActivation(categoryId);
 
         if (!isActivated && (count >= 2 || count === 0)) {
             showPaymentModal();
@@ -62,7 +61,7 @@ async function validateCodeOnline() {
     try {
         showLoading();
         if (categoryId) {
-            const { success, error } = await ActivationModel.validateCourseOnline(categoryId, code);
+            const { success, error } = await window.api.validateCourseActivation(categoryId, code);
 
             feedback.textContent = success ? "Activation successful" : error;
 
@@ -89,4 +88,4 @@ activateBtn.addEventListener('click', () => {
 });
 
 // Export for reuse
-module.exports = { checkAndShowModal };
+module.exports = { checkAndShowModal, showLoading, hideLoading };

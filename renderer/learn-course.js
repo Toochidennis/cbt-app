@@ -1,7 +1,6 @@
 const axios = require('axios');
 const Chart = require('chart.js/auto');
-const {checkAndShowModal} = require('./course-activation');
-
+const {showLoading, hideLoading, checkAndShowModal} = require('./course-activation');
 let lessons = [];
 let currentIndex = 0;
 let pointsChart = null;
@@ -46,31 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function showLoader() {
-    const loaderContainer = document.createElement('div');
-    loaderContainer.id = 'loader-container';
-    const loader = document.createElement('div');
-    loader.id = 'loader';
-
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        } 
-    `;
-    document.head.appendChild(style);
-
-    loaderContainer.appendChild(loader);
-    document.body.appendChild(loaderContainer);
-}
-
-function hideLoader() {
-    document.getElementById('loader-container')?.remove();
-}
-
 function fetchLessons(courseId) {
-    showLoader(); // Show loader before starting the request
+    showLoading(); // Show loader before starting the request
     axios.get(`https://linkschoolonline.com/lessons?course_id=${courseId}`)
         .then(response => {
             // console.log(response.data);
@@ -81,7 +57,7 @@ function fetchLessons(courseId) {
             console.error('Error:', error);
         })
         .finally(() => {
-            hideLoader(); // Hide loader after the request completes
+            hideLoading(); // Hide loader after the request completes
         });
 }
 
@@ -121,7 +97,7 @@ function populateLessons() {
         lessonContainer.appendChild(li);
     });
 
-    selectLesson(currentIndex);
+    selectLesson(currentIndex); 
 }
 
 function selectLesson(index) {
@@ -136,7 +112,6 @@ function selectLesson(index) {
     updateLessonHighlight(index);
     localStorage.setItem('lessonTitle', selectedLesson.title);
 
-    console.log(selectedLesson.content.reading_url);
     if (selectedLesson.content.reading_url == 1) {
         return handleCongratsContent(index, selectedLesson);
     }
@@ -361,6 +336,8 @@ const updateQuizButtonText = (button, assessment) => {
 };
 
 const takeQuiz = (content, viewId, courseId, lessonId) => {
+    checkAndShowModal();
+
     const quizBtn = document.getElementById(viewId);
     if (!quizBtn) return;
 
@@ -378,6 +355,8 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 };
 
 const takeFinalQuiz = (courseId, lessonId, content) => {
+    checkAndShowModal();
+    
     content.quiz_url === 1
         ? openQuiz(courseId, lessonId, true)
         : showNoQuizAlert();

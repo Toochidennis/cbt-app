@@ -47109,7 +47109,7 @@ const feedback = document.querySelector('.feedback');
 const skipBtn = document.querySelector('.skip');
 const loadingOverlay = document.getElementById("loading-overlay");
 
-let { categoryId, isFree } = localStorage.getItem('category');
+const {id:categoryId, isFree} = JSON.parse(localStorage.getItem('category'));
 
 function showLoading() {
     loadingOverlay.style.display = 'flex';
@@ -47125,6 +47125,7 @@ function getNumOfVideosWatched() {
 
 function incrementVideosWatched() {
     const current = getNumOfVideosWatched();
+    console.log('Current ', current);
     localStorage.setItem('count', `${current + 1}`);
 }
 
@@ -47136,16 +47137,19 @@ function hidePaymentModal() {
     paymentModal.style.display = 'none';
 }
 
-function checkAndShowModal() {
-    if (!categoryId || !isFree) return;
+async function checkAndShowModal() {
+    console.log('I ran hereee');
+  //  if (categoryId !== 0) return;
+    console.log('i ran here too');
 
     console.log('cat', categoryId);
 
     if (isFree === 0) {
+        console.log('did it enter?');
         incrementVideosWatched();
 
         const count = getNumOfVideosWatched();
-        const isActivated = ActivationModel.isCourseActivated(categoryId);
+        const isActivated = await window.api.getCourseActivation(categoryId);
 
         if (!isActivated && (count >= 2 || count === 0)) {
             showPaymentModal();
@@ -47164,7 +47168,7 @@ async function validateCodeOnline() {
     try {
         showLoading();
         if (categoryId) {
-            const { success, error } = await ActivationModel.validateCourseOnline(categoryId, code);
+            const { success, error } = await window.api.validateCourseActivation(categoryId, code);
 
             feedback.textContent = success ? "Activation successful" : error;
 
@@ -47191,13 +47195,12 @@ activateBtn.addEventListener('click', () => {
 });
 
 // Export for reuse
-module.exports = { checkAndShowModal };
+module.exports = { checkAndShowModal, showLoading, hideLoading };
 
 },{"../models/ActivationModel":1}],218:[function(require,module,exports){
 const axios = require('axios');
 const Chart = require('chart.js/auto');
-const {checkAndShowModal} = require('./course-activation');
-
+const {showLoading, hideLoading, checkAndShowModal} = require('./course-activation');
 let lessons = [];
 let currentIndex = 0;
 let pointsChart = null;
@@ -47242,31 +47245,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function showLoader() {
-    const loaderContainer = document.createElement('div');
-    loaderContainer.id = 'loader-container';
-    const loader = document.createElement('div');
-    loader.id = 'loader';
-
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        } 
-    `;
-    document.head.appendChild(style);
-
-    loaderContainer.appendChild(loader);
-    document.body.appendChild(loaderContainer);
-}
-
-function hideLoader() {
-    document.getElementById('loader-container')?.remove();
-}
-
 function fetchLessons(courseId) {
-    showLoader(); // Show loader before starting the request
+    showLoading(); // Show loader before starting the request
     axios.get(`https://linkschoolonline.com/lessons?course_id=${courseId}`)
         .then(response => {
             // console.log(response.data);
@@ -47277,7 +47257,7 @@ function fetchLessons(courseId) {
             console.error('Error:', error);
         })
         .finally(() => {
-            hideLoader(); // Hide loader after the request completes
+            hideLoading(); // Hide loader after the request completes
         });
 }
 
@@ -47317,7 +47297,7 @@ function populateLessons() {
         lessonContainer.appendChild(li);
     });
 
-    selectLesson(currentIndex);
+    selectLesson(currentIndex); 
 }
 
 function selectLesson(index) {

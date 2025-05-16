@@ -59,10 +59,10 @@ function showError(message) {
 
 showShimmer();
 
-axios.get('https://linkskool.net/api/v1/categories.php')
+axios.get('https://linkschoolonline.com/categories')
   .then(response => {
     populateCategories(response.data);
-    fetchCourses({ name: 'Kids Weekend CodeLab', id: 0, free: 0 });
+    fetchCourses({ name: 'Kids Weekend CodeLab', id: 1, free: 0 });
   })
   .catch(error => {
     if (!navigator.onLine) {
