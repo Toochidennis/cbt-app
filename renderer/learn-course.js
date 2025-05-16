@@ -101,7 +101,7 @@ function populateLessons() {
 }
 
 function selectLesson(index) {
-    checkAndShowModal();
+    if(!checkAndShowModal()) return;
 
     currentIndex = index;
     localStorage.setItem("selectedLessonIndex", currentIndex);
@@ -189,6 +189,8 @@ function updateLessonHighlight(index) {
 function setupDownloadButton(buttonId, fileUrl, fallbackMessage) {
     const btn = document.getElementById(buttonId);
     btn.onclick = () => {
+        if(!checkAndShowModal()) return;
+        
         if (fileUrl) {
             downloadFile(fileUrl);
         } else {
@@ -336,7 +338,7 @@ const updateQuizButtonText = (button, assessment) => {
 };
 
 const takeQuiz = (content, viewId, courseId, lessonId) => {
-    checkAndShowModal();
+    if(!checkAndShowModal()) return;
 
     const quizBtn = document.getElementById(viewId);
     if (!quizBtn) return;
@@ -355,8 +357,8 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 };
 
 const takeFinalQuiz = (courseId, lessonId, content) => {
-    checkAndShowModal();
-    
+    if(!checkAndShowModal()) return;
+
     content.quiz_url === 1
         ? openQuiz(courseId, lessonId, true)
         : showNoQuizAlert();
