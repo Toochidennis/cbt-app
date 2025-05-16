@@ -250,7 +250,7 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName)
 
         certWindow.close();
 
-        return {err:'Certificate limit reached for this course'};
+        return { err: 'Certificate limit reached for this course' };
     }
 
     const certWindow = new BrowserWindow({
@@ -340,12 +340,12 @@ ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) =>
     return ActivationModel.validateActivationOffline(activationCode, hash);
 });
 
-ipcMain.handle('validate-course-activation', async (_, activationCode, categoryId) => {
-    return ActivationModel.validateActivationOnline(activationCode, categoryId);
+ipcMain.handle('validate-course-activation', async (_, activationCode, categoryId, courseId) => {
+    return ActivationModel.validateCourseActivationOnline(activationCode, categoryId, courseId);
 });
 
-ipcMain.handle('get-course-activation', async (_, categoryId) => {
-    return ActivationModel.isCourseActivated(categoryId);
+ipcMain.handle('get-course-activation', async (_, categoryId, courseId) => {
+    return ActivationModel.isCourseActivated(categoryId, courseId);
 });
 
 ipcMain.handle('generate-product-key', async () => {

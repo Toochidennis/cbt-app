@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    switchPage("learning");
+    switchPage("cbt-dashboard");
 
     cbtBtn.addEventListener('click', () => {
         switchPage("cbt-dashboard");

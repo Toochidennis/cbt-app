@@ -192,7 +192,7 @@ function populateCourses(courses, category) {
     courseDescription.textContent = course.description;
     footerImage.src = "assets/img/image 85.png"
     footerImage.alt = "Course Footer Image"
-    footerText.innerHTML = `${category} <br> Powered By Digital Dreams`;
+    footerText.innerHTML = `${category.name} <br> Powered By Digital Dreams`;
     takeCourseBtn.textContent = "Take Course";
 
     takeCourseBtn.onclick = () => {

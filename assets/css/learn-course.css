@@ -877,10 +877,11 @@ input::placeholder {
 }
 
 .skip {
-    align-self: flex-end;
+    align-self: center;
     text-decoration: underline;
     cursor: pointer;
     color: #000;
+    font-weight: 500;
 }
 
 #loading-overlay {

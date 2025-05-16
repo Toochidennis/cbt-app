@@ -64,17 +64,26 @@ class ActivationModel {
         return data.cbt.activated && new Date() < expirationDate;
     }
 
-    static saveCourseActivation(categoryId) {
+    static saveCourseActivation(categoryId, courseId) {
         const data = this.readActivationData();
         if (!data.courses) data.courses = {};
-        data.courses[categoryId] = true;
+
+        if (!data.courses[categoryId]) {
+            data.courses[categoryId] = {};
+        }
+
+        data.courses[categoryId][courseId] = true;
         this.writeActivationData(data);
     }
 
-    static isCourseActivated(categoryId) {
+    static isCourseActivated(categoryId, courseId) {
+       // console.log(categoryId, courseId);
         const data = this.readActivationData();
-        return data.courses && data.courses[categoryId] === true;
+        return !!(data.courses &&
+            data.courses[categoryId] &&
+            data.courses[categoryId][courseId]);
     }
+
 
     // static isActivated() {
     //     if (!fs.existsSync(this.activationFilePath)) return false;
@@ -99,8 +108,9 @@ class ActivationModel {
      * Validates activation by sending the activation code and generated product key
      * to the server, comparing the server's hash to a locally computed hash.
      */
-    static async validateActivationOnline(activationCode, categoryId) {
+    static async validateActivationOnline(activationCode) {
         try {
+            // console.log(activationCode, categoryId);
             const productKey = this.generateProductKey();
 
             //Send activation code and product key to your server
@@ -112,6 +122,8 @@ class ActivationModel {
             });
 
             const responseData = await response.json();
+
+            // console.log(responseData);
 
             if (!response.ok) {
                 //  console.error('Server error:', responseData);
@@ -130,8 +142,52 @@ class ActivationModel {
 
             // Compare the hashes
             if (shortHash === serverHash) {
-                if (categoryId) this.saveCourseActivation(categoryId);
                 this.saveCbtActivationStatus(true);
+                return { success: true, error: '' };
+            } else {
+                return { success: false, error: 'Activation validation failed: Invalid hash.' };
+            }
+        } catch (e) {
+            // console.error('Network or unexpected error:', error);
+            return { success: false, error: 'An error occurred. Please try again.' };
+        }
+    }
+
+    static async validateCourseActivationOnline(activationCode, categoryId, courseId) {
+        try {
+            // console.log(activationCode, categoryId);
+            const productKey = this.generateProductKey();
+
+            //Send activation code and product key to your server
+            //(Your server should hash the received productKey with its secret and return the hash)
+            const response = await fetch('http://linkskool.net/api/v1/course_activation.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ activationCode, productKey })
+            });
+
+            const responseData = await response.json();
+
+            // console.log(responseData);
+
+            if (!response.ok) {
+                //  console.error('Server error:', responseData);
+                // throw new Error(responseData.message || 'Server error');
+                return { success: false, error: 'Invalid activation code' };
+            }
+
+            // Compute local hash for comparison
+            const localHash = crypto
+                .createHash('sha256')
+                .update(`${activationCode}-${productKey}`)
+                .digest('hex');
+
+            const shortHash = localHash.slice(0, 6).toUpperCase();
+            const serverHash = responseData.hashKey;
+
+            // Compare the hashes
+            if (shortHash === serverHash) {
+                this.saveCourseActivation(categoryId, courseId);
                 return { success: true, error: '' };
             } else {
                 return { success: false, error: 'Activation validation failed: Invalid hash.' };

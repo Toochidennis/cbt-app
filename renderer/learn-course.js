@@ -1,6 +1,6 @@
 const axios = require('axios');
 const Chart = require('chart.js/auto');
-const {showLoading, hideLoading, checkAndShowModal} = require('./course-activation');
+const { showLoading, hideLoading, checkAndShowModal, disableUIIfUnpaid } = require('./course-activation');
 let lessons = [];
 let currentIndex = 0;
 let pointsChart = null;
@@ -26,6 +26,7 @@ const certTemplate = document.getElementById('cert-template');
 const QUIZ_KEY_PREFIX = 'quiz_';
 
 const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
+const { id: categoryId, isFree } = JSON.parse(localStorage.getItem('category'));
 
 // === Utility Functions ===
 const getQuizKey = (courseId, lessonId) => `${QUIZ_KEY_PREFIX}${courseId}_${lessonId}`;
@@ -38,6 +39,7 @@ const setQuizData = (courseId, lessonId) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    disableUIIfUnpaid();
     certTemplate.src = templates[courseId];
     if (courseId) {
         console.log("Restored courseId from localStorage:", courseId);
@@ -46,8 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchLessons(courseId) {
+    const url = categoryId === 1 ? `https://linkschoolonline.com/new_lessons?course_id=${courseId}`
+        : `https://linkschoolonline.com/lessons?course_id=${courseId}`;
+
     showLoading(); // Show loader before starting the request
-    axios.get(`https://linkschoolonline.com/lessons?course_id=${courseId}`)
+    axios.get(url)
         .then(response => {
             // console.log(response.data);
             lessons = response.data;
@@ -97,11 +102,11 @@ function populateLessons() {
         lessonContainer.appendChild(li);
     });
 
-    selectLesson(currentIndex); 
+    selectLesson(currentIndex);
 }
 
 function selectLesson(index) {
-    if(!checkAndShowModal()) return;
+    if (!checkAndShowModal()) return;
 
     currentIndex = index;
     localStorage.setItem("selectedLessonIndex", currentIndex);
@@ -189,8 +194,8 @@ function updateLessonHighlight(index) {
 function setupDownloadButton(buttonId, fileUrl, fallbackMessage) {
     const btn = document.getElementById(buttonId);
     btn.onclick = () => {
-        if(!checkAndShowModal()) return;
-        
+        if (!checkAndShowModal()) return;
+
         if (fileUrl) {
             downloadFile(fileUrl);
         } else {
@@ -338,7 +343,7 @@ const updateQuizButtonText = (button, assessment) => {
 };
 
 const takeQuiz = (content, viewId, courseId, lessonId) => {
-    if(!checkAndShowModal()) return;
+    if (!checkAndShowModal()) return;
 
     const quizBtn = document.getElementById(viewId);
     if (!quizBtn) return;
@@ -357,7 +362,7 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 };
 
 const takeFinalQuiz = (courseId, lessonId, content) => {
-    if(!checkAndShowModal()) return;
+    if (!checkAndShowModal()) return;
 
     content.quiz_url === 1
         ? openQuiz(courseId, lessonId, true)
