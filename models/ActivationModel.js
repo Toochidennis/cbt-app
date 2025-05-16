@@ -20,38 +20,86 @@ class ActivationModel {
         return machineIdSync().slice(0, 8);
     }
 
-    static saveActivationStatus(isActivated) {
+    static readActivationData() {
+        if (!fs.existsSync(this.activationFilePath)) return {};
+        try {
+            const data = JSON.parse(fs.readFileSync(this.activationFilePath, 'utf8'));
+
+            // Check if it's the old format
+            if (typeof data.activated === 'boolean') {
+                return {
+                    cbt: {
+                        activated: data.activated,
+                        expiresAt: data.expiresAt
+                    },
+                    courses: {}
+                };
+            }
+
+            return data;
+        } catch {
+            return {};
+        }
+    }
+
+    static writeActivationData(data) {
         this.ensureDirectoryExists();
-        const expirationDate = new Date();
-        expirationDate.setDate(expirationDate.getDate() + 365);
-        const data = { activated: isActivated, expiresAt: expirationDate.toISOString() };
         fs.writeFileSync(this.activationFilePath, JSON.stringify(data, null, 2), 'utf8');
     }
 
-    static isActivated() {
-        if (!fs.existsSync(this.activationFilePath)) return false;
+    static saveCbtActivationStatus(isActivated) {
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 365);
 
-        try {
-            const data = JSON.parse(fs.readFileSync(this.activationFilePath, 'utf8'));
-            const expirationDate = new Date(data.expiresAt);
-            const currentDate = new Date();
-
-            if (data.activated === true && currentDate < expirationDate) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (error) {
-            console.error("Error reading activation file:", error);
-            return false;
-        }
+        const data = this.readActivationData();
+        data.cbt = { activated: isActivated, expiresAt: expirationDate.toISOString() };
+        this.writeActivationData(data);
     }
+
+    static isCbtActivated() {
+        const data = this.readActivationData();
+        if (!data.cbt) return false;
+
+        const expirationDate = new Date(data.cbt.expiresAt);
+        return data.cbt.activated && new Date() < expirationDate;
+    }
+
+    static saveCourseActivation(categoryId) {
+        const data = this.readActivationData();
+        if (!data.courses) data.courses = {};
+        data.courses[categoryId] = true;
+        this.writeActivationData(data);
+    }
+
+    static isCourseActivated(categoryId) {
+        const data = this.readActivationData();
+        return data.courses && data.courses[categoryId] === true;
+    }
+
+    // static isActivated() {
+    //     if (!fs.existsSync(this.activationFilePath)) return false;
+
+    //     try {
+    //         const data = JSON.parse(fs.readFileSync(this.activationFilePath, 'utf8'));
+    //         const expirationDate = new Date(data.expiresAt);
+    //         const currentDate = new Date();
+
+    //         if (data.activated === true && currentDate < expirationDate) {
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     } catch (error) {
+    //         console.error("Error reading activation file:", error);
+    //         return false;
+    //     }
+    // }
 
     /**
      * Validates activation by sending the activation code and generated product key
      * to the server, comparing the server's hash to a locally computed hash.
      */
-    static async validateActivationOnline(activationCode) {
+    static async validateActivationOnline(activationCode, categoryId) {
         try {
             const productKey = this.generateProductKey();
 
@@ -82,7 +130,8 @@ class ActivationModel {
 
             // Compare the hashes
             if (shortHash === serverHash) {
-                this.saveActivationStatus(true);
+                if (categoryId) this.saveCourseActivation(categoryId);
+                this.saveCbtActivationStatus(true);
                 return { success: true, error: '' };
             } else {
                 return { success: false, error: 'Activation validation failed: Invalid hash.' };
@@ -108,11 +157,11 @@ class ActivationModel {
 
             const shortHash = localHash.slice(0, 6).toUpperCase();
 
-          //  console.log("hash", shortHash);//645fc944
+            //  console.log("hash", shortHash);//645fc944
 
             // Compare the hashes
             if (shortHash === serverHash) {
-                this.saveActivationStatus(true);
+                this.saveCbtActivationStatus(true);
                 return { success: true, error: '' };
             } else {
                 return { success: false, error: 'Activation validation failed: Invalid hash.' };

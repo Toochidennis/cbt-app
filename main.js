@@ -13,14 +13,14 @@ autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
-// const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 
-// if (env === 'development') {
-//     require('electron-reload')(__dirname, {
-//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-//         hardResetMethod: 'exit',
-//     });
-// }
+if (env === 'development') {
+    require('electron-reload')(__dirname, {
+        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+        hardResetMethod: 'exit',
+    });
+}
 
 let mainWindow;
 let learnCourseWindow;
@@ -214,7 +214,6 @@ ipcMain.on('open-quiz-window', () => {
     // Enjoyment allowance
     quizWindow.loadFile('pages/quiz.html');
 
-
     const closeHandler = (_, lessonId) => {
         if (quizWindow && !quizWindow.isDestroyed()) {
             learnCourseWindow.webContents.send('send-quiz-result', lessonId);
@@ -233,7 +232,6 @@ ipcMain.on('open-quiz-window', () => {
 
 
 ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName) => {
-    const certKey = `certCount_${courseId}`;
     const certCountPath = path.join(app.getPath('userData'), 'certCount.json');
 
     // Load or create cert count file
@@ -243,7 +241,16 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName)
     }
 
     if ((certCounts[courseId] || 0) >= 4) {
-        return { error: 'Certificate limit reached for this course.' };
+        await dialog.showMessageBox({
+            type: 'info',
+            title: 'Certificate Request',
+            message: 'Certificate limit reached for this course.',
+            buttons: ['OK']
+        });
+
+        certWindow.close();
+
+        return {err:'Certificate limit reached for this course'};
     }
 
     const certWindow = new BrowserWindow({
@@ -322,7 +329,7 @@ ipcMain.handle('get-image-path', (_, subject, imageFileName) => {
 
 // IPC handlers for activation state.
 ipcMain.handle('get-activation-state', async () => {
-    return ActivationModel.isActivated();
+    return ActivationModel.isCbtActivated();
 });
 
 ipcMain.handle('validate-activation-online', async (_, activationCode) => {
@@ -331,6 +338,14 @@ ipcMain.handle('validate-activation-online', async (_, activationCode) => {
 
 ipcMain.handle('validate-activation-offline', async (_, activationCode, hash) => {
     return ActivationModel.validateActivationOffline(activationCode, hash);
+});
+
+ipcMain.handle('validate-course-activation', async (_, activationCode, categoryId) => {
+    return ActivationModel.validateActivationOnline(activationCode, categoryId);
+});
+
+ipcMain.handle('get-course-activation', async (_, categoryId) => {
+    return ActivationModel.isCourseActivated(categoryId);
 });
 
 ipcMain.handle('generate-product-key', async () => {

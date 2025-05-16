@@ -1,10 +1,16 @@
 const { jsPDF } = require('jspdf/dist/jspdf.umd');
 const html2canvas = require('html2canvas');
 
+// const templates = {
+//     1: '../assets/img/scratch-cert.svg',
+//     2: '../assets/img/graphic-cert.svg',
+//     3: '../assets/img/web-cert.svg'
+// };
+
 const templates = {
-    1: '../assets/img/scratch-cert.svg',
-    2: '../assets/img/graphic-cert.svg',
-    3: '../assets/img/web-cert.svg'
+    1: 'https://linkschoolonline.com/assets/certs/scratch-cert.svg',
+    2: 'https://linkschoolonline.com/assets/certs/graphic-cert.svg',
+    3: 'https://linkschoolonline.com/assets/certs/web-cert.svg'
 };
 
 const spanColor = {
@@ -19,7 +25,7 @@ window.api.onSetName(async (_, name, courseId) => {
 
     if (nameSpan && certTemplate) {
         const capitalizedName = capitalizeName(name);
-        certTemplate.src = templates[courseId];
+        await loadImageAsync(certTemplate, templates[courseId]);
         nameSpan.innerText = capitalizedName;
         nameSpan.style.color = spanColor[courseId];
     }
@@ -58,4 +64,12 @@ function capitalizeName(name) {
                 .join('-')
         )
         .join(' ');
+}
+
+function loadImageAsync(imgElement, src) {
+    return new Promise((resolve, reject) => {
+        imgElement.onload = () => resolve();
+        imgElement.onerror = (err) => reject(err);
+        imgElement.src = src;
+    });
 }
