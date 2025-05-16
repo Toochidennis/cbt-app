@@ -46,7 +46,10 @@ async function checkAndShowModal() {
 
         if (!isActivated && (count >= 2 || count === 0)) {
             showPaymentModal();
+            return false;
         }
+
+        return true;
     }
 }
 

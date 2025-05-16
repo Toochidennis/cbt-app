@@ -47138,14 +47138,9 @@ function hidePaymentModal() {
 }
 
 async function checkAndShowModal() {
-    console.log('I ran hereee');
   //  if (categoryId !== 0) return;
-    console.log('i ran here too');
-
-    console.log('cat', categoryId);
 
     if (isFree === 0) {
-        console.log('did it enter?');
         incrementVideosWatched();
 
         const count = getNumOfVideosWatched();
@@ -47153,7 +47148,10 @@ async function checkAndShowModal() {
 
         if (!isActivated && (count >= 2 || count === 0)) {
             showPaymentModal();
+            return false;
         }
+
+        return true;
     }
 }
 
@@ -47301,7 +47299,7 @@ function populateLessons() {
 }
 
 function selectLesson(index) {
-    checkAndShowModal();
+    if(!checkAndShowModal()) return;
 
     currentIndex = index;
     localStorage.setItem("selectedLessonIndex", currentIndex);
@@ -47312,7 +47310,6 @@ function selectLesson(index) {
     updateLessonHighlight(index);
     localStorage.setItem('lessonTitle', selectedLesson.title);
 
-    console.log(selectedLesson.content.reading_url);
     if (selectedLesson.content.reading_url == 1) {
         return handleCongratsContent(index, selectedLesson);
     }
@@ -47390,6 +47387,8 @@ function updateLessonHighlight(index) {
 function setupDownloadButton(buttonId, fileUrl, fallbackMessage) {
     const btn = document.getElementById(buttonId);
     btn.onclick = () => {
+        if(!checkAndShowModal()) return;
+        
         if (fileUrl) {
             downloadFile(fileUrl);
         } else {
@@ -47537,6 +47536,8 @@ const updateQuizButtonText = (button, assessment) => {
 };
 
 const takeQuiz = (content, viewId, courseId, lessonId) => {
+    if(!checkAndShowModal()) return;
+
     const quizBtn = document.getElementById(viewId);
     if (!quizBtn) return;
 
@@ -47554,6 +47555,8 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 };
 
 const takeFinalQuiz = (courseId, lessonId, content) => {
+    if(!checkAndShowModal()) return;
+
     content.quiz_url === 1
         ? openQuiz(courseId, lessonId, true)
         : showNoQuizAlert();
