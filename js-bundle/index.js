@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     typingBtn.addEventListener('click', () => {
-        switchPage('key-buddy');
+        switchPage('typing');
     });
 
     learnBtn.addEventListener('click', () => {
