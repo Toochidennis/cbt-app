@@ -19494,7 +19494,7 @@ async function checkAndShowModal() {
         const count = getNumOfVideosWatched();
         const isActivated = await window.api.getCourseActivation(categoryId, courseId);
 
-        if (!isActivated && (count > 2 || count === 0)) {
+        if (!isActivated && (count > 2 || count === 1)) {
             showPaymentModal();
             return false;
         }
