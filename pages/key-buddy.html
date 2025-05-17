@@ -1,47 +1,114 @@
+<div class="container">
+    <main class="main-content">
+        <header>
+            <button class="back-btn">Back</button>
+            <div class="header-controls">
+                <div class="volume-container">
+                    <button id="music-mute-toggle" class="mute-btn">
+                        <img src="assets/img/image.png" alt="Music Mute/Unmute" id="music-mute-icon" width="24"
+                            height="24">
+                    </button>
+                    <label for="music-volume" class="volume-label">Music:</label>
+                    <input type="range" id="music-volume" min="0" max="1" step="0.1" value="1">
+                </div>
+                <div class="volume-container">
+                    <button id="key-mute-toggle" class="mute-btn">
+                        <img src="assets/img/image.png" alt="Key Mute/Unmute" id="key-mute-icon" width="24" height="24">
+                    </button>
+                    <label for="key-volume" class="volume-label">Key:</label>
+                    <input type="range" id="key-volume" min="0" max="1" step="0.1" value="1">
+                </div> 
+                <span class="timer">00:00</span>
+                <button class="restart-btn">Restart</button>
+            </div>
+        </header>
+        <section class="typing-area">
+            <div class="instruction">Home key</div>
+            <div class="key-sequence"></div>
+        </section>
+        <section class="keyboard">
+            <div class="row">
+                <div class="key" data-char="~" data-secondary="`"></div>
+                <div class="key" data-char="!" data-secondary="1"></div>
+                <div class="key" data-char="@" data-secondary="2"></div>
+                <div class="key" data-char="#" data-secondary="3"></div>
+                <div class="key" data-char="$" data-secondary="4"></div>
+                <div class="key" data-char="%" data-secondary="5"></div>
+                <div class="key" data-char="^" data-secondary="6"></div>
+                <div class="key" data-char="&" data-secondary="7"></div>
+                <div class="key" data-char="*" data-secondary="8"></div>
+                <div class="key" data-char="(" data-secondary="9"></div>
+                <div class="key" data-char=")" data-secondary="0"></div>
+                <div class="key" data-char="_" data-secondary="-"></div>
+                <div class="key" data-char="+" data-secondary="="></div>
+                <div class="key back">backspace</div>
+            </div>
+            <div class="row">
+                <div class="key tab">tab</div>
+                <div class="key">Q</div>
+                <div class="key">W</div>
+                <div class="key">E</div>
+                <div class="key">R</div>
+                <div class="key">T</div>
+                <div class="key">Y</div>
+                <div class="key">U</div>
+                <div class="key">I</div>
+                <div class="key">O</div>
+                <div class="key">P</div>
+                <div class="key" data-char="}" data-secondary="["></div>
+                <div class="key" data-char="}" data-secondary="]"></div>
+                <div class="key" data-char="|" data-secondary="\"></div>
+            </div>
+            <div class="row cap">
+                <div class="key caps">caps lock</div>
+                <div class="key">A</div>
+                <div class="key">S</div>
+                <div class="key">D</div>
+                <div class="key">F</div>
+                <div class="key">G</div>
+                <div class="key">H</div>
+                <div class="key">J</div>
+                <div class="key">K</div>
+                <div class="key">L</div>
+                <div class="key" data-char=":" data-secondary=";"></div>
+                <div class="key" data-char="&quot;" data-secondary="'"> </div>
+                <div class="key enter">enter</div>
+            </div>
+            <div class="row">
+                <div class="key shift">shift</div>
+                <div class="key">Z</div>
+                <div class="key">X</div>
+                <div class="key">C</div>
+                <div class="key">V</div>
+                <div class="key">B</div>
+                <div class="key">N</div>
+                <div class="key">M</div>
+                <div class="key" data-char="<" data-secondary=","></div>
+                <div class="key" data-char=">" data-secondary="."></div>
+                <div class="key" data-char="?" data-secondary="/"></div>
+                <div class="key shift">shift</div>
+            </div>
+            <div class="row">
+                <div class="key ctrl">ctrl</div>
+                <div class="key alt">alt</div>
+                <div class="key space">space</div>
+                <div class="key alt">alt</div>
+                <div class="key ctrl">ctrl</div>
 
-<section class="dashboard">
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball ball1"></div>
-    <div class="d-flex justify-content-center logo mt-5">
-        <img src="assets/img/logo.png" alt="logo" />
+            </div>
+        </section>
+    </main>
+</div>
+<div id="game-over-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2 id="level-title">Game Over</h2>
+        <p id="score-display">Your Score: 0</p>
+        <p id="comment-display">Great job!</p>
+        <button id="replay-btn">Replay</button>
+        <button id="next-level-btn">Next</button>
+
     </div>
-    <div class="container-box">
-        <div class="grid-container mt-4">
-            <div class="grid-item">
-                <a href="/lesson">
-                    <img src="assets/img/typing-lessons.png" alt="Typing Lesson" />
-                    <p>Typing Lesson</p>
-                </a>
-            </div>
-            <div class="grid-item">
-                <a href="/typing-test">
-                    <img src="assets/img/typing-lessons.png" alt="Typing Test" />
-                    <p>Typing Test</p>
-                </a>
-            </div>
-            <div class="grid-item">
-                <a href="/challenge">
-                    <img src="assets/img/typing-lessons.png" alt="Challenge" />
-                    <p>Challenge</p>
-                </a>
-            </div>
-            <div class="grid-item">
-                <a href="/game">
-                    <img src="assets/img/typing-lessons.png" alt="Typing Games" />
-                    <p>Typing Games</p>
-                </a>
-            </div>
-            <div class="grid-item">
-                <a href="/leaderboard">
-                    <img src="assets/img/typing-lessons.png" alt="Leader Board" />
-                    <p>Leader Board</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<link rel="stylesheet" href="assets/css/key-buddy.css" />
+</div>
 <style>
    
 </style>
