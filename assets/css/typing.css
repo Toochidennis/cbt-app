@@ -1,0 +1,112 @@
+.dashboard {
+    background: linear-gradient(120deg, blue 0%, #e3f0ff 40%, #ffffff 70%, #1a4972 100%); /* Faded blue to white gradient */
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+    position: relative; /* Establish stacking context for child elements */
+    overflow: hidden; /* Prevent scrollbars */
+  }
+  
+  .container-box {
+    background: #fffbf5;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 900px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    position: relative; /* Ensure content is above the balls */
+    z-index: 1; /* Place content above the balls */
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 390px;
+    padding: 20px;
+  }
+  
+  .grid-item {
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .grid-item img {
+      width: 70%;
+      border-radius: 91.5px;
+  }
+  
+  .grid-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #FF6F00;
+  }
+  
+  
+  .ball {
+    width: 200px;
+    height: 200px;
+    background-color: #FFBD8A;
+    border: 4px dotted #fffbf5;
+    border-radius: 50%;
+    position: absolute; /* Position balls relative to the .dashboard container */
+    animation: floatBall 6s infinite alternate ease-in-out;
+    z-index: 0; /* Place balls behind content but above the background */
+  }
+  
+  .ball:nth-child(1) {
+    top: 35%;
+    left: 8%;
+    width: 150PX;
+    height: 150PX;
+    background-color: #FFF3E0;
+    border: 4px dotted #FFBD8A;
+    animation-duration: 8s;
+  }
+  
+  .ball:nth-child(2) {
+    bottom: 55%;
+    right: 10%;
+    animation-duration: 10s;
+  }
+  
+  .ball:nth-child(3) {
+    top: 70%;
+    left: 75%;
+    width: 170PX;
+    height: 170px;
+    animation-duration: 7s;
+    background-color: #FF6F004D;
+  }
+  
+  .ball1 {
+    background-color: #fffbf5;
+    border: 4px dotted #FFBD8A;
+  }
+  
+  .logo {
+    position: relative; /* Ensure the logo is above the balls */
+    z-index: 1; /* Place the logo above the balls */
+  }
+  
+  @keyframes floatBall {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-20px) translateX(20px);
+    }
+    100% {
+      transform: translateY(20px) translateX(-20px);
+    }
+  }
