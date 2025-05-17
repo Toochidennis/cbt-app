@@ -4449,7 +4449,7 @@ showShimmer();
 axios.get('https://linkschoolonline.com/categories')
   .then(response => {
     populateCategories(response.data);
-    fetchCourses({ name: 'Kids Weekend CodeLab', id: 1, free: 0 });
+    fetchCourses(response.data[0]);
   })
   .catch(error => {
     if (!navigator.onLine) {
@@ -4653,7 +4653,7 @@ const startLearning = (course, category) => {
   );
 
   localStorage.setItem('category',
-    JSON.stringify({ id: category.id, isFree: category.free })
+    JSON.stringify({ id: category.id, isFree: category.free, limit: category.limit })
   );
 }
 },{"axios":1}]},{},[37]);

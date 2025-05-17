@@ -26,7 +26,7 @@ const certTemplate = document.getElementById('cert-template');
 const QUIZ_KEY_PREFIX = 'quiz_';
 
 const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
-const { id: categoryId, isFree } = JSON.parse(localStorage.getItem('category'));
+const { id: categoryId, isFree, limit } = JSON.parse(localStorage.getItem('category'));
 
 // === Utility Functions ===
 const getQuizKey = (courseId, lessonId) => `${QUIZ_KEY_PREFIX}${courseId}_${lessonId}`;

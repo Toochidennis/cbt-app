@@ -19455,7 +19455,8 @@ const feedback = document.querySelector('.feedback');
 const skipBtn = document.querySelector('.skip');
 const loadingOverlay = document.getElementById("loading-overlay");
 
-const {id:categoryId, isFree} = JSON.parse(localStorage.getItem('category'));
+const {id:categoryId, isFree, limit} = JSON.parse(localStorage.getItem('category'));
+console.log('limit ', limit);
 const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
 
 function showLoading() {
@@ -19494,7 +19495,7 @@ async function checkAndShowModal() {
         const count = getNumOfVideosWatched();
         const isActivated = await window.api.getCourseActivation(categoryId, courseId);
 
-        if (!isActivated && (count > 2 || count === 1)) {
+        if (!isActivated && (count > limit || count === 1)) {
             showPaymentModal();
             return false;
         }
@@ -19546,7 +19547,7 @@ async function disableUIIfUnpaid() {
         const count = getNumOfVideosWatched();
         const isActivated = await window.api.getCourseActivation(categoryId, courseId);
 
-        if (!isActivated && count > 2) {
+        if (!isActivated && count > limit) {
             disableAllExceptActivateAndClose();
         }
     }else{
@@ -19620,7 +19621,7 @@ const certTemplate = document.getElementById('cert-template');
 const QUIZ_KEY_PREFIX = 'quiz_';
 
 const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
-const { id: categoryId, isFree } = JSON.parse(localStorage.getItem('category'));
+const { id: categoryId, isFree, limit } = JSON.parse(localStorage.getItem('category'));
 
 // === Utility Functions ===
 const getQuizKey = (courseId, lessonId) => `${QUIZ_KEY_PREFIX}${courseId}_${lessonId}`;
