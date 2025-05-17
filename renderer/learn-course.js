@@ -194,7 +194,7 @@ function updateLessonHighlight(index) {
 function setupDownloadButton(buttonId, fileUrl, fallbackMessage) {
     const btn = document.getElementById(buttonId);
     btn.onclick = () => {
-        if (!checkAndShowModal()) return;
+       // if (!checkAndShowModal()) return;
 
         if (fileUrl) {
             downloadFile(fileUrl);
@@ -238,28 +238,25 @@ function setZoomInfo(content) {
     // Convert server date to Date object
     const classDateTime = new Date(content.date.replace(" ", "T")); // Ensure ISO format
     const classStartTime = new Date(classDateTime);
-    classStartTime.setHours(10, 0, 0, 0); // 10:00 AM
+   // classStartTime.setHours(10, 0, 0, 0); 
 
     const classEndTime = new Date(classDateTime);
-    classEndTime.setHours(12, 0, 0, 0); // 12:00 PM
+    classEndTime.setHours(classStartTime.getHours() + 2); // 12:00 PM
 
     const now = new Date();
 
+    const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
+    const readableStartTime = classStartTime.toLocaleTimeString('en-US', timeOptions);
+    const readableEndTime = classEndTime.toLocaleTimeString('en-US', timeOptions);
+
     let zoomInfoText = "";
     if (now < classStartTime) {
-        // Before class
-        const options = {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-        };
-        const readableDate = classStartTime.toLocaleDateString("en-US", options);
-        zoomInfoText = `Your Zoom class starts on <strong>${readableDate}</strong> from <strong>10:00 AM to 12:00 PM</strong>.`;
+        const dateOptions = { weekday: "long", month: "long", day: "numeric" };
+        const readableDate = classStartTime.toLocaleDateString("en-US", dateOptions);
+        zoomInfoText = `Your Zoom class starts on <strong>${readableDate}</strong> from <strong>${readableStartTime} to ${readableEndTime}</strong>.`;
     } else if (now >= classStartTime && now <= classEndTime) {
-        // During class
-        zoomInfoText = `<strong>Your Zoom class is currently ongoing (10:00 AM to 12:00 PM).</strong>`;
+        zoomInfoText = `<strong>Your Zoom class is currently ongoing (${readableStartTime} to ${readableEndTime}).</strong>`;
     } else {
-        // After class
         zoomInfoText = `<strong>Your Zoom class has ended. You can now watch the recorded video.</strong>`;
     }
 
@@ -343,7 +340,7 @@ const updateQuizButtonText = (button, assessment) => {
 };
 
 const takeQuiz = (content, viewId, courseId, lessonId) => {
-    if (!checkAndShowModal()) return;
+  //  if (!checkAndShowModal()) return;
 
     const quizBtn = document.getElementById(viewId);
     if (!quizBtn) return;
@@ -362,7 +359,7 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 };
 
 const takeFinalQuiz = (courseId, lessonId, content) => {
-    if (!checkAndShowModal()) return;
+   // if (!checkAndShowModal()) return;
 
     content.quiz_url === 1
         ? openQuiz(courseId, lessonId, true)

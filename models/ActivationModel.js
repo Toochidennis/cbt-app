@@ -156,7 +156,7 @@ class ActivationModel {
     static async validateCourseActivationOnline(activationCode, categoryId, courseId) {
         try {
             // console.log(activationCode, categoryId);
-            const productKey = this.generateProductKey();
+            const productKey = `${this.generateProductKey}-${categoryId}-${courseId}`;
 
             //Send activation code and product key to your server
             //(Your server should hash the received productKey with its secret and return the hash)

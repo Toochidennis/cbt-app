@@ -17,13 +17,15 @@ function hideLoading() {
 }
 
 function getNumOfVideosWatched() {
-    return parseInt(localStorage.getItem('count'), 10) || 0;
+    const counts = JSON.parse(localStorage.getItem('courseViewCounts') || '{}');
+    return counts[courseId] || 0;
 }
 
 function incrementVideosWatched() {
-    const current = getNumOfVideosWatched();
-    console.log('Current ', current);
-    localStorage.setItem('count', `${current + 1}`);
+    const counts = JSON.parse(localStorage.getItem('courseViewCounts') || '{}');
+    counts[courseId] = (counts[courseId] || 0) + 1;
+    console.log(`Course ${courseId} view count:`, counts[courseId]);
+    localStorage.setItem('courseViewCounts', JSON.stringify(counts));
 }
 
 function showPaymentModal() {
@@ -35,15 +37,14 @@ function hidePaymentModal() {
 }
 
 async function checkAndShowModal() {
-  //  if (categoryId !== 0) return;
-
     if (isFree === 0) {
         incrementVideosWatched();
-
+        disableUIIfUnpaid();
+        
         const count = getNumOfVideosWatched();
-        const isActivated = await window.api.getCourseActivation(categoryId,courseId);
+        const isActivated = await window.api.getCourseActivation(categoryId, courseId);
 
-        if (!isActivated && (count >= 2 || count === 0)) {
+        if (!isActivated && (count > 2 || count === 0)) {
             showPaymentModal();
             return false;
         }
@@ -95,7 +96,7 @@ async function disableUIIfUnpaid() {
         const count = getNumOfVideosWatched();
         const isActivated = await window.api.getCourseActivation(categoryId, courseId);
 
-        if (!isActivated && (count >= 2 || count === 0)) {
+        if (!isActivated && count > 2) {
             disableAllExceptActivateAndClose();
         }
     }else{
@@ -104,7 +105,7 @@ async function disableUIIfUnpaid() {
 }
 
 function enableAllUI() {
-    const allElements = document.querySelectorAll('button, input, iframe, ul, select, textarea, a');
+    const allElements = document.querySelectorAll('button, input, iframe, select, textarea, a');
     allElements.forEach(el => {
         el.disabled = false;
         el.style.pointerEvents = 'auto';
@@ -126,7 +127,7 @@ function disableAllExceptActivateAndClose() {
         }
     });
 
-    const allInputs = document.querySelectorAll('input, select, iframe, ul, textarea, a');
+    const allInputs = document.querySelectorAll('input, select, iframe, textarea, a');
     allInputs.forEach(el => {
         if (el !== activateBtn && el !== closeBtn && el !== codeInput) {
             el.disabled = true;
