@@ -1,112 +1,540 @@
-.dashboard {
-  background: linear-gradient(120deg, blue 0%, #e3f0ff 40%, #ffffff 70%, #1a4972 100%); /* Faded blue to white gradient */
-  min-height: 100vh; /* Full viewport height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center contents vertically */
-  align-items: center; /* Center contents horizontally */
-  position: relative; /* Establish stacking context for child elements */
-  overflow: hidden; /* Prevent scrollbars */
+.container {
+    display: flex;
+    width: 100%;
+    font-family: "Urbanist";
+    align-items: center;
 }
 
-.container-box {
-  background: #fffbf5;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 900px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  position: relative; /* Ensure content is above the balls */
-  z-index: 1; /* Place content above the balls */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
 }
 
-.grid-item:hover {
-  transform: scale(1.05);
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  height: 390px;
-  padding: 20px;
+.typing-area {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.grid-item {
-  border-radius: 20px;
-  text-align: center;
-  transition: transform 0.3s;
+.instruction {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-.grid-item img {
-    width: 70%;
-    border-radius: 91.5px;
+.key-sequence {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    background-color: #fafafa;
+    min-height: 100px;
+    max-width: 100% ;
+    overflow: hidden;
 }
 
-.grid-item p {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #FF6F00;
+.key-sequence .sequence-key {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 2.5em;
+    padding: .4em 1em;
+    justify-content: center;
+    background-color: #B0F0D7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.key-sequence .sequence-key:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.1); 
+} 
+
+.key-sequence .sequence-key span.correct {
+    background-color: green;
+    color: #fff;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+
+.key-sequence .sequence-key span.incorrect {
+    background-color: red;
+    color: #fff;
+}
+
+.key-sequence .sequence-key.incorrect {
+    background-color: red;
+    color: #fff;
+}
+
+.key-sequence .sequence-key.active{
+    background-color: yellow; /* Bright orange for active keys */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for active keys */
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduce gap between rows */
+    border-radius: 10px; /* Slightly rounded corners */
+    padding: 1.5em; /* Adjust padding inside the keyboard container */
+    margin: 0 auto; /* Center the keyboard container */
+    margin-top: 1em; /* Adjust margin for better spacing */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Reduce gap between keys */
+}
+
+.key {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 1em 0;
+    border-radius: 10px; 
+    background-color: #f0f8ff;
+    font-size: 1.2rem; /* Adjust font size for better fit */
+    font-weight: bold;
+    color: #333; /* Darker text color for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a playful shadow */
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.key::before {
+    content: attr(data-char);
+    font-size: .8rem;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.key::after {
+    content: attr(data-secondary);
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.key.back, .key.caps, .key.enter, .key.tab{
+    width: 105px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.key.shift{
+    width: 135px;
+    text-align: end;
+    font-size: 1rem;
+}
+
+.key.space {
+    width: 445px;
+    font-size: 1rem;
+}
+
+.key.ctrl, .key.alt{
+    width: 90px; 
+    font-size: 1rem;
+}
+
+.key:hover {
+    background-color: #e0f7fa; /* Slightly lighter blue on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.key.active {
+    background-color: #ff8c42; /* Bright orange for active keys */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for active keys */
+}
+
+.key.correct {
+    background-color: #4caf50; /* Bright green for correct keys */
+    color: #fff;
+}
+
+.key.incorrect {
+    background-color: #f44336; /* Bright red for incorrect keys */
+    color: #fff;
+}
+
+.key.suggested {
+    background-color: #ffd700; /* Bright yellow for suggested keys */
+    color: #000;
+}
+
+.key:active {
+    transform: scale(0.95); /* Slightly shrink on press */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on press */
 }
 
 
-.ball {
-  width: 200px;
-  height: 200px;
-  background-color: #FFBD8A;
-  border: 4px dotted #fffbf5;
-  border-radius: 50%;
-  position: absolute; /* Position balls relative to the .dashboard container */
-  animation: floatBall 6s infinite alternate ease-in-out;
-  z-index: 0; /* Place balls behind content but above the background */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.ball:nth-child(1) {
-  top: 35%;
-  left: 8%;
-  width: 150PX;
-  height: 150PX;
-  background-color: #FFF3E0;
-  border: 4px dotted #FFBD8A;
-  animation-duration: 8s;
+.modal.hidden {
+    display: none;
 }
 
-.ball:nth-child(2) {
-  bottom: 55%;
-  right: 10%;
-  animation-duration: 10s;
+.modal-content {
+    background-color: #ffebcd; /* Light beige background for a warm look */
+    padding: 40px; /* Increased padding for a larger box */
+    border-radius: 20px; /* More rounded corners */
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow for emphasis */
+    width: 500px; /* Increased width */
+    max-width: 90%; /* Ensure it fits smaller screens */
+    animation: pop-in 0.3s ease-out; /* Add a pop-in animation */
 }
 
-.ball:nth-child(3) {
-  top: 70%;
-  left: 75%;
-  width: 170PX;
-  height: 170px;
-  animation-duration: 7s;
-  background-color: #FF6F004D;
+.modal-content h2 {
+    font-size: 36px; /* Larger font size for the title */
+    font-weight: bold;
+    color: #ff5722; /* Bright orange for a playful look */
+    margin-bottom: 20px;
 }
 
-.ball1 {
-  background-color: #fffbf5;
-  border: 4px dotted #FFBD8A;
+.modal-content p {
+    font-size: 20px; /* Larger font size for text */
+    color: #333; /* Darker text for readability */
+    margin: 15px 0;
 }
 
-.logo {
-  position: relative; /* Ensure the logo is above the balls */
-  z-index: 1; /* Place the logo above the balls */
+.modal-content button {
+    font-size: 18px; /* Larger font size for buttons */
+    font-weight: bold;
+    padding: 15px 30px; /* Increased padding for larger buttons */
+    background-color: #4caf50; /* Bright green for a fun look */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a playful shadow */
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px; /* Add spacing between buttons */
 }
 
-@keyframes floatBall {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(-20px) translateX(20px);
-  }
-  100% {
-    transform: translateY(20px) translateX(-20px);
-  }
+.modal-content button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Add a pop-in animation for the modal */
+@keyframes pop-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.timer {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff5722; /* Bright orange for a playful look */
+    background-color: #fff3e0; /* Light orange background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #ff8c42; /* Border matching the theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a playful shadow */
+    margin-right: 15px;
+}
+
+.restart-btn {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4caf50; /* Bright green for a fun look */
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a playful shadow */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.restart-btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.volume-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4caf50; /* Bright green for a playful look */
+    margin-right: 5px;
+}
+
+#music-volume, #key-volume {
+    width: 100px; /* Reduced width */
+    height: 8px; /* Slightly thicker for better visibility */
+    background-color: #e0e0e0; /* Light gray background */
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#music-volume::-webkit-slider-thumb, #key-volume::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #4caf50; /* Bright green thumb */
+    border-radius: 50%; /* Circular thumb */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for a playful look */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#music-volume::-webkit-slider-thumb:hover, #key-volume::-webkit-slider-thumb:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+.mute-btn img {
+    width: 20px; /* Smaller size */
+    height: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Add a shadow for a stylish look */
+    transition: transform 0.2s, opacity 0.3s; /* Smooth transition for hover effects */
+    cursor: pointer;
+}
+
+.mute-btn img:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+    opacity: 0.8; /* Slightly dim the icon on hover */
+}
+
+.back-btn {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2196f3; /* Bright blue for a playful look */
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a playful shadow */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #1976d2; /* Slightly darker blue on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.header-controls {
+    position: relative; /* Enable positioning for child elements */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Add spacing between elements */
+    justify-content: flex-end; /* Align elements to the right */
+}
+
+.volume-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1; /* Ensure proper stacking order */
+    gap: 10px; /* Add spacing between the icon, label, and slider */
+}
+
+.volume-controls {
+    display: none; /* Hide the volume controls by default */
+    position: absolute;
+    bottom: 40px; /* Position above the parent container */
+    left: 50%; /* Center horizontally relative to the parent */
+    transform: translateX(-50%); /* Adjust for centering */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for a stylish look */
+    z-index: 1000;
+    white-space: nowrap; /* Prevent wrapping of content */
+}
+
+.volume-container:hover .volume-controls {
+    display: none; /* No effect on hover */
+}
+
+.volume-container:not(:hover) .volume-controls {
+    display: none; /* Hide the volume controls when not hovering over the container */
+}
+
+.volume-container .volume-controls {
+    max-width: calc(100vw - 20px); /* Ensure it doesn't overflow the screen */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+}
+
+/* Style for the volume sliders and labels */
+.volume-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4caf50; /* Bright green for a playful look */
+}
+
+#music-volume, #key-volume {
+    width: 80px; /* Adjusted width */
+    height: 6px; /* Slightly thinner for better visibility */
+    background-color: #e0e0e0; /* Light gray background */
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    cursor: pointer;
+}
+
+#music-volume::-webkit-slider-thumb, #key-volume::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #4caf50; /* Bright green thumb */
+    border-radius: 50%; /* Circular thumb */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for a playful look */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#music-volume::-webkit-slider-thumb:hover, #key-volume::-webkit-slider-thumb:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+.volume-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.volume-controls {
+    display: none; /* Hide the volume controls by default */
+    position: absolute;
+    top: 40px; /* Position below the parent container */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for a stylish look */
+    z-index: 1000;
+    white-space: nowrap; /* Prevent wrapping of content */
+}
+
+.volume-controls.hidden {
+    display: none; /* Ensure hidden class hides the dropdown */
+}
+
+.dropdown-arrow {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #4caf50; /* Match the theme */
+    transition: transform 0.2s;
+}
+
+.dropdown-arrow:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Style for the volume sliders and labels */
+.volume-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4caf50; /* Bright green for a playful look */
+    margin-right: 5px;
+}
+
+#music-volume, #key-volume {
+    width: 80px; /* Reduced width */
+    height: 6px; /* Slightly thinner for better visibility */
+    background-color: #e0e0e0; /* Light gray background */
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#music-volume::-webkit-slider-thumb, #key-volume::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #4caf50; /* Bright green thumb */
+    border-radius: 50%; /* Circular thumb */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for a playful look */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#music-volume::-webkit-slider-thumb:hover, #key-volume::-webkit-slider-thumb:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+.bouncing {
+    animation: bounce 0.5s infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-origin: center;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.sequence-key.bouncing {
+    animation: bounce 1s infinite; /* Increased duration to make it slower */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-origin: center;
 }
