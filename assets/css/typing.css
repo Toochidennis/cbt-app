@@ -13,6 +13,7 @@
   background: #F5F7FA;
   border-radius: 5px;
   padding: 10px 40px;
+  box-shadow: 0 8px 24px rgba(44,62,80,0.18), 0 2px 12px rgba(44,62,80,0.07);
 }
 .typing-dashboard-title {
     color: #2563eb;
@@ -41,6 +42,12 @@
     max-width: 280px;
     min-width: 0;
     width: 100%;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.typing-feature-card:hover {
+    box-shadow: 0 8px 24px rgba(44,62,80,0.18), 0 2px 12px rgba(44,62,80,0.07);
+    transform: translateY(-8px) scale(1.03);
+    z-index: 2;
 }
 .typing-feature-tag {
     font-size: 0.75rem;
