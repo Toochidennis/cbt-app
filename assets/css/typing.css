@@ -1,112 +1,107 @@
-.dashboard {
-    background: linear-gradient(120deg, blue 0%, #e3f0ff 40%, #ffffff 70%, #1a4972 100%); /* Faded blue to white gradient */
-    min-height: 100vh; /* Full viewport height */
+/* --- Typing Dashboard UI Styles --- */
+.typing-dashboard-bg {
+  min-height: 100vh; ;
+    background: white;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center contents vertically */
-    align-items: center; /* Center contents horizontally */
-    position: relative; /* Establish stacking context for child elements */
-    overflow: hidden; /* Prevent scrollbars */
-  }
-  
-  .container-box {
-    background: #fffbf5;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: flex-start;
+ 
+}
+
+.typing-dashboard-card{
+  background: #F5F7FA;
+  border-radius: 5px;
+  padding: 10px 40px;
+}
+.typing-dashboard-title {
+    color: #2563eb;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px;
     text-align: center;
-    width: 900px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    position: relative; /* Ensure content is above the balls */
-    z-index: 1; /* Place content above the balls */
-  }
-  
-  .grid-item:hover {
-    transform: scale(1.05);
-  }
-  
-  .grid-container {
+    letter-spacing: 0.5px;
+}
+
+.typing-dashboard-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    height: 390px;
-    padding: 20px;
-  }
-  
-  .grid-item {
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.3s;
-  }
-  
-  .grid-item img {
-      width: 70%;
-      border-radius: 91.5px;
-  }
-  
-  .grid-item p {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #FF6F00;
-  }
-  
-  
-  .ball {
-    width: 200px;
-    height: 200px;
-    background-color: #FFBD8A;
-    border: 4px dotted #fffbf5;
-    border-radius: 50%;
-    position: absolute; /* Position balls relative to the .dashboard container */
-    animation: floatBall 6s infinite alternate ease-in-out;
-    z-index: 0; /* Place balls behind content but above the background */
-  }
-  
-  .ball:nth-child(1) {
-    top: 35%;
-    left: 8%;
-    width: 150PX;
-    height: 150PX;
-    background-color: #FFF3E0;
-    border: 4px dotted #FFBD8A;
-    animation-duration: 8s;
-  }
-  
-  .ball:nth-child(2) {
-    bottom: 55%;
-    right: 10%;
-    animation-duration: 10s;
-  }
-  
-  .ball:nth-child(3) {
-    top: 70%;
-    left: 75%;
-    width: 170PX;
-    height: 170px;
-    animation-duration: 7s;
-    background-color: #FF6F004D;
-  }
-  
-  .ball1 {
-    background-color: #fffbf5;
-    border: 4px dotted #FFBD8A;
-  }
-  
-  .logo {
-    position: relative; /* Ensure the logo is above the balls */
-    z-index: 1; /* Place the logo above the balls */
-  }
-  
-  @keyframes floatBall {
-    0% {
-      transform: translateY(0) translateX(0);
-    }
-    50% {
-      transform: translateY(-20px) translateX(20px);
-    }
-    100% {
-      transform: translateY(20px) translateX(-20px);
-    }
-  }
+    gap: 20px 50px;
+}
+.typing-feature-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    min-height: 120px;
+    max-width: 280px;
+    min-width: 0;
+    width: 100%;
+}
+.typing-feature-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 2px 10px;
+    margin-bottom: 7px;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+.tag-blue { background: #e3edff; color: #2563eb; }
+.tag-orange { background: #ffe5d0; color: #ff8c42; }
+.tag-purple { background: #ede7ff; color: #7c3aed; }
+.tag-yellow { background: #eab308; color: #eab308; }
+.typing-feature-img {
+    width: 100%;
+    height: 120px;
+    object-fit: fill;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: #f3f6fa;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+}
+.typing-feature-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 4px;
+}
+.typing-feature-desc {
+    font-size: 0.75rem;
+    color: #6b7a8f;
+    margin-bottom: 12px;
+    min-height: 24px;
+}
+.typing-feature-btn {
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+}
+.btn-blue { background: #e3edff; color: #2563eb; }
+.btn-blue:hover { background: #2563eb; color: #fff; }
+.btn-orange { background: #ffe5d0; color: #ff8c42; }
+.btn-orange:hover { background: #ff8c42; color: #fff; }
+.btn-purple { background: #ede7ff; color: #7c3aed; }
+.btn-purple:hover { background: #7c3aed; color: #fff; }
+.btn-yellow { background: #FFF6C4; color: #eab308; }
+.btn-yellow:hover { background: #eab308; color: #fff; }
+@media (max-width: 900px) {
+    .typing-dashboard-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+    .typing-dashboard-card { padding: 8px 2px; }
+    .typing-dashboard-grid { grid-template-columns: 1fr; gap: 16px 0; }
+    .typing-feature-card { padding: 16px 8px 12px 8px; }
+}
