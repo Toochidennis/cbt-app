@@ -35,6 +35,7 @@ contextBridge.exposeInMainWorld('api', {
     validateCourseActivation: (activationCode, categoryId, courseId) => ipcRenderer.invoke('validate-course-activation', activationCode, categoryId, courseId),
     openActivationWindow: () => ipcRenderer.send('open-activation-window'),
     closeActivationWindow: () => ipcRenderer.send('close-activation-window'),
+    loadChallenge: () => ipcRenderer.send('load-challenge'),
     joinZoom: (url) => ipcRenderer.send('open-zoom-meeting', url),
     generateProductKey: (productKey) => ipcRenderer.invoke('generate-product-key', productKey),
     getImagePath: (subject, imageFileName) => ipcRenderer.invoke('get-image-path', subject, imageFileName),

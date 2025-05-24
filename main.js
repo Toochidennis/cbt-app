@@ -14,14 +14,14 @@ autoUpdater.logger.transports.file.level = 'info';
 const gotTheLock = app.requestSingleInstanceLock();
 //let isUpdateModalOpen = false;
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-        hardResetMethod: 'exit',
-    });
-}
+// if (env === 'development') {
+//     require('electron-reload')(__dirname, {
+//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+//         hardResetMethod: 'exit',
+//     });
+// }
 
 let mainWindow;
 let learnCourseWindow;
@@ -221,6 +221,7 @@ ipcMain.on('open-quiz-window', () => {
             quizWindow.close();
         }
     };
+    
 
     // Register the listener for this window instance
     ipcMain.once('close-quiz-window', closeHandler);
@@ -290,6 +291,20 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName)
     certWindow.close();
 
     return { success: true, filePath };
+});
+
+ipcMain.on('load-challenge', () => {
+    const keybuddy = new BrowserWindow({
+        webPreferences: {
+            contextIsolation: true,
+            preload: path.join(__dirname, 'preload.js'),
+        }
+    });
+
+    keybuddy.setMenu(null);
+    keybuddy.maximize();
+
+    keybuddy.loadURL('https:linkschoolonline.com/keybuddy');
 });
 
 // IPC handlers for opening windows
