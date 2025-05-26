@@ -305,9 +305,7 @@ ipcMain.on('load-challenge', () => {
     keybuddy.maximize();
 
     keybuddy.webContents.session.clearCache().then(() => {
-        keybuddy.loadURL('https://linkschoolonline.com/keybuddy', {
-            extraHeaders: 'pragma: no-cache\n'
-        });
+        keybuddy.loadURL('https://linkschoolonline.com/keybuddy?' + Date.now());
     });
     
 });
