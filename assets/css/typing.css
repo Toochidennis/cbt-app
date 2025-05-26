@@ -12,7 +12,8 @@ html, body {
     min-height: 90vh;
     background: #F5F7FA;
     display: flex;
-    padding: 2em;
+    margin-bottom: 2em; /* Add space below the last row */
+    padding: auto;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
