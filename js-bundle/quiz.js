@@ -19460,6 +19460,7 @@ const quizState = {
 let pointsChart = null;
 
 const { courseId, lessonId } = JSON.parse(localStorage.getItem('quizData'));
+const { id: categoryId, isFree, limit } = JSON.parse(localStorage.getItem('category'));
 
 const submitBtn = document.getElementById('submit-button');
 const closeBtn = document.getElementById('close-btn');
@@ -19502,8 +19503,11 @@ function hideLoader() {
 }
 
 function fetchQuestions() {
+    const url = categoryId === 1 ? `https://linkschoolonline.com/lesson-quiz-2?lesson_id=${lessonId}&course_id=${courseId}`
+    : `https://linkschoolonline.com/lesson-quiz?lesson_id=${lessonId}&course_id=${courseId}`;
+
     showLoader();
-    axios.get(`https://linkschoolonline.com/lesson-quiz?lesson_id=${lessonId}&course_id=${courseId}`)
+    axios.get(url)
         .then(response => {
             console.log(response.data);
             formatQuestions(response.data);
