@@ -14,14 +14,14 @@ autoUpdater.logger.transports.file.level = 'info';
 const gotTheLock = app.requestSingleInstanceLock();
 //let isUpdateModalOpen = false;
 
-// const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 
-// if (env === 'development') {
-//     require('electron-reload')(__dirname, {
-//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-//         hardResetMethod: 'exit',
-//     });
-// }
+if (env === 'development') {
+    require('electron-reload')(__dirname, {
+        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+        hardResetMethod: 'exit',
+    });
+}
 
 let mainWindow;
 let learnCourseWindow;
@@ -304,11 +304,12 @@ ipcMain.on('load-challenge', () => {
     keybuddy.setMenu(null);
     keybuddy.maximize();
 
-    keybuddy.loadURL('https://linkschoolonline.com/keybuddy',
-        {
+    keybuddy.webContents.session.clearCache().then(() => {
+        keybuddy.loadURL('https://linkschoolonline.com/keybuddy', {
             extraHeaders: 'pragma: no-cache\n'
-        }
-    );
+        });
+    });
+    
 });
 
 // IPC handlers for opening windows
