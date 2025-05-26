@@ -304,7 +304,11 @@ ipcMain.on('load-challenge', () => {
     keybuddy.setMenu(null);
     keybuddy.maximize();
 
-    keybuddy.loadURL('https://linkschoolonline.com/keybuddy');
+    keybuddy.loadURL('https://linkschoolonline.com/keybuddy',
+        {
+            extraHeaders: 'pragma: no-cache\n'
+        }
+    );
 });
 
 // IPC handlers for opening windows
