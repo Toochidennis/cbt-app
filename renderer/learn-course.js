@@ -39,7 +39,7 @@ const setQuizData = (courseId, lessonId) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    disableUIIfUnpaid();
+    disableUIIfUnpaid(currentIndex);
     certTemplate.src = templates[courseId];
     if (courseId) {
         console.log("Restored courseId from localStorage:", courseId);
@@ -106,7 +106,7 @@ function populateLessons() {
 }
 
 function selectLesson(index) {
-    if (!checkAndShowModal()) return;
+    if (!checkAndShowModal(index)) return;
 
     currentIndex = index;
     localStorage.setItem("selectedLessonIndex", currentIndex);

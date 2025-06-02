@@ -5,7 +5,7 @@ const feedback = document.querySelector('.feedback');
 const skipBtn = document.querySelector('.skip');
 const loadingOverlay = document.getElementById("loading-overlay");
 
-const {id:categoryId, isFree, limit} = JSON.parse(localStorage.getItem('category'));
+const { id: categoryId, isFree, limit } = JSON.parse(localStorage.getItem('category'));
 console.log('limit ', limit);
 const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
 
@@ -37,15 +37,16 @@ function hidePaymentModal() {
     paymentModal.style.display = 'none';
 }
 
-async function checkAndShowModal() {
+async function checkAndShowModal(index) {
     if (isFree === 0) {
-        incrementVideosWatched();
-        disableUIIfUnpaid();
-        
-        const count = getNumOfVideosWatched();
+        console.log('Limit ', limit);
+        console.log('index ', index);
+
+        disableUIIfUnpaid(index);
+
         const isActivated = await window.api.getCourseActivation(categoryId, courseId);
 
-        if (!isActivated && (count > limit || count === 1)) {
+        if (!isActivated && index > limit) {
             showPaymentModal();
             return false;
         }
@@ -92,15 +93,16 @@ activateBtn.addEventListener('click', () => {
     validateCodeOnline();
 });
 
-async function disableUIIfUnpaid() {
+async function disableUIIfUnpaid(index) {
     if (isFree === 0) {
-        const count = getNumOfVideosWatched();
         const isActivated = await window.api.getCourseActivation(categoryId, courseId);
 
-        if (!isActivated && count > limit) {
+        if (!isActivated && index > limit) {
             disableAllExceptActivateAndClose();
+        } else {
+            enableAllUI();
         }
-    }else{
+    } else {
         enableAllUI();
     }
 }
