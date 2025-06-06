@@ -24,6 +24,7 @@ const gotTheLock = app.requestSingleInstanceLock();
 //     });
 // }
 
+
 let mainWindow;
 let learnCourseWindow;
 
@@ -222,7 +223,7 @@ ipcMain.on('open-quiz-window', () => {
             quizWindow.close();
         }
     };
-    
+
 
     // Register the listener for this window instance
     ipcMain.once('close-quiz-window', closeHandler);
@@ -308,7 +309,7 @@ ipcMain.on('load-challenge', () => {
     keybuddy.webContents.session.clearCache().then(() => {
         keybuddy.loadURL('https://linkschoolonline.com/keybuddy?' + Date.now());
     });
-    
+
 });
 
 // IPC handlers for opening windows
@@ -434,3 +435,7 @@ if (!gotTheLock) {
         if (process.platform !== 'darwin') app.quit();
     });
 }
+
+process.on('uncaughtException', (error) => {
+    log.error('Uncaught Exception:', error);
+});
