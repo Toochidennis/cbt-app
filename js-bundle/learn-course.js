@@ -19455,7 +19455,7 @@ const feedback = document.querySelector('.feedback');
 const skipBtn = document.querySelector('.skip');
 const loadingOverlay = document.getElementById("loading-overlay");
 
-const {id:categoryId, isFree, limit} = JSON.parse(localStorage.getItem('category'));
+const { id: categoryId, isFree, limit } = JSON.parse(localStorage.getItem('category'));
 console.log('limit ', limit);
 const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
 
@@ -19549,10 +19549,10 @@ async function disableUIIfUnpaid(index) {
 
         if (!isActivated && index > limit) {
             disableAllExceptActivateAndClose();
-        }else{
+        } else {
             enableAllUI();
         }
-    }else{
+    } else {
         enableAllUI();
     }
 }
@@ -19601,12 +19601,7 @@ const { showLoading, hideLoading, checkAndShowModal, disableUIIfUnpaid } = requi
 let lessons = [];
 let currentIndex = 0;
 let pointsChart = null;
-
-const templates = {
-    1: '../assets/img/scratch-cert.svg',
-    2: '../assets/img/graphic-cert.svg',
-    3: '../assets/img/web-cert.svg'
-};
+let templates = [];
 
 const certModal = document.getElementById('certificate-modal');
 const downloadCertBtn = document.getElementById('download-cert');
@@ -19623,7 +19618,7 @@ const certTemplate = document.getElementById('cert-template');
 const QUIZ_KEY_PREFIX = 'quiz_';
 
 const { courseId, courseName, email } = JSON.parse(localStorage.getItem('courseData'));
-const { id: categoryId, isFree, limit } = JSON.parse(localStorage.getItem('category'));
+const { id: categoryId, isFree, limit, slogan } = JSON.parse(localStorage.getItem('category'));
 
 // === Utility Functions ===
 const getQuizKey = (courseId, lessonId) => `${QUIZ_KEY_PREFIX}${courseId}_${lessonId}`;
@@ -19637,12 +19632,42 @@ const setQuizData = (courseId, lessonId) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     disableUIIfUnpaid(currentIndex);
-    certTemplate.src = templates[courseId];
+    getTemplates();
     if (courseId) {
-        console.log("Restored courseId from localStorage:", courseId);
+        //    console.log("Restored courseId from localStorage:", courseId);
         fetchLessons(courseId);
     }
 });
+
+async function getTemplates() {
+    const cacheKey = 'certTemplatesCache';
+    const cacheTTL = 24 * 60 * 60 * 1000; // 1 day
+    const cached = localStorage.getItem(cacheKey);
+
+    if (cached) {
+        const { data, timestamp } = JSON.parse(cached);
+        const isExpired = Date.now() - timestamp > cacheTTL;
+        if (!isExpired) {
+            templates = data;
+            certTemplate.src = templates[slogan][courseId];
+            return;
+        }
+    }
+
+    try {
+        const response = await axios.get('https://linkschoolonline.com/certificates');
+        templates = response.data;
+
+        localStorage.setItem(cacheKey, JSON.stringify({
+            data: templates,
+            timestamp: Date.now()
+        }));
+
+        certTemplate.src = templates[slogan][courseId];
+    } catch (error) {
+        console.error('Error fetching certificate templates:', error);
+    }
+}
 
 function fetchLessons(courseId) {
     const url = categoryId === 1 ? `https://linkschoolonline.com/new_lessons?course_id=${courseId}`
@@ -19791,7 +19816,7 @@ function updateLessonHighlight(index) {
 function setupDownloadButton(buttonId, fileUrl, fallbackMessage) {
     const btn = document.getElementById(buttonId);
     btn.onclick = () => {
-       // if (!checkAndShowModal()) return;
+        // if (!checkAndShowModal()) return;
 
         if (fileUrl) {
             downloadFile(fileUrl);
@@ -19806,36 +19831,55 @@ cancelCertBtn.addEventListener('click', () => {
 });
 
 const showCertificateModal = () => {
+    const feedback = document.getElementById('name-feedback');
+
+    // Reset input and show modal
     certNameInput.value = '';
     certModal.style.display = 'flex';
+    feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+    feedback.style.color = 'gray';
 
+    // Character count feedback
+    certNameInput.oninput = () => {
+        const max = certNameInput.maxLength;
+        const length = certNameInput.value.length;
+
+        feedback.textContent = `${length} / ${max} characters`;
+        feedback.style.color = length >= max ? 'red' : 'gray';
+    };
+
+    // Download button click handler
     downloadCertBtn.onclick = async () => {
         const fullName = certNameInput.value.trim();
         if (!fullName) return;
 
+        // Disable button during generation
         downloadCertBtn.disabled = true;
         downloadCertBtn.textContent = "Generating Certificate...";
         downloadCertBtn.style.cursor = 'not-allowed';
 
         try {
-            const filePath = await window.api.generatePDF(fullName, courseId, courseName);
+            const filePath = await window.api.generatePDF(fullName, courseId, courseName, slogan);
             console.log("Certificate saved at:", filePath);
         } catch (err) {
             console.error("Error generating certificate:", err);
         } finally {
+            // Reset button state and input
             downloadCertBtn.disabled = false;
             downloadCertBtn.textContent = "Download Certificate";
             downloadCertBtn.style.cursor = 'pointer';
-            certNameInput.value = "";
+            certNameInput.value = '';
+            feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+            feedback.style.color = 'gray';
         }
     };
-}
+};
 
 function setZoomInfo(content) {
     // Convert server date to Date object
     const classDateTime = new Date(content.date.replace(" ", "T")); // Ensure ISO format
     const classStartTime = new Date(classDateTime);
-   // classStartTime.setHours(10, 0, 0, 0); 
+    // classStartTime.setHours(10, 0, 0, 0); 
 
     const classEndTime = new Date(classDateTime);
     classEndTime.setHours(classStartTime.getHours() + 2); // 12:00 PM
@@ -19937,7 +19981,7 @@ const updateQuizButtonText = (button, assessment) => {
 };
 
 const takeQuiz = (content, viewId, courseId, lessonId) => {
-  //  if (!checkAndShowModal()) return;
+    //  if (!checkAndShowModal()) return;
 
     const quizBtn = document.getElementById(viewId);
     if (!quizBtn) return;
@@ -19956,7 +20000,7 @@ const takeQuiz = (content, viewId, courseId, lessonId) => {
 };
 
 const takeFinalQuiz = (courseId, lessonId, content) => {
-   // if (!checkAndShowModal()) return;
+    // if (!checkAndShowModal()) return;
 
     content.quiz_url === 1
         ? openQuiz(courseId, lessonId, true)

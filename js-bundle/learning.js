@@ -4395,11 +4395,11 @@ const bannerColors = [
   "#4682B4", // Steel Blue
 ];
 
-const categoryColors = ['#f3ecda', '#EBE3FF', '#E7E7E7'];
+const categoryColors = ['#E7E7E7', '#f3ecda', '#EBE3FF'];
 const categoriesImg = [
+  'assets/img/kids-camp.svg',
   'assets/img/code-lab.svg',
   'assets/img/easter-cat.svg',
-  'assets/img/kids-camp.svg',
 ];
 
 function showShimmer() {
@@ -4509,7 +4509,7 @@ function populateCategories(categories) {
       catBoxes.forEach(el => el.classList.remove('active'));
       box.classList.add('active');
 
-      if (i === catBoxes.length - 1) return;
+      if (categories[i].courses === 0) return;
 
       showShimmer()
       fetchCourses(categories[i]);
@@ -4653,7 +4653,12 @@ const startLearning = (course, category) => {
   );
 
   localStorage.setItem('category',
-    JSON.stringify({ id: category.id, isFree: category.free, limit: category.limit })
+    JSON.stringify({
+      id: category.id,
+      isFree: category.free,
+      limit: category.limit,
+      slogan: category.short
+    })
   );
 }
 },{"axios":1}]},{},[37]);

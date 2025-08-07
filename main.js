@@ -235,7 +235,7 @@ ipcMain.on('open-quiz-window', () => {
 });
 
 
-ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName) => {
+ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName, slogan) => {
     const certCountPath = path.join(app.getPath('userData'), 'certCount.json');
 
     // Load or create cert count file
@@ -244,7 +244,9 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName)
         certCounts = JSON.parse(fs.readFileSync(certCountPath));
     }
 
-    if ((certCounts[courseId] || 0) >= 4) {
+    const count = certCounts?.[slogan]?.[courseId] || 0;
+
+    if (count >= 4) {
         await dialog.showMessageBox({
             type: 'info',
             title: 'Certificate Request',
@@ -268,7 +270,7 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName)
     });
 
     await certWindow.loadFile('pages/certificate.html');
-    certWindow.webContents.send('set-name', name, courseId);
+    certWindow.webContents.send('set-name', name, courseId, slogan);
 
     // Wait for the 'pdf-generated' event and resolve when it's triggered
     const pdfBuffer = await new Promise(resolve => {
@@ -287,15 +289,18 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName)
         buttons: ['OK']
     });
 
-    certCounts[courseId] = (certCounts[courseId] || 0) + 1;
-    fs.writeFileSync(certCountPath, JSON.stringify(certCounts));
+    if (!certCounts[slogan]) certCounts[slogan] = {};
+    certCounts[slogan][courseId] = count + 1;
+
+    // Save it
+    fs.writeFileSync(certCountPath, JSON.stringify(certCounts, null, 2));
 
     certWindow.close();
 
     return { success: true, filePath };
 });
 
-ipcMain.on('load-challenge', () => {
+ipcMain.on('load-challenge', (_, page) => {
     const keybuddy = new BrowserWindow({
         webPreferences: {
             contextIsolation: true,
@@ -307,9 +312,12 @@ ipcMain.on('load-challenge', () => {
     keybuddy.maximize();
 
     keybuddy.webContents.session.clearCache().then(() => {
-        keybuddy.loadURL('https://linkschoolonline.com/keybuddy?' + Date.now());
+        if (page === 'lesson') {
+            keybuddy.loadURL('https://keybaddy.com?' + Date.now());
+        } else {
+            keybuddy.loadURL('https://keybaddy.com/challenege?' + Date.now());
+        }
     });
-
 });
 
 // IPC handlers for opening windows
