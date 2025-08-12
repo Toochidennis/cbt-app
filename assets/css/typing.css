@@ -202,9 +202,17 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    /* Needed for absolute button */
     padding: 0;
     gap: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.image1:hover,
+.image2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .image1 img {
@@ -262,6 +270,14 @@
     flex-shrink: 0;
     background: #8FBEFE;
     position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.challenge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .challenge button {
@@ -296,6 +312,13 @@
     position: relative;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bottom-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .bottom-img img {
