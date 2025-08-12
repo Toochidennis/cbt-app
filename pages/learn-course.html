@@ -158,7 +158,8 @@
             <div class="modal-content">
                 <h2>Congratulations! You passed</h2>
                 <p>Please enter your name to download your certificate</p>
-                <input type="text" id="cert-name" placeholder="Your Full Name" />
+                <input type="text" id="cert-name" placeholder="Your Full Name" maxlength="23" />
+                <small id="name-feedback" style="display: block; color: gray;">0 / 23 characters</small>
 
                 <div class="modal-buttons">
                     <button id="download-cert">Download Certificate</button>

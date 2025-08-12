@@ -1,17 +1,24 @@
 const { jsPDF } = require('jspdf/dist/jspdf.umd');
 const html2canvas = require('html2canvas');
+const axios = require('axios');
 
+// 60 and 50 2.5rem
+
+// top: 44%;
+// left: 60%;
+// transform: translate(-10%, -50%);
+// font-size: 2rem;
 // const templates = {
-//     1: '../assets/img/scratch-cert.svg',
-//     2: '../assets/img/graphic-cert.svg',
-//     3: '../assets/img/web-cert.svg'
+//     1: '../assets/img/robo-cert.svg',
+//     2: '../assets/img/code-lab-graphic-cert.svg',
+//     3: '../assets/img/code-lab-web-cert.svg',
 // };
 
-const templates = {
-    1: 'https://linkschoolonline.com/assets/certs/scratch-cert.svg',
-    2: 'https://linkschoolonline.com/assets/certs/graphic-cert.svg',
-    3: 'https://linkschoolonline.com/assets/certs/web-cert.svg'
-};
+// const templates = {
+//     1: 'https://linkschoolonline.com/assets/certs/scratch-cert.svg',
+//     2: 'https://linkschoolonline.com/assets/certs/graphic-cert.svg',
+//     3: 'https://linkschoolonline.com/assets/certs/web-cert.svg'
+// };
 
 const spanColor = {
     1: '#d68e17',
@@ -19,38 +26,58 @@ const spanColor = {
     3: '#da607d'
 };
 
-window.api.onSetName(async (_, name, courseId) => {
-    const certTemplate = document.querySelector('.cert-img');
-    const nameSpan = document.querySelector('.cert-name');
+window.api.onSetName(async (_, name, courseId, slogan) => {
+    console.log('Triggered IPC setName:', slogan);
 
-    if (nameSpan && certTemplate) {
-        const capitalizedName = capitalizeName(name);
-        await loadImageAsync(certTemplate, templates[courseId]);
-        nameSpan.innerText = capitalizedName;
-        nameSpan.style.color = spanColor[courseId];
+    try {
+        const response = await axios.get('https://linkschoolonline.com/certificates');
+        const templates = response.data[slogan];
+
+        const certTemplate = document.querySelector('.cert-img');
+        const nameSpan = document.querySelector('.cert-name');
+
+        if (nameSpan && certTemplate) {
+            const capitalizedName = capitalizeName(name);
+            await loadImageAsync(certTemplate, templates[courseId]);
+            nameSpan.innerText = capitalizedName;
+            nameSpan.style.color = spanColor[courseId];
+
+            if (slogan === 'code_lab') {
+                nameSpan.style.top = '60%';
+                nameSpan.style.transform = 'translate(-60%, -50%)';
+                nameSpan.style.fontSize = '2rem';
+            } else if (slogan === 'boot_camp') {
+                nameSpan.style.transform = 'translate(-10%, -50%)';
+                nameSpan.style.top = '44%';
+                nameSpan.style.left = '60%';
+                nameSpan.style.fontSize = '2rem';
+            }
+        }
+
+        const cert = document.querySelector('.cert-content');
+
+        const canvas = await html2canvas(cert, {
+            scale: 2, // for better quality
+            useCORS: true,
+        });
+
+        const imgData = canvas.toDataURL('image/png');
+
+        const pdf = new jsPDF({
+            orientation: 'landscape',
+            unit: 'px',
+            format: [canvas.width, canvas.height],
+        });
+
+        pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+        const pdfBlob = pdf.output('blob');
+        const pdfBuffer = Buffer.from(await pdfBlob.arrayBuffer());
+
+        window.api.writePDF('pdf-generated', pdfBuffer);
+
+    } catch (error) {
+        console.error('Error during certificate generation:', error);
     }
-
-    const cert = document.querySelector('.cert-content');
-
-    const canvas = await html2canvas(cert, {
-        scale: 2, // for better quality
-        useCORS: true,
-    });
-
-    const imgData = canvas.toDataURL('image/png');
-
-    const pdf = new jsPDF({
-        orientation: 'landscape',
-        unit: 'px',
-        format: [canvas.width, canvas.height],
-    });
-
-
-    pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-    const pdfBlob = pdf.output('blob');
-    const pdfBuffer = Buffer.from(await pdfBlob.arrayBuffer());
-
-    window.api.writePDF('pdf-generated', pdfBuffer);
 });
 
 function capitalizeName(name) {
