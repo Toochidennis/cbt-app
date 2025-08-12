@@ -1,202 +1,372 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Urbanist', Arial, sans-serif;
-    background: #F5F7FA;
+.typing-dashboard {
+    margin-left: 2em;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-
-/* --- Typing Dashboard UI Styles --- */
-.typing-dashboard-bg {
-    min-height: 90vh;
-    background: #F5F7FA;
-    display: flex;
-    margin-bottom: 2em; /* Add space below the last row */
-    padding: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 85%;
-    max-width: 1440px; /* or 1600px if you want more stretch */
+.left-content,
+.right-content {
+    width: 100%;
+    max-width: 500px;
     box-sizing: border-box;
-    margin: auto;
 }
 
-
-.typing-dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2vw 2vw;
-    width: 100%;
-}
-
-.typing-feature-card {
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(44,62,80,0.07);
-    padding: 2vw 1vw;
+.left-content {
     display: flex;
     flex-direction: column;
-    padding: 1.5em;
-    align-items: left;
-    position: relative;
-    min-height: 120px;
-    max-width: 100%;
+}
+
+.welcome-message {
+    display: flex;
+    max-width: 450px;
     width: 100%;
-    transition: box-shadow 0.2s, transform 0.2s;
-    /* text-align: center; */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 100px;
 }
 
-.typing-feature-card:hover {
-    box-shadow: 0 8px 24px rgba(44,62,80,0.18), 0 2px 12px rgba(44,62,80,0.07);
-    transform: translateX(3px) scale(1.05);
-    z-index: 2;
-}
-
-.typing-feature-tag {
-    width: 25%;
-    font-size: 0.75rem;
+.welcome-message h1 {
+    color: #007DFA;
+    font-family: "Quicksand";
+    font-size: 44px;
+    font-style: normal;
     font-weight: 700;
-    border-radius: 6px;
-    padding: 7px;
-    margin-bottom: 7px;
-    letter-spacing: 1px;
-    display: inline-block;
-    text-align: left;
+    line-height: 50px;
+    align-self: stretch;
 }
 
-.tag-blue { background: #e3edff; color: #2563eb; }
-.tag-orange { background: #ffe5d0; color: #ff8c42; }
-.tag-purple { background: #ede7ff; color: #7c3aed; }
-.tag-yellow { background: #eab308; color: lightgoldenrodyellow; }
-
-.typing-feature-img {
-    width: 100%;
-    height: 120px;
-    object-fit: fill;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    background: #f3f6fa;
-    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
-}
-
-.typing-feature-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 4px;
-    text-align: left;
-}
-
-.typing-feature-desc {
-    font-size: 0.75rem;
-    color: #6b7a8f;
-    margin-bottom: 12px;
-    min-height: 24px;
-}
-
-.typing-feature-btn {
-    width: 100%;
-    height: 2.5rem;
-    text-align: center;
-    display: inline-block;
-    font-size: 0.95rem;
+.welcome-message p {
+    color: #414141;
+    font-family: "Quicksand";
+    font-size: 16px;
+    font-style: normal;
     font-weight: 600;
-    border-radius: 5px;
-    padding: 12px 16px;
-    text-decoration: none;
-    transition: background 0.18s, color 0.18s;
-    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+    line-height: 32px;
+}
+
+.welcome-buttons {
+    display: flex;
+    width: 300px;
+    height: 50px;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+}
+
+.visit,
+.let {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 24px;
+    border: 1px solid #CAE5FF;
+    background: #E5F2FF;
+    padding: 8px;
+}
+
+.visit {
+    color: #0080FF;
+    border-radius: 24px;
+    border: 1px solid #CAE5FF;
+    background: #E5F2FF;
+    align-items: center;
     cursor: pointer;
 }
 
-.btn-blue { background: #e3edff; color: #2563eb; }
-.btn-blue:hover { background: #2563eb; color: #fff; }
-.btn-orange { background: #ffe5d0; color: #ff8c42; }
-.btn-orange:hover { background: #ff8c42; color: #fff; }
-.btn-purple { background: #ede7ff; color: #7c3aed; }
-.btn-purple:hover { background: #7c3aed; color: #fff; }
-.btn-yellow { background: #FFF6C4; color: #eab308; }
-.btn-yellow:hover { background: #eab308; color: #fff; }
+.let {
+    color: #FFF;
+    border-radius: 24px;
+    border: 1px solid #0080FF;
+    background: #0080FF;
+    align-items: center;
+    cursor: pointer;
+}
 
-@media (min-width: 1800px) {
-    .typing-dashboard-bg {
-        max-width: 1600px;
-        padding: 3em;
-    }
+.let:hover,
+.visit:hover {
+    outline: 2px solid #0080FF;
+    outline-offset: 2px;
+}
+
+.stats {
+
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    flex-wrap: wrap;
+    display: inline-flex;
+    margin-top: 50px;
+    align-items: flex-start;
+    gap: 55.988px;
+    background: rgba(255, 255, 255, 0.80);
+    padding: 20px;
+}
+
+.stat-box {
+    backdrop-filter: blur(6.220839977264404px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10.663px;
+    text-align: center;
+}
+
+.stat-box p {
+    color: #264065;
+    font-family: "Baloo 2";
+    font-size: 27.994px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.stat-box span {
+    color: #909090;
+    text-align: center;
+    font-family: "Baloo 2";
+    font-size: 13.997px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.stats svg {
+    background: #E5F2FF;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
 }
 
 
-@media (max-width: 1200px) {
-    .typing-dashboard-card {
-        padding: 2vw 2vw;
-        max-width: 100vw;
-    }
-    .typing-dashboard-grid {
-        gap: 1.5vw 1.5vw;
-    }
+.right-content {
+
+    margin-top: 30px;
+    height: auto;
+    max-height: 600px;
+    overflow: visible
+}
+
+.top-img,
+.bottom-img {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.lesson-test {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.image1 {
+    display: flex;
+
+    padding: 10px 10px 0px 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    background: #F7BFB8;
+}
+
+.image2 {
+    display: flex;
+
+    padding: 10px 10px 0px 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    background: #FFD93B;
+}
+
+.image1,
+.image2 {
+    display: flex;
+    width: 200px;
+    height: 170px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    /* Needed for absolute button */
+    padding: 0;
+    gap: 0;
+}
+
+.image1 img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    border: none;
+}
+
+.image2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.image1 button,
+.image2 button {
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: none;
+    background: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Baloo 2";
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.top-img {
+    display: flex;
+    gap: 10px;
+}
+
+.challenge {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 350px;
+    padding: 0 10px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    background: #8FBEFE;
+    position: relative;
+}
+
+.challenge button {
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: none;
+    background: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Baloo 2";
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.challenge img {
+    width: 80%;
+    height: 60%;
+    object-fit: cover;
+    margin-top: auto;
+}
+
+.bottom-img {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.bottom-img img {
+    max-width: 92%;
+    display: block;
+}
+
+.bottom-img button {
+    background: transparent;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 8px 18px;
+    border: none;
+    color: #28B7D6;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "Baloo 2";
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
 }
 
 @media (max-width: 900px) {
-    .typing-dashboard-card {
-        padding: 2vw 1vw;
+    .typing-dashboard {
+        flex-direction: column;
+        gap: 40px;
+        margin-left: 0;
+        align-items: center;
     }
-    .typing-dashboard-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px 0;
+
+    .left-content,
+    .right-content {
+        max-width: 100%;
     }
-    .typing-feature-card {
-        padding: 12px 6px 10px 6px;
+
+    .welcome-message {
+        max-width: 100%;
+    }
+
+    .stats {
+        max-width: 100%;
+        gap: 16px;
     }
 }
 
 @media (max-width: 600px) {
-    .typing-dashboard-card {
-        padding: 4px 1px;
-        margin: 8px;
+    .welcome-message h1 {
+        font-size: 28px;
+        line-height: 36px;
     }
-    .typing-dashboard-grid {
-        grid-template-columns: 1fr;
-        gap: 12px 0;
-    }
-    .typing-feature-card {
-        padding: 10px 4px 8px 4px;
-        min-height: 100px;
-    }
-    .typing-feature-img {
-        height: 80px;
-    }
-    .typing-feature-title {
-        font-size: 0.95rem;
-    }
-    .typing-feature-desc {
-        font-size: 0.7rem;
-    }
-    .typing-feature-btn {
-        font-size: 0.9rem;
-        padding: 8px 8px;
-        height: 2rem;
-    }
-}
 
-@media (max-width: 400px) {
-    .typing-dashboard-card {
-        padding: 2px 0;
-        margin: 4px;
+    .welcome-message p {
+        font-size: 14px;
+        line-height: 24px;
     }
-    .typing-feature-card {
-        padding: 6px 2px 6px 2px;
+
+    .image1,
+    .image2,
+    .challenge {
+        max-width: 100%;
+        min-width: 0;
     }
-    .typing-feature-img {
-        height: 60px;
-    }
-    .typing-feature-title {
-        font-size: 0.85rem;
-    }
-    .typing-feature-btn {
-        font-size: 0.85rem;
-        padding: 6px 4px;
-        height: 1.7rem;
+
+    .stats {
+        flex-direction: column;
+        gap: 12px;
     }
 }
