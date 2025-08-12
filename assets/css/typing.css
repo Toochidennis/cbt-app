@@ -148,11 +148,13 @@
 
 
 .right-content {
-
     margin-top: 30px;
     height: auto;
     max-height: 600px;
-    overflow: visible
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .top-img,
@@ -196,8 +198,8 @@
 .image1,
 .image2 {
     display: flex;
-    width: 200px;
-    height: 170px;
+    width: clamp(150px, 30vw, 200px);
+    height: clamp(130px, 25vw, 170px);
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -211,7 +213,7 @@
 
 .image1:hover,
 .image2:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -261,8 +263,8 @@
 .challenge {
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 350px;
+    width: clamp(200px, 40vw, 250px);
+    height: clamp(280px, 45vw, 350px);
     padding: 0 10px;
     justify-content: flex-end;
     align-items: center;
@@ -276,7 +278,7 @@
 }
 
 .challenge:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -314,16 +316,19 @@
     align-items: center;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: transparent;
 }
 
 .bottom-img:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .bottom-img img {
     max-width: 92%;
     display: block;
+    background: transparent;
+    mix-blend-mode: multiply;
 }
 
 .bottom-img button {
@@ -381,15 +386,24 @@
         line-height: 24px;
     }
 
+    .top-img {
+        justify-content: center;
+        gap: 8px;
+    }
+
     .image1,
     .image2,
     .challenge {
-        max-width: 100%;
-        min-width: 0;
+        width: calc(50% - 4px);
+        min-width: 140px;
     }
 
     .stats {
         flex-direction: column;
         gap: 12px;
+    }
+
+    .bottom-img img {
+        max-width: 100%;
     }
 }
