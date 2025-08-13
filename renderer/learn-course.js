@@ -73,8 +73,11 @@ async function getTemplates() {
 }
 
 function fetchLessons(courseId) {
-    const url = categoryId === 1 ? `https://linkschoolonline.com/new_lessons?course_id=${courseId}`
-        : `https://linkschoolonline.com/lessons?course_id=${courseId}`;
+    const url = categoryId === 1 
+        ? `https://linkschoolonline.com/new_lessons?course_id=${courseId}`
+        :  categoryId === 3 
+            ? `https://linkschoolonline.com/boot-camp-lessons?course_id=${courseId}`
+            : `https://linkschoolonline.com/lessons?course_id=${courseId}`;
 
     showLoading(); // Show loader before starting the request
     axios.get(url)
