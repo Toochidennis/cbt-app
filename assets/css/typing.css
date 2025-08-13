@@ -311,6 +311,7 @@
 
 .bottom-img {
     margin-top: clamp(0.5rem, 2vw, 1rem);
+    margin-bottom: clamp(2rem, 4vw, 4rem);
     position: relative;
     display: flex;
     align-items: center;
