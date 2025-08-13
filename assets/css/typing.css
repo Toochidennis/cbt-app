@@ -4,7 +4,9 @@
     gap: 100px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 6rem;
+    margin-bottom: clamp(6rem, 12vh, 12rem);
+    min-height: calc(100vh - 100px);
+    padding-bottom: clamp(2rem, 5vh, 5rem);
 }
 
 .left-content,
