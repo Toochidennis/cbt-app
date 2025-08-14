@@ -27,6 +27,7 @@ if (env === 'development') {
 
 let mainWindow;
 let learnCourseWindow;
+let modalOpen = false;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -399,14 +400,22 @@ autoUpdater.on("download-progress", (progress) => {
 
 autoUpdater.on('update-downloaded', () => {
     log.info('Update downloaded');
-    dialog.showMessageBox({
-        type: 'info',
-        title: 'Update available',
-        message: 'A new version has been downloaded. Restart the application to apply the updates.',
-        buttons: ['Restart', 'Later']
-    }).then(result => {
-        if (result.response === 0) autoUpdater.quitAndInstall();
-    });
+
+    if (modalOpen) {
+        mainWindow.webContents.send("hide-update-modal");
+    }
+
+    // Then show new modal
+    modalOpen = true;
+    mainWindow.webContents.send("show-update-modal");
+});
+
+ipcMain.on("update-now", () => {
+    autoUpdater.quitAndInstall();
+});
+
+ipcMain.on("ignore-update", () => {
+    modalOpen = false;
 });
 
 

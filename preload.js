@@ -37,6 +37,10 @@ contextBridge.exposeInMainWorld('api', {
     closeActivationWindow: () => ipcRenderer.send('close-activation-window'),
     loadChallenge: (page) => ipcRenderer.send('load-challenge', page),
     joinZoom: (url) => ipcRenderer.send('open-zoom-meeting', url),
+    showUpdateModal: () => ipcRenderer.send('show-update-modal'),
+    hideUpdateModal: () => ipcRenderer.send('hide-update-modal'),
+    updateNow: () => ipcRenderer.send('update-now'),
+    ignoreUpdate: () => ipcRenderer.send('ignore-update'),
     generateProductKey: (productKey) => ipcRenderer.invoke('generate-product-key', productKey),
     getImagePath: (subject, imageFileName) => ipcRenderer.invoke('get-image-path', subject, imageFileName),
 });

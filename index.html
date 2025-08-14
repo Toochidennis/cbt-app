@@ -1,66 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>LinkSkool</title>
     <link rel="stylesheet" href="assets/css/globals.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/key-buddy.css" />
     <link rel="stylesheet" href="assets/css/learning.css" />
     <link rel="stylesheet" href="assets/css/video.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main-app">
-        <div class="sidebar">
-            <div class="sidebar-item" id="cbt-btn">
-                <img src="assets/icons/cbt.svg" alt="CBT" />
-                <span>CBT</span>
-            </div>
-            <div class="sidebar-item" id="typing-btn">
-                <img src="assets/icons/typing.svg" alt="Typing" />
-                <span>Typing</span>
-            </div>
-            <div class="sidebar-item" id="learn-btn">
-                <img src="assets/icons/learning_sphere.svg" alt="Learn" />
-                <span>Learn</span>
-            </div>
-            <div class="sidebar-item" id="video-btn">
-                <img src="assets/img/icons8_video_playlist 1.svg" alt="video" />
-                <span>Videos</span>
-            </div>
+      <div class="sidebar">
+        <div class="sidebar-item" id="cbt-btn">
+          <img src="assets/icons/cbt.svg" alt="CBT" />
+          <span>CBT</span>
         </div>
-
-        <div class="title-bar">
-            <div class="drag-region">
-                <div class="logo">
-                    <img class="graduation-cap" src="assets/img/graduationcap.svg" />
-                    <p class="link-skool">
-                        <span class="text-wrapper-7">Link</span><span class="text-wrapper-8">Skool</span>
-                    </p>
-                </div>
-                <div class="search" id="search">
-                    <img class="img-2" src="assets/img/magnifyingglass.svg" />
-                    <input class="search-here" placeholder="Search here...." type="text" />
-                </div>
-                <div class="window-controls" id="controls-container">
-                    <div class="button window-hover" id="min-button">
-                        <img class="icon" id="min" alt="minimize" src="assets/img/minus.png" draggable="false" />
-                    </div>
-                    <div class="button window-hover" id="max-button">
-                        <img class="icon" id="max" alt="maximize" src="assets/img/restore-down.png" draggable="false" />
-                    </div>
-                    <div class="button window-hover-close" id="close-button">
-                        <img class="icon" id="close" alt="close" src="assets/img/close2.svg" draggable="false" />
-                    </div>
-                </div>
-            </div>
+        <div class="sidebar-item" id="typing-btn">
+          <img src="assets/icons/typing.svg" alt="Typing" />
+          <span>Typing</span>
         </div>
+        <div class="sidebar-item" id="learn-btn">
+          <img src="assets/icons/learning_sphere.svg" alt="Learn" />
+          <span>Learn</span>
+        </div>
+        <div class="sidebar-item" id="video-btn">
+          <img src="assets/img/icons8_video_playlist 1.svg" alt="video" />
+          <span>Videos</span>
+        </div>
+      </div>
 
-        <div id="content"></div>
+      <div class="title-bar">
+        <div class="drag-region">
+          <div class="logo">
+            <img class="graduation-cap" src="assets/img/graduationcap.svg" />
+            <p class="link-skool">
+              <span class="text-wrapper-7">Link</span
+              ><span class="text-wrapper-8">Skool</span>
+            </p>
+          </div>
+          <div class="search" id="search">
+            <img class="img-2" src="assets/img/magnifyingglass.svg" />
+            <input
+              class="search-here"
+              placeholder="Search here...."
+              type="text"
+            />
+          </div>
+          <div class="window-controls" id="controls-container">
+            <div class="button window-hover" id="min-button">
+              <img
+                class="icon"
+                id="min"
+                alt="minimize"
+                src="assets/img/minus.png"
+                draggable="false"
+              />
+            </div>
+            <div class="button window-hover" id="max-button">
+              <img
+                class="icon"
+                id="max"
+                alt="maximize"
+                src="assets/img/restore-down.png"
+                draggable="false"
+              />
+            </div>
+            <div class="button window-hover-close" id="close-button">
+              <img
+                class="icon"
+                id="close"
+                alt="close"
+                src="assets/img/close2.svg"
+                draggable="false"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="content"></div>
     </div>
-    <script src="js-bundle/index.js"></script>
-</body>
+    <!-- Update Modal -->
+    <div id="update-modal" class="update-modal">
+      <div class="update-modal-content">
+        <h2 >Update Available</h2>
+        <p>
+          A new version of LinkSkool is available. Update now to get the latest
+          features and improvements.
+        </p>
+        <div class="update-modal-actions">
+          <button id="update-now" class="update-btn">Update</button>
+          <button id="ignore-update" class="ignore-btn">Ignore</button>
+        </div>
+      </div>
+    </div>
 
+    <script src="js-bundle/index.js"></script>
+  </body>
 </html>
