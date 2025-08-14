@@ -315,7 +315,7 @@ ipcMain.on('load-challenge', (_, page) => {
         if (page === 'lesson') {
             keybuddy.loadURL('https://keybaddy.com?' + Date.now());
         } else {
-            keybuddy.loadURL('https://keybaddy.com/challenege?' + Date.now());
+            keybuddy.loadURL('https://keybaddy.com/challenge?' + Date.now());
         }
     });
 });
