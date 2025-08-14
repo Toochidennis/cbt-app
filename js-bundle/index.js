@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarItems = document.querySelectorAll(".sidebar-item");
 
     sidebarItems[0].classList.add('active');
-    
+
     sidebarItems.forEach(item => {
         item.addEventListener("click", () => {
             sidebarItems.forEach(el => el.classList.remove("active"));
@@ -71,6 +71,31 @@ document.addEventListener('DOMContentLoaded', () => {
             controlsContainer.classList.remove('hidden');
             search.classList.remove('hidden');
         }
+    });
+
+    window.api.showUpdateModal(() => {
+        showUpdateModal();
+    })
+
+    // Show update modal
+    function showUpdateModal() {
+        document.getElementById("update-modal").style.display = "block";
+    }
+
+    // Hide update modal
+    function hideUpdateModal() {
+        document.getElementById("update-modal").style.display = "none";
+    }
+
+    // Buttons
+    document.getElementById("update-now").addEventListener("click", function () {
+        window.api.updateNow();
+        hideUpdateModal();
+    });
+
+    document.getElementById("ignore-update").addEventListener("click", () => {
+        window.api.ignoreUpdate();
+        document.getElementById("update-modal").style.display = "none";
     });
 });
 
