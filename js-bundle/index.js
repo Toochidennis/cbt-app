@@ -88,14 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Buttons
-    document.getElementById("update-now").addEventListener("click", function () {
+    document.getElementById("update-now").addEventListener("click", () => {
         window.api.updateNow();
         hideUpdateModal();
     });
 
     document.getElementById("ignore-update").addEventListener("click", () => {
         window.api.ignoreUpdate();
-        document.getElementById("update-modal").style.display = "none";
+        hideUpdateModal();
     });
 });
 

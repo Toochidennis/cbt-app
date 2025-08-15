@@ -12,17 +12,15 @@ autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
-//let isUpdateModalOpen = false;
 
+// const env = process.env.NODE_ENV || 'development';
 
-const env = process.env.NODE_ENV || 'development';
-
-if (env === 'development') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-        hardResetMethod: 'exit',
-    });
-}
+// if (env === 'development') {
+//     require('electron-reload')(__dirname, {
+//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+//         hardResetMethod: 'exit',
+//     });
+// }
 
 
 let mainWindow;
@@ -403,11 +401,11 @@ autoUpdater.on('update-downloaded', () => {
 
     if (modalOpen) {
         mainWindow.webContents.send("hide-update-modal");
+        log.info('Hide update modal');
     }
 
     // Then show new modal
-    modalOpen = true;
-    mainWindow.webContents.send("show-update-modal");
+    notifyUpdateAvailable();
 });
 
 ipcMain.on("update-now", () => {
@@ -418,6 +416,19 @@ ipcMain.on("ignore-update", () => {
     modalOpen = false;
 });
 
+function notifyUpdateAvailable() {
+    if (mainWindow) {
+        // Flash / bounce for attention
+        if (process.platform === 'darwin') {
+            app.dock.bounce('informational');
+        } else {
+            mainWindow.flashFrame(true);
+        }
+
+        modalOpen = true;
+        mainWindow.webContents.send('show-update-modal');
+    }
+}
 
 if (!gotTheLock) {
     app.quit();

@@ -37,7 +37,7 @@ contextBridge.exposeInMainWorld('api', {
     closeActivationWindow: () => ipcRenderer.send('close-activation-window'),
     loadChallenge: (page) => ipcRenderer.send('load-challenge', page),
     joinZoom: (url) => ipcRenderer.send('open-zoom-meeting', url),
-    showUpdateModal: () => ipcRenderer.send('show-update-modal'),
+    showUpdateModal: (callback) => ipcRenderer.on('show-update-modal', callback),
     hideUpdateModal: () => ipcRenderer.send('hide-update-modal'),
     updateNow: () => ipcRenderer.send('update-now'),
     ignoreUpdate: () => ipcRenderer.send('ignore-update'),

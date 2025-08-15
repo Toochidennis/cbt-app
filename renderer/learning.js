@@ -131,7 +131,7 @@ function populateCategories(categories) {
 }
 
 function fetchCourses(selectedCategory) {
-  axios.get('https://linkschoolonline.com/courses')
+  axios.get(`https://linkschoolonline.com/courses?category=${selectedCategory.id}`)
     .then(response => {
       hideShimmer();
       console.log(response.data);
@@ -208,9 +208,12 @@ function populateCourses(courses, category) {
       startLearning(course, category);
     };
 
-    bannerFragment.appendChild(
-      populateCarousel(course, bannerColors[index], category)
-    );
+    if (index < 3) {
+      bannerFragment.appendChild(
+        populateCarousel(course, bannerColors[index], category)
+      );
+    }
+
     fragment.appendChild(courseBox);
   });
 
@@ -255,22 +258,26 @@ function populateCarousel(course, color, category) {
 }
 
 const startLearning = (course, category) => {
-  window.api.openLearnCourseWindow();
-  localStorage.setItem('courseData',
-    JSON.stringify(
-      {
-        courseId: course.id,
-        courseName: course.course_name,
-        email: course.email
-      })
-  );
+  if (course.has_content) {
+    window.api.openLearnCourseWindow();
+    localStorage.setItem('courseData',
+      JSON.stringify(
+        {
+          courseId: course.id,
+          courseName: course.course_name,
+          email: course.email
+        })
+    );
 
-  localStorage.setItem('category',
-    JSON.stringify({
-      id: category.id,
-      isFree: category.free,
-      limit: category.limit,
-      slogan: category.short
-    })
-  );
+    localStorage.setItem('category',
+      JSON.stringify({
+        id: category.id,
+        isFree: category.free,
+        limit: category.limit,
+        slogan: category.short
+      })
+    );
+  } else {
+    window.alert('No contents yet!')
+  }
 }
