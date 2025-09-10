@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Igwe Chinaecherem",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Omlenyi Alexis Ihotu",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Agu Chidera Esther",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Chinaedu Testimony Chimaobi",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Onyia Chiamaka Olivia",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Onyia Ifeanyichukwu Daniel",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Chinmdiebube Princess Okeke",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Orji David",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Okonkwo Goodluck Ozioma",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Orjiezeoke Ifechukwu Edmond",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Chinwendu Chiaha",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Enobuike Kamsi Stephanie",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Tasie Chiagozie Micheal ",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Ilouno Alvin Kamdilichukwu",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Nwokeji Kester",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Agu Wilson Chimeremeze",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Mezulu M Makodi-Biereenu",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Ugochukwu Dominion ",
+    "course_name": "basics",
+    "course_id": 8
+  },
+  {
+    "name": "Osakwe Otitonna",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Chukwudelunzu Sealtiel",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Munachi Akpaka",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Akachukwu Akpaka",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Ozobu Chiemezie Hillary",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Okolo Divine",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Okolo Micheal",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Kizito Onuorah",
+    "course_name": "python",
+    "course_id": 4
+  },
+  {
+    "name": "Mbajunwa Kelechi",
+    "course_name": "scratch",
+    "course_id": 1
+  },
+  {
+    "name": "Onwunkwo Kaobichukeura Bryan",
+    "course_name": "scratch",
+    "course_id": 1
+  },
+  {
+    "name": "Ogbonna Noella  Onyinyechi",
+    "course_name": "scratch",
+    "course_id": 1
+  },
+  {
+    "name": "Agu Wilson",
+    "course_name": "scratch",
+    "course_id": 1
+  },
+  {
+    "name": "Igwe Praise",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Daniel Fidelis",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Oluoma Onyebueke",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Chine Mezue",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Olive Dike",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Aghandu Angel",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Onwunkwo Karachukwu Liam",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Ude Mmesoma",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Chinedu Edith Onyinyechi",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Chinwendu Chiaha",
+    "course_name": "graphics",
+    "course_id": 2
+  },
+  {
+    "name": "Akabuike Uchenna Divine-Gift",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Orjiezeoke Chisom Divine-Favour",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Ikeugwu Divine",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Ugwu Hanniel",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Okeke Chinemelum ",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Ezeanioma Duke Sogidechukwu",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Chinedu Edith Onyinyechi",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Orjiezeoke Ifechukwu Edmond",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Tasie Chiagozie Micheal ",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Ilouno Alvin Kamdilichukwu",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Nwokeji Kester",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Zikora Onyebueke",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Daniel Okechukwu",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Ozobu Chiemezie Hillary",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Nnaji Chukwunweike Paschal",
+    "course_name": "web",
+    "course_id": 3
+  },
+  {
+    "name": "Chukwudelunzu Sealtiel",
+    "course_name": "web",
+    "course_id": 3
+  }
+]

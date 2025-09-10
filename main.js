@@ -13,14 +13,14 @@ autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
-// const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 
-// if (env === 'development') {
-//     require('electron-reload')(__dirname, {
-//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-//         hardResetMethod: 'exit',
-//     });
-// }
+if (env === 'development') {
+    require('electron-reload')(__dirname, {
+        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+        hardResetMethod: 'exit',
+    });
+}
 
 
 let mainWindow;
@@ -245,18 +245,18 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName,
 
     const count = certCounts?.[slogan]?.[courseId] || 0;
 
-    if (count >= 4) {
-        await dialog.showMessageBox({
-            type: 'info',
-            title: 'Certificate Request',
-            message: 'Certificate limit reached for this course.',
-            buttons: ['OK']
-        });
+    // if (count >= 4) {
+    //     await dialog.showMessageBox({
+    //         type: 'info',
+    //         title: 'Certificate Request',
+    //         message: 'Certificate limit reached for this course.',
+    //         buttons: ['OK']
+    //     });
 
-        certWindow.close();
+    //     certWindow.close();
 
-        return { err: 'Certificate limit reached for this course' };
-    }
+    //     return { err: 'Certificate limit reached for this course' };
+    // }
 
     const certWindow = new BrowserWindow({
         width: 1123,
@@ -281,12 +281,12 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName,
     const filePath = path.join(app.getPath('downloads'), `${name}_${courseName}_certificate.pdf`);
     fs.writeFileSync(filePath, pdfBuffer);
 
-    await dialog.showMessageBox({
-        type: 'info',
-        title: 'PDF Generated',
-        message: 'The certificate has been saved to your Downloads folder.',
-        buttons: ['OK']
-    });
+    // await dialog.showMessageBox({
+    //     type: 'info',
+    //     title: 'PDF Generated',
+    //     message: 'The certificate has been saved to your Downloads folder.',
+    //     buttons: ['OK']
+    // });
 
     if (!certCounts[slogan]) certCounts[slogan] = {};
     certCounts[slogan][courseId] = count + 1;

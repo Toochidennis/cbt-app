@@ -258,6 +258,9 @@ function populateCarousel(course, color, category) {
 }
 
 const startLearning = (course, category) => {
+
+  console.log('Course ', course);
+  console.log('cat ', category);
   if (course.has_content) {
     window.api.openLearnCourseWindow();
     localStorage.setItem('courseData',

@@ -19598,6 +19598,7 @@ module.exports = { checkAndShowModal, showLoading, hideLoading, disableUIIfUnpai
 const axios = require('axios');
 const Chart = require('chart.js/auto');
 const { showLoading, hideLoading, checkAndShowModal, disableUIIfUnpaid } = require('./course-activation');
+
 let lessons = [];
 let currentIndex = 0;
 let pointsChart = null;
@@ -19670,9 +19671,9 @@ async function getTemplates() {
 }
 
 function fetchLessons(courseId) {
-    const url = categoryId === 1 
+    const url = categoryId === 1
         ? `https://linkschoolonline.com/new_lessons?course_id=${courseId}`
-        :  categoryId === 3 
+        : categoryId === 3
             ? `https://linkschoolonline.com/boot-camp-lessons?course_id=${courseId}`
             : `https://linkschoolonline.com/lessons?course_id=${courseId}`;
 
@@ -19833,49 +19834,97 @@ cancelCertBtn.addEventListener('click', () => {
     certModal.style.display = 'none';
 });
 
-const showCertificateModal = () => {
-    const feedback = document.getElementById('name-feedback');
+const showCertificateModal = async () => {
+    try {
+        const files = ['umuahia.json'];
 
-    // Reset input and show modal
-    certNameInput.value = '';
-    certModal.style.display = 'flex';
-    feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
-    feedback.style.color = 'gray';
+        for (const file of files) {
+            const response = await fetch(`../assets/names/${file}`);
+            if (!response.ok) throw new Error(`Failed to load ${file}`);
 
-    // Character count feedback
-    certNameInput.oninput = () => {
-        const max = certNameInput.maxLength;
-        const length = certNameInput.value.length;
+            const names = await response.json();
+            const max = 24;
+            console.log(names)
+            let count = 0;
+            for (const n of names){
+                let name = n.name.trim();
+                console.log('name ', name);
 
-        feedback.textContent = `${length} / ${max} characters`;
-        feedback.style.color = length >= max ? 'red' : 'gray';
-    };
+                if (name.length > max) {
+                    let parts = name.split(/\s+/);
 
-    // Download button click handler
-    downloadCertBtn.onclick = async () => {
-        const fullName = certNameInput.value.trim();
-        if (!fullName) return;
+                    if (parts.length > 2) {
+                        const first = parts[0];
+                        const last = parts[parts.length - 1];
+                        const middle = parts.slice(1, -1).map(p => p[0].toUpperCase() + '.').join(' ');
 
-        // Disable button during generation
-        downloadCertBtn.disabled = true;
-        downloadCertBtn.textContent = "Generating Certificate...";
-        downloadCertBtn.style.cursor = 'not-allowed';
+                        name = `${first} ${middle} ${last}`;
+                    }
+                }
+                console.log("Final Name:", name);
 
-        try {
-            const filePath = await window.api.generatePDF(fullName, courseId, courseName, slogan);
-            console.log("Certificate saved at:", filePath);
-        } catch (err) {
-            console.error("Error generating certificate:", err);
-        } finally {
-            // Reset button state and input
-            downloadCertBtn.disabled = false;
-            downloadCertBtn.textContent = "Download Certificate";
-            downloadCertBtn.style.cursor = 'pointer';
-            certNameInput.value = '';
-            feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
-            feedback.style.color = 'gray';
+                try {
+                    const filePath = await window.api.generatePDF(
+                        name,
+                        n.course_id,
+                        n.course_name,
+                        'boot_camp'
+                    );
+                    console.log('count ', count++);
+                    console.log("Certificate saved at:", filePath);
+                } catch (err) {
+                    console.error("Error generating certificate:", err);
+                }
+
+                await new Promise(res => setTimeout(res, 5000))
+            }
         }
-    };
+    } catch (error) {
+        console.error(`Error processing file:`, error);
+    }
+
+    // const feedback = document.getElementById('name-feedback');
+
+    // // Reset input and show modal
+    // certNameInput.value = '';
+    // certModal.style.display = 'flex';
+    // feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+    // feedback.style.color = 'gray';
+
+    // // Character count feedback
+    // certNameInput.oninput = () => {
+    //     const max = certNameInput.maxLength;
+    //     const length = certNameInput.value.length;
+
+    //     feedback.textContent = `${length} / ${max} characters`;
+    //     feedback.style.color = length >= max ? 'red' : 'gray';
+    // };
+
+    // // Download button click handler
+    // downloadCertBtn.onclick = async () => {
+    //     const fullName = certNameInput.value.trim();
+    //     if (!fullName) return;
+
+    //     // Disable button during generation
+    //     downloadCertBtn.disabled = true;
+    //     downloadCertBtn.textContent = "Generating Certificate...";
+    //     downloadCertBtn.style.cursor = 'not-allowed';
+
+    //     try {
+    //         const filePath = await window.api.generatePDF(fullName, courseId, courseName, slogan);
+    //         console.log("Certificate saved at:", filePath);
+    //     } catch (err) {
+    //         console.error("Error generating certificate:", err);
+    //     } finally {
+    //         // Reset button state and input
+    //         downloadCertBtn.disabled = false;
+    //         downloadCertBtn.textContent = "Download Certificate";
+    //         downloadCertBtn.style.cursor = 'pointer';
+    //         certNameInput.value = '';
+    //         feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+    //         feedback.style.color = 'gray';
+    //     }
+    // };
 };
 
 function setZoomInfo(content) {
