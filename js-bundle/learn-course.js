@@ -19835,96 +19835,96 @@ cancelCertBtn.addEventListener('click', () => {
 });
 
 const showCertificateModal = async () => {
-    try {
-        const files = ['umuahia.json'];
+    // try {
+    //     const files = ['umuahia.json'];
 
-        for (const file of files) {
-            const response = await fetch(`../assets/names/${file}`);
-            if (!response.ok) throw new Error(`Failed to load ${file}`);
+    //     for (const file of files) {
+    //         const response = await fetch(`../assets/names/${file}`);
+    //         if (!response.ok) throw new Error(`Failed to load ${file}`);
 
-            const names = await response.json();
-            const max = 24;
-            console.log(names)
-            let count = 0;
-            for (const n of names){
-                let name = n.name.trim();
-                console.log('name ', name);
+    //         const names = await response.json();
+    //         const max = 24;
+    //         console.log(names)
+    //         let count = 0;
+    //         for (const n of names){
+    //             let name = n.name.trim();
+    //             console.log('name ', name);
 
-                if (name.length > max) {
-                    let parts = name.split(/\s+/);
+    //             if (name.length > max) {
+    //                 let parts = name.split(/\s+/);
 
-                    if (parts.length > 2) {
-                        const first = parts[0];
-                        const last = parts[parts.length - 1];
-                        const middle = parts.slice(1, -1).map(p => p[0].toUpperCase() + '.').join(' ');
+    //                 if (parts.length > 2) {
+    //                     const first = parts[0];
+    //                     const last = parts[parts.length - 1];
+    //                     const middle = parts.slice(1, -1).map(p => p[0].toUpperCase() + '.').join(' ');
 
-                        name = `${first} ${middle} ${last}`;
-                    }
-                }
-                console.log("Final Name:", name);
+    //                     name = `${first} ${middle} ${last}`;
+    //                 }
+    //             }
+    //             console.log("Final Name:", name);
 
-                try {
-                    const filePath = await window.api.generatePDF(
-                        name,
-                        n.course_id,
-                        n.course_name,
-                        'boot_camp'
-                    );
-                    console.log('count ', count++);
-                    console.log("Certificate saved at:", filePath);
-                } catch (err) {
-                    console.error("Error generating certificate:", err);
-                }
+    //             try {
+    //                 const filePath = await window.api.generatePDF(
+    //                     name,
+    //                     n.course_id,
+    //                     n.course_name,
+    //                     'boot_camp'
+    //                 );
+    //                 console.log('count ', count++);
+    //                 console.log("Certificate saved at:", filePath);
+    //             } catch (err) {
+    //                 console.error("Error generating certificate:", err);
+    //             }
 
-                await new Promise(res => setTimeout(res, 5000))
-            }
-        }
-    } catch (error) {
-        console.error(`Error processing file:`, error);
-    }
-
-    // const feedback = document.getElementById('name-feedback');
-
-    // // Reset input and show modal
-    // certNameInput.value = '';
-    // certModal.style.display = 'flex';
-    // feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
-    // feedback.style.color = 'gray';
-
-    // // Character count feedback
-    // certNameInput.oninput = () => {
-    //     const max = certNameInput.maxLength;
-    //     const length = certNameInput.value.length;
-
-    //     feedback.textContent = `${length} / ${max} characters`;
-    //     feedback.style.color = length >= max ? 'red' : 'gray';
-    // };
-
-    // // Download button click handler
-    // downloadCertBtn.onclick = async () => {
-    //     const fullName = certNameInput.value.trim();
-    //     if (!fullName) return;
-
-    //     // Disable button during generation
-    //     downloadCertBtn.disabled = true;
-    //     downloadCertBtn.textContent = "Generating Certificate...";
-    //     downloadCertBtn.style.cursor = 'not-allowed';
-
-    //     try {
-    //         const filePath = await window.api.generatePDF(fullName, courseId, courseName, slogan);
-    //         console.log("Certificate saved at:", filePath);
-    //     } catch (err) {
-    //         console.error("Error generating certificate:", err);
-    //     } finally {
-    //         // Reset button state and input
-    //         downloadCertBtn.disabled = false;
-    //         downloadCertBtn.textContent = "Download Certificate";
-    //         downloadCertBtn.style.cursor = 'pointer';
-    //         certNameInput.value = '';
-    //         feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
-    //         feedback.style.color = 'gray';
+    //             await new Promise(res => setTimeout(res, 5000))
+    //         }
     //     }
-    // };
+    // } catch (error) {
+    //     console.error(`Error processing file:`, error);
+    // }
+
+    const feedback = document.getElementById('name-feedback');
+
+    // Reset input and show modal
+    certNameInput.value = '';
+    certModal.style.display = 'flex';
+    feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+    feedback.style.color = 'gray';
+
+    // Character count feedback
+    certNameInput.oninput = () => {
+        const max = certNameInput.maxLength;
+        const length = certNameInput.value.length;
+
+        feedback.textContent = `${length} / ${max} characters`;
+        feedback.style.color = length >= max ? 'red' : 'gray';
+    };
+
+    // Download button click handler
+    downloadCertBtn.onclick = async () => {
+        const fullName = certNameInput.value.trim();
+        if (!fullName) return;
+
+        // Disable button during generation
+        downloadCertBtn.disabled = true;
+        downloadCertBtn.textContent = "Generating Certificate...";
+        downloadCertBtn.style.cursor = 'not-allowed';
+
+        try {
+            const filePath = await window.api.generatePDF(fullName, courseId, courseName, slogan);
+            console.log("Certificate saved at:", filePath);
+        } catch (err) {
+            console.error("Error generating certificate:", err);
+        } finally {
+            // Reset button state and input
+            downloadCertBtn.disabled = false;
+            downloadCertBtn.textContent = "Download Certificate";
+            downloadCertBtn.style.cursor = 'pointer';
+            certNameInput.value = '';
+            feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+            feedback.style.color = 'gray';
+        }
+    };
 };
 
 function setZoomInfo(content) {
