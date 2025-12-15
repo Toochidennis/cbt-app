@@ -5,14 +5,16 @@ const bannerColors = [
   "#5A8DEE", // Soft Blue
   "#6C63FF", // Purple-Blue
   "#1E90FF", // Dodger Blue
-  "#4682B4", // Steel Blue
+  "#4682B4", // Steel Blue,
+  "#7B68EE"  // Medium Slate Blue
 ];
 
-const categoryColors = ['#E7E7E7', '#f3ecda', '#EBE3FF'];
+const categoryColors = ['#E7E7E7', '#f3ecda', '#EBE3FF', '#E7E7E7',];
 const categoriesImg = [
   'assets/img/kids-camp.svg',
   'assets/img/code-lab.svg',
   'assets/img/easter-cat.svg',
+  'assets/img/kids-camp.svg',
 ];
 
 function showShimmer() {
