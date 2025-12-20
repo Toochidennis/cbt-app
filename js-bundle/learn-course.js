@@ -19608,6 +19608,8 @@ const certModal = document.getElementById('certificate-modal');
 const downloadCertBtn = document.getElementById('download-cert');
 const cancelCertBtn = document.getElementById('cancel-cert');
 const certNameInput = document.getElementById('cert-name');
+const certSuccessModal = document.getElementById('cert-success-modal');
+const certSuccessCloseBtn = document.getElementById('cert-success-close');
 const modal = document.getElementById('assignment-modal');
 const submitBtn = document.getElementById('assignment-submit');
 const sendMailBtn = document.getElementById('send-mail');
@@ -19641,7 +19643,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function getTemplates() {
-    const cacheKey = 'certTemplatesCache';
+    const cacheKey = 'certTemplatesCache_3';
     const cacheTTL = 24 * 60 * 60 * 1000; // 1 day
     const cached = localStorage.getItem(cacheKey);
 
@@ -19750,6 +19752,7 @@ function selectLesson(index) {
     toggleSectionVisibility(true);
 
     const embedUrl = getEmbedUrl(selectedLesson.content.video_url);
+    
     document.getElementById('lesson-video').src = embedUrl;
     document.getElementById('recorded-video').src = getEmbedUrl(selectedLesson.content.recorded_url);
     document.getElementById('content-title').innerHTML =
@@ -19832,6 +19835,18 @@ function setupDownloadButton(buttonId, fileUrl, fallbackMessage) {
 
 cancelCertBtn.addEventListener('click', () => {
     certModal.style.display = 'none';
+    certNameInput.value = '';
+    const feedback = document.getElementById('name-feedback');
+    feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+    feedback.style.color = 'gray';
+});
+
+certSuccessCloseBtn.addEventListener('click', () => {
+    certSuccessModal.style.display = 'none';
+    certNameInput.value = '';
+    const feedback = document.getElementById('name-feedback');
+    feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
+    feedback.style.color = 'gray';
 });
 
 const showCertificateModal = async () => {
@@ -19913,16 +19928,17 @@ const showCertificateModal = async () => {
         try {
             const filePath = await window.api.generatePDF(fullName, courseId, courseName, slogan);
             console.log("Certificate saved at:", filePath);
+            // Show success modal
+            certModal.style.display = 'none';
+            certSuccessModal.style.display = 'flex';
         } catch (err) {
             console.error("Error generating certificate:", err);
+            alert('Error downloading certificate. Please try again.');
         } finally {
-            // Reset button state and input
+            // Reset button state
             downloadCertBtn.disabled = false;
             downloadCertBtn.textContent = "Download Certificate";
             downloadCertBtn.style.cursor = 'pointer';
-            certNameInput.value = '';
-            feedback.textContent = '0 / ' + certNameInput.maxLength + ' characters';
-            feedback.style.color = 'gray';
         }
     };
 };

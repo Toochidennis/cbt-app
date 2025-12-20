@@ -13,14 +13,14 @@ autoUpdater.logger.transports.file.level = 'info';
 
 const gotTheLock = app.requestSingleInstanceLock();
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-        hardResetMethod: 'exit',
-    });
-}
+// if (env === 'development') {
+//     require('electron-reload')(__dirname, {
+//         electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+//         hardResetMethod: 'exit',
+//     });
+// }
 
 
 let mainWindow;
@@ -262,6 +262,7 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName,
         width: 1123,
         height: 794,
         show: false,
+        backgroundColor: '#ffffff',
         webPreferences: {
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js'),
@@ -269,13 +270,24 @@ ipcMain.handle('generate-certificate-pdf', async (_, name, courseId, courseName,
     });
 
     await certWindow.loadFile('pages/certificate.html');
-    certWindow.webContents.send('set-name', name, courseId, slogan);
+ certWindow.webContents.send('set-name', name, courseId, slogan);
 
     // Wait for the 'pdf-generated' event and resolve when it's triggered
-    const pdfBuffer = await new Promise(resolve => {
-        ipcMain.once('pdf-generated', (_, buffer) => {
-            resolve(buffer);
-        });
+    // const pdfBuffer = await new Promise(resolve => {
+    //     ipcMain.once('pdf-generated', (_, buffer) => {
+    //         resolve(buffer);
+    //     });
+    // });
+
+    await new Promise(resolve => {
+        ipcMain.once('certificate-ready', resolve);
+    });
+
+    const pdfBuffer = await certWindow.webContents.printToPDF({
+        landscape: true,
+        printBackground: true,
+        preferCSSPageSize: true,
+        margins: {top: 0, bottom: 0, left: 0, right: 0}
     });
 
     const filePath = path.join(app.getPath('downloads'), `${name}_${courseName}_certificate.pdf`);

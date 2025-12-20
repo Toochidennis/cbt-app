@@ -1,6 +1,6 @@
-const { jsPDF } = require('jspdf/dist/jspdf.umd');
-const html2canvas = require('html2canvas');
-const axios = require('axios');
+// const { jsPDF } = require('jspdf/dist/jspdf.umd');
+// const html2canvas = require('html2canvas');
+const axios = require("axios");
 
 // 60 and 50 2.5rem
 
@@ -12,6 +12,7 @@ const axios = require('axios');
 //     1: '../assets/img/robo-cert.svg',
 //     2: '../assets/img/code-lab-graphic-cert.svg',
 //     3: '../assets/img/code-lab-web-cert.svg',
+//     8: '../assets/img/ai-explorer-cert.svg'
 // };
 
 // const templates = {
@@ -21,82 +22,94 @@ const axios = require('axios');
 // };
 
 const spanColor = {
-    1: '#d68e17',
-    2: '#a8693d',
-    3: '#da607d'
+  1: "#d68e17",
+  2: "#a8693d",
+  3: "#da607d",
+  8: "#000",
 };
 
 window.api.onSetName(async (_, name, courseId, slogan) => {
-    console.log('Triggered IPC setName:', slogan);
+  console.log("Triggered IPC setName:", slogan);
 
-    try {
-        const response = await axios.get('https://linkschoolonline.com/certificates');
-        const templates = response.data[slogan];
+  try {
+    const response = await axios.get(
+      "https://linkschoolonline.com/certificates"
+    );
+    const templates = response.data[slogan];
 
-        const certTemplate = document.querySelector('.cert-img');
-        const nameSpan = document.querySelector('.cert-name');
+    const certTemplate = document.querySelector(".cert-img");
+    const nameSpan = document.querySelector(".cert-name");
 
-        if (nameSpan && certTemplate) {
-            const capitalizedName = capitalizeName(name);
-            await loadImageAsync(certTemplate, templates[courseId]);
-            nameSpan.innerText = capitalizedName;
-            nameSpan.style.color = spanColor[courseId];
+    if (nameSpan && certTemplate) {
+      const capitalizedName = capitalizeName(name);
+      await loadImageAsync(certTemplate, templates[courseId]);
+      nameSpan.innerText = capitalizedName;
+      nameSpan.style.color = spanColor[courseId];
 
-            if (slogan === 'code_lab') {
-                nameSpan.style.top = '60%';
-                nameSpan.style.transform = 'translate(-60%, -50%)';
-                nameSpan.style.fontSize = '2rem';
-            } else if (slogan === 'boot_camp') {
-                nameSpan.style.transform = 'translate(-10%, -50%)';
-                nameSpan.style.top = '44%';
-                nameSpan.style.left = '60%';
-                nameSpan.style.fontSize = '2rem';
-            }
-        }
-
-        const cert = document.querySelector('.cert-content');
-
-        const canvas = await html2canvas(cert, {
-            scale: 2, // for better quality
-            useCORS: true,
-        });
-
-        const imgData = canvas.toDataURL('image/png');
-
-        const pdf = new jsPDF({
-            orientation: 'landscape',
-            unit: 'px',
-            format: [canvas.width, canvas.height],
-        });
-
-        pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-        const pdfBlob = pdf.output('blob');
-        const pdfBuffer = Buffer.from(await pdfBlob.arrayBuffer());
-
-        window.api.writePDF('pdf-generated', pdfBuffer);
-
-    } catch (error) {
-        console.error('Error during certificate generation:', error);
+      if (slogan === "code_lab") {
+        nameSpan.style.top = "60%";
+        nameSpan.style.transform = "translate(-60%, -50%)";
+        nameSpan.style.fontSize = "2rem";
+      } else if (slogan === "boot_camp") {
+        nameSpan.style.transform = "translate(-10%, -50%)";
+        nameSpan.style.top = "44%";
+        nameSpan.style.left = "60%";
+        nameSpan.style.fontSize = "2rem";
+      } else if (slogan === "ai_explorer") {
+        nameSpan.style.top = "46%";
+        nameSpan.style.left = "65%";
+        nameSpan.style.transform = "translate(-30%, -50%)";
+        nameSpan.style.fontSize = "2.5rem";
+        nameSpan.style.fontFamily = "Rouge Script";
+        nameSpan.style.fontWeight = "normal";
+      }
     }
+
+    await document.fonts.ready;
+    window.api.notifyCertificateReady();
+
+    //     const cert = document.querySelector('.cert-content');
+
+    //     const canvas = await html2canvas(cert, {
+    //         scale: 2, // for better quality
+    //         useCORS: true,
+    //     });
+
+    //     const imgData = canvas.toDataURL('image/png');
+
+    //     const pdf = new jsPDF({
+    //         orientation: 'landscape',
+    //         unit: 'px',
+    //         format: [canvas.width, canvas.height],
+    //     });
+
+    //     pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+    //     const pdfBlob = pdf.output('blob');
+    //     const pdfBuffer = Buffer.from(await pdfBlob.arrayBuffer());
+
+    //     window.api.writePDF('pdf-generated', pdfBuffer);
+  } catch (error) {
+    console.error("Error during certificate generation:", error);
+  }
 });
 
 function capitalizeName(name) {
-    return name
-        .toLowerCase()
-        .split(' ')
-        .map(word =>
-            word
-                .split('-')
-                .map(part => part.charAt(0).toUpperCase() + part.slice(1))
-                .join('-')
-        )
-        .join(' ');
+  return name
+    .toLowerCase()
+    .split(" ")
+    .map((word) =>
+      word
+        .split("-")
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join("-")
+    )
+    .join(" ");
 }
 
 function loadImageAsync(imgElement, src) {
-    return new Promise((resolve, reject) => {
-        imgElement.onload = () => resolve();
-        imgElement.onerror = (err) => reject(err);
-        imgElement.src = src;
-    });
+  return new Promise((resolve, reject) => {
+    imgElement.onload = () => resolve();
+    imgElement.onerror = (err) => reject(err);
+    imgElement.src = src;
+  });
 }
