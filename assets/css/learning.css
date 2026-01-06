@@ -126,12 +126,8 @@
 
 .categories {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
     padding: 1em 2em;
 }
 
@@ -143,7 +139,7 @@
     padding: 1em;
     border-radius: 10px;
     gap: 10px;
-    width: 30rem;
+    width: 22rem;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }

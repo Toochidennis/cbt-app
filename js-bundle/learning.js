@@ -4396,12 +4396,14 @@ const bannerColors = [
   "#7B68EE"  // Medium Slate Blue
 ];
 
-const categoryColors = ['#E7E7E7', '#f3ecda', '#EBE3FF', '#E7E7E7',];
+const categoryColors = ['#F8ECE0', '#f3ecda', '#EBE3FF', '#E7E7E7', '#FFF3E0', '#E0F7FA'];
 const categoriesImg = [
-  'assets/img/kids-camp.svg',
+  'assets/img/code-lab.svg',
   'assets/img/code-lab.svg',
   'assets/img/easter-cat.svg',
   'assets/img/kids-camp.svg',
+  'assets/img/kids-camp.svg',
+  'assets/img/easter-cat.svg'
 ];
 
 function showShimmer() {
@@ -4466,6 +4468,8 @@ function populateCategories(categories) {
   if (!categories) {
     return;
   }
+
+  categories.sort((a, b) => b.id - a.id);
 
   const categoriesDiv = document.querySelector('.categories');
   categoriesDiv.innerHTML = '';
